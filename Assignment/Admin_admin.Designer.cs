@@ -31,6 +31,7 @@
             this.btnEditAdmin = new System.Windows.Forms.Button();
             this.btnRadmin = new System.Windows.Forms.Button();
             this.btnDeleteAdmin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEditAdmin
@@ -63,11 +64,21 @@
             this.btnDeleteAdmin.Text = "Delete";
             this.btnDeleteAdmin.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(337, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "welcome";
+            // 
             // Admin_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDeleteAdmin);
             this.Controls.Add(this.btnRadmin);
             this.Controls.Add(this.btnEditAdmin);
@@ -75,6 +86,7 @@
             this.Text = "Admin_admin";
             this.Load += new System.EventHandler(this.Admin_admin_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,5 +95,6 @@
         private System.Windows.Forms.Button btnEditAdmin;
         private System.Windows.Forms.Button btnRadmin;
         private System.Windows.Forms.Button btnDeleteAdmin;
+        private System.Windows.Forms.Label label1;
     }
 }
