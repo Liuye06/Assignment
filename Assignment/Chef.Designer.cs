@@ -28,38 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lbl_main = new System.Windows.Forms.Label();
+            this.btn_c_order = new System.Windows.Forms.Button();
+            this.btn_inventory = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_main
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(296, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.lbl_main.AutoSize = true;
+            this.lbl_main.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_main.Location = new System.Drawing.Point(254, 87);
+            this.lbl_main.Name = "lbl_main";
+            this.lbl_main.Size = new System.Drawing.Size(246, 37);
+            this.lbl_main.TabIndex = 0;
+            this.lbl_main.Text = "Chef Mainpage";
             // 
-            // button1
+            // btn_c_order
             // 
-            this.button1.Location = new System.Drawing.Point(179, 245);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_c_order.Location = new System.Drawing.Point(179, 245);
+            this.btn_c_order.Name = "btn_c_order";
+            this.btn_c_order.Size = new System.Drawing.Size(106, 53);
+            this.btn_c_order.TabIndex = 1;
+            this.btn_c_order.Text = "Orders";
+            this.btn_c_order.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_inventory
             // 
-            this.button2.Location = new System.Drawing.Point(480, 245);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_inventory.Location = new System.Drawing.Point(437, 245);
+            this.btn_inventory.Name = "btn_inventory";
+            this.btn_inventory.Size = new System.Drawing.Size(95, 53);
+            this.btn_inventory.TabIndex = 2;
+            this.btn_inventory.Text = "Inventory";
+            this.btn_inventory.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -77,9 +78,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_inventory);
+            this.Controls.Add(this.btn_c_order);
+            this.Controls.Add(this.lbl_main);
             this.Name = "Chef";
             this.Text = "Chef";
             this.ResumeLayout(false);
@@ -89,9 +90,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbl_main;
+        private System.Windows.Forms.Button btn_c_order;
+        private System.Windows.Forms.Button btn_inventory;
         private System.Windows.Forms.Button button3;
     }
 }
