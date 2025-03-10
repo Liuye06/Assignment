@@ -19,9 +19,14 @@ namespace Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admin_admin btnAdmin = new Admin_admin();
+            Admin btnAdmin = new Admin();
             btnAdmin.Show();
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
