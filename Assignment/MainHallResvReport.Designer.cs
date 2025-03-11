@@ -33,7 +33,22 @@
             this.btnMHall_HRReport = new System.Windows.Forms.Button();
             this.btnHRReport_HRReport = new System.Windows.Forms.Button();
             this.btnUProfile_HRReport = new System.Windows.Forms.Button();
+            this.gbHRReport = new System.Windows.Forms.GroupBox();
+            this.lblMonth = new System.Windows.Forms.Label();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.lblResvType = new System.Windows.Forms.Label();
+            this.cmbResvType = new System.Windows.Forms.ComboBox();
+            this.btnSearchReport = new System.Windows.Forms.Button();
+            this.dgvReport = new System.Windows.Forms.DataGridView();
+            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.tableSidebar_HRReport.SuspendLayout();
+            this.gbHRReport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_HRReport
@@ -101,15 +116,140 @@
             this.btnUProfile_HRReport.Text = "Update Profile";
             this.btnUProfile_HRReport.UseVisualStyleBackColor = true;
             // 
+            // gbHRReport
+            // 
+            this.gbHRReport.Controls.Add(this.btnExport);
+            this.gbHRReport.Controls.Add(this.btnGenerate);
+            this.gbHRReport.Controls.Add(this.dgvReport);
+            this.gbHRReport.Controls.Add(this.btnSearchReport);
+            this.gbHRReport.Controls.Add(this.cmbResvType);
+            this.gbHRReport.Controls.Add(this.lblResvType);
+            this.gbHRReport.Controls.Add(this.cmbMonth);
+            this.gbHRReport.Controls.Add(this.lblMonth);
+            this.gbHRReport.Location = new System.Drawing.Point(219, 76);
+            this.gbHRReport.Name = "gbHRReport";
+            this.gbHRReport.Size = new System.Drawing.Size(752, 365);
+            this.gbHRReport.TabIndex = 1;
+            this.gbHRReport.TabStop = false;
+            this.gbHRReport.Text = "Hall Reservation Report";
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(40, 44);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(67, 25);
+            this.lblMonth.TabIndex = 0;
+            this.lblMonth.Text = "Month";
+            // 
+            // cmbMonth
+            // 
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Location = new System.Drawing.Point(113, 40);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(149, 33);
+            this.cmbMonth.TabIndex = 1;
+            // 
+            // lblResvType
+            // 
+            this.lblResvType.AutoSize = true;
+            this.lblResvType.Location = new System.Drawing.Point(288, 43);
+            this.lblResvType.Name = "lblResvType";
+            this.lblResvType.Size = new System.Drawing.Size(165, 25);
+            this.lblResvType.TabIndex = 2;
+            this.lblResvType.Text = "Reservation Type";
+            // 
+            // cmbResvType
+            // 
+            this.cmbResvType.FormattingEnabled = true;
+            this.cmbResvType.Location = new System.Drawing.Point(459, 40);
+            this.cmbResvType.Name = "cmbResvType";
+            this.cmbResvType.Size = new System.Drawing.Size(149, 33);
+            this.cmbResvType.TabIndex = 3;
+            // 
+            // btnSearchReport
+            // 
+            this.btnSearchReport.Location = new System.Drawing.Point(623, 38);
+            this.btnSearchReport.Name = "btnSearchReport";
+            this.btnSearchReport.Size = new System.Drawing.Size(106, 35);
+            this.btnSearchReport.TabIndex = 4;
+            this.btnSearchReport.Text = "Search";
+            this.btnSearchReport.UseVisualStyleBackColor = true;
+            // 
+            // dgvReport
+            // 
+            this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColDate,
+            this.ColCustomerName,
+            this.ColHallName,
+            this.ColStatus});
+            this.dgvReport.Location = new System.Drawing.Point(45, 85);
+            this.dgvReport.Name = "dgvReport";
+            this.dgvReport.RowHeadersWidth = 51;
+            this.dgvReport.RowTemplate.Height = 24;
+            this.dgvReport.Size = new System.Drawing.Size(684, 216);
+            this.dgvReport.TabIndex = 5;
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Date";
+            this.ColDate.MinimumWidth = 6;
+            this.ColDate.Name = "ColDate";
+            this.ColDate.Width = 125;
+            // 
+            // ColCustomerName
+            // 
+            this.ColCustomerName.HeaderText = "Customer";
+            this.ColCustomerName.MinimumWidth = 6;
+            this.ColCustomerName.Name = "ColCustomerName";
+            this.ColCustomerName.Width = 180;
+            // 
+            // ColHallName
+            // 
+            this.ColHallName.HeaderText = "Hall Name";
+            this.ColHallName.MinimumWidth = 6;
+            this.ColHallName.Name = "ColHallName";
+            this.ColHallName.Width = 165;
+            // 
+            // ColStatus
+            // 
+            this.ColStatus.HeaderText = "Status";
+            this.ColStatus.MinimumWidth = 6;
+            this.ColStatus.Name = "ColStatus";
+            this.ColStatus.Width = 160;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Location = new System.Drawing.Point(45, 316);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(333, 34);
+            this.btnGenerate.TabIndex = 6;
+            this.btnGenerate.Text = "Generate PDF Report";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(384, 316);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(345, 34);
+            this.btnExport.TabIndex = 7;
+            this.btnExport.Text = "Export to Excel";
+            this.btnExport.UseVisualStyleBackColor = true;
+            // 
             // MainHallResvReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(982, 453);
+            this.Controls.Add(this.gbHRReport);
             this.Controls.Add(this.tableSidebar_HRReport);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainHallResvReport";
             this.Text = "HallResvReport";
             this.tableSidebar_HRReport.ResumeLayout(false);
+            this.gbHRReport.ResumeLayout(false);
+            this.gbHRReport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,5 +261,18 @@
         private System.Windows.Forms.Button btnMHall_HRReport;
         private System.Windows.Forms.Button btnHRReport_HRReport;
         private System.Windows.Forms.Button btnUProfile_HRReport;
+        private System.Windows.Forms.GroupBox gbHRReport;
+        private System.Windows.Forms.Label lblMonth;
+        private System.Windows.Forms.ComboBox cmbMonth;
+        private System.Windows.Forms.Button btnSearchReport;
+        private System.Windows.Forms.ComboBox cmbResvType;
+        private System.Windows.Forms.Label lblResvType;
+        private System.Windows.Forms.DataGridView dgvReport;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColCustomerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColHallName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColStatus;
+        private System.Windows.Forms.Button btnExport;
     }
 }
