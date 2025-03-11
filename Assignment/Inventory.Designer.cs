@@ -29,34 +29,39 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txt_s_id = new System.Windows.Forms.TextBox();
+            this.txt_ingredient = new System.Windows.Forms.TextBox();
+            this.txt_stock = new System.Windows.Forms.TextBox();
+            this.btn_s_add = new System.Windows.Forms.Button();
+            this.btn_s_edit = new System.Windows.Forms.Button();
+            this.btn_s_del = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_clear = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_s_id = new System.Windows.Forms.Label();
+            this.lbl_ingredient = new System.Windows.Forms.Label();
+            this.lbl_stock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txt_search
             // 
-            this.textBox1.Location = new System.Drawing.Point(54, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 26);
-            this.textBox1.TabIndex = 0;
+            this.txt_search.Location = new System.Drawing.Point(477, 67);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(225, 26);
+            this.txt_search.TabIndex = 0;
             // 
             // btn_search
             // 
             this.btn_search.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_search.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_search.BackgroundImage")));
             this.btn_search.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_search.Location = new System.Drawing.Point(298, 67);
+            this.btn_search.Location = new System.Drawing.Point(723, 55);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(52, 50);
             this.btn_search.TabIndex = 1;
@@ -66,60 +71,64 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(420, 76);
+            this.dataGridView1.Location = new System.Drawing.Point(459, 123);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(335, 255);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBox2
+            // txt_s_id
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 3;
+            this.txt_s_id.Location = new System.Drawing.Point(148, 42);
+            this.txt_s_id.Name = "txt_s_id";
+            this.txt_s_id.Size = new System.Drawing.Size(100, 26);
+            this.txt_s_id.TabIndex = 3;
             // 
-            // textBox3
+            // txt_ingredient
             // 
-            this.textBox3.Location = new System.Drawing.Point(86, 234);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 4;
+            this.txt_ingredient.Location = new System.Drawing.Point(148, 101);
+            this.txt_ingredient.Name = "txt_ingredient";
+            this.txt_ingredient.Size = new System.Drawing.Size(100, 26);
+            this.txt_ingredient.TabIndex = 4;
             // 
-            // textBox4
+            // txt_stock
             // 
-            this.textBox4.Location = new System.Drawing.Point(86, 305);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 26);
-            this.textBox4.TabIndex = 5;
+            this.txt_stock.Location = new System.Drawing.Point(148, 156);
+            this.txt_stock.Name = "txt_stock";
+            this.txt_stock.Size = new System.Drawing.Size(100, 26);
+            this.txt_stock.TabIndex = 5;
             // 
-            // button2
+            // btn_s_add
             // 
-            this.button2.Location = new System.Drawing.Point(238, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_s_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_s_add.Location = new System.Drawing.Point(32, 218);
+            this.btn_s_add.Name = "btn_s_add";
+            this.btn_s_add.Size = new System.Drawing.Size(81, 36);
+            this.btn_s_add.TabIndex = 6;
+            this.btn_s_add.Text = "ADD";
+            this.btn_s_add.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_s_edit
             // 
-            this.button3.Location = new System.Drawing.Point(238, 237);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_s_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_s_edit.Location = new System.Drawing.Point(148, 218);
+            this.btn_s_edit.Name = "btn_s_edit";
+            this.btn_s_edit.Size = new System.Drawing.Size(84, 36);
+            this.btn_s_edit.TabIndex = 7;
+            this.btn_s_edit.Text = "EDIT";
+            this.btn_s_edit.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btn_s_del
             // 
-            this.button4.Location = new System.Drawing.Point(238, 307);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_s_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_s_del.Location = new System.Drawing.Point(281, 218);
+            this.btn_s_del.Name = "btn_s_del";
+            this.btn_s_del.Size = new System.Drawing.Size(91, 36);
+            this.btn_s_del.TabIndex = 8;
+            this.btn_s_del.Text = "DELETE";
+            this.btn_s_del.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -139,35 +148,79 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btn_clear
             // 
-            this.button6.Location = new System.Drawing.Point(238, 376);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.Location = new System.Drawing.Point(32, 292);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(100, 33);
+            this.btn_clear.TabIndex = 11;
+            this.btn_clear.Text = "CLEAR";
+            this.btn_clear.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lbl_stock);
+            this.groupBox1.Controls.Add(this.lbl_ingredient);
+            this.groupBox1.Controls.Add(this.lbl_s_id);
+            this.groupBox1.Controls.Add(this.txt_s_id);
+            this.groupBox1.Controls.Add(this.btn_clear);
+            this.groupBox1.Controls.Add(this.txt_ingredient);
+            this.groupBox1.Controls.Add(this.txt_stock);
+            this.groupBox1.Controls.Add(this.btn_s_add);
+            this.groupBox1.Controls.Add(this.btn_s_del);
+            this.groupBox1.Controls.Add(this.btn_s_edit);
+            this.groupBox1.Location = new System.Drawing.Point(24, 81);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(394, 341);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // lbl_s_id
+            // 
+            this.lbl_s_id.AutoSize = true;
+            this.lbl_s_id.Location = new System.Drawing.Point(28, 42);
+            this.lbl_s_id.Name = "lbl_s_id";
+            this.lbl_s_id.Size = new System.Drawing.Size(75, 20);
+            this.lbl_s_id.TabIndex = 12;
+            this.lbl_s_id.Text = "Stock ID:";
+            // 
+            // lbl_ingredient
+            // 
+            this.lbl_ingredient.AutoSize = true;
+            this.lbl_ingredient.Location = new System.Drawing.Point(28, 101);
+            this.lbl_ingredient.Name = "lbl_ingredient";
+            this.lbl_ingredient.Size = new System.Drawing.Size(85, 20);
+            this.lbl_ingredient.TabIndex = 13;
+            this.lbl_ingredient.Text = "Ingredient:";
+            // 
+            // lbl_stock
+            // 
+            this.lbl_stock.AutoSize = true;
+            this.lbl_stock.Location = new System.Drawing.Point(24, 162);
+            this.lbl_stock.Name = "lbl_stock";
+            this.lbl_stock.Size = new System.Drawing.Size(54, 20);
+            this.lbl_stock.TabIndex = 14;
+            this.lbl_stock.Text = "Stock:";
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button6);
+            this.ClientSize = new System.Drawing.Size(828, 456);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_search);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_search);
             this.Name = "Inventory";
             this.Text = "Inventory";
+            this.Load += new System.EventHandler(this.Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,17 +228,21 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txt_s_id;
+        private System.Windows.Forms.TextBox txt_ingredient;
+        private System.Windows.Forms.TextBox txt_stock;
+        private System.Windows.Forms.Button btn_s_add;
+        private System.Windows.Forms.Button btn_s_edit;
+        private System.Windows.Forms.Button btn_s_del;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbl_stock;
+        private System.Windows.Forms.Label lbl_ingredient;
+        private System.Windows.Forms.Label lbl_s_id;
     }
 }
