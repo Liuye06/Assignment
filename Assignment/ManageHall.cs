@@ -10,11 +10,28 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class ManageHall : Form
+    public partial class MainManageHall : Form
     {
-        public ManageHall()
+        public MainManageHall()
         {
             InitializeComponent();
+        }
+
+        private void ManageHall_Load(object sender, EventArgs e)
+        {
+            // Ensure the DataGridView has no duplicate columns
+            if (dgvHall.Columns["Action"] == null)
+            {
+                // Create an Action column
+                DataGridViewButtonColumn actionColumn = new DataGridViewButtonColumn();
+                actionColumn.Name = "Action";
+                actionColumn.HeaderText = "Action";
+                actionColumn.Text = "Edit | Delete"; // Display both actions
+                actionColumn.UseColumnTextForButtonValue = true; // Show button text
+
+                // Add the column to DataGridView
+                dgvHall.Columns.Add(actionColumn);
+            }
         }
     }
 }

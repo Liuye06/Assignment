@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class ManageMenu : Form
+    public partial class MainManageMenu : Form
     {
-        public ManageMenu()
+        public MainManageMenu()
         {
             InitializeComponent();
         }
