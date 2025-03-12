@@ -16,7 +16,7 @@ namespace Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inventory());
+            Application.Run(new M());
         }
     }
 }
