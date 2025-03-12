@@ -16,7 +16,7 @@ namespace Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new M());
+            Application.Run(new Chef());
         }
     }
 }

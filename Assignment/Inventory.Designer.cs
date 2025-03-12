@@ -33,29 +33,28 @@
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ingredientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assignmentdbDataSet = new Assignment.AssignmentdbDataSet();
             this.txt_s_id = new System.Windows.Forms.TextBox();
             this.txt_ingredient = new System.Windows.Forms.TextBox();
             this.txt_stock = new System.Windows.Forms.TextBox();
             this.btn_s_add = new System.Windows.Forms.Button();
             this.btn_s_edit = new System.Windows.Forms.Button();
             this.btn_s_del = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_i_back = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_stock = new System.Windows.Forms.Label();
             this.lbl_ingredient = new System.Windows.Forms.Label();
             this.lbl_s_id = new System.Windows.Forms.Label();
-            this.assignmentdbDataSet = new Assignment.AssignmentdbDataSet();
-            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stockTableAdapter = new Assignment.AssignmentdbDataSetTableAdapters.StockTableAdapter();
-            this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ingredientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_search
@@ -95,6 +94,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(335, 255);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // stockIDDataGridViewTextBoxColumn
+            // 
+            this.stockIDDataGridViewTextBoxColumn.DataPropertyName = "Stock_ID";
+            this.stockIDDataGridViewTextBoxColumn.HeaderText = "Stock_ID";
+            this.stockIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.stockIDDataGridViewTextBoxColumn.Name = "stockIDDataGridViewTextBoxColumn";
+            this.stockIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // ingredientDataGridViewTextBoxColumn
+            // 
+            this.ingredientDataGridViewTextBoxColumn.DataPropertyName = "Ingredient";
+            this.ingredientDataGridViewTextBoxColumn.HeaderText = "Ingredient";
+            this.ingredientDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.ingredientDataGridViewTextBoxColumn.Name = "ingredientDataGridViewTextBoxColumn";
+            this.ingredientDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // stockDataGridViewTextBoxColumn
+            // 
+            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
+            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
+            this.stockDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
+            this.stockDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataMember = "Stock";
+            this.stockBindingSource.DataSource = this.assignmentdbDataSet;
+            // 
+            // assignmentdbDataSet
+            // 
+            this.assignmentdbDataSet.DataSetName = "AssignmentdbDataSet";
+            this.assignmentdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txt_s_id
             // 
@@ -147,23 +181,15 @@
             this.btn_s_del.Text = "DELETE";
             this.btn_s_del.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_i_back
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(139, 13);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_i_back.Location = new System.Drawing.Point(13, 13);
+            this.btn_i_back.Name = "btn_i_back";
+            this.btn_i_back.Size = new System.Drawing.Size(89, 33);
+            this.btn_i_back.TabIndex = 9;
+            this.btn_i_back.Text = "Back";
+            this.btn_i_back.UseVisualStyleBackColor = true;
+            this.btn_i_back.Click += new System.EventHandler(this.btn_i_back_Click);
             // 
             // btn_clear
             // 
@@ -221,44 +247,9 @@
             this.lbl_s_id.TabIndex = 12;
             this.lbl_s_id.Text = "Stock ID:";
             // 
-            // assignmentdbDataSet
-            // 
-            this.assignmentdbDataSet.DataSetName = "AssignmentdbDataSet";
-            this.assignmentdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stockBindingSource
-            // 
-            this.stockBindingSource.DataMember = "Stock";
-            this.stockBindingSource.DataSource = this.assignmentdbDataSet;
-            // 
             // stockTableAdapter
             // 
             this.stockTableAdapter.ClearBeforeFill = true;
-            // 
-            // stockIDDataGridViewTextBoxColumn
-            // 
-            this.stockIDDataGridViewTextBoxColumn.DataPropertyName = "Stock_ID";
-            this.stockIDDataGridViewTextBoxColumn.HeaderText = "Stock_ID";
-            this.stockIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.stockIDDataGridViewTextBoxColumn.Name = "stockIDDataGridViewTextBoxColumn";
-            this.stockIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stockIDDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // ingredientDataGridViewTextBoxColumn
-            // 
-            this.ingredientDataGridViewTextBoxColumn.DataPropertyName = "Ingredient";
-            this.ingredientDataGridViewTextBoxColumn.HeaderText = "Ingredient";
-            this.ingredientDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.ingredientDataGridViewTextBoxColumn.Name = "ingredientDataGridViewTextBoxColumn";
-            this.ingredientDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // stockDataGridViewTextBoxColumn
-            // 
-            this.stockDataGridViewTextBoxColumn.DataPropertyName = "Stock";
-            this.stockDataGridViewTextBoxColumn.HeaderText = "Stock";
-            this.stockDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
-            this.stockDataGridViewTextBoxColumn.Width = 150;
             // 
             // Inventory
             // 
@@ -266,8 +257,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 456);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_i_back);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_search);
@@ -275,10 +265,10 @@
             this.Text = "Inventory";
             this.Load += new System.EventHandler(this.Inventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,8 +285,7 @@
         private System.Windows.Forms.Button btn_s_add;
         private System.Windows.Forms.Button btn_s_edit;
         private System.Windows.Forms.Button btn_s_del;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_i_back;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl_stock;

@@ -16,5 +16,11 @@ namespace Assignment
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Chef chef = new Chef();
+            chef.Show();
+        }
     }
 }

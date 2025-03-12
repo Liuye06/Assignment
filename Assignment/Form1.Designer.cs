@@ -29,100 +29,85 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.btnUpload = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnUpload = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.assignmentdbDataSet = new Assignment.AssignmentdbDataSet();
-            this.assignmentdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.assignmentdbDataSet1 = new Assignment.AssignmentdbDataSet1();
+            this.assignmentdbDataSet2 = new Assignment.AssignmentdbDataSet2();
             this.menuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.menuTableAdapter = new Assignment.AssignmentdbDataSet1TableAdapters.MenuTableAdapter();
+            this.menuTableAdapter = new Assignment.AssignmentdbDataSet2TableAdapters.MenuTableAdapter();
             this.itemIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(450, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(450, 138);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 2;
             // 
             // btnUpload
             // 
-            this.btnUpload.Location = new System.Drawing.Point(615, 124);
+            this.btnUpload.Location = new System.Drawing.Point(563, 155);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(75, 23);
-            this.btnUpload.TabIndex = 3;
-            this.btnUpload.Text = "Upload";
+            this.btnUpload.TabIndex = 0;
+            this.btnUpload.Text = "button1";
             this.btnUpload.UseVisualStyleBackColor = true;
             this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
             // 
-            // dataGridView1
+            // textBox1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.textBox1.Location = new System.Drawing.Point(336, 96);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(336, 155);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 26);
+            this.textBox2.TabIndex = 3;
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.itemIDDataGridViewTextBoxColumn,
             this.itemDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn,
             this.categoryDataGridViewTextBoxColumn,
             this.imageDataGridViewImageColumn});
-            this.dataGridView1.DataSource = this.menuBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 311);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(744, 181);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView.DataSource = this.menuBindingSource;
+            this.dataGridView.Location = new System.Drawing.Point(34, 245);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowHeadersWidth = 62;
+            this.dataGridView.RowTemplate.Height = 28;
+            this.dataGridView.Size = new System.Drawing.Size(698, 150);
+            this.dataGridView.TabIndex = 4;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(116, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(70, 61);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(218, 182);
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.Size = new System.Drawing.Size(221, 162);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // assignmentdbDataSet
+            // assignmentdbDataSet2
             // 
-            this.assignmentdbDataSet.DataSetName = "AssignmentdbDataSet";
-            this.assignmentdbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // assignmentdbDataSetBindingSource
-            // 
-            this.assignmentdbDataSetBindingSource.DataSource = this.assignmentdbDataSet;
-            this.assignmentdbDataSetBindingSource.Position = 0;
-            // 
-            // assignmentdbDataSet1
-            // 
-            this.assignmentdbDataSet1.DataSetName = "AssignmentdbDataSet1";
-            this.assignmentdbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.assignmentdbDataSet2.DataSetName = "AssignmentdbDataSet2";
+            this.assignmentdbDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuBindingSource
             // 
             this.menuBindingSource.DataMember = "Menu";
-            this.menuBindingSource.DataSource = this.assignmentdbDataSet1;
+            this.menuBindingSource.DataSource = this.assignmentdbDataSet2;
             // 
             // menuTableAdapter
             // 
@@ -169,59 +154,42 @@
             this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
             this.imageDataGridViewImageColumn.Width = 150;
             // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.AutoScrollMargin = new System.Drawing.Size(1, 1);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btnUpload);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
-            this.panel1.TabIndex = 5;
-            // 
-            // M
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
-            this.Name = "M";
-            this.Text = "M";
-            this.Load += new System.EventHandler(this.M_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnUpload);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuBindingSource)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button btnUpload;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource assignmentdbDataSetBindingSource;
-        private AssignmentdbDataSet assignmentdbDataSet;
-        private AssignmentdbDataSet1 assignmentdbDataSet1;
+        private System.Windows.Forms.DataGridView dataGridView;
+        private AssignmentdbDataSet2 assignmentdbDataSet2;
         private System.Windows.Forms.BindingSource menuBindingSource;
-        private AssignmentdbDataSet1TableAdapters.MenuTableAdapter menuTableAdapter;
+        private AssignmentdbDataSet2TableAdapters.MenuTableAdapter menuTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
-        private System.Windows.Forms.Panel panel1;
     }
 }

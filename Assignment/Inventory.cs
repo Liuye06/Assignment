@@ -14,6 +14,7 @@ namespace Assignment
 {
     public partial class Inventory: Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\User\source\repos\Liuye06\Assignment\Assignment\Assignmentdb.mdf;Integrated Security=True");
         public Inventory()
         {
             InitializeComponent();
@@ -34,6 +35,12 @@ namespace Assignment
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_i_back_Click(object sender, EventArgs e)
+        {
+            Chef chef = new Chef();
+            chef.Show();
         }
     }
 }
