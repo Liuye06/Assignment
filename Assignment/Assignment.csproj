@@ -65,6 +65,12 @@
     <Compile Include="ManageMenu.Designer.cs">
       <DependentUpon>ManageMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerUpdateProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerUpdateProfile.Designer.cs">
+      <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainHallResvReport.resx">
@@ -75,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageMenu.resx">
       <DependentUpon>ManageMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerUpdateProfile.resx">
+      <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
