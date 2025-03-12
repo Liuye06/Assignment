@@ -62,11 +62,10 @@
             this.tableSidebar_UProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableSidebar_UProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_UProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_UProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_UProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableSidebar_UProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_UProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_UProfile.Size = new System.Drawing.Size(200, 429);
-            this.tableSidebar_UProfile.TabIndex = 0;
             // 
             // btnMMenu_UProfile
             // 
@@ -96,16 +95,16 @@
             this.btnHRReport_UProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHRReport_UProfile.Location = new System.Drawing.Point(3, 143);
             this.btnHRReport_UProfile.Name = "btnHRReport_UProfile";
-            this.btnHRReport_UProfile.Size = new System.Drawing.Size(194, 34);
+            this.btnHRReport_UProfile.Size = new System.Drawing.Size(194, 64);
             this.btnHRReport_UProfile.TabIndex = 2;
-            this.btnHRReport_UProfile.Text = "Hall Resv Report";
+            this.btnHRReport_UProfile.Text = "Hall Reservation Report";
             this.btnHRReport_UProfile.UseVisualStyleBackColor = true;
             // 
             // btnUProfile_UProfile
             // 
             this.btnUProfile_UProfile.FlatAppearance.BorderSize = 0;
             this.btnUProfile_UProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUProfile_UProfile.Location = new System.Drawing.Point(3, 183);
+            this.btnUProfile_UProfile.Location = new System.Drawing.Point(3, 213);
             this.btnUProfile_UProfile.Name = "btnUProfile_UProfile";
             this.btnUProfile_UProfile.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_UProfile.TabIndex = 3;

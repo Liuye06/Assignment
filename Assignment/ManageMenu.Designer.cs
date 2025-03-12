@@ -44,6 +44,7 @@
             this.btn_HRReport_MMenu = new System.Windows.Forms.Button();
             this.btnUProfile_MMenu = new System.Windows.Forms.Button();
             this.ColMenuItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAction = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -111,6 +112,7 @@
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColMenuItem,
+            this.colMenuImage,
             this.ColPrice,
             this.ColCategory,
             this.ColAction});
@@ -168,7 +170,7 @@
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MMenu.Size = new System.Drawing.Size(200, 430);
@@ -205,9 +207,9 @@
             this.btn_HRReport_MMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HRReport_MMenu.Location = new System.Drawing.Point(3, 143);
             this.btn_HRReport_MMenu.Name = "btn_HRReport_MMenu";
-            this.btn_HRReport_MMenu.Size = new System.Drawing.Size(194, 34);
+            this.btn_HRReport_MMenu.Size = new System.Drawing.Size(194, 64);
             this.btn_HRReport_MMenu.TabIndex = 2;
-            this.btn_HRReport_MMenu.Text = "Hall Resv Report";
+            this.btn_HRReport_MMenu.Text = "Hall Reservation Report";
             this.btn_HRReport_MMenu.UseVisualStyleBackColor = true;
             // 
             // btnUProfile_MMenu
@@ -215,7 +217,7 @@
             this.btnUProfile_MMenu.FlatAppearance.BorderSize = 0;
             this.btnUProfile_MMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUProfile_MMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUProfile_MMenu.Location = new System.Drawing.Point(3, 183);
+            this.btnUProfile_MMenu.Location = new System.Drawing.Point(3, 213);
             this.btnUProfile_MMenu.Name = "btnUProfile_MMenu";
             this.btnUProfile_MMenu.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_MMenu.TabIndex = 3;
@@ -227,7 +229,14 @@
             this.ColMenuItem.HeaderText = "Name";
             this.ColMenuItem.MinimumWidth = 6;
             this.ColMenuItem.Name = "ColMenuItem";
-            this.ColMenuItem.Width = 182;
+            this.ColMenuItem.Width = 125;
+            // 
+            // colMenuImage
+            // 
+            this.colMenuImage.HeaderText = "Image";
+            this.colMenuImage.MinimumWidth = 6;
+            this.colMenuImage.Name = "colMenuImage";
+            this.colMenuImage.Width = 125;
             // 
             // ColPrice
             // 
@@ -241,14 +250,14 @@
             this.ColCategory.HeaderText = "Category";
             this.ColCategory.MinimumWidth = 6;
             this.ColCategory.Name = "ColCategory";
-            this.ColCategory.Width = 160;
+            this.ColCategory.Width = 125;
             // 
             // ColAction
             // 
             this.ColAction.HeaderText = "Action";
             this.ColAction.MinimumWidth = 6;
             this.ColAction.Name = "ColAction";
-            this.ColAction.Width = 165;
+            this.ColAction.Width = 130;
             // 
             // MainManageMenu
             // 
@@ -284,6 +293,7 @@
         private System.Windows.Forms.Button btn_HRReport_MMenu;
         private System.Windows.Forms.Button btnUProfile_MMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuItem;
+        private System.Windows.Forms.DataGridViewImageColumn colMenuImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCategory;
         private System.Windows.Forms.DataGridViewButtonColumn ColAction;

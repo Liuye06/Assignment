@@ -55,7 +55,6 @@
             // 
             this.tableSidebar_HRReport.ColumnCount = 1;
             this.tableSidebar_HRReport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSidebar_HRReport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_HRReport.Controls.Add(this.btnMMenu_HRReport, 0, 1);
             this.tableSidebar_HRReport.Controls.Add(this.btnMHall_HRReport, 0, 2);
             this.tableSidebar_HRReport.Controls.Add(this.btnHRReport_HRReport, 0, 3);
@@ -66,7 +65,7 @@
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_HRReport.Size = new System.Drawing.Size(200, 428);
@@ -100,16 +99,16 @@
             this.btnHRReport_HRReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHRReport_HRReport.Location = new System.Drawing.Point(3, 143);
             this.btnHRReport_HRReport.Name = "btnHRReport_HRReport";
-            this.btnHRReport_HRReport.Size = new System.Drawing.Size(194, 34);
+            this.btnHRReport_HRReport.Size = new System.Drawing.Size(194, 64);
             this.btnHRReport_HRReport.TabIndex = 2;
-            this.btnHRReport_HRReport.Text = "Hall Resv Report";
+            this.btnHRReport_HRReport.Text = "Hall Reservation Report";
             this.btnHRReport_HRReport.UseVisualStyleBackColor = true;
             // 
             // btnUProfile_HRReport
             // 
             this.btnUProfile_HRReport.FlatAppearance.BorderSize = 0;
             this.btnUProfile_HRReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUProfile_HRReport.Location = new System.Drawing.Point(3, 183);
+            this.btnUProfile_HRReport.Location = new System.Drawing.Point(3, 213);
             this.btnUProfile_HRReport.Name = "btnUProfile_HRReport";
             this.btnUProfile_HRReport.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_HRReport.TabIndex = 3;
