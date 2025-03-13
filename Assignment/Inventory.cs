@@ -22,7 +22,7 @@ namespace Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Inventory_Load(object sender, EventArgs e)
@@ -41,6 +41,18 @@ namespace Assignment
         {
             Chef chef = new Chef();
             chef.Show();
+        }
+
+        private void btn_s_add_Click(object sender, EventArgs e)
+        {
+            
+            con.Open();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "insert into table values('" + txt_ingredient + "', '" + txt_stock + "')";
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Added successfuly.");
         }
     }
 }

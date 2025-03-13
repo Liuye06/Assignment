@@ -160,6 +160,7 @@
             this.btn_s_add.TabIndex = 6;
             this.btn_s_add.Text = "ADD";
             this.btn_s_add.UseVisualStyleBackColor = true;
+            this.btn_s_add.Click += new System.EventHandler(this.btn_s_add_Click);
             // 
             // btn_s_edit
             // 
