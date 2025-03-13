@@ -33,5 +33,10 @@ namespace Assignment
                 dgvHall.Columns.Add(actionColumn);
             }
         }
+
+        private void btnAddNewHall_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,14 +36,14 @@
             this.gbMHall = new System.Windows.Forms.GroupBox();
             this.btnAddNewHall = new System.Windows.Forms.Button();
             this.dgvHall = new System.Windows.Forms.DataGridView();
-            this.btnSearchHall = new System.Windows.Forms.Button();
-            this.txtHall = new System.Windows.Forms.TextBox();
-            this.lblHall = new System.Windows.Forms.Label();
             this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHallImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAction = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnSearchHall = new System.Windows.Forms.Button();
+            this.txtHall = new System.Windows.Forms.TextBox();
+            this.lblHall = new System.Windows.Forms.Label();
             this.tableSidebar_MHall.SuspendLayout();
             this.gbMHall.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).BeginInit();
@@ -135,6 +135,7 @@
             this.btnAddNewHall.TabIndex = 4;
             this.btnAddNewHall.Text = "Add New Hall";
             this.btnAddNewHall.UseVisualStyleBackColor = true;
+            this.btnAddNewHall.Click += new System.EventHandler(this.btnAddNewHall_Click);
             // 
             // dgvHall
             // 
@@ -151,31 +152,6 @@
             this.dgvHall.RowTemplate.Height = 24;
             this.dgvHall.Size = new System.Drawing.Size(684, 216);
             this.dgvHall.TabIndex = 3;
-            // 
-            // btnSearchHall
-            // 
-            this.btnSearchHall.Location = new System.Drawing.Point(263, 39);
-            this.btnSearchHall.Name = "btnSearchHall";
-            this.btnSearchHall.Size = new System.Drawing.Size(106, 35);
-            this.btnSearchHall.TabIndex = 2;
-            this.btnSearchHall.Text = "Search";
-            this.btnSearchHall.UseVisualStyleBackColor = true;
-            // 
-            // txtHall
-            // 
-            this.txtHall.Location = new System.Drawing.Point(104, 41);
-            this.txtHall.Name = "txtHall";
-            this.txtHall.Size = new System.Drawing.Size(143, 30);
-            this.txtHall.TabIndex = 1;
-            // 
-            // lblHall
-            // 
-            this.lblHall.AutoSize = true;
-            this.lblHall.Location = new System.Drawing.Point(40, 44);
-            this.lblHall.Name = "lblHall";
-            this.lblHall.Size = new System.Drawing.Size(45, 25);
-            this.lblHall.TabIndex = 0;
-            this.lblHall.Text = "Hall";
             // 
             // ColHallName
             // 
@@ -211,6 +187,31 @@
             this.ColAction.MinimumWidth = 6;
             this.ColAction.Name = "ColAction";
             this.ColAction.Width = 130;
+            // 
+            // btnSearchHall
+            // 
+            this.btnSearchHall.Location = new System.Drawing.Point(263, 39);
+            this.btnSearchHall.Name = "btnSearchHall";
+            this.btnSearchHall.Size = new System.Drawing.Size(106, 35);
+            this.btnSearchHall.TabIndex = 2;
+            this.btnSearchHall.Text = "Search";
+            this.btnSearchHall.UseVisualStyleBackColor = true;
+            // 
+            // txtHall
+            // 
+            this.txtHall.Location = new System.Drawing.Point(104, 41);
+            this.txtHall.Name = "txtHall";
+            this.txtHall.Size = new System.Drawing.Size(143, 30);
+            this.txtHall.TabIndex = 1;
+            // 
+            // lblHall
+            // 
+            this.lblHall.AutoSize = true;
+            this.lblHall.Location = new System.Drawing.Point(40, 44);
+            this.lblHall.Name = "lblHall";
+            this.lblHall.Size = new System.Drawing.Size(45, 25);
+            this.lblHall.TabIndex = 0;
+            this.lblHall.Text = "Hall";
             // 
             // MainManageHall
             // 

@@ -34,6 +34,11 @@
             this.btnSearchMenu = new System.Windows.Forms.Button();
             this.gbMMenu = new System.Windows.Forms.GroupBox();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
+            this.ColMenuItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColMenuPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMenuCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMenuAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.lblMenu = new System.Windows.Forms.Label();
@@ -43,11 +48,6 @@
             this.btnMHall_MMenu = new System.Windows.Forms.Button();
             this.btn_HRReport_MMenu = new System.Windows.Forms.Button();
             this.btnUProfile_MMenu = new System.Windows.Forms.Button();
-            this.ColMenuItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbMMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.tableSidebar_MMenu.SuspendLayout();
@@ -55,12 +55,13 @@
             // 
             // btnAddMenu
             // 
-            this.btnAddMenu.Location = new System.Drawing.Point(45, 327);
+            this.btnAddMenu.Location = new System.Drawing.Point(45, 325);
             this.btnAddMenu.Name = "btnAddMenu";
             this.btnAddMenu.Size = new System.Drawing.Size(219, 34);
             this.btnAddMenu.TabIndex = 0;
             this.btnAddMenu.Text = "Add New Menu Item";
             this.btnAddMenu.UseVisualStyleBackColor = true;
+            this.btnAddMenu.Click += new System.EventHandler(this.btnAddMenu_Click);
             // 
             // button2
             // 
@@ -113,15 +114,53 @@
             this.dgvMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColMenuItem,
             this.colMenuImage,
-            this.ColPrice,
-            this.ColCategory,
-            this.ColAction});
+            this.ColMenuPrice,
+            this.ColMenuCategory,
+            this.ColMenuAction});
             this.dgvMenu.Location = new System.Drawing.Point(45, 95);
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.RowHeadersWidth = 51;
             this.dgvMenu.RowTemplate.Height = 24;
             this.dgvMenu.Size = new System.Drawing.Size(684, 216);
             this.dgvMenu.TabIndex = 8;
+            this.dgvMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellContentClick);
+            // 
+            // ColMenuItem
+            // 
+            this.ColMenuItem.HeaderText = "Name";
+            this.ColMenuItem.MinimumWidth = 6;
+            this.ColMenuItem.Name = "ColMenuItem";
+            this.ColMenuItem.Width = 125;
+            // 
+            // colMenuImage
+            // 
+            this.colMenuImage.HeaderText = "Image";
+            this.colMenuImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colMenuImage.MinimumWidth = 6;
+            this.colMenuImage.Name = "colMenuImage";
+            this.colMenuImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMenuImage.Width = 125;
+            // 
+            // ColMenuPrice
+            // 
+            this.ColMenuPrice.HeaderText = "Price";
+            this.ColMenuPrice.MinimumWidth = 6;
+            this.ColMenuPrice.Name = "ColMenuPrice";
+            this.ColMenuPrice.Width = 125;
+            // 
+            // ColMenuCategory
+            // 
+            this.ColMenuCategory.HeaderText = "Category";
+            this.ColMenuCategory.MinimumWidth = 6;
+            this.ColMenuCategory.Name = "ColMenuCategory";
+            this.ColMenuCategory.Width = 125;
+            // 
+            // ColMenuAction
+            // 
+            this.ColMenuAction.HeaderText = "Action";
+            this.ColMenuAction.MinimumWidth = 6;
+            this.ColMenuAction.Name = "ColMenuAction";
+            this.ColMenuAction.Width = 130;
             // 
             // lblCategory
             // 
@@ -187,6 +226,7 @@
             this.btnMMenu_MMenu.TabIndex = 0;
             this.btnMMenu_MMenu.Text = "Manage Menu";
             this.btnMMenu_MMenu.UseVisualStyleBackColor = true;
+            this.btnMMenu_MMenu.Click += new System.EventHandler(this.btnMMenu_MMenu_Click);
             // 
             // btnMHall_MMenu
             // 
@@ -199,6 +239,7 @@
             this.btnMHall_MMenu.TabIndex = 1;
             this.btnMHall_MMenu.Text = "Manage Hall";
             this.btnMHall_MMenu.UseVisualStyleBackColor = true;
+            this.btnMHall_MMenu.Click += new System.EventHandler(this.btnMHall_MMenu_Click);
             // 
             // btn_HRReport_MMenu
             // 
@@ -211,6 +252,7 @@
             this.btn_HRReport_MMenu.TabIndex = 2;
             this.btn_HRReport_MMenu.Text = "Hall Reservation Report";
             this.btn_HRReport_MMenu.UseVisualStyleBackColor = true;
+            this.btn_HRReport_MMenu.Click += new System.EventHandler(this.btn_HRReport_MMenu_Click);
             // 
             // btnUProfile_MMenu
             // 
@@ -223,41 +265,7 @@
             this.btnUProfile_MMenu.TabIndex = 3;
             this.btnUProfile_MMenu.Text = "Update Profile";
             this.btnUProfile_MMenu.UseVisualStyleBackColor = true;
-            // 
-            // ColMenuItem
-            // 
-            this.ColMenuItem.HeaderText = "Name";
-            this.ColMenuItem.MinimumWidth = 6;
-            this.ColMenuItem.Name = "ColMenuItem";
-            this.ColMenuItem.Width = 125;
-            // 
-            // colMenuImage
-            // 
-            this.colMenuImage.HeaderText = "Image";
-            this.colMenuImage.MinimumWidth = 6;
-            this.colMenuImage.Name = "colMenuImage";
-            this.colMenuImage.Width = 125;
-            // 
-            // ColPrice
-            // 
-            this.ColPrice.HeaderText = "Price";
-            this.ColPrice.MinimumWidth = 6;
-            this.ColPrice.Name = "ColPrice";
-            this.ColPrice.Width = 125;
-            // 
-            // ColCategory
-            // 
-            this.ColCategory.HeaderText = "Category";
-            this.ColCategory.MinimumWidth = 6;
-            this.ColCategory.Name = "ColCategory";
-            this.ColCategory.Width = 125;
-            // 
-            // ColAction
-            // 
-            this.ColAction.HeaderText = "Action";
-            this.ColAction.MinimumWidth = 6;
-            this.ColAction.Name = "ColAction";
-            this.ColAction.Width = 130;
+            this.btnUProfile_MMenu.Click += new System.EventHandler(this.btnUProfile_MMenu_Click);
             // 
             // MainManageMenu
             // 
@@ -267,7 +275,6 @@
             this.Controls.Add(this.gbMMenu);
             this.Name = "MainManageMenu";
             this.Text = "ManageMenu";
-            this.Load += new System.EventHandler(this.ManageMenu_Load);
             this.gbMMenu.ResumeLayout(false);
             this.gbMMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
@@ -294,8 +301,8 @@
         private System.Windows.Forms.Button btnUProfile_MMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuItem;
         private System.Windows.Forms.DataGridViewImageColumn colMenuImage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCategory;
-        private System.Windows.Forms.DataGridViewButtonColumn ColAction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuCategory;
+        private System.Windows.Forms.DataGridViewButtonColumn ColMenuAction;
     }
 }
