@@ -12,31 +12,33 @@ namespace Assignment
 {
     public partial class MainManageHall : Form
     {
+        private SidebarManager _sidebarManager;
+
         public MainManageHall()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
         }
 
-        private void ManageHall_Load(object sender, EventArgs e)
-        {
-            // Ensure the DataGridView has no duplicate columns
-            if (dgvHall.Columns["Action"] == null)
-            {
-                // Create an Action column
-                DataGridViewButtonColumn actionColumn = new DataGridViewButtonColumn();
-                actionColumn.Name = "Action";
-                actionColumn.HeaderText = "Action";
-                actionColumn.Text = "Edit | Delete"; // Display both actions
-                actionColumn.UseColumnTextForButtonValue = true; // Show button text
 
-                // Add the column to DataGridView
-                dgvHall.Columns.Add(actionColumn);
-            }
+        private void btnMMenu_MHall_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainManageMenu());
         }
 
-        private void btnAddNewHall_Click(object sender, EventArgs e)
+        private void btnMHall_MHall_Click(object sender, EventArgs e)
         {
+            _sidebarManager.NavigateTo(new MainManageHall());
+        }
 
+        private void btnHRReport_MHall_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainHallResvReport());
+        }
+
+        private void btnUProfile_MHall_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ManagerUpdateProfile());
         }
     }
 }

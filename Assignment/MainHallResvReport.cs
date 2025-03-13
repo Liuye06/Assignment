@@ -12,9 +12,32 @@ namespace Assignment
 {
     public partial class MainHallResvReport : Form
     {
+        private SidebarManager _sidebarManager;
+
         public MainHallResvReport()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
+        }
+
+        private void btnMMenu_HRReport_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainManageMenu());
+        }
+
+        private void btnMHall_HRReport_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainManageHall());
+        }
+
+        private void btnHRReport_HRReport_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainHallResvReport());
+        }
+
+        private void btnUProfile_HRReport_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ManagerUpdateProfile());
         }
     }
 }

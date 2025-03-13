@@ -79,6 +79,7 @@
             this.btnMMenu_MHall.TabIndex = 0;
             this.btnMMenu_MHall.Text = "Manage Menu";
             this.btnMMenu_MHall.UseVisualStyleBackColor = true;
+            this.btnMMenu_MHall.Click += new System.EventHandler(this.btnMMenu_MHall_Click);
             // 
             // btnMHall_MHall
             // 
@@ -90,6 +91,7 @@
             this.btnMHall_MHall.TabIndex = 1;
             this.btnMHall_MHall.Text = "Manage Hall";
             this.btnMHall_MHall.UseVisualStyleBackColor = true;
+            this.btnMHall_MHall.Click += new System.EventHandler(this.btnMHall_MHall_Click);
             // 
             // btnHRReport_MHall
             // 
@@ -101,6 +103,7 @@
             this.btnHRReport_MHall.TabIndex = 2;
             this.btnHRReport_MHall.Text = "Hall Reservation Report";
             this.btnHRReport_MHall.UseVisualStyleBackColor = true;
+            this.btnHRReport_MHall.Click += new System.EventHandler(this.btnHRReport_MHall_Click);
             // 
             // btnUProfile_MHall
             // 
@@ -112,6 +115,7 @@
             this.btnUProfile_MHall.TabIndex = 3;
             this.btnUProfile_MHall.Text = "Update Profile";
             this.btnUProfile_MHall.UseVisualStyleBackColor = true;
+            this.btnUProfile_MHall.Click += new System.EventHandler(this.btnUProfile_MHall_Click);
             // 
             // gbMHall
             // 
@@ -134,8 +138,6 @@
             this.btnAddNewHall.Size = new System.Drawing.Size(153, 35);
             this.btnAddNewHall.TabIndex = 4;
             this.btnAddNewHall.Text = "Add New Hall";
-            this.btnAddNewHall.UseVisualStyleBackColor = true;
-            this.btnAddNewHall.Click += new System.EventHandler(this.btnAddNewHall_Click);
             // 
             // dgvHall
             // 
@@ -222,7 +224,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainManageHall";
             this.Text = "ManageHall";
-            this.Load += new System.EventHandler(this.ManageHall_Load);
             this.tableSidebar_MHall.ResumeLayout(false);
             this.gbMHall.ResumeLayout(false);
             this.gbMHall.PerformLayout();

@@ -9,18 +9,23 @@ namespace Assignment
 {
     public class SidebarManager
     {
-        private Form _parentForm;
+        private Form _currentForm; // Track the currently open form
 
-        public SidebarManager(Form parentForm)
+        public SidebarManager(Form startForm)
         {
-            _parentForm = parentForm;
+            _currentForm = startForm;
         }
 
         public void NavigateTo(Form newForm)
         {
-            _parentForm.Hide(); // Hide the current form
-            newForm.FormClosed += (s, e) => _parentForm.Show(); // Show the parent form when the new one is closed
-            newForm.Show();
+            if (_currentForm != null)
+            {
+                _currentForm.Hide(); // Hide the current form instead of closing it
+            }
+
+            _currentForm = newForm; // Set new form as the active form
+            _currentForm.FormClosed += (s, e) => Application.Exit(); // Ensure app exits when the last form is closed
+            _currentForm.Show();
         }
     }
 }

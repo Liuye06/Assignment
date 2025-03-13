@@ -34,18 +34,18 @@
             this.btnHRReport_HRReport = new System.Windows.Forms.Button();
             this.btnUProfile_HRReport = new System.Windows.Forms.Button();
             this.gbHRReport = new System.Windows.Forms.GroupBox();
-            this.lblMonth = new System.Windows.Forms.Label();
-            this.cmbMonth = new System.Windows.Forms.ComboBox();
-            this.lblResvType = new System.Windows.Forms.Label();
-            this.cmbResvType = new System.Windows.Forms.ComboBox();
-            this.btnSearchReport = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnGenerate = new System.Windows.Forms.Button();
             this.dgvReport = new System.Windows.Forms.DataGridView();
             this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnExport = new System.Windows.Forms.Button();
+            this.btnSearchReport = new System.Windows.Forms.Button();
+            this.cmbResvType = new System.Windows.Forms.ComboBox();
+            this.lblResvType = new System.Windows.Forms.Label();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.tableSidebar_HRReport.SuspendLayout();
             this.gbHRReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
@@ -80,7 +80,7 @@
             this.btnMMenu_HRReport.Size = new System.Drawing.Size(194, 34);
             this.btnMMenu_HRReport.TabIndex = 0;
             this.btnMMenu_HRReport.Text = "Manage Menu";
-            this.btnMMenu_HRReport.UseVisualStyleBackColor = true;
+            this.btnMMenu_HRReport.Click += new System.EventHandler(this.btnMMenu_HRReport_Click);
             // 
             // btnMHall_HRReport
             // 
@@ -92,6 +92,7 @@
             this.btnMHall_HRReport.TabIndex = 1;
             this.btnMHall_HRReport.Text = "Manage Hall";
             this.btnMHall_HRReport.UseVisualStyleBackColor = true;
+            this.btnMHall_HRReport.Click += new System.EventHandler(this.btnMHall_HRReport_Click);
             // 
             // btnHRReport_HRReport
             // 
@@ -103,6 +104,7 @@
             this.btnHRReport_HRReport.TabIndex = 2;
             this.btnHRReport_HRReport.Text = "Hall Reservation Report";
             this.btnHRReport_HRReport.UseVisualStyleBackColor = true;
+            this.btnHRReport_HRReport.Click += new System.EventHandler(this.btnHRReport_HRReport_Click);
             // 
             // btnUProfile_HRReport
             // 
@@ -114,6 +116,7 @@
             this.btnUProfile_HRReport.TabIndex = 3;
             this.btnUProfile_HRReport.Text = "Update Profile";
             this.btnUProfile_HRReport.UseVisualStyleBackColor = true;
+            this.btnUProfile_HRReport.Click += new System.EventHandler(this.btnUProfile_HRReport_Click);
             // 
             // gbHRReport
             // 
@@ -132,48 +135,23 @@
             this.gbHRReport.TabStop = false;
             this.gbHRReport.Text = "Hall Reservation Report";
             // 
-            // lblMonth
+            // btnExport
             // 
-            this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(40, 44);
-            this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(67, 25);
-            this.lblMonth.TabIndex = 0;
-            this.lblMonth.Text = "Month";
+            this.btnExport.Location = new System.Drawing.Point(384, 316);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(345, 34);
+            this.btnExport.TabIndex = 7;
+            this.btnExport.Text = "Export to Excel";
+            this.btnExport.UseVisualStyleBackColor = true;
             // 
-            // cmbMonth
+            // btnGenerate
             // 
-            this.cmbMonth.FormattingEnabled = true;
-            this.cmbMonth.Location = new System.Drawing.Point(113, 40);
-            this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(149, 33);
-            this.cmbMonth.TabIndex = 1;
-            // 
-            // lblResvType
-            // 
-            this.lblResvType.AutoSize = true;
-            this.lblResvType.Location = new System.Drawing.Point(288, 43);
-            this.lblResvType.Name = "lblResvType";
-            this.lblResvType.Size = new System.Drawing.Size(165, 25);
-            this.lblResvType.TabIndex = 2;
-            this.lblResvType.Text = "Reservation Type";
-            // 
-            // cmbResvType
-            // 
-            this.cmbResvType.FormattingEnabled = true;
-            this.cmbResvType.Location = new System.Drawing.Point(459, 40);
-            this.cmbResvType.Name = "cmbResvType";
-            this.cmbResvType.Size = new System.Drawing.Size(149, 33);
-            this.cmbResvType.TabIndex = 3;
-            // 
-            // btnSearchReport
-            // 
-            this.btnSearchReport.Location = new System.Drawing.Point(623, 38);
-            this.btnSearchReport.Name = "btnSearchReport";
-            this.btnSearchReport.Size = new System.Drawing.Size(106, 35);
-            this.btnSearchReport.TabIndex = 4;
-            this.btnSearchReport.Text = "Search";
-            this.btnSearchReport.UseVisualStyleBackColor = true;
+            this.btnGenerate.Location = new System.Drawing.Point(45, 316);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(333, 34);
+            this.btnGenerate.TabIndex = 6;
+            this.btnGenerate.Text = "Generate PDF Report";
+            this.btnGenerate.UseVisualStyleBackColor = true;
             // 
             // dgvReport
             // 
@@ -218,23 +196,48 @@
             this.ColStatus.Name = "ColStatus";
             this.ColStatus.Width = 160;
             // 
-            // btnGenerate
+            // btnSearchReport
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(45, 316);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(333, 34);
-            this.btnGenerate.TabIndex = 6;
-            this.btnGenerate.Text = "Generate PDF Report";
-            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnSearchReport.Location = new System.Drawing.Point(623, 38);
+            this.btnSearchReport.Name = "btnSearchReport";
+            this.btnSearchReport.Size = new System.Drawing.Size(106, 35);
+            this.btnSearchReport.TabIndex = 4;
+            this.btnSearchReport.Text = "Search";
+            this.btnSearchReport.UseVisualStyleBackColor = true;
             // 
-            // btnExport
+            // cmbResvType
             // 
-            this.btnExport.Location = new System.Drawing.Point(384, 316);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(345, 34);
-            this.btnExport.TabIndex = 7;
-            this.btnExport.Text = "Export to Excel";
-            this.btnExport.UseVisualStyleBackColor = true;
+            this.cmbResvType.FormattingEnabled = true;
+            this.cmbResvType.Location = new System.Drawing.Point(459, 40);
+            this.cmbResvType.Name = "cmbResvType";
+            this.cmbResvType.Size = new System.Drawing.Size(149, 33);
+            this.cmbResvType.TabIndex = 3;
+            // 
+            // lblResvType
+            // 
+            this.lblResvType.AutoSize = true;
+            this.lblResvType.Location = new System.Drawing.Point(288, 43);
+            this.lblResvType.Name = "lblResvType";
+            this.lblResvType.Size = new System.Drawing.Size(165, 25);
+            this.lblResvType.TabIndex = 2;
+            this.lblResvType.Text = "Reservation Type";
+            // 
+            // cmbMonth
+            // 
+            this.cmbMonth.FormattingEnabled = true;
+            this.cmbMonth.Location = new System.Drawing.Point(113, 40);
+            this.cmbMonth.Name = "cmbMonth";
+            this.cmbMonth.Size = new System.Drawing.Size(149, 33);
+            this.cmbMonth.TabIndex = 1;
+            // 
+            // lblMonth
+            // 
+            this.lblMonth.AutoSize = true;
+            this.lblMonth.Location = new System.Drawing.Point(40, 44);
+            this.lblMonth.Name = "lblMonth";
+            this.lblMonth.Size = new System.Drawing.Size(67, 25);
+            this.lblMonth.TabIndex = 0;
+            this.lblMonth.Text = "Month";
             // 
             // MainHallResvReport
             // 

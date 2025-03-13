@@ -14,10 +14,12 @@ namespace Assignment
     public partial class AddNewMenuItem : Form
     {
         public MenuItem NewMenuItem { get; private set; } // Store the new item
+        private SidebarManager _sidebarManager;
 
         public AddNewMenuItem()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
         }
 
         private void btnBrowseImageMenu_Click(object sender, EventArgs e)
@@ -52,6 +54,31 @@ namespace Assignment
             NewMenuItem = new MenuItem(txtAddMenu.Text, picAddMenu.Image, price, cmbCategoryMenu.SelectedItem.ToString());
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void btnMMenu_AddMenu_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainManageMenu());
+        }
+
+        private void btnMHall_AddMenu_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainManageHall());
+        }
+
+        private void btnMRReport_AddMenu_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainHallResvReport());
+        }
+
+        private void btnUProfile_AddMenu_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ManagerUpdateProfile());
+        }
+
+        private void btnCancelMenu_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Closes the current form
         }
     }
 }
