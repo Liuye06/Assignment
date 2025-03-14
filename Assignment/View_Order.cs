@@ -16,5 +16,12 @@ namespace Assignment
         {
             InitializeComponent();
         }
+
+        private void View_Order_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'assignmentdbDataSet3.Order' table. You can move, or remove it, as needed.
+            this.orderTableAdapter.Fill(this.assignmentdbDataSet3.Order);
+
+        }
     }
 }

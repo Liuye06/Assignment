@@ -78,6 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssignmentdbDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="AssignmentdbDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Chef.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +173,17 @@
     </None>
     <None Include="AssignmentdbDataSet2.xss">
       <DependentUpon>AssignmentdbDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="AssignmentdbDataSet3.xsc">
+      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="AssignmentdbDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AssignmentdbDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AssignmentdbDataSet3.xss">
+      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
