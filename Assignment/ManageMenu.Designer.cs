@@ -33,12 +33,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnSearchMenu = new System.Windows.Forms.Button();
             this.gbMMenu = new System.Windows.Forms.GroupBox();
+            this.btnResetMMenu = new System.Windows.Forms.Button();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
-            this.ColMenuItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColMenuPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMenuCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMenuAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.lblMenu = new System.Windows.Forms.Label();
@@ -48,6 +44,12 @@
             this.btnMHall_MMenu = new System.Windows.Forms.Button();
             this.btn_HRReport_MMenu = new System.Windows.Forms.Button();
             this.btnUProfile_MMenu = new System.Windows.Forms.Button();
+            this.ColMenuItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColMenuPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMenuCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMenuAction = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbMMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.tableSidebar_MMenu.SuspendLayout();
@@ -57,7 +59,7 @@
             // 
             this.btnAddMenu.Location = new System.Drawing.Point(45, 325);
             this.btnAddMenu.Name = "btnAddMenu";
-            this.btnAddMenu.Size = new System.Drawing.Size(219, 34);
+            this.btnAddMenu.Size = new System.Drawing.Size(343, 34);
             this.btnAddMenu.TabIndex = 0;
             this.btnAddMenu.Text = "Add New Menu Item";
             this.btnAddMenu.UseVisualStyleBackColor = true;
@@ -88,9 +90,11 @@
             this.btnSearchMenu.TabIndex = 3;
             this.btnSearchMenu.Text = "Search";
             this.btnSearchMenu.UseVisualStyleBackColor = true;
+            this.btnSearchMenu.Click += new System.EventHandler(this.btnSearchMenu_Click);
             // 
             // gbMMenu
             // 
+            this.gbMMenu.Controls.Add(this.btnResetMMenu);
             this.gbMMenu.Controls.Add(this.dgvMenu);
             this.gbMMenu.Controls.Add(this.lblCategory);
             this.gbMMenu.Controls.Add(this.cmbCategory);
@@ -107,6 +111,16 @@
             this.gbMMenu.TabIndex = 1;
             this.gbMMenu.TabStop = false;
             this.gbMMenu.Text = "Manage Menu";
+            // 
+            // btnResetMMenu
+            // 
+            this.btnResetMMenu.Location = new System.Drawing.Point(394, 325);
+            this.btnResetMMenu.Name = "btnResetMMenu";
+            this.btnResetMMenu.Size = new System.Drawing.Size(335, 34);
+            this.btnResetMMenu.TabIndex = 9;
+            this.btnResetMMenu.Text = "Reset Search Menu Item";
+            this.btnResetMMenu.UseVisualStyleBackColor = true;
+            this.btnResetMMenu.Click += new System.EventHandler(this.btnResetMMenu_Click);
             // 
             // dgvMenu
             // 
@@ -125,43 +139,6 @@
             this.dgvMenu.TabIndex = 8;
             this.dgvMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellContentClick);
             // 
-            // ColMenuItem
-            // 
-            this.ColMenuItem.HeaderText = "Name";
-            this.ColMenuItem.MinimumWidth = 6;
-            this.ColMenuItem.Name = "ColMenuItem";
-            this.ColMenuItem.Width = 125;
-            // 
-            // colMenuImage
-            // 
-            this.colMenuImage.HeaderText = "Image";
-            this.colMenuImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.colMenuImage.MinimumWidth = 6;
-            this.colMenuImage.Name = "colMenuImage";
-            this.colMenuImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMenuImage.Width = 125;
-            // 
-            // ColMenuPrice
-            // 
-            this.ColMenuPrice.HeaderText = "Price";
-            this.ColMenuPrice.MinimumWidth = 6;
-            this.ColMenuPrice.Name = "ColMenuPrice";
-            this.ColMenuPrice.Width = 125;
-            // 
-            // ColMenuCategory
-            // 
-            this.ColMenuCategory.HeaderText = "Category";
-            this.ColMenuCategory.MinimumWidth = 6;
-            this.ColMenuCategory.Name = "ColMenuCategory";
-            this.ColMenuCategory.Width = 125;
-            // 
-            // ColMenuAction
-            // 
-            this.ColMenuAction.HeaderText = "Action";
-            this.ColMenuAction.MinimumWidth = 6;
-            this.ColMenuAction.Name = "ColMenuAction";
-            this.ColMenuAction.Width = 130;
-            // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
@@ -174,10 +151,17 @@
             // cmbCategory
             // 
             this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "Appetizer",
+            "Main Dish",
+            "Side Dish",
+            "Beverage",
+            "Dessert"});
             this.cmbCategory.Location = new System.Drawing.Point(553, 41);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(176, 33);
             this.cmbCategory.TabIndex = 6;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
             // lblMenu
             // 
@@ -267,14 +251,64 @@
             this.btnUProfile_MMenu.UseVisualStyleBackColor = true;
             this.btnUProfile_MMenu.Click += new System.EventHandler(this.btnUProfile_MMenu_Click);
             // 
+            // ColMenuItem
+            // 
+            this.ColMenuItem.DataPropertyName = "Item";
+            this.ColMenuItem.HeaderText = "Menu Item";
+            this.ColMenuItem.MinimumWidth = 6;
+            this.ColMenuItem.Name = "ColMenuItem";
+            this.ColMenuItem.Width = 140;
+            // 
+            // colMenuImage
+            // 
+            this.colMenuImage.HeaderText = "Image";
+            this.colMenuImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colMenuImage.MinimumWidth = 6;
+            this.colMenuImage.Name = "colMenuImage";
+            this.colMenuImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMenuImage.Width = 125;
+            // 
+            // ColMenuPrice
+            // 
+            this.ColMenuPrice.DataPropertyName = "Price";
+            this.ColMenuPrice.HeaderText = "Price";
+            this.ColMenuPrice.MinimumWidth = 6;
+            this.ColMenuPrice.Name = "ColMenuPrice";
+            this.ColMenuPrice.Width = 110;
+            // 
+            // ColMenuCategory
+            // 
+            this.ColMenuCategory.DataPropertyName = "Category";
+            this.ColMenuCategory.HeaderText = "Category";
+            this.ColMenuCategory.MinimumWidth = 6;
+            this.ColMenuCategory.Name = "ColMenuCategory";
+            this.ColMenuCategory.Width = 125;
+            // 
+            // ColMenuAction
+            // 
+            this.ColMenuAction.HeaderText = "Action";
+            this.ColMenuAction.MinimumWidth = 6;
+            this.ColMenuAction.Name = "ColMenuAction";
+            this.ColMenuAction.Width = 130;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(350, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            // 
             // MainManageMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(982, 453);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableSidebar_MMenu);
             this.Controls.Add(this.gbMMenu);
             this.Name = "MainManageMenu";
             this.Text = "ManageMenu";
+            this.Load += new System.EventHandler(this.MainManageMenu_Load);
             this.gbMMenu.ResumeLayout(false);
             this.gbMMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
@@ -299,10 +333,12 @@
         private System.Windows.Forms.Button btnMHall_MMenu;
         private System.Windows.Forms.Button btn_HRReport_MMenu;
         private System.Windows.Forms.Button btnUProfile_MMenu;
+        private System.Windows.Forms.Button btnResetMMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuItem;
         private System.Windows.Forms.DataGridViewImageColumn colMenuImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuCategory;
         private System.Windows.Forms.DataGridViewButtonColumn ColMenuAction;
+        private System.Windows.Forms.Button button1;
     }
 }

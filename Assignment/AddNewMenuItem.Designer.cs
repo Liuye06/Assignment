@@ -111,10 +111,11 @@
             // 
             this.cmbCategoryMenu.FormattingEnabled = true;
             this.cmbCategoryMenu.Items.AddRange(new object[] {
-            "Rice",
-            "Noodle",
-            "Western",
-            "Japanese"});
+            "Appetizer",
+            "Main Dish",
+            "Side Dish",
+            "Beverage",
+            "Dessert"});
             this.cmbCategoryMenu.Location = new System.Drawing.Point(153, 197);
             this.cmbCategoryMenu.Name = "cmbCategoryMenu";
             this.cmbCategoryMenu.Size = new System.Drawing.Size(276, 33);
