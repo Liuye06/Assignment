@@ -39,7 +39,7 @@ namespace Assignment
 
         private void btn_i_back_Click(object sender, EventArgs e)
         {
-            Chef chef = new Chef();
+            Chef1 chef = new Chef1();
             chef.Show();
         }
 

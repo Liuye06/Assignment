@@ -89,6 +89,12 @@
     <Compile Include="Chef.Designer.cs">
       <DependentUpon>Chef.cs</DependentUpon>
     </Compile>
+    <Compile Include="Chef1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chef1.Designer.cs">
+      <DependentUpon>Chef1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chef_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="Chef.resx">
       <DependentUpon>Chef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chef1.resx">
+      <DependentUpon>Chef1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chef_Profile.resx">
       <DependentUpon>Chef_Profile.cs</DependentUpon>

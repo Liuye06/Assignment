@@ -19,7 +19,7 @@ namespace Assignment
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Chef chef = new Chef();
+            Chef1 chef = new Chef1();
             chef.Show();
         }
     }
