@@ -19,6 +19,8 @@ namespace Assignment
 
         private void Chef_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'assignmentdbDataSet3.Order' table. You can move, or remove it, as needed.
+            this.orderTableAdapter.Fill(this.assignmentdbDataSet3.Order);
             // TODO: This line of code loads data into the 'assignmentdbDataSet.Stock' table. You can move, or remove it, as needed.
             this.stockTableAdapter.Fill(this.assignmentdbDataSet.Stock);
 
