@@ -33,9 +33,9 @@
             this.btn_inventory = new System.Windows.Forms.Button();
             this.btn_CusOrder = new System.Windows.Forms.Button();
             this.btn_ChefProfile = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel_CVI = new System.Windows.Forms.Panel();
+            this.panel_CVP = new System.Windows.Forms.Panel();
+            this.panel_CVO = new System.Windows.Forms.Panel();
             this.lbl_chef = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.assignmentdbDataSet = new Assignment.AssignmentdbDataSet();
@@ -45,10 +45,10 @@
             this.stockIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ingredientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_CUI = new System.Windows.Forms.Button();
             this.lbl_inventory = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txt_CSI = new System.Windows.Forms.TextBox();
+            this.btn_SI = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.assignmentdbDataSet3 = new Assignment.AssignmentdbDataSet3();
@@ -60,15 +60,23 @@
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_COrder = new System.Windows.Forms.Button();
+            this.lbl_CUsername = new System.Windows.Forms.Label();
+            this.lbl_CName = new System.Windows.Forms.Label();
+            this.lbl_CRole = new System.Windows.Forms.Label();
+            this.lbl_CDOB = new System.Windows.Forms.Label();
+            this.lbl_CEmail = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_CUP = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.panel_CVI.SuspendLayout();
+            this.panel_CVP.SuspendLayout();
+            this.panel_CVO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSetBindingSource)).BeginInit();
@@ -77,6 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -113,6 +123,7 @@
             this.btn_inventory.TabIndex = 0;
             this.btn_inventory.Text = "Inventory";
             this.btn_inventory.UseVisualStyleBackColor = false;
+            this.btn_inventory.Click += new System.EventHandler(this.btn_inventory_Click);
             // 
             // btn_CusOrder
             // 
@@ -125,6 +136,7 @@
             this.btn_CusOrder.TabIndex = 1;
             this.btn_CusOrder.Text = "Customer\'s Orders";
             this.btn_CusOrder.UseVisualStyleBackColor = false;
+            this.btn_CusOrder.Click += new System.EventHandler(this.btn_CusOrder_Click);
             // 
             // btn_ChefProfile
             // 
@@ -137,46 +149,45 @@
             this.btn_ChefProfile.TabIndex = 2;
             this.btn_ChefProfile.Text = "Profile";
             this.btn_ChefProfile.UseVisualStyleBackColor = false;
+            this.btn_ChefProfile.Click += new System.EventHandler(this.btn_ChefProfile_Click);
             // 
-            // panel1
+            // panel_CVI
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.lbl_inventory);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(196, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(580, 436);
-            this.panel1.TabIndex = 1;
+            this.panel_CVI.AutoScroll = true;
+            this.panel_CVI.BackColor = System.Drawing.Color.AliceBlue;
+            this.panel_CVI.Controls.Add(this.btn_SI);
+            this.panel_CVI.Controls.Add(this.txt_CSI);
+            this.panel_CVI.Controls.Add(this.lbl_inventory);
+            this.panel_CVI.Controls.Add(this.btn_CUI);
+            this.panel_CVI.Controls.Add(this.dataGridView1);
+            this.panel_CVI.Location = new System.Drawing.Point(196, 0);
+            this.panel_CVI.Name = "panel_CVI";
+            this.panel_CVI.Size = new System.Drawing.Size(580, 436);
+            this.panel_CVI.TabIndex = 1;
             // 
-            // panel2
+            // panel_CVP
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.Color.PeachPuff;
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(196, 902);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 421);
-            this.panel2.TabIndex = 2;
+            this.panel_CVP.AutoScroll = true;
+            this.panel_CVP.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel_CVP.Controls.Add(this.btn_CUP);
+            this.panel_CVP.Controls.Add(this.pictureBox1);
+            this.panel_CVP.Controls.Add(this.groupBox1);
+            this.panel_CVP.Location = new System.Drawing.Point(196, 902);
+            this.panel_CVP.Name = "panel_CVP";
+            this.panel_CVP.Size = new System.Drawing.Size(580, 421);
+            this.panel_CVP.TabIndex = 2;
             // 
-            // panel3
+            // panel_CVO
             // 
-            this.panel3.AutoScroll = true;
-            this.panel3.BackColor = System.Drawing.SystemColors.Info;
-            this.panel3.Controls.Add(this.dataGridView2);
-            this.panel3.Controls.Add(this.btn_COrder);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(196, 450);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(580, 438);
-            this.panel3.TabIndex = 2;
+            this.panel_CVO.AutoScroll = true;
+            this.panel_CVO.BackColor = System.Drawing.SystemColors.Info;
+            this.panel_CVO.Controls.Add(this.dataGridView2);
+            this.panel_CVO.Controls.Add(this.btn_COrder);
+            this.panel_CVO.Controls.Add(this.label3);
+            this.panel_CVO.Location = new System.Drawing.Point(196, 450);
+            this.panel_CVO.Name = "panel_CVO";
+            this.panel_CVO.Size = new System.Drawing.Size(580, 438);
+            this.panel_CVO.TabIndex = 2;
             // 
             // lbl_chef
             // 
@@ -248,14 +259,15 @@
             this.stockDataGridViewTextBoxColumn.Name = "stockDataGridViewTextBoxColumn";
             this.stockDataGridViewTextBoxColumn.Width = 150;
             // 
-            // button1
+            // btn_CUI
             // 
-            this.button1.Location = new System.Drawing.Point(396, 377);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 36);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Update Inventory";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_CUI.Location = new System.Drawing.Point(396, 377);
+            this.btn_CUI.Name = "btn_CUI";
+            this.btn_CUI.Size = new System.Drawing.Size(172, 36);
+            this.btn_CUI.TabIndex = 1;
+            this.btn_CUI.Text = "Update Inventory";
+            this.btn_CUI.UseVisualStyleBackColor = true;
+            this.btn_CUI.Click += new System.EventHandler(this.btn_CUI_Click);
             // 
             // lbl_inventory
             // 
@@ -267,21 +279,21 @@
             this.lbl_inventory.TabIndex = 2;
             this.lbl_inventory.Text = "Inventory";
             // 
-            // textBox1
+            // txt_CSI
             // 
-            this.textBox1.Location = new System.Drawing.Point(44, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(350, 26);
-            this.textBox1.TabIndex = 3;
+            this.txt_CSI.Location = new System.Drawing.Point(44, 80);
+            this.txt_CSI.Name = "txt_CSI";
+            this.txt_CSI.Size = new System.Drawing.Size(350, 26);
+            this.txt_CSI.TabIndex = 3;
             // 
-            // button2
+            // btn_SI
             // 
-            this.button2.Location = new System.Drawing.Point(441, 74);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 39);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_SI.Location = new System.Drawing.Point(441, 74);
+            this.btn_SI.Name = "btn_SI";
+            this.btn_SI.Size = new System.Drawing.Size(91, 39);
+            this.btn_SI.TabIndex = 4;
+            this.btn_SI.Text = "Search";
+            this.btn_SI.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -370,51 +382,139 @@
             this.btn_COrder.TabIndex = 4;
             this.btn_COrder.Text = "Choose an Order";
             this.btn_COrder.UseVisualStyleBackColor = true;
+            this.btn_COrder.Click += new System.EventHandler(this.btn_COrder_Click);
+            // 
+            // lbl_CUsername
+            // 
+            this.lbl_CUsername.AutoSize = true;
+            this.lbl_CUsername.Location = new System.Drawing.Point(32, 46);
+            this.lbl_CUsername.Name = "lbl_CUsername";
+            this.lbl_CUsername.Size = new System.Drawing.Size(87, 20);
+            this.lbl_CUsername.TabIndex = 0;
+            this.lbl_CUsername.Text = "Username:";
+            // 
+            // lbl_CName
+            // 
+            this.lbl_CName.AutoSize = true;
+            this.lbl_CName.Location = new System.Drawing.Point(32, 102);
+            this.lbl_CName.Name = "lbl_CName";
+            this.lbl_CName.Size = new System.Drawing.Size(55, 20);
+            this.lbl_CName.TabIndex = 1;
+            this.lbl_CName.Text = "Name:";
+            // 
+            // lbl_CRole
+            // 
+            this.lbl_CRole.AutoSize = true;
+            this.lbl_CRole.Location = new System.Drawing.Point(32, 159);
+            this.lbl_CRole.Name = "lbl_CRole";
+            this.lbl_CRole.Size = new System.Drawing.Size(46, 20);
+            this.lbl_CRole.TabIndex = 2;
+            this.lbl_CRole.Text = "Role:";
+            // 
+            // lbl_CDOB
+            // 
+            this.lbl_CDOB.AutoSize = true;
+            this.lbl_CDOB.Location = new System.Drawing.Point(32, 210);
+            this.lbl_CDOB.Name = "lbl_CDOB";
+            this.lbl_CDOB.Size = new System.Drawing.Size(103, 20);
+            this.lbl_CDOB.TabIndex = 3;
+            this.lbl_CDOB.Text = "Date of Birth:";
+            // 
+            // lbl_CEmail
+            // 
+            this.lbl_CEmail.AutoSize = true;
+            this.lbl_CEmail.Location = new System.Drawing.Point(32, 273);
+            this.lbl_CEmail.Name = "lbl_CEmail";
+            this.lbl_CEmail.Size = new System.Drawing.Size(52, 20);
+            this.lbl_CEmail.TabIndex = 4;
+            this.lbl_CEmail.Text = "Email:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lbl_CUsername);
+            this.groupBox1.Controls.Add(this.lbl_CEmail);
+            this.groupBox1.Controls.Add(this.lbl_CName);
+            this.groupBox1.Controls.Add(this.lbl_CDOB);
+            this.groupBox1.Controls.Add(this.lbl_CRole);
+            this.groupBox1.Location = new System.Drawing.Point(29, 84);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(342, 304);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Profile";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(206, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 22);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Location = new System.Drawing.Point(206, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 22);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 75);
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Location = new System.Drawing.Point(206, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
-            this.label4.TabIndex = 0;
+            this.label4.Size = new System.Drawing.Size(53, 22);
+            this.label4.TabIndex = 7;
             this.label4.Text = "label4";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(72, 135);
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Location = new System.Drawing.Point(206, 210);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
-            this.label5.TabIndex = 1;
+            this.label5.Size = new System.Drawing.Size(53, 22);
+            this.label5.TabIndex = 8;
             this.label5.Text = "label5";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(72, 209);
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Location = new System.Drawing.Point(206, 273);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
-            this.label6.TabIndex = 2;
+            this.label6.Size = new System.Drawing.Size(53, 22);
+            this.label6.TabIndex = 9;
             this.label6.Text = "label6";
             // 
-            // label7
+            // pictureBox1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(72, 271);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 20);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "label7";
+            this.pictureBox1.Location = new System.Drawing.Point(411, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(157, 145);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // label8
+            // btn_CUP
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(72, 325);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 20);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "label8";
+            this.btn_CUP.Location = new System.Drawing.Point(425, 336);
+            this.btn_CUP.Name = "btn_CUP";
+            this.btn_CUP.Size = new System.Drawing.Size(132, 41);
+            this.btn_CUP.TabIndex = 7;
+            this.btn_CUP.Text = "Update Profile";
+            this.btn_CUP.UseVisualStyleBackColor = true;
+            this.btn_CUP.Click += new System.EventHandler(this.btn_CUP_Click);
             // 
             // Chef
             // 
@@ -422,21 +522,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_CVO);
+            this.Controls.Add(this.panel_CVP);
+            this.Controls.Add(this.panel_CVI);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Chef";
             this.Text = "Chef";
             this.Load += new System.EventHandler(this.Chef_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel_CVI.ResumeLayout(false);
+            this.panel_CVI.PerformLayout();
+            this.panel_CVP.ResumeLayout(false);
+            this.panel_CVO.ResumeLayout(false);
+            this.panel_CVO.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSetBindingSource)).EndInit();
@@ -445,6 +544,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -455,9 +557,9 @@
         private System.Windows.Forms.Button btn_inventory;
         private System.Windows.Forms.Button btn_ChefProfile;
         private System.Windows.Forms.Button btn_CusOrder;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel_CVI;
+        private System.Windows.Forms.Panel panel_CVP;
+        private System.Windows.Forms.Panel panel_CVO;
         private System.Windows.Forms.Label lbl_chef;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource assignmentdbDataSetBindingSource;
@@ -467,9 +569,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stockIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ingredientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_CUI;
+        private System.Windows.Forms.Button btn_SI;
+        private System.Windows.Forms.TextBox txt_CSI;
         private System.Windows.Forms.Label lbl_inventory;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource assignmentdbDataSet3BindingSource;
@@ -482,10 +584,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_COrder;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl_CEmail;
+        private System.Windows.Forms.Label lbl_CDOB;
+        private System.Windows.Forms.Label lbl_CRole;
+        private System.Windows.Forms.Label lbl_CName;
+        private System.Windows.Forms.Label lbl_CUsername;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_CUP;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

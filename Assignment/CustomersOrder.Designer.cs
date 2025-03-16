@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class View_Order
+    partial class CustomersOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.btn_VO_b = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.assignmentdbDataSet3 = new Assignment.AssignmentdbDataSet3();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderTableAdapter = new Assignment.AssignmentdbDataSet3TableAdapters.OrderTableAdapter();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.assignmentdbDataSet3 = new Assignment.AssignmentdbDataSet3();
+            this.orderTableAdapter = new Assignment.AssignmentdbDataSet3TableAdapters.OrderTableAdapter();
             this.btn_c_o = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_VO_b
@@ -52,6 +52,7 @@
             this.btn_VO_b.TabIndex = 0;
             this.btn_VO_b.Text = "Back";
             this.btn_VO_b.UseVisualStyleBackColor = true;
+            this.btn_VO_b.Click += new System.EventHandler(this.btn_VO_b_Click);
             // 
             // dataGridView1
             // 
@@ -69,20 +70,6 @@
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(659, 252);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // assignmentdbDataSet3
-            // 
-            this.assignmentdbDataSet3.DataSetName = "AssignmentdbDataSet3";
-            this.assignmentdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataMember = "Order";
-            this.orderBindingSource.DataSource = this.assignmentdbDataSet3;
-            // 
-            // orderTableAdapter
-            // 
-            this.orderTableAdapter.ClearBeforeFill = true;
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -117,6 +104,20 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.Width = 150;
             // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataMember = "Order";
+            this.orderBindingSource.DataSource = this.assignmentdbDataSet3;
+            // 
+            // assignmentdbDataSet3
+            // 
+            this.assignmentdbDataSet3.DataSetName = "AssignmentdbDataSet3";
+            this.assignmentdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // orderTableAdapter
+            // 
+            this.orderTableAdapter.ClearBeforeFill = true;
+            // 
             // btn_c_o
             // 
             this.btn_c_o.Location = new System.Drawing.Point(573, 376);
@@ -126,7 +127,7 @@
             this.btn_c_o.Text = "Choose an Order";
             this.btn_c_o.UseVisualStyleBackColor = true;
             // 
-            // View_Order
+            // CustomersOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,12 +135,12 @@
             this.Controls.Add(this.btn_c_o);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_VO_b);
-            this.Name = "View_Order";
-            this.Text = "View_Order";
+            this.Name = "CustomersOrder";
+            this.Text = "CustomersOders";
             this.Load += new System.EventHandler(this.View_Order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).EndInit();
             this.ResumeLayout(false);
 
         }
