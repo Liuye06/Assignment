@@ -38,7 +38,11 @@
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.assignmentdbDataSet3 = new Assignment.AssignmentdbDataSet3();
             this.orderTableAdapter = new Assignment.AssignmentdbDataSet3TableAdapters.OrderTableAdapter();
-            this.btn_c_o = new System.Windows.Forms.Button();
+            this.cmb_UOS = new System.Windows.Forms.ComboBox();
+            this.ldl_OrderID = new System.Windows.Forms.Label();
+            this.lbl_status = new System.Windows.Forms.Label();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).BeginInit();
@@ -64,11 +68,11 @@
             this.quantityDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.orderBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(59, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(420, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(298, 252);
             this.dataGridView1.TabIndex = 1;
             // 
             // orderIDDataGridViewTextBoxColumn
@@ -118,21 +122,61 @@
             // 
             this.orderTableAdapter.ClearBeforeFill = true;
             // 
-            // btn_c_o
+            // cmb_UOS
             // 
-            this.btn_c_o.Location = new System.Drawing.Point(573, 376);
-            this.btn_c_o.Name = "btn_c_o";
-            this.btn_c_o.Size = new System.Drawing.Size(145, 47);
-            this.btn_c_o.TabIndex = 2;
-            this.btn_c_o.Text = "Choose an Order";
-            this.btn_c_o.UseVisualStyleBackColor = true;
+            this.cmb_UOS.FormattingEnabled = true;
+            this.cmb_UOS.Items.AddRange(new object[] {
+            "In progress",
+            "Completed"});
+            this.cmb_UOS.Location = new System.Drawing.Point(193, 256);
+            this.cmb_UOS.Name = "cmb_UOS";
+            this.cmb_UOS.Size = new System.Drawing.Size(121, 28);
+            this.cmb_UOS.TabIndex = 2;
+            // 
+            // ldl_OrderID
+            // 
+            this.ldl_OrderID.AutoSize = true;
+            this.ldl_OrderID.Location = new System.Drawing.Point(81, 195);
+            this.ldl_OrderID.Name = "ldl_OrderID";
+            this.ldl_OrderID.Size = new System.Drawing.Size(74, 20);
+            this.ldl_OrderID.TabIndex = 3;
+            this.ldl_OrderID.Text = "Order ID:";
+            // 
+            // lbl_status
+            // 
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.Location = new System.Drawing.Point(81, 259);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(60, 20);
+            this.lbl_status.TabIndex = 4;
+            this.lbl_status.Text = "Status:";
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.Location = new System.Drawing.Point(193, 195);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.Size = new System.Drawing.Size(121, 26);
+            this.txtOrderID.TabIndex = 6;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(608, 382);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(95, 42);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // CustomersOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_c_o);
+            this.Controls.Add(this.txtOrderID);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.lbl_status);
+            this.Controls.Add(this.ldl_OrderID);
+            this.Controls.Add(this.cmb_UOS);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_VO_b);
             this.Name = "CustomersOrder";
@@ -142,6 +186,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -156,6 +201,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btn_c_o;
+        private System.Windows.Forms.ComboBox cmb_UOS;
+        private System.Windows.Forms.Label ldl_OrderID;
+        private System.Windows.Forms.Label lbl_status;
+        private System.Windows.Forms.TextBox txtOrderID;
+        private System.Windows.Forms.Button btnSave;
     }
 }
