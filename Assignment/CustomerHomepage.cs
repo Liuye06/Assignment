@@ -125,5 +125,9 @@ namespace Assignment
             mp_orders.Show();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
