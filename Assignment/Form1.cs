@@ -30,14 +30,14 @@ namespace Assignment
 
         public void Insert(string item, string price, string category, byte[] image)
         {
-            using(SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["Assignment.Properties.Settings.AssignmentdbConnectionString"].ConnectionString))
+            using(SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["Assignment.Properties.Settings.Assignment dbConnectionString"].ConnectionString))
             {
                 cn.Open();
                 SqlCommand cmd = new SqlCommand("insert into Menu(Item, Price, Category, Image) values (@item, @price, @category, @image)", cn);
                     cmd.Parameters.AddWithValue("@image", image);
                     cmd.Parameters.AddWithValue("@category", category);
                     cmd.Parameters.AddWithValue("@price", price);
-                    cmd.Parameters.AddWithValue("@ite,", item);
+                    cmd.Parameters.AddWithValue("@item", item);
                     cmd.ExecuteNonQuery();
                 cn.Close();
                 
@@ -46,7 +46,7 @@ namespace Assignment
 
         public void LoadData()
         {
-            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["Assignment.Properties.Settings.AssignmentdbConnectionString"].ConnectionString))
+            using (SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["Assignment.Properties.Settings.Assignment dBConnectionString"].ConnectionString))
             {
                 if (cn.State == ConnectionState.Closed)
                     cn.Open();
