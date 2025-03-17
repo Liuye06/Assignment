@@ -111,23 +111,23 @@
             // 
             // txt_CE
             // 
-            this.txt_CE.Location = new System.Drawing.Point(242, 166);
+            this.txt_CE.Location = new System.Drawing.Point(170, 174);
             this.txt_CE.Name = "txt_CE";
-            this.txt_CE.Size = new System.Drawing.Size(100, 28);
+            this.txt_CE.Size = new System.Drawing.Size(301, 28);
             this.txt_CE.TabIndex = 8;
             // 
             // txt_CN
             // 
-            this.txt_CN.Location = new System.Drawing.Point(242, 102);
+            this.txt_CN.Location = new System.Drawing.Point(170, 102);
             this.txt_CN.Name = "txt_CN";
-            this.txt_CN.Size = new System.Drawing.Size(100, 28);
+            this.txt_CN.Size = new System.Drawing.Size(301, 28);
             this.txt_CN.TabIndex = 7;
             // 
             // txt_CU
             // 
-            this.txt_CU.Location = new System.Drawing.Point(242, 35);
+            this.txt_CU.Location = new System.Drawing.Point(170, 35);
             this.txt_CU.Name = "txt_CU";
-            this.txt_CU.Size = new System.Drawing.Size(100, 28);
+            this.txt_CU.Size = new System.Drawing.Size(301, 28);
             this.txt_CU.TabIndex = 6;
             // 
             // pictureBox1
@@ -140,9 +140,9 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(242, 236);
+            this.dateTimePicker1.Location = new System.Drawing.Point(170, 236);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 28);
+            this.dateTimePicker1.Size = new System.Drawing.Size(301, 28);
             this.dateTimePicker1.TabIndex = 10;
             // 
             // btn_UPI
