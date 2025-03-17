@@ -34,16 +34,18 @@
             this.btnHRReport_MHall = new System.Windows.Forms.Button();
             this.btnUProfile_MHall = new System.Windows.Forms.Button();
             this.gbMHall = new System.Windows.Forms.GroupBox();
+            this.btnResetHallSearch = new System.Windows.Forms.Button();
             this.btnAddNewHall = new System.Windows.Forms.Button();
             this.dgvHall = new System.Windows.Forms.DataGridView();
-            this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHallImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColAction = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSearchHall = new System.Windows.Forms.Button();
             this.txtHall = new System.Windows.Forms.TextBox();
             this.lblHall = new System.Windows.Forms.Label();
+            this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHallImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHallEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColHallDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableSidebar_MHall.SuspendLayout();
             this.gbMHall.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).BeginInit();
@@ -119,6 +121,7 @@
             // 
             // gbMHall
             // 
+            this.gbMHall.Controls.Add(this.btnResetHallSearch);
             this.gbMHall.Controls.Add(this.btnAddNewHall);
             this.gbMHall.Controls.Add(this.dgvHall);
             this.gbMHall.Controls.Add(this.btnSearchHall);
@@ -126,18 +129,28 @@
             this.gbMHall.Controls.Add(this.lblHall);
             this.gbMHall.Location = new System.Drawing.Point(218, 73);
             this.gbMHall.Name = "gbMHall";
-            this.gbMHall.Size = new System.Drawing.Size(752, 369);
+            this.gbMHall.Size = new System.Drawing.Size(852, 369);
             this.gbMHall.TabIndex = 1;
             this.gbMHall.TabStop = false;
             this.gbMHall.Text = "Manage Hall";
+            // 
+            // btnResetHallSearch
+            // 
+            this.btnResetHallSearch.Location = new System.Drawing.Point(440, 320);
+            this.btnResetHallSearch.Name = "btnResetHallSearch";
+            this.btnResetHallSearch.Size = new System.Drawing.Size(390, 35);
+            this.btnResetHallSearch.TabIndex = 5;
+            this.btnResetHallSearch.Text = "Reset Search Hall Name";
+            this.btnResetHallSearch.Click += new System.EventHandler(this.btnResetHallSearch_Click);
             // 
             // btnAddNewHall
             // 
             this.btnAddNewHall.Location = new System.Drawing.Point(45, 320);
             this.btnAddNewHall.Name = "btnAddNewHall";
-            this.btnAddNewHall.Size = new System.Drawing.Size(153, 35);
+            this.btnAddNewHall.Size = new System.Drawing.Size(390, 35);
             this.btnAddNewHall.TabIndex = 4;
-            this.btnAddNewHall.Text = "Add New Hall";
+            this.btnAddNewHall.Text = "Add New Hall Name";
+            this.btnAddNewHall.Click += new System.EventHandler(this.btnAddNewHall_Click);
             // 
             // dgvHall
             // 
@@ -146,21 +159,49 @@
             this.ColHallName,
             this.ColHallImage,
             this.ColCapacity,
-            this.ColType,
-            this.ColAction});
+            this.ColPrice,
+            this.ColHallEdit,
+            this.ColHallDelete});
             this.dgvHall.Location = new System.Drawing.Point(45, 91);
             this.dgvHall.Name = "dgvHall";
             this.dgvHall.RowHeadersWidth = 51;
             this.dgvHall.RowTemplate.Height = 24;
-            this.dgvHall.Size = new System.Drawing.Size(684, 216);
+            this.dgvHall.Size = new System.Drawing.Size(785, 216);
             this.dgvHall.TabIndex = 3;
+            // 
+            // btnSearchHall
+            // 
+            this.btnSearchHall.Location = new System.Drawing.Point(416, 39);
+            this.btnSearchHall.Name = "btnSearchHall";
+            this.btnSearchHall.Size = new System.Drawing.Size(106, 35);
+            this.btnSearchHall.TabIndex = 2;
+            this.btnSearchHall.Text = "Search";
+            this.btnSearchHall.UseVisualStyleBackColor = true;
+            this.btnSearchHall.Click += new System.EventHandler(this.btnSearchHall_Click);
+            // 
+            // txtHall
+            // 
+            this.txtHall.Location = new System.Drawing.Point(148, 41);
+            this.txtHall.Name = "txtHall";
+            this.txtHall.Size = new System.Drawing.Size(262, 30);
+            this.txtHall.TabIndex = 1;
+            // 
+            // lblHall
+            // 
+            this.lblHall.AutoSize = true;
+            this.lblHall.Location = new System.Drawing.Point(40, 44);
+            this.lblHall.Name = "lblHall";
+            this.lblHall.Size = new System.Drawing.Size(102, 25);
+            this.lblHall.TabIndex = 0;
+            this.lblHall.Text = "Hall Name";
             // 
             // ColHallName
             // 
-            this.ColHallName.HeaderText = "Name";
+            this.ColHallName.DataPropertyName = "HallName";
+            this.ColHallName.HeaderText = "Hall Name";
             this.ColHallName.MinimumWidth = 6;
             this.ColHallName.Name = "ColHallName";
-            this.ColHallName.Width = 125;
+            this.ColHallName.Width = 135;
             // 
             // ColHallImage
             // 
@@ -171,59 +212,46 @@
             // 
             // ColCapacity
             // 
+            this.ColCapacity.DataPropertyName = "Capacity";
             this.ColCapacity.HeaderText = "Capacity";
             this.ColCapacity.MinimumWidth = 6;
             this.ColCapacity.Name = "ColCapacity";
             this.ColCapacity.Width = 125;
             // 
-            // ColType
+            // ColPrice
             // 
-            this.ColType.HeaderText = "Type";
-            this.ColType.MinimumWidth = 6;
-            this.ColType.Name = "ColType";
-            this.ColType.Width = 125;
+            this.ColPrice.DataPropertyName = "Price_P_D";
+            this.ColPrice.HeaderText = "Price";
+            this.ColPrice.MinimumWidth = 6;
+            this.ColPrice.Name = "ColPrice";
+            this.ColPrice.Width = 115;
             // 
-            // ColAction
+            // ColHallEdit
             // 
-            this.ColAction.HeaderText = "Action";
-            this.ColAction.MinimumWidth = 6;
-            this.ColAction.Name = "ColAction";
-            this.ColAction.Width = 130;
+            this.ColHallEdit.DataPropertyName = "Edit";
+            this.ColHallEdit.HeaderText = "Action";
+            this.ColHallEdit.MinimumWidth = 6;
+            this.ColHallEdit.Name = "ColHallEdit";
+            this.ColHallEdit.Width = 115;
             // 
-            // btnSearchHall
+            // ColHallDelete
             // 
-            this.btnSearchHall.Location = new System.Drawing.Point(263, 39);
-            this.btnSearchHall.Name = "btnSearchHall";
-            this.btnSearchHall.Size = new System.Drawing.Size(106, 35);
-            this.btnSearchHall.TabIndex = 2;
-            this.btnSearchHall.Text = "Search";
-            this.btnSearchHall.UseVisualStyleBackColor = true;
-            // 
-            // txtHall
-            // 
-            this.txtHall.Location = new System.Drawing.Point(104, 41);
-            this.txtHall.Name = "txtHall";
-            this.txtHall.Size = new System.Drawing.Size(143, 30);
-            this.txtHall.TabIndex = 1;
-            // 
-            // lblHall
-            // 
-            this.lblHall.AutoSize = true;
-            this.lblHall.Location = new System.Drawing.Point(40, 44);
-            this.lblHall.Name = "lblHall";
-            this.lblHall.Size = new System.Drawing.Size(45, 25);
-            this.lblHall.TabIndex = 0;
-            this.lblHall.Text = "Hall";
+            this.ColHallDelete.DataPropertyName = "Delete";
+            this.ColHallDelete.HeaderText = "Action";
+            this.ColHallDelete.MinimumWidth = 6;
+            this.ColHallDelete.Name = "ColHallDelete";
+            this.ColHallDelete.Width = 115;
             // 
             // MainManageHall
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(982, 453);
+            this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbMHall);
             this.Controls.Add(this.tableSidebar_MHall);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainManageHall";
             this.Text = "ManageHall";
+            this.Load += new System.EventHandler(this.MainManageHall_Load);
             this.tableSidebar_MHall.ResumeLayout(false);
             this.gbMHall.ResumeLayout(false);
             this.gbMHall.PerformLayout();
@@ -245,10 +273,12 @@
         private System.Windows.Forms.Button btnSearchHall;
         private System.Windows.Forms.DataGridView dgvHall;
         private System.Windows.Forms.Button btnAddNewHall;
+        private System.Windows.Forms.Button btnResetHallSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColHallName;
         private System.Windows.Forms.DataGridViewImageColumn ColHallImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCapacity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColType;
-        private System.Windows.Forms.DataGridViewButtonColumn ColAction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrice;
+        private System.Windows.Forms.DataGridViewButtonColumn ColHallEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn ColHallDelete;
     }
 }

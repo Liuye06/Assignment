@@ -9,44 +9,48 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Assignment
 {
-    public partial class AddNewMenuItem : Form
+    public partial class AddNewHall : Form
     {
         private SidebarManager _sidebarManager;
 
-        public AddNewMenuItem()
+        public AddNewHall()
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
         }
 
-        private void btnBrowseImageMenu_Click(object sender, EventArgs e)
+        private void btnBrowseImageHall_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                picAddMenu.Image = Image.FromFile(openFileDialog.FileName);
+                picAddNewHall.Image = Image.FromFile(openFileDialog.FileName);
             }
-
         }
 
-        private void btnAddMenuItem_Click(object sender, EventArgs e)
+        private void btnAddNewHall_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtAddMenu.Text) ||
-            string.IsNullOrWhiteSpace(txtPriceMenu.Text) ||
-            cmbCategoryMenu.SelectedItem == null ||
-            picAddMenu.Image == null)
+            if (string.IsNullOrWhiteSpace(txtHallName.Text) ||
+            string.IsNullOrWhiteSpace(txtCapacity.Text) ||
+            string.IsNullOrWhiteSpace(txtPriceHall.Text) ||
+            picAddNewHall.Image == null)
                 {
                     MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-            if (!decimal.TryParse(txtPriceMenu.Text, out decimal price))
+            if (!decimal.TryParse(txtCapacity.Text, out decimal capacity))
+            {
+                MessageBox.Show("Invalid capacity format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(txtPriceHall.Text, out decimal price))
             {
                 MessageBox.Show("Invalid price format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -59,13 +63,13 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO Menu (Item, Price, Category) VALUES (@Item, @Price, @Category)";
+                    string query = "INSERT INTO Hall (HallName, Capacity, Price_P_D) VALUES (@HallName, @Capacity, @Price_P_D)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Item", txtAddMenu.Text);
-                        cmd.Parameters.AddWithValue("@Price", price);
-                        cmd.Parameters.AddWithValue("@Category", cmbCategoryMenu.SelectedItem.ToString());
+                        cmd.Parameters.AddWithValue("@HallName", txtHallName.Text);
+                        cmd.Parameters.AddWithValue("@Capacity", capacity);
+                        cmd.Parameters.AddWithValue("@Price_P_D", price);
 
                         cmd.ExecuteNonQuery(); // 🔹 Insert into database
                     }
@@ -83,29 +87,29 @@ namespace Assignment
             this.Close();
         }
 
-        private void btnMMenu_AddMenu_Click(object sender, EventArgs e)
+        private void btnCancelHall_Click(object sender, EventArgs e)
+        {
+            this.Close(); // Closes the current form
+        }
+
+        private void btnMMenu_AddNewHall_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainManageMenu());
         }
 
-        private void btnMHall_AddMenu_Click(object sender, EventArgs e)
+        private void btnMHall_AddNewHall_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainManageHall());
         }
 
-        private void btnMRReport_AddMenu_Click(object sender, EventArgs e)
+        private void btnHRReport_AddNewHall_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainHallResvReport());
         }
 
-        private void btnUProfile_AddMenu_Click(object sender, EventArgs e)
+        private void btnUProfile_AddNewHall_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ManagerUpdateProfile());
-        }
-
-        private void btnCancelMenu_Click(object sender, EventArgs e)
-        {
-            this.Close(); // Closes the current form
         }
     }
 }

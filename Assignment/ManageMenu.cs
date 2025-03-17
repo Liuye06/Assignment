@@ -15,16 +15,48 @@ namespace Assignment
 {
     public partial class MainManageMenu : Form
     {
-        private MenuManager menuManager;
         private SidebarManager _sidebarManager;
+        private BindingSource bindingSource = new BindingSource();
 
 
         public MainManageMenu()
         {
             InitializeComponent();
-            menuManager = new MenuManager();
             _sidebarManager = new SidebarManager(this);
         }
+
+        private void MainManageMenu_Load(object sender, EventArgs e)
+        {
+            LoadMenuData();
+            dgvMenu.CellContentClick += dgvMenu_CellContentClick;
+        }
+
+        private void LoadMenuData()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Item, Price, Category FROM Menu"; 
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    bindingSource.DataSource = dt;
+                    dgvMenu.AutoGenerateColumns = false;
+                    dgvMenu.DataSource = bindingSource; 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading data: " + ex.Message);
+                }
+            }
+        }
+
 
         private void btnAddMenu_Click(object sender, EventArgs e)
         {
@@ -32,17 +64,103 @@ namespace Assignment
 
             if (form.ShowDialog() == DialogResult.OK) // Wait until form is closed
             {
-                menuManager.AddMenuItem(form.NewMenuItem); // Add new item from form
                 LoadMenuData();
             }
         }
 
+
+        private void btnSearchMenu_Click(object sender, EventArgs e)
+        {
+            string searchText = txtMenu.Text.Trim().Replace("'", "''"); // Prevent SQL errors
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                bindingSource.Filter = $"Item LIKE '%{searchText}%'"; //  Apply filter
+            }
+            else
+            {
+                bindingSource.RemoveFilter(); //  Show all rows
+            }
+        }
+
+
+        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = cmbCategory.SelectedItem?.ToString();
+
+            if (!string.IsNullOrEmpty(selectedCategory) && selectedCategory != "All")
+            {
+                bindingSource.Filter = $"Category = '{selectedCategory}'"; // 🔹 Filter by category
+            }
+            else
+            {
+                bindingSource.RemoveFilter(); // 🔹 Show all rows
+            }
+        }
+
+
+        private void btnResetMMenu_Click(object sender, EventArgs e)
+        {
+            txtMenu.Text = "";
+            cmbCategory.SelectedIndex = 0; // Select "All"
+            bindingSource.RemoveFilter(); // Reset all filters 
+        }
+
+
         private void dgvMenu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                // Get the clicked column name
+                if (dgvMenu.Columns[e.ColumnIndex].Name == "ColMenuEdit")
+                {
+                    string menuItem = dgvMenu.Rows[e.RowIndex].Cells["ColMenuEdit"].Value.ToString();
+                    EditMenuItem(menuItem);
+                }
+                
+            }
             LoadMenuData();
         }
 
 
+        private void EditMenuItem(string menuItem)
+        {
+            EditMenuItemForm editForm = new EditMenuItemForm(menuItem);
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadMenuData(); // Refresh menu items after editing
+            }
+        }
+
+
+        private void DeleteMenuItem(string menuItem)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete " + menuItem + "?",
+                                                  "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        string query = "DELETE FROM Menu WHERE Item = @MenuItem";
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@Item", menuItem);
+                            cmd.ExecuteNonQuery();
+                        }
+                        LoadMenuData(); // Refresh table after deletion
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error deleting item: " + ex.Message);
+                    }
+                }
+            }
+        }
         private void btnMMenu_MMenu_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainManageMenu());
@@ -62,94 +180,5 @@ namespace Assignment
         {
             _sidebarManager.NavigateTo(new ManagerUpdateProfile());
         }
-
-        private void btnSearchMenu_Click(object sender, EventArgs e)
-        {
-            string searchText = txtMenu.Text.Trim().ToLower();
-
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                foreach (DataGridViewRow row in dgvMenu.Rows)
-                {
-                    if (row.Cells["ColMenuItem"].Value != null &&
-                        row.Cells["ColMenuItem"].Value.ToString().ToLower().Contains(searchText))
-                    {
-                        row.Visible = true; // Show matching row
-                    }
-                    else
-                    {
-                        row.Visible = false; // Hide non-matching rows
-                    }
-                }
-            }
-            else
-            {
-                // Show all rows if search box is empty
-                foreach (DataGridViewRow row in dgvMenu.Rows)
-                {
-                    row.Visible = true;
-                }
-            }
-        }
-
-        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedCategory = cmbCategory.SelectedItem?.ToString();
-
-            foreach (DataGridViewRow row in dgvMenu.Rows)
-            {
-                if (row.Cells["ColMenuCategory"].Value != null &&
-                    row.Cells["ColMenuCategory"].Value.ToString() == selectedCategory)
-                {
-                    row.Visible = true; // Show matching category
-                }
-                else
-                {
-                    row.Visible = false; // Hide non-matching category
-                }
-            }
-        }
-
-        private void btnResetMMenu_Click(object sender, EventArgs e)
-        {
-            txtMenu.Text = "";
-            cmbCategory.SelectedIndex = 0; // Select "All"
-
-            foreach (DataGridViewRow row in dgvMenu.Rows)
-            {
-                row.Visible = true;
-            }
-        }
-
-        private void LoadMenuData()
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT Item, Price, Category FROM Menu"; // Adjust table name
-
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dgvMenu.AutoGenerateColumns = false;
-                    dgvMenu.DataSource = dt; // Assuming dgvMenu is your DataGridView name
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading data: " + ex.Message);
-                }
-            }
-        }
-
-        private void MainManageMenu_Load(object sender, EventArgs e)
-        {
-            LoadMenuData();
-        }
-
     }
 }

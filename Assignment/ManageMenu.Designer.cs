@@ -48,8 +48,8 @@
             this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColMenuPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMenuCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMenuAction = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ColMenuEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ActionMenuDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbMMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.tableSidebar_MMenu.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             this.btnAddMenu.Location = new System.Drawing.Point(45, 325);
             this.btnAddMenu.Name = "btnAddMenu";
-            this.btnAddMenu.Size = new System.Drawing.Size(343, 34);
+            this.btnAddMenu.Size = new System.Drawing.Size(390, 34);
             this.btnAddMenu.TabIndex = 0;
             this.btnAddMenu.Text = "Add New Menu Item";
             this.btnAddMenu.UseVisualStyleBackColor = true;
@@ -84,9 +84,9 @@
             // 
             // btnSearchMenu
             // 
-            this.btnSearchMenu.Location = new System.Drawing.Point(299, 39);
+            this.btnSearchMenu.Location = new System.Drawing.Point(372, 39);
             this.btnSearchMenu.Name = "btnSearchMenu";
-            this.btnSearchMenu.Size = new System.Drawing.Size(106, 35);
+            this.btnSearchMenu.Size = new System.Drawing.Size(133, 35);
             this.btnSearchMenu.TabIndex = 3;
             this.btnSearchMenu.Text = "Search";
             this.btnSearchMenu.UseVisualStyleBackColor = true;
@@ -107,16 +107,16 @@
             this.gbMMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMMenu.Location = new System.Drawing.Point(218, 71);
             this.gbMMenu.Name = "gbMMenu";
-            this.gbMMenu.Size = new System.Drawing.Size(752, 370);
+            this.gbMMenu.Size = new System.Drawing.Size(852, 370);
             this.gbMMenu.TabIndex = 1;
             this.gbMMenu.TabStop = false;
             this.gbMMenu.Text = "Manage Menu";
             // 
             // btnResetMMenu
             // 
-            this.btnResetMMenu.Location = new System.Drawing.Point(394, 325);
+            this.btnResetMMenu.Location = new System.Drawing.Point(446, 325);
             this.btnResetMMenu.Name = "btnResetMMenu";
-            this.btnResetMMenu.Size = new System.Drawing.Size(335, 34);
+            this.btnResetMMenu.Size = new System.Drawing.Size(390, 34);
             this.btnResetMMenu.TabIndex = 9;
             this.btnResetMMenu.Text = "Reset Search Menu Item";
             this.btnResetMMenu.UseVisualStyleBackColor = true;
@@ -130,19 +130,20 @@
             this.colMenuImage,
             this.ColMenuPrice,
             this.ColMenuCategory,
-            this.ColMenuAction});
+            this.ColMenuEdit,
+            this.ActionMenuDelete});
             this.dgvMenu.Location = new System.Drawing.Point(45, 95);
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.RowHeadersWidth = 51;
             this.dgvMenu.RowTemplate.Height = 24;
-            this.dgvMenu.Size = new System.Drawing.Size(684, 216);
+            this.dgvMenu.Size = new System.Drawing.Size(791, 216);
             this.dgvMenu.TabIndex = 8;
             this.dgvMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellContentClick);
             // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(455, 44);
+            this.lblCategory.Location = new System.Drawing.Point(523, 44);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(92, 25);
             this.lblCategory.TabIndex = 7;
@@ -157,9 +158,9 @@
             "Side Dish",
             "Beverage",
             "Dessert"});
-            this.cmbCategory.Location = new System.Drawing.Point(553, 41);
+            this.cmbCategory.Location = new System.Drawing.Point(621, 41);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(176, 33);
+            this.cmbCategory.Size = new System.Drawing.Size(215, 33);
             this.cmbCategory.TabIndex = 6;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
@@ -176,7 +177,7 @@
             // 
             this.txtMenu.Location = new System.Drawing.Point(150, 41);
             this.txtMenu.Name = "txtMenu";
-            this.txtMenu.Size = new System.Drawing.Size(143, 30);
+            this.txtMenu.Size = new System.Drawing.Size(216, 30);
             this.txtMenu.TabIndex = 4;
             // 
             // tableSidebar_MMenu
@@ -284,26 +285,30 @@
             this.ColMenuCategory.Name = "ColMenuCategory";
             this.ColMenuCategory.Width = 125;
             // 
-            // ColMenuAction
+            // ColMenuEdit
             // 
-            this.ColMenuAction.HeaderText = "Action";
-            this.ColMenuAction.MinimumWidth = 6;
-            this.ColMenuAction.Name = "ColMenuAction";
-            this.ColMenuAction.Width = 130;
+            this.ColMenuEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColMenuEdit.DataPropertyName = "Edit";
+            this.ColMenuEdit.HeaderText = "Action";
+            this.ColMenuEdit.MinimumWidth = 6;
+            this.ColMenuEdit.Name = "ColMenuEdit";
+            this.ColMenuEdit.Text = "Edit";
+            this.ColMenuEdit.UseColumnTextForButtonValue = true;
+            this.ColMenuEdit.Width = 115;
             // 
-            // button1
+            // ActionMenuDelete
             // 
-            this.button1.Location = new System.Drawing.Point(350, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.ActionMenuDelete.HeaderText = "Action";
+            this.ActionMenuDelete.MinimumWidth = 6;
+            this.ActionMenuDelete.Name = "ActionMenuDelete";
+            this.ActionMenuDelete.Text = "Delete";
+            this.ActionMenuDelete.UseColumnTextForButtonValue = true;
+            this.ActionMenuDelete.Width = 115;
             // 
             // MainManageMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(982, 453);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.tableSidebar_MMenu);
             this.Controls.Add(this.gbMMenu);
             this.Name = "MainManageMenu";
@@ -338,7 +343,7 @@
         private System.Windows.Forms.DataGridViewImageColumn colMenuImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuCategory;
-        private System.Windows.Forms.DataGridViewButtonColumn ColMenuAction;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewButtonColumn ColMenuEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn ActionMenuDelete;
     }
 }
