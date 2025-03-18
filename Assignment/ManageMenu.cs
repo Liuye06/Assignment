@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 
 namespace Assignment
@@ -28,7 +29,9 @@ namespace Assignment
         private void MainManageMenu_Load(object sender, EventArgs e)
         {
             LoadMenuData();
+            dgvMenu.CellContentClick -= dgvMenu_CellContentClick; // Ensure no duplicates
             dgvMenu.CellContentClick += dgvMenu_CellContentClick;
+            dgvMenu.CellFormatting += dgvMenu_CellFormatting;
         }
 
         private void LoadMenuData()
@@ -40,20 +43,33 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Item, Price, Category FROM Menu"; 
+                    string query = "SELECT Item, Image, Price, Category FROM Menu";
 
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
 
-                    bindingSource.DataSource = dt;
-                    dgvMenu.AutoGenerateColumns = false;
-                    dgvMenu.DataSource = bindingSource; 
+                        // Bind data to the DataGridView
+                        bindingSource.DataSource = dt;
+                        dgvMenu.AutoGenerateColumns = false;
+                        dgvMenu.DataSource = bindingSource;
+                    }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error loading data: " + ex.Message);
                 }
+            }
+        }
+
+
+        private Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                return Image.FromStream(ms);
             }
         }
 
@@ -109,23 +125,32 @@ namespace Assignment
 
         private void dgvMenu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Ensure valid cell
             {
-                // Get the clicked column name
-                if (dgvMenu.Columns[e.ColumnIndex].Name == "ColMenuEdit")
+                string columnName = dgvMenu.Columns[e.ColumnIndex].Name; // Get clicked column name
+
+                if (columnName == "ColMenuEdit")
                 {
-                    string menuItem = dgvMenu.Rows[e.RowIndex].Cells["ColMenuEdit"].Value.ToString();
+                    // 📝 Edit Button Clicked
+                    string menuItem = dgvMenu.Rows[e.RowIndex].Cells["ColMenuItem"].Value.ToString();
                     EditMenuItem(menuItem);
                 }
-                
+                else if (columnName == "ColMenuDelete")
+                {
+                    // ❌ Delete Button Clicked
+                    string menuItem = dgvMenu.Rows[e.RowIndex].Cells["ColMenuItem"].Value.ToString();
+                    DeleteMenuItem(menuItem);
+                }
             }
-            LoadMenuData();
         }
 
 
         private void EditMenuItem(string menuItem)
         {
-            EditMenuItemForm editForm = new EditMenuItemForm(menuItem);
+            // Ensure the SidebarManager is passed
+            SidebarManager sidebarManager = new SidebarManager(this);
+            EditMenuItemForm editForm = new EditMenuItemForm(menuItem, sidebarManager);
+
             if (editForm.ShowDialog() == DialogResult.OK)
             {
                 LoadMenuData(); // Refresh menu items after editing
@@ -135,24 +160,28 @@ namespace Assignment
 
         private void DeleteMenuItem(string menuItem)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to delete " + menuItem + "?",
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete {menuItem}?",
                                                   "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     try
                     {
                         conn.Open();
                         string query = "DELETE FROM Menu WHERE Item = @MenuItem";
+
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@Item", menuItem);
+                            cmd.Parameters.AddWithValue("@MenuItem", menuItem);
                             cmd.ExecuteNonQuery();
                         }
-                        LoadMenuData(); // Refresh table after deletion
+
+                        MessageBox.Show("Menu item deleted successfully!");
+                        LoadMenuData(); // Refresh DataGridView
                     }
                     catch (Exception ex)
                     {
@@ -161,6 +190,8 @@ namespace Assignment
                 }
             }
         }
+
+
         private void btnMMenu_MMenu_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainManageMenu());
@@ -179,6 +210,17 @@ namespace Assignment
         private void btnUProfile_MMenu_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ManagerUpdateProfile());
+        }
+
+        private void dgvMenu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvMenu.Columns[e.ColumnIndex].Name == "colMenuImage")  // Ensure this matches your Image column name
+            {
+                if (e.Value != null && e.Value is byte[] byteArray)
+                {
+                    e.Value = ByteArrayToImage(byteArray);
+                }
+            }
         }
     }
 }

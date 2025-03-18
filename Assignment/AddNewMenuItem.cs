@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,8 @@ namespace Assignment
                 return;
             }
 
+            byte[] imageData = ImageToByteArray(picAddMenu.Image); // Convert image
+
             string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -59,11 +62,12 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO Menu (Item, Price, Category) VALUES (@Item, @Price, @Category)";
+                    string query = "INSERT INTO Menu (Item, Image, Price, Category) VALUES (@Item, @Image, @Price, @Category)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Item", txtAddMenu.Text);
+                        cmd.Parameters.AddWithValue("@Image", imageData);
                         cmd.Parameters.AddWithValue("@Price", price);
                         cmd.Parameters.AddWithValue("@Category", cmbCategoryMenu.SelectedItem.ToString());
 
@@ -82,6 +86,17 @@ namespace Assignment
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png); // Save as PNG (or use JPEG)
+                return ms.ToArray();
+            }
+        }
+
 
         private void btnMMenu_AddMenu_Click(object sender, EventArgs e)
         {

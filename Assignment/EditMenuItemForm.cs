@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,12 +18,12 @@ namespace Assignment
         private string originalMenuItem;
         private SidebarManager _sidebarManager;
 
-        public EditMenuItemForm(string menuItem)
+        public EditMenuItemForm(string menuItem, SidebarManager sidebarManager)
         {
             InitializeComponent();
             originalMenuItem = menuItem;
             LoadMenuItemDetails(menuItem);
-            _sidebarManager = new SidebarManager(this);
+            _sidebarManager =  sidebarManager;
         }
 
         private void LoadMenuItemDetails(string menuItem)
@@ -34,7 +35,7 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Item, Price, Category FROM Menu WHERE Item = @MenuItem";
+                    string query = "SELECT Item, Price, Category, Image FROM Menu WHERE Item = @MenuItem";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -46,6 +47,13 @@ namespace Assignment
                                 txtEditMenu.Text = reader["Item"].ToString();
                                 txtEditPriceMenu.Text = reader["Price"].ToString();
                                 cmbEditCategoryMenu.Text = reader["Category"].ToString();
+
+                                // Load Image if it exists
+                                if (reader["Image"] != DBNull.Value)
+                                {
+                                    byte[] imageBytes = (byte[])reader["Image"];
+                                    picEditMenu.Image = ByteArrayToImage(imageBytes);
+                                }
                             }
                         }
                     }
@@ -69,6 +77,14 @@ namespace Assignment
                 return;
             }
 
+            if (!decimal.TryParse(price, out decimal priceValue))
+            {
+                MessageBox.Show("Invalid price format.");
+                return;
+            }
+
+            byte[] imageData = picEditMenu.Image != null ? ImageToByteArray(picEditMenu.Image) : null;
+
             string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -76,7 +92,15 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "UPDATE Menu SET Item = @NewMenuItem, Price = @Price, Category = @Category WHERE Item = @OriginalMenuItem";
+                    string query;
+                    if (imageData != null)
+                    {
+                        query = "UPDATE Menu SET Item = @NewMenuItem, Price = @Price, Category = @Category, Image = @Image WHERE Item = @OriginalMenuItem";
+                    }
+                    else
+                    {
+                        query = "UPDATE Menu SET Item = @NewMenuItem, Price = @Price, Category = @Category WHERE Item = @OriginalMenuItem";
+                    }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -85,6 +109,10 @@ namespace Assignment
                         cmd.Parameters.AddWithValue("@Category", category);
                         cmd.Parameters.AddWithValue("@OriginalMenuItem", originalMenuItem);
 
+                        if (imageData != null)
+                        {
+                            cmd.Parameters.AddWithValue("@Image", imageData);
+                        }
                         cmd.ExecuteNonQuery();
                     }
 
@@ -96,6 +124,34 @@ namespace Assignment
                 {
                     MessageBox.Show("Error updating menu item: " + ex.Message);
                 }
+            }
+        }
+
+        private void btnEditBrowseImageMenu_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                picEditMenu.Image = Image.FromFile(openFileDialog.FileName);
+            }
+        }
+
+        private byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
             }
         }
 

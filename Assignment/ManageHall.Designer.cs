@@ -197,7 +197,7 @@
             // 
             // ColHallName
             // 
-            this.ColHallName.DataPropertyName = "HallName";
+            this.ColHallName.DataPropertyName = "Hall_Name";
             this.ColHallName.HeaderText = "Hall Name";
             this.ColHallName.MinimumWidth = 6;
             this.ColHallName.Name = "ColHallName";
@@ -220,7 +220,7 @@
             // 
             // ColPrice
             // 
-            this.ColPrice.DataPropertyName = "Price_P_D";
+            this.ColPrice.DataPropertyName = "Price_P_Day";
             this.ColPrice.HeaderText = "Price";
             this.ColPrice.MinimumWidth = 6;
             this.ColPrice.Name = "ColPrice";

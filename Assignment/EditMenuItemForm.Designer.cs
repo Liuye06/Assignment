@@ -168,6 +168,7 @@
             this.btnEditBrowseImageMenu.TabIndex = 7;
             this.btnEditBrowseImageMenu.Text = "Browse Image";
             this.btnEditBrowseImageMenu.UseVisualStyleBackColor = true;
+            this.btnEditBrowseImageMenu.Click += new System.EventHandler(this.btnEditBrowseImageMenu_Click);
             // 
             // picEditMenu
             // 

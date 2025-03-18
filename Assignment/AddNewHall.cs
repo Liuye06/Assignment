@@ -63,13 +63,13 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO Hall (HallName, Capacity, Price_P_D) VALUES (@HallName, @Capacity, @Price_P_D)";
+                    string query = "INSERT INTO Hall (Hall_Name, Capacity, Price_P_Day) VALUES (@Hall_Name, @Capacity, @Price_P_Day)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@HallName", txtHallName.Text);
+                        cmd.Parameters.AddWithValue("@Hall_Name", txtHallName.Text);
                         cmd.Parameters.AddWithValue("@Capacity", capacity);
-                        cmd.Parameters.AddWithValue("@Price_P_D", price);
+                        cmd.Parameters.AddWithValue("@Price_P_Day", price);
 
                         cmd.ExecuteNonQuery(); // 🔹 Insert into database
                     }

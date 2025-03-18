@@ -49,7 +49,7 @@
             this.ColMenuPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMenuCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMenuEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ActionMenuDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColMenuDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbMMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.tableSidebar_MMenu.SuspendLayout();
@@ -131,14 +131,15 @@
             this.ColMenuPrice,
             this.ColMenuCategory,
             this.ColMenuEdit,
-            this.ActionMenuDelete});
+            this.ColMenuDelete});
             this.dgvMenu.Location = new System.Drawing.Point(45, 95);
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.RowHeadersWidth = 51;
-            this.dgvMenu.RowTemplate.Height = 24;
+            this.dgvMenu.RowTemplate.Height = 60;
             this.dgvMenu.Size = new System.Drawing.Size(791, 216);
             this.dgvMenu.TabIndex = 8;
             this.dgvMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellContentClick);
+            this.dgvMenu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMenu_CellFormatting);
             // 
             // lblCategory
             // 
@@ -262,6 +263,7 @@
             // 
             // colMenuImage
             // 
+            this.colMenuImage.DataPropertyName = "Image";
             this.colMenuImage.HeaderText = "Image";
             this.colMenuImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.colMenuImage.MinimumWidth = 6;
@@ -294,16 +296,16 @@
             this.ColMenuEdit.Name = "ColMenuEdit";
             this.ColMenuEdit.Text = "Edit";
             this.ColMenuEdit.UseColumnTextForButtonValue = true;
-            this.ColMenuEdit.Width = 115;
+            this.ColMenuEdit.Width = 105;
             // 
-            // ActionMenuDelete
+            // ColMenuDelete
             // 
-            this.ActionMenuDelete.HeaderText = "Action";
-            this.ActionMenuDelete.MinimumWidth = 6;
-            this.ActionMenuDelete.Name = "ActionMenuDelete";
-            this.ActionMenuDelete.Text = "Delete";
-            this.ActionMenuDelete.UseColumnTextForButtonValue = true;
-            this.ActionMenuDelete.Width = 115;
+            this.ColMenuDelete.HeaderText = "Action";
+            this.ColMenuDelete.MinimumWidth = 6;
+            this.ColMenuDelete.Name = "ColMenuDelete";
+            this.ColMenuDelete.Text = "Delete";
+            this.ColMenuDelete.UseColumnTextForButtonValue = true;
+            this.ColMenuDelete.Width = 115;
             // 
             // MainManageMenu
             // 
@@ -344,6 +346,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuCategory;
         private System.Windows.Forms.DataGridViewButtonColumn ColMenuEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn ActionMenuDelete;
+        private System.Windows.Forms.DataGridViewButtonColumn ColMenuDelete;
     }
 }

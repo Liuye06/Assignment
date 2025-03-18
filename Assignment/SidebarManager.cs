@@ -18,7 +18,7 @@ namespace Assignment
 
         public void NavigateTo(Form newForm)
         {
-            if (_currentForm != null)
+            if (_currentForm != null && !_currentForm.IsDisposed)
             {
                 _currentForm.Hide(); // Hide the current form instead of closing it
             }

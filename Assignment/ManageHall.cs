@@ -39,7 +39,7 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT HallName, Capacity, Price_P_D FROM Hall";
+                    string query = "SELECT Hall_Name, Capacity, Price_P_Day FROM Hall";
 
                     SqlDataAdapter da = new SqlDataAdapter(query, conn);
                     DataTable dt = new DataTable();
@@ -74,7 +74,7 @@ namespace Assignment
 
             if (!string.IsNullOrEmpty(searchText))
             {
-                bindingSource.Filter = $"HallName LIKE '%{searchText}%'"; // 🔹 Apply filter
+                bindingSource.Filter = $"Hall_Name LIKE '%{searchText}%'"; // 🔹 Apply filter
             }
             else
             {
