@@ -32,30 +32,69 @@ namespace Assignment
 
         private void LoadHallData()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            DataTable dt = HallManager.LoadHallData();
+            if (dt != null)
             {
-                try
+                bindingSource.DataSource = dt;
+                dgvHall.AutoGenerateColumns = false;
+                dgvHall.DataSource = bindingSource;
+            }
+        }
+
+
+        private void dgvHall_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Ensure valid cell
+            {
+                string columnName = dgvHall.Columns[e.ColumnIndex].Name; // Get clicked column name
+
+                if (columnName == "ColHallEdit")
                 {
-                    conn.Open();
-                    string query = "SELECT Hall_Name, Capacity, Price_P_Day FROM Hall";
-
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    bindingSource.DataSource = dt;
-                    dgvHall.AutoGenerateColumns = false;
-                    dgvHall.DataSource = bindingSource;
+                    // 📝 Edit Button Clicked
+                    string hallName = dgvHall.Rows[e.RowIndex].Cells["ColHallName"].Value.ToString();
+                    EditHallName(hallName);
                 }
-                catch (Exception ex)
+                else if (columnName == "ColHallDelete")
                 {
-                    MessageBox.Show("Error loading data: " + ex.Message);
+                    // ❌ Delete Button Clicked
+                    string hallName = dgvHall.Rows[e.RowIndex].Cells["ColHallName"].Value.ToString();
+                    DeleteHallName(hallName);
                 }
             }
         }
 
+
+        private void EditHallName(string hallName)
+        {
+            // Ensure the SidebarManager is passed
+            SidebarManager sidebarManager = new SidebarManager(this);
+            EditHallData editForm = new EditHallData(hallName, sidebarManager);
+
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadHallData(); // Refresh menu items after editing
+            }
+        }
+
+
+        private void DeleteHallName(string hallName)
+        {
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete {hallName}?",
+                                                  "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                if (HallManager.DeleteHallData(hallName)) // Call new method from MenuManager
+                {
+                    MessageBox.Show("Hall data deleted successfully!");
+                    LoadHallData(); // Refresh DataGridView
+                }
+                else
+                {
+                    MessageBox.Show("Error: Hall data not found or could not be deleted.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         private void btnAddNewHall_Click(object sender, EventArgs e)
         {
@@ -109,6 +148,5 @@ namespace Assignment
         {
             _sidebarManager.NavigateTo(new ManagerUpdateProfile());
         }
-
     }
 }

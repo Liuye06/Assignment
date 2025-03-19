@@ -61,12 +61,20 @@
     <Compile Include="AddNewMenuItem.Designer.cs">
       <DependentUpon>AddNewMenuItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditHallData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditHallData.Designer.cs">
+      <DependentUpon>EditHallData.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditMenuItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditMenuItemForm.Designer.cs">
       <DependentUpon>EditMenuItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HallManager.cs" />
+    <Compile Include="ImageManager.cs" />
     <Compile Include="MainHallResvReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +99,7 @@
     <Compile Include="ManagerUpdateProfile.Designer.cs">
       <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuManager.cs" />
     <Compile Include="Picture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewMenuItem.resx">
       <DependentUpon>AddNewMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditHallData.resx">
+      <DependentUpon>EditHallData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditMenuItemForm.resx">
       <DependentUpon>EditMenuItemForm.cs</DependentUpon>

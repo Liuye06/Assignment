@@ -22,29 +22,17 @@ namespace Assignment
             _sidebarManager = new SidebarManager(this);
         }
 
-        private void btnBrowseImageHall_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                picAddNewHall.Image = Image.FromFile(openFileDialog.FileName);
-            }
-        }
-
         private void btnAddNewHall_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtHallName.Text) ||
             string.IsNullOrWhiteSpace(txtCapacity.Text) ||
-            string.IsNullOrWhiteSpace(txtPriceHall.Text) ||
-            picAddNewHall.Image == null)
+            string.IsNullOrWhiteSpace(txtPriceHall.Text))
                 {
                     MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-            if (!decimal.TryParse(txtCapacity.Text, out decimal capacity))
+            if (!int.TryParse(txtCapacity.Text, out int capacity))
             {
                 MessageBox.Show("Invalid capacity format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -56,31 +44,17 @@ namespace Assignment
                 return;
             }
 
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+            bool success = HallManager.AddHallData(txtHallName.Text, capacity, price);
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (success)
             {
-                try
-                {
-                    conn.Open();
-                    string query = "INSERT INTO Hall (Hall_Name, Capacity, Price_P_Day) VALUES (@Hall_Name, @Capacity, @Price_P_Day)";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Hall_Name", txtHallName.Text);
-                        cmd.Parameters.AddWithValue("@Capacity", capacity);
-                        cmd.Parameters.AddWithValue("@Price_P_Day", price);
-
-                        cmd.ExecuteNonQuery(); // 🔹 Insert into database
-                    }
-
-                    MessageBox.Show("Menu item added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error adding menu item: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                MessageBox.Show("Hall data added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error adding hall data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             this.DialogResult = DialogResult.OK;

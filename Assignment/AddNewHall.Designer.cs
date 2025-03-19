@@ -34,19 +34,16 @@
             this.btnHRReport_AddNewHall = new System.Windows.Forms.Button();
             this.btnUProfile_AddNewHall = new System.Windows.Forms.Button();
             this.gbAddNewHall = new System.Windows.Forms.GroupBox();
-            this.btnBrowseImageHall = new System.Windows.Forms.Button();
             this.btnCancelHall = new System.Windows.Forms.Button();
             this.txtPriceHall = new System.Windows.Forms.TextBox();
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.lblPriceHall = new System.Windows.Forms.Label();
             this.lblCapacity = new System.Windows.Forms.Label();
-            this.picAddNewHall = new System.Windows.Forms.PictureBox();
             this.btnAddNewHall = new System.Windows.Forms.Button();
             this.lblAddHall = new System.Windows.Forms.Label();
             this.txtHallName = new System.Windows.Forms.TextBox();
             this.tableSidebar_AddHall.SuspendLayout();
             this.gbAddNewHall.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddNewHall)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_AddHall
@@ -120,13 +117,11 @@
             // 
             // gbAddNewHall
             // 
-            this.gbAddNewHall.Controls.Add(this.btnBrowseImageHall);
             this.gbAddNewHall.Controls.Add(this.btnCancelHall);
             this.gbAddNewHall.Controls.Add(this.txtPriceHall);
             this.gbAddNewHall.Controls.Add(this.txtCapacity);
             this.gbAddNewHall.Controls.Add(this.lblPriceHall);
             this.gbAddNewHall.Controls.Add(this.lblCapacity);
-            this.gbAddNewHall.Controls.Add(this.picAddNewHall);
             this.gbAddNewHall.Controls.Add(this.btnAddNewHall);
             this.gbAddNewHall.Controls.Add(this.lblAddHall);
             this.gbAddNewHall.Controls.Add(this.txtHallName);
@@ -136,16 +131,6 @@
             this.gbAddNewHall.TabIndex = 1;
             this.gbAddNewHall.TabStop = false;
             this.gbAddNewHall.Text = "Add New Hall";
-            // 
-            // btnBrowseImageHall
-            // 
-            this.btnBrowseImageHall.Location = new System.Drawing.Point(571, 276);
-            this.btnBrowseImageHall.Name = "btnBrowseImageHall";
-            this.btnBrowseImageHall.Size = new System.Drawing.Size(219, 34);
-            this.btnBrowseImageHall.TabIndex = 10;
-            this.btnBrowseImageHall.Text = "Browse Image";
-            this.btnBrowseImageHall.UseVisualStyleBackColor = true;
-            this.btnBrowseImageHall.Click += new System.EventHandler(this.btnBrowseImageHall_Click);
             // 
             // btnCancelHall
             // 
@@ -189,15 +174,6 @@
             this.lblCapacity.TabIndex = 5;
             this.lblCapacity.Text = "Capacity";
             // 
-            // picAddNewHall
-            // 
-            this.picAddNewHall.Location = new System.Drawing.Point(571, 45);
-            this.picAddNewHall.Name = "picAddNewHall";
-            this.picAddNewHall.Size = new System.Drawing.Size(219, 210);
-            this.picAddNewHall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAddNewHall.TabIndex = 4;
-            this.picAddNewHall.TabStop = false;
-            // 
             // btnAddNewHall
             // 
             this.btnAddNewHall.Location = new System.Drawing.Point(45, 316);
@@ -236,7 +212,6 @@
             this.tableSidebar_AddHall.ResumeLayout(false);
             this.gbAddNewHall.ResumeLayout(false);
             this.gbAddNewHall.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAddNewHall)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,12 +227,10 @@
         private System.Windows.Forms.Label lblAddHall;
         private System.Windows.Forms.TextBox txtHallName;
         private System.Windows.Forms.Button btnAddNewHall;
-        private System.Windows.Forms.PictureBox picAddNewHall;
         private System.Windows.Forms.TextBox txtPriceHall;
         private System.Windows.Forms.TextBox txtCapacity;
         private System.Windows.Forms.Label lblPriceHall;
         private System.Windows.Forms.Label lblCapacity;
         private System.Windows.Forms.Button btnCancelHall;
-        private System.Windows.Forms.Button btnBrowseImageHall;
     }
 }

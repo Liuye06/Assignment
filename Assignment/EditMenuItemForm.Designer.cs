@@ -185,7 +185,7 @@
             this.cmbEditCategoryMenu.Items.AddRange(new object[] {
             "Appetizer",
             "Main Dish",
-            "Side Dish",
+            "Side ",
             "Beverage",
             "Dessert"});
             this.cmbEditCategoryMenu.Location = new System.Drawing.Point(207, 222);

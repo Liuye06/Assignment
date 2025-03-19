@@ -35,6 +35,12 @@
             this.gbMMenu = new System.Windows.Forms.GroupBox();
             this.btnResetMMenu = new System.Windows.Forms.Button();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
+            this.ColMenuItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColMenuPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMenuCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMenuEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColMenuDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.lblMenu = new System.Windows.Forms.Label();
@@ -44,12 +50,6 @@
             this.btnMHall_MMenu = new System.Windows.Forms.Button();
             this.btn_HRReport_MMenu = new System.Windows.Forms.Button();
             this.btnUProfile_MMenu = new System.Windows.Forms.Button();
-            this.ColMenuItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColMenuPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMenuCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMenuEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ColMenuDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.gbMMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.tableSidebar_MMenu.SuspendLayout();
@@ -141,6 +141,60 @@
             this.dgvMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellContentClick);
             this.dgvMenu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMenu_CellFormatting);
             // 
+            // ColMenuItem
+            // 
+            this.ColMenuItem.DataPropertyName = "Item";
+            this.ColMenuItem.HeaderText = "Menu Item";
+            this.ColMenuItem.MinimumWidth = 6;
+            this.ColMenuItem.Name = "ColMenuItem";
+            this.ColMenuItem.Width = 140;
+            // 
+            // colMenuImage
+            // 
+            this.colMenuImage.DataPropertyName = "Image";
+            this.colMenuImage.HeaderText = "Image";
+            this.colMenuImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.colMenuImage.MinimumWidth = 6;
+            this.colMenuImage.Name = "colMenuImage";
+            this.colMenuImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colMenuImage.Width = 125;
+            // 
+            // ColMenuPrice
+            // 
+            this.ColMenuPrice.DataPropertyName = "Price";
+            this.ColMenuPrice.HeaderText = "Price";
+            this.ColMenuPrice.MinimumWidth = 6;
+            this.ColMenuPrice.Name = "ColMenuPrice";
+            this.ColMenuPrice.Width = 110;
+            // 
+            // ColMenuCategory
+            // 
+            this.ColMenuCategory.DataPropertyName = "Category";
+            this.ColMenuCategory.HeaderText = "Category";
+            this.ColMenuCategory.MinimumWidth = 6;
+            this.ColMenuCategory.Name = "ColMenuCategory";
+            this.ColMenuCategory.Width = 125;
+            // 
+            // ColMenuEdit
+            // 
+            this.ColMenuEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColMenuEdit.DataPropertyName = "Edit";
+            this.ColMenuEdit.HeaderText = "Action";
+            this.ColMenuEdit.MinimumWidth = 6;
+            this.ColMenuEdit.Name = "ColMenuEdit";
+            this.ColMenuEdit.Text = "Edit";
+            this.ColMenuEdit.UseColumnTextForButtonValue = true;
+            this.ColMenuEdit.Width = 105;
+            // 
+            // ColMenuDelete
+            // 
+            this.ColMenuDelete.HeaderText = "Action";
+            this.ColMenuDelete.MinimumWidth = 6;
+            this.ColMenuDelete.Name = "ColMenuDelete";
+            this.ColMenuDelete.Text = "Delete";
+            this.ColMenuDelete.UseColumnTextForButtonValue = true;
+            this.ColMenuDelete.Width = 115;
+            // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
@@ -156,7 +210,7 @@
             this.cmbCategory.Items.AddRange(new object[] {
             "Appetizer",
             "Main Dish",
-            "Side Dish",
+            "Side ",
             "Beverage",
             "Dessert"});
             this.cmbCategory.Location = new System.Drawing.Point(621, 41);
@@ -252,60 +306,6 @@
             this.btnUProfile_MMenu.Text = "Update Profile";
             this.btnUProfile_MMenu.UseVisualStyleBackColor = true;
             this.btnUProfile_MMenu.Click += new System.EventHandler(this.btnUProfile_MMenu_Click);
-            // 
-            // ColMenuItem
-            // 
-            this.ColMenuItem.DataPropertyName = "Item";
-            this.ColMenuItem.HeaderText = "Menu Item";
-            this.ColMenuItem.MinimumWidth = 6;
-            this.ColMenuItem.Name = "ColMenuItem";
-            this.ColMenuItem.Width = 140;
-            // 
-            // colMenuImage
-            // 
-            this.colMenuImage.DataPropertyName = "Image";
-            this.colMenuImage.HeaderText = "Image";
-            this.colMenuImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.colMenuImage.MinimumWidth = 6;
-            this.colMenuImage.Name = "colMenuImage";
-            this.colMenuImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMenuImage.Width = 125;
-            // 
-            // ColMenuPrice
-            // 
-            this.ColMenuPrice.DataPropertyName = "Price";
-            this.ColMenuPrice.HeaderText = "Price";
-            this.ColMenuPrice.MinimumWidth = 6;
-            this.ColMenuPrice.Name = "ColMenuPrice";
-            this.ColMenuPrice.Width = 110;
-            // 
-            // ColMenuCategory
-            // 
-            this.ColMenuCategory.DataPropertyName = "Category";
-            this.ColMenuCategory.HeaderText = "Category";
-            this.ColMenuCategory.MinimumWidth = 6;
-            this.ColMenuCategory.Name = "ColMenuCategory";
-            this.ColMenuCategory.Width = 125;
-            // 
-            // ColMenuEdit
-            // 
-            this.ColMenuEdit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColMenuEdit.DataPropertyName = "Edit";
-            this.ColMenuEdit.HeaderText = "Action";
-            this.ColMenuEdit.MinimumWidth = 6;
-            this.ColMenuEdit.Name = "ColMenuEdit";
-            this.ColMenuEdit.Text = "Edit";
-            this.ColMenuEdit.UseColumnTextForButtonValue = true;
-            this.ColMenuEdit.Width = 105;
-            // 
-            // ColMenuDelete
-            // 
-            this.ColMenuDelete.HeaderText = "Action";
-            this.ColMenuDelete.MinimumWidth = 6;
-            this.ColMenuDelete.Name = "ColMenuDelete";
-            this.ColMenuDelete.Text = "Delete";
-            this.ColMenuDelete.UseColumnTextForButtonValue = true;
-            this.ColMenuDelete.Width = 115;
             // 
             // MainManageMenu
             // 

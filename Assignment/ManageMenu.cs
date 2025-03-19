@@ -36,40 +36,24 @@ namespace Assignment
 
         private void LoadMenuData()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            DataTable dt = MenuManager.LoadMenuData();
+            if (dt != null)
             {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT Item, Image, Price, Category FROM Menu";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-
-                        // Bind data to the DataGridView
-                        bindingSource.DataSource = dt;
-                        dgvMenu.AutoGenerateColumns = false;
-                        dgvMenu.DataSource = bindingSource;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading data: " + ex.Message);
-                }
+                bindingSource.DataSource = dt;
+                dgvMenu.AutoGenerateColumns = false;
+                dgvMenu.DataSource = bindingSource;
             }
         }
 
 
-        private Image ByteArrayToImage(byte[] byteArrayIn)
+        private void dgvMenu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            if (dgvMenu.Columns[e.ColumnIndex].Name == "colMenuImage")  // Ensure this matches your Image column name
             {
-                return Image.FromStream(ms);
+                if (e.Value != null && e.Value is byte[] byteArray)
+                {
+                    e.Value = ImageManager.ByteArrayToImage(byteArray);
+                }
             }
         }
 
@@ -165,28 +149,14 @@ namespace Assignment
 
             if (result == DialogResult.Yes)
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
-
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                if (MenuManager.DeleteMenuItem(menuItem)) // Call new method from MenuManager
                 {
-                    try
-                    {
-                        conn.Open();
-                        string query = "DELETE FROM Menu WHERE Item = @MenuItem";
-
-                        using (SqlCommand cmd = new SqlCommand(query, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@MenuItem", menuItem);
-                            cmd.ExecuteNonQuery();
-                        }
-
-                        MessageBox.Show("Menu item deleted successfully!");
-                        LoadMenuData(); // Refresh DataGridView
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error deleting item: " + ex.Message);
-                    }
+                    MessageBox.Show("Menu item deleted successfully!");
+                    LoadMenuData(); // Refresh DataGridView
+                }
+                else
+                {
+                    MessageBox.Show("Error: Menu item not found or could not be deleted.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -210,17 +180,6 @@ namespace Assignment
         private void btnUProfile_MMenu_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ManagerUpdateProfile());
-        }
-
-        private void dgvMenu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (dgvMenu.Columns[e.ColumnIndex].Name == "colMenuImage")  // Ensure this matches your Image column name
-            {
-                if (e.Value != null && e.Value is byte[] byteArray)
-                {
-                    e.Value = ByteArrayToImage(byteArray);
-                }
-            }
         }
     }
 }

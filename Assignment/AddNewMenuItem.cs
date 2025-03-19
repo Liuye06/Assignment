@@ -53,47 +53,19 @@ namespace Assignment
                 return;
             }
 
-            byte[] imageData = ImageToByteArray(picAddMenu.Image); // Convert image
+            byte[] imageData = ImageManager.ImageToByteArray(picAddMenu.Image); // Convert image
 
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+            bool success = MenuManager.AddMenuItem(txtAddMenu.Text, imageData, price, cmbCategoryMenu.SelectedItem.ToString());
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (success)
             {
-                try
-                {
-                    conn.Open();
-                    string query = "INSERT INTO Menu (Item, Image, Price, Category) VALUES (@Item, @Image, @Price, @Category)";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Item", txtAddMenu.Text);
-                        cmd.Parameters.AddWithValue("@Image", imageData);
-                        cmd.Parameters.AddWithValue("@Price", price);
-                        cmd.Parameters.AddWithValue("@Category", cmbCategoryMenu.SelectedItem.ToString());
-
-                        cmd.ExecuteNonQuery(); // 🔹 Insert into database
-                    }
-
-                    MessageBox.Show("Menu item added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error adding menu item: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                MessageBox.Show("Menu item added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-
-        private byte[] ImageToByteArray(Image image)
-        {
-            using (MemoryStream ms = new MemoryStream())
+            else
             {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png); // Save as PNG (or use JPEG)
-                return ms.ToArray();
+                MessageBox.Show("Error adding menu item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

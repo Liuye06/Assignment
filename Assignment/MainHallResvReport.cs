@@ -39,5 +39,10 @@ namespace Assignment
         {
             _sidebarManager.NavigateTo(new ManagerUpdateProfile());
         }
+
+        private void btnSearchReport_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

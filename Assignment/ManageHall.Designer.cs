@@ -41,7 +41,6 @@
             this.txtHall = new System.Windows.Forms.TextBox();
             this.lblHall = new System.Windows.Forms.Label();
             this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHallImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHallEdit = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -157,7 +156,6 @@
             this.dgvHall.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHall.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColHallName,
-            this.ColHallImage,
             this.ColCapacity,
             this.ColPrice,
             this.ColHallEdit,
@@ -168,6 +166,7 @@
             this.dgvHall.RowTemplate.Height = 24;
             this.dgvHall.Size = new System.Drawing.Size(785, 216);
             this.dgvHall.TabIndex = 3;
+            this.dgvHall.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHall_CellContentClick);
             // 
             // btnSearchHall
             // 
@@ -201,14 +200,7 @@
             this.ColHallName.HeaderText = "Hall Name";
             this.ColHallName.MinimumWidth = 6;
             this.ColHallName.Name = "ColHallName";
-            this.ColHallName.Width = 135;
-            // 
-            // ColHallImage
-            // 
-            this.ColHallImage.HeaderText = "Image";
-            this.ColHallImage.MinimumWidth = 6;
-            this.ColHallImage.Name = "ColHallImage";
-            this.ColHallImage.Width = 125;
+            this.ColHallName.Width = 160;
             // 
             // ColCapacity
             // 
@@ -216,7 +208,7 @@
             this.ColCapacity.HeaderText = "Capacity";
             this.ColCapacity.MinimumWidth = 6;
             this.ColCapacity.Name = "ColCapacity";
-            this.ColCapacity.Width = 125;
+            this.ColCapacity.Width = 160;
             // 
             // ColPrice
             // 
@@ -224,7 +216,7 @@
             this.ColPrice.HeaderText = "Price";
             this.ColPrice.MinimumWidth = 6;
             this.ColPrice.Name = "ColPrice";
-            this.ColPrice.Width = 115;
+            this.ColPrice.Width = 150;
             // 
             // ColHallEdit
             // 
@@ -232,7 +224,9 @@
             this.ColHallEdit.HeaderText = "Action";
             this.ColHallEdit.MinimumWidth = 6;
             this.ColHallEdit.Name = "ColHallEdit";
-            this.ColHallEdit.Width = 115;
+            this.ColHallEdit.Text = "Edit";
+            this.ColHallEdit.UseColumnTextForButtonValue = true;
+            this.ColHallEdit.Width = 130;
             // 
             // ColHallDelete
             // 
@@ -240,7 +234,9 @@
             this.ColHallDelete.HeaderText = "Action";
             this.ColHallDelete.MinimumWidth = 6;
             this.ColHallDelete.Name = "ColHallDelete";
-            this.ColHallDelete.Width = 115;
+            this.ColHallDelete.Text = "Delete";
+            this.ColHallDelete.UseColumnTextForButtonValue = true;
+            this.ColHallDelete.Width = 130;
             // 
             // MainManageHall
             // 
@@ -275,7 +271,6 @@
         private System.Windows.Forms.Button btnAddNewHall;
         private System.Windows.Forms.Button btnResetHallSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColHallName;
-        private System.Windows.Forms.DataGridViewImageColumn ColHallImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCapacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrice;
         private System.Windows.Forms.DataGridViewButtonColumn ColHallEdit;
