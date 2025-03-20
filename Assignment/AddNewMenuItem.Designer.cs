@@ -170,7 +170,7 @@
             this.btnUProfile_AddMenu.Name = "btnUProfile_AddMenu";
             this.btnUProfile_AddMenu.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_AddMenu.TabIndex = 3;
-            this.btnUProfile_AddMenu.Text = "Update Profile";
+            this.btnUProfile_AddMenu.Text = "Manager Profile";
             this.btnUProfile_AddMenu.UseVisualStyleBackColor = true;
             this.btnUProfile_AddMenu.Click += new System.EventHandler(this.btnUProfile_AddMenu_Click);
             // 

@@ -37,7 +37,7 @@ namespace Assignment
 
         private void btnUProfile_HRReport_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerUpdateProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile());
         }
 
         private void btnSearchReport_Click(object sender, EventArgs e)

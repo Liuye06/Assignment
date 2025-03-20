@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbEditHall = new System.Windows.Forms.GroupBox();
+            this.txtEditPriceHall = new System.Windows.Forms.TextBox();
             this.btnCancelEditHall = new System.Windows.Forms.Button();
             this.btnSaveHallName = new System.Windows.Forms.Button();
             this.txtEditCapacityHall = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.btnMHall_EditHall = new System.Windows.Forms.Button();
             this.btnHRReport_EditHall = new System.Windows.Forms.Button();
             this.btnUProfile_EditHall = new System.Windows.Forms.Button();
-            this.txtEditPriceHall = new System.Windows.Forms.TextBox();
             this.gbEditHall.SuspendLayout();
             this.tableSidebar_EditHall.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,13 @@
             this.gbEditHall.TabIndex = 6;
             this.gbEditHall.TabStop = false;
             this.gbEditHall.Text = "Edit Hall Name";
+            // 
+            // txtEditPriceHall
+            // 
+            this.txtEditPriceHall.Location = new System.Drawing.Point(207, 222);
+            this.txtEditPriceHall.Name = "txtEditPriceHall";
+            this.txtEditPriceHall.Size = new System.Drawing.Size(301, 30);
+            this.txtEditPriceHall.TabIndex = 10;
             // 
             // btnCancelEditHall
             // 
@@ -192,16 +199,9 @@
             this.btnUProfile_EditHall.Name = "btnUProfile_EditHall";
             this.btnUProfile_EditHall.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_EditHall.TabIndex = 3;
-            this.btnUProfile_EditHall.Text = "Update Profile";
+            this.btnUProfile_EditHall.Text = "Manager Profile";
             this.btnUProfile_EditHall.UseVisualStyleBackColor = true;
             this.btnUProfile_EditHall.Click += new System.EventHandler(this.btnUProfile_EditHall_Click);
-            // 
-            // txtEditPriceHall
-            // 
-            this.txtEditPriceHall.Location = new System.Drawing.Point(207, 222);
-            this.txtEditPriceHall.Name = "txtEditPriceHall";
-            this.txtEditPriceHall.Size = new System.Drawing.Size(301, 30);
-            this.txtEditPriceHall.TabIndex = 10;
             // 
             // EditHallData
             // 

@@ -111,7 +111,7 @@
             this.btnUProfile_AddNewHall.Name = "btnUProfile_AddNewHall";
             this.btnUProfile_AddNewHall.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_AddNewHall.TabIndex = 4;
-            this.btnUProfile_AddNewHall.Text = "Update Profile";
+            this.btnUProfile_AddNewHall.Text = "Manager Profile";
             this.btnUProfile_AddNewHall.UseVisualStyleBackColor = true;
             this.btnUProfile_AddNewHall.Click += new System.EventHandler(this.btnUProfile_AddNewHall_Click);
             // 

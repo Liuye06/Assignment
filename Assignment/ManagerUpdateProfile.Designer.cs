@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class ManagerUpdateProfile
+    partial class ManagerProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -34,18 +34,24 @@
             this.btnHRReport_UProfile = new System.Windows.Forms.Button();
             this.btnUProfile_UProfile = new System.Windows.Forms.Button();
             this.gbMangerProfile = new System.Windows.Forms.GroupBox();
-            this.btnSaveManagerPasswordChanges = new System.Windows.Forms.Button();
-            this.txtConfirmMangerPassword = new System.Windows.Forms.TextBox();
-            this.txtNewManagerPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblNewManagerPassword = new System.Windows.Forms.Label();
-            this.lblChangeManagerPassword = new System.Windows.Forms.Label();
-            this.txtManagerEmail = new System.Windows.Forms.TextBox();
-            this.lblManaegerEmail = new System.Windows.Forms.Label();
+            this.txtManagerPassword = new System.Windows.Forms.TextBox();
+            this.txtManagerUsername = new System.Windows.Forms.TextBox();
+            this.lblManagerPassword = new System.Windows.Forms.Label();
+            this.lblManagerUsername = new System.Windows.Forms.Label();
+            this.lblManagerGender = new System.Windows.Forms.Label();
+            this.lblManagerDOB = new System.Windows.Forms.Label();
+            this.btnUpdateManagerProfile = new System.Windows.Forms.Button();
+            this.txtMangerEmail = new System.Windows.Forms.TextBox();
             this.txtManagerName = new System.Windows.Forms.TextBox();
+            this.lblManagerProfilePic = new System.Windows.Forms.Label();
+            this.lblManagerEmail = new System.Windows.Forms.Label();
             this.lblManagerName = new System.Windows.Forms.Label();
+            this.picManagerProfilePic = new System.Windows.Forms.PictureBox();
+            this.cmbManagerGender = new System.Windows.Forms.ComboBox();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.tableSidebar_UProfile.SuspendLayout();
             this.gbMangerProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picManagerProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_UProfile
@@ -112,125 +118,176 @@
             this.btnUProfile_UProfile.Name = "btnUProfile_UProfile";
             this.btnUProfile_UProfile.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_UProfile.TabIndex = 3;
-            this.btnUProfile_UProfile.Text = "Update Profile";
+            this.btnUProfile_UProfile.Text = "Manager Profile";
             this.btnUProfile_UProfile.UseVisualStyleBackColor = true;
             this.btnUProfile_UProfile.Click += new System.EventHandler(this.btnUProfile_UProfile_Click);
             // 
             // gbMangerProfile
             // 
-            this.gbMangerProfile.Controls.Add(this.btnSaveManagerPasswordChanges);
-            this.gbMangerProfile.Controls.Add(this.txtConfirmMangerPassword);
-            this.gbMangerProfile.Controls.Add(this.txtNewManagerPassword);
-            this.gbMangerProfile.Controls.Add(this.label1);
-            this.gbMangerProfile.Controls.Add(this.lblNewManagerPassword);
-            this.gbMangerProfile.Controls.Add(this.lblChangeManagerPassword);
-            this.gbMangerProfile.Controls.Add(this.txtManagerEmail);
-            this.gbMangerProfile.Controls.Add(this.lblManaegerEmail);
+            this.gbMangerProfile.Controls.Add(this.dtpDOB);
+            this.gbMangerProfile.Controls.Add(this.cmbManagerGender);
+            this.gbMangerProfile.Controls.Add(this.picManagerProfilePic);
+            this.gbMangerProfile.Controls.Add(this.txtManagerPassword);
+            this.gbMangerProfile.Controls.Add(this.txtManagerUsername);
+            this.gbMangerProfile.Controls.Add(this.lblManagerPassword);
+            this.gbMangerProfile.Controls.Add(this.lblManagerUsername);
+            this.gbMangerProfile.Controls.Add(this.lblManagerGender);
+            this.gbMangerProfile.Controls.Add(this.lblManagerDOB);
+            this.gbMangerProfile.Controls.Add(this.btnUpdateManagerProfile);
+            this.gbMangerProfile.Controls.Add(this.txtMangerEmail);
             this.gbMangerProfile.Controls.Add(this.txtManagerName);
+            this.gbMangerProfile.Controls.Add(this.lblManagerProfilePic);
+            this.gbMangerProfile.Controls.Add(this.lblManagerEmail);
             this.gbMangerProfile.Controls.Add(this.lblManagerName);
             this.gbMangerProfile.Location = new System.Drawing.Point(218, 72);
             this.gbMangerProfile.Name = "gbMangerProfile";
-            this.gbMangerProfile.Size = new System.Drawing.Size(752, 369);
+            this.gbMangerProfile.Size = new System.Drawing.Size(852, 369);
             this.gbMangerProfile.TabIndex = 1;
             this.gbMangerProfile.TabStop = false;
             this.gbMangerProfile.Text = "Manager Profile";
             // 
-            // btnSaveManagerPasswordChanges
+            // txtManagerPassword
             // 
-            this.btnSaveManagerPasswordChanges.Location = new System.Drawing.Point(45, 307);
-            this.btnSaveManagerPasswordChanges.Name = "btnSaveManagerPasswordChanges";
-            this.btnSaveManagerPasswordChanges.Size = new System.Drawing.Size(153, 35);
-            this.btnSaveManagerPasswordChanges.TabIndex = 9;
-            this.btnSaveManagerPasswordChanges.Text = "Save Changes";
-            this.btnSaveManagerPasswordChanges.UseVisualStyleBackColor = true;
+            this.txtManagerPassword.Location = new System.Drawing.Point(161, 92);
+            this.txtManagerPassword.Name = "txtManagerPassword";
+            this.txtManagerPassword.Size = new System.Drawing.Size(271, 30);
+            this.txtManagerPassword.TabIndex = 17;
             // 
-            // txtConfirmMangerPassword
+            // txtManagerUsername
             // 
-            this.txtConfirmMangerPassword.Location = new System.Drawing.Point(235, 236);
-            this.txtConfirmMangerPassword.Name = "txtConfirmMangerPassword";
-            this.txtConfirmMangerPassword.Size = new System.Drawing.Size(203, 30);
-            this.txtConfirmMangerPassword.TabIndex = 8;
+            this.txtManagerUsername.Location = new System.Drawing.Point(161, 38);
+            this.txtManagerUsername.Name = "txtManagerUsername";
+            this.txtManagerUsername.Size = new System.Drawing.Size(271, 30);
+            this.txtManagerUsername.TabIndex = 16;
             // 
-            // txtNewManagerPassword
+            // lblManagerPassword
             // 
-            this.txtNewManagerPassword.Location = new System.Drawing.Point(235, 196);
-            this.txtNewManagerPassword.Name = "txtNewManagerPassword";
-            this.txtNewManagerPassword.Size = new System.Drawing.Size(203, 30);
-            this.txtNewManagerPassword.TabIndex = 7;
+            this.lblManagerPassword.AutoSize = true;
+            this.lblManagerPassword.Location = new System.Drawing.Point(37, 95);
+            this.lblManagerPassword.Name = "lblManagerPassword";
+            this.lblManagerPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblManagerPassword.TabIndex = 15;
+            this.lblManagerPassword.Text = "Password";
             // 
-            // label1
+            // lblManagerUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Confirm Password";
+            this.lblManagerUsername.AutoSize = true;
+            this.lblManagerUsername.Location = new System.Drawing.Point(37, 41);
+            this.lblManagerUsername.Name = "lblManagerUsername";
+            this.lblManagerUsername.Size = new System.Drawing.Size(102, 25);
+            this.lblManagerUsername.TabIndex = 14;
+            this.lblManagerUsername.Text = "Username";
             // 
-            // lblNewManagerPassword
+            // lblManagerGender
             // 
-            this.lblNewManagerPassword.AutoSize = true;
-            this.lblNewManagerPassword.Location = new System.Drawing.Point(40, 199);
-            this.lblNewManagerPassword.Name = "lblNewManagerPassword";
-            this.lblNewManagerPassword.Size = new System.Drawing.Size(142, 25);
-            this.lblNewManagerPassword.TabIndex = 5;
-            this.lblNewManagerPassword.Text = "New Password";
+            this.lblManagerGender.AutoSize = true;
+            this.lblManagerGender.Location = new System.Drawing.Point(37, 310);
+            this.lblManagerGender.Name = "lblManagerGender";
+            this.lblManagerGender.Size = new System.Drawing.Size(77, 25);
+            this.lblManagerGender.TabIndex = 11;
+            this.lblManagerGender.Text = "Gender";
             // 
-            // lblChangeManagerPassword
+            // lblManagerDOB
             // 
-            this.lblChangeManagerPassword.AutoSize = true;
-            this.lblChangeManagerPassword.Location = new System.Drawing.Point(6, 154);
-            this.lblChangeManagerPassword.Name = "lblChangeManagerPassword";
-            this.lblChangeManagerPassword.Size = new System.Drawing.Size(173, 25);
-            this.lblChangeManagerPassword.TabIndex = 4;
-            this.lblChangeManagerPassword.Text = "Change Password";
+            this.lblManagerDOB.AutoSize = true;
+            this.lblManagerDOB.Location = new System.Drawing.Point(37, 261);
+            this.lblManagerDOB.Name = "lblManagerDOB";
+            this.lblManagerDOB.Size = new System.Drawing.Size(118, 25);
+            this.lblManagerDOB.TabIndex = 10;
+            this.lblManagerDOB.Text = "Date of Birth";
             // 
-            // txtManagerEmail
+            // btnUpdateManagerProfile
             // 
-            this.txtManagerEmail.Location = new System.Drawing.Point(110, 88);
-            this.txtManagerEmail.Name = "txtManagerEmail";
-            this.txtManagerEmail.ReadOnly = true;
-            this.txtManagerEmail.Size = new System.Drawing.Size(197, 30);
-            this.txtManagerEmail.TabIndex = 3;
+            this.btnUpdateManagerProfile.Location = new System.Drawing.Point(461, 307);
+            this.btnUpdateManagerProfile.Name = "btnUpdateManagerProfile";
+            this.btnUpdateManagerProfile.Size = new System.Drawing.Size(371, 35);
+            this.btnUpdateManagerProfile.TabIndex = 9;
+            this.btnUpdateManagerProfile.Text = "Update Profile";
+            this.btnUpdateManagerProfile.UseVisualStyleBackColor = true;
+            this.btnUpdateManagerProfile.Click += new System.EventHandler(this.btnUpdateManagerProfile_Click);
             // 
-            // lblManaegerEmail
+            // txtMangerEmail
             // 
-            this.lblManaegerEmail.AutoSize = true;
-            this.lblManaegerEmail.Location = new System.Drawing.Point(40, 88);
-            this.lblManaegerEmail.Name = "lblManaegerEmail";
-            this.lblManaegerEmail.Size = new System.Drawing.Size(60, 25);
-            this.lblManaegerEmail.TabIndex = 2;
-            this.lblManaegerEmail.Text = "Email";
+            this.txtMangerEmail.Location = new System.Drawing.Point(161, 201);
+            this.txtMangerEmail.Name = "txtMangerEmail";
+            this.txtMangerEmail.Size = new System.Drawing.Size(271, 30);
+            this.txtMangerEmail.TabIndex = 8;
             // 
             // txtManagerName
             // 
-            this.txtManagerName.Location = new System.Drawing.Point(110, 41);
+            this.txtManagerName.Location = new System.Drawing.Point(161, 147);
             this.txtManagerName.Name = "txtManagerName";
-            this.txtManagerName.ReadOnly = true;
-            this.txtManagerName.Size = new System.Drawing.Size(197, 30);
-            this.txtManagerName.TabIndex = 1;
+            this.txtManagerName.Size = new System.Drawing.Size(271, 30);
+            this.txtManagerName.TabIndex = 7;
+            // 
+            // lblManagerProfilePic
+            // 
+            this.lblManagerProfilePic.AutoSize = true;
+            this.lblManagerProfilePic.Location = new System.Drawing.Point(539, 43);
+            this.lblManagerProfilePic.Name = "lblManagerProfilePic";
+            this.lblManagerProfilePic.Size = new System.Drawing.Size(131, 25);
+            this.lblManagerProfilePic.TabIndex = 4;
+            this.lblManagerProfilePic.Text = "Profile Picture";
+            // 
+            // lblManagerEmail
+            // 
+            this.lblManagerEmail.AutoSize = true;
+            this.lblManagerEmail.Location = new System.Drawing.Point(37, 204);
+            this.lblManagerEmail.Name = "lblManagerEmail";
+            this.lblManagerEmail.Size = new System.Drawing.Size(60, 25);
+            this.lblManagerEmail.TabIndex = 2;
+            this.lblManagerEmail.Text = "Email";
             // 
             // lblManagerName
             // 
             this.lblManagerName.AutoSize = true;
-            this.lblManagerName.Location = new System.Drawing.Point(40, 44);
+            this.lblManagerName.Location = new System.Drawing.Point(37, 150);
             this.lblManagerName.Name = "lblManagerName";
             this.lblManagerName.Size = new System.Drawing.Size(64, 25);
             this.lblManagerName.TabIndex = 0;
             this.lblManagerName.Text = "Name";
             // 
-            // ManagerUpdateProfile
+            // picManagerProfilePic
+            // 
+            this.picManagerProfilePic.Location = new System.Drawing.Point(544, 76);
+            this.picManagerProfilePic.Name = "picManagerProfilePic";
+            this.picManagerProfilePic.Size = new System.Drawing.Size(219, 210);
+            this.picManagerProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picManagerProfilePic.TabIndex = 18;
+            this.picManagerProfilePic.TabStop = false;
+            // 
+            // cmbManagerGender
+            // 
+            this.cmbManagerGender.FormattingEnabled = true;
+            this.cmbManagerGender.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.cmbManagerGender.Location = new System.Drawing.Point(161, 309);
+            this.cmbManagerGender.Name = "cmbManagerGender";
+            this.cmbManagerGender.Size = new System.Drawing.Size(271, 33);
+            this.cmbManagerGender.TabIndex = 19;
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(161, 256);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(271, 30);
+            this.dtpDOB.TabIndex = 3;
+            // 
+            // ManagerProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(982, 453);
+            this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbMangerProfile);
             this.Controls.Add(this.tableSidebar_UProfile);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "ManagerUpdateProfile";
-            this.Text = "Update Profile";
+            this.Name = "ManagerProfile";
+            this.Text = "Manager Profile";
+            this.Load += new System.EventHandler(this.ManagerProfile_Load);
             this.tableSidebar_UProfile.ResumeLayout(false);
             this.gbMangerProfile.ResumeLayout(false);
             this.gbMangerProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picManagerProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,14 +301,19 @@
         private System.Windows.Forms.Button btnUProfile_UProfile;
         private System.Windows.Forms.GroupBox gbMangerProfile;
         private System.Windows.Forms.Label lblManagerName;
+        private System.Windows.Forms.Label lblManagerProfilePic;
+        private System.Windows.Forms.Label lblManagerEmail;
+        private System.Windows.Forms.TextBox txtMangerEmail;
         private System.Windows.Forms.TextBox txtManagerName;
-        private System.Windows.Forms.Label lblChangeManagerPassword;
-        private System.Windows.Forms.TextBox txtManagerEmail;
-        private System.Windows.Forms.Label lblManaegerEmail;
-        private System.Windows.Forms.TextBox txtConfirmMangerPassword;
-        private System.Windows.Forms.TextBox txtNewManagerPassword;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblNewManagerPassword;
-        private System.Windows.Forms.Button btnSaveManagerPasswordChanges;
+        private System.Windows.Forms.Button btnUpdateManagerProfile;
+        private System.Windows.Forms.Label lblManagerGender;
+        private System.Windows.Forms.Label lblManagerDOB;
+        private System.Windows.Forms.TextBox txtManagerPassword;
+        private System.Windows.Forms.TextBox txtManagerUsername;
+        private System.Windows.Forms.Label lblManagerPassword;
+        private System.Windows.Forms.Label lblManagerUsername;
+        private System.Windows.Forms.PictureBox picManagerProfilePic;
+        private System.Windows.Forms.ComboBox cmbManagerGender;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
     }
 }

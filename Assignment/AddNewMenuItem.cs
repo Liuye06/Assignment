@@ -87,7 +87,7 @@ namespace Assignment
 
         private void btnUProfile_AddMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerUpdateProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile());
         }
 
         private void btnCancelMenu_Click(object sender, EventArgs e)

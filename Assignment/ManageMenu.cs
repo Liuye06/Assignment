@@ -179,7 +179,7 @@ namespace Assignment
 
         private void btnUProfile_MMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerUpdateProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile());
         }
     }
 }

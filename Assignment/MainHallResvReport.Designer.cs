@@ -37,16 +37,16 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.dgvReport = new System.Windows.Forms.DataGridView();
-            this.btnSearchReport = new System.Windows.Forms.Button();
-            this.cmbResvType = new System.Windows.Forms.ComboBox();
-            this.lblResvType = new System.Windows.Forms.Label();
-            this.cmbMonth = new System.Windows.Forms.ComboBox();
-            this.lblMonth = new System.Windows.Forms.Label();
             this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColResvType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearchReport = new System.Windows.Forms.Button();
+            this.cmbResvType = new System.Windows.Forms.ComboBox();
+            this.lblResvType = new System.Windows.Forms.Label();
+            this.cmbMonth = new System.Windows.Forms.ComboBox();
+            this.lblMonth = new System.Windows.Forms.Label();
             this.tableSidebar_HRReport.SuspendLayout();
             this.gbHRReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
@@ -115,7 +115,7 @@
             this.btnUProfile_HRReport.Name = "btnUProfile_HRReport";
             this.btnUProfile_HRReport.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_HRReport.TabIndex = 3;
-            this.btnUProfile_HRReport.Text = "Update Profile";
+            this.btnUProfile_HRReport.Text = "Manager Profile";
             this.btnUProfile_HRReport.UseVisualStyleBackColor = true;
             this.btnUProfile_HRReport.Click += new System.EventHandler(this.btnUProfile_HRReport_Click);
             // 
@@ -169,6 +169,41 @@
             this.dgvReport.RowTemplate.Height = 24;
             this.dgvReport.Size = new System.Drawing.Size(781, 216);
             this.dgvReport.TabIndex = 5;
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Date";
+            this.ColDate.MinimumWidth = 6;
+            this.ColDate.Name = "ColDate";
+            this.ColDate.Width = 125;
+            // 
+            // ColCustomerName
+            // 
+            this.ColCustomerName.HeaderText = "Customer";
+            this.ColCustomerName.MinimumWidth = 6;
+            this.ColCustomerName.Name = "ColCustomerName";
+            this.ColCustomerName.Width = 180;
+            // 
+            // ColHallName
+            // 
+            this.ColHallName.HeaderText = "Hall Name";
+            this.ColHallName.MinimumWidth = 6;
+            this.ColHallName.Name = "ColHallName";
+            this.ColHallName.Width = 130;
+            // 
+            // ColResvType
+            // 
+            this.ColResvType.HeaderText = "Reservation Type";
+            this.ColResvType.MinimumWidth = 6;
+            this.ColResvType.Name = "ColResvType";
+            this.ColResvType.Width = 200;
+            // 
+            // ColStatus
+            // 
+            this.ColStatus.HeaderText = "Status";
+            this.ColStatus.MinimumWidth = 6;
+            this.ColStatus.Name = "ColStatus";
+            this.ColStatus.Width = 117;
             // 
             // btnSearchReport
             // 
@@ -226,40 +261,6 @@
             this.lblMonth.Size = new System.Drawing.Size(67, 25);
             this.lblMonth.TabIndex = 0;
             this.lblMonth.Text = "Month";
-            // 
-            // ColDate
-            // 
-            this.ColDate.HeaderText = "Date";
-            this.ColDate.MinimumWidth = 6;
-            this.ColDate.Name = "ColDate";
-            // 
-            // ColCustomerName
-            // 
-            this.ColCustomerName.HeaderText = "Customer";
-            this.ColCustomerName.MinimumWidth = 6;
-            this.ColCustomerName.Name = "ColCustomerName";
-            this.ColCustomerName.Width = 180;
-            // 
-            // ColHallName
-            // 
-            this.ColHallName.HeaderText = "Hall Name";
-            this.ColHallName.MinimumWidth = 6;
-            this.ColHallName.Name = "ColHallName";
-            this.ColHallName.Width = 130;
-            // 
-            // ColResvType
-            // 
-            this.ColResvType.HeaderText = "Reservation Type";
-            this.ColResvType.MinimumWidth = 6;
-            this.ColResvType.Name = "ColResvType";
-            this.ColResvType.Width = 200;
-            // 
-            // ColStatus
-            // 
-            this.ColStatus.HeaderText = "Status";
-            this.ColStatus.MinimumWidth = 6;
-            this.ColStatus.Name = "ColStatus";
-            this.ColStatus.Width = 117;
             // 
             // MainHallResvReport
             // 

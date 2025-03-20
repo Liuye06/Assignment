@@ -37,14 +37,14 @@
             this.btnResetHallSearch = new System.Windows.Forms.Button();
             this.btnAddNewHall = new System.Windows.Forms.Button();
             this.dgvHall = new System.Windows.Forms.DataGridView();
-            this.btnSearchHall = new System.Windows.Forms.Button();
-            this.txtHall = new System.Windows.Forms.TextBox();
-            this.lblHall = new System.Windows.Forms.Label();
             this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColHallEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColHallDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnSearchHall = new System.Windows.Forms.Button();
+            this.txtHall = new System.Windows.Forms.TextBox();
+            this.lblHall = new System.Windows.Forms.Label();
             this.tableSidebar_MHall.SuspendLayout();
             this.gbMHall.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).BeginInit();
@@ -114,7 +114,7 @@
             this.btnUProfile_MHall.Name = "btnUProfile_MHall";
             this.btnUProfile_MHall.Size = new System.Drawing.Size(194, 34);
             this.btnUProfile_MHall.TabIndex = 3;
-            this.btnUProfile_MHall.Text = "Update Profile";
+            this.btnUProfile_MHall.Text = "Manager Profile";
             this.btnUProfile_MHall.UseVisualStyleBackColor = true;
             this.btnUProfile_MHall.Click += new System.EventHandler(this.btnUProfile_MHall_Click);
             // 
@@ -168,32 +168,6 @@
             this.dgvHall.TabIndex = 3;
             this.dgvHall.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHall_CellContentClick);
             // 
-            // btnSearchHall
-            // 
-            this.btnSearchHall.Location = new System.Drawing.Point(416, 39);
-            this.btnSearchHall.Name = "btnSearchHall";
-            this.btnSearchHall.Size = new System.Drawing.Size(106, 35);
-            this.btnSearchHall.TabIndex = 2;
-            this.btnSearchHall.Text = "Search";
-            this.btnSearchHall.UseVisualStyleBackColor = true;
-            this.btnSearchHall.Click += new System.EventHandler(this.btnSearchHall_Click);
-            // 
-            // txtHall
-            // 
-            this.txtHall.Location = new System.Drawing.Point(148, 41);
-            this.txtHall.Name = "txtHall";
-            this.txtHall.Size = new System.Drawing.Size(262, 30);
-            this.txtHall.TabIndex = 1;
-            // 
-            // lblHall
-            // 
-            this.lblHall.AutoSize = true;
-            this.lblHall.Location = new System.Drawing.Point(40, 44);
-            this.lblHall.Name = "lblHall";
-            this.lblHall.Size = new System.Drawing.Size(102, 25);
-            this.lblHall.TabIndex = 0;
-            this.lblHall.Text = "Hall Name";
-            // 
             // ColHallName
             // 
             this.ColHallName.DataPropertyName = "Hall_Name";
@@ -237,6 +211,32 @@
             this.ColHallDelete.Text = "Delete";
             this.ColHallDelete.UseColumnTextForButtonValue = true;
             this.ColHallDelete.Width = 130;
+            // 
+            // btnSearchHall
+            // 
+            this.btnSearchHall.Location = new System.Drawing.Point(416, 39);
+            this.btnSearchHall.Name = "btnSearchHall";
+            this.btnSearchHall.Size = new System.Drawing.Size(106, 35);
+            this.btnSearchHall.TabIndex = 2;
+            this.btnSearchHall.Text = "Search";
+            this.btnSearchHall.UseVisualStyleBackColor = true;
+            this.btnSearchHall.Click += new System.EventHandler(this.btnSearchHall_Click);
+            // 
+            // txtHall
+            // 
+            this.txtHall.Location = new System.Drawing.Point(148, 41);
+            this.txtHall.Name = "txtHall";
+            this.txtHall.Size = new System.Drawing.Size(262, 30);
+            this.txtHall.TabIndex = 1;
+            // 
+            // lblHall
+            // 
+            this.lblHall.AutoSize = true;
+            this.lblHall.Location = new System.Drawing.Point(40, 44);
+            this.lblHall.Name = "lblHall";
+            this.lblHall.Size = new System.Drawing.Size(102, 25);
+            this.lblHall.TabIndex = 0;
+            this.lblHall.Text = "Hall Name";
             // 
             // MainManageHall
             // 
