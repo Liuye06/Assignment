@@ -19,16 +19,16 @@ namespace Assignment
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionString["myCS"].ToString());
             con.Open();
 
-            SqlCommand cmd = new SqlCommand("select count(*) from users where username=@a and password = @b", con);
-            cmd.Parameters.AddWithValue("@a", username);
-            cmd.Parameters.AddWithValue("@b", password);
+            SqlCommand cmd = new SqlCommand("select count(*) from User where username=@a and password = @b", con);
+            cmd.Parameters.AddWithValue("@a", Username);
+            cmd.Parameters.AddWithValue("@b", Password);
 
             int count = Convert.ToTnt32(cmd.ExecuteScalar());
             if (count > 0)
             {
-                SqlCommand cmd2 = new SqlCommand("select count(*) from users where username=@a and password = @b", con);
-                cmd2.Parameters.AddWithValue("@a", username);
-                cmd2.Parameters.AddWithValue("@b", password);
+                SqlCommand cmd2 = new SqlCommand("select count(*) from User where username=@a and password = @b", con);
+                cmd2.Parameters.AddWithValue("@a", Username);
+                cmd2.Parameters.AddWithValue("@b", Password);
 
                 string userRole = cmd2.ExecuteScalar().ToString();
 
