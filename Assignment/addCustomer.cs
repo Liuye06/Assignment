@@ -5,15 +5,19 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Assignment
 {
     public partial class addCustomer : Form
     {
+        public object Username { get; private set; }
+
         public addCustomer()
         {
             InitializeComponent();
@@ -51,11 +55,64 @@ namespace Assignment
                             MessageBox.Show("Registration Failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_CusDOB.Text = String.Empty;
+                    txt_CusGender.Text = String.Empty;
+                    txt_CusRole.Text = String.Empty;
+                    txt_CusPassword.Text = String.Empty;
+                    txt_CusName.Text = String.Empty;
+                    txt_CusEmail.Text = String.Empty;
+                    txt_CusUsername = String.Empty;
                 }
             }
-    }
-}
+        }
+
+
+
+        private void addCustomer_Load(object sender, EventArgs e, string v)
+        {
+            string connectionString = "your_connection_string_here";
+            string query = "SELECT Real_Name, DOB, Gender, Role, Email, Password FROM Users WHERE Username = @Username";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        // 这里的 username 来自 TextBox
+                        cmd.Parameters.AddWithValue("@Username", Username);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read()) // if find out the data
+                            {
+                                txt_CusName.Text = reader["Real_Name"].ToString();
+
+                                // process the date
+                                if (reader["DOB"] != DBNull.Value)
+                                {
+                                    txt_CusDOB.Text = Convert.ToDateTime(reader["DOB"]).ToShortDateString();
+                                }
+                                else
+                                {
+                                    txt_CusDOB.Text = "";
+                                }
+
+                                txt_CusGender.Text = reader["Gender"].ToString();
+                                txt_CusRole.Text = reader["Role"].ToString();
+                                txt_CusEmail.Text = reader["Email"].ToString();
+                                txt_CusPassword.Text = reader["Password"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("User not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+
+                    }           
+            }
+        }
+                
+    
+
