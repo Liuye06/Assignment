@@ -28,5 +28,17 @@ namespace Assignment
         {
 
         }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            update_Staff btn_UpStaff = new update_Staff();
+            btn_UpStaff.Show();
+        }
+
+        private void btn_UpCustomer_Click(object sender, EventArgs e)
+        {
+            update_Customer btn_UpCustomer = new update_Customer();
+            btn_UpCustomer.Show();
+        }
     }
 }

@@ -18,5 +18,7 @@ namespace Assignment
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Admin());
         }
+
+
     }
 }

@@ -46,11 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addCustomer.Designer.cs">
+      <DependentUpon>addCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,6 +71,22 @@
     <Compile Include="salesReport.Designer.cs">
       <DependentUpon>salesReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlConnetion.cs" />
+    <Compile Include="update_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_Customer.Designer.cs">
+      <DependentUpon>update_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_Staff.Designer.cs">
+      <DependentUpon>update_Staff.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addCustomer.resx">
+      <DependentUpon>addCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +102,23 @@
     <EmbeddedResource Include="salesReport.resx">
       <DependentUpon>salesReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="update_Customer.resx">
+      <DependentUpon>update_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_Staff.resx">
+      <DependentUpon>update_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +131,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

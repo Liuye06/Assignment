@@ -31,9 +31,11 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.btn_Home = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_SalesReport = new System.Windows.Forms.Button();
+            this.btn_UpStaff = new System.Windows.Forms.Button();
             this.btn_Feedback = new System.Windows.Forms.Button();
-            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_SalesReport = new System.Windows.Forms.Button();
+            this.btn_UpCustomer = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +55,7 @@
             this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Home.ForeColor = System.Drawing.Color.Black;
-            this.btn_Home.Location = new System.Drawing.Point(-2, 122);
+            this.btn_Home.Location = new System.Drawing.Point(-2, 25);
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(258, 78);
             this.btn_Home.TabIndex = 2;
@@ -66,7 +68,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btn_Update);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btn_UpCustomer);
+            this.panel1.Controls.Add(this.btn_UpStaff);
             this.panel1.Controls.Add(this.btn_Feedback);
             this.panel1.Controls.Add(this.btn_SalesReport);
             this.panel1.Controls.Add(this.btn_Home);
@@ -78,19 +82,20 @@
             this.panel1.TabIndex = 3;
             this.panel1.UseWaitCursor = true;
             // 
-            // btn_SalesReport
+            // btn_UpStaff
             // 
-            this.btn_SalesReport.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
-            this.btn_SalesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_SalesReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SalesReport.ForeColor = System.Drawing.Color.Black;
-            this.btn_SalesReport.Location = new System.Drawing.Point(3, 206);
-            this.btn_SalesReport.Name = "btn_SalesReport";
-            this.btn_SalesReport.Size = new System.Drawing.Size(258, 78);
-            this.btn_SalesReport.TabIndex = 6;
-            this.btn_SalesReport.Text = "Sales Report";
-            this.btn_SalesReport.UseVisualStyleBackColor = true;
-            this.btn_SalesReport.UseWaitCursor = true;
+            this.btn_UpStaff.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
+            this.btn_UpStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_UpStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_UpStaff.ForeColor = System.Drawing.Color.Black;
+            this.btn_UpStaff.Location = new System.Drawing.Point(-1, 277);
+            this.btn_UpStaff.Name = "btn_UpStaff";
+            this.btn_UpStaff.Size = new System.Drawing.Size(258, 78);
+            this.btn_UpStaff.TabIndex = 8;
+            this.btn_UpStaff.Text = "Update Staff";
+            this.btn_UpStaff.UseVisualStyleBackColor = true;
+            this.btn_UpStaff.UseWaitCursor = true;
+            this.btn_UpStaff.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Feedback
             // 
@@ -98,7 +103,7 @@
             this.btn_Feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Feedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Feedback.ForeColor = System.Drawing.Color.Black;
-            this.btn_Feedback.Location = new System.Drawing.Point(-2, 299);
+            this.btn_Feedback.Location = new System.Drawing.Point(-2, 193);
             this.btn_Feedback.Name = "btn_Feedback";
             this.btn_Feedback.Size = new System.Drawing.Size(258, 78);
             this.btn_Feedback.TabIndex = 7;
@@ -106,19 +111,48 @@
             this.btn_Feedback.UseVisualStyleBackColor = true;
             this.btn_Feedback.UseWaitCursor = true;
             // 
-            // btn_Update
+            // btn_SalesReport
             // 
-            this.btn_Update.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
-            this.btn_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Update.ForeColor = System.Drawing.Color.Black;
-            this.btn_Update.Location = new System.Drawing.Point(-2, 393);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(258, 78);
-            this.btn_Update.TabIndex = 8;
-            this.btn_Update.Text = "Update User";
-            this.btn_Update.UseVisualStyleBackColor = true;
-            this.btn_Update.UseWaitCursor = true;
+            this.btn_SalesReport.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
+            this.btn_SalesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SalesReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SalesReport.ForeColor = System.Drawing.Color.Black;
+            this.btn_SalesReport.Location = new System.Drawing.Point(-2, 109);
+            this.btn_SalesReport.Name = "btn_SalesReport";
+            this.btn_SalesReport.Size = new System.Drawing.Size(258, 78);
+            this.btn_SalesReport.TabIndex = 6;
+            this.btn_SalesReport.Text = "Sales Report";
+            this.btn_SalesReport.UseVisualStyleBackColor = true;
+            this.btn_SalesReport.UseWaitCursor = true;
+            // 
+            // btn_UpCustomer
+            // 
+            this.btn_UpCustomer.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
+            this.btn_UpCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_UpCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_UpCustomer.ForeColor = System.Drawing.Color.Black;
+            this.btn_UpCustomer.Location = new System.Drawing.Point(-1, 361);
+            this.btn_UpCustomer.Name = "btn_UpCustomer";
+            this.btn_UpCustomer.Size = new System.Drawing.Size(258, 78);
+            this.btn_UpCustomer.TabIndex = 9;
+            this.btn_UpCustomer.Text = "Update Customer";
+            this.btn_UpCustomer.UseVisualStyleBackColor = true;
+            this.btn_UpCustomer.UseWaitCursor = true;
+            this.btn_UpCustomer.Click += new System.EventHandler(this.btn_UpCustomer_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(-1, 445);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(258, 78);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Update Profile";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseWaitCursor = true;
             // 
             // Admin
             // 
@@ -143,8 +177,10 @@
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Update;
+        private System.Windows.Forms.Button btn_UpStaff;
         private System.Windows.Forms.Button btn_Feedback;
         private System.Windows.Forms.Button btn_SalesReport;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_UpCustomer;
     }
 }
