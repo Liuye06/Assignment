@@ -16,7 +16,8 @@ namespace Assignment
         {
             string status = null;
 
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionString["myCS"].ToString());
+            string connectionString = ConfigurationManager.ConnectionStrings["MyCS"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(connectionString))
             con.Open();
 
             SqlCommand cmd = new SqlCommand("select count(*) from User where username=@a and password = @b", con);
