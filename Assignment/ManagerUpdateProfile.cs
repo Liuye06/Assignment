@@ -25,33 +25,33 @@ namespace Assignment
         }
 
 
-        private void LoadUserProfile(int userID)
+        private void LoadManagerProfile(int loggedInUserID)
         {
             string query = "SELECT Email, Real_Name, DOB, Gender, Username, Profile_Pic FROM User WHERE User_ID = @UserID AND Role = 'Manager'";
-            
+
             string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@UserID", userID);
+                cmd.Parameters.AddWithValue("@UserID", loggedInUserID);
+
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    txtManagerUsername.Text = reader["Username"].ToString();
-                    txtManagerPassword.Text = reader["Password"].ToString();
-                    txtManagerName.Text = reader["Name"].ToString();
                     txtMangerEmail.Text = reader["Email"].ToString();
-                    dtpDOB.Value = Convert.ToDateTime(reader["DateOfBirth"]);
-                    cmbManagerGender.Text = reader["Gender"].ToString();
+                    txtManagerName.Text = reader["Real_Name"].ToString();
+                    dtpDOB.Value = Convert.ToDateTime(reader["DOB"]);
+                    cmbManagerGender.SelectedItem = reader["Gender"].ToString();
+                    txtManagerUsername.Text = reader["Username"].ToString();
 
                     // Load Profile Picture
-                    if (reader["ProfilePicture"] != DBNull.Value)
+                    if (!reader.IsDBNull(reader.GetOrdinal("Profile_Pic")))
                     {
-                        byte[] imageBytes = (byte[])reader["ProfilePicture"];
-                        using (MemoryStream ms = new MemoryStream(imageBytes))
+                        byte[] imgData = (byte[])reader["Profile_Pic"];
+                        using (MemoryStream ms = new MemoryStream(imgData))
                         {
                             picManagerProfilePic.Image = Image.FromStream(ms);
                         }
@@ -60,6 +60,7 @@ namespace Assignment
                 reader.Close();
             }
         }
+
         private void btnMMenu_UProfile_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainManageMenu());
@@ -87,7 +88,7 @@ namespace Assignment
 
         private void ManagerProfile_Load(object sender, EventArgs e)
         {
-            LoadUserProfile(UserID);
+            LoadManagerProfile(loggedInUserID);
         }
     }
 }
