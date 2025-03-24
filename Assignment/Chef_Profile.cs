@@ -9,25 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment
-{
-<<<<<<<< HEAD:Assignment/UpdateManagerProfile.cs
-    public partial class UpdateManagerProfile : Form
-    {
-        public UpdateManagerProfile()
-========
+{ 
     public partial class Chef_Profile: Form
     {
         public Chef_Profile()
->>>>>>>> origin/Chef:Assignment/Chef_Profile.cs
         {
             InitializeComponent();
         }
 
-<<<<<<<< HEAD:Assignment/UpdateManagerProfile.cs
-        private void btnUpdateManagerProfile_Click(object sender, EventArgs e)
-========
         private void button2_Click(object sender, EventArgs e)
->>>>>>>> origin/Chef:Assignment/Chef_Profile.cs
         {
             Chef chef = new Chef();
             chef.Show();

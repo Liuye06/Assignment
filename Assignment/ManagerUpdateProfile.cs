@@ -88,7 +88,7 @@ namespace Assignment
 
         private void ManagerProfile_Load(object sender, EventArgs e)
         {
-            LoadManagerProfile(loggedInUserID);
+            
         }
     }
 }
