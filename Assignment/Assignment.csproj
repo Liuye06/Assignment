@@ -49,7 +49,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
@@ -84,6 +86,7 @@
     <Compile Include="AddNewMenuItem.Designer.cs">
       <DependentUpon>AddNewMenuItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChefManager.cs" />
     <Compile Include="EditHallData.cs">
       <SubType>Form</SubType>
     </Compile>

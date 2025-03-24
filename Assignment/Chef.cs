@@ -12,53 +12,76 @@ namespace Assignment
 {
     public partial class Chef: Form
     {
+        private SidebarManager _sidebarManager;
+        private BindingSource bindingSource = new BindingSource();
+
         public Chef()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
         }
+
 
         private void Chef_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'assignmentdbDataSet3.Order' table. You can move, or remove it, as needed.
-            this.orderTableAdapter.Fill(this.assignmentdbDataSet3.Order);
-            // TODO: This line of code loads data into the 'assignmentdbDataSet.Stock' table. You can move, or remove it, as needed.
-            this.stockTableAdapter.Fill(this.assignmentdbDataSet.Stock);
-            panel_CVI.Visible = false;
-            panel_CVO.Visible = false;
-            panel_CVP.Visible = false;
+            LoadChefData();
         }
 
-        private void btn_inventory_Click(object sender, EventArgs e)
+
+        private void LoadChefData()
         {
-            panel_CVI.Visible = !panel_CVI.Visible;
+            DataTable dt = HallManager.LoadHallData();
+            if (dt != null)
+            {
+                bindingSource.DataSource = dt;
+                dgvIngredient.AutoGenerateColumns = false;
+                dgvIngredient.DataSource = bindingSource;
+            }
         }
 
-        private void btn_CusOrder_Click(object sender, EventArgs e)
+
+        private void dgvIngredient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            panel_CVO.Visible = !panel_CVO.Visible;
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0) // Ensure valid cell
+            {
+                string columnName = dgvIngredient.Columns[e.ColumnIndex].Name; // Get clicked column name
+
+                if (columnName == "ColIngredientEdit")
+                {
+                    // 📝 Edit Button Clicked
+                    string ingredient = dgvIngredient.Rows[e.RowIndex].Cells["ColIngredientName"].Value.ToString();
+                    EditChefName(ingredient);
+                }
+                else if (columnName == "ColIngredientDelete")
+                {
+                    // ❌ Delete Button Clicked
+                    string ingredient = dgvIngredient.Rows[e.RowIndex].Cells["ColIngredientName"].Value.ToString();
+                    DeleteHallName(ingredient);
+                }
+            }
         }
 
-        private void btn_ChefProfile_Click(object sender, EventArgs e)
+        private void EditChefName(string ingredient)
         {
-            panel_CVP.Visible = !panel_CVP.Visible;
+            // Ensure the SidebarManager is passed
+            SidebarManager sidebarManager = new SidebarManager(this);
+            EditHallData editForm = new EditHallData(hallName, sidebarManager);
+
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadHallData(); // Refresh menu items after editing
+            }
         }
 
-        private void btn_CUI_Click(object sender, EventArgs e)
+        private void btnAddNewIngredient_Click(object sender, EventArgs e)
         {
-            Inventory inventory = new Inventory();
-            inventory.Show();
+            AddNewHall form = new AddNewHall();
+
+            if (form.ShowDialog() == DialogResult.OK) // Wait until form is closed
+            {
+                LoadChefData();
+            }
         }
 
-        private void btn_COrder_Click(object sender, EventArgs e)
-        {
-            CustomersOrder v_order = new CustomersOrder();
-            v_order.Show();
-        }
-
-        private void btn_CUP_Click(object sender, EventArgs e)
-        {
-            Chef_Profile c_profile = new Chef_Profile();
-            c_profile.Show();
-        }
     }
 }
