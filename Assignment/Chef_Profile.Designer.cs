@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class Chef_Profile
+    partial class UpdateManagerProfile
     {
         /// <summary>
         /// Required designer variable.

@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="AddNewHall.cs">
       <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AssignmentdbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -94,6 +95,7 @@
     </Compile>
     <Compile Include="EditMenuItemForm.Designer.cs">
       <DependentUpon>EditMenuItemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AssignmentdbDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +106,7 @@
     <Compile Include="ImageManager.cs" />
     <Compile Include="MainHallResvReport.cs">
       <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AssignmentdbDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -111,26 +114,33 @@
     </Compile>
     <Compile Include="MainHallResvReport.Designer.cs">
       <DependentUpon>MainHallResvReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="AssignmentdbDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="ManageHall.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chef.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageHall.Designer.cs">
       <DependentUpon>ManageHall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chef.Designer.cs">
       <DependentUpon>Chef.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chef_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManageMenu.Designer.cs">
       <DependentUpon>ManageMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chef_Profile.Designer.cs">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </Compile>
@@ -152,12 +162,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SidebarManager.cs" />
-    <Compile Include="UpdateManagerProfile.cs">
     <Compile Include="CustomersOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateManagerProfile.Designer.cs">
-      <DependentUpon>UpdateManagerProfile.cs</DependentUpon>
     <Compile Include="CustomersOrder.Designer.cs">
       <DependentUpon>CustomersOrder.cs</DependentUpon>
     </Compile>
@@ -178,11 +185,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageHall.resx">
       <DependentUpon>ManageHall.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chef.resx">
       <DependentUpon>Chef.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageMenu.resx">
       <DependentUpon>ManageMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chef_Profile.resx">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,8 +211,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UpdateManagerProfile.resx">
-      <DependentUpon>UpdateManagerProfile.cs</DependentUpon>
     <EmbeddedResource Include="CustomersOrder.resx">
       <DependentUpon>CustomersOrder.cs</DependentUpon>
     </EmbeddedResource>
