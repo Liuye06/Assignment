@@ -19,15 +19,17 @@ namespace Assignment
 
         private void View_Order_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'assignmentdbDataSet3.Order' table. You can move, or remove it, as needed.
-            this.orderTableAdapter.Fill(this.assignmentdbDataSet3.Order);
 
         }
 
         private void btn_VO_b_Click(object sender, EventArgs e)
         {
-            Chef chef = new Chef();
-            chef.Show();
+          
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

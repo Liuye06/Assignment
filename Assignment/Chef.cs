@@ -30,7 +30,7 @@ namespace Assignment
 
         private void LoadChefData()
         {
-            DataTable dt = HallManager.LoadHallData();
+            DataTable dt = ChefManager.LoadChefData();
             if (dt != null)
             {
                 bindingSource.DataSource = dt;
@@ -56,7 +56,7 @@ namespace Assignment
                 {
                     // ❌ Delete Button Clicked
                     string ingredient = dgvIngredient.Rows[e.RowIndex].Cells["ColIngredientName"].Value.ToString();
-                    DeleteHallName(ingredient);
+                    DeleteChefName(ingredient);
                 }
             }
         }
@@ -65,17 +65,36 @@ namespace Assignment
         {
             // Ensure the SidebarManager is passed
             SidebarManager sidebarManager = new SidebarManager(this);
-            EditHallData editForm = new EditHallData(hallName, sidebarManager);
+            EditChefIngredient editForm = new EditChefIngredient(ingredient, sidebarManager);
 
             if (editForm.ShowDialog() == DialogResult.OK)
             {
-                LoadHallData(); // Refresh menu items after editing
+                LoadChefData(); // Refresh menu items after editing
             }
         }
 
+
+        private void DeleteChefName(string ingredient)
+        {
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete {ingredient}?",
+                                                  "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                if (ChefManager.DeleteChefData(ingredient)) // Call new method from MenuManager
+                {
+                    MessageBox.Show("Inventory data deleted successfully!");
+                    LoadChefData(); // Refresh DataGridView
+                }
+                else
+                {
+                    MessageBox.Show("Error: Inventory data not found or could not be deleted.", "Deletion Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         private void btnAddNewIngredient_Click(object sender, EventArgs e)
         {
-            AddNewHall form = new AddNewHall();
+            AddChefIngredient form = new AddChefIngredient();
 
             if (form.ShowDialog() == DialogResult.OK) // Wait until form is closed
             {
@@ -83,5 +102,39 @@ namespace Assignment
             }
         }
 
+        private void btnSearchIngredient_Click(object sender, EventArgs e)
+        {
+            string searchText = txtIngredient.Text.Trim().Replace("'", "''"); // Prevent SQL errors
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                bindingSource.Filter = $"Ingredient LIKE '%{searchText}%'"; // 🔹 Apply filter
+            }
+            else
+            {
+                bindingSource.RemoveFilter(); // 🔹 Show all rows
+            }
+        }
+
+        private void btnResetIngredientSearch_Click(object sender, EventArgs e)
+        {
+            txtIngredient.Text = "";
+            bindingSource.RemoveFilter(); // Reset all filters 
+        }
+
+        private void btn_inventory_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Chef());
+        }
+
+        private void btn_CusOrder_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomersOrder());
+        }
+
+        private void btn_ChefProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Chef_Profile());
+        }
     }
 }

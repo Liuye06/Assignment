@@ -23,7 +23,7 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Ingredient, Stock, FROM Stock";
+                    string query = "SELECT Ingredient, Stock FROM Stock";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))

@@ -61,6 +61,7 @@
             this.btn_inventory.TabIndex = 0;
             this.btn_inventory.Text = "Manage Inventory";
             this.btn_inventory.UseVisualStyleBackColor = false;
+            this.btn_inventory.Click += new System.EventHandler(this.btn_inventory_Click);
             // 
             // btn_ChefProfile
             // 
@@ -74,6 +75,7 @@
             this.btn_ChefProfile.TabIndex = 2;
             this.btn_ChefProfile.Text = "Chef Profile";
             this.btn_ChefProfile.UseVisualStyleBackColor = false;
+            this.btn_ChefProfile.Click += new System.EventHandler(this.btn_ChefProfile_Click);
             // 
             // btn_CusOrder
             // 
@@ -87,6 +89,7 @@
             this.btn_CusOrder.TabIndex = 1;
             this.btn_CusOrder.Text = "Customer\'s Orders";
             this.btn_CusOrder.UseVisualStyleBackColor = false;
+            this.btn_CusOrder.Click += new System.EventHandler(this.btn_CusOrder_Click);
             // 
             // lbl_chef
             // 
@@ -139,6 +142,7 @@
             this.btnResetIngredientSearch.Size = new System.Drawing.Size(390, 35);
             this.btnResetIngredientSearch.TabIndex = 5;
             this.btnResetIngredientSearch.Text = "Reset Search Ingredient";
+            this.btnResetIngredientSearch.Click += new System.EventHandler(this.btnResetIngredientSearch_Click);
             // 
             // btnAddNewIngredient
             // 
@@ -173,6 +177,7 @@
             this.btnSearchIngredient.TabIndex = 2;
             this.btnSearchIngredient.Text = "Search";
             this.btnSearchIngredient.UseVisualStyleBackColor = true;
+            this.btnSearchIngredient.Click += new System.EventHandler(this.btnSearchIngredient_Click);
             // 
             // txtIngredient
             // 
@@ -192,7 +197,7 @@
             // 
             // ColIngredientName
             // 
-            this.ColIngredientName.DataPropertyName = "IngredientName";
+            this.ColIngredientName.DataPropertyName = "Ingredient";
             this.ColIngredientName.HeaderText = "Ingredient";
             this.ColIngredientName.MinimumWidth = 6;
             this.ColIngredientName.Name = "ColIngredientName";

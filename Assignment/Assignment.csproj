@@ -69,6 +69,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddChefIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddChefIngredient.Designer.cs">
+      <DependentUpon>AddChefIngredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewHall.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
       <DependentUpon>AddNewMenuItem.cs</DependentUpon>
     </Compile>
     <Compile Include="ChefManager.cs" />
+    <Compile Include="EditChefIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditChefIngredient.Designer.cs">
+      <DependentUpon>EditChefIngredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditHallData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,11 +183,17 @@
     <Compile Include="CustomersOrder.Designer.cs">
       <DependentUpon>CustomersOrder.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddChefIngredient.resx">
+      <DependentUpon>AddChefIngredient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNewHall.resx">
       <DependentUpon>AddNewHall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewMenuItem.resx">
       <DependentUpon>AddNewMenuItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditChefIngredient.resx">
+      <DependentUpon>EditChefIngredient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditHallData.resx">
       <DependentUpon>EditHallData.cs</DependentUpon>

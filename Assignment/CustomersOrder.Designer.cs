@@ -28,183 +28,231 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.btn_VO_b = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.assignmentdbDataSet3 = new Assignment.AssignmentdbDataSet3();
-            this.orderTableAdapter = new Assignment.AssignmentdbDataSet3TableAdapters.OrderTableAdapter();
-            this.cmb_UOS = new System.Windows.Forms.ComboBox();
-            this.ldl_OrderID = new System.Windows.Forms.Label();
-            this.lbl_status = new System.Windows.Forms.Label();
-            this.txtOrderID = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).BeginInit();
+            this.tableSidebar_ChefCustomerOrder = new System.Windows.Forms.TableLayoutPanel();
+            this.btninventory_ChefCustomerOrder = new System.Windows.Forms.Button();
+            this.btnCusOrder_ChefCustomerOrder = new System.Windows.Forms.Button();
+            this.btnChefProfile_ChefCustomerOrder = new System.Windows.Forms.Button();
+            this.gbShowCusOrder = new System.Windows.Forms.GroupBox();
+            this.btnResetChefCusOrderSearch = new System.Windows.Forms.Button();
+            this.dgvChefCusOrder = new System.Windows.Forms.DataGridView();
+            this.btnSearchCusOrderStatus = new System.Windows.Forms.Button();
+            this.lblCusOrderStatus = new System.Windows.Forms.Label();
+            this.cmbCusOrderStatus = new System.Windows.Forms.ComboBox();
+            this.ColFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCusOrderStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ChefInCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColIngredientEdit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColIngredientDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tableSidebar_ChefCustomerOrder.SuspendLayout();
+            this.gbShowCusOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChefCusOrder)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_VO_b
+            // tableSidebar_ChefCustomerOrder
             // 
-            this.btn_VO_b.Location = new System.Drawing.Point(27, 13);
-            this.btn_VO_b.Name = "btn_VO_b";
-            this.btn_VO_b.Size = new System.Drawing.Size(75, 32);
-            this.btn_VO_b.TabIndex = 0;
-            this.btn_VO_b.Text = "Back";
-            this.btn_VO_b.UseVisualStyleBackColor = true;
-            this.btn_VO_b.Click += new System.EventHandler(this.btn_VO_b_Click);
+            this.tableSidebar_ChefCustomerOrder.ColumnCount = 1;
+            this.tableSidebar_ChefCustomerOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSidebar_ChefCustomerOrder.Controls.Add(this.btninventory_ChefCustomerOrder, 0, 1);
+            this.tableSidebar_ChefCustomerOrder.Controls.Add(this.btnCusOrder_ChefCustomerOrder, 0, 2);
+            this.tableSidebar_ChefCustomerOrder.Controls.Add(this.btnChefProfile_ChefCustomerOrder, 0, 3);
+            this.tableSidebar_ChefCustomerOrder.Location = new System.Drawing.Point(12, 11);
+            this.tableSidebar_ChefCustomerOrder.Name = "tableSidebar_ChefCustomerOrder";
+            this.tableSidebar_ChefCustomerOrder.RowCount = 5;
+            this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_ChefCustomerOrder.Size = new System.Drawing.Size(200, 430);
+            this.tableSidebar_ChefCustomerOrder.TabIndex = 6;
             // 
-            // dataGridView1
+            // btninventory_ChefCustomerOrder
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn,
-            this.userIDDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.orderBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(420, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(298, 252);
-            this.dataGridView1.TabIndex = 1;
+            this.btninventory_ChefCustomerOrder.BackColor = System.Drawing.Color.Silver;
+            this.btninventory_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
+            this.btninventory_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btninventory_ChefCustomerOrder.Location = new System.Drawing.Point(3, 62);
+            this.btninventory_ChefCustomerOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btninventory_ChefCustomerOrder.Name = "btninventory_ChefCustomerOrder";
+            this.btninventory_ChefCustomerOrder.Size = new System.Drawing.Size(194, 36);
+            this.btninventory_ChefCustomerOrder.TabIndex = 0;
+            this.btninventory_ChefCustomerOrder.Text = "Manage Inventory";
+            this.btninventory_ChefCustomerOrder.UseVisualStyleBackColor = false;
             // 
-            // orderIDDataGridViewTextBoxColumn
+            // btnCusOrder_ChefCustomerOrder
             // 
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderIDDataGridViewTextBoxColumn.Width = 150;
+            this.btnCusOrder_ChefCustomerOrder.BackColor = System.Drawing.Color.Silver;
+            this.btnCusOrder_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
+            this.btnCusOrder_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCusOrder_ChefCustomerOrder.Location = new System.Drawing.Point(3, 102);
+            this.btnCusOrder_ChefCustomerOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCusOrder_ChefCustomerOrder.Name = "btnCusOrder_ChefCustomerOrder";
+            this.btnCusOrder_ChefCustomerOrder.Size = new System.Drawing.Size(194, 36);
+            this.btnCusOrder_ChefCustomerOrder.TabIndex = 1;
+            this.btnCusOrder_ChefCustomerOrder.Text = "Customer\'s Orders";
+            this.btnCusOrder_ChefCustomerOrder.UseVisualStyleBackColor = false;
             // 
-            // userIDDataGridViewTextBoxColumn
+            // btnChefProfile_ChefCustomerOrder
             // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 150;
+            this.btnChefProfile_ChefCustomerOrder.BackColor = System.Drawing.Color.Silver;
+            this.btnChefProfile_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
+            this.btnChefProfile_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChefProfile_ChefCustomerOrder.Location = new System.Drawing.Point(3, 142);
+            this.btnChefProfile_ChefCustomerOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnChefProfile_ChefCustomerOrder.Name = "btnChefProfile_ChefCustomerOrder";
+            this.btnChefProfile_ChefCustomerOrder.Size = new System.Drawing.Size(194, 36);
+            this.btnChefProfile_ChefCustomerOrder.TabIndex = 2;
+            this.btnChefProfile_ChefCustomerOrder.Text = "Chef Profile";
+            this.btnChefProfile_ChefCustomerOrder.UseVisualStyleBackColor = false;
             // 
-            // quantityDataGridViewTextBoxColumn
+            // gbShowCusOrder
             // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.Width = 150;
+            this.gbShowCusOrder.Controls.Add(this.cmbCusOrderStatus);
+            this.gbShowCusOrder.Controls.Add(this.btnResetChefCusOrderSearch);
+            this.gbShowCusOrder.Controls.Add(this.dgvChefCusOrder);
+            this.gbShowCusOrder.Controls.Add(this.btnSearchCusOrderStatus);
+            this.gbShowCusOrder.Controls.Add(this.lblCusOrderStatus);
+            this.gbShowCusOrder.Location = new System.Drawing.Point(218, 73);
+            this.gbShowCusOrder.Name = "gbShowCusOrder";
+            this.gbShowCusOrder.Size = new System.Drawing.Size(852, 369);
+            this.gbShowCusOrder.TabIndex = 7;
+            this.gbShowCusOrder.TabStop = false;
+            this.gbShowCusOrder.Text = "Customer Order";
             // 
-            // statusDataGridViewTextBoxColumn
+            // btnResetChefCusOrderSearch
             // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 150;
+            this.btnResetChefCusOrderSearch.Location = new System.Drawing.Point(567, 39);
+            this.btnResetChefCusOrderSearch.Name = "btnResetChefCusOrderSearch";
+            this.btnResetChefCusOrderSearch.Size = new System.Drawing.Size(263, 35);
+            this.btnResetChefCusOrderSearch.TabIndex = 5;
+            this.btnResetChefCusOrderSearch.Text = "Reset Search Ingredient";
             // 
-            // orderBindingSource
+            // dgvChefCusOrder
             // 
-            this.orderBindingSource.DataMember = "Order";
-            this.orderBindingSource.DataSource = this.assignmentdbDataSet3;
+            this.dgvChefCusOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChefCusOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColFoodName,
+            this.ColCusOrderStatus,
+            this.ChefInCharge,
+            this.ColIngredientEdit,
+            this.ColIngredientDelete});
+            this.dgvChefCusOrder.Location = new System.Drawing.Point(45, 91);
+            this.dgvChefCusOrder.Name = "dgvChefCusOrder";
+            this.dgvChefCusOrder.RowHeadersWidth = 51;
+            this.dgvChefCusOrder.RowTemplate.Height = 24;
+            this.dgvChefCusOrder.Size = new System.Drawing.Size(785, 263);
+            this.dgvChefCusOrder.TabIndex = 3;
             // 
-            // assignmentdbDataSet3
+            // btnSearchCusOrderStatus
             // 
-            this.assignmentdbDataSet3.DataSetName = "AssignmentdbDataSet3";
-            this.assignmentdbDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btnSearchCusOrderStatus.Location = new System.Drawing.Point(416, 39);
+            this.btnSearchCusOrderStatus.Name = "btnSearchCusOrderStatus";
+            this.btnSearchCusOrderStatus.Size = new System.Drawing.Size(145, 35);
+            this.btnSearchCusOrderStatus.TabIndex = 2;
+            this.btnSearchCusOrderStatus.Text = "Search";
+            this.btnSearchCusOrderStatus.UseVisualStyleBackColor = true;
             // 
-            // orderTableAdapter
+            // lblCusOrderStatus
             // 
-            this.orderTableAdapter.ClearBeforeFill = true;
+            this.lblCusOrderStatus.AutoSize = true;
+            this.lblCusOrderStatus.Location = new System.Drawing.Point(40, 44);
+            this.lblCusOrderStatus.Name = "lblCusOrderStatus";
+            this.lblCusOrderStatus.Size = new System.Drawing.Size(68, 25);
+            this.lblCusOrderStatus.TabIndex = 0;
+            this.lblCusOrderStatus.Text = "Status";
             // 
-            // cmb_UOS
+            // cmbCusOrderStatus
             // 
-            this.cmb_UOS.FormattingEnabled = true;
-            this.cmb_UOS.Items.AddRange(new object[] {
-            "In progress",
+            this.cmbCusOrderStatus.FormattingEnabled = true;
+            this.cmbCusOrderStatus.Items.AddRange(new object[] {
+            "Haven\'t accepted",
+            "In Progress",
             "Completed"});
-            this.cmb_UOS.Location = new System.Drawing.Point(193, 256);
-            this.cmb_UOS.Name = "cmb_UOS";
-            this.cmb_UOS.Size = new System.Drawing.Size(121, 28);
-            this.cmb_UOS.TabIndex = 2;
+            this.cmbCusOrderStatus.Location = new System.Drawing.Point(136, 41);
+            this.cmbCusOrderStatus.Name = "cmbCusOrderStatus";
+            this.cmbCusOrderStatus.Size = new System.Drawing.Size(274, 33);
+            this.cmbCusOrderStatus.TabIndex = 6;
             // 
-            // ldl_OrderID
+            // ColFoodName
             // 
-            this.ldl_OrderID.AutoSize = true;
-            this.ldl_OrderID.Location = new System.Drawing.Point(81, 195);
-            this.ldl_OrderID.Name = "ldl_OrderID";
-            this.ldl_OrderID.Size = new System.Drawing.Size(74, 20);
-            this.ldl_OrderID.TabIndex = 3;
-            this.ldl_OrderID.Text = "Order ID:";
+            this.ColFoodName.DataPropertyName = "Food";
+            this.ColFoodName.HeaderText = "Food";
+            this.ColFoodName.MinimumWidth = 6;
+            this.ColFoodName.Name = "ColFoodName";
+            this.ColFoodName.Width = 160;
             // 
-            // lbl_status
+            // ColCusOrderStatus
             // 
-            this.lbl_status.AutoSize = true;
-            this.lbl_status.Location = new System.Drawing.Point(81, 259);
-            this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(60, 20);
-            this.lbl_status.TabIndex = 4;
-            this.lbl_status.Text = "Status:";
+            this.ColCusOrderStatus.DataPropertyName = "Status";
+            this.ColCusOrderStatus.HeaderText = "Status";
+            this.ColCusOrderStatus.MinimumWidth = 6;
+            this.ColCusOrderStatus.Name = "ColCusOrderStatus";
+            this.ColCusOrderStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColCusOrderStatus.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColCusOrderStatus.Width = 150;
             // 
-            // txtOrderID
+            // ChefInCharge
             // 
-            this.txtOrderID.Location = new System.Drawing.Point(193, 195);
-            this.txtOrderID.Name = "txtOrderID";
-            this.txtOrderID.Size = new System.Drawing.Size(121, 26);
-            this.txtOrderID.TabIndex = 6;
+            this.ChefInCharge.HeaderText = "Chef In Charge";
+            this.ChefInCharge.MinimumWidth = 6;
+            this.ChefInCharge.Name = "ChefInCharge";
+            this.ChefInCharge.Width = 180;
             // 
-            // btnSave
+            // ColIngredientEdit
             // 
-            this.btnSave.Location = new System.Drawing.Point(608, 382);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 42);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.ColIngredientEdit.DataPropertyName = "Edit";
+            this.ColIngredientEdit.HeaderText = "Action";
+            this.ColIngredientEdit.MinimumWidth = 6;
+            this.ColIngredientEdit.Name = "ColIngredientEdit";
+            this.ColIngredientEdit.Text = "Edit";
+            this.ColIngredientEdit.UseColumnTextForButtonValue = true;
+            this.ColIngredientEdit.Width = 120;
+            // 
+            // ColIngredientDelete
+            // 
+            this.ColIngredientDelete.DataPropertyName = "Delete";
+            this.ColIngredientDelete.HeaderText = "Action";
+            this.ColIngredientDelete.MinimumWidth = 6;
+            this.ColIngredientDelete.Name = "ColIngredientDelete";
+            this.ColIngredientDelete.Text = "Delete";
+            this.ColIngredientDelete.UseColumnTextForButtonValue = true;
+            this.ColIngredientDelete.Width = 120;
             // 
             // CustomersOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtOrderID);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.lbl_status);
-            this.Controls.Add(this.ldl_OrderID);
-            this.Controls.Add(this.cmb_UOS);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btn_VO_b);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1082, 453);
+            this.Controls.Add(this.gbShowCusOrder);
+            this.Controls.Add(this.tableSidebar_ChefCustomerOrder);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CustomersOrder";
-            this.Text = "CustomersOders";
+            this.Text = "CustomersOrder";
             this.Load += new System.EventHandler(this.View_Order_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assignmentdbDataSet3)).EndInit();
+            this.tableSidebar_ChefCustomerOrder.ResumeLayout(false);
+            this.gbShowCusOrder.ResumeLayout(false);
+            this.gbShowCusOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChefCusOrder)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btn_VO_b;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private AssignmentdbDataSet3 assignmentdbDataSet3;
-        private System.Windows.Forms.BindingSource orderBindingSource;
-        private AssignmentdbDataSet3TableAdapters.OrderTableAdapter orderTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox cmb_UOS;
-        private System.Windows.Forms.Label ldl_OrderID;
-        private System.Windows.Forms.Label lbl_status;
-        private System.Windows.Forms.TextBox txtOrderID;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TableLayoutPanel tableSidebar_ChefCustomerOrder;
+        private System.Windows.Forms.Button btninventory_ChefCustomerOrder;
+        private System.Windows.Forms.Button btnCusOrder_ChefCustomerOrder;
+        private System.Windows.Forms.Button btnChefProfile_ChefCustomerOrder;
+        private System.Windows.Forms.GroupBox gbShowCusOrder;
+        private System.Windows.Forms.Button btnResetChefCusOrderSearch;
+        private System.Windows.Forms.DataGridView dgvChefCusOrder;
+        private System.Windows.Forms.Button btnSearchCusOrderStatus;
+        private System.Windows.Forms.Label lblCusOrderStatus;
+        private System.Windows.Forms.ComboBox cmbCusOrderStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColFoodName;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColCusOrderStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChefInCharge;
+        private System.Windows.Forms.DataGridViewButtonColumn ColIngredientEdit;
+        private System.Windows.Forms.DataGridViewButtonColumn ColIngredientDelete;
     }
 }
