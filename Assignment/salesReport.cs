@@ -50,7 +50,9 @@ namespace Assignment
 
         private void salesReport_Load(object sender, EventArgs e)
         {
-         
+            // TODO: This line of code loads data into the 'database1DataSet3.Payment' table. You can move, or remove it, as needed.
+            this.paymentTableAdapter1.Fill(this.database1DataSet3.Payment);
+
             this.paymentTableAdapter.Fill(this.database1DataSet1.Payment);
 
         }

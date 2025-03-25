@@ -17,7 +17,6 @@ namespace Assignment
 {
     public partial class addCustomer : Form
     {
-        private object dataGridView1;
         private string connectionString;
 
         public object Username { get; private set; }
@@ -25,12 +24,7 @@ namespace Assignment
         public addCustomer()
         {
             InitializeComponent();
-            refresh();
-        }
-
-        private void refresh()
-        {
-            throw new NotImplementedException();
+            this.Load += new EventHandler(addCustomer_Load);
         }
 
         private void btn_addCus_Click(object sender, EventArgs e)
@@ -82,34 +76,6 @@ namespace Assignment
             }
         }
 
-
-
-        private void addCustomer_Load(object sender, EventArgs e, string v)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open(); // Make sure the connection opens
-                    string query = "SELECT * FROM User";
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("No data found.");
-                    }
-
-                    dataGridView1.DataSource = dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-        
         private void refresh(object sender, EventArgs e)
         {
             txt_CusName.Text = "";
@@ -120,6 +86,11 @@ namespace Assignment
             txt_CusUsername.Text = "";
             txt_CusPassword.Text = "";
         }
-    }
 
+        private void addCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
        
