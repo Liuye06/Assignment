@@ -36,7 +36,10 @@
             this.btn_UpStaff = new System.Windows.Forms.Button();
             this.btn_Feedback = new System.Windows.Forms.Button();
             this.btn_SalesReport = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl1
@@ -155,12 +158,31 @@
             this.btn_SalesReport.UseWaitCursor = true;
             this.btn_SalesReport.Click += new System.EventHandler(this.btn_SalesReport_Click);
             // 
+            // btn_exit
+            // 
+            this.btn_exit.Location = new System.Drawing.Point(1005, 35);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(101, 44);
+            this.btn_exit.TabIndex = 4;
+            this.btn_exit.Text = "Exit";
+            this.btn_exit.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(454, 221);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(219, 135);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Linen;
             this.ClientSize = new System.Drawing.Size(1154, 559);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -168,6 +190,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +206,7 @@
         private System.Windows.Forms.Button btn_SalesReport;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_UpCustomer;
+        private System.Windows.Forms.Button btn_exit;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
