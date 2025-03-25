@@ -10,6 +10,15 @@ namespace Assignment
 {
     internal class User
     {
+        private string text1;
+        private string text2;
+
+        public User(string text1, string text2)
+        {
+            this.text1 = text1;
+            this.text2 = text2;
+        }
+
         public object ConfigurationManager { get; private set; }    }
 
     public string login(string un)
