@@ -207,7 +207,6 @@
             this.Controls.Add(this.label1);
             this.Name = "addCustomer";
             this.Text = "addCustomer";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 

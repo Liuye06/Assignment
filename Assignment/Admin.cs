@@ -40,5 +40,11 @@ namespace Assignment
             update_Customer btn_UpCustomer = new update_Customer();
             btn_UpCustomer.Show();
         }
+
+        private void btn_SalesReport_Click(object sender, EventArgs e)
+        {
+            salesReport btn_SalesReport = new salesReport();
+            btn_SalesReport.Show();
+        }
     }
 }

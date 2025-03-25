@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
@@ -16,52 +17,67 @@ namespace Assignment
 {
     public partial class addCustomer : Form
     {
+        private object dataGridView1;
+        private string connectionString;
+
         public object Username { get; private set; }
 
         public addCustomer()
         {
             InitializeComponent();
+            refresh();
+        }
+
+        private void refresh()
+        {
+            throw new NotImplementedException();
         }
 
         private void btn_addCus_Click(object sender, EventArgs e)
         {
-            string connectionString = "your_connection_string_here";
-
-            string query = "INSERT INTO Users (Email, Real_Name, DOB, Gender, Username, Password, Role) " +
-                   "VALUES (@Email, @Real_Name, @DOB, @Gender, @Username, @Password, @Role)";
-
-            using (SqlConnection con = new SqlConnection(connectionString))
+            if (string.IsNullOrWhiteSpace(txt_CusName.Text) ||
+                 string.IsNullOrWhiteSpace(txt_CusDOB.Text) ||
+                 string.IsNullOrWhiteSpace(txt_CusGender.Text) ||
+                 string.IsNullOrWhiteSpace(txt_CusRole.Text) ||
+                 string.IsNullOrWhiteSpace(txt_CusEmail.Text) ||
+                 string.IsNullOrWhiteSpace(txt_CusUsername.Text) ||
+                 string.IsNullOrWhiteSpace(txt_CusPassword.Text))
             {
-                try
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@Real_Name", txt_CusName);
-                        cmd.Parameters.AddWithValue("@DOB", txt_CusDOB);
-                        cmd.Parameters.AddWithValue("@Gender", txt_CusGender);
-                        cmd.Parameters.AddWithValue("@Role", txt_CusRole);
-                        cmd.Parameters.AddWithValue("@Email", txt_CusEmail);
-                        cmd.Parameters.AddWithValue("@Username", txt_CusUsername);
-                        cmd.Parameters.AddWithValue("@Password", txt_CusPassword);
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO User (Real_Name, DOB, Gender, Role, Email, Username, Password) VALUES (@Real_Name, @DOB, @Gender, @Role, @Email, @Username, @Password)";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Real_Name", txt_CusName.Text);
+                    cmd.Parameters.AddWithValue("@DOB", txt_CusDOB.Text);
+                    cmd.Parameters.AddWithValue("@Gender", txt_CusGender.Text);
+                    cmd.Parameters.AddWithValue("@Role", txt_CusRole.Text);
+                    cmd.Parameters.AddWithValue("@Email", txt_CusEmail.Text);
+                    cmd.Parameters.AddWithValue("@Username", txt_CusUsername.Text);
+                    cmd.Parameters.AddWithValue("@Password", txt_CusPassword.Text); // Consider hashing the password
+
+                    try
+                    {
+                        conn.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Registration Successfull!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("User registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Refresh(); //Refresh 
                         }
                         else
                         {
-                            MessageBox.Show("Registration Failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Registration failed. Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    txt_CusDOB.Text = String.Empty;
-                    txt_CusGender.Text = String.Empty;
-                    txt_CusRole.Text = String.Empty;
-                    txt_CusPassword.Text = String.Empty;
-                    txt_CusName.Text = String.Empty;
-                    txt_CusEmail.Text = String.Empty;
-                    txt_CusUsername = String.Empty;
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -70,49 +86,40 @@ namespace Assignment
 
         private void addCustomer_Load(object sender, EventArgs e, string v)
         {
-            string connectionString = "your_connection_string_here";
-            string query = "SELECT Real_Name, DOB, Gender, Role, Email, Password FROM Users WHERE Username = @Username";
-
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                try
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    conn.Open(); // Make sure the connection opens
+                    string query = "SELECT * FROM User";
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    if (dt.Rows.Count == 0)
                     {
-                        // 这里的 username 来自 TextBox
-                        cmd.Parameters.AddWithValue("@Username", Username);
+                        MessageBox.Show("No data found.");
+                    }
 
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read()) // if find out the data
-                            {
-                                txt_CusName.Text = reader["Real_Name"].ToString();
-
-                                // process the date
-                                if (reader["DOB"] != DBNull.Value)
-                                {
-                                    txt_CusDOB.Text = Convert.ToDateTime(reader["DOB"]).ToShortDateString();
-                                }
-                                else
-                                {
-                                    txt_CusDOB.Text = "";
-                                }
-
-                                txt_CusGender.Text = reader["Gender"].ToString();
-                                txt_CusRole.Text = reader["Role"].ToString();
-                                txt_CusEmail.Text = reader["Email"].ToString();
-                                txt_CusPassword.Text = reader["Password"].ToString();
-                            }
-                            else
-                            {
-                                MessageBox.Show("User not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
-
-                    }           
+                    dataGridView1.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
-                
-    
+        
+        private void refresh(object sender, EventArgs e)
+        {
+            txt_CusName.Text = "";
+            txt_CusDOB.Text = "";
+            txt_CusGender.Text = "";
+            txt_CusRole.Text = "";
+            txt_CusEmail.Text = "";
+            txt_CusUsername.Text = "";
+            txt_CusPassword.Text = "";
+        }
+    }
 
+       

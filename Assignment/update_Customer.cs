@@ -19,14 +19,17 @@ namespace Assignment
 
         private void update_Customer_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet2.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter1.Fill(this.database1DataSet2.User);
             // TODO: This line of code loads data into the 'database1DataSet.User' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.database1DataSet.User);
 
         }
 
-        private void btn_SalesReport_Click(object sender, EventArgs e)
+        private void btn_AddCus_Click(object sender, EventArgs e)
         {
-
+            addCustomer btn_AddCus = new addCustomer();
+            btn_AddCus.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,8 +45,20 @@ namespace Assignment
             {
                 DataView dv = new DataView(dt);
                 dv.RowFilter = "Roles = 'Customer'"; // just declare roles of Customer 
-                dataGridView1.DataSource = dv;
+                dataGridView1.DataSource = dt;
             }
+        }
+
+        private void btn_Home_Click(object sender, EventArgs e)
+        {
+            Admin btn_Home = new Admin();
+            btn_Home.Show();
+        }
+
+        private void btn_EditCus_Click(object sender, EventArgs e)
+        {
+            EditCus btn_EditCus = new EditCus();
+            btn_EditCus.Show();
         }
     }
 }

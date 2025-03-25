@@ -16,7 +16,7 @@ namespace Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new addCustomer());
+            Application.Run(new Admin());
         }
 
 
