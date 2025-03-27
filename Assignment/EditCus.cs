@@ -1,110 +1,163 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static Assignment.AdminClass;
 
 namespace Assignment
 {
+    public class ListItem
+    {
+        public string Text { get; set; }
+        public string Value { get; set; }
+
+        public ListItem(string text, string value)
+        {
+            Text = text;
+            Value = value;
+        }
+        public override string ToString()
+        {
+            return Text;
+        }
+    }
+
     public partial class EditCus : Form
     {
-        private string connectionString;
-
+        private DataGridView dataGridView;
+        private string selectedUserId = "";
+        public EditCus(DataGridView dgv)
+        {
+            InitializeComponent();
+            this.dataGridView = dgv ?? throw new ArgumentNullException(nameof(dgv), "DataGridView cannot be null.");
+        }
         public EditCus()
         {
             InitializeComponent();
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void EditCus_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Clear(); // clear the listBox1
+            LoadCustomers(listBox1);
+        }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+        private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem is ListItem selectedItem)
             {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT Real_Name FROM User WHERE Role = 'Customer'";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                listBox1.Items.Add(reader["Real_Name"].ToString());
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error edditing User Info:" + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                selectedUserId = selectedItem.Value; // select User ID
             }
         }
 
-        private void btnEditCus(object sender, EventArgs e)
+        private void btn_EditCus_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem == null || comboBox1.SelectedItem == null || string.IsNullOrWhiteSpace(txt_EditCus.Text))
+            if (string.IsNullOrEmpty(selectedUserId) || comboBox1.SelectedItem == null)
             {
-                MessageBox.Show("Please ensure you have selected a user, an editable field, and entered a new value!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a user and a field to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string selectedUser = listBox1.SelectedItem.ToString();  // Selected user's Real_Name
-            string selectedField = comboBox1.SelectedItem.ToString(); // Selected field to edit
-            string newValue = txt_EditCus.Text.Trim(); // New value to update
+            string selectedField = comboBox1.SelectedItem.ToString();
+            string newValue = txt_EditCus.Text.Trim();
 
-            // Call EditUser method
-            if (EditUser(selectedUser, selectedField, newValue))
+            if (string.IsNullOrWhiteSpace(newValue))
             {
-                MessageBox.Show("User information updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please enter a valid value.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Dictionary<string, string> fieldMapping = new Dictionary<string, string>
+        {
+            { "Real Name", "Real_Name" },
+            { "Date of Birth", "DOB" },
+            { "Email", "Email" },
+            { "Username", "Username" },
+            { "Gender", "Gender" }
+        };
+
+            if (!fieldMapping.ContainsKey(selectedField))
+            {
+                MessageBox.Show("Invalid field selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string databaseField = fieldMapping[selectedField];
+
+            bool success = AdminClass.EditUser(selectedUserId, databaseField, newValue, dataGridView);
+            if (success)
+            {
+                MessageBox.Show("User Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AdminClass.LoadCustomers(listBox1); // 
             }
             else
             {
-                MessageBox.Show("Update failed. Please check the user information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Update Failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private bool EditUser(string selectedUser, string selectedField, string newValue)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void EditCus_Load(object sender, EventArgs e)
-        {
-          
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Define possible user fields
-            string[] information = { "Real_Name", "DOB", "Gender", "Email", "Username" };
-
-            // Get selected field from ComboBox
-            string selectedInfo = comboBox1.SelectedItem?.ToString();
-
-            if (!string.IsNullOrEmpty(selectedInfo) && information.Contains(selectedInfo))
+            txt_EditCus.Clear();
+            if (comboBox1.SelectedItem?.ToString() == "Date of Birth")
             {
-                txt_EditCus.Text = ""; // Clear the text field when a new selection is made
-
-                if (selectedInfo == "DOB")
-                {
-                    txt_EditCus.Text = "DD/MM/YYYY"; // Placeholder for date format
-                }
+                txt_EditCus.Text = "DD-MM-YYYY"; // Placeholder
             }
         }
+
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
-            listBox1.ClearSelected();    // Deselect any selected user in listBox1
-            comboBox1.SelectedIndex = -1; // Reset comboBox1 selection
-            txt_EditCus.Clear();         // Clear the text in txt_EditCus
+            listBox1.ClearSelected();
+            comboBox1.SelectedIndex = -1;
+            txt_EditCus.Clear();
+            selectedUserId = "";
         }
+        public static void LoadCustomers(ListBox listBox)
+        {
+            listBox.Items.Clear();
+
+            DataTable dt = GetCustomerData(); // get custmoer data
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string displayText = $"{row["User_ID"]} - {row["Real_Name"]}";
+                listBox.Items.Add(new ListItem(displayText, row["User_ID"].ToString()));
+            }
+        }
+        public static DataTable GetCustomerData()
+        {
+            DataTable dt = new DataTable();
+            string query = "SELECT User_ID, Real_Name FROM Customers"; // 调整表名
+
+            using (SqlConnection conn = new SqlConnection("your_connection_string"))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+            return dt;
+        }
+
+    }
+
+}
+public class ListItem
+{
+    public string Text { get; set; }
+    public string Value { get; set; }
+
+    public ListItem(string text, string value)
+    {
+        Text = text;
+        Value = value;
+    }
+
+    public override string ToString()
+    {
+        return Text;
     }
 }

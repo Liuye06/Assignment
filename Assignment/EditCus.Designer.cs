@@ -45,6 +45,7 @@
             this.btn_EditCus.TabIndex = 3;
             this.btn_EditCus.Text = "Save";
             this.btn_EditCus.UseVisualStyleBackColor = true;
+            this.btn_EditCus.Click += new System.EventHandler(this.btn_EditCus_Click);
             // 
             // btn_Cancel
             // 
@@ -79,14 +80,14 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(155, 84);
             this.listBox1.TabIndex = 31;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBoxUsers_SelectedIndexChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Real_Name",
-            "DOB",
+            "Real Name",
+            "Date of Birth",
             "Gender",
             "Email",
             "Username"});

@@ -101,6 +101,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Database1DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DeleteCus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,9 +118,7 @@
     <Compile Include="DeleteStaff.Designer.cs">
       <DependentUpon>DeleteStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditCus.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="EditCus.cs" />
     <Compile Include="EditCus.Designer.cs">
       <DependentUpon>EditCus.cs</DependentUpon>
     </Compile>
@@ -270,6 +273,17 @@
     </None>
     <None Include="Database1DataSet6.xss">
       <DependentUpon>Database1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet7.xsc">
+      <DependentUpon>Database1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet7.xss">
+      <DependentUpon>Database1DataSet7.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
