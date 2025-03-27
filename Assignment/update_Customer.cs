@@ -66,5 +66,7 @@ namespace Assignment
             DeleteCus btn_DeleteCus = new DeleteCus();
             btn_DeleteCus.Show();
         }
+
+
     }
 }

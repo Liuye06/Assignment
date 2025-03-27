@@ -32,14 +32,12 @@
             this.lbl_CusName = new System.Windows.Forms.Label();
             this.lbl_DOB = new System.Windows.Forms.Label();
             this.lbl_email = new System.Windows.Forms.Label();
-            this.lbl_roleCus = new System.Windows.Forms.Label();
             this.lbl_GenderCus = new System.Windows.Forms.Label();
             this.lbl_CusPassword = new System.Windows.Forms.Label();
             this.lbl_CusUsername = new System.Windows.Forms.Label();
             this.txt_CusName = new System.Windows.Forms.TextBox();
             this.txt_CusDOB = new System.Windows.Forms.TextBox();
             this.txt_CusGender = new System.Windows.Forms.TextBox();
-            this.txt_CusRole = new System.Windows.Forms.TextBox();
             this.txt_CusEmail = new System.Windows.Forms.TextBox();
             this.txt_CusUsername = new System.Windows.Forms.TextBox();
             this.txt_CusPassword = new System.Windows.Forms.TextBox();
@@ -79,21 +77,11 @@
             // 
             this.lbl_email.AutoSize = true;
             this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_email.Location = new System.Drawing.Point(246, 264);
+            this.lbl_email.Location = new System.Drawing.Point(246, 233);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(78, 25);
             this.lbl_email.TabIndex = 3;
             this.lbl_email.Text = "Email :";
-            // 
-            // lbl_roleCus
-            // 
-            this.lbl_roleCus.AutoSize = true;
-            this.lbl_roleCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roleCus.Location = new System.Drawing.Point(246, 227);
-            this.lbl_roleCus.Name = "lbl_roleCus";
-            this.lbl_roleCus.Size = new System.Drawing.Size(68, 25);
-            this.lbl_roleCus.TabIndex = 4;
-            this.lbl_roleCus.Text = "Role :";
             // 
             // lbl_GenderCus
             // 
@@ -109,7 +97,7 @@
             // 
             this.lbl_CusPassword.AutoSize = true;
             this.lbl_CusPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CusPassword.Location = new System.Drawing.Point(249, 351);
+            this.lbl_CusPassword.Location = new System.Drawing.Point(249, 320);
             this.lbl_CusPassword.Name = "lbl_CusPassword";
             this.lbl_CusPassword.Size = new System.Drawing.Size(119, 25);
             this.lbl_CusPassword.TabIndex = 6;
@@ -119,7 +107,7 @@
             // 
             this.lbl_CusUsername.AutoSize = true;
             this.lbl_CusUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CusUsername.Location = new System.Drawing.Point(246, 305);
+            this.lbl_CusUsername.Location = new System.Drawing.Point(246, 274);
             this.lbl_CusUsername.Name = "lbl_CusUsername";
             this.lbl_CusUsername.Size = new System.Drawing.Size(123, 25);
             this.lbl_CusUsername.TabIndex = 7;
@@ -146,37 +134,30 @@
             this.txt_CusGender.Size = new System.Drawing.Size(100, 22);
             this.txt_CusGender.TabIndex = 10;
             // 
-            // txt_CusRole
-            // 
-            this.txt_CusRole.Location = new System.Drawing.Point(452, 230);
-            this.txt_CusRole.Name = "txt_CusRole";
-            this.txt_CusRole.Size = new System.Drawing.Size(100, 22);
-            this.txt_CusRole.TabIndex = 11;
-            // 
             // txt_CusEmail
             // 
-            this.txt_CusEmail.Location = new System.Drawing.Point(452, 267);
+            this.txt_CusEmail.Location = new System.Drawing.Point(452, 236);
             this.txt_CusEmail.Name = "txt_CusEmail";
             this.txt_CusEmail.Size = new System.Drawing.Size(100, 22);
             this.txt_CusEmail.TabIndex = 12;
             // 
             // txt_CusUsername
             // 
-            this.txt_CusUsername.Location = new System.Drawing.Point(452, 311);
+            this.txt_CusUsername.Location = new System.Drawing.Point(452, 280);
             this.txt_CusUsername.Name = "txt_CusUsername";
             this.txt_CusUsername.Size = new System.Drawing.Size(100, 22);
             this.txt_CusUsername.TabIndex = 13;
             // 
             // txt_CusPassword
             // 
-            this.txt_CusPassword.Location = new System.Drawing.Point(452, 354);
+            this.txt_CusPassword.Location = new System.Drawing.Point(452, 323);
             this.txt_CusPassword.Name = "txt_CusPassword";
             this.txt_CusPassword.Size = new System.Drawing.Size(100, 22);
             this.txt_CusPassword.TabIndex = 14;
             // 
             // btn_addCus
             // 
-            this.btn_addCus.Location = new System.Drawing.Point(363, 409);
+            this.btn_addCus.Location = new System.Drawing.Point(363, 378);
             this.btn_addCus.Name = "btn_addCus";
             this.btn_addCus.Size = new System.Drawing.Size(95, 31);
             this.btn_addCus.TabIndex = 15;
@@ -193,14 +174,12 @@
             this.Controls.Add(this.txt_CusPassword);
             this.Controls.Add(this.txt_CusUsername);
             this.Controls.Add(this.txt_CusEmail);
-            this.Controls.Add(this.txt_CusRole);
             this.Controls.Add(this.txt_CusGender);
             this.Controls.Add(this.txt_CusDOB);
             this.Controls.Add(this.txt_CusName);
             this.Controls.Add(this.lbl_CusUsername);
             this.Controls.Add(this.lbl_CusPassword);
             this.Controls.Add(this.lbl_GenderCus);
-            this.Controls.Add(this.lbl_roleCus);
             this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.lbl_DOB);
             this.Controls.Add(this.lbl_CusName);
@@ -219,14 +198,12 @@
         private System.Windows.Forms.Label lbl_CusName;
         private System.Windows.Forms.Label lbl_DOB;
         private System.Windows.Forms.Label lbl_email;
-        private System.Windows.Forms.Label lbl_roleCus;
         private System.Windows.Forms.Label lbl_GenderCus;
         private System.Windows.Forms.Label lbl_CusPassword;
         private System.Windows.Forms.Label lbl_CusUsername;
         private System.Windows.Forms.TextBox txt_CusName;
         private System.Windows.Forms.TextBox txt_CusDOB;
         private System.Windows.Forms.TextBox txt_CusGender;
-        private System.Windows.Forms.TextBox txt_CusRole;
         private System.Windows.Forms.TextBox txt_CusEmail;
         private System.Windows.Forms.TextBox txt_CusUsername;
         private System.Windows.Forms.TextBox txt_CusPassword;

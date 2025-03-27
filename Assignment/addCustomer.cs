@@ -13,13 +13,13 @@ using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Configuration;
 
-
 namespace Assignment
 {
     public partial class addCustomer : Form
     {
         private string connectionString;
         private object ConfigurationManager;
+
 
         public object Username { get; private set; }
 
@@ -28,6 +28,7 @@ namespace Assignment
             InitializeComponent();
             this.Load += new EventHandler(addCustomer_Load);
             connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
+
         }
 
         private void btn_addCus_Click(object sender, EventArgs e)
@@ -35,7 +36,6 @@ namespace Assignment
             if (string.IsNullOrWhiteSpace(txt_CusName.Text) ||
                  string.IsNullOrWhiteSpace(txt_CusDOB.Text) ||
                  string.IsNullOrWhiteSpace(txt_CusGender.Text) ||
-                 string.IsNullOrWhiteSpace(txt_CusRole.Text) ||
                  string.IsNullOrWhiteSpace(txt_CusEmail.Text) ||
                  string.IsNullOrWhiteSpace(txt_CusUsername.Text) ||
                  string.IsNullOrWhiteSpace(txt_CusPassword.Text))
@@ -52,10 +52,10 @@ namespace Assignment
                     cmd.Parameters.AddWithValue("@Real_Name", txt_CusName.Text);
                     cmd.Parameters.AddWithValue("@DOB", txt_CusDOB.Text);
                     cmd.Parameters.AddWithValue("@Gender", txt_CusGender.Text);
-                    cmd.Parameters.AddWithValue("@Role", txt_CusRole.Text);
+                    cmd.Parameters.AddWithValue("@Role", "Customer"); // Default role set as Customer
                     cmd.Parameters.AddWithValue("@Email", txt_CusEmail.Text);
                     cmd.Parameters.AddWithValue("@Username", txt_CusUsername.Text);
-                    cmd.Parameters.AddWithValue("@Password", txt_CusPassword.Text); // Consider hashing the password
+                    cmd.Parameters.AddWithValue("@Password", txt_CusPassword.Text);
 
                     try
                     {
@@ -64,7 +64,7 @@ namespace Assignment
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("User registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Refresh(); //Refresh 
+                            Refresh(); // Refresh form fields
                         }
                         else
                         {
@@ -84,7 +84,6 @@ namespace Assignment
             txt_CusName.Text = "";
             txt_CusDOB.Text = "";
             txt_CusGender.Text = "";
-            txt_CusRole.Text = "";
             txt_CusEmail.Text = "";
             txt_CusUsername.Text = "";
             txt_CusPassword.Text = "";
@@ -96,4 +95,3 @@ namespace Assignment
         }
     }
 }
-       

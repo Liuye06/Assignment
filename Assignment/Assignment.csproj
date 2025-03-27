@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,6 +52,12 @@
     </Compile>
     <Compile Include="addCustomer.Designer.cs">
       <DependentUpon>addCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addStaff.Designer.cs">
+      <DependentUpon>addStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs">
       <SubType>Form</SubType>
@@ -89,17 +96,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Database1DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DeleteCus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeleteCus.Designer.cs">
       <DependentUpon>DeleteCus.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteStaff.Designer.cs">
+      <DependentUpon>DeleteStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditCus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditCus.Designer.cs">
       <DependentUpon>EditCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editStaff.Designer.cs">
+      <DependentUpon>editStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,8 +146,17 @@
     <Compile Include="update_Staff.Designer.cs">
       <DependentUpon>update_Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="view_CusFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_CusFeedback.Designer.cs">
+      <DependentUpon>view_CusFeedback.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addCustomer.resx">
       <DependentUpon>addCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStaff.resx">
+      <DependentUpon>addStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -131,8 +164,14 @@
     <EmbeddedResource Include="DeleteCus.resx">
       <DependentUpon>DeleteCus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteStaff.resx">
+      <DependentUpon>DeleteStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCus.resx">
       <DependentUpon>EditCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editStaff.resx">
+      <DependentUpon>editStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="update_Staff.resx">
       <DependentUpon>update_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_CusFeedback.resx">
+      <DependentUpon>view_CusFeedback.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
@@ -217,6 +259,17 @@
     </None>
     <None Include="Database1DataSet5.xss">
       <DependentUpon>Database1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet6.xsc">
+      <DependentUpon>Database1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet6.xss">
+      <DependentUpon>Database1DataSet6.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

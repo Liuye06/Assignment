@@ -142,6 +142,7 @@
             this.btn_Feedback.Text = "Feedback";
             this.btn_Feedback.UseVisualStyleBackColor = true;
             this.btn_Feedback.UseWaitCursor = true;
+            this.btn_Feedback.Click += new System.EventHandler(this.btn_Feedback_Click);
             // 
             // btn_SalesReport
             // 

@@ -19,7 +19,15 @@ namespace Assignment
 
         private void update_Staff_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database1DataSet6.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.database1DataSet6.User);
 
+        }
+
+        private void btn_view_Click(object sender, EventArgs e)
+        {
+            update_Staff btn_view = new update_Staff();
+            btn_view.Show();
         }
     }
 }

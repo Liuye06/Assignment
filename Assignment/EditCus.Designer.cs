@@ -30,7 +30,7 @@
         {
             this.btn_EditCus = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
-            this.txt_CusPassword = new System.Windows.Forms.TextBox();
+            this.txt_EditCus = new System.Windows.Forms.TextBox();
             this.lbl_EditCus = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -48,19 +48,19 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(651, 324);
+            this.btn_Cancel.Location = new System.Drawing.Point(621, 324);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 4;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
-            // txt_CusPassword
+            // txt_EditCus
             // 
-            this.txt_CusPassword.Location = new System.Drawing.Point(491, 210);
-            this.txt_CusPassword.Name = "txt_CusPassword";
-            this.txt_CusPassword.Size = new System.Drawing.Size(100, 22);
-            this.txt_CusPassword.TabIndex = 29;
+            this.txt_EditCus.Location = new System.Drawing.Point(491, 210);
+            this.txt_EditCus.Name = "txt_EditCus";
+            this.txt_EditCus.Size = new System.Drawing.Size(100, 22);
+            this.txt_EditCus.TabIndex = 29;
             // 
             // lbl_EditCus
             // 
@@ -85,7 +85,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Name",
+            "Real_Name",
             "DOB",
             "Gender",
             "Email",
@@ -94,6 +94,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 32;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -113,11 +114,12 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lbl_EditCus);
-            this.Controls.Add(this.txt_CusPassword);
+            this.Controls.Add(this.txt_EditCus);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_EditCus);
             this.Name = "EditCus";
             this.Text = "EditCus";
+            this.Load += new System.EventHandler(this.EditCus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +128,7 @@
         #endregion
         private System.Windows.Forms.Button btn_EditCus;
         private System.Windows.Forms.Button btn_Cancel;
-        private System.Windows.Forms.TextBox txt_CusPassword;
+        private System.Windows.Forms.TextBox txt_EditCus;
         private System.Windows.Forms.Label lbl_EditCus;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox comboBox1;

@@ -42,31 +42,31 @@ namespace Assignment
         }
 
 
-        public static bool EditUser(string originalUserInfo, string newUserInfo, string Email, string Real_Name, double DOB)
+        public static bool EditUser(string selectedUser, string selectedField, string newValue)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "UPDATE User SET Item = @NewUserInfo, Email = @Email, DOB = @DOB,Gender = @Gender, Real_Name = @Real_Name, Username = @Username, Password =@Password WHERE User = @OriginalUserInfo";
+                    string query = $"UPDATE User SET {selectedField} = @NewValue WHERE Real_Name = @UserName AND Role = 'Customer'";
+
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@NewUserInfo", newUserInfo);
-                        cmd.Parameters.AddWithValue("@Email", Email);
-                        cmd.Parameters.AddWithValue("@Real_Name", Real_Name);
-                        cmd.Parameters.AddWithValue("@DOB", DOB);
-                        cmd.Parameters.AddWithValue("@OriginalUserInfo", originalUserInfo);
+                        cmd.Parameters.AddWithValue("@NewValue", newValue);
+                        cmd.Parameters.AddWithValue("@UserName", selectedUser);
+
                         return cmd.ExecuteNonQuery() > 0;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error editing user info: " + ex.Message);
+                    MessageBox.Show("Error updating user info: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
         }
+
 
         public static bool DeleteUser(string username)
         {
@@ -141,36 +141,4 @@ namespace Assignment
         }
 
 
-        public static DataRow GetMenuItem(string menuItem)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
-            DataTable dt = new DataTable();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT Item, Price, Category, Image FROM Menu WHERE Item = @MenuItem";
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@MenuItem", menuItem);
-
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error retrieving menu item: " + ex.Message);
-                    return null;
-                }
-            }
-
-            return dt.Rows.Count > 0 ? dt.Rows[0] : null; // Return first row or null if not found
-        }
-    }
-}
+        

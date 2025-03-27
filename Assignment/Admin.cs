@@ -46,5 +46,11 @@ namespace Assignment
             salesReport btn_SalesReport = new salesReport();
             btn_SalesReport.Show();
         }
+
+        private void btn_Feedback_Click(object sender, EventArgs e)
+        {
+            view_CusFeedback btn_Feedback = new view_CusFeedback();
+            btn_Feedback.Show();
+        }
     }
 }
