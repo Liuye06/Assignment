@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Configuration;
 
 
 namespace Assignment
@@ -18,6 +19,7 @@ namespace Assignment
     public partial class addCustomer : Form
     {
         private string connectionString;
+        private object ConfigurationManager;
 
         public object Username { get; private set; }
 
@@ -25,6 +27,7 @@ namespace Assignment
         {
             InitializeComponent();
             this.Load += new EventHandler(addCustomer_Load);
+            connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
         }
 
         private void btn_addCus_Click(object sender, EventArgs e)

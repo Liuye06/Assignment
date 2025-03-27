@@ -58,6 +58,7 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminClass.cs" />
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -77,6 +78,22 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteCus.Designer.cs">
+      <DependentUpon>DeleteCus.cs</DependentUpon>
     </Compile>
     <Compile Include="EditCus.cs">
       <SubType>Form</SubType>
@@ -110,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteCus.resx">
+      <DependentUpon>DeleteCus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditCus.resx">
       <DependentUpon>EditCus.cs</DependentUpon>
@@ -175,6 +195,28 @@
     </None>
     <None Include="Database1DataSet3.xss">
       <DependentUpon>Database1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet4.xsc">
+      <DependentUpon>Database1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet4.xss">
+      <DependentUpon>Database1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet5.xsc">
+      <DependentUpon>Database1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet5.xss">
+      <DependentUpon>Database1DataSet5.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

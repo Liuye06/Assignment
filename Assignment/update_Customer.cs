@@ -60,5 +60,11 @@ namespace Assignment
             EditCus btn_EditCus = new EditCus();
             btn_EditCus.Show();
         }
+
+        private void btn_DeleteCus_Click(object sender, EventArgs e)
+        {
+            DeleteCus btn_DeleteCus = new DeleteCus();
+            btn_DeleteCus.Show();
+        }
     }
 }
