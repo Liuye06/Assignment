@@ -35,7 +35,7 @@ namespace Assignment
             return dt;
         }
 
-        // 📌 添加用户后刷新 DataGridView
+        // 📌 after add user refresh DataGridView
         public static bool AddUser(string realName, DateTime dob, string gender, string email, string username, string password, DataGridView dataGridView)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -72,7 +72,7 @@ namespace Assignment
             }
         }
 
-        // 📌 编辑用户后刷新 DataGridView
+        // 📌 after edit refresh the DataGridView
         public static bool EditUser(string user_Id, string field, string newValue, DataGridView dataGridView)
         {
             HashSet<string> allowedFields = new HashSet<string> { "Real_Name", "DOB", "Gender", "Email", "Username" };

@@ -57,8 +57,6 @@ namespace Assignment
 
         private void btn_EditCus_Click(object sender, EventArgs e)
         {
-            EditCus btn_EditCus = new EditCus();
-            btn_EditCus.Show();
             EditCus editCusForm = new EditCus(this.dataGridView1);
             editCusForm.ShowDialog();
         }

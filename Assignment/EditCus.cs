@@ -39,17 +39,15 @@ namespace Assignment
         }
         private void EditCus_Load(object sender, EventArgs e)
         {
-            LoadCustomers(listBox1);
+            AdminClass.LoadCustomers(listBox1); 
         }
-
         private void listBoxUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem is ListItem selectedItem)
             {
-                selectedUserId = selectedItem.Value; // select User ID
+                selectedUserId = selectedItem.Value;
             }
         }
-
         private void btn_EditCus_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(selectedUserId) || comboBox1.SelectedItem == null)
@@ -57,7 +55,6 @@ namespace Assignment
                 MessageBox.Show("Please select a user and a field to edit.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             string selectedField = comboBox1.SelectedItem.ToString();
             string newValue = txt_EditCus.Text.Trim();
 
@@ -66,7 +63,6 @@ namespace Assignment
                 MessageBox.Show("Please enter a valid value.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             Dictionary<string, string> fieldMapping = new Dictionary<string, string>
         {
             { "Real Name", "Real_Name" },
@@ -81,14 +77,13 @@ namespace Assignment
                 MessageBox.Show("Invalid field selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             string databaseField = fieldMapping[selectedField];
 
             bool success = AdminClass.EditUser(selectedUserId, databaseField, newValue, dataGridView);
             if (success)
             {
                 MessageBox.Show("User Updated Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                AdminClass.LoadCustomers(listBox1); // 
+                AdminClass.LoadCustomers(listBox1); // Use AdminClass method
             }
             else
             {
@@ -96,13 +91,12 @@ namespace Assignment
             }
         }
 
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_EditCus.Clear();
             if (comboBox1.SelectedItem?.ToString() == "Date of Birth")
             {
-                txt_EditCus.Text = "DD-MM-YYYY"; // Placeholder
+                txt_EditCus.Text = "DD/MM/YYYY"; // Placeholder
             }
         }
 
@@ -128,9 +122,9 @@ namespace Assignment
         public static DataTable GetCustomerData()
         {
             DataTable dt = new DataTable();
-            string query = "SELECT User_ID, Real_Name FROM Customers"; // 调整表名
+            string query = "SELECT User_ID, Real_Name FROM [User]";
 
-            using (SqlConnection conn = new SqlConnection("your_connection_string"))
+            using (SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Catherine Ling\\OneDrive\\Documents\\C#\\Assignment\\Assignment\\Database1.mdf\";Integrated Security=True"))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
