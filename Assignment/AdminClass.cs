@@ -300,7 +300,7 @@ namespace Assignment
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static DataTable GetStaffByRole() //get new staff data
+        public static DataTable GetStaffDataByRole(string role)
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -308,11 +308,26 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT User_ID, Email, Real_Name, DOB, Gender FROM [User] WHERE Role = 'Admin','Manager','Chef','Reservation Coordinator'";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    string query;
+                    if (string.IsNullOrEmpty(role))
                     {
-                        adapter.Fill(dt);
+                        query = "SELECT User_ID, Email, Real_Name, DOB, Gender FROM [User] WHERE Role IN ('Admin', 'Manager', 'Chef', 'Reservation Coordinator')";
+                    }
+                    else
+                    {
+                        query = "SELECT User_ID, Email, Real_Name, DOB, Gender FROM [User] WHERE Role = @Role";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        if (!string.IsNullOrEmpty(role))
+                        {
+                            cmd.Parameters.AddWithValue("@Role", role);
+                        }
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -322,31 +337,30 @@ namespace Assignment
             }
             return dt;
         }
-        public static void RefreshDataGridView1(DataGridView dataGridView) // this refresh for Staff role
+        public static void RefreshStaffGridView(DataGridView dataGridView, string role)
         {
             if (dataGridView == null || dataGridView.IsDisposed) return;
 
             try
             {
-                dataGridView.DataSource = GetStaffByRole();
+                dataGridView.DataSource = GetStaffDataByRole(role);
                 dataGridView.Refresh();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error refreshing grid: " + ex.Message, "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error refreshing grid: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static void LoadStaff(ListBox listBox)// for load the staff role
+
+        public static void LoadStaff(ListBox listBox) // for load the staff role
         {
             if (listBox == null || listBox.IsDisposed) return;
-
             try
             {
                 listBox.Invoke((MethodInvoker)delegate
                 {
                     listBox.Items.Clear();
-                    DataTable dt = GetStaffByRole();
+                    DataTable dt = GetStaffDataByRole(""); // Pass empty string or specific role if needed
                     if (dt == null) return;
 
                     foreach (DataRow row in dt.Rows)
@@ -355,6 +369,11 @@ namespace Assignment
                         listBox.Items.Add(new ListItem(displayText, row["User_ID"].ToString()));
                     }
                 });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading staff: " + ex.Message,
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -275,11 +275,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Admin",
-            "Chef",
-            "Manager",
-            "Reservation Coordinator"});
             this.comboBox1.Location = new System.Drawing.Point(393, 57);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
@@ -302,6 +297,7 @@
             this.Btn_viewStaff.TabIndex = 9;
             this.Btn_viewStaff.Text = "View";
             this.Btn_viewStaff.UseVisualStyleBackColor = true;
+            this.Btn_viewStaff.Click += new System.EventHandler(this.Btn_viewStaff_Click);
             // 
             // update_Staff
             // 

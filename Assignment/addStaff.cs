@@ -130,7 +130,7 @@ namespace Assignment
                               MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearForm();
                 // Refresh the DataGridView
-                AdminClass.RefreshDataGridView1(_dataGridView);
+                AdminClass.RefreshDataGridView(_dataGridView);
             }
         }
 
