@@ -170,7 +170,7 @@ namespace Assignment
                 }
             }
         }
-        public static bool DeleteUser(string user_Id, DataGridView dataGridView)//refresh DataGridView after delete user
+        public static bool DeleteUser(string realName)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -178,10 +178,10 @@ namespace Assignment
                 {
                     conn.Open();
 
-                    string checkQuery = "SELECT COUNT(*) FROM [User] WHERE User_ID = @User_ID";
+                    string checkQuery = "SELECT COUNT(*) FROM [User] WHERE Real_Name = @RealName";
                     using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
-                        checkCmd.Parameters.AddWithValue("@User_ID", user_Id);
+                        checkCmd.Parameters.AddWithValue("@RealName", realName);
                         int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
                         if (count == 0)
@@ -190,17 +190,11 @@ namespace Assignment
                             return false;
                         }
                     }
-
-                    string deleteQuery = "DELETE FROM [User] WHERE User_ID = @UserID";
+                    string deleteQuery = "DELETE FROM [User] WHERE Real_Name = @RealName";
                     using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
                     {
-                        deleteCmd.Parameters.AddWithValue("@UserID", user_Id);
-                        bool success = deleteCmd.ExecuteNonQuery() > 0;
-                        if (success)
-                        {
-                            RefreshDataGridView(dataGridView);
-                        }
-                        return success;
+                        deleteCmd.Parameters.AddWithValue("@RealName", realName);
+                        return deleteCmd.ExecuteNonQuery() > 0;
                     }
                 }
                 catch (Exception ex)
@@ -308,14 +302,11 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query;
-                    if (string.IsNullOrEmpty(role))
+                    string query = "SELECT User_ID, Real_Name, Email, DOB, Gender, Role, Username, Password FROM [User]";
+
+                    if (!string.IsNullOrEmpty(role))
                     {
-                        query = "SELECT User_ID, Email, Real_Name, DOB, Gender FROM [User] WHERE Role IN ('Admin', 'Manager', 'Chef', 'Reservation Coordinator')";
-                    }
-                    else
-                    {
-                        query = "SELECT User_ID, Email, Real_Name, DOB, Gender FROM [User] WHERE Role = @Role";
+                        query += " WHERE Role = @Role";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -351,31 +342,82 @@ namespace Assignment
                 MessageBox.Show("Error refreshing grid: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        public static void LoadStaff(ListBox listBox) // for load the staff role
+        public static void LoadStaff(ListBox listBox)
         {
             if (listBox == null || listBox.IsDisposed) return;
+
             try
             {
                 listBox.Invoke((MethodInvoker)delegate
                 {
                     listBox.Items.Clear();
-                    DataTable dt = GetStaffDataByRole(""); // Pass empty string or specific role if needed
-                    if (dt == null) return;
+                    DataTable dt = GetStaffDataByRole(""); 
+
+                    if (dt == null || dt.Rows.Count == 0) return;
 
                     foreach (DataRow row in dt.Rows)
                     {
-                        string displayText = $"{row["User_ID"]} - {row["Real_Name"]}";
-                        listBox.Items.Add(new ListItem(displayText, row["User_ID"].ToString()));
+                        string displayText = $"{row["User_ID"]} - {row["Real_Name"]} | {row["Email"]} | {row["DOB"]} | {row["Gender"]} | {row["Role"]} | {row["Username"]} | {row["Password"]}";
+                        listBox.Items.Add(displayText);
                     }
                 });
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error loading staff: " + ex.Message,
-                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading staff: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public static List<string> GetStaffNamesByRole(string role)
+        {
+            List<string> staffNames = new List<string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Real_Name FROM [User] WHERE Role = @Role";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Role", role);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                staffNames.Add(reader["Real_Name"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading staff names: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return staffNames;
+        }
+        public static bool DeleteStaffByName(string realName)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(
+                "DELETE FROM [User] WHERE Real_Name = @RealName", conn))
+            {
+                cmd.Parameters.AddWithValue("@RealName", realName);
+
+                try
+                {
+                    conn.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting staff: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+     }
     }
-}
         

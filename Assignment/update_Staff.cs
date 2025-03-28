@@ -46,6 +46,12 @@ namespace Assignment
         {
             RefreshDataGrid();
         }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            DeleteStaff btn_Delete = new DeleteStaff();
+            btn_Delete.ShowDialog();
+        }
     }
 
 }

@@ -133,7 +133,6 @@ namespace Assignment
                 AdminClass.RefreshDataGridView(_dataGridView);
             }
         }
-
         private void addStaff_Load(object sender, EventArgs e)
         {
             txt_StaffDOB.Text = DateTime.Now.ToString("DD/MM/YYYY");
