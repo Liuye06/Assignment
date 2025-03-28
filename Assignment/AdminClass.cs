@@ -69,7 +69,7 @@ namespace Assignment
                     return false;
                 }
             }
-        }       
+        }
         public static bool IsUsernameAvailable(string username) // Validate if username already exists
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -169,7 +169,7 @@ namespace Assignment
                 }
             }
         }
-        public static void RefreshDataGridView(DataGridView dataGridView) 
+        public static void RefreshDataGridView(DataGridView dataGridView)
         {
             if (dataGridView == null || dataGridView.IsDisposed) return;
 
@@ -209,5 +209,57 @@ namespace Assignment
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public static DataTable GetCustomerFeedbacks()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Feedback_ID, Order_ID, Feedback FROM [Table]";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading feedback data: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return dt;
+        }
+
+        public static void ConfigureFeedbackGridView(DataGridView dataGridView)
+        {
+            if (dataGridView == null) return;
+
+            try
+            {
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView.ReadOnly = true;
+                dataGridView.AllowUserToAddRows = false;
+                dataGridView.AllowUserToDeleteRows = false;
+                dataGridView.RowHeadersVisible = false;
+                dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                if (dataGridView.Columns.Contains("Feedback_ID"))
+                    dataGridView.Columns["Feedback_ID"].HeaderText = "Feedback ID";
+                if (dataGridView.Columns.Contains("Order_ID"))
+                    dataGridView.Columns["Order_ID"].HeaderText = "Order ID";
+                if (dataGridView.Columns.Contains("Feedback"))
+                    dataGridView.Columns["Feedback"].HeaderText = "Customer Feedback";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error configuring grid view: " + ex.Message,
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
+       
+        
