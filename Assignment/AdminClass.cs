@@ -70,6 +70,47 @@ namespace Assignment
                 }
             }
         }
+        public static List<string> GetStaffRoles()
+        {
+            return new List<string> { "Admin", "Chef", "Manager", "Reservation Coordinator" };
+        }
+
+        public static bool AddStaff(string realName, DateTime dob, string gender, string email,
+                                  string role, string username, string password, DataGridView dataGridView)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"INSERT INTO [User] (Real_Name, DOB, Gender, Email, Role, Username, Password) 
+                                VALUES (@Real_Name, @DOB, @Gender, @Email, @Role, @Username, @Password)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.Add("@Real_Name", SqlDbType.NVarChar).Value = realName;
+                        cmd.Parameters.Add("@DOB", SqlDbType.DateTime).Value = dob;
+                        cmd.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = gender;
+                        cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = email;
+                        cmd.Parameters.Add("@Role", SqlDbType.NVarChar).Value = role;
+                        cmd.Parameters.Add("@Username", SqlDbType.NVarChar).Value = username;
+                        cmd.Parameters.Add("@Password", SqlDbType.NVarChar).Value = password;
+
+                        bool success = cmd.ExecuteNonQuery() > 0;
+                        if (success && dataGridView != null)
+                        {
+                            RefreshDataGridView(dataGridView);
+                        }
+                        return success;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error adding user: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
         public static bool IsUsernameAvailable(string username) // Validate if username already exists
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -209,7 +250,7 @@ namespace Assignment
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static DataTable GetCustomerFeedbacks()
+        public static DataTable GetCustomerFeedbacks()//admin see cus feedback
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -259,7 +300,63 @@ namespace Assignment
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public static DataTable GetStaffByRole() //get new staff data
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT User_ID, Email, Real_Name, DOB, Gender FROM [User] WHERE Role = 'Admin','Manager','Chef','Reservation Coordinator'";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading staff data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return dt;
+        }
+        public static void RefreshDataGridView1(DataGridView dataGridView) // this refresh for Staff role
+        {
+            if (dataGridView == null || dataGridView.IsDisposed) return;
+
+            try
+            {
+                dataGridView.DataSource = GetStaffByRole();
+                dataGridView.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error refreshing grid: " + ex.Message, "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public static void LoadStaff(ListBox listBox)// for load the staff role
+        {
+            if (listBox == null || listBox.IsDisposed) return;
+
+            try
+            {
+                listBox.Invoke((MethodInvoker)delegate
+                {
+                    listBox.Items.Clear();
+                    DataTable dt = GetStaffByRole();
+                    if (dt == null) return;
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string displayText = $"{row["User_ID"]} - {row["Real_Name"]}";
+                        listBox.Items.Add(new ListItem(displayText, row["User_ID"].ToString()));
+                    }
+                });
+            }
+        }
     }
 }
-       
         

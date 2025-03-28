@@ -19,9 +19,9 @@ namespace Assignment
 
         private void update_Customer_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet2.User' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'database1DataSet2.User' table. 
             this.userTableAdapter1.Fill(this.database1DataSet2.User);
-            // TODO: This line of code loads data into the 'database1DataSet.User' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'database1DataSet.User' table.
             this.userTableAdapter.Fill(this.database1DataSet.User);
 
         }
@@ -36,6 +36,7 @@ namespace Assignment
         {
             update_Customer btn_viewCus = new update_Customer();
             btn_viewCus.Show();
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -52,5 +52,10 @@ namespace Assignment
             view_CusFeedback btn_Feedback = new view_CusFeedback();
             btn_Feedback.Show();
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
