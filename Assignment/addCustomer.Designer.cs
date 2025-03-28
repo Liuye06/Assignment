@@ -37,11 +37,11 @@
             this.lbl_CusUsername = new System.Windows.Forms.Label();
             this.txt_CusName = new System.Windows.Forms.TextBox();
             this.txt_CusDOB = new System.Windows.Forms.TextBox();
-            this.txt_CusGender = new System.Windows.Forms.TextBox();
             this.txt_CusEmail = new System.Windows.Forms.TextBox();
             this.txt_CusUsername = new System.Windows.Forms.TextBox();
             this.txt_CusPassword = new System.Windows.Forms.TextBox();
             this.btn_addCus = new System.Windows.Forms.Button();
+            this.cb_gender = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -127,13 +127,6 @@
             this.txt_CusDOB.Size = new System.Drawing.Size(100, 22);
             this.txt_CusDOB.TabIndex = 9;
             // 
-            // txt_CusGender
-            // 
-            this.txt_CusGender.Location = new System.Drawing.Point(452, 190);
-            this.txt_CusGender.Name = "txt_CusGender";
-            this.txt_CusGender.Size = new System.Drawing.Size(100, 22);
-            this.txt_CusGender.TabIndex = 10;
-            // 
             // txt_CusEmail
             // 
             this.txt_CusEmail.Location = new System.Drawing.Point(452, 236);
@@ -165,16 +158,27 @@
             this.btn_addCus.UseVisualStyleBackColor = true;
             this.btn_addCus.Click += new System.EventHandler(this.btn_addCus_Click);
             // 
+            // cb_gender
+            // 
+            this.cb_gender.FormattingEnabled = true;
+            this.cb_gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cb_gender.Location = new System.Drawing.Point(452, 191);
+            this.cb_gender.Name = "cb_gender";
+            this.cb_gender.Size = new System.Drawing.Size(100, 24);
+            this.cb_gender.TabIndex = 16;
+            // 
             // addCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 482);
+            this.Controls.Add(this.cb_gender);
             this.Controls.Add(this.btn_addCus);
             this.Controls.Add(this.txt_CusPassword);
             this.Controls.Add(this.txt_CusUsername);
             this.Controls.Add(this.txt_CusEmail);
-            this.Controls.Add(this.txt_CusGender);
             this.Controls.Add(this.txt_CusDOB);
             this.Controls.Add(this.txt_CusName);
             this.Controls.Add(this.lbl_CusUsername);
@@ -203,10 +207,10 @@
         private System.Windows.Forms.Label lbl_CusUsername;
         private System.Windows.Forms.TextBox txt_CusName;
         private System.Windows.Forms.TextBox txt_CusDOB;
-        private System.Windows.Forms.TextBox txt_CusGender;
         private System.Windows.Forms.TextBox txt_CusEmail;
         private System.Windows.Forms.TextBox txt_CusUsername;
         private System.Windows.Forms.TextBox txt_CusPassword;
         private System.Windows.Forms.Button btn_addCus;
+        private System.Windows.Forms.ComboBox cb_gender;
     }
 }

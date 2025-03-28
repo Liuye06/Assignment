@@ -35,8 +35,8 @@ namespace Assignment
             return dt;
         }
 
-        // 📌 after add user refresh DataGridView
-        public static bool AddUser(string realName, DateTime dob, string gender, string email, string username, string password, DataGridView dataGridView)
+        //  after add user refresh DataGridView
+        public static bool AddUser(string realName, DateTime dob, string gender, string email,string role, string username, string password, DataGridView dataGridView)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -44,8 +44,8 @@ namespace Assignment
                 {
                     conn.Open();
                     string query = @"
-                        INSERT INTO [User] (Real_Name, DOB, Gender, Email, Username, Password) 
-                        VALUES (@Real_Name, @DOB, @Gender,@Email, @Username, @Password)";
+                        INSERT INTO [User] (Real_Name, DOB, Gender, Email,Role, Username, Password) 
+                        VALUES (@Real_Name, @DOB, @Gender,@Email,@Role, @Username, @Password)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -53,6 +53,7 @@ namespace Assignment
                         cmd.Parameters.Add("@DOB", SqlDbType.DateTime).Value = dob;
                         cmd.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = gender;
                         cmd.Parameters.Add("@Email", SqlDbType.NVarChar).Value = email;
+                        cmd.Parameters.Add("@Role", SqlDbType.NVarChar).Value = role;
                         cmd.Parameters.Add("@Username", SqlDbType.NVarChar).Value = username;
                         cmd.Parameters.Add("@Password", SqlDbType.NVarChar).Value = password;
 
@@ -71,8 +72,31 @@ namespace Assignment
                 }
             }
         }
+        // Validate if username already exists
+        public static bool IsUsernameAvailable(string username)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM [User] WHERE Username = @Username";
 
-        // 📌 after edit refresh the DataGridView
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        return (int)cmd.ExecuteScalar() == 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error checking username: " + ex.Message, "Database Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+        //  after edit refresh the DataGridView
         public static bool EditUser(string user_Id, string field, string newValue, DataGridView dataGridView)
         {
             HashSet<string> allowedFields = new HashSet<string> { "Real_Name", "DOB", "Gender", "Email", "Username" };
@@ -109,7 +133,7 @@ namespace Assignment
             }
         }
 
-        // 📌 refresh DataGridView after delete user
+        //  refresh DataGridView after delete user
         public static bool DeleteUser(string user_Id, DataGridView dataGridView)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -158,16 +182,29 @@ namespace Assignment
         }
         public static void LoadCustomers(ListBox listBox)
         {
-            listBox.Items.Clear();
-            DataTable dt = GetCustomerData();
+            if (listBox == null || listBox.IsDisposed) return;
 
-            foreach (DataRow row in dt.Rows)
+            try
             {
-                string displayText = $"{row["User_ID"]} - {row["Real_Name"]}";
-                listBox.Items.Add(new ListItem(displayText, row["User_ID"].ToString()));
+                listBox.Invoke((MethodInvoker)delegate
+                {
+                    listBox.Items.Clear();
+                    DataTable dt = GetCustomerData();
+                    if (dt == null) return;
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string displayText = $"{row["User_ID"]} - {row["Real_Name"]}";
+                        listBox.Items.Add(new ListItem(displayText, row["User_ID"].ToString()));
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading customers: " + ex.Message,
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
 
