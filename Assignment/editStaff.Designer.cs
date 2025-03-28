@@ -38,8 +38,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -106,6 +104,7 @@
             this.btn_EditCus.TabIndex = 34;
             this.btn_EditCus.Text = "Save";
             this.btn_EditCus.UseVisualStyleBackColor = true;
+            this.btn_EditCus.Click += new System.EventHandler(this.btn_EditCus_Click_1);
             // 
             // label2
             // 
@@ -119,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(409, 60);
+            this.label3.Location = new System.Drawing.Point(355, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 16);
             this.label3.TabIndex = 43;
@@ -134,36 +133,16 @@
             "Gender",
             "Email",
             "Username"});
-            this.comboBox2.Location = new System.Drawing.Point(539, 57);
+            this.comboBox2.Location = new System.Drawing.Point(485, 54);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 42;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(274, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 44;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(691, 57);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 45;
-            this.button2.Text = "Confirm";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // editStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label2);
@@ -176,6 +155,7 @@
             this.Controls.Add(this.btn_EditCus);
             this.Name = "editStaff";
             this.Text = "editStaff";
+            this.Load += new System.EventHandler(this.editStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +173,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

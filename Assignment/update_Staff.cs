@@ -52,6 +52,12 @@ namespace Assignment
             DeleteStaff btn_Delete = new DeleteStaff();
             btn_Delete.ShowDialog();
         }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            editStaff btn_Edit = new editStaff();
+            btn_Edit.ShowDialog();
+        }
     }
 
 }

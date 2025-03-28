@@ -418,6 +418,73 @@ namespace Assignment
                 }
             }
         }
-     }
+        public static List<string> GetEditableFields()
+        {
+            return new List<string> { "Real_Name", "DOB", "Gender", "Email", "Username" };
+        }
+        public static bool UpdateStaffInfo(string realName, string field, string newValue)
+        {
+            HashSet<string> allowedFields = new HashSet<string> { "Real_Name", "DOB", "Gender", "Email", "Username" };
+
+            if (!allowedFields.Contains(field))
+            {
+                MessageBox.Show("Invalid field update attempt!", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(
+                $"UPDATE [User] SET {field} = @NewValue WHERE Real_Name = @RealName", conn))
+            {
+                cmd.Parameters.AddWithValue("@NewValue", newValue);
+                cmd.Parameters.AddWithValue("@RealName", realName);
+
+                try
+                {
+                    conn.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error updating {field}: {ex.Message}",
+                                   "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+        public static Dictionary<string, string> GetStaffDetails(string realName)
+        {
+            var details = new Dictionary<string, string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(
+                "SELECT Real_Name, DOB, Gender, Email, Username FROM [User] WHERE Real_Name = @RealName", conn))
+            {
+                cmd.Parameters.AddWithValue("@RealName", realName);
+
+                try
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            details["Real_Name"] = reader["Real_Name"].ToString();
+                            details["DOB"] = reader["DOB"].ToString();
+                            details["Gender"] = reader["Gender"].ToString();
+                            details["Email"] = reader["Email"].ToString();
+                            details["Username"] = reader["Username"].ToString();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading staff details: {ex.Message}",
+                                   "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return details;
+        }
+    }
     }
         
