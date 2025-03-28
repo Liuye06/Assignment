@@ -8,6 +8,12 @@ namespace Assignment
 {
     public partial class addCustomer : Form
     {
+        private DataGridView _dataGridView; // Store reference to main form's DataGridView
+        public addCustomer(DataGridView dataGridView)// Modify constructor to accept DataGridView
+        {
+            InitializeComponent();
+            _dataGridView = dataGridView;
+        }
         public addCustomer()
         {
             InitializeComponent();
@@ -18,36 +24,40 @@ namespace Assignment
                 return;
 
             DateTime dob;
-            if (!DateTime.TryParseExact(txt_CusDOB.Text, "DD/MM/YYYY", null, System.Globalization.DateTimeStyles.None, out dob))
+            if (!DateTime.TryParseExact(txt_CusDOB.Text, "dd/MM/yyyy",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None, out dob))
             {
-                MessageBox.Show("Please enter a valid date format (DD/MM/YYYY)", "Invalid Date",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter exactly in DD/MM/YYYY format (e.g. 06/12/2007)",
+                              "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Check if username is available
             if (!AdminClass.IsUsernameAvailable(txt_CusUsername.Text))
             {
-                MessageBox.Show("Username already exists. Please choose another one.", "Validation Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Username already exists", "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             bool success = AdminClass.AddUser(
-                realName: txt_CusName.Text,
-                dob: dob,  // Pass the parsed DateTime object
-                gender: cb_gender.Text,
-                email: txt_CusEmail.Text,
-                role: "Customer",
-                username: txt_CusUsername.Text,
-                password: txt_CusPassword.Text,
-                dataGridView: null);
+                txt_CusName.Text,
+                dob,
+                cb_gender.Text,
+                txt_CusEmail.Text,
+                "Customer",
+                txt_CusUsername.Text,
+                txt_CusPassword.Text,
+                null);
 
             if (success)
             {
-                MessageBox.Show("Customer added successfully!", "Success",
+                MessageBox.Show("Registration successful!", "Success",
                               MessageBoxButtons.OK, MessageBoxIcon.Information);
                 refresh();
+
+                // Refresh the DataGridView
+                AdminClass.RefreshDataGridView(_dataGridView);
             }
         }
 

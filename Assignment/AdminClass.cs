@@ -11,8 +11,7 @@ namespace Assignment
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
 
-        // get the new data of Customers 
-        public static DataTable GetCustomerData()
+        public static DataTable GetCustomerData()// get the new data of Customers
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -35,17 +34,16 @@ namespace Assignment
             return dt;
         }
 
-        //  after add user refresh DataGridView
-        public static bool AddUser(string realName, DateTime dob, string gender, string email,string role, string username, string password, DataGridView dataGridView)
+        public static bool AddUser(string realName, DateTime dob, string gender, string email,
+                                 string role, string username, string password, DataGridView dataGridView)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = @"
-                        INSERT INTO [User] (Real_Name, DOB, Gender, Email,Role, Username, Password) 
-                        VALUES (@Real_Name, @DOB, @Gender,@Email,@Role, @Username, @Password)";
+                    string query = @"INSERT INTO [User] (Real_Name, DOB, Gender, Email, Role, Username, Password) 
+                                VALUES (@Real_Name, @DOB, @Gender, @Email, @Role, @Username, @Password)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -58,9 +56,9 @@ namespace Assignment
                         cmd.Parameters.Add("@Password", SqlDbType.NVarChar).Value = password;
 
                         bool success = cmd.ExecuteNonQuery() > 0;
-                        if (success)
+                        if (success && dataGridView != null)
                         {
-                            RefreshCustomerGrid(dataGridView); 
+                            RefreshDataGridView(dataGridView);
                         }
                         return success;
                     }
@@ -71,9 +69,8 @@ namespace Assignment
                     return false;
                 }
             }
-        }
-        // Validate if username already exists
-        public static bool IsUsernameAvailable(string username)
+        }       
+        public static bool IsUsernameAvailable(string username) // Validate if username already exists
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -121,7 +118,7 @@ namespace Assignment
                     bool success = cmd.ExecuteNonQuery() > 0;
                     if (success)
                     {
-                        RefreshCustomerGrid(dataGridView); 
+                        RefreshDataGridView(dataGridView);
                     }
                     return success;
                 }
@@ -132,9 +129,7 @@ namespace Assignment
                 }
             }
         }
-
-        //  refresh DataGridView after delete user
-        public static bool DeleteUser(string user_Id, DataGridView dataGridView)
+        public static bool DeleteUser(string user_Id, DataGridView dataGridView)//refresh DataGridView after delete user
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -155,14 +150,14 @@ namespace Assignment
                         }
                     }
 
-                    string deleteQuery = "DELETE FROM [User] WHERE UserID = @UserID";
+                    string deleteQuery = "DELETE FROM [User] WHERE User_ID = @UserID";
                     using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
                     {
                         deleteCmd.Parameters.AddWithValue("@UserID", user_Id);
                         bool success = deleteCmd.ExecuteNonQuery() > 0;
                         if (success)
                         {
-                            RefreshCustomerGrid(dataGridView); 
+                            RefreshDataGridView(dataGridView);
                         }
                         return success;
                     }
@@ -174,11 +169,20 @@ namespace Assignment
                 }
             }
         }
-
-        // refresh the DataGridView
-        public static void RefreshCustomerGrid(DataGridView dataGridView)
+        public static void RefreshDataGridView(DataGridView dataGridView) 
         {
-            dataGridView.DataSource = GetCustomerData();
+            if (dataGridView == null || dataGridView.IsDisposed) return;
+
+            try
+            {
+                dataGridView.DataSource = GetCustomerData();
+                dataGridView.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error refreshing grid: " + ex.Message, "Error",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public static void LoadCustomers(ListBox listBox)
         {
@@ -207,4 +211,3 @@ namespace Assignment
         }
     }
 }
-

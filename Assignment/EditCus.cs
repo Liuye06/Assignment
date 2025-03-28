@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
-using static Assignment.AdminClass;
+
 
 namespace Assignment
 {
@@ -33,10 +33,7 @@ namespace Assignment
             InitializeComponent();
             this.dataGridView = dgv ?? throw new ArgumentNullException(nameof(dgv), "DataGridView cannot be null.");
         }
-        public EditCus()
-        {
-            InitializeComponent();
-        }
+   
         private void EditCus_Load(object sender, EventArgs e)
         {
             AdminClass.LoadCustomers(listBox1); 

@@ -28,8 +28,8 @@ namespace Assignment
 
         private void btn_AddCus_Click(object sender, EventArgs e)
         {
-            addCustomer btn_AddCus = new addCustomer();
-            btn_AddCus.Show();
+            addCustomer form = new addCustomer(dataGridView1);
+            form.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
