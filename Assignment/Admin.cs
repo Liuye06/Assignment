@@ -55,5 +55,10 @@ namespace Assignment
             button2.Show();
         }
 
+        //private void btn_exit_Click(object sender, EventArgs e)
+        //{
+            //login btn_exit = new login();
+            //btn_exit.Show();
+        //}
     }
 }

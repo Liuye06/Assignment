@@ -168,11 +168,11 @@
             // 
             // btn_editProfile
             // 
-            this.btn_editProfile.Location = new System.Drawing.Point(646, 305);
+            this.btn_editProfile.Location = new System.Drawing.Point(646, 294);
             this.btn_editProfile.Name = "btn_editProfile";
             this.btn_editProfile.Size = new System.Drawing.Size(75, 23);
             this.btn_editProfile.TabIndex = 14;
-            this.btn_editProfile.Text = "button1";
+            this.btn_editProfile.Text = "Edit";
             this.btn_editProfile.UseVisualStyleBackColor = true;
             this.btn_editProfile.Click += new System.EventHandler(this.btn_editProfile_Click);
             // 

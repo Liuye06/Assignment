@@ -147,6 +147,7 @@
             this.btn_Home.Text = "Home";
             this.btn_Home.UseVisualStyleBackColor = true;
             this.btn_Home.UseWaitCursor = true;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // dataGridView1
             // 

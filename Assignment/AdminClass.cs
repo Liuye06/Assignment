@@ -248,7 +248,7 @@ namespace Assignment
                 ));
             }
         }
-        public static DataTable GetCustomerFeedbacks()//admin see cus feedback
+        public static DataTable GetCustomerFeedbacks()
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -256,7 +256,7 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Feedback_ID, Order_ID, Feedback FROM Feedbacks";
+                    string query = "SELECT Feedback_ID, Order_ID, Feedback FROM [Table]";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
