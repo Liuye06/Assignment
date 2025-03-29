@@ -196,6 +196,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "RCProfile";
             this.Text = "RCProfile";
+            this.Load += new System.EventHandler(this.RCProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
