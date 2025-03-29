@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_view = new System.Windows.Forms.Button();
-            this.btn_update = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -63,7 +62,6 @@
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btn_view);
-            this.panel1.Controls.Add(this.btn_update);
             this.panel1.Controls.Add(this.btn_Delete);
             this.panel1.Controls.Add(this.btn_Edit);
             this.panel1.Controls.Add(this.btn_Add);
@@ -72,7 +70,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 539);
+            this.panel1.Size = new System.Drawing.Size(257, 456);
             this.panel1.TabIndex = 5;
             this.panel1.UseWaitCursor = true;
             // 
@@ -90,20 +88,6 @@
             this.btn_view.UseVisualStyleBackColor = true;
             this.btn_view.UseWaitCursor = true;
             this.btn_view.Click += new System.EventHandler(this.btn_view_Click);
-            // 
-            // btn_update
-            // 
-            this.btn_update.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
-            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.ForeColor = System.Drawing.Color.Black;
-            this.btn_update.Location = new System.Drawing.Point(-2, 438);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(258, 78);
-            this.btn_update.TabIndex = 10;
-            this.btn_update.Text = "Update Profile";
-            this.btn_update.UseVisualStyleBackColor = true;
-            this.btn_update.UseWaitCursor = true;
             // 
             // btn_Delete
             // 
@@ -306,7 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 539);
+            this.ClientSize = new System.Drawing.Size(926, 456);
             this.Controls.Add(this.Btn_viewStaff);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
@@ -328,7 +312,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_view;
-        private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_Add;

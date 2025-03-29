@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_viewCus = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.btn_DeleteCus = new System.Windows.Forms.Button();
             this.btn_EditCus = new System.Windows.Forms.Button();
             this.btn_AddCus = new System.Windows.Forms.Button();
@@ -65,7 +64,6 @@
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btn_viewCus);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.btn_DeleteCus);
             this.panel1.Controls.Add(this.btn_EditCus);
             this.panel1.Controls.Add(this.btn_AddCus);
@@ -74,7 +72,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 542);
+            this.panel1.Size = new System.Drawing.Size(257, 452);
             this.panel1.TabIndex = 4;
             this.panel1.UseWaitCursor = true;
             // 
@@ -92,20 +90,6 @@
             this.btn_viewCus.UseVisualStyleBackColor = true;
             this.btn_viewCus.UseWaitCursor = true;
             this.btn_viewCus.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(-2, 438);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(258, 78);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Update Profile";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.UseWaitCursor = true;
             // 
             // btn_DeleteCus
             // 
@@ -295,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 542);
+            this.ClientSize = new System.Drawing.Size(1051, 452);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "update_Customer";
@@ -314,7 +298,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_DeleteCus;
         private System.Windows.Forms.Button btn_EditCus;
         private System.Windows.Forms.Button btn_AddCus;
