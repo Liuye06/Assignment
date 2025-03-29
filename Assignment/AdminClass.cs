@@ -4,7 +4,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.IO; 
+using System.IO;
+using Assignment;
 
 namespace Assignment
 {
@@ -235,27 +236,16 @@ namespace Assignment
         }
         public static void LoadCustomers(ListBox listBox)
         {
-            if (listBox == null || listBox.IsDisposed) return;
+            listBox.Items.Clear();
+            var dt = GetCustomerData();
 
-            try
+            foreach (DataRow row in dt.Rows)
             {
-                listBox.Invoke((MethodInvoker)delegate
-                {
-                    listBox.Items.Clear();
-                    DataTable dt = GetCustomerData();
-                    if (dt == null) return;
-
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        string displayText = $"{row["User_ID"]} - {row["Real_Name"]}";
-                        listBox.Items.Add(new ListItem(displayText, row["User_ID"].ToString()));
-                    }
-                });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading customers: " + ex.Message,
-                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Verify this creates proper ListItem objects
+                listBox.Items.Add(new ListItem(
+                    $"{row["User_ID"]} - {row["Real_Name"]}",
+                    row["User_ID"].ToString()
+                ));
             }
         }
         public static DataTable GetCustomerFeedbacks()//admin see cus feedback
@@ -562,6 +552,82 @@ namespace Assignment
                 }
             }
         }
-      }
-   }
+        public static List<string> GetMenuItems()
+        {
+            List<string> menuItems = new List<string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Item FROM Menu";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        menuItems.Add(reader["Item"].ToString());
+                    }
+                }
+            }
+            return menuItems;
+        }
+        public static List<string> GetPaymentMonths()
+        {
+            List<string> months = new List<string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT DISTINCT FORMAT(Payment_date, 'MMMM yyyy') AS MonthYear FROM Payment";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        months.Add(reader["MonthYear"].ToString());
+                    }
+                }
+            }
+            return months;
+        }
+        public static DataTable GetInitialPayments()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Payment_ID, Payment_date, Amount, Item_ID FROM Payment";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    conn.Open();
+                    adapter.Fill(dt);
+                }
+            }
+            return dt;
+        }
+        public static DataTable SearchPayments(string item, string month)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT p.Payment_ID, p.Payment_date, p.Amount, p.Order_ID, p.Reservation_ID, p.Status 
+                         FROM Payment p
+                         JOIN Menu m ON p.Item_ID = m.Item_ID
+                         WHERE m.Item = @Item AND FORMAT(p.Payment_date, 'MMMM yyyy') = @MonthYear";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Item", item);
+                    cmd.Parameters.AddWithValue("@MonthYear", month);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        conn.Open();
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            return dt;
+        }
+
+    }
+}
         

@@ -42,17 +42,22 @@
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet3 = new Assignment.Database1DataSet3();
             this.paymentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet1 = new Assignment.Database1DataSet1();
             this.paymentTableAdapter = new Assignment.Database1DataSet1TableAdapters.PaymentTableAdapter();
-            this.database1DataSet3 = new Assignment.Database1DataSet3();
-            this.paymentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.paymentTableAdapter1 = new Assignment.Database1DataSet3TableAdapters.PaymentTableAdapter();
+            this.database1DataSet9 = new Assignment.Database1DataSet9();
+            this.paymentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.paymentTableAdapter2 = new Assignment.Database1DataSet9TableAdapters.PaymentTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_month
@@ -136,7 +141,7 @@
             this.orderIDDataGridViewTextBoxColumn,
             this.reservationIDDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.paymentBindingSource1;
+            this.dataGridView1.DataSource = this.paymentBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(30, 164);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -193,6 +198,16 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
+            // paymentBindingSource1
+            // 
+            this.paymentBindingSource1.DataMember = "Payment";
+            this.paymentBindingSource1.DataSource = this.database1DataSet3;
+            // 
+            // database1DataSet3
+            // 
+            this.database1DataSet3.DataSetName = "Database1DataSet3";
+            this.database1DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // paymentBindingSource
             // 
             this.paymentBindingSource.DataMember = "Payment";
@@ -207,19 +222,23 @@
             // 
             this.paymentTableAdapter.ClearBeforeFill = true;
             // 
-            // database1DataSet3
-            // 
-            this.database1DataSet3.DataSetName = "Database1DataSet3";
-            this.database1DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // paymentBindingSource1
-            // 
-            this.paymentBindingSource1.DataMember = "Payment";
-            this.paymentBindingSource1.DataSource = this.database1DataSet3;
-            // 
             // paymentTableAdapter1
             // 
             this.paymentTableAdapter1.ClearBeforeFill = true;
+            // 
+            // database1DataSet9
+            // 
+            this.database1DataSet9.DataSetName = "Database1DataSet9";
+            this.database1DataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // paymentBindingSource2
+            // 
+            this.paymentBindingSource2.DataMember = "Payment";
+            this.paymentBindingSource2.DataSource = this.database1DataSet9;
+            // 
+            // paymentTableAdapter2
+            // 
+            this.paymentTableAdapter2.ClearBeforeFill = true;
             // 
             // salesReport
             // 
@@ -240,10 +259,12 @@
             this.Text = "salesReport";
             this.Load += new System.EventHandler(this.salesReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,5 +291,8 @@
         private Database1DataSet3 database1DataSet3;
         private System.Windows.Forms.BindingSource paymentBindingSource1;
         private Database1DataSet3TableAdapters.PaymentTableAdapter paymentTableAdapter1;
+        private Database1DataSet9 database1DataSet9;
+        private System.Windows.Forms.BindingSource paymentBindingSource2;
+        private Database1DataSet9TableAdapters.PaymentTableAdapter paymentTableAdapter2;
     }
 }
