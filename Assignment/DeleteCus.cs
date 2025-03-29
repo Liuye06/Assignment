@@ -62,7 +62,7 @@ namespace Assignment
                 return;
             }
 
-            string userId = comboBox1.SelectedValue.ToString();
+            string userId = comboBox1.SelectedValue.ToString(); 
 
             var confirmResult = MessageBox.Show($"Are you sure you want to delete this customer?",
                                                 "Confirm Delete",
@@ -71,7 +71,7 @@ namespace Assignment
 
             if (confirmResult == DialogResult.Yes)
             {
-                bool success = AdminClass.DeleteUser(userId);
+                bool success = AdminClass.DeleteUser(userId, dataGridView1);
                 if (success)
                 {
                     LoadCustomerNames();

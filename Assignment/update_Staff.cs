@@ -58,6 +58,11 @@ namespace Assignment
             editStaff form = new editStaff(dataGridView1);
             form.ShowDialog();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

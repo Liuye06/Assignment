@@ -11,17 +11,17 @@ namespace Assignment
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
 
-        public static bool DeleteUser(string realName, DataGridView dataGridView = null)
+        public static bool DeleteUser(string userId, DataGridView dataGridView = null)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string checkQuery = "SELECT COUNT(*) FROM [User] WHERE Real_Name = @RealName";
+                    string checkQuery = "SELECT COUNT(*) FROM [User] WHERE User_ID = @User_ID";
                     using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
-                        checkCmd.Parameters.AddWithValue("@RealName", realName);
+                        checkCmd.Parameters.AddWithValue("@User_ID", userId);
                         int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
                         if (count == 0)
@@ -30,10 +30,10 @@ namespace Assignment
                             return false;
                         }
                     }
-                    string deleteQuery = "DELETE FROM [User] WHERE Real_Name = @RealName";
+                    string deleteQuery = "DELETE FROM [User] WHERE User_ID = @User_ID";
                     using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
                     {
-                        deleteCmd.Parameters.AddWithValue("@RealName", realName);
+                        deleteCmd.Parameters.AddWithValue("@User_ID", userId);
                         bool success = deleteCmd.ExecuteNonQuery() > 0;
 
                         if (success)
@@ -43,6 +43,7 @@ namespace Assignment
                             {
                                 RefreshDataGridView(dataGridView);
                             }
+                            RefreshDataGridView(dataGridView);
                         }
                         return success;
                     }

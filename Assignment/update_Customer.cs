@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Assignment
 {
@@ -17,39 +18,31 @@ namespace Assignment
         public update_Customer()
         {
             InitializeComponent();
-        }
-        public update_Customer(DataGridView dataGridView)
-        {
-            InitializeComponent();
-            this.dataGridView = dataGridView;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
         }
         private void update_Customer_Load(object sender, EventArgs e)
         {
-            this.userTableAdapter.Fill(this.database1DataSet.User);
-            dataGridView1.DataSource = this.database1DataSet.User; 
-
+            RefreshDataGrid();
+        }
+        private void RefreshDataGrid()
+        {    
+            AdminClass.RefreshDataGridView(dataGridView1);
         }
 
         private void btn_AddCus_Click(object sender, EventArgs e)
         {
             addCustomer form = new addCustomer(dataGridView1);
             form.ShowDialog();
+            RefreshDataGrid();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//view customer
         {
-            update_Customer form = new update_Customer(dataGridView1);
-            form.ShowDialog();
+            RefreshDataGrid();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.DataSource is DataTable dt)
-            {
-                DataView dv = dt.DefaultView;
-                dv.RowFilter = "Roles = 'Customer'";
-                dataGridView1.DataSource = dv;  
-            }
         }
         private void btn_Home_Click(object sender, EventArgs e)
         {
