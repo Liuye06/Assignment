@@ -136,19 +136,3 @@ namespace Assignment
     }
 
 }
-public class ListItem
-{
-    public string Text { get; set; }
-    public string Value { get; set; }
-
-    public ListItem(string text, string value)
-    {
-        Text = text;
-        Value = value;
-    }
-
-    public override string ToString()
-    {
-        return Text;
-    }
-}

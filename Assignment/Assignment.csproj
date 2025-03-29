@@ -108,6 +108,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Database1DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DeleteCus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +291,17 @@
     </None>
     <None Include="Database1DataSet7.xss">
       <DependentUpon>Database1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet8.xsc">
+      <DependentUpon>Database1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet8.xss">
+      <DependentUpon>Database1DataSet8.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

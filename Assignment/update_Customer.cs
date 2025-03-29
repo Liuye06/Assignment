@@ -12,17 +12,21 @@ namespace Assignment
 {
     public partial class update_Customer : Form
     {
+        private DataGridView dataGridView;
+
         public update_Customer()
         {
             InitializeComponent();
         }
-
+        public update_Customer(DataGridView dataGridView)
+        {
+            InitializeComponent();
+            this.dataGridView = dataGridView;
+        }
         private void update_Customer_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet2.User' table. 
-            this.userTableAdapter1.Fill(this.database1DataSet2.User);
-            // TODO: This line of code loads data into the 'database1DataSet.User' table.
             this.userTableAdapter.Fill(this.database1DataSet.User);
+            dataGridView1.DataSource = this.database1DataSet.User; 
 
         }
 
@@ -34,22 +38,19 @@ namespace Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            update_Customer btn_viewCus = new update_Customer();
-            btn_viewCus.Show();
-
+            update_Customer form = new update_Customer(dataGridView1);
+            form.ShowDialog();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataTable dt = (DataTable)dataGridView1.DataSource;
-            if (dt != null)
+            if (dataGridView1.DataSource is DataTable dt)
             {
-                DataView dv = new DataView(dt);
-                dv.RowFilter = "Roles = 'Customer'"; // just declare roles of Customer 
-                dataGridView1.DataSource = dt;
+                DataView dv = dt.DefaultView;
+                dv.RowFilter = "Roles = 'Customer'";
+                dataGridView1.DataSource = dv;  
             }
         }
-
         private void btn_Home_Click(object sender, EventArgs e)
         {
             Admin btn_Home = new Admin();
@@ -64,10 +65,8 @@ namespace Assignment
 
         private void btn_DeleteCus_Click(object sender, EventArgs e)
         {
-            DeleteCus btn_DeleteCus = new DeleteCus();
-            btn_DeleteCus.Show();
+            DeleteCus deleteForm = new DeleteCus(this.dataGridView1);
+            deleteForm.ShowDialog();
         }
-
-
     }
 }

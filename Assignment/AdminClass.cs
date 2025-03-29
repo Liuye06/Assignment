@@ -11,27 +11,48 @@ namespace Assignment
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
 
-        public static DataTable GetCustomerData()// get the new data of Customers
+        public static bool DeleteUser(string realName, DataGridView dataGridView = null)
         {
-            DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "SELECT User_ID, Real_Name FROM [User] WHERE Role = 'Customer'";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    string checkQuery = "SELECT COUNT(*) FROM [User] WHERE Real_Name = @RealName";
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
-                        adapter.Fill(dt);
+                        checkCmd.Parameters.AddWithValue("@RealName", realName);
+                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (count == 0)
+                        {
+                            MessageBox.Show("User not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return false;
+                        }
+                    }
+                    string deleteQuery = "DELETE FROM [User] WHERE Real_Name = @RealName";
+                    using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
+                    {
+                        deleteCmd.Parameters.AddWithValue("@RealName", realName);
+                        bool success = deleteCmd.ExecuteNonQuery() > 0;
+
+                        if (success)
+                        {
+                            MessageBox.Show("Customer deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (dataGridView != null)
+                            {
+                                RefreshDataGridView(dataGridView);
+                            }
+                        }
+                        return success;
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error loading customer data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error deleting user: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
             }
-            return dt;
         }
 
         public static bool AddUser(string realName, DateTime dob, string gender, string email,
@@ -170,40 +191,31 @@ namespace Assignment
                 }
             }
         }
-        public static bool DeleteUser(string realName)
+
+        public static DataTable GetCustomerData()
         {
+            DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-
-                    string checkQuery = "SELECT COUNT(*) FROM [User] WHERE Real_Name = @RealName";
-                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                    string query = "SELECT User_ID, Real_Name, Email,DOB, Gender,Role, Username, Password FROM [User] WHERE Role = 'Customer'";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
-                        checkCmd.Parameters.AddWithValue("@RealName", realName);
-                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
-
-                        if (count == 0)
-                        {
-                            MessageBox.Show("User not found!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return false;
-                        }
-                    }
-                    string deleteQuery = "DELETE FROM [User] WHERE Real_Name = @RealName";
-                    using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
-                    {
-                        deleteCmd.Parameters.AddWithValue("@RealName", realName);
-                        return deleteCmd.ExecuteNonQuery() > 0;
+                        adapter.Fill(dt);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error deleting user: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
+                    MessageBox.Show("Error loading customer data: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            return dt;
         }
+
         public static void RefreshDataGridView(DataGridView dataGridView)
         {
             if (dataGridView == null || dataGridView.IsDisposed) return;
@@ -215,8 +227,8 @@ namespace Assignment
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error refreshing grid: " + ex.Message, "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error refreshing grid: " + ex.Message,
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public static void LoadCustomers(ListBox listBox)
@@ -252,7 +264,7 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Feedback_ID, Order_ID, Feedback FROM [Table]";
+                    string query = "SELECT Feedback_ID, Order_ID, Feedback FROM Feedbacks";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
@@ -491,5 +503,5 @@ namespace Assignment
             return details;
         }
     }
-    }
+   }
         
