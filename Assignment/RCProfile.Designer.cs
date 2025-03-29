@@ -63,6 +63,7 @@
             this.btn_SaveProfile.TabIndex = 28;
             this.btn_SaveProfile.Text = "Save";
             this.btn_SaveProfile.UseVisualStyleBackColor = true;
+            this.btn_SaveProfile.Click += new System.EventHandler(this.btn_SaveProfile_Click);
             // 
             // txt_RCPassword
             // 

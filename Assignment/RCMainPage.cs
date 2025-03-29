@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,9 +13,17 @@ namespace Assignment
 {
     public partial class RCMainPage : Form
     {
+        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
         public RCMainPage()
         {
             InitializeComponent();
+        }
+
+        private void btn_Profile_Click(object sender, EventArgs e)
+        {
+            string username = "admin123"; // get the username from login
+            RCProfile btn_Profile = new RCProfile(username);
+            btn_Profile.Show();
         }
     }
 }

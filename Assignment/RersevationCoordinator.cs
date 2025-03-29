@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Assignment
 {
@@ -42,7 +43,6 @@ namespace Assignment
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Username", username);
-
                     byte[] imageBytes = File.ReadAllBytes(imagePath);
                     cmd.Parameters.AddWithValue("@Profile_Pic", imageBytes);
 

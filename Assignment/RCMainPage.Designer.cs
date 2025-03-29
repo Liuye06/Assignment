@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Reservation = new System.Windows.Forms.Button();
-            this.btn_Update = new System.Windows.Forms.Button();
-            this.btn_Reply = new System.Windows.Forms.Button();
             this.btn_Profile = new System.Windows.Forms.Button();
+            this.btn_Reply = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_Reservation = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,23 +47,15 @@
             this.panel1.Size = new System.Drawing.Size(228, 452);
             this.panel1.TabIndex = 0;
             // 
-            // btn_Reservation
+            // btn_Profile
             // 
-            this.btn_Reservation.Location = new System.Drawing.Point(0, 71);
-            this.btn_Reservation.Name = "btn_Reservation";
-            this.btn_Reservation.Size = new System.Drawing.Size(228, 77);
-            this.btn_Reservation.TabIndex = 0;
-            this.btn_Reservation.Text = "Manage Reservation";
-            this.btn_Reservation.UseVisualStyleBackColor = true;
-            // 
-            // btn_Update
-            // 
-            this.btn_Update.Location = new System.Drawing.Point(0, 154);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(228, 77);
-            this.btn_Update.TabIndex = 1;
-            this.btn_Update.Text = "Update Request";
-            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Profile.Location = new System.Drawing.Point(0, 320);
+            this.btn_Profile.Name = "btn_Profile";
+            this.btn_Profile.Size = new System.Drawing.Size(228, 77);
+            this.btn_Profile.TabIndex = 2;
+            this.btn_Profile.Text = "Profile";
+            this.btn_Profile.UseVisualStyleBackColor = true;
+            this.btn_Profile.Click += new System.EventHandler(this.btn_Profile_Click);
             // 
             // btn_Reply
             // 
@@ -74,14 +66,23 @@
             this.btn_Reply.Text = "Reply Request";
             this.btn_Reply.UseVisualStyleBackColor = true;
             // 
-            // btn_Profile
+            // btn_Update
             // 
-            this.btn_Profile.Location = new System.Drawing.Point(0, 320);
-            this.btn_Profile.Name = "btn_Profile";
-            this.btn_Profile.Size = new System.Drawing.Size(228, 77);
-            this.btn_Profile.TabIndex = 2;
-            this.btn_Profile.Text = "Profile";
-            this.btn_Profile.UseVisualStyleBackColor = true;
+            this.btn_Update.Location = new System.Drawing.Point(0, 154);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(228, 77);
+            this.btn_Update.TabIndex = 1;
+            this.btn_Update.Text = "Update Request";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            // 
+            // btn_Reservation
+            // 
+            this.btn_Reservation.Location = new System.Drawing.Point(0, 71);
+            this.btn_Reservation.Name = "btn_Reservation";
+            this.btn_Reservation.Size = new System.Drawing.Size(228, 77);
+            this.btn_Reservation.TabIndex = 0;
+            this.btn_Reservation.Text = "Manage Reservation";
+            this.btn_Reservation.UseVisualStyleBackColor = true;
             // 
             // RCMainPage
             // 
