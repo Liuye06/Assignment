@@ -20,17 +20,17 @@ namespace Assignment {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("AssignmentdbDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("AssignmentdbDataSet6")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class AssignmentdbDataSet : global::System.Data.DataSet {
+    public partial class AssignmentdbDataSet6 : global::System.Data.DataSet {
         
-        private HallDataTable tableHall;
+        private OrderDataTable tableOrder;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public AssignmentdbDataSet() {
+        public AssignmentdbDataSet6() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Assignment {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected AssignmentdbDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected AssignmentdbDataSet6(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Assignment {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Hall"] != null)) {
-                    base.Tables.Add(new HallDataTable(ds.Tables["Hall"]));
+                if ((ds.Tables["Order"] != null)) {
+                    base.Tables.Add(new OrderDataTable(ds.Tables["Order"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Assignment {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HallDataTable Hall {
+        public OrderDataTable Order {
             get {
-                return this.tableHall;
+                return this.tableOrder;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            AssignmentdbDataSet cln = ((AssignmentdbDataSet)(base.Clone()));
+            AssignmentdbDataSet6 cln = ((AssignmentdbDataSet6)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Assignment {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Hall"] != null)) {
-                    base.Tables.Add(new HallDataTable(ds.Tables["Hall"]));
+                if ((ds.Tables["Order"] != null)) {
+                    base.Tables.Add(new OrderDataTable(ds.Tables["Order"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableHall = ((HallDataTable)(base.Tables["Hall"]));
+            this.tableOrder = ((OrderDataTable)(base.Tables["Order"]));
             if ((initTable == true)) {
-                if ((this.tableHall != null)) {
-                    this.tableHall.InitVars();
+                if ((this.tableOrder != null)) {
+                    this.tableOrder.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "AssignmentdbDataSet";
+            this.DataSetName = "AssignmentdbDataSet6";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/AssignmentdbDataSet.xsd";
+            this.Namespace = "http://tempuri.org/AssignmentdbDataSet6.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableHall = new HallDataTable();
-            base.Tables.Add(this.tableHall);
+            this.tableOrder = new OrderDataTable();
+            base.Tables.Add(this.tableOrder);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeHall() {
+        private bool ShouldSerializeOrder() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            AssignmentdbDataSet ds = new AssignmentdbDataSet();
+            AssignmentdbDataSet6 ds = new AssignmentdbDataSet6();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,21 +270,23 @@ namespace Assignment {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void HallRowChangeEventHandler(object sender, HallRowChangeEvent e);
+        public delegate void OrderRowChangeEventHandler(object sender, OrderRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HallDataTable : global::System.Data.TypedTableBase<HallRow> {
+        public partial class OrderDataTable : global::System.Data.TypedTableBase<OrderRow> {
             
-            private global::System.Data.DataColumn columnHall_Pic;
+            private global::System.Data.DataColumn columnOrder_ID;
+            
+            private global::System.Data.DataColumn columnStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallDataTable() {
-                this.TableName = "Hall";
+            public OrderDataTable() {
+                this.TableName = "Order";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -292,7 +294,7 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal HallDataTable(global::System.Data.DataTable table) {
+            internal OrderDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -309,16 +311,24 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected HallDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected OrderDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Hall_PicColumn {
+            public global::System.Data.DataColumn Order_IDColumn {
                 get {
-                    return this.columnHall_Pic;
+                    return this.columnOrder_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn StatusColumn {
+                get {
+                    return this.columnStatus;
                 }
             }
             
@@ -333,45 +343,53 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRow this[int index] {
+            public OrderRow this[int index] {
                 get {
-                    return ((HallRow)(this.Rows[index]));
+                    return ((OrderRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HallRowChangeEventHandler HallRowChanging;
+            public event OrderRowChangeEventHandler OrderRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HallRowChangeEventHandler HallRowChanged;
+            public event OrderRowChangeEventHandler OrderRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HallRowChangeEventHandler HallRowDeleting;
+            public event OrderRowChangeEventHandler OrderRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HallRowChangeEventHandler HallRowDeleted;
+            public event OrderRowChangeEventHandler OrderRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddHallRow(HallRow row) {
+            public void AddOrderRow(OrderRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRow AddHallRow(byte[] Hall_Pic) {
-                HallRow rowHallRow = ((HallRow)(this.NewRow()));
+            public OrderRow AddOrderRow(string Status) {
+                OrderRow rowOrderRow = ((OrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Hall_Pic};
-                rowHallRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHallRow);
-                return rowHallRow;
+                        null,
+                        Status};
+                rowOrderRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOrderRow);
+                return rowOrderRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public OrderRow FindByOrder_ID(int Order_ID) {
+                return ((OrderRow)(this.Rows.Find(new object[] {
+                            Order_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                HallDataTable cln = ((HallDataTable)(base.Clone()));
+                OrderDataTable cln = ((OrderDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -379,47 +397,59 @@ namespace Assignment {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new HallDataTable();
+                return new OrderDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnHall_Pic = base.Columns["Hall_Pic"];
+                this.columnOrder_ID = base.Columns["Order_ID"];
+                this.columnStatus = base.Columns["Status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnHall_Pic = new global::System.Data.DataColumn("Hall_Pic", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHall_Pic);
-                this.columnHall_Pic.AllowDBNull = false;
+                this.columnOrder_ID = new global::System.Data.DataColumn("Order_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrder_ID);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnOrder_ID}, true));
+                this.columnOrder_ID.AutoIncrement = true;
+                this.columnOrder_ID.AutoIncrementSeed = -1;
+                this.columnOrder_ID.AutoIncrementStep = -1;
+                this.columnOrder_ID.AllowDBNull = false;
+                this.columnOrder_ID.ReadOnly = true;
+                this.columnOrder_ID.Unique = true;
+                this.columnStatus.AllowDBNull = false;
+                this.columnStatus.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRow NewHallRow() {
-                return ((HallRow)(this.NewRow()));
+            public OrderRow NewOrderRow() {
+                return ((OrderRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HallRow(builder);
+                return new OrderRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(HallRow);
+                return typeof(OrderRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.HallRowChanged != null)) {
-                    this.HallRowChanged(this, new HallRowChangeEvent(((HallRow)(e.Row)), e.Action));
+                if ((this.OrderRowChanged != null)) {
+                    this.OrderRowChanged(this, new OrderRowChangeEvent(((OrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -427,8 +457,8 @@ namespace Assignment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.HallRowChanging != null)) {
-                    this.HallRowChanging(this, new HallRowChangeEvent(((HallRow)(e.Row)), e.Action));
+                if ((this.OrderRowChanging != null)) {
+                    this.OrderRowChanging(this, new OrderRowChangeEvent(((OrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -436,8 +466,8 @@ namespace Assignment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.HallRowDeleted != null)) {
-                    this.HallRowDeleted(this, new HallRowChangeEvent(((HallRow)(e.Row)), e.Action));
+                if ((this.OrderRowDeleted != null)) {
+                    this.OrderRowDeleted(this, new OrderRowChangeEvent(((OrderRow)(e.Row)), e.Action));
                 }
             }
             
@@ -445,14 +475,14 @@ namespace Assignment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.HallRowDeleting != null)) {
-                    this.HallRowDeleting(this, new HallRowChangeEvent(((HallRow)(e.Row)), e.Action));
+                if ((this.OrderRowDeleting != null)) {
+                    this.OrderRowDeleting(this, new OrderRowChangeEvent(((OrderRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveHallRow(HallRow row) {
+            public void RemoveOrderRow(OrderRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -461,7 +491,7 @@ namespace Assignment {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                AssignmentdbDataSet ds = new AssignmentdbDataSet();
+                AssignmentdbDataSet6 ds = new AssignmentdbDataSet6();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -479,7 +509,7 @@ namespace Assignment {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HallDataTable";
+                attribute2.FixedValue = "OrderDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -523,25 +553,36 @@ namespace Assignment {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class HallRow : global::System.Data.DataRow {
+        public partial class OrderRow : global::System.Data.DataRow {
             
-            private HallDataTable tableHall;
+            private OrderDataTable tableOrder;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal HallRow(global::System.Data.DataRowBuilder rb) : 
+            internal OrderRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableHall = ((HallDataTable)(this.Table));
+                this.tableOrder = ((OrderDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public byte[] Hall_Pic {
+            public int Order_ID {
                 get {
-                    return ((byte[])(this[this.tableHall.Hall_PicColumn]));
+                    return ((int)(this[this.tableOrder.Order_IDColumn]));
                 }
                 set {
-                    this[this.tableHall.Hall_PicColumn] = value;
+                    this[this.tableOrder.Order_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Status {
+                get {
+                    return ((string)(this[this.tableOrder.StatusColumn]));
+                }
+                set {
+                    this[this.tableOrder.StatusColumn] = value;
                 }
             }
         }
@@ -550,22 +591,22 @@ namespace Assignment {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class HallRowChangeEvent : global::System.EventArgs {
+        public class OrderRowChangeEvent : global::System.EventArgs {
             
-            private HallRow eventRow;
+            private OrderRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRowChangeEvent(HallRow row, global::System.Data.DataRowAction action) {
+            public OrderRowChangeEvent(OrderRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRow Row {
+            public OrderRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -581,7 +622,7 @@ namespace Assignment {
         }
     }
 }
-namespace Assignment.AssignmentdbDataSetTableAdapters {
+namespace Assignment.AssignmentdbDataSet6TableAdapters {
     
     
     /// <summary>
@@ -593,7 +634,7 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class HallTableAdapter : global::System.ComponentModel.Component {
+    public partial class OrderTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -607,7 +648,7 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public HallTableAdapter() {
+        public OrderTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -704,9 +745,27 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Hall";
-            tableMapping.ColumnMappings.Add("Hall_Pic", "Hall_Pic");
+            tableMapping.DataSetTable = "Order";
+            tableMapping.ColumnMappings.Add("Order_ID", "Order_ID");
+            tableMapping.ColumnMappings.Add("Status", "Status");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Order] WHERE (([Order_ID] = @Original_Order_ID) AND ([Status] " +
+                "= @Original_Status))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Order] SET [Status] = @Status WHERE (([Order_ID] = @Original_Order_" +
+                "ID) AND ([Status] = @Original_Status));\r\nSELECT Order_ID, Status FROM [Order] WH" +
+                "ERE (Order_ID = @Order_ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Order_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Order_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Order_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Order_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -722,7 +781,7 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Hall_Pic FROM dbo.Hall";
+            this._commandCollection[0].CommandText = "SELECT Order_ID, Status FROM dbo.[Order]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -730,7 +789,7 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(AssignmentdbDataSet.HallDataTable dataTable) {
+        public virtual int Fill(AssignmentdbDataSet6.OrderDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -743,11 +802,111 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual AssignmentdbDataSet.HallDataTable GetData() {
+        public virtual AssignmentdbDataSet6.OrderDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            AssignmentdbDataSet.HallDataTable dataTable = new AssignmentdbDataSet.HallDataTable();
+            AssignmentdbDataSet6.OrderDataTable dataTable = new AssignmentdbDataSet6.OrderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AssignmentdbDataSet6.OrderDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AssignmentdbDataSet6 dataSet) {
+            return this.Adapter.Update(dataSet, "Order");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_Order_ID, string Original_Status) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Order_ID));
+            if ((Original_Status == null)) {
+                throw new global::System.ArgumentNullException("Original_Status");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Status));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Status, int Original_Order_ID, string Original_Status, int Order_ID) {
+            if ((Status == null)) {
+                throw new global::System.ArgumentNullException("Status");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Status));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_Order_ID));
+            if ((Original_Status == null)) {
+                throw new global::System.ArgumentNullException("Original_Status");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_Status));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Order_ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Status, int Original_Order_ID, string Original_Status) {
+            return this.Update(Status, Original_Order_ID, Original_Status, Original_Order_ID);
         }
     }
     
@@ -763,6 +922,8 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private OrderTableAdapter _orderTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -775,6 +936,20 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public OrderTableAdapter OrderTableAdapter {
+            get {
+                return this._orderTableAdapter;
+            }
+            set {
+                this._orderTableAdapter = value;
             }
         }
         
@@ -797,6 +972,10 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._orderTableAdapter != null) 
+                            && (this._orderTableAdapter.Connection != null))) {
+                    return this._orderTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -810,6 +989,9 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._orderTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -819,8 +1001,17 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(AssignmentdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(AssignmentdbDataSet6 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._orderTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Order.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._orderTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -829,8 +1020,16 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(AssignmentdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(AssignmentdbDataSet6 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._orderTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Order.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._orderTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -839,8 +1038,16 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(AssignmentdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(AssignmentdbDataSet6 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._orderTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Order.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._orderTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -873,12 +1080,17 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(AssignmentdbDataSet dataSet) {
+        public virtual int UpdateAll(AssignmentdbDataSet6 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._orderTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._orderTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -912,6 +1124,15 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._orderTableAdapter != null)) {
+                    revertConnections.Add(this._orderTableAdapter, this._orderTableAdapter.Connection);
+                    this._orderTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._orderTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._orderTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._orderTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._orderTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -969,6 +1190,10 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._orderTableAdapter != null)) {
+                    this._orderTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._orderTableAdapter]));
+                    this._orderTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

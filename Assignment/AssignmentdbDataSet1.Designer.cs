@@ -279,15 +279,13 @@ namespace Assignment {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class MenuDataTable : global::System.Data.TypedTableBase<MenuRow> {
             
-            private global::System.Data.DataColumn columnItem_ID;
-            
             private global::System.Data.DataColumn columnItem;
             
             private global::System.Data.DataColumn columnPrice;
             
             private global::System.Data.DataColumn columnCategory;
             
-            private global::System.Data.DataColumn columnImage;
+            private global::System.Data.DataColumn columnItem_Pic;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -324,14 +322,6 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Item_IDColumn {
-                get {
-                    return this.columnItem_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn ItemColumn {
                 get {
                     return this.columnItem;
@@ -356,9 +346,9 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ImageColumn {
+            public global::System.Data.DataColumn Item_PicColumn {
                 get {
-                    return this.columnImage;
+                    return this.columnItem_Pic;
                 }
             }
             
@@ -399,24 +389,16 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MenuRow AddMenuRow(string Item, decimal Price, string Category, byte[] Image) {
+            public MenuRow AddMenuRow(string Item, decimal Price, string Category, byte[] Item_Pic) {
                 MenuRow rowMenuRow = ((MenuRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         Item,
                         Price,
                         Category,
-                        Image};
+                        Item_Pic};
                 rowMenuRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMenuRow);
                 return rowMenuRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MenuRow FindByItem_ID(int Item_ID) {
-                return ((MenuRow)(this.Rows.Find(new object[] {
-                            Item_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -436,18 +418,15 @@ namespace Assignment {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnItem_ID = base.Columns["Item_ID"];
                 this.columnItem = base.Columns["Item"];
                 this.columnPrice = base.Columns["Price"];
                 this.columnCategory = base.Columns["Category"];
-                this.columnImage = base.Columns["Image"];
+                this.columnItem_Pic = base.Columns["Item_Pic"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnItem_ID = new global::System.Data.DataColumn("Item_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnItem_ID);
                 this.columnItem = new global::System.Data.DataColumn("Item", typeof(string), null, global::System.Data.MappingType.Element);
                 this.columnItem.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "Item");
                 this.columnItem.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "ItemColumn");
@@ -458,16 +437,8 @@ namespace Assignment {
                 base.Columns.Add(this.columnPrice);
                 this.columnCategory = new global::System.Data.DataColumn("Category", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCategory);
-                this.columnImage = new global::System.Data.DataColumn("Image", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImage);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnItem_ID}, true));
-                this.columnItem_ID.AutoIncrement = true;
-                this.columnItem_ID.AutoIncrementSeed = -1;
-                this.columnItem_ID.AutoIncrementStep = -1;
-                this.columnItem_ID.AllowDBNull = false;
-                this.columnItem_ID.ReadOnly = true;
-                this.columnItem_ID.Unique = true;
+                this.columnItem_Pic = new global::System.Data.DataColumn("Item_Pic", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItem_Pic);
                 this.columnItem.AllowDBNull = false;
                 this.columnItem.MaxLength = 2147483647;
                 this.columnPrice.AllowDBNull = false;
@@ -615,17 +586,6 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Item_ID {
-                get {
-                    return ((int)(this[this.tableMenu.Item_IDColumn]));
-                }
-                set {
-                    this[this.tableMenu.Item_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Item {
                 get {
                     return ((string)(this[this.tableMenu.ItemColumn]));
@@ -659,30 +619,30 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public byte[] Image {
+            public byte[] Item_Pic {
                 get {
                     try {
-                        return ((byte[])(this[this.tableMenu.ImageColumn]));
+                        return ((byte[])(this[this.tableMenu.Item_PicColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Image\' in table \'Menu\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Item_Pic\' in table \'Menu\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMenu.ImageColumn] = value;
+                    this[this.tableMenu.Item_PicColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsImageNull() {
-                return this.IsNull(this.tableMenu.ImageColumn);
+            public bool IsItem_PicNull() {
+                return this.IsNull(this.tableMenu.Item_PicColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetImageNull() {
-                this[this.tableMenu.ImageColumn] = global::System.Convert.DBNull;
+            public void SetItem_PicNull() {
+                this[this.tableMenu.Item_PicColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -845,43 +805,20 @@ namespace Assignment.AssignmentdbDataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Menu";
-            tableMapping.ColumnMappings.Add("Item_ID", "Item_ID");
             tableMapping.ColumnMappings.Add("Item", "Item");
             tableMapping.ColumnMappings.Add("Price", "Price");
             tableMapping.ColumnMappings.Add("Category", "Category");
-            tableMapping.ColumnMappings.Add("Image", "Image");
+            tableMapping.ColumnMappings.Add("Item_Pic", "Item_Pic");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Menu] WHERE (([Item_ID] = @Original_Item_ID) AND ([Price] = @O" +
-                "riginal_Price) AND ([Category] = @Original_Category))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Category", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Menu] ([Item], [Price], [Category], [Image]) VALUES (@Item, @P" +
-                "rice, @Category, @Image);\r\nSELECT Item_ID, Item, Price, Category, Image FROM Men" +
-                "u WHERE (Item_ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Menu] ([Item], [Price], [Category], [Item_Pic]) VALUES (@Item," +
+                " @Price, @Category, @Item_Pic)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Image", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Menu] SET [Item] = @Item, [Price] = @Price, [Category] = @Category, [Image] = @Image WHERE (([Item_ID] = @Original_Item_ID) AND ([Price] = @Original_Price) AND ([Category] = @Original_Category));
-SELECT Item_ID, Item, Price, Category, Image FROM Menu WHERE (Item_ID = @Item_ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Category", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Image", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Item_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Category", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Category", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Item_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Item_Pic", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Item_Pic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -897,7 +834,7 @@ SELECT Item_ID, Item, Price, Category, Image FROM Menu WHERE (Item_ID = @Item_ID
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Item_ID, Item, Price, Category, Image FROM dbo.Menu";
+            this._commandCollection[0].CommandText = "SELECT Item, Price, Category, Item_Pic FROM dbo.Menu";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -957,37 +894,8 @@ SELECT Item_ID, Item, Price, Category, Image FROM Menu WHERE (Item_ID = @Item_ID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Item_ID, decimal Original_Price, string Original_Category) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Item_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((decimal)(Original_Price));
-            if ((Original_Category == null)) {
-                throw new global::System.ArgumentNullException("Original_Category");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Category));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Item, decimal Price, string Category, byte[] Image) {
+        public virtual int Insert(string Item, decimal Price, string Category, byte[] Item_Pic) {
             if ((Item == null)) {
                 throw new global::System.ArgumentNullException("Item");
             }
@@ -1001,11 +909,11 @@ SELECT Item_ID, Item, Price, Category, Image FROM Menu WHERE (Item_ID = @Item_ID
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Category));
             }
-            if ((Image == null)) {
+            if ((Item_Pic == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(Image));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(Item_Pic));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1021,63 +929,6 @@ SELECT Item_ID, Item, Price, Category, Image FROM Menu WHERE (Item_ID = @Item_ID
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Item, decimal Price, string Category, byte[] Image, int Original_Item_ID, decimal Original_Price, string Original_Category, int Item_ID) {
-            if ((Item == null)) {
-                throw new global::System.ArgumentNullException("Item");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Item));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(Price));
-            if ((Category == null)) {
-                throw new global::System.ArgumentNullException("Category");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Category));
-            }
-            if ((Image == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(Image));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Item_ID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_Price));
-            if ((Original_Category == null)) {
-                throw new global::System.ArgumentNullException("Original_Category");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Category));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Item_ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Item, decimal Price, string Category, byte[] Image, int Original_Item_ID, decimal Original_Price, string Original_Category) {
-            return this.Update(Item, Price, Category, Image, Original_Item_ID, Original_Price, Original_Category, Original_Item_ID);
         }
     }
     

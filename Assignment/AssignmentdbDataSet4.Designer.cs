@@ -20,17 +20,17 @@ namespace Assignment {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("AssignmentdbDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("AssignmentdbDataSet4")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class AssignmentdbDataSet : global::System.Data.DataSet {
+    public partial class AssignmentdbDataSet4 : global::System.Data.DataSet {
         
-        private HallDataTable tableHall;
+        private R_RequestDataTable tableR_Request;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public AssignmentdbDataSet() {
+        public AssignmentdbDataSet4() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Assignment {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected AssignmentdbDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected AssignmentdbDataSet4(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Assignment {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Hall"] != null)) {
-                    base.Tables.Add(new HallDataTable(ds.Tables["Hall"]));
+                if ((ds.Tables["R_Request"] != null)) {
+                    base.Tables.Add(new R_RequestDataTable(ds.Tables["R_Request"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Assignment {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public HallDataTable Hall {
+        public R_RequestDataTable R_Request {
             get {
-                return this.tableHall;
+                return this.tableR_Request;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            AssignmentdbDataSet cln = ((AssignmentdbDataSet)(base.Clone()));
+            AssignmentdbDataSet4 cln = ((AssignmentdbDataSet4)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Assignment {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Hall"] != null)) {
-                    base.Tables.Add(new HallDataTable(ds.Tables["Hall"]));
+                if ((ds.Tables["R_Request"] != null)) {
+                    base.Tables.Add(new R_RequestDataTable(ds.Tables["R_Request"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableHall = ((HallDataTable)(base.Tables["Hall"]));
+            this.tableR_Request = ((R_RequestDataTable)(base.Tables["R_Request"]));
             if ((initTable == true)) {
-                if ((this.tableHall != null)) {
-                    this.tableHall.InitVars();
+                if ((this.tableR_Request != null)) {
+                    this.tableR_Request.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "AssignmentdbDataSet";
+            this.DataSetName = "AssignmentdbDataSet4";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/AssignmentdbDataSet.xsd";
+            this.Namespace = "http://tempuri.org/AssignmentdbDataSet4.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableHall = new HallDataTable();
-            base.Tables.Add(this.tableHall);
+            this.tableR_Request = new R_RequestDataTable();
+            base.Tables.Add(this.tableR_Request);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeHall() {
+        private bool ShouldSerializeR_Request() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Assignment {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            AssignmentdbDataSet ds = new AssignmentdbDataSet();
+            AssignmentdbDataSet4 ds = new AssignmentdbDataSet4();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,21 +270,35 @@ namespace Assignment {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void HallRowChangeEventHandler(object sender, HallRowChangeEvent e);
+        public delegate void R_RequestRowChangeEventHandler(object sender, R_RequestRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class HallDataTable : global::System.Data.TypedTableBase<HallRow> {
+        public partial class R_RequestDataTable : global::System.Data.TypedTableBase<R_RequestRow> {
             
-            private global::System.Data.DataColumn columnHall_Pic;
+            private global::System.Data.DataColumn columnR_Req_ID;
+            
+            private global::System.Data.DataColumn columnRequest;
+            
+            private global::System.Data.DataColumn columnFunction;
+            
+            private global::System.Data.DataColumn columnHead_Count;
+            
+            private global::System.Data.DataColumn columnStart_Date;
+            
+            private global::System.Data.DataColumn columnEnd_Date;
+            
+            private global::System.Data.DataColumn columnR_Date;
+            
+            private global::System.Data.DataColumn columnStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallDataTable() {
-                this.TableName = "Hall";
+            public R_RequestDataTable() {
+                this.TableName = "R_Request";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -292,7 +306,7 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal HallDataTable(global::System.Data.DataTable table) {
+            internal R_RequestDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -309,16 +323,72 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected HallDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected R_RequestDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Hall_PicColumn {
+            public global::System.Data.DataColumn R_Req_IDColumn {
                 get {
-                    return this.columnHall_Pic;
+                    return this.columnR_Req_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RequestColumn {
+                get {
+                    return this.columnRequest;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FunctionColumn {
+                get {
+                    return this.columnFunction;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Head_CountColumn {
+                get {
+                    return this.columnHead_Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Start_DateColumn {
+                get {
+                    return this.columnStart_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn End_DateColumn {
+                get {
+                    return this.columnEnd_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn R_DateColumn {
+                get {
+                    return this.columnR_Date;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn StatusColumn {
+                get {
+                    return this.columnStatus;
                 }
             }
             
@@ -333,45 +403,59 @@ namespace Assignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRow this[int index] {
+            public R_RequestRow this[int index] {
                 get {
-                    return ((HallRow)(this.Rows[index]));
+                    return ((R_RequestRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HallRowChangeEventHandler HallRowChanging;
+            public event R_RequestRowChangeEventHandler R_RequestRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HallRowChangeEventHandler HallRowChanged;
+            public event R_RequestRowChangeEventHandler R_RequestRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HallRowChangeEventHandler HallRowDeleting;
+            public event R_RequestRowChangeEventHandler R_RequestRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event HallRowChangeEventHandler HallRowDeleted;
+            public event R_RequestRowChangeEventHandler R_RequestRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddHallRow(HallRow row) {
+            public void AddR_RequestRow(R_RequestRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRow AddHallRow(byte[] Hall_Pic) {
-                HallRow rowHallRow = ((HallRow)(this.NewRow()));
+            public R_RequestRow AddR_RequestRow(int R_Req_ID, string Request, string Function, int Head_Count, System.DateTime Start_Date, System.DateTime End_Date, System.DateTime R_Date, string Status) {
+                R_RequestRow rowR_RequestRow = ((R_RequestRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Hall_Pic};
-                rowHallRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowHallRow);
-                return rowHallRow;
+                        R_Req_ID,
+                        Request,
+                        Function,
+                        Head_Count,
+                        Start_Date,
+                        End_Date,
+                        R_Date,
+                        Status};
+                rowR_RequestRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowR_RequestRow);
+                return rowR_RequestRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public R_RequestRow FindByR_Req_ID(int R_Req_ID) {
+                return ((R_RequestRow)(this.Rows.Find(new object[] {
+                            R_Req_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                HallDataTable cln = ((HallDataTable)(base.Clone()));
+                R_RequestDataTable cln = ((R_RequestDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -379,47 +463,80 @@ namespace Assignment {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new HallDataTable();
+                return new R_RequestDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnHall_Pic = base.Columns["Hall_Pic"];
+                this.columnR_Req_ID = base.Columns["R_Req_ID"];
+                this.columnRequest = base.Columns["Request"];
+                this.columnFunction = base.Columns["Function"];
+                this.columnHead_Count = base.Columns["Head_Count"];
+                this.columnStart_Date = base.Columns["Start_Date"];
+                this.columnEnd_Date = base.Columns["End_Date"];
+                this.columnR_Date = base.Columns["R_Date"];
+                this.columnStatus = base.Columns["Status"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnHall_Pic = new global::System.Data.DataColumn("Hall_Pic", typeof(byte[]), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHall_Pic);
-                this.columnHall_Pic.AllowDBNull = false;
+                this.columnR_Req_ID = new global::System.Data.DataColumn("R_Req_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnR_Req_ID);
+                this.columnRequest = new global::System.Data.DataColumn("Request", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRequest);
+                this.columnFunction = new global::System.Data.DataColumn("Function", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFunction);
+                this.columnHead_Count = new global::System.Data.DataColumn("Head_Count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHead_Count);
+                this.columnStart_Date = new global::System.Data.DataColumn("Start_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStart_Date);
+                this.columnEnd_Date = new global::System.Data.DataColumn("End_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnd_Date);
+                this.columnR_Date = new global::System.Data.DataColumn("R_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnR_Date);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnR_Req_ID}, true));
+                this.columnR_Req_ID.AllowDBNull = false;
+                this.columnR_Req_ID.Unique = true;
+                this.columnRequest.MaxLength = 50;
+                this.columnFunction.AllowDBNull = false;
+                this.columnFunction.MaxLength = 50;
+                this.columnHead_Count.AllowDBNull = false;
+                this.columnStart_Date.AllowDBNull = false;
+                this.columnEnd_Date.AllowDBNull = false;
+                this.columnR_Date.AllowDBNull = false;
+                this.columnStatus.AllowDBNull = false;
+                this.columnStatus.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRow NewHallRow() {
-                return ((HallRow)(this.NewRow()));
+            public R_RequestRow NewR_RequestRow() {
+                return ((R_RequestRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new HallRow(builder);
+                return new R_RequestRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(HallRow);
+                return typeof(R_RequestRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.HallRowChanged != null)) {
-                    this.HallRowChanged(this, new HallRowChangeEvent(((HallRow)(e.Row)), e.Action));
+                if ((this.R_RequestRowChanged != null)) {
+                    this.R_RequestRowChanged(this, new R_RequestRowChangeEvent(((R_RequestRow)(e.Row)), e.Action));
                 }
             }
             
@@ -427,8 +544,8 @@ namespace Assignment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.HallRowChanging != null)) {
-                    this.HallRowChanging(this, new HallRowChangeEvent(((HallRow)(e.Row)), e.Action));
+                if ((this.R_RequestRowChanging != null)) {
+                    this.R_RequestRowChanging(this, new R_RequestRowChangeEvent(((R_RequestRow)(e.Row)), e.Action));
                 }
             }
             
@@ -436,8 +553,8 @@ namespace Assignment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.HallRowDeleted != null)) {
-                    this.HallRowDeleted(this, new HallRowChangeEvent(((HallRow)(e.Row)), e.Action));
+                if ((this.R_RequestRowDeleted != null)) {
+                    this.R_RequestRowDeleted(this, new R_RequestRowChangeEvent(((R_RequestRow)(e.Row)), e.Action));
                 }
             }
             
@@ -445,14 +562,14 @@ namespace Assignment {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.HallRowDeleting != null)) {
-                    this.HallRowDeleting(this, new HallRowChangeEvent(((HallRow)(e.Row)), e.Action));
+                if ((this.R_RequestRowDeleting != null)) {
+                    this.R_RequestRowDeleting(this, new R_RequestRowChangeEvent(((R_RequestRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveHallRow(HallRow row) {
+            public void RemoveR_RequestRow(R_RequestRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -461,7 +578,7 @@ namespace Assignment {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                AssignmentdbDataSet ds = new AssignmentdbDataSet();
+                AssignmentdbDataSet4 ds = new AssignmentdbDataSet4();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -479,7 +596,7 @@ namespace Assignment {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "HallDataTable";
+                attribute2.FixedValue = "R_RequestDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -523,26 +640,120 @@ namespace Assignment {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class HallRow : global::System.Data.DataRow {
+        public partial class R_RequestRow : global::System.Data.DataRow {
             
-            private HallDataTable tableHall;
+            private R_RequestDataTable tableR_Request;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal HallRow(global::System.Data.DataRowBuilder rb) : 
+            internal R_RequestRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableHall = ((HallDataTable)(this.Table));
+                this.tableR_Request = ((R_RequestDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public byte[] Hall_Pic {
+            public int R_Req_ID {
                 get {
-                    return ((byte[])(this[this.tableHall.Hall_PicColumn]));
+                    return ((int)(this[this.tableR_Request.R_Req_IDColumn]));
                 }
                 set {
-                    this[this.tableHall.Hall_PicColumn] = value;
+                    this[this.tableR_Request.R_Req_IDColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Request {
+                get {
+                    try {
+                        return ((string)(this[this.tableR_Request.RequestColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Request\' in table \'R_Request\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableR_Request.RequestColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Function {
+                get {
+                    return ((string)(this[this.tableR_Request.FunctionColumn]));
+                }
+                set {
+                    this[this.tableR_Request.FunctionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Head_Count {
+                get {
+                    return ((int)(this[this.tableR_Request.Head_CountColumn]));
+                }
+                set {
+                    this[this.tableR_Request.Head_CountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Start_Date {
+                get {
+                    return ((global::System.DateTime)(this[this.tableR_Request.Start_DateColumn]));
+                }
+                set {
+                    this[this.tableR_Request.Start_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime End_Date {
+                get {
+                    return ((global::System.DateTime)(this[this.tableR_Request.End_DateColumn]));
+                }
+                set {
+                    this[this.tableR_Request.End_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime R_Date {
+                get {
+                    return ((global::System.DateTime)(this[this.tableR_Request.R_DateColumn]));
+                }
+                set {
+                    this[this.tableR_Request.R_DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Status {
+                get {
+                    return ((string)(this[this.tableR_Request.StatusColumn]));
+                }
+                set {
+                    this[this.tableR_Request.StatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRequestNull() {
+                return this.IsNull(this.tableR_Request.RequestColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRequestNull() {
+                this[this.tableR_Request.RequestColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -550,22 +761,22 @@ namespace Assignment {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class HallRowChangeEvent : global::System.EventArgs {
+        public class R_RequestRowChangeEvent : global::System.EventArgs {
             
-            private HallRow eventRow;
+            private R_RequestRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRowChangeEvent(HallRow row, global::System.Data.DataRowAction action) {
+            public R_RequestRowChangeEvent(R_RequestRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public HallRow Row {
+            public R_RequestRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -581,7 +792,7 @@ namespace Assignment {
         }
     }
 }
-namespace Assignment.AssignmentdbDataSetTableAdapters {
+namespace Assignment.AssignmentdbDataSet4TableAdapters {
     
     
     /// <summary>
@@ -593,7 +804,7 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class HallTableAdapter : global::System.ComponentModel.Component {
+    public partial class R_RequestTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -607,7 +818,7 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public HallTableAdapter() {
+        public R_RequestTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -704,9 +915,51 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Hall";
-            tableMapping.ColumnMappings.Add("Hall_Pic", "Hall_Pic");
+            tableMapping.DataSetTable = "R_Request";
+            tableMapping.ColumnMappings.Add("R_Req_ID", "R_Req_ID");
+            tableMapping.ColumnMappings.Add("Request", "Request");
+            tableMapping.ColumnMappings.Add("Function", "Function");
+            tableMapping.ColumnMappings.Add("Head_Count", "Head_Count");
+            tableMapping.ColumnMappings.Add("Start_Date", "Start_Date");
+            tableMapping.ColumnMappings.Add("End_Date", "End_Date");
+            tableMapping.ColumnMappings.Add("R_Date", "R_Date");
+            tableMapping.ColumnMappings.Add("Status", "Status");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[R_Request] WHERE (([R_Req_ID] = @Original_R_Req_ID) AND ((@IsNull_Request = 1 AND [Request] IS NULL) OR ([Request] = @Original_Request)) AND ([Function] = @Original_Function) AND ([Head_Count] = @Original_Head_Count) AND ([Start_Date] = @Original_Start_Date) AND ([End_Date] = @Original_End_Date) AND ([R_Date] = @Original_R_Date) AND ([Status] = @Original_Status))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_R_Req_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "R_Req_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Request", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Request", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Request", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Request", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Function", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Function", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Head_Count", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Head_Count", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Start_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_End_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "End_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_R_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "R_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[R_Request] SET [R_Req_ID] = @R_Req_ID, [Request] = @Request, [Function] = @Function, [Head_Count] = @Head_Count, [Start_Date] = @Start_Date, [End_Date] = @End_Date, [R_Date] = @R_Date, [Status] = @Status WHERE (([R_Req_ID] = @Original_R_Req_ID) AND ((@IsNull_Request = 1 AND [Request] IS NULL) OR ([Request] = @Original_Request)) AND ([Function] = @Original_Function) AND ([Head_Count] = @Original_Head_Count) AND ([Start_Date] = @Original_Start_Date) AND ([End_Date] = @Original_End_Date) AND ([R_Date] = @Original_R_Date) AND ([Status] = @Original_Status));
+SELECT R_Req_ID, Request, Function, Head_Count, Start_Date, End_Date, R_Date, Status FROM R_Request WHERE (R_Req_ID = @R_Req_ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@R_Req_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "R_Req_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Request", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Request", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Function", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Function", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Head_Count", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Head_Count", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@End_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "End_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@R_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "R_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_R_Req_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "R_Req_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Request", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Request", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Request", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Request", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Function", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Function", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Head_Count", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Head_Count", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Start_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Start_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_End_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "End_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_R_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "R_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -722,7 +975,8 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Hall_Pic FROM dbo.Hall";
+            this._commandCollection[0].CommandText = "SELECT R_Req_ID, Request, [Function], Head_Count, Start_Date, End_Date, R_Date, S" +
+                "tatus FROM dbo.R_Request";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -730,7 +984,7 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(AssignmentdbDataSet.HallDataTable dataTable) {
+        public virtual int Fill(AssignmentdbDataSet4.R_RequestDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -743,11 +997,179 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual AssignmentdbDataSet.HallDataTable GetData() {
+        public virtual AssignmentdbDataSet4.R_RequestDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            AssignmentdbDataSet.HallDataTable dataTable = new AssignmentdbDataSet.HallDataTable();
+            AssignmentdbDataSet4.R_RequestDataTable dataTable = new AssignmentdbDataSet4.R_RequestDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AssignmentdbDataSet4.R_RequestDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AssignmentdbDataSet4 dataSet) {
+            return this.Adapter.Update(dataSet, "R_Request");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_R_Req_ID, string Original_Request, string Original_Function, int Original_Head_Count, System.DateTime Original_Start_Date, System.DateTime Original_End_Date, System.DateTime Original_R_Date, string Original_Status) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_R_Req_ID));
+            if ((Original_Request == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Request));
+            }
+            if ((Original_Function == null)) {
+                throw new global::System.ArgumentNullException("Original_Function");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Function));
+            }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Head_Count));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Start_Date));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_End_Date));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_R_Date));
+            if ((Original_Status == null)) {
+                throw new global::System.ArgumentNullException("Original_Status");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Status));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int R_Req_ID, 
+                    string Request, 
+                    string Function, 
+                    int Head_Count, 
+                    System.DateTime Start_Date, 
+                    System.DateTime End_Date, 
+                    System.DateTime R_Date, 
+                    string Status, 
+                    int Original_R_Req_ID, 
+                    string Original_Request, 
+                    string Original_Function, 
+                    int Original_Head_Count, 
+                    System.DateTime Original_Start_Date, 
+                    System.DateTime Original_End_Date, 
+                    System.DateTime Original_R_Date, 
+                    string Original_Status) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(R_Req_ID));
+            if ((Request == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Request));
+            }
+            if ((Function == null)) {
+                throw new global::System.ArgumentNullException("Function");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Function));
+            }
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Head_Count));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Start_Date));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(End_Date));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(R_Date));
+            if ((Status == null)) {
+                throw new global::System.ArgumentNullException("Status");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Status));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_R_Req_ID));
+            if ((Original_Request == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Request));
+            }
+            if ((Original_Function == null)) {
+                throw new global::System.ArgumentNullException("Original_Function");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Function));
+            }
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Head_Count));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Start_Date));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_End_Date));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_R_Date));
+            if ((Original_Status == null)) {
+                throw new global::System.ArgumentNullException("Original_Status");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Status));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Request, string Function, int Head_Count, System.DateTime Start_Date, System.DateTime End_Date, System.DateTime R_Date, string Status, int Original_R_Req_ID, string Original_Request, string Original_Function, int Original_Head_Count, System.DateTime Original_Start_Date, System.DateTime Original_End_Date, System.DateTime Original_R_Date, string Original_Status) {
+            return this.Update(Original_R_Req_ID, Request, Function, Head_Count, Start_Date, End_Date, R_Date, Status, Original_R_Req_ID, Original_Request, Original_Function, Original_Head_Count, Original_Start_Date, Original_End_Date, Original_R_Date, Original_Status);
         }
     }
     
@@ -763,6 +1185,8 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private R_RequestTableAdapter _r_RequestTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -775,6 +1199,20 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public R_RequestTableAdapter R_RequestTableAdapter {
+            get {
+                return this._r_RequestTableAdapter;
+            }
+            set {
+                this._r_RequestTableAdapter = value;
             }
         }
         
@@ -797,6 +1235,10 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._r_RequestTableAdapter != null) 
+                            && (this._r_RequestTableAdapter.Connection != null))) {
+                    return this._r_RequestTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -810,6 +1252,9 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._r_RequestTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -819,8 +1264,17 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(AssignmentdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(AssignmentdbDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._r_RequestTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.R_Request.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._r_RequestTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -829,8 +1283,16 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(AssignmentdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(AssignmentdbDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._r_RequestTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.R_Request.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._r_RequestTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -839,8 +1301,16 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(AssignmentdbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(AssignmentdbDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._r_RequestTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.R_Request.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._r_RequestTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -873,12 +1343,17 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(AssignmentdbDataSet dataSet) {
+        public virtual int UpdateAll(AssignmentdbDataSet4 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._r_RequestTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._r_RequestTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -912,6 +1387,15 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._r_RequestTableAdapter != null)) {
+                    revertConnections.Add(this._r_RequestTableAdapter, this._r_RequestTableAdapter.Connection);
+                    this._r_RequestTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._r_RequestTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._r_RequestTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._r_RequestTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._r_RequestTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -969,6 +1453,10 @@ namespace Assignment.AssignmentdbDataSetTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._r_RequestTableAdapter != null)) {
+                    this._r_RequestTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._r_RequestTableAdapter]));
+                    this._r_RequestTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
