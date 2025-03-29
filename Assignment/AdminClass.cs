@@ -422,7 +422,7 @@ namespace Assignment
         {
             return new List<string> { "Real_Name", "DOB", "Gender", "Email", "Username" };
         }
-        public static bool UpdateStaffInfo(string realName, string field, string newValue)
+        public static bool UpdateStaffInfo(string realName, string field, string newValue, DataGridView dataGridView)
         {
             HashSet<string> allowedFields = new HashSet<string> { "Real_Name", "DOB", "Gender", "Email", "Username" };
 
@@ -443,7 +443,12 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    return cmd.ExecuteNonQuery() > 0;
+                    bool success = cmd.ExecuteNonQuery() > 0;
+                    if (success && dataGridView != null)
+                    {
+                        RefreshDataGridView(dataGridView);
+                    }
+                    return success;
                 }
                 catch (Exception ex)
                 {

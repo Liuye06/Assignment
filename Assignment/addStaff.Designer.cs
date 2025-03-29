@@ -158,7 +158,7 @@
             "Chef",
             "Manager",
             "Reservation Coordinator"});
-            this.cB_StaffRole.Location = new System.Drawing.Point(472, 47);
+            this.cB_StaffRole.Location = new System.Drawing.Point(484, 47);
             this.cB_StaffRole.Name = "cB_StaffRole";
             this.cB_StaffRole.Size = new System.Drawing.Size(121, 24);
             this.cB_StaffRole.TabIndex = 29;

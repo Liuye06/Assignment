@@ -55,8 +55,8 @@ namespace Assignment
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            editStaff btn_Edit = new editStaff();
-            btn_Edit.ShowDialog();
+            editStaff form = new editStaff(dataGridView1);
+            form.ShowDialog();
         }
     }
 

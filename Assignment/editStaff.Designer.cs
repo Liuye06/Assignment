@@ -91,16 +91,16 @@
             // 
             this.btn_Cancel.Location = new System.Drawing.Point(431, 331);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel.Size = new System.Drawing.Size(78, 37);
             this.btn_Cancel.TabIndex = 35;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
             // btn_EditCus
             // 
-            this.btn_EditCus.Location = new System.Drawing.Point(238, 331);
+            this.btn_EditCus.Location = new System.Drawing.Point(246, 331);
             this.btn_EditCus.Name = "btn_EditCus";
-            this.btn_EditCus.Size = new System.Drawing.Size(75, 23);
+            this.btn_EditCus.Size = new System.Drawing.Size(93, 37);
             this.btn_EditCus.TabIndex = 34;
             this.btn_EditCus.Text = "Save";
             this.btn_EditCus.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             "Gender",
             "Email",
             "Username"});
-            this.comboBox2.Location = new System.Drawing.Point(485, 54);
+            this.comboBox2.Location = new System.Drawing.Point(500, 54);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 42;

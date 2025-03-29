@@ -1,27 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment
 {
     public partial class editStaff : Form
     {
-        public editStaff()
+        private DataGridView _dataGridView; // Reference to main form's DataGridView
+        public editStaff(DataGridView dataGridView)
         {
             InitializeComponent();
+            _dataGridView = dataGridView;
 
             // Set up event handlers
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
         }
-
         private void editStaff_Load(object sender, EventArgs e)
         {
             // Load roles
@@ -36,7 +30,6 @@ namespace Assignment
             listBox1.Items.Clear();
             txt_EditCus.Clear();
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem == null) return;
@@ -51,7 +44,6 @@ namespace Assignment
             comboBox2.SelectedIndex = -1;
             txt_EditCus.Clear();
         }
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem == null) return;
@@ -66,7 +58,6 @@ namespace Assignment
                 txt_EditCus.Text = details.ContainsKey(selectedField) ? details[selectedField] : "";
             }
         }
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem == null || comboBox2.SelectedItem == null) return;
@@ -77,7 +68,6 @@ namespace Assignment
             var details = AdminClass.GetStaffDetails(selectedStaff);
             txt_EditCus.Text = details.ContainsKey(selectedField) ? details[selectedField] : "";
         }
-
         private void btn_EditCus_Click_1(object sender, EventArgs e)
         {
             if (listBox1.SelectedItem == null ||
@@ -101,13 +91,14 @@ namespace Assignment
 
             if (confirm == DialogResult.Yes)
             {
-                bool success = AdminClass.UpdateStaffInfo(staffName, field, newValue);
+                bool success = AdminClass.UpdateStaffInfo(staffName, field, newValue, _dataGridView);
                 if (success)
                 {
                     MessageBox.Show("Staff information updated successfully!",
                                   "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Refresh the current field value
                     comboBox2_SelectedIndexChanged(sender, e);
+                    this.Close(); // Close the form after successful update
                 }
                 else
                 {
@@ -116,7 +107,6 @@ namespace Assignment
                 }
             }
         }
-
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             // Clear all selections
@@ -124,8 +114,7 @@ namespace Assignment
             comboBox2.SelectedIndex = -1;
             listBox1.Items.Clear();
             txt_EditCus.Clear();
+            this.Close(); // Close the form
         }
-
-     
     }
 }
