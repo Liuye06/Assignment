@@ -1,0 +1,107 @@
+﻿namespace Assignment
+{
+    partial class RCMainPage
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Reservation = new System.Windows.Forms.Button();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.btn_Reply = new System.Windows.Forms.Button();
+            this.btn_Profile = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_Profile);
+            this.panel1.Controls.Add(this.btn_Reply);
+            this.panel1.Controls.Add(this.btn_Update);
+            this.panel1.Controls.Add(this.btn_Reservation);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(228, 452);
+            this.panel1.TabIndex = 0;
+            // 
+            // btn_Reservation
+            // 
+            this.btn_Reservation.Location = new System.Drawing.Point(0, 71);
+            this.btn_Reservation.Name = "btn_Reservation";
+            this.btn_Reservation.Size = new System.Drawing.Size(228, 77);
+            this.btn_Reservation.TabIndex = 0;
+            this.btn_Reservation.Text = "Manage Reservation";
+            this.btn_Reservation.UseVisualStyleBackColor = true;
+            // 
+            // btn_Update
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(0, 154);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(228, 77);
+            this.btn_Update.TabIndex = 1;
+            this.btn_Update.Text = "Update Request";
+            this.btn_Update.UseVisualStyleBackColor = true;
+            // 
+            // btn_Reply
+            // 
+            this.btn_Reply.Location = new System.Drawing.Point(0, 237);
+            this.btn_Reply.Name = "btn_Reply";
+            this.btn_Reply.Size = new System.Drawing.Size(228, 77);
+            this.btn_Reply.TabIndex = 1;
+            this.btn_Reply.Text = "Reply Request";
+            this.btn_Reply.UseVisualStyleBackColor = true;
+            // 
+            // btn_Profile
+            // 
+            this.btn_Profile.Location = new System.Drawing.Point(0, 320);
+            this.btn_Profile.Name = "btn_Profile";
+            this.btn_Profile.Size = new System.Drawing.Size(228, 77);
+            this.btn_Profile.TabIndex = 2;
+            this.btn_Profile.Text = "Profile";
+            this.btn_Profile.UseVisualStyleBackColor = true;
+            // 
+            // RCMainPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(893, 450);
+            this.Controls.Add(this.panel1);
+            this.Name = "RCMainPage";
+            this.Text = "RCMainPage";
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_Reservation;
+        private System.Windows.Forms.Button btn_Profile;
+        private System.Windows.Forms.Button btn_Reply;
+        private System.Windows.Forms.Button btn_Update;
+    }
+}
