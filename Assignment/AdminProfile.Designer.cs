@@ -164,6 +164,7 @@
             this.btn_SaveProfile.TabIndex = 13;
             this.btn_SaveProfile.Text = "Save";
             this.btn_SaveProfile.UseVisualStyleBackColor = true;
+            this.btn_SaveProfile.Click += new System.EventHandler(this.btn_SaveProfile_Click);
             // 
             // btn_editProfile
             // 
@@ -173,6 +174,7 @@
             this.btn_editProfile.TabIndex = 14;
             this.btn_editProfile.Text = "button1";
             this.btn_editProfile.UseVisualStyleBackColor = true;
+            this.btn_editProfile.Click += new System.EventHandler(this.btn_editProfile_Click);
             // 
             // AdminProfile
             // 
@@ -196,6 +198,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "AdminProfile";
             this.Text = "AdminProfile";
+            this.Load += new System.EventHandler(this.AdminProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

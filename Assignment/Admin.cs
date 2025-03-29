@@ -50,8 +50,10 @@ namespace Assignment
         }
         private void button2_Click_1(object sender, EventArgs e)//update admin profile only
         {
-            AdminProfile button2 = new AdminProfile();
+            string username = "admin123"; // get from the login page
+            AdminProfile button2 = new AdminProfile(username);
             button2.Show();
         }
+
     }
 }
