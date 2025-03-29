@@ -27,7 +27,7 @@ namespace Assignment
             "Email",
             "Username"
         });
-     }
+        }
         private void EditCus_Load(object sender, EventArgs e)
         {
             try
@@ -72,6 +72,7 @@ namespace Assignment
 
         private void btn_EditCus_Click_1(object sender, EventArgs e)
         {
+            // Input validation remains the same
             if (string.IsNullOrEmpty(selectedUserId) || comboBox1.SelectedItem == null)
             {
                 MessageBox.Show("Please select a user and a field to edit.", "Warning",
@@ -89,19 +90,7 @@ namespace Assignment
                 return;
             }
 
-            // Single combined confirmation dialog with user ID
-            DialogResult result = MessageBox.Show(
-                $"User ID: {selectedUserId}\n\nChange {selectedField} to: {newValue}\n\nConfirm update?",
-                "Update Confirmation",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (result != DialogResult.Yes)
-            {
-                return; // User canceled
-            }
-
-            // Rest of your update logic...
+            // Field mapping remains the same
             var fieldMapping = new Dictionary<string, string>
     {
         { "Real Name", "Real_Name" },
@@ -111,18 +100,42 @@ namespace Assignment
         { "Username", "Username" }
     };
 
-            bool success = AdminClass.EditUser(
-                selectedUserId,
-                fieldMapping[selectedField],
-                newValue,
-                dataGridView
-            );
-
-            if (success)
+            if (!fieldMapping.ContainsKey(selectedField))
             {
-                MessageBox.Show("Update successful!", "Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                AdminClass.LoadCustomers(listBox1);
+                MessageBox.Show("Invalid field selected.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // SINGLE DIALOG that combines confirmation and result
+            DialogResult result = MessageBox.Show(
+                $"Update User ID: {selectedUserId}\n\nField: {selectedField}\nNew Value: {newValue}\n\nProceed?",
+                "Confirm Update",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    bool success = AdminClass.EditUser(
+                        selectedUserId,
+                        fieldMapping[selectedField],
+                        newValue,
+                        dataGridView
+                    );
+
+                    // No separate success message - the confirmation was enough
+                    if (success)
+                    {
+                        AdminClass.LoadCustomers(listBox1); // Silent refresh
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Update failed: {ex.Message}", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
