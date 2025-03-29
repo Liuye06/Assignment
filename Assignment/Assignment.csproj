@@ -71,50 +71,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assignmentdb2DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Assignmentdb2DataSet.xsd</DependentUpon>
+    <Compile Include="CustomerFeedback.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AssignmentdbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet5.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet6.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet7.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet7.xsd</DependentUpon>
+    <Compile Include="CustomerFeedback.Designer.cs">
+      <DependentUpon>CustomerFeedback.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerHomepage.cs">
       <SubType>Form</SubType>
@@ -122,17 +83,35 @@
     <Compile Include="CustomerHomepage.Designer.cs">
       <DependentUpon>CustomerHomepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerMakeAnOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerMakeAnOrder.Designer.cs">
+      <DependentUpon>CustomerMakeAnOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMakeAnReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerMakeAnReservation.Designer.cs">
+      <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMakePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerMakePayment.Designer.cs">
+      <DependentUpon>CustomerMakePayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer_EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Customer_EditProfile.Designer.cs">
       <DependentUpon>Customer_EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Customer_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Customer_Profile.Designer.cs">
+      <DependentUpon>Customer_Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="MakePayment_Orders.cs">
       <SubType>Form</SubType>
@@ -160,11 +139,6 @@
     </Compile>
     <Compile Include="AddNewHall.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="AddNewHall.Designer.cs">
       <DependentUpon>AddNewHall.cs</DependentUpon>
@@ -194,29 +168,14 @@
     <Compile Include="EditMenuItemForm.Designer.cs">
       <DependentUpon>EditMenuItemForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AssignmentdbDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="HallManager.cs" />
     <Compile Include="HallReservationManager.cs" />
     <Compile Include="ImageManager.cs" />
     <Compile Include="MainHallResvReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AssignmentdbDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="MainHallResvReport.Designer.cs">
       <DependentUpon>MainHallResvReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AssignmentdbDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
     </Compile>
     <Compile Include="ManageHall.cs">
       <SubType>Form</SubType>
@@ -251,23 +210,41 @@
     </Compile>
     <Compile Include="MenuManager.cs" />
     <Compile Include="Ingredients.cs" />
-    <Compile Include="Inventory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inventory.Designer.cs">
-      <DependentUpon>Inventory.cs</DependentUpon>
-    </Compile>
     <Compile Include="OrderManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewCustomerOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCustomerOrder.Designer.cs">
+      <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCustomerReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCustomerReservation.Designer.cs">
+      <DependentUpon>ViewCustomerReservation.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomerFeedback.resx">
+      <DependentUpon>CustomerFeedback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerHomepage.resx">
       <DependentUpon>CustomerHomepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerMakeAnOrder.resx">
+      <DependentUpon>CustomerMakeAnOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerMakeAnReservation.resx">
+      <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerMakePayment.resx">
+      <DependentUpon>CustomerMakePayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_EditProfile.resx">
       <DependentUpon>Customer_EditProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Customer_Profile.resx">
+      <DependentUpon>Customer_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MakePayment_Orders.resx">
       <DependentUpon>MakePayment_Orders.cs</DependentUpon>
@@ -321,9 +298,6 @@
     <EmbeddedResource Include="ManagerUpdateProfile.resx">
       <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventory.resx">
-      <DependentUpon>Inventory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -334,152 +308,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Assignmentdb2DataSet.xsc">
-      <DependentUpon>Assignmentdb2DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Assignmentdb2DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Assignmentdb2DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Assignmentdb2DataSet.xss">
-      <DependentUpon>Assignmentdb2DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet.xsc">
-      <DependentUpon>AssignmentdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet.xss">
-      <DependentUpon>AssignmentdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet1.xsc">
-      <DependentUpon>AssignmentdbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet1.xss">
-      <DependentUpon>AssignmentdbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet2.xsc">
-      <DependentUpon>AssignmentdbDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet2.xss">
-      <DependentUpon>AssignmentdbDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet3.xsc">
-      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet3.xss">
-      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet4.xsc">
-      <DependentUpon>AssignmentdbDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet4.xss">
-      <DependentUpon>AssignmentdbDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet5.xsc">
-      <DependentUpon>AssignmentdbDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet5.xss">
-      <DependentUpon>AssignmentdbDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet6.xsc">
-      <DependentUpon>AssignmentdbDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet6.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet6.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet6.xss">
-      <DependentUpon>AssignmentdbDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet7.xsc">
-      <DependentUpon>AssignmentdbDataSet7.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet7.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet7.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet7.xss">
-      <DependentUpon>AssignmentdbDataSet7.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="ViewCustomerOrder.resx">
+      <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomerReservation.resx">
+      <DependentUpon>ViewCustomerReservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomersOrder.resx">
       <DependentUpon>CustomersOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="AssignmentdbDataSet.xsc">
-      <DependentUpon>AssignmentdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet.xss">
-      <DependentUpon>AssignmentdbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet1.xsc">
-      <DependentUpon>AssignmentdbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet1.xss">
-      <DependentUpon>AssignmentdbDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet2.xsc">
-      <DependentUpon>AssignmentdbDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet2.xss">
-      <DependentUpon>AssignmentdbDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet3.xsc">
-      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="AssignmentdbDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AssignmentdbDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AssignmentdbDataSet3.xss">
-      <DependentUpon>AssignmentdbDataSet3.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -506,22 +343,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assignmentdb.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assignmentdb2.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assignmentdb2_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Assignmentdb2.mdf</DependentUpon>
-    </Content>
-    <Content Include="Assignmentdb_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <DependentUpon>Assignmentdb.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Screenshot 2025-03-06 113817.png" />
   </ItemGroup>
   <ItemGroup>
@@ -538,15 +359,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assignmentdb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assignmentdb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Assignmentdb.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

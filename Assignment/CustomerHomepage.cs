@@ -36,7 +36,6 @@ namespace Assignment
         private void CustomerHomepage_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'assignmentdbDataSet6.Order' table. You can move, or remove it, as needed.
-            this.orderTableAdapter.Fill(this.assignmentdbDataSet6.Order);
             panel_ViewOrders.Visible = false;
             panel_ViewReservation.Visible = false;
             panel_OrderMenu.Visible = false;
