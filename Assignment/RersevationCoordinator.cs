@@ -9,6 +9,7 @@ namespace Assignment
 {
     internal class RersevationCoordinator
     {
+        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
         public static bool UpdateRCProfile(string username, string realName, string dob, string gender, string email, string password)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
