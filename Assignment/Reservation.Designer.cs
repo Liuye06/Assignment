@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_view = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
-            this.btn_Delete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +48,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 452);
             this.panel1.TabIndex = 1;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Location = new System.Drawing.Point(0, 344);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(228, 77);
+            this.btn_Delete.TabIndex = 3;
+            this.btn_Delete.Text = "Delete Reservation";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Add
             // 
@@ -90,16 +100,6 @@
             this.btn_Home.UseVisualStyleBackColor = true;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Location = new System.Drawing.Point(0, 344);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(228, 77);
-            this.btn_Delete.TabIndex = 3;
-            this.btn_Delete.Text = "Delete Reservation";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
-            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -108,6 +108,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Reservation";
             this.Text = "Reservation";
+            this.Load += new System.EventHandler(this.Reservation_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -46,5 +46,16 @@ namespace Assignment
             DeleteReservation btn_Delete = new DeleteReservation();
             btn_Delete.Show();
         }
+
+        private void Reservation_Load(object sender, EventArgs e)
+        {
+            RefreshDataGrid()
+        }
+
+        private void RefreshDataGrid()
+        {
+            ReservationCoordinator.RefreshDataGridView(dataGridView1);
+        }
+
     }
 }
