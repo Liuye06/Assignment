@@ -42,19 +42,19 @@
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rRequestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet9 = new Assignment.Database1DataSet9();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet3 = new Assignment.Database1DataSet3();
             this.reservationTableAdapter = new Assignment.Database1DataSet3TableAdapters.ReservationTableAdapter();
-            this.database1DataSet9 = new Assignment.Database1DataSet9();
-            this.rRequestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.r_RequestTableAdapter1 = new Assignment.Database1DataSet9TableAdapters.R_RequestTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -90,7 +90,6 @@
             this.txt_Reply.Name = "txt_Reply";
             this.txt_Reply.Size = new System.Drawing.Size(290, 22);
             this.txt_Reply.TabIndex = 3;
-            this.txt_Reply.TextChanged += new System.EventHandler(this.txt_Reply_TextChanged);
             // 
             // btn_Send
             // 
@@ -100,7 +99,6 @@
             this.btn_Send.TabIndex = 4;
             this.btn_Send.Text = "Send";
             this.btn_Send.UseVisualStyleBackColor = true;
-            this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
             // rRequestBindingSource
             // 
@@ -123,7 +121,6 @@
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 6;
             this.Cancel.Text = "Cancel";
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // dataGridView1
             // 
@@ -140,7 +137,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(675, 150);
             this.dataGridView1.TabIndex = 7;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // userIDDataGridViewTextBoxColumn
             // 
@@ -166,6 +162,16 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
+            // rRequestBindingSource1
+            // 
+            this.rRequestBindingSource1.DataMember = "R_Request";
+            this.rRequestBindingSource1.DataSource = this.database1DataSet9;
+            // 
+            // database1DataSet9
+            // 
+            this.database1DataSet9.DataSetName = "Database1DataSet9";
+            this.database1DataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
@@ -179,16 +185,6 @@
             // reservationTableAdapter
             // 
             this.reservationTableAdapter.ClearBeforeFill = true;
-            // 
-            // database1DataSet9
-            // 
-            this.database1DataSet9.DataSetName = "Database1DataSet9";
-            this.database1DataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rRequestBindingSource1
-            // 
-            this.rRequestBindingSource1.DataMember = "R_Request";
-            this.rRequestBindingSource1.DataSource = this.database1DataSet9;
             // 
             // r_RequestTableAdapter1
             // 
@@ -212,10 +208,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

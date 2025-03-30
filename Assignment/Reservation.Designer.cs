@@ -68,7 +68,6 @@
             this.btn_Delete.TabIndex = 3;
             this.btn_Delete.Text = "Delete Reservation";
             this.btn_Delete.UseVisualStyleBackColor = true;
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Assign
             // 
@@ -78,17 +77,18 @@
             this.btn_Assign.TabIndex = 2;
             this.btn_Assign.Text = "Assign Hall";
             this.btn_Assign.UseVisualStyleBackColor = true;
-            this.btn_Assign.Click += new System.EventHandler(this.btn_Assign_Click);
             // 
             // btn_view
             // 
-            this.btn_view.Enabled = false;
             this.btn_view.Location = new System.Drawing.Point(0, 142);
             this.btn_view.Name = "btn_view";
+            this.btn_view.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btn_view.Size = new System.Drawing.Size(228, 77);
             this.btn_view.TabIndex = 1;
             this.btn_view.Text = "View Reservation";
+            this.btn_view.UseCompatibleTextRendering = true;
             this.btn_view.UseVisualStyleBackColor = true;
+            this.btn_view.UseWaitCursor = true;
             this.btn_view.Click += new System.EventHandler(this.btn_view_Click);
             // 
             // btn_Home
@@ -99,7 +99,6 @@
             this.btn_Home.TabIndex = 0;
             this.btn_Home.Text = "Home";
             this.btn_Home.UseVisualStyleBackColor = true;
-            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // dataGridView1
             // 
@@ -118,7 +117,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(492, 284);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // reservationIDDataGridViewTextBoxColumn
             // 
@@ -184,7 +182,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "Reservation";
             this.Text = "Reservation";
-            this.Load += new System.EventHandler(this.Reservation_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();

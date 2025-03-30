@@ -99,7 +99,8 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT R_Req_ID, User_ID, Request, Function, Head_Count, Start_Date, End_Date, R_Date, Status FROM [R_Request]";
+                    // Fix: Added square brackets around Function
+                    string query = "SELECT R_Req_ID, User_ID, Request, [Function], Head_Count, Start_Date, End_Date, R_Date, Status FROM [R_Request]";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
@@ -263,6 +264,120 @@ namespace Assignment
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error deleting reservation: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
+        public static DataTable GetAvailableHalls()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Hall_ID, Hall_Name, Capacity, Price_P_Day FROM [Hall] " +
+                                  "WHERE Hall_ID NOT IN (SELECT Hall_ID FROM [Reservation])";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading Hall Data: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return dt;
+        }
+
+        public static DataTable GetPendingRequests()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT User_ID, Start_Date FROM [R_Request] " +
+                              "WHERE Status = 'In Progress'";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dt);
+                }
+            }
+            return dt;
+        }
+        public static bool CheckHallAvailability(int hallID)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM [Reservation] WHERE Hall_ID = @HallID";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@HallID", hallID);
+                    conn.Open();
+                    int count = (int)cmd.ExecuteScalar();
+                    return count == 0;
+                }
+            }
+        }
+
+        public static bool CheckRequestStatus(int userID)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Status FROM [R_Request] WHERE User_ID = @UserID";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@UserID", userID);
+                    conn.Open();
+                    string status = (string)cmd.ExecuteScalar();
+                    return status == "In Progress";
+                }
+            }
+        }
+        public static bool CreateReservation(int hallID, int userID, DateTime startDate)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Check if hall is already reserved
+                    if (!CheckHallAvailability(hallID))
+                    {
+                        MessageBox.Show("This hall is already reserved.", "Error",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    // Check if request status is valid
+                    if (!CheckRequestStatus(userID))
+                    {
+                        MessageBox.Show("The selected request is not in 'In Progress' status.", "Error",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    // Create new reservation
+                    string query = "INSERT INTO [Reservation] (Hall_ID, User_ID, R_Req_ID, Status) " +
+                                  "VALUES (@HallID, @UserID, " +
+                                  "(SELECT R_Req_ID FROM [R_Request] WHERE User_ID = @UserID), 'Booked')";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@HallID", hallID);
+                        cmd.Parameters.AddWithValue("@UserID", userID);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error creating reservation: " + ex.Message,
                                   "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }

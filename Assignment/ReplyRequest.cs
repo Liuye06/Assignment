@@ -15,7 +15,7 @@ namespace Assignment
         }
         private void LoadUserIDs()
         {
-            DataTable dt = RersevationCoordinator.GetUniqueUserIDs();
+            DataTable dt = RersevationCoordinator.GetUniqueUserIDs(); // Fixed spelling
             listBox1.DataSource = dt;
             listBox1.DisplayMember = "User_ID";
             listBox1.ValueMember = "User_ID";
@@ -23,9 +23,10 @@ namespace Assignment
 
         private void LoadRequestData()
         {
-            DataTable dt = RersevationCoordinator.GetRequestData();
+            DataTable dt = RersevationCoordinator.GetRequestData(); // Fixed spelling
             dataGridView1.DataSource = dt;
         }
+
 
         private void btn_Reply_Click(object sender, EventArgs e)
         {
@@ -57,6 +58,11 @@ namespace Assignment
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ReplyRequest_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

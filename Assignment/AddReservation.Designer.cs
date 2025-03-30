@@ -34,6 +34,12 @@
             this.lbl_HallID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hallNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pricePDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hallBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet8 = new Assignment.Database1DataSet8();
             this.rRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet6 = new Assignment.Database1DataSet6();
             this.database1DataSet4 = new Assignment.Database1DataSet4();
@@ -43,20 +49,14 @@
             this.r_RequestTableAdapter = new Assignment.Database1DataSet6TableAdapters.R_RequestTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.database1DataSet8 = new Assignment.Database1DataSet8();
-            this.hallBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hallTableAdapter = new Assignment.Database1DataSet8TableAdapters.HallTableAdapter();
-            this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hallNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pricePDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Add
@@ -110,8 +110,51 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(552, 150);
             this.dataGridView1.TabIndex = 30;
+            // 
+            // hallIDDataGridViewTextBoxColumn
+            // 
+            this.hallIDDataGridViewTextBoxColumn.DataPropertyName = "Hall_ID";
+            this.hallIDDataGridViewTextBoxColumn.HeaderText = "Hall_ID";
+            this.hallIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hallIDDataGridViewTextBoxColumn.Name = "hallIDDataGridViewTextBoxColumn";
+            this.hallIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hallIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // hallNameDataGridViewTextBoxColumn
+            // 
+            this.hallNameDataGridViewTextBoxColumn.DataPropertyName = "Hall_Name";
+            this.hallNameDataGridViewTextBoxColumn.HeaderText = "Hall_Name";
+            this.hallNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hallNameDataGridViewTextBoxColumn.Name = "hallNameDataGridViewTextBoxColumn";
+            this.hallNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // capacityDataGridViewTextBoxColumn
+            // 
+            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
+            this.capacityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pricePDayDataGridViewTextBoxColumn
+            // 
+            this.pricePDayDataGridViewTextBoxColumn.DataPropertyName = "Price_P_Day";
+            this.pricePDayDataGridViewTextBoxColumn.HeaderText = "Price_P_Day";
+            this.pricePDayDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pricePDayDataGridViewTextBoxColumn.Name = "pricePDayDataGridViewTextBoxColumn";
+            this.pricePDayDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // hallBindingSource
+            // 
+            this.hallBindingSource.DataMember = "Hall";
+            this.hallBindingSource.DataSource = this.database1DataSet8;
+            // 
+            // database1DataSet8
+            // 
+            this.database1DataSet8.DataSetName = "Database1DataSet8";
+            this.database1DataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rRequestBindingSource
             // 
@@ -169,52 +212,9 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Select the Customer for assign the Hall:";
             // 
-            // database1DataSet8
-            // 
-            this.database1DataSet8.DataSetName = "Database1DataSet8";
-            this.database1DataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hallBindingSource
-            // 
-            this.hallBindingSource.DataMember = "Hall";
-            this.hallBindingSource.DataSource = this.database1DataSet8;
-            // 
             // hallTableAdapter
             // 
             this.hallTableAdapter.ClearBeforeFill = true;
-            // 
-            // hallIDDataGridViewTextBoxColumn
-            // 
-            this.hallIDDataGridViewTextBoxColumn.DataPropertyName = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.HeaderText = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hallIDDataGridViewTextBoxColumn.Name = "hallIDDataGridViewTextBoxColumn";
-            this.hallIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hallIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hallNameDataGridViewTextBoxColumn
-            // 
-            this.hallNameDataGridViewTextBoxColumn.DataPropertyName = "Hall_Name";
-            this.hallNameDataGridViewTextBoxColumn.HeaderText = "Hall_Name";
-            this.hallNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hallNameDataGridViewTextBoxColumn.Name = "hallNameDataGridViewTextBoxColumn";
-            this.hallNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // capacityDataGridViewTextBoxColumn
-            // 
-            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
-            this.capacityDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pricePDayDataGridViewTextBoxColumn
-            // 
-            this.pricePDayDataGridViewTextBoxColumn.DataPropertyName = "Price_P_Day";
-            this.pricePDayDataGridViewTextBoxColumn.HeaderText = "Price_P_Day";
-            this.pricePDayDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pricePDayDataGridViewTextBoxColumn.Name = "pricePDayDataGridViewTextBoxColumn";
-            this.pricePDayDataGridViewTextBoxColumn.Width = 125;
             // 
             // AddReservation
             // 
@@ -233,12 +233,12 @@
             this.Text = "AddReservation";
             this.Load += new System.EventHandler(this.AddReservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

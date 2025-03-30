@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment
@@ -15,49 +9,53 @@ namespace Assignment
         public Reservation()
         {
             InitializeComponent();
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            SetupDataGridView();
+            LoadReservationData();
+        }
+
+        private void SetupDataGridView()
+        {
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void LoadReservationData()
+        {
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor; // Show loading cursor
+
+                DataTable reservationData = RersevationCoordinator.GetReservationData();
+
+                if (reservationData != null)
+                {
+                    dataGridView1.DataSource = reservationData;
+
+                    if (reservationData.Rows.Count == 0)
+                    {
+                        MessageBox.Show("No reservation data found.", "Information",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading reservation data: " + ex.Message,
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default; // Restore default cursor
+            }
         }
 
         private void btn_view_Click(object sender, EventArgs e)
         {
-            Reservation btn_view = new Reservation();
-            btn_view.Show();
-        }
-
-        private void btn_Home_Click(object sender, EventArgs e)
-        {
-            RCMainPage btn_Home = new RCMainPage();
-            btn_Home.Show();
-        }
-
-        private void btn_Assign_Click(object sender, EventArgs e)
-        {
-            AddReservation form = new AddReservation(); 
-            form.Show();
-            RefreshDataGrid();
-        }
-
-        private void btn_Delete_Click(object sender, EventArgs e)
-        {
-            DeleteReservation btn_Delete = new DeleteReservation();
-            btn_Delete.Show();
-        }
-
-        private void Reservation_Load(object sender, EventArgs e)
-        {
-            this.reservationTableAdapter.Fill(this.database1DataSet2.Reservation);
-            RefreshDataGrid();
-        }
-
-        private void RefreshDataGrid()
-        {
-            this.reservationTableAdapter.Fill(this.database1DataSet2.Reservation);
-            dataGridView1.DataSource = this.database1DataSet2.Reservation;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
- 
+            LoadReservationData();
         }
     }
 }

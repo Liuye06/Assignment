@@ -15,6 +15,8 @@ namespace Assignment
         public AddReservation()
         {
             InitializeComponent();
+            LoadAvailableHalls();
+            LoadPendingRequests();
         }
 
         private void AddReservation_Load(object sender, EventArgs e)
@@ -25,7 +27,19 @@ namespace Assignment
             this.r_RequestTableAdapter.Fill(this.database1DataSet6.R_Request);
             // TODO: This line of code loads data into the 'database1DataSet4.Reservation' table. You can move, or remove it, as needed.
             this.reservationTableAdapter.Fill(this.database1DataSet4.Reservation);
+        }
+        private void LoadAvailableHalls()
+        {
+            DataTable dt = RersevationCoordinator.GetAvailableHalls();
+            dataGridView1.DataSource = dt;
+        }
 
+        private void LoadPendingRequests()
+        {
+            DataTable dt = RersevationCoordinator.GetPendingRequests();
+            listBox1.DataSource = dt;
+            listBox1.DisplayMember = "User_ID";
+            listBox1.ValueMember = "User_ID";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,27 +49,40 @@ namespace Assignment
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            string hallID = txt_HallID.Text;
-            
-
-            if (string.IsNullOrWhiteSpace(hallID) 
+            if (string.IsNullOrWhiteSpace(txt_HallID.Text))
             {
-                MessageBox.Show("Please fill in all fields");
+                MessageBox.Show("Please enter a Hall ID.", "Warning",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (RersevationCoordinator.AddReservation(hallID))
+            if (listBox1.SelectedItem == null)
             {
-                MessageBox.Show("Reservation added successfully");
-                RersevationCoordinator.RefreshDataGridView(dataGridView1);
-
-                // Clear the fields after successful addition
-                txt_HallID.Clear();
-               
+                MessageBox.Show("Please select a customer.", "Warning",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
+
+            if (!int.TryParse(txt_HallID.Text, out int hallID))
             {
-                MessageBox.Show("Failed to add reservation");
+                MessageBox.Show("Please enter a valid Hall ID (numeric value).", "Warning",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataRowView selectedRow = (DataRowView)listBox1.SelectedItem;
+            int userID = Convert.ToInt32(selectedRow["User_ID"]);
+            DateTime startDate = Convert.ToDateTime(selectedRow["Start_Date"]);
+
+            bool success = RersevationCoordinator.CreateReservation(hallID, userID, startDate);
+
+            if (success)
+            {
+                MessageBox.Show("Reservation created successfully!", "Success",
+                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Refresh the data
+                LoadAvailableHalls();
+                txt_HallID.Clear();
             }
         }
 
