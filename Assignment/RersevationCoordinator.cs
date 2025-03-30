@@ -99,7 +99,7 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Request_ID, Item_ID, Order_ID, Request, DateTime, Quantity FROM [Request]";
+                    string query = "SELECT R_Req_ID, User_ID, Request, Function, Head_Count, Start_Date, End_Date, R_Date, Status FROM [R_Request]";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
@@ -108,11 +108,11 @@ namespace Assignment
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error loading Reservation Data: " + ex.Message,
+                    MessageBox.Show("Error loading Request Data: " + ex.Message,
                                   "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            return dt; 
+            return dt;
         }
 
         public static void RefreshDataGridView(DataGridView dataGridView)
@@ -130,7 +130,6 @@ namespace Assignment
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
 
         // get all User_ID excluding duplication
         public static DataTable GetUniqueUserIDs()
@@ -138,7 +137,7 @@ namespace Assignment
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT DISTINCT User_ID FROM [Reservation]";
+                string query = "SELECT DISTINCT User_ID FROM [R_Request] WHERE Status IS NULL OR Status = ''";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                 {
@@ -147,6 +146,29 @@ namespace Assignment
             }
             return dt;
         }
+        public static void UpdateRequestStatus(int userID, string status)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE [R_Request] SET Status = @Status WHERE User_ID = @UserID";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Status", status);
+                        cmd.Parameters.AddWithValue("@UserID", userID);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating status: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
         // insect to R_Request database
         public static bool InsertReply(string userID, string status)

@@ -34,23 +34,29 @@
             this.lbl_HallID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.rRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet6 = new Assignment.Database1DataSet6();
             this.database1DataSet4 = new Assignment.Database1DataSet4();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reservationTableAdapter = new Assignment.Database1DataSet4TableAdapters.ReservationTableAdapter();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Cancel = new System.Windows.Forms.Button();
-            this.database1DataSet6 = new Assignment.Database1DataSet6();
-            this.rRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.r_RequestTableAdapter = new Assignment.Database1DataSet6TableAdapters.R_RequestTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.database1DataSet8 = new Assignment.Database1DataSet8();
+            this.hallBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hallTableAdapter = new Assignment.Database1DataSet8TableAdapters.HallTableAdapter();
+            this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hallNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pricePDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Add
@@ -95,16 +101,27 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIDDataGridViewTextBoxColumn,
-            this.rReqIDDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.rRequestBindingSource;
+            this.hallIDDataGridViewTextBoxColumn,
+            this.hallNameDataGridViewTextBoxColumn,
+            this.capacityDataGridViewTextBoxColumn,
+            this.pricePDayDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.hallBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(58, 46);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(425, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(553, 150);
             this.dataGridView1.TabIndex = 30;
+            // 
+            // rRequestBindingSource
+            // 
+            this.rRequestBindingSource.DataMember = "R_Request";
+            this.rRequestBindingSource.DataSource = this.database1DataSet6;
+            // 
+            // database1DataSet6
+            // 
+            this.database1DataSet6.DataSetName = "Database1DataSet6";
+            this.database1DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // database1DataSet4
             // 
@@ -120,30 +137,6 @@
             // 
             this.reservationTableAdapter.ClearBeforeFill = true;
             // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // rReqIDDataGridViewTextBoxColumn
-            // 
-            this.rReqIDDataGridViewTextBoxColumn.DataPropertyName = "R_Req_ID";
-            this.rReqIDDataGridViewTextBoxColumn.HeaderText = "R_Req_ID";
-            this.rReqIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rReqIDDataGridViewTextBoxColumn.Name = "rReqIDDataGridViewTextBoxColumn";
-            this.rReqIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
-            // 
             // btn_Cancel
             // 
             this.btn_Cancel.Location = new System.Drawing.Point(261, 343);
@@ -153,16 +146,6 @@
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
-            // 
-            // database1DataSet6
-            // 
-            this.database1DataSet6.DataSetName = "Database1DataSet6";
-            this.database1DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rRequestBindingSource
-            // 
-            this.rRequestBindingSource.DataMember = "R_Request";
-            this.rRequestBindingSource.DataSource = this.database1DataSet6;
             // 
             // r_RequestTableAdapter
             // 
@@ -186,6 +169,53 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Select the Customer for assign the Hall:";
             // 
+            // database1DataSet8
+            // 
+            this.database1DataSet8.DataSetName = "Database1DataSet8";
+            this.database1DataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hallBindingSource
+            // 
+            this.hallBindingSource.DataMember = "Hall";
+            this.hallBindingSource.DataSource = this.database1DataSet8;
+            // 
+            // hallTableAdapter
+            // 
+            this.hallTableAdapter.ClearBeforeFill = true;
+            // 
+            // hallIDDataGridViewTextBoxColumn
+            // 
+            this.hallIDDataGridViewTextBoxColumn.DataPropertyName = "Hall_ID";
+            this.hallIDDataGridViewTextBoxColumn.HeaderText = "Hall_ID";
+            this.hallIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hallIDDataGridViewTextBoxColumn.Name = "hallIDDataGridViewTextBoxColumn";
+            this.hallIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hallIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // hallNameDataGridViewTextBoxColumn
+            // 
+            this.hallNameDataGridViewTextBoxColumn.DataPropertyName = "Hall_Name";
+            this.hallNameDataGridViewTextBoxColumn.HeaderText = "Hall_Name";
+            this.hallNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hallNameDataGridViewTextBoxColumn.Name = "hallNameDataGridViewTextBoxColumn";
+            this.hallNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // capacityDataGridViewTextBoxColumn
+            // 
+            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
+            this.capacityDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
+            this.capacityDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // pricePDayDataGridViewTextBoxColumn
+            // 
+            this.pricePDayDataGridViewTextBoxColumn.DataPropertyName = "Price_P_Day";
+            this.pricePDayDataGridViewTextBoxColumn.HeaderText = "Price_P_Day";
+            this.pricePDayDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.pricePDayDataGridViewTextBoxColumn.Name = "pricePDayDataGridViewTextBoxColumn";
+            this.pricePDayDataGridViewTextBoxColumn.Width = 125;
+            // 
             // AddReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -203,10 +233,12 @@
             this.Text = "AddReservation";
             this.Load += new System.EventHandler(this.AddReservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,14 +253,18 @@
         private Database1DataSet4 database1DataSet4;
         private System.Windows.Forms.BindingSource reservationBindingSource;
         private Database1DataSet4TableAdapters.ReservationTableAdapter reservationTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rReqIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_Cancel;
         private Database1DataSet6 database1DataSet6;
         private System.Windows.Forms.BindingSource rRequestBindingSource;
         private Database1DataSet6TableAdapters.R_RequestTableAdapter r_RequestTableAdapter;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
+        private Database1DataSet8 database1DataSet8;
+        private System.Windows.Forms.BindingSource hallBindingSource;
+        private Database1DataSet8TableAdapters.HallTableAdapter hallTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hallIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hallNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pricePDayDataGridViewTextBoxColumn;
     }
 }

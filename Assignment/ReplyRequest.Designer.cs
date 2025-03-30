@@ -39,19 +39,22 @@
             this.r_RequestTableAdapter = new Assignment.Database1DataSet1TableAdapters.R_RequestTableAdapter();
             this.Cancel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet3 = new Assignment.Database1DataSet3();
             this.reservationTableAdapter = new Assignment.Database1DataSet3TableAdapters.ReservationTableAdapter();
+            this.database1DataSet9 = new Assignment.Database1DataSet9();
+            this.rRequestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.r_RequestTableAdapter1 = new Assignment.Database1DataSet9TableAdapters.R_RequestTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,6 +90,7 @@
             this.txt_Reply.Name = "txt_Reply";
             this.txt_Reply.Size = new System.Drawing.Size(290, 22);
             this.txt_Reply.TabIndex = 3;
+            this.txt_Reply.TextChanged += new System.EventHandler(this.txt_Reply_TextChanged);
             // 
             // btn_Send
             // 
@@ -126,12 +130,10 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.reservationIDDataGridViewTextBoxColumn,
-            this.hallIDDataGridViewTextBoxColumn,
             this.userIDDataGridViewTextBoxColumn,
             this.rReqIDDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.reservationBindingSource;
+            this.dataGridView1.DataSource = this.rRequestBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(55, 32);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -139,23 +141,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(675, 150);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // reservationIDDataGridViewTextBoxColumn
-            // 
-            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "Reservation_ID";
-            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "Reservation_ID";
-            this.reservationIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
-            this.reservationIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reservationIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hallIDDataGridViewTextBoxColumn
-            // 
-            this.hallIDDataGridViewTextBoxColumn.DataPropertyName = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.HeaderText = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hallIDDataGridViewTextBoxColumn.Name = "hallIDDataGridViewTextBoxColumn";
-            this.hallIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // userIDDataGridViewTextBoxColumn
             // 
@@ -195,6 +180,20 @@
             // 
             this.reservationTableAdapter.ClearBeforeFill = true;
             // 
+            // database1DataSet9
+            // 
+            this.database1DataSet9.DataSetName = "Database1DataSet9";
+            this.database1DataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rRequestBindingSource1
+            // 
+            this.rRequestBindingSource1.DataMember = "R_Request";
+            this.rRequestBindingSource1.DataSource = this.database1DataSet9;
+            // 
+            // r_RequestTableAdapter1
+            // 
+            this.r_RequestTableAdapter1.ClearBeforeFill = true;
+            // 
             // ReplyRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,6 +214,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,10 +236,11 @@
         private Database1DataSet3 database1DataSet3;
         private System.Windows.Forms.BindingSource reservationBindingSource;
         private Database1DataSet3TableAdapters.ReservationTableAdapter reservationTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reservationIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hallIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rReqIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private Database1DataSet9 database1DataSet9;
+        private System.Windows.Forms.BindingSource rRequestBindingSource1;
+        private Database1DataSet9TableAdapters.R_RequestTableAdapter r_RequestTableAdapter1;
     }
 }
