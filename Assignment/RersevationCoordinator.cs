@@ -185,7 +185,7 @@ namespace Assignment
                 }
             }
         }
- 
+
         public static bool AddReservation(string hallID, string requestID)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -208,5 +208,65 @@ namespace Assignment
                 }
             }
         }
+        public static DataTable GetReservationData()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Reservation_ID, Hall_ID, User_ID, R_Req_ID, Status FROM [Reservation]";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading Reservation Data: " + ex.Message,
+                                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return dt;
+        }
+        public static DataTable GetReservationIDs()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT Reservation_ID FROM [Reservation]";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dt);
+                }
+            }
+            return dt;
+        }
+        public static bool DeleteReservation(int reservationID)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "DELETE FROM [Reservation] WHERE Reservation_ID = @ReservationID";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ReservationID", reservationID);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error deleting reservation: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+        }
     }
-  }
+}

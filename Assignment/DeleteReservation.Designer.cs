@@ -146,7 +146,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "DeleteReservation";
             this.Text = "DeleteReservation";
-            this.Load += new System.EventHandler(this.DeleteReservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).EndInit();
