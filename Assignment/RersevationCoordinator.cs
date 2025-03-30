@@ -91,7 +91,7 @@ namespace Assignment
             }
             return dt;
         }
-        public static DataTable GetReservationData()
+        public static DataTable GetRequestData()
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -99,7 +99,7 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Reservation_ID, Hall_ID, User_ID, R_Req_ID, Status FROM [Reservation]";
+                    string query = "SELECT Request_ID, Item_ID, Order_ID, Request, DateTime, Quantity FROM [Request]";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
@@ -121,7 +121,7 @@ namespace Assignment
 
             try
             {
-                dataGridView.DataSource = GetReservationData();
+                dataGridView.DataSource = GetRequestData();
                 dataGridView.Refresh();
             }
             catch (Exception ex)
@@ -160,6 +160,29 @@ namespace Assignment
                     cmd.Parameters.AddWithValue("@Status", status);
                     conn.Open();
                     return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+ 
+        public static bool AddReservation(string hallID, string requestID)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO [Reservation] (Hall_ID, R_Req_ID, Status) VALUES (@Hall_ID, @R_Req_ID, 'In Progress')";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Hall_ID", hallID);
+                    try
+                    {
+                        conn.Open();
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error adding reservation: " + ex.Message,
+                                      "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                 }
             }
         }

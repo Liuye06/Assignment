@@ -14,12 +14,12 @@ namespace Assignment
 
         private void ReplyRequest_Load(object sender, EventArgs e)
         {
-            LoadData(); 
+           
         }
 
         private void LoadData()
         {
-            dataGridView1.DataSource = RersevationCoordinator.GetReservationData();
+            dataGridView1.DataSource = RersevationCoordinator.GetRequestData();
             listBox1.DataSource = RersevationCoordinator.GetUniqueUserIDs();
             listBox1.DisplayMember = "User_ID";
             listBox1.ValueMember = "User_ID"; 
@@ -51,9 +51,13 @@ namespace Assignment
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-
             listBox1.ClearSelected();
             txt_Reply.Clear();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
  }

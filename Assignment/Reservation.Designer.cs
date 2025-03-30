@@ -32,29 +32,27 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
-            this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_view = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.database1DataSet2 = new Assignment.Database1DataSet2();
-            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reservationTableAdapter = new Assignment.Database1DataSet2TableAdapters.ReservationTableAdapter();
             this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet2 = new Assignment.Database1DataSet2();
+            this.reservationTableAdapter = new Assignment.Database1DataSet2TableAdapters.ReservationTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_Delete);
             this.panel1.Controls.Add(this.btn_Add);
-            this.panel1.Controls.Add(this.btn_Edit);
             this.panel1.Controls.Add(this.btn_view);
             this.panel1.Controls.Add(this.btn_Home);
             this.panel1.Location = new System.Drawing.Point(1, 0);
@@ -64,7 +62,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(0, 344);
+            this.btn_Delete.Location = new System.Drawing.Point(0, 308);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(228, 77);
             this.btn_Delete.TabIndex = 3;
@@ -74,28 +72,18 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(0, 178);
+            this.btn_Add.Location = new System.Drawing.Point(0, 225);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(228, 77);
             this.btn_Add.TabIndex = 2;
-            this.btn_Add.Text = "Add Reservation";
+            this.btn_Add.Text = "Assign Hall";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // btn_Edit
-            // 
-            this.btn_Edit.Location = new System.Drawing.Point(0, 261);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(228, 77);
-            this.btn_Edit.TabIndex = 1;
-            this.btn_Edit.Text = " Edit Reservation";
-            this.btn_Edit.UseVisualStyleBackColor = true;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_view
             // 
             this.btn_view.Enabled = false;
-            this.btn_view.Location = new System.Drawing.Point(0, 95);
+            this.btn_view.Location = new System.Drawing.Point(0, 142);
             this.btn_view.Name = "btn_view";
             this.btn_view.Size = new System.Drawing.Size(228, 77);
             this.btn_view.TabIndex = 1;
@@ -105,7 +93,7 @@
             // 
             // btn_Home
             // 
-            this.btn_Home.Location = new System.Drawing.Point(0, 12);
+            this.btn_Home.Location = new System.Drawing.Point(0, 59);
             this.btn_Home.Name = "btn_Home";
             this.btn_Home.Size = new System.Drawing.Size(228, 77);
             this.btn_Home.TabIndex = 0;
@@ -131,20 +119,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(492, 284);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // database1DataSet2
-            // 
-            this.database1DataSet2.DataSetName = "Database1DataSet2";
-            this.database1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reservationBindingSource
-            // 
-            this.reservationBindingSource.DataMember = "Reservation";
-            this.reservationBindingSource.DataSource = this.database1DataSet2;
-            // 
-            // reservationTableAdapter
-            // 
-            this.reservationTableAdapter.ClearBeforeFill = true;
             // 
             // reservationIDDataGridViewTextBoxColumn
             // 
@@ -187,6 +161,20 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
+            // reservationBindingSource
+            // 
+            this.reservationBindingSource.DataMember = "Reservation";
+            this.reservationBindingSource.DataSource = this.database1DataSet2;
+            // 
+            // database1DataSet2
+            // 
+            this.database1DataSet2.DataSetName = "Database1DataSet2";
+            this.database1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reservationTableAdapter
+            // 
+            this.reservationTableAdapter.ClearBeforeFill = true;
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,8 +187,8 @@
             this.Load += new System.EventHandler(this.Reservation_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -209,7 +197,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_Add;
-        private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_view;
         private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Button btn_Delete;

@@ -28,7 +28,8 @@ namespace Assignment
 
         private void btn_Reservation_Click(object sender, EventArgs e)
         {
-
+            Reservation btn_Reservation = new Reservation();
+            btn_Reservation.Show();
         }
 
         private void btn_Reply_Click(object sender, EventArgs e)

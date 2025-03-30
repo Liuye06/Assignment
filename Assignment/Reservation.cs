@@ -37,12 +37,6 @@ namespace Assignment
             RefreshDataGrid();
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-            EditReservation btn_Edit = new EditReservation();
-            btn_Edit.Show();
-        }
-
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             DeleteReservation btn_Delete = new DeleteReservation();
