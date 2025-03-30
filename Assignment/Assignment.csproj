@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReservation.Designer.cs">
+      <DependentUpon>AddReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,6 +79,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteReservation.Designer.cs">
+      <DependentUpon>DeleteReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditReservation.Designer.cs">
+      <DependentUpon>EditReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +113,12 @@
       <DependentUpon>ReplyRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="RersevationCoordinator.cs" />
+    <Compile Include="Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReplyRequest.resx">
       <DependentUpon>ReplyRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateRequest.resx">
       <DependentUpon>UpdateRequest.cs</DependentUpon>

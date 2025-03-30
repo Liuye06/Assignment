@@ -58,9 +58,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(38, 219);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 16);
+            this.label1.Size = new System.Drawing.Size(224, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Select the message from Customer:";
+            this.label1.Text = "Select the UserID to reply  Customer:";
             // 
             // listBox1
             // 
