@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Assignment
 {
@@ -51,6 +52,9 @@ namespace Assignment
         private void Cancel_Click(object sender, EventArgs e)
         {
 
+            listBox1.ClearSelected();
+            txt_Reply.Clear();
         }
     }
-}
+ }
+
