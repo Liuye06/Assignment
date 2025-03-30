@@ -91,5 +91,77 @@ namespace Assignment
             }
             return dt;
         }
+        public static DataTable GetReservationData()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT Reservation_ID, Hall_ID, User_ID, R_Req_ID, Status FROM [Reservation]";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading Reservation Data: " + ex.Message,
+                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            return dt; 
+        }
+
+        public static void RefreshDataGridView(DataGridView dataGridView)
+        {
+            if (dataGridView == null || dataGridView.IsDisposed) return;
+
+            try
+            {
+                dataGridView.DataSource = GetReservationData();
+                dataGridView.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error refreshing grid: " + ex.Message,
+                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+       
+
+        // get all User_ID excluding duplication
+        public static DataTable GetUniqueUserIDs()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT DISTINCT User_ID FROM [Reservation]";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dt);
+                }
+            }
+            return dt;
+        }
+
+        // insect to R_Request database
+        public static bool InsertReply(string userID, string status)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO [R_Request] (User_ID, Status) VALUES (@User_ID, @Status)";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@User_ID", userID);
+                    cmd.Parameters.AddWithValue("@Status", status);
+                    conn.Open();
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
     }
-}
+  }

@@ -15,11 +15,12 @@ namespace Assignment
         public Reservation()
         {
             InitializeComponent();
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
         }
 
         private void btn_view_Click(object sender, EventArgs e)
         {
-            Reservation btn_view = Reservation();
+            Reservation btn_view = new Reservation();
             btn_view.Show();
         }
 
@@ -31,8 +32,9 @@ namespace Assignment
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            AddReservation btn_Add = new AddReservation();
-            btn_Add.Show();
+            AddReservation form = new AddReservation(); 
+            form.Show();
+            RefreshDataGrid();
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
@@ -49,13 +51,19 @@ namespace Assignment
 
         private void Reservation_Load(object sender, EventArgs e)
         {
-            RefreshDataGrid()
+            this.reservationTableAdapter.Fill(this.database1DataSet2.Reservation);
+            RefreshDataGrid();
         }
 
         private void RefreshDataGrid()
         {
-            ReservationCoordinator.RefreshDataGridView(dataGridView1);
+            this.reservationTableAdapter.Fill(this.database1DataSet2.Reservation);
+            dataGridView1.DataSource = this.database1DataSet2.Reservation;
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+ 
+        }
     }
 }

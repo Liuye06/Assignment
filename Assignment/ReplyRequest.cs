@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Assignment
@@ -17,16 +11,41 @@ namespace Assignment
             InitializeComponent();
         }
 
-        private void btn_Send_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ReplyRequest_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet1.R_Request' table. You can move, or remove it, as needed.
-            this.r_RequestTableAdapter.Fill(this.database1DataSet1.R_Request);
+            LoadData(); 
+        }
 
+        private void LoadData()
+        {
+            dataGridView1.DataSource = RersevationCoordinator.GetReservationData();
+            listBox1.DataSource = RersevationCoordinator.GetUniqueUserIDs();
+            listBox1.DisplayMember = "User_ID";
+            listBox1.ValueMember = "User_ID"; 
+        }
+
+        private void btn_Send_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem == null || string.IsNullOrWhiteSpace(txt_Reply.Text))
+            {
+                MessageBox.Show("Please select a user and enter a reply.");
+                return;
+            }
+
+            // select the  User_ID
+            string userID = (listBox1.SelectedItem as DataRowView)["User_ID"].ToString();
+            string status = txt_Reply.Text;
+
+            // insect to R_Request 
+            if (RersevationCoordinator.InsertReply(userID, status))
+            {
+                MessageBox.Show("Reply has been sent!");
+                txt_Reply.Clear(); 
+            }
+            else
+            {
+                MessageBox.Show("Failed to send reply, please try again.");
+            }
         }
     }
 }
