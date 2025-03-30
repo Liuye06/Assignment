@@ -47,5 +47,10 @@ namespace Assignment
                 MessageBox.Show("Failed to send reply, please try again.");
             }
         }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
