@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Profile = new System.Windows.Forms.Button();
             this.btn_Reply = new System.Windows.Forms.Button();
-            this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Reservation = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -39,9 +38,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_Profile);
-            this.panel1.Controls.Add(this.btn_Reply);
-            this.panel1.Controls.Add(this.btn_Update);
             this.panel1.Controls.Add(this.btn_Reservation);
+            this.panel1.Controls.Add(this.btn_Reply);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 452);
@@ -49,7 +47,7 @@
             // 
             // btn_Profile
             // 
-            this.btn_Profile.Location = new System.Drawing.Point(0, 320);
+            this.btn_Profile.Location = new System.Drawing.Point(0, 269);
             this.btn_Profile.Name = "btn_Profile";
             this.btn_Profile.Size = new System.Drawing.Size(228, 77);
             this.btn_Profile.TabIndex = 2;
@@ -59,7 +57,7 @@
             // 
             // btn_Reply
             // 
-            this.btn_Reply.Location = new System.Drawing.Point(0, 237);
+            this.btn_Reply.Location = new System.Drawing.Point(0, 103);
             this.btn_Reply.Name = "btn_Reply";
             this.btn_Reply.Size = new System.Drawing.Size(228, 77);
             this.btn_Reply.TabIndex = 1;
@@ -67,18 +65,9 @@
             this.btn_Reply.UseVisualStyleBackColor = true;
             this.btn_Reply.Click += new System.EventHandler(this.btn_Reply_Click);
             // 
-            // btn_Update
-            // 
-            this.btn_Update.Location = new System.Drawing.Point(0, 154);
-            this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(228, 77);
-            this.btn_Update.TabIndex = 1;
-            this.btn_Update.Text = "Update Request";
-            this.btn_Update.UseVisualStyleBackColor = true;
-            // 
             // btn_Reservation
             // 
-            this.btn_Reservation.Location = new System.Drawing.Point(0, 71);
+            this.btn_Reservation.Location = new System.Drawing.Point(0, 186);
             this.btn_Reservation.Name = "btn_Reservation";
             this.btn_Reservation.Size = new System.Drawing.Size(228, 77);
             this.btn_Reservation.TabIndex = 0;
@@ -94,6 +83,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "RCMainPage";
             this.Text = "RCMainPage";
+            this.Load += new System.EventHandler(this.RCMainPage_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -105,6 +95,5 @@
         private System.Windows.Forms.Button btn_Reservation;
         private System.Windows.Forms.Button btn_Profile;
         private System.Windows.Forms.Button btn_Reply;
-        private System.Windows.Forms.Button btn_Update;
     }
 }

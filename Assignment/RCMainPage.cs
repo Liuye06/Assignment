@@ -37,5 +37,10 @@ namespace Assignment
             ReplyRequest btn_Reply = new ReplyRequest();
             btn_Reply.Show();
         }
+
+        private void RCMainPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

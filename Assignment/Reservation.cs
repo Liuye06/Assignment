@@ -30,7 +30,7 @@ namespace Assignment
             btn_Home.Show();
         }
 
-        private void btn_Add_Click(object sender, EventArgs e)
+        private void btn_Assign_Click(object sender, EventArgs e)
         {
             AddReservation form = new AddReservation(); 
             form.Show();

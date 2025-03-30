@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_Assign = new System.Windows.Forms.Button();
             this.btn_view = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -52,7 +52,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_Delete);
-            this.panel1.Controls.Add(this.btn_Add);
+            this.panel1.Controls.Add(this.btn_Assign);
             this.panel1.Controls.Add(this.btn_view);
             this.panel1.Controls.Add(this.btn_Home);
             this.panel1.Location = new System.Drawing.Point(1, 0);
@@ -70,15 +70,15 @@
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
-            // btn_Add
+            // btn_Assign
             // 
-            this.btn_Add.Location = new System.Drawing.Point(0, 225);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(228, 77);
-            this.btn_Add.TabIndex = 2;
-            this.btn_Add.Text = "Assign Hall";
-            this.btn_Add.UseVisualStyleBackColor = true;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            this.btn_Assign.Location = new System.Drawing.Point(0, 225);
+            this.btn_Assign.Name = "btn_Assign";
+            this.btn_Assign.Size = new System.Drawing.Size(228, 77);
+            this.btn_Assign.TabIndex = 2;
+            this.btn_Assign.Text = "Assign Hall";
+            this.btn_Assign.UseVisualStyleBackColor = true;
+            this.btn_Assign.Click += new System.EventHandler(this.btn_Assign_Click);
             // 
             // btn_view
             // 
@@ -196,7 +196,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Button btn_Assign;
         private System.Windows.Forms.Button btn_view;
         private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Button btn_Delete;

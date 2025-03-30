@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.database1DataSet5 = new Assignment.Database1DataSet5();
-            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reservationTableAdapter = new Assignment.Database1DataSet5TableAdapters.ReservationTableAdapter();
             this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet5 = new Assignment.Database1DataSet5();
+            this.reservationTableAdapter = new Assignment.Database1DataSet5TableAdapters.ReservationTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btn_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,20 +62,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(676, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // database1DataSet5
-            // 
-            this.database1DataSet5.DataSetName = "Database1DataSet5";
-            this.database1DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reservationBindingSource
-            // 
-            this.reservationBindingSource.DataMember = "Reservation";
-            this.reservationBindingSource.DataSource = this.database1DataSet5;
-            // 
-            // reservationTableAdapter
-            // 
-            this.reservationTableAdapter.ClearBeforeFill = true;
             // 
             // reservationIDDataGridViewTextBoxColumn
             // 
@@ -118,6 +104,20 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
+            // reservationBindingSource
+            // 
+            this.reservationBindingSource.DataMember = "Reservation";
+            this.reservationBindingSource.DataSource = this.database1DataSet5;
+            // 
+            // database1DataSet5
+            // 
+            this.database1DataSet5.DataSetName = "Database1DataSet5";
+            this.database1DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reservationTableAdapter
+            // 
+            this.reservationTableAdapter.ClearBeforeFill = true;
+            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -129,7 +129,7 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(421, 338);
+            this.btn_Delete.Location = new System.Drawing.Point(412, 283);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(106, 41);
             this.btn_Delete.TabIndex = 2;
@@ -148,8 +148,8 @@
             this.Text = "DeleteReservation";
             this.Load += new System.EventHandler(this.DeleteReservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).EndInit();
             this.ResumeLayout(false);
 
         }
