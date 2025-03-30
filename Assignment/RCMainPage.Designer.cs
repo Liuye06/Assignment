@@ -65,6 +65,7 @@
             this.btn_Reply.TabIndex = 1;
             this.btn_Reply.Text = "Reply Request";
             this.btn_Reply.UseVisualStyleBackColor = true;
+            this.btn_Reply.Click += new System.EventHandler(this.btn_Reply_Click);
             // 
             // btn_Update
             // 
@@ -83,6 +84,7 @@
             this.btn_Reservation.TabIndex = 0;
             this.btn_Reservation.Text = "Manage Reservation";
             this.btn_Reservation.UseVisualStyleBackColor = true;
+            this.btn_Reservation.Click += new System.EventHandler(this.btn_Reservation_Click);
             // 
             // RCMainPage
             // 

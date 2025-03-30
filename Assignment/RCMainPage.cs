@@ -25,5 +25,16 @@ namespace Assignment
             RCProfile btn_Profile = new RCProfile(username);
             btn_Profile.Show();
         }
+
+        private void btn_Reservation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Reply_Click(object sender, EventArgs e)
+        {
+            ReplyRequest btn_Reply = new ReplyRequest();
+            btn_Reply.Show();
+        }
     }
 }
