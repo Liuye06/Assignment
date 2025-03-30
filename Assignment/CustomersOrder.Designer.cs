@@ -34,17 +34,19 @@
             this.btnCusOrder_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.btnChefProfile_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.gbShowCusOrder = new System.Windows.Forms.GroupBox();
-            this.lblUpdateNewCusOrderStatus = new System.Windows.Forms.Label();
+            this.lblOrderID = new System.Windows.Forms.Label();
             this.cmbNewCusOrderStatus = new System.Windows.Forms.ComboBox();
             this.btnRefreshStatusCusOrder = new System.Windows.Forms.Button();
             this.btnUpdateCusOrderStatus = new System.Windows.Forms.Button();
             this.lblCusStatusOrder = new System.Windows.Forms.Label();
             this.cmbCusOrderStatus = new System.Windows.Forms.ComboBox();
             this.dgvChefCusOrder = new System.Windows.Forms.DataGridView();
+            this.CusOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCusOrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateCusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColChefInCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblFoodName = new System.Windows.Forms.Label();
             this.tableSidebar_ChefCustomerOrder.SuspendLayout();
             this.gbShowCusOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChefCusOrder)).BeginInit();
@@ -123,7 +125,8 @@
             // 
             // gbShowCusOrder
             // 
-            this.gbShowCusOrder.Controls.Add(this.lblUpdateNewCusOrderStatus);
+            this.gbShowCusOrder.Controls.Add(this.lblFoodName);
+            this.gbShowCusOrder.Controls.Add(this.lblOrderID);
             this.gbShowCusOrder.Controls.Add(this.cmbNewCusOrderStatus);
             this.gbShowCusOrder.Controls.Add(this.btnRefreshStatusCusOrder);
             this.gbShowCusOrder.Controls.Add(this.btnUpdateCusOrderStatus);
@@ -137,13 +140,13 @@
             this.gbShowCusOrder.TabStop = false;
             this.gbShowCusOrder.Text = "Customer Order";
             // 
-            // lblUpdateNewCusOrderStatus
+            // lblOrderID
             // 
-            this.lblUpdateNewCusOrderStatus.AutoSize = true;
-            this.lblUpdateNewCusOrderStatus.Location = new System.Drawing.Point(40, 328);
-            this.lblUpdateNewCusOrderStatus.Name = "lblUpdateNewCusOrderStatus";
-            this.lblUpdateNewCusOrderStatus.Size = new System.Drawing.Size(0, 25);
-            this.lblUpdateNewCusOrderStatus.TabIndex = 16;
+            this.lblOrderID.AutoSize = true;
+            this.lblOrderID.Location = new System.Drawing.Point(40, 328);
+            this.lblOrderID.Name = "lblOrderID";
+            this.lblOrderID.Size = new System.Drawing.Size(0, 25);
+            this.lblOrderID.TabIndex = 16;
             // 
             // cmbNewCusOrderStatus
             // 
@@ -160,16 +163,17 @@
             // 
             this.btnRefreshStatusCusOrder.Location = new System.Drawing.Point(440, 40);
             this.btnRefreshStatusCusOrder.Name = "btnRefreshStatusCusOrder";
-            this.btnRefreshStatusCusOrder.Size = new System.Drawing.Size(390, 36);
+            this.btnRefreshStatusCusOrder.Size = new System.Drawing.Size(390, 28);
             this.btnRefreshStatusCusOrder.TabIndex = 14;
             this.btnRefreshStatusCusOrder.Text = "Refresh Status";
             this.btnRefreshStatusCusOrder.UseVisualStyleBackColor = true;
+            this.btnRefreshStatusCusOrder.Click += new System.EventHandler(this.btnRefreshStatusCusOrder_Click);
             // 
             // btnUpdateCusOrderStatus
             // 
             this.btnUpdateCusOrderStatus.Location = new System.Drawing.Point(667, 325);
             this.btnUpdateCusOrderStatus.Name = "btnUpdateCusOrderStatus";
-            this.btnUpdateCusOrderStatus.Size = new System.Drawing.Size(163, 34);
+            this.btnUpdateCusOrderStatus.Size = new System.Drawing.Size(163, 28);
             this.btnUpdateCusOrderStatus.TabIndex = 13;
             this.btnUpdateCusOrderStatus.Text = "Update Status";
             this.btnUpdateCusOrderStatus.UseVisualStyleBackColor = true;
@@ -188,6 +192,7 @@
             // 
             this.cmbCusOrderStatus.FormattingEnabled = true;
             this.cmbCusOrderStatus.Items.AddRange(new object[] {
+            "All",
             "Pending",
             "In Progress",
             "Completed"});
@@ -195,11 +200,13 @@
             this.cmbCusOrderStatus.Name = "cmbCusOrderStatus";
             this.cmbCusOrderStatus.Size = new System.Drawing.Size(265, 33);
             this.cmbCusOrderStatus.TabIndex = 11;
+            this.cmbCusOrderStatus.SelectedIndexChanged += new System.EventHandler(this.cmbCusOrderStatus_SelectedIndexChanged);
             // 
             // dgvChefCusOrder
             // 
             this.dgvChefCusOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChefCusOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CusOrderID,
             this.ColFoodName,
             this.ColCusOrderStatus,
             this.UpdateCusOrder,
@@ -207,9 +214,18 @@
             this.dgvChefCusOrder.Location = new System.Drawing.Point(45, 91);
             this.dgvChefCusOrder.Name = "dgvChefCusOrder";
             this.dgvChefCusOrder.RowHeadersWidth = 51;
-            this.dgvChefCusOrder.RowTemplate.Height = 24;
+            this.dgvChefCusOrder.RowTemplate.Height = 30;
             this.dgvChefCusOrder.Size = new System.Drawing.Size(785, 224);
             this.dgvChefCusOrder.TabIndex = 3;
+            this.dgvChefCusOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellContentClick);
+            // 
+            // CusOrderID
+            // 
+            this.CusOrderID.DataPropertyName = "OrderID";
+            this.CusOrderID.HeaderText = "Order ID";
+            this.CusOrderID.MinimumWidth = 6;
+            this.CusOrderID.Name = "CusOrderID";
+            this.CusOrderID.Width = 125;
             // 
             // ColFoodName
             // 
@@ -217,7 +233,7 @@
             this.ColFoodName.HeaderText = "Food Name";
             this.ColFoodName.MinimumWidth = 6;
             this.ColFoodName.Name = "ColFoodName";
-            this.ColFoodName.Width = 160;
+            this.ColFoodName.Width = 170;
             // 
             // ColCusOrderStatus
             // 
@@ -226,7 +242,7 @@
             this.ColCusOrderStatus.MinimumWidth = 6;
             this.ColCusOrderStatus.Name = "ColCusOrderStatus";
             this.ColCusOrderStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColCusOrderStatus.Width = 150;
+            this.ColCusOrderStatus.Width = 125;
             // 
             // UpdateCusOrder
             // 
@@ -244,7 +260,15 @@
             this.ColChefInCharge.HeaderText = "Chef In Charge";
             this.ColChefInCharge.MinimumWidth = 6;
             this.ColChefInCharge.Name = "ColChefInCharge";
-            this.ColChefInCharge.Width = 125;
+            this.ColChefInCharge.Width = 187;
+            // 
+            // lblFoodName
+            // 
+            this.lblFoodName.AutoSize = true;
+            this.lblFoodName.Location = new System.Drawing.Point(211, 327);
+            this.lblFoodName.Name = "lblFoodName";
+            this.lblFoodName.Size = new System.Drawing.Size(0, 25);
+            this.lblFoodName.TabIndex = 17;
             // 
             // CustomersOrder
             // 
@@ -279,10 +303,12 @@
         private System.Windows.Forms.Label lbl_chef;
         private System.Windows.Forms.Button btnRefreshStatusCusOrder;
         private System.Windows.Forms.ComboBox cmbNewCusOrderStatus;
-        private System.Windows.Forms.Label lblUpdateNewCusOrderStatus;
+        private System.Windows.Forms.Label lblOrderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CusOrderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColFoodName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCusOrderStatus;
         private System.Windows.Forms.DataGridViewButtonColumn UpdateCusOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColChefInCharge;
+        private System.Windows.Forms.Label lblFoodName;
     }
 }

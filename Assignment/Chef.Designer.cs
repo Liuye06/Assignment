@@ -37,13 +37,13 @@
             this.btnResetIngredientSearch = new System.Windows.Forms.Button();
             this.btnAddNewIngredient = new System.Windows.Forms.Button();
             this.dgvIngredient = new System.Windows.Forms.DataGridView();
-            this.btnSearchIngredient = new System.Windows.Forms.Button();
-            this.txtIngredient = new System.Windows.Forms.TextBox();
-            this.lblIngredient = new System.Windows.Forms.Label();
             this.ColIngredientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColIngredientEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColIngredientDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnSearchIngredient = new System.Windows.Forms.Button();
+            this.txtIngredient = new System.Windows.Forms.TextBox();
+            this.lblIngredient = new System.Windows.Forms.Label();
             this.tableSidebar_CInventory.SuspendLayout();
             this.gbCInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredient)).BeginInit();
@@ -169,32 +169,6 @@
             this.dgvIngredient.TabIndex = 3;
             this.dgvIngredient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIngredient_CellContentClick);
             // 
-            // btnSearchIngredient
-            // 
-            this.btnSearchIngredient.Location = new System.Drawing.Point(416, 39);
-            this.btnSearchIngredient.Name = "btnSearchIngredient";
-            this.btnSearchIngredient.Size = new System.Drawing.Size(106, 35);
-            this.btnSearchIngredient.TabIndex = 2;
-            this.btnSearchIngredient.Text = "Search";
-            this.btnSearchIngredient.UseVisualStyleBackColor = true;
-            this.btnSearchIngredient.Click += new System.EventHandler(this.btnSearchIngredient_Click);
-            // 
-            // txtIngredient
-            // 
-            this.txtIngredient.Location = new System.Drawing.Point(148, 41);
-            this.txtIngredient.Name = "txtIngredient";
-            this.txtIngredient.Size = new System.Drawing.Size(262, 30);
-            this.txtIngredient.TabIndex = 1;
-            // 
-            // lblIngredient
-            // 
-            this.lblIngredient.AutoSize = true;
-            this.lblIngredient.Location = new System.Drawing.Point(40, 44);
-            this.lblIngredient.Name = "lblIngredient";
-            this.lblIngredient.Size = new System.Drawing.Size(98, 25);
-            this.lblIngredient.TabIndex = 0;
-            this.lblIngredient.Text = "Ingredient";
-            // 
             // ColIngredientName
             // 
             this.ColIngredientName.DataPropertyName = "Ingredient";
@@ -230,6 +204,32 @@
             this.ColIngredientDelete.Text = "Delete";
             this.ColIngredientDelete.UseColumnTextForButtonValue = true;
             this.ColIngredientDelete.Width = 190;
+            // 
+            // btnSearchIngredient
+            // 
+            this.btnSearchIngredient.Location = new System.Drawing.Point(416, 39);
+            this.btnSearchIngredient.Name = "btnSearchIngredient";
+            this.btnSearchIngredient.Size = new System.Drawing.Size(106, 35);
+            this.btnSearchIngredient.TabIndex = 2;
+            this.btnSearchIngredient.Text = "Search";
+            this.btnSearchIngredient.UseVisualStyleBackColor = true;
+            this.btnSearchIngredient.Click += new System.EventHandler(this.btnSearchIngredient_Click);
+            // 
+            // txtIngredient
+            // 
+            this.txtIngredient.Location = new System.Drawing.Point(148, 41);
+            this.txtIngredient.Name = "txtIngredient";
+            this.txtIngredient.Size = new System.Drawing.Size(262, 30);
+            this.txtIngredient.TabIndex = 1;
+            // 
+            // lblIngredient
+            // 
+            this.lblIngredient.AutoSize = true;
+            this.lblIngredient.Location = new System.Drawing.Point(40, 44);
+            this.lblIngredient.Name = "lblIngredient";
+            this.lblIngredient.Size = new System.Drawing.Size(98, 25);
+            this.lblIngredient.TabIndex = 0;
+            this.lblIngredient.Text = "Ingredient";
             // 
             // Chef
             // 

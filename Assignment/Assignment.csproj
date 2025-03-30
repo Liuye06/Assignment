@@ -209,7 +209,6 @@
       <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuManager.cs" />
-    <Compile Include="Ingredients.cs" />
     <Compile Include="OrderManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
