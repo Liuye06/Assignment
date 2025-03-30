@@ -27,31 +27,31 @@ namespace Assignment
         {
             try
             {
-                Cursor.Current = Cursors.WaitCursor; // Show loading cursor
+                Cursor.Current = Cursors.WaitCursor;
 
                 DataTable reservationData = RersevationCoordinator.GetReservationData();
 
-                if (reservationData != null)
+                if (reservationData == null || reservationData.Rows.Count == 0)
                 {
-                    dataGridView1.DataSource = reservationData;
-
-                    if (reservationData.Rows.Count == 0)
-                    {
-                        MessageBox.Show("No reservation data found.", "Information",
-                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    dataGridView1.DataSource = null; 
+                    MessageBox.Show("No reservation data found.", "Information",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
+
+                dataGridView1.DataSource = reservationData;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading reservation data: " + ex.Message,
-                              "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
-                Cursor.Current = Cursors.Default; // Restore default cursor
+                Cursor.Current = Cursors.Default;
             }
         }
+
 
         private void btn_view_Click(object sender, EventArgs e)
         {

@@ -223,6 +223,11 @@ namespace Assignment
                     {
                         adapter.Fill(dt);
                     }
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        return null; 
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -232,6 +237,7 @@ namespace Assignment
             }
             return dt;
         }
+
         public static DataTable GetReservationIDs()
         {
             DataTable dt = new DataTable();
