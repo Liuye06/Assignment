@@ -48,6 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="Accessibility" />
@@ -71,6 +75,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addCustomer.Designer.cs">
+      <DependentUpon>addCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addStaff.Designer.cs">
+      <DependentUpon>addStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.cs">
     <Compile Include="CheckoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,21 +187,78 @@
     <Compile Include="EditMenuItemForm.Designer.cs">
       <DependentUpon>EditMenuItemForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminClass.cs" />
+    <Compile Include="AdminProfile.cs">
     <Compile Include="HallManager.cs" />
     <Compile Include="HallReservationManager.cs" />
     <Compile Include="ImageManager.cs" />
     <Compile Include="MainHallResvReport.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AdminProfile.Designer.cs">
+      <DependentUpon>AdminProfile.cs</DependentUpon>
     <Compile Include="MainHallResvReport.Designer.cs">
       <DependentUpon>MainHallResvReport.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageHall.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Database1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database1DataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Database1DataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCus.cs">
     <Compile Include="Chef.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DeleteCus.Designer.cs">
+      <DependentUpon>DeleteCus.cs</DependentUpon>
     <Compile Include="ManageHall.Designer.cs">
       <DependentUpon>ManageHall.cs</DependentUpon>
     </Compile>
@@ -194,12 +268,16 @@
     <Compile Include="ManageMenu.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DeleteStaff.cs">
     <Compile Include="Chef_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DeleteStaff.Designer.cs">
+      <DependentUpon>DeleteStaff.cs</DependentUpon>
     <Compile Include="ManageMenu.Designer.cs">
       <DependentUpon>ManageMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditCus.cs">
     <Compile Include="Chef_Profile.Designer.cs">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </Compile>
@@ -207,19 +285,58 @@
     <Compile Include="ManagerUpdateProfile.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditCus.Designer.cs">
+      <DependentUpon>EditCus.cs</DependentUpon>
     <Compile Include="ManagerUpdateProfile.Designer.cs">
       <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="editStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editStaff.Designer.cs">
+      <DependentUpon>editStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListItem.cs" />
     <Compile Include="MenuManager.cs" />
     <Compile Include="OrderManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="salesReport.cs">
     <Compile Include="ViewCustomerOrder.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="salesReport.Designer.cs">
+      <DependentUpon>salesReport.cs</DependentUpon>
     <Compile Include="ViewCustomerOrder.Designer.cs">
       <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlConnetion.cs" />
+    <Compile Include="update_Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_Customer.Designer.cs">
+      <DependentUpon>update_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="update_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update_Staff.Designer.cs">
+      <DependentUpon>update_Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view_CusFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view_CusFeedback.Designer.cs">
+      <DependentUpon>view_CusFeedback.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addCustomer.resx">
+      <DependentUpon>addCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStaff.resx">
+      <DependentUpon>addStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
     <Compile Include="ViewCustomerOrderManager.cs" />
     <Compile Include="ViewCustomerReservation.cs">
       <SubType>Form</SubType>
@@ -291,12 +408,24 @@
     <EmbeddedResource Include="Chef.resx">
       <DependentUpon>Chef.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminProfile.resx">
+      <DependentUpon>AdminProfile.cs</DependentUpon>
     <EmbeddedResource Include="ManageMenu.resx">
       <DependentUpon>ManageMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteCus.resx">
+      <DependentUpon>DeleteCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteStaff.resx">
+      <DependentUpon>DeleteStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCus.resx">
+      <DependentUpon>EditCus.cs</DependentUpon>
     <EmbeddedResource Include="Chef_Profile.resx">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="editStaff.resx">
+      <DependentUpon>editStaff.cs</DependentUpon>
     <EmbeddedResource Include="ManagerUpdateProfile.resx">
       <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +439,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="salesReport.resx">
+      <DependentUpon>salesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_Customer.resx">
+      <DependentUpon>update_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="update_Staff.resx">
+      <DependentUpon>update_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view_CusFeedback.resx">
+      <DependentUpon>view_CusFeedback.cs</DependentUpon>
     <EmbeddedResource Include="ViewCustomerOrder.resx">
       <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +459,116 @@
     <EmbeddedResource Include="CustomersOrder.resx">
       <DependentUpon>CustomersOrder.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Database1DataSet.xsc">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet.xss">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet1.xsc">
+      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet1.xss">
+      <DependentUpon>Database1DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet2.xsc">
+      <DependentUpon>Database1DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet2.xss">
+      <DependentUpon>Database1DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet3.xsc">
+      <DependentUpon>Database1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet3.xss">
+      <DependentUpon>Database1DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet4.xsc">
+      <DependentUpon>Database1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet4.xss">
+      <DependentUpon>Database1DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet5.xsc">
+      <DependentUpon>Database1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet5.xss">
+      <DependentUpon>Database1DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet6.xsc">
+      <DependentUpon>Database1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet6.xss">
+      <DependentUpon>Database1DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet7.xsc">
+      <DependentUpon>Database1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet7.xss">
+      <DependentUpon>Database1DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet8.xsc">
+      <DependentUpon>Database1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet8.xss">
+      <DependentUpon>Database1DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet9.xsc">
+      <DependentUpon>Database1DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Database1DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Database1DataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Database1DataSet9.xss">
+      <DependentUpon>Database1DataSet9.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -331,6 +581,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database1.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
