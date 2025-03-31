@@ -159,7 +159,6 @@ namespace Assignment
         private List<OrderItem> cartList = new List<OrderItem>();
 
 
-
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedCategory = cmbCategory.SelectedItem.ToString();
@@ -170,6 +169,33 @@ namespace Assignment
         {
             cmbCategory.SelectedIndex = 0; // Set to "All"
             LoadFoodMenu("All"); // Reload full menu
+        }
+
+
+        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        {
+            if (cartList.Count == 0)
+            {
+                MessageBox.Show("Your cart is empty!", "Empty Cart", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            CheckoutForm checkout = new CheckoutForm(cartList, currentUserId);
+            checkout.ShowDialog();
+        }
+
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            if (cartList.Count == 0)
+            {
+                MessageBox.Show("Your cart is empty!", "Empty Cart", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Pass the existing cartList reference instead of creating a new one
+            CheckoutForm checkout = new CheckoutForm(cartList, currentUserId);
+            checkout.ShowDialog();
         }
 
 
@@ -206,32 +232,6 @@ namespace Assignment
         private void btnFeedback_Click_1(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerFeedback());
-        }
-
-        private void btnPlaceOrder_Click(object sender, EventArgs e)
-        {
-            if (cartList.Count == 0)
-            {
-                MessageBox.Show("Your cart is empty!", "Empty Cart", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            CheckoutForm checkout = new CheckoutForm(cartList, currentUserId);
-            checkout.ShowDialog();
-        }
-
-
-        private void btnCheckOut_Click(object sender, EventArgs e)
-        {
-            if (cartList.Count == 0)
-            {
-                MessageBox.Show("Your cart is empty!", "Empty Cart", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Pass the existing cartList reference instead of creating a new one
-            CheckoutForm checkout = new CheckoutForm(cartList, currentUserId);
-            checkout.ShowDialog();
         }
     }
 }

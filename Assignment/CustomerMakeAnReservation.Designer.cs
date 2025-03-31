@@ -38,34 +38,20 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.panel_ReservationRequest = new System.Windows.Forms.Panel();
-            this.gb_Details = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lbl_ReqDate_O = new System.Windows.Forms.Label();
-            this.lbl_HeadCount_O = new System.Windows.Forms.Label();
-            this.lbl_Function_O = new System.Windows.Forms.Label();
-            this.lbl_TotalD_O = new System.Windows.Forms.Label();
-            this.lbl_HeadCount_C = new System.Windows.Forms.Label();
-            this.lbl_TotalDays = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lbl_Request_C = new System.Windows.Forms.Label();
-            this.lbl_Request_O = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbl_ReqDate = new System.Windows.Forms.Label();
-            this.lbl_Function_C = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numHeadCount = new System.Windows.Forms.NumericUpDown();
             this.lbl_HeadCount = new System.Windows.Forms.Label();
-            this.lblReservationDate = new System.Windows.Forms.Label();
+            this.lblStartReservationDate = new System.Windows.Forms.Label();
             this.lbl_Function = new System.Windows.Forms.Label();
-            this.cb_Function = new System.Windows.Forms.ComboBox();
+            this.cmbFunction = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_Request = new System.Windows.Forms.TextBox();
-            this.monthCal_ResDate = new System.Windows.Forms.MonthCalendar();
+            this.txtRequest = new System.Windows.Forms.TextBox();
+            this.monthCalendarStart = new System.Windows.Forms.MonthCalendar();
             this.btn_SendReq = new System.Windows.Forms.Button();
+            this.lblEndReservationDate = new System.Windows.Forms.Label();
+            this.monthCalendarEnd = new System.Windows.Forms.MonthCalendar();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.panel_ReservationRequest.SuspendLayout();
-            this.gb_Details.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHeadCount)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_CustomerProfile
@@ -115,6 +101,7 @@
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
             this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // btnMakePayment
             // 
@@ -125,6 +112,7 @@
             this.btnMakePayment.TabIndex = 5;
             this.btnMakePayment.Text = "Make Payment";
             this.btnMakePayment.UseVisualStyleBackColor = true;
+            this.btnMakePayment.Click += new System.EventHandler(this.btnMakePayment_Click);
             // 
             // btnMakeReservation
             // 
@@ -135,6 +123,7 @@
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation";
             this.btnMakeReservation.UseVisualStyleBackColor = true;
+            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
             // 
             // btnMakeOrder
             // 
@@ -145,6 +134,7 @@
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
             this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // btnViewReservations
             // 
@@ -155,6 +145,7 @@
             this.btnViewReservations.TabIndex = 6;
             this.btnViewReservations.Text = "View Reservations";
             this.btnViewReservations.UseVisualStyleBackColor = true;
+            this.btnViewReservations.Click += new System.EventHandler(this.btnViewReservations_Click);
             // 
             // btnViewOrders
             // 
@@ -167,6 +158,7 @@
             this.btnViewOrders.TabIndex = 4;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
             // btnProfile
             // 
@@ -179,19 +171,22 @@
             this.btnProfile.TabIndex = 9;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // panel_ReservationRequest
             // 
             this.panel_ReservationRequest.AutoScroll = true;
-            this.panel_ReservationRequest.Controls.Add(this.gb_Details);
-            this.panel_ReservationRequest.Controls.Add(this.numericUpDown2);
+            this.panel_ReservationRequest.BackColor = System.Drawing.Color.MistyRose;
+            this.panel_ReservationRequest.Controls.Add(this.monthCalendarEnd);
+            this.panel_ReservationRequest.Controls.Add(this.lblEndReservationDate);
+            this.panel_ReservationRequest.Controls.Add(this.numHeadCount);
             this.panel_ReservationRequest.Controls.Add(this.lbl_HeadCount);
-            this.panel_ReservationRequest.Controls.Add(this.lblReservationDate);
+            this.panel_ReservationRequest.Controls.Add(this.lblStartReservationDate);
             this.panel_ReservationRequest.Controls.Add(this.lbl_Function);
-            this.panel_ReservationRequest.Controls.Add(this.cb_Function);
+            this.panel_ReservationRequest.Controls.Add(this.cmbFunction);
             this.panel_ReservationRequest.Controls.Add(this.label11);
-            this.panel_ReservationRequest.Controls.Add(this.txt_Request);
-            this.panel_ReservationRequest.Controls.Add(this.monthCal_ResDate);
+            this.panel_ReservationRequest.Controls.Add(this.txtRequest);
+            this.panel_ReservationRequest.Controls.Add(this.monthCalendarStart);
             this.panel_ReservationRequest.Controls.Add(this.btn_SendReq);
             this.panel_ReservationRequest.Location = new System.Drawing.Point(219, 76);
             this.panel_ReservationRequest.Margin = new System.Windows.Forms.Padding(4);
@@ -199,212 +194,53 @@
             this.panel_ReservationRequest.Size = new System.Drawing.Size(850, 360);
             this.panel_ReservationRequest.TabIndex = 56;
             // 
-            // gb_Details
+            // numHeadCount
             // 
-            this.gb_Details.Controls.Add(this.label7);
-            this.gb_Details.Controls.Add(this.lbl_ReqDate_O);
-            this.gb_Details.Controls.Add(this.lbl_HeadCount_O);
-            this.gb_Details.Controls.Add(this.lbl_Function_O);
-            this.gb_Details.Controls.Add(this.lbl_TotalD_O);
-            this.gb_Details.Controls.Add(this.lbl_HeadCount_C);
-            this.gb_Details.Controls.Add(this.lbl_TotalDays);
-            this.gb_Details.Controls.Add(this.label8);
-            this.gb_Details.Controls.Add(this.lbl_Request_C);
-            this.gb_Details.Controls.Add(this.lbl_Request_O);
-            this.gb_Details.Controls.Add(this.label9);
-            this.gb_Details.Controls.Add(this.label10);
-            this.gb_Details.Controls.Add(this.lbl_ReqDate);
-            this.gb_Details.Controls.Add(this.lbl_Function_C);
-            this.gb_Details.Location = new System.Drawing.Point(561, 38);
-            this.gb_Details.Margin = new System.Windows.Forms.Padding(4);
-            this.gb_Details.Name = "gb_Details";
-            this.gb_Details.Padding = new System.Windows.Forms.Padding(4);
-            this.gb_Details.Size = new System.Drawing.Size(267, 222);
-            this.gb_Details.TabIndex = 47;
-            this.gb_Details.TabStop = false;
-            this.gb_Details.Text = "Details";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 33);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 25);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Starting Date :";
-            // 
-            // lbl_ReqDate_O
-            // 
-            this.lbl_ReqDate_O.AutoSize = true;
-            this.lbl_ReqDate_O.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbl_ReqDate_O.Location = new System.Drawing.Point(125, 194);
-            this.lbl_ReqDate_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ReqDate_O.Name = "lbl_ReqDate_O";
-            this.lbl_ReqDate_O.Size = new System.Drawing.Size(2, 27);
-            this.lbl_ReqDate_O.TabIndex = 27;
-            // 
-            // lbl_HeadCount_O
-            // 
-            this.lbl_HeadCount_O.AutoSize = true;
-            this.lbl_HeadCount_O.Location = new System.Drawing.Point(115, 116);
-            this.lbl_HeadCount_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_HeadCount_O.Name = "lbl_HeadCount_O";
-            this.lbl_HeadCount_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_HeadCount_O.TabIndex = 21;
-            // 
-            // lbl_Function_O
-            // 
-            this.lbl_Function_O.AutoSize = true;
-            this.lbl_Function_O.Location = new System.Drawing.Point(107, 162);
-            this.lbl_Function_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Function_O.Name = "lbl_Function_O";
-            this.lbl_Function_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_Function_O.TabIndex = 25;
-            // 
-            // lbl_TotalD_O
-            // 
-            this.lbl_TotalD_O.AutoSize = true;
-            this.lbl_TotalD_O.Location = new System.Drawing.Point(107, 81);
-            this.lbl_TotalD_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_TotalD_O.Name = "lbl_TotalD_O";
-            this.lbl_TotalD_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_TotalD_O.TabIndex = 17;
-            // 
-            // lbl_HeadCount_C
-            // 
-            this.lbl_HeadCount_C.AutoSize = true;
-            this.lbl_HeadCount_C.Location = new System.Drawing.Point(17, 116);
-            this.lbl_HeadCount_C.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_HeadCount_C.Name = "lbl_HeadCount_C";
-            this.lbl_HeadCount_C.Size = new System.Drawing.Size(123, 25);
-            this.lbl_HeadCount_C.TabIndex = 20;
-            this.lbl_HeadCount_C.Text = "Head Count:";
-            // 
-            // lbl_TotalDays
-            // 
-            this.lbl_TotalDays.AutoSize = true;
-            this.lbl_TotalDays.Location = new System.Drawing.Point(16, 81);
-            this.lbl_TotalDays.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_TotalDays.Name = "lbl_TotalDays";
-            this.lbl_TotalDays.Size = new System.Drawing.Size(117, 25);
-            this.lbl_TotalDays.TabIndex = 16;
-            this.lbl_TotalDays.Text = "Total Days :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(124, 33);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 25);
-            this.label8.TabIndex = 19;
-            // 
-            // lbl_Request_C
-            // 
-            this.lbl_Request_C.AutoSize = true;
-            this.lbl_Request_C.Location = new System.Drawing.Point(16, 135);
-            this.lbl_Request_C.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Request_C.Name = "lbl_Request_C";
-            this.lbl_Request_C.Size = new System.Drawing.Size(95, 25);
-            this.lbl_Request_C.TabIndex = 22;
-            this.lbl_Request_C.Text = "Request :";
-            // 
-            // lbl_Request_O
-            // 
-            this.lbl_Request_O.AutoSize = true;
-            this.lbl_Request_O.Location = new System.Drawing.Point(107, 135);
-            this.lbl_Request_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Request_O.Name = "lbl_Request_O";
-            this.lbl_Request_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_Request_O.TabIndex = 23;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 57);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 25);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "End Date :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(101, 57);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 25);
-            this.label10.TabIndex = 18;
-            // 
-            // lbl_ReqDate
-            // 
-            this.lbl_ReqDate.AutoSize = true;
-            this.lbl_ReqDate.Location = new System.Drawing.Point(16, 194);
-            this.lbl_ReqDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ReqDate.Name = "lbl_ReqDate";
-            this.lbl_ReqDate.Size = new System.Drawing.Size(136, 25);
-            this.lbl_ReqDate.TabIndex = 26;
-            this.lbl_ReqDate.Text = "Request Date:";
-            // 
-            // lbl_Function_C
-            // 
-            this.lbl_Function_C.AutoSize = true;
-            this.lbl_Function_C.Location = new System.Drawing.Point(13, 162);
-            this.lbl_Function_C.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Function_C.Name = "lbl_Function_C";
-            this.lbl_Function_C.Size = new System.Drawing.Size(98, 25);
-            this.lbl_Function_C.TabIndex = 24;
-            this.lbl_Function_C.Text = "Function :";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(379, 230);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.numHeadCount.Location = new System.Drawing.Point(448, 311);
+            this.numHeadCount.Margin = new System.Windows.Forms.Padding(4);
+            this.numHeadCount.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(160, 30);
-            this.numericUpDown2.TabIndex = 45;
+            this.numHeadCount.Name = "numHeadCount";
+            this.numHeadCount.Size = new System.Drawing.Size(160, 30);
+            this.numHeadCount.TabIndex = 45;
             // 
             // lbl_HeadCount
             // 
             this.lbl_HeadCount.AutoSize = true;
-            this.lbl_HeadCount.Location = new System.Drawing.Point(374, 197);
+            this.lbl_HeadCount.Location = new System.Drawing.Point(443, 277);
             this.lbl_HeadCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_HeadCount.Name = "lbl_HeadCount";
             this.lbl_HeadCount.Size = new System.Drawing.Size(117, 25);
             this.lbl_HeadCount.TabIndex = 44;
             this.lbl_HeadCount.Text = "Head Count";
             // 
-            // lblReservationDate
+            // lblStartReservationDate
             // 
-            this.lblReservationDate.AutoSize = true;
-            this.lblReservationDate.Location = new System.Drawing.Point(26, 17);
-            this.lblReservationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblReservationDate.Name = "lblReservationDate";
-            this.lblReservationDate.Size = new System.Drawing.Size(161, 25);
-            this.lblReservationDate.TabIndex = 43;
-            this.lblReservationDate.Text = "Reservation Date";
+            this.lblStartReservationDate.AutoSize = true;
+            this.lblStartReservationDate.Location = new System.Drawing.Point(26, 17);
+            this.lblStartReservationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStartReservationDate.Name = "lblStartReservationDate";
+            this.lblStartReservationDate.Size = new System.Drawing.Size(207, 25);
+            this.lblStartReservationDate.TabIndex = 43;
+            this.lblStartReservationDate.Text = "Start Reservation Date";
             // 
             // lbl_Function
             // 
             this.lbl_Function.AutoSize = true;
-            this.lbl_Function.Location = new System.Drawing.Point(374, 17);
+            this.lbl_Function.Location = new System.Drawing.Point(26, 277);
             this.lbl_Function.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Function.Name = "lbl_Function";
             this.lbl_Function.Size = new System.Drawing.Size(87, 25);
             this.lbl_Function.TabIndex = 42;
             this.lbl_Function.Text = "Function";
             // 
-            // cb_Function
+            // cmbFunction
             // 
-            this.cb_Function.FormattingEnabled = true;
-            this.cb_Function.Items.AddRange(new object[] {
+            this.cmbFunction.FormattingEnabled = true;
+            this.cmbFunction.Items.AddRange(new object[] {
             "Birthday",
             "Wedding",
             "Conference",
@@ -413,37 +249,38 @@
             "Anniversary",
             "Competition",
             "Performance"});
-            this.cb_Function.Location = new System.Drawing.Point(379, 53);
-            this.cb_Function.Margin = new System.Windows.Forms.Padding(4);
-            this.cb_Function.Name = "cb_Function";
-            this.cb_Function.Size = new System.Drawing.Size(160, 33);
-            this.cb_Function.TabIndex = 41;
+            this.cmbFunction.Location = new System.Drawing.Point(31, 311);
+            this.cmbFunction.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbFunction.Name = "cmbFunction";
+            this.cmbFunction.Size = new System.Drawing.Size(160, 33);
+            this.cmbFunction.TabIndex = 41;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(374, 116);
+            this.label11.Location = new System.Drawing.Point(211, 277);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 25);
             this.label11.TabIndex = 40;
             this.label11.Text = "Request";
             // 
-            // txt_Request
+            // txtRequest
             // 
-            this.txt_Request.Location = new System.Drawing.Point(379, 145);
-            this.txt_Request.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_Request.Name = "txt_Request";
-            this.txt_Request.Size = new System.Drawing.Size(217, 30);
-            this.txt_Request.TabIndex = 39;
+            this.txtRequest.Location = new System.Drawing.Point(216, 311);
+            this.txtRequest.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRequest.Name = "txtRequest";
+            this.txtRequest.Size = new System.Drawing.Size(217, 30);
+            this.txtRequest.TabIndex = 39;
             // 
-            // monthCal_ResDate
+            // monthCalendarStart
             // 
-            this.monthCal_ResDate.Location = new System.Drawing.Point(31, 53);
-            this.monthCal_ResDate.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
-            this.monthCal_ResDate.MinDate = new System.DateTime(2025, 3, 12, 0, 0, 0, 0);
-            this.monthCal_ResDate.Name = "monthCal_ResDate";
-            this.monthCal_ResDate.TabIndex = 37;
+            this.monthCalendarStart.Location = new System.Drawing.Point(31, 53);
+            this.monthCalendarStart.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.monthCalendarStart.MinDate = new System.DateTime(2025, 3, 12, 0, 0, 0, 0);
+            this.monthCalendarStart.Name = "monthCalendarStart";
+            this.monthCalendarStart.TabIndex = 37;
+            this.monthCalendarStart.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarStart_DateChanged);
             // 
             // btn_SendReq
             // 
@@ -456,6 +293,25 @@
             this.btn_SendReq.UseVisualStyleBackColor = true;
             this.btn_SendReq.Click += new System.EventHandler(this.btn_SendReq_Click);
             // 
+            // lblEndReservationDate
+            // 
+            this.lblEndReservationDate.AutoSize = true;
+            this.lblEndReservationDate.Location = new System.Drawing.Point(317, 17);
+            this.lblEndReservationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndReservationDate.Name = "lblEndReservationDate";
+            this.lblEndReservationDate.Size = new System.Drawing.Size(201, 25);
+            this.lblEndReservationDate.TabIndex = 48;
+            this.lblEndReservationDate.Text = "End Reservation Date";
+            // 
+            // monthCalendarEnd
+            // 
+            this.monthCalendarEnd.Location = new System.Drawing.Point(300, 53);
+            this.monthCalendarEnd.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.monthCalendarEnd.MinDate = new System.DateTime(2025, 3, 12, 0, 0, 0, 0);
+            this.monthCalendarEnd.Name = "monthCalendarEnd";
+            this.monthCalendarEnd.TabIndex = 49;
+            this.monthCalendarEnd.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarEnd_DateChanged);
+            // 
             // CustomerMakeAnReservation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -465,12 +321,11 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerMakeAnReservation";
             this.Text = "CustomerMakeAnReservation";
+            this.Load += new System.EventHandler(this.CustomerMakeAnReservation_Load);
             this.tableSidebar_CustomerProfile.ResumeLayout(false);
             this.panel_ReservationRequest.ResumeLayout(false);
             this.panel_ReservationRequest.PerformLayout();
-            this.gb_Details.ResumeLayout(false);
-            this.gb_Details.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHeadCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,29 +342,16 @@
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Panel panel_ReservationRequest;
-        private System.Windows.Forms.GroupBox gb_Details;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbl_ReqDate_O;
-        private System.Windows.Forms.Label lbl_HeadCount_O;
-        private System.Windows.Forms.Label lbl_Function_O;
-        private System.Windows.Forms.Label lbl_TotalD_O;
-        private System.Windows.Forms.Label lbl_HeadCount_C;
-        private System.Windows.Forms.Label lbl_TotalDays;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lbl_Request_C;
-        private System.Windows.Forms.Label lbl_Request_O;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lbl_ReqDate;
-        private System.Windows.Forms.Label lbl_Function_C;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numHeadCount;
         private System.Windows.Forms.Label lbl_HeadCount;
-        private System.Windows.Forms.Label lblReservationDate;
+        private System.Windows.Forms.Label lblStartReservationDate;
         private System.Windows.Forms.Label lbl_Function;
-        private System.Windows.Forms.ComboBox cb_Function;
+        private System.Windows.Forms.ComboBox cmbFunction;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txt_Request;
-        private System.Windows.Forms.MonthCalendar monthCal_ResDate;
+        private System.Windows.Forms.TextBox txtRequest;
+        private System.Windows.Forms.MonthCalendar monthCalendarStart;
         private System.Windows.Forms.Button btn_SendReq;
+        private System.Windows.Forms.MonthCalendar monthCalendarEnd;
+        private System.Windows.Forms.Label lblEndReservationDate;
     }
 }

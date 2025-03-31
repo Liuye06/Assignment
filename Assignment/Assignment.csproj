@@ -107,6 +107,7 @@
     <Compile Include="CustomerMenu.Designer.cs">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerReservationManager.cs" />
     <Compile Include="Customer_EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
