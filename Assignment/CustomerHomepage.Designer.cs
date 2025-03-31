@@ -2696,7 +2696,6 @@
             this.btn_Orders.TabIndex = 3;
             this.btn_Orders.Text = "Make Payment For Orders";
             this.btn_Orders.UseVisualStyleBackColor = true;
-            this.btn_Orders.Click += new System.EventHandler(this.btn_Orders_Click);
             // 
             // btn_Reservations
             // 

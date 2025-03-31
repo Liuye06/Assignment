@@ -118,11 +118,7 @@ namespace Assignment
             mp_reservation.Show();
         }
 
-        private void btn_Orders_Click(object sender, EventArgs e)
-        {
-            MakePayment_Orders mp_orders = new MakePayment_Orders();
-            mp_orders.Show();
-        }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

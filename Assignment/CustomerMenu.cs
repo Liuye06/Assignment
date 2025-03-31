@@ -20,7 +20,7 @@ namespace Assignment
         private SidebarManager _sidebarManager;
         private int currentUserId; // Store logged-in user's ID
 
-        public CustomerMenu(int userId=0)
+        public CustomerMenu(int userId=1)
         {
             InitializeComponent();
             this.currentUserId = userId; // Assign user ID
@@ -137,7 +137,9 @@ namespace Assignment
 
                 if (quantity > 0)
                 {
-                    AddOrderToList(itemId, itemName, price, quantity);
+                    FoodMenuManager.AddOrderToList(cartList, itemId, itemName, price, quantity);
+                    // Reset quantity to 0 after placing the order
+                    quantityBox.Value = 0;
                 }
                 else
                 {
@@ -156,29 +158,6 @@ namespace Assignment
 
         private List<OrderItem> cartList = new List<OrderItem>();
 
-
-        private void AddToCart(int itemId, string itemName, decimal price, int quantity)
-        {
-            // Check if the item is already in the cart
-            var existingItem = cartList.FirstOrDefault(item => item.ItemId == itemId);
-
-            if (existingItem != null)
-            {
-                existingItem.Quantity += quantity;  // Increase quantity
-            }
-            else
-            {
-                cartList.Add(new OrderItem
-                {
-                    ItemId = itemId,
-                    ItemName = itemName,
-                    Price = price,
-                    Quantity = quantity
-                });
-            }
-
-            MessageBox.Show($"{quantity}x {itemName} added to cart!", "Added to Cart", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
 
 
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -241,7 +220,8 @@ namespace Assignment
             checkout.ShowDialog();
         }
 
-        private void CheckoutAndSaveOrder()
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
         {
             if (cartList.Count == 0)
             {
@@ -249,55 +229,9 @@ namespace Assignment
                 return;
             }
 
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString))
-                {
-                    conn.Open();
-                    SqlTransaction transaction = conn.BeginTransaction();
-
-                    try
-                    {
-                        // Insert into Order table
-                        string insertOrderQuery = "INSERT INTO [Order] (User_ID, Status) OUTPUT INSERTED.Order_ID VALUES (@UserId, 'Pending')";
-                        SqlCommand orderCmd = new SqlCommand(insertOrderQuery, conn, transaction);
-                        orderCmd.Parameters.AddWithValue("@UserId", currentUserId);
-
-                        int orderId = (int)orderCmd.ExecuteScalar(); // Retrieve generated Order_ID
-
-                        // Insert into Request table
-                        string insertRequestQuery = "INSERT INTO Request (Item_ID, Order_ID, DateTime, Quantity) VALUES (@ItemId, @OrderId, @DateTime, @Quantity)";
-                        foreach (var item in cartList)
-                        {
-                            SqlCommand requestCmd = new SqlCommand(insertRequestQuery, conn, transaction);
-                            requestCmd.Parameters.AddWithValue("@ItemId", item.ItemId);
-                            requestCmd.Parameters.AddWithValue("@OrderId", orderId);
-                            requestCmd.Parameters.AddWithValue("@DateTime", DateTime.Now);
-                            requestCmd.Parameters.AddWithValue("@Quantity", item.Quantity);
-
-                            requestCmd.ExecuteNonQuery();
-                        }
-
-                        transaction.Commit();
-                        MessageBox.Show("Order placed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cartList.Clear(); // Clear the cart after checkout
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                        MessageBox.Show("Error processing order: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database connection error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnCheckOut_Click(object sender, EventArgs e)
-        {
-            CheckoutAndSaveOrder();
+            // Pass the existing cartList reference instead of creating a new one
+            CheckoutForm checkout = new CheckoutForm(cartList, currentUserId);
+            checkout.ShowDialog();
         }
     }
 }

@@ -31,20 +31,27 @@ namespace Assignment
         }
 
         //  Method to Add Order
-        public static void AddOrderToList(int itemId, string itemName, decimal price, int quantity)
+        public static void AddOrderToList(List<OrderItem> cartList, int itemId, string itemName, decimal price, int quantity)
         {
             if (quantity > 0)
             {
-                OrderItem order = new OrderItem
+                var existingItem = cartList.FirstOrDefault(item => item.ItemId == itemId);
+                if (existingItem != null)
                 {
-                    ItemId = itemId,
-                    ItemName = itemName,
-                    Price = price,
-                    Quantity = quantity
-                };
+                    existingItem.Quantity += quantity; // Increase quantity if item exists
+                }
+                else
+                {
+                    cartList.Add(new OrderItem
+                    {
+                        ItemId = itemId,
+                        ItemName = itemName,
+                        Price = price,
+                        Quantity = quantity
+                    });
+                }
 
-                orderList.Add(order);
-                MessageBox.Show($"{quantity}x {itemName} added to order!", "Order Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"{quantity}x {itemName} added to cart!", "Order Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -55,6 +62,7 @@ namespace Assignment
 
         public static DataTable GetFoodMenuFromDB(string category = null)
         {
+
             DataTable foodTable = new DataTable();
             try
             {
@@ -121,6 +129,8 @@ namespace Assignment
                     orderCmd.Parameters.AddWithValue("@UserID", userId);
                     int orderId = (int)orderCmd.ExecuteScalar();
 
+                    decimal totalAmount = 0;
+
                     // Insert cart items into Request table
                     string requestQuery = "INSERT INTO [dbo].[Request] (Item_ID, Order_ID, DateTime, Quantity) VALUES (@ItemID, @OrderID, GETDATE(), @Quantity)";
                     foreach (var item in cartList)
@@ -130,10 +140,22 @@ namespace Assignment
                         requestCmd.Parameters.AddWithValue("@OrderID", orderId);
                         requestCmd.Parameters.AddWithValue("@Quantity", item.Quantity);
                         requestCmd.ExecuteNonQuery();
+
+                        // Calculate total amount
+                        totalAmount += item.TotalPrice;
                     }
 
+                    // Insert payment record
+                    string paymentQuery = "INSERT INTO [dbo].[Payment] (Payment_date, Amount, Order_ID, Status) VALUES (GETDATE(), @Amount, @OrderID, 'Done')";
+                    SqlCommand paymentCmd = new SqlCommand(paymentQuery, conn, transaction);
+                    paymentCmd.Parameters.AddWithValue("@Amount", totalAmount);
+                    paymentCmd.Parameters.AddWithValue("@OrderID", orderId);
+                    paymentCmd.ExecuteNonQuery();
+
                     transaction.Commit();
-                    cartList.Clear(); // Empty the cart after placing order
+                    cartList.Clear(); // Empty cart after placing order
+
+                    MessageBox.Show("Order and payment recorded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
