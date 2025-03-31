@@ -40,10 +40,7 @@ namespace Assignment
             _sidebarManager.NavigateTo(new ViewCustomerReservation());
         }
 
-        private void btnMakeOrder_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerMenu());
-        }
+        
 
         private void btnMakeReservation_Click(object sender, EventArgs e)
         {

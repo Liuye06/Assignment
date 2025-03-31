@@ -37,25 +37,15 @@
             this.btnViewReservations = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.gbCMenu = new System.Windows.Forms.GroupBox();
-            this.btnResetCMenu = new System.Windows.Forms.Button();
-            this.dgvFoodMenu = new System.Windows.Forms.DataGridView();
-            this.lblCategory = new System.Windows.Forms.Label();
-            this.cmbCategory = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
-            this.ColFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMenuImage = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColMenuPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FoodAvailableStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMenuAdd = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ColMenuDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.flowPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.btnResetCMenu = new System.Windows.Forms.Button();
+            this.gbCMenu = new System.Windows.Forms.GroupBox();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.gbCMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_CustomerProfile
@@ -105,6 +95,7 @@
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
             this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click_1);
             // 
             // btnMakePayment
             // 
@@ -115,6 +106,7 @@
             this.btnMakePayment.TabIndex = 5;
             this.btnMakePayment.Text = "Make Payment";
             this.btnMakePayment.UseVisualStyleBackColor = true;
+            this.btnMakePayment.Click += new System.EventHandler(this.btnMakePayment_Click_1);
             // 
             // btnMakeReservation
             // 
@@ -125,6 +117,7 @@
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation";
             this.btnMakeReservation.UseVisualStyleBackColor = true;
+            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click_1);
             // 
             // btnMakeOrder
             // 
@@ -135,6 +128,7 @@
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
             this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click_1);
             // 
             // btnViewReservations
             // 
@@ -145,6 +139,7 @@
             this.btnViewReservations.TabIndex = 6;
             this.btnViewReservations.Text = "View Reservations";
             this.btnViewReservations.UseVisualStyleBackColor = true;
+            this.btnViewReservations.Click += new System.EventHandler(this.btnViewReservations_Click_1);
             // 
             // btnViewOrders
             // 
@@ -157,6 +152,7 @@
             this.btnViewOrders.TabIndex = 4;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click_1);
             // 
             // btnProfile
             // 
@@ -169,72 +165,25 @@
             this.btnProfile.TabIndex = 9;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click_1);
             // 
-            // gbCMenu
+            // flowPanelMenu
             // 
-            this.gbCMenu.Controls.Add(this.btnResetCMenu);
-            this.gbCMenu.Controls.Add(this.dgvFoodMenu);
-            this.gbCMenu.Controls.Add(this.lblCategory);
-            this.gbCMenu.Controls.Add(this.cmbCategory);
-            this.gbCMenu.Controls.Add(this.button3);
-            this.gbCMenu.Controls.Add(this.button2);
-            this.gbCMenu.Controls.Add(this.btnCheckOut);
-            this.gbCMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCMenu.Location = new System.Drawing.Point(52, 471);
-            this.gbCMenu.Name = "gbCMenu";
-            this.gbCMenu.Size = new System.Drawing.Size(852, 370);
-            this.gbCMenu.TabIndex = 147;
-            this.gbCMenu.TabStop = false;
-            this.gbCMenu.Text = "Food Menu";
+            this.flowPanelMenu.AutoScroll = true;
+            this.flowPanelMenu.Location = new System.Drawing.Point(45, 68);
+            this.flowPanelMenu.Name = "flowPanelMenu";
+            this.flowPanelMenu.Size = new System.Drawing.Size(791, 236);
+            this.flowPanelMenu.TabIndex = 148;
             // 
-            // btnResetCMenu
+            // btnCheckOut
             // 
-            this.btnResetCMenu.Location = new System.Drawing.Point(467, 41);
-            this.btnResetCMenu.Name = "btnResetCMenu";
-            this.btnResetCMenu.Size = new System.Drawing.Size(369, 34);
-            this.btnResetCMenu.TabIndex = 9;
-            this.btnResetCMenu.Text = "Reset Category";
-            this.btnResetCMenu.UseVisualStyleBackColor = true;
-            // 
-            // dgvFoodMenu
-            // 
-            this.dgvFoodMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFoodMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColFoodName,
-            this.colMenuImage,
-            this.ColMenuPrice,
-            this.FoodAvailableStatus,
-            this.ColMenuAdd,
-            this.ColMenuDelete});
-            this.dgvFoodMenu.Location = new System.Drawing.Point(45, 95);
-            this.dgvFoodMenu.Name = "dgvFoodMenu";
-            this.dgvFoodMenu.RowHeadersWidth = 51;
-            this.dgvFoodMenu.RowTemplate.Height = 60;
-            this.dgvFoodMenu.Size = new System.Drawing.Size(791, 216);
-            this.dgvFoodMenu.TabIndex = 8;
-            // 
-            // lblCategory
-            // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(40, 44);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(92, 25);
-            this.lblCategory.TabIndex = 7;
-            this.lblCategory.Text = "Category";
-            // 
-            // cmbCategory
-            // 
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Items.AddRange(new object[] {
-            "Appetizer",
-            "Main Dish",
-            "Side ",
-            "Beverage",
-            "Dessert"});
-            this.cmbCategory.Location = new System.Drawing.Point(138, 41);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(313, 33);
-            this.cmbCategory.TabIndex = 6;
+            this.btnCheckOut.Location = new System.Drawing.Point(45, 310);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(390, 34);
+            this.btnCheckOut.TabIndex = 0;
+            this.btnCheckOut.Text = "Checkout";
+            this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // button3
             // 
@@ -245,98 +194,61 @@
             this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // cmbCategory
             // 
-            this.button2.Location = new System.Drawing.Point(172, 195);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Delete";
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Items.AddRange(new object[] {
+            "All",
+            "Appetizer",
+            "Main Dish",
+            "Side ",
+            "Beverage",
+            "Dessert"});
+            this.cmbCategory.Location = new System.Drawing.Point(138, 37);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(313, 33);
+            this.cmbCategory.TabIndex = 6;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
-            // btnCheckOut
+            // lblCategory
             // 
-            this.btnCheckOut.Location = new System.Drawing.Point(45, 325);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(390, 34);
-            this.btnCheckOut.TabIndex = 0;
-            this.btnCheckOut.Text = "Checkout";
-            this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(40, 40);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(92, 25);
+            this.lblCategory.TabIndex = 7;
+            this.lblCategory.Text = "Category";
             // 
-            // ColFoodName
+            // btnResetCMenu
             // 
-            this.ColFoodName.DataPropertyName = "FoodName";
-            this.ColFoodName.HeaderText = "Food Name";
-            this.ColFoodName.MinimumWidth = 6;
-            this.ColFoodName.Name = "ColFoodName";
-            this.ColFoodName.Width = 150;
+            this.btnResetCMenu.Location = new System.Drawing.Point(467, 37);
+            this.btnResetCMenu.Name = "btnResetCMenu";
+            this.btnResetCMenu.Size = new System.Drawing.Size(369, 30);
+            this.btnResetCMenu.TabIndex = 9;
+            this.btnResetCMenu.Text = "Reset Category";
+            this.btnResetCMenu.UseVisualStyleBackColor = true;
+            this.btnResetCMenu.Click += new System.EventHandler(this.btnResetCMenu_Click);
             // 
-            // colMenuImage
+            // gbCMenu
             // 
-            this.colMenuImage.DataPropertyName = "Image";
-            this.colMenuImage.HeaderText = "Image";
-            this.colMenuImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.colMenuImage.MinimumWidth = 6;
-            this.colMenuImage.Name = "colMenuImage";
-            this.colMenuImage.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colMenuImage.Width = 125;
-            // 
-            // ColMenuPrice
-            // 
-            this.ColMenuPrice.DataPropertyName = "Price";
-            this.ColMenuPrice.HeaderText = "Price";
-            this.ColMenuPrice.MinimumWidth = 6;
-            this.ColMenuPrice.Name = "ColMenuPrice";
-            this.ColMenuPrice.Width = 110;
-            // 
-            // FoodAvailableStatus
-            // 
-            this.FoodAvailableStatus.HeaderText = "Status";
-            this.FoodAvailableStatus.MinimumWidth = 6;
-            this.FoodAvailableStatus.Name = "FoodAvailableStatus";
-            this.FoodAvailableStatus.Width = 125;
-            // 
-            // ColMenuAdd
-            // 
-            this.ColMenuAdd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColMenuAdd.DataPropertyName = "Add";
-            this.ColMenuAdd.HeaderText = "Action";
-            this.ColMenuAdd.MinimumWidth = 6;
-            this.ColMenuAdd.Name = "ColMenuAdd";
-            this.ColMenuAdd.Text = "Add";
-            this.ColMenuAdd.UseColumnTextForButtonValue = true;
-            this.ColMenuAdd.Width = 105;
-            // 
-            // ColMenuDelete
-            // 
-            this.ColMenuDelete.HeaderText = "Action";
-            this.ColMenuDelete.MinimumWidth = 6;
-            this.ColMenuDelete.Name = "ColMenuDelete";
-            this.ColMenuDelete.Text = "Delete";
-            this.ColMenuDelete.UseColumnTextForButtonValue = true;
-            this.ColMenuDelete.Width = 115;
-            // 
-            // flowPanelMenu
-            // 
-            this.flowPanelMenu.AutoScroll = true;
-            this.flowPanelMenu.Location = new System.Drawing.Point(400, 98);
-            this.flowPanelMenu.Name = "flowPanelMenu";
-            this.flowPanelMenu.Size = new System.Drawing.Size(200, 100);
-            this.flowPanelMenu.TabIndex = 148;
-            this.flowPanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(671, 47);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 149;
+            this.gbCMenu.Controls.Add(this.flowPanelMenu);
+            this.gbCMenu.Controls.Add(this.btnResetCMenu);
+            this.gbCMenu.Controls.Add(this.lblCategory);
+            this.gbCMenu.Controls.Add(this.cmbCategory);
+            this.gbCMenu.Controls.Add(this.button3);
+            this.gbCMenu.Controls.Add(this.btnCheckOut);
+            this.gbCMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCMenu.Location = new System.Drawing.Point(218, 76);
+            this.gbCMenu.Name = "gbCMenu";
+            this.gbCMenu.Size = new System.Drawing.Size(852, 360);
+            this.gbCMenu.TabIndex = 147;
+            this.gbCMenu.TabStop = false;
+            this.gbCMenu.Text = "Food Menu";
             // 
             // CustomerMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1082, 719);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.flowPanelMenu);
+            this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbCMenu);
             this.Controls.Add(this.tableSidebar_CustomerProfile);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -345,7 +257,6 @@
             this.tableSidebar_CustomerProfile.ResumeLayout(false);
             this.gbCMenu.ResumeLayout(false);
             this.gbCMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFoodMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,21 +271,12 @@
         private System.Windows.Forms.Button btnViewReservations;
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.GroupBox gbCMenu;
-        private System.Windows.Forms.Button btnResetCMenu;
-        private System.Windows.Forms.DataGridView dgvFoodMenu;
-        private System.Windows.Forms.Label lblCategory;
-        private System.Windows.Forms.ComboBox cmbCategory;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnCheckOut;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColFoodName;
-        private System.Windows.Forms.DataGridViewImageColumn colMenuImage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FoodAvailableStatus;
-        private System.Windows.Forms.DataGridViewButtonColumn ColMenuAdd;
-        private System.Windows.Forms.DataGridViewButtonColumn ColMenuDelete;
         private System.Windows.Forms.FlowLayoutPanel flowPanelMenu;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCheckOut;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.Button btnResetCMenu;
+        private System.Windows.Forms.GroupBox gbCMenu;
     }
 }

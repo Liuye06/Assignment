@@ -16,45 +16,64 @@ namespace Assignment
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
-        // Class representing a food item
-        public class FoodItem
+
+        //  List to store selected orders
+        public static List<OrderItem> orderList = new List<OrderItem>();
+
+        //  OrderItem Class (Nested Inside FoodMenuManager)
+        public class OrderItem
         {
             public int ItemId { get; set; }
-            public string Name { get; set; }
+            public string ItemName { get; set; }
             public decimal Price { get; set; }
-            public string Category { get; set; }
-            public Image FoodImage { get; set; }  // Stores image from VARBINARY
+            public int Quantity { get; set; }
+            public decimal TotalPrice => Price * Quantity;
         }
 
-        // Fetch food menu from the database
-        public List<FoodItem> GetFoodItems()
+        //  Method to Add Order
+        public static void AddOrderToList(int itemId, string itemName, decimal price, int quantity)
         {
-            List<FoodItem> foodItems = new List<FoodItem>();
+            if (quantity > 0)
+            {
+                OrderItem order = new OrderItem
+                {
+                    ItemId = itemId,
+                    ItemName = itemName,
+                    Price = price,
+                    Quantity = quantity
+                };
 
+                orderList.Add(order);
+                MessageBox.Show($"{quantity}x {itemName} added to order!", "Order Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please select at least 1 quantity!", "Invalid Quantity", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        public static DataTable GetFoodMenuFromDB(string category = null)
+        {
+            DataTable foodTable = new DataTable();
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = "SELECT Item_Id, Item, Price, Category, Image FROM Menu";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    conn.Open();
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    if (!string.IsNullOrEmpty(category) && category != "All")
+                        query += " WHERE Category = @Category";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        while (reader.Read())
-                        {
-                            byte[] imageData = reader["Image"] as byte[];
+                        if (!string.IsNullOrEmpty(category) && category != "All")
+                            cmd.Parameters.AddWithValue("@Category", category);
 
-                            foodItems.Add(new FoodItem
-                            {
-                                ItemId = Convert.ToInt32(reader["Item_Id"]),
-                                Name = reader["Item"].ToString(),
-                                Price = Convert.ToDecimal(reader["Price"]),
-                                Category = reader["Category"].ToString(),
-                                FoodImage = (imageData != null && imageData.Length > 0)
-                                ? ImageManager.ByteArrayToImage(imageData)
-                                : Properties.Resources.default_image // Default image from resources
-                            });
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            foodTable.Load(reader);
                         }
                     }
                 }
@@ -63,8 +82,65 @@ namespace Assignment
             {
                 MessageBox.Show("Error loading menu: " + ex.Message);
             }
+            return foodTable;
+        }
 
-            return foodItems;
+
+        // Get unique categories from the database
+        public static List<string> GetCategories()
+        {
+            List<string> categories = new List<string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT DISTINCT Category FROM Menu";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                        categories.Add(reader["Category"].ToString());
+                }
+            }
+            return categories;
+        }
+
+
+        public static void PlaceOrder(int userId, List<OrderItem> cartList)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlTransaction transaction = conn.BeginTransaction();
+
+                try
+                {
+                    // Insert new order
+                    string orderQuery = "INSERT INTO [dbo].[Order] (User_ID, Status) OUTPUT INSERTED.Order_ID VALUES (@UserID, 'Pending')";
+                    SqlCommand orderCmd = new SqlCommand(orderQuery, conn, transaction);
+                    orderCmd.Parameters.AddWithValue("@UserID", userId);
+                    int orderId = (int)orderCmd.ExecuteScalar();
+
+                    // Insert cart items into Request table
+                    string requestQuery = "INSERT INTO [dbo].[Request] (Item_ID, Order_ID, DateTime, Quantity) VALUES (@ItemID, @OrderID, GETDATE(), @Quantity)";
+                    foreach (var item in cartList)
+                    {
+                        SqlCommand requestCmd = new SqlCommand(requestQuery, conn, transaction);
+                        requestCmd.Parameters.AddWithValue("@ItemID", item.ItemId);
+                        requestCmd.Parameters.AddWithValue("@OrderID", orderId);
+                        requestCmd.Parameters.AddWithValue("@Quantity", item.Quantity);
+                        requestCmd.ExecuteNonQuery();
+                    }
+
+                    transaction.Commit();
+                    cartList.Clear(); // Empty the cart after placing order
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show("Error placing order: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
