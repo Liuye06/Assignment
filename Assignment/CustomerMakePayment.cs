@@ -12,9 +12,14 @@ namespace Assignment
 {
     public partial class CustomerMakePayment : Form
     {
+        private SidebarManager _sidebarManager;
+
         public CustomerMakePayment()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
         }
+
+        
     }
 }

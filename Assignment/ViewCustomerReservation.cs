@@ -12,10 +12,17 @@ namespace Assignment
 {
     public partial class ViewCustomerReservation : Form
     {
+        private SidebarManager _sidebarManager;
+
         public ViewCustomerReservation()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

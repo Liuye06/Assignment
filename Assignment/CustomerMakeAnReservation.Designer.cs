@@ -454,6 +454,7 @@
             this.btn_SendReq.TabIndex = 38;
             this.btn_SendReq.Text = "Send Request";
             this.btn_SendReq.UseVisualStyleBackColor = true;
+            this.btn_SendReq.Click += new System.EventHandler(this.btn_SendReq_Click);
             // 
             // CustomerMakeAnReservation
             // 

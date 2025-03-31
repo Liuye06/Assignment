@@ -105,7 +105,7 @@
             this.gbMMenu.Controls.Add(this.btnSearchMenu);
             this.gbMMenu.Controls.Add(this.btnAddMenu);
             this.gbMMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbMMenu.Location = new System.Drawing.Point(218, 71);
+            this.gbMMenu.Location = new System.Drawing.Point(218, 72);
             this.gbMMenu.Name = "gbMMenu";
             this.gbMMenu.Size = new System.Drawing.Size(852, 370);
             this.gbMMenu.TabIndex = 1;

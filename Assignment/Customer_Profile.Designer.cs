@@ -42,14 +42,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Username = new System.Windows.Forms.Label();
             this.tableSidebar_CustomerProfile = new System.Windows.Forms.TableLayoutPanel();
-            this.btnProfile = new System.Windows.Forms.Button();
-            this.btnViewOrders = new System.Windows.Forms.Button();
-            this.btnViewReservations = new System.Windows.Forms.Button();
-            this.btnMakeOrder = new System.Windows.Forms.Button();
-            this.btnMakeReservation = new System.Windows.Forms.Button();
-            this.btnMakePayment = new System.Windows.Forms.Button();
-            this.btnFeedback = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnFeedback = new System.Windows.Forms.Button();
+            this.btnMakePayment = new System.Windows.Forms.Button();
+            this.btnMakeReservation = new System.Windows.Forms.Button();
+            this.btnMakeOrder = new System.Windows.Forms.Button();
+            this.btnViewReservations = new System.Windows.Forms.Button();
+            this.btnViewOrders = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.panel_ViewProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableSidebar_CustomerProfile.SuspendLayout();
@@ -85,6 +85,7 @@
             this.btn_Edit.TabIndex = 44;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // lbl_Email_O
             // 
@@ -223,17 +224,65 @@
             this.tableSidebar_CustomerProfile.Size = new System.Drawing.Size(200, 424);
             this.tableSidebar_CustomerProfile.TabIndex = 11;
             // 
-            // btnProfile
+            // btnLogOut
             // 
-            this.btnProfile.FlatAppearance.BorderSize = 0;
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Location = new System.Drawing.Point(4, 64);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(192, 32);
-            this.btnProfile.TabIndex = 9;
-            this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnLogOut.Location = new System.Drawing.Point(4, 374);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(192, 32);
+            this.btnLogOut.TabIndex = 3;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            // 
+            // btnFeedback
+            // 
+            this.btnFeedback.Location = new System.Drawing.Point(4, 334);
+            this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.Size = new System.Drawing.Size(192, 32);
+            this.btnFeedback.TabIndex = 2;
+            this.btnFeedback.Text = "Feedback";
+            this.btnFeedback.UseVisualStyleBackColor = true;
+            // 
+            // btnMakePayment
+            // 
+            this.btnMakePayment.Location = new System.Drawing.Point(4, 294);
+            this.btnMakePayment.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMakePayment.Name = "btnMakePayment";
+            this.btnMakePayment.Size = new System.Drawing.Size(192, 32);
+            this.btnMakePayment.TabIndex = 5;
+            this.btnMakePayment.Text = "Make Payment";
+            this.btnMakePayment.UseVisualStyleBackColor = true;
+            // 
+            // btnMakeReservation
+            // 
+            this.btnMakeReservation.Location = new System.Drawing.Point(4, 224);
+            this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMakeReservation.Name = "btnMakeReservation";
+            this.btnMakeReservation.Size = new System.Drawing.Size(192, 62);
+            this.btnMakeReservation.TabIndex = 1;
+            this.btnMakeReservation.Text = "Make a Reservation";
+            this.btnMakeReservation.UseVisualStyleBackColor = true;
+            // 
+            // btnMakeOrder
+            // 
+            this.btnMakeOrder.Location = new System.Drawing.Point(4, 184);
+            this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMakeOrder.Name = "btnMakeOrder";
+            this.btnMakeOrder.Size = new System.Drawing.Size(192, 32);
+            this.btnMakeOrder.TabIndex = 0;
+            this.btnMakeOrder.Text = "Make an Order";
+            this.btnMakeOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnViewReservations
+            // 
+            this.btnViewReservations.Location = new System.Drawing.Point(4, 144);
+            this.btnViewReservations.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewReservations.Name = "btnViewReservations";
+            this.btnViewReservations.Size = new System.Drawing.Size(192, 32);
+            this.btnViewReservations.TabIndex = 6;
+            this.btnViewReservations.Text = "View Reservations";
+            this.btnViewReservations.UseVisualStyleBackColor = true;
             // 
             // btnViewOrders
             // 
@@ -247,65 +296,17 @@
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
             // 
-            // btnViewReservations
+            // btnProfile
             // 
-            this.btnViewReservations.Location = new System.Drawing.Point(4, 144);
-            this.btnViewReservations.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewReservations.Name = "btnViewReservations";
-            this.btnViewReservations.Size = new System.Drawing.Size(192, 32);
-            this.btnViewReservations.TabIndex = 6;
-            this.btnViewReservations.Text = "View Reservations";
-            this.btnViewReservations.UseVisualStyleBackColor = true;
-            // 
-            // btnMakeOrder
-            // 
-            this.btnMakeOrder.Location = new System.Drawing.Point(4, 184);
-            this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMakeOrder.Name = "btnMakeOrder";
-            this.btnMakeOrder.Size = new System.Drawing.Size(192, 32);
-            this.btnMakeOrder.TabIndex = 0;
-            this.btnMakeOrder.Text = "Make an Order";
-            this.btnMakeOrder.UseVisualStyleBackColor = true;
-            // 
-            // btnMakeReservation
-            // 
-            this.btnMakeReservation.Location = new System.Drawing.Point(4, 224);
-            this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMakeReservation.Name = "btnMakeReservation";
-            this.btnMakeReservation.Size = new System.Drawing.Size(192, 62);
-            this.btnMakeReservation.TabIndex = 1;
-            this.btnMakeReservation.Text = "Make a Reservation";
-            this.btnMakeReservation.UseVisualStyleBackColor = true;
-            // 
-            // btnMakePayment
-            // 
-            this.btnMakePayment.Location = new System.Drawing.Point(4, 294);
-            this.btnMakePayment.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMakePayment.Name = "btnMakePayment";
-            this.btnMakePayment.Size = new System.Drawing.Size(192, 32);
-            this.btnMakePayment.TabIndex = 5;
-            this.btnMakePayment.Text = "Make Payment";
-            this.btnMakePayment.UseVisualStyleBackColor = true;
-            // 
-            // btnFeedback
-            // 
-            this.btnFeedback.Location = new System.Drawing.Point(4, 334);
-            this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFeedback.Name = "btnFeedback";
-            this.btnFeedback.Size = new System.Drawing.Size(192, 32);
-            this.btnFeedback.TabIndex = 2;
-            this.btnFeedback.Text = "Feedback";
-            this.btnFeedback.UseVisualStyleBackColor = true;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.Location = new System.Drawing.Point(4, 374);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(192, 32);
-            this.btnLogOut.TabIndex = 3;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnProfile.FlatAppearance.BorderSize = 0;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Location = new System.Drawing.Point(4, 64);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(192, 32);
+            this.btnProfile.TabIndex = 9;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
             // 
             // Customer_Profile
             // 

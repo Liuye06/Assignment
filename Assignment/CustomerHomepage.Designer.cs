@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerHomepage));
             this.btnMakeOrder = new System.Windows.Forms.Button();
             this.btnMakeReservation = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.lbl_Gender = new System.Windows.Forms.Label();
             this.lbl_DOB = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_Username = new System.Windows.Forms.Label();
             this.panel_ViewOrders = new System.Windows.Forms.Panel();
             this.btn_ReturnViewOrders = new System.Windows.Forms.Button();
@@ -67,9 +67,6 @@
             this.lbl_TotalOrder = new System.Windows.Forms.Label();
             this.lbl_OrderID = new System.Windows.Forms.Label();
             this.dataGV_ViewOrder = new System.Windows.Forms.DataGridView();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel_ViewReservation = new System.Windows.Forms.Panel();
             this.btn_ViewReservation = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -95,6 +92,7 @@
             this.btnOrderMenu_Next = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.lblRequest_T = new System.Windows.Forms.Label();
+            this.pb_T = new System.Windows.Forms.PictureBox();
             this.lblD_T = new System.Windows.Forms.Label();
             this.txtRequest_T = new System.Windows.Forms.TextBox();
             this.numUD_T = new System.Windows.Forms.NumericUpDown();
@@ -102,6 +100,7 @@
             this.lblPrice_T = new System.Windows.Forms.Label();
             this.lblDesserts = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.pb_NYC = new System.Windows.Forms.PictureBox();
             this.lblD_NYC = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -109,6 +108,7 @@
             this.lblPrice_NYC = new System.Windows.Forms.Label();
             this.txtRequest_NYC = new System.Windows.Forms.TextBox();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.pb_PC = new System.Windows.Forms.PictureBox();
             this.lblD_PC = new System.Windows.Forms.Label();
             this.numUD_PC = new System.Windows.Forms.NumericUpDown();
             this.lblQuantityPC = new System.Windows.Forms.Label();
@@ -117,6 +117,7 @@
             this.lblRequest_PC = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.lblRequest_GT = new System.Windows.Forms.Label();
+            this.pb_GT = new System.Windows.Forms.PictureBox();
             this.txtRequest_GT = new System.Windows.Forms.TextBox();
             this.lblB_GT = new System.Windows.Forms.Label();
             this.numUD_GT = new System.Windows.Forms.NumericUpDown();
@@ -125,6 +126,7 @@
             this.lblBeverages = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.lblRequest_BM = new System.Windows.Forms.Label();
+            this.pb_NBM = new System.Windows.Forms.PictureBox();
             this.txtRequest_BM = new System.Windows.Forms.TextBox();
             this.lblB_BM = new System.Windows.Forms.Label();
             this.numUD_BM = new System.Windows.Forms.NumericUpDown();
@@ -132,6 +134,7 @@
             this.lblPrice_BM = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
             this.lblRequest_L = new System.Windows.Forms.Label();
+            this.pb_L = new System.Windows.Forms.PictureBox();
             this.txtRequest_L = new System.Windows.Forms.TextBox();
             this.lblB_L = new System.Windows.Forms.Label();
             this.numUD_L = new System.Windows.Forms.NumericUpDown();
@@ -139,6 +142,7 @@
             this.lblPrice_L = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblRequest_SB = new System.Windows.Forms.Label();
+            this.pb_SB = new System.Windows.Forms.PictureBox();
             this.txtRequest_SB = new System.Windows.Forms.TextBox();
             this.lblS_SB = new System.Windows.Forms.Label();
             this.lblPrice_SB = new System.Windows.Forms.Label();
@@ -147,6 +151,7 @@
             this.lblSides = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.lblRequest_MP = new System.Windows.Forms.Label();
+            this.pb_MP = new System.Windows.Forms.PictureBox();
             this.txtRequest_MP = new System.Windows.Forms.TextBox();
             this.lblS_MP = new System.Windows.Forms.Label();
             this.lblPrice_MP = new System.Windows.Forms.Label();
@@ -154,6 +159,7 @@
             this.lblQuantityMP = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.lblRequest_R = new System.Windows.Forms.Label();
+            this.pb_R = new System.Windows.Forms.PictureBox();
             this.txtRequest_R = new System.Windows.Forms.TextBox();
             this.lblS_R = new System.Windows.Forms.Label();
             this.lblPrice_R = new System.Windows.Forms.Label();
@@ -161,6 +167,7 @@
             this.lblQuantityR = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.lblRequest_GS = new System.Windows.Forms.Label();
+            this.pb_GS = new System.Windows.Forms.PictureBox();
             this.txtRequest_GS = new System.Windows.Forms.TextBox();
             this.lblMD_GS = new System.Windows.Forms.Label();
             this.lblPrice_GS = new System.Windows.Forms.Label();
@@ -168,6 +175,7 @@
             this.lblQuantity_GS = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.lblRequest_EFR = new System.Windows.Forms.Label();
+            this.pb_EFR = new System.Windows.Forms.PictureBox();
             this.txtRequest_EFR = new System.Windows.Forms.TextBox();
             this.lblMD_EFR = new System.Windows.Forms.Label();
             this.lblPrice_EFR = new System.Windows.Forms.Label();
@@ -176,6 +184,7 @@
             this.lblMainDishes = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.lblRequest_FnC = new System.Windows.Forms.Label();
+            this.pb_FnC = new System.Windows.Forms.PictureBox();
             this.txtRequest_FnC = new System.Windows.Forms.TextBox();
             this.lblMD_FnC = new System.Windows.Forms.Label();
             this.lblPrice_FnC = new System.Windows.Forms.Label();
@@ -184,6 +193,7 @@
             this.lblAppetizers = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblRequest_MS = new System.Windows.Forms.Label();
+            this.pb_MS = new System.Windows.Forms.PictureBox();
             this.txtRequest_MS = new System.Windows.Forms.TextBox();
             this.lblA_MushroomS = new System.Windows.Forms.Label();
             this.lblPrice_MS = new System.Windows.Forms.Label();
@@ -191,6 +201,7 @@
             this.lblQuantityMS = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblRequest_CS = new System.Windows.Forms.Label();
+            this.pb_CS = new System.Windows.Forms.PictureBox();
             this.txtRequest_CS = new System.Windows.Forms.TextBox();
             this.lblA_CaesarS = new System.Windows.Forms.Label();
             this.lblPrice_CS = new System.Windows.Forms.Label();
@@ -198,6 +209,7 @@
             this.lblQuantityCS = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.lblRequest_SC = new System.Windows.Forms.Label();
+            this.pb_SC = new System.Windows.Forms.PictureBox();
             this.txtRequest_SC = new System.Windows.Forms.TextBox();
             this.lbl_ShrimpCocktail = new System.Windows.Forms.Label();
             this.lblPrice_SC = new System.Windows.Forms.Label();
@@ -249,87 +261,70 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.pb_T = new System.Windows.Forms.PictureBox();
-            this.pb_NYC = new System.Windows.Forms.PictureBox();
-            this.pb_PC = new System.Windows.Forms.PictureBox();
-            this.pb_GT = new System.Windows.Forms.PictureBox();
-            this.pb_NBM = new System.Windows.Forms.PictureBox();
-            this.pb_L = new System.Windows.Forms.PictureBox();
-            this.pb_SB = new System.Windows.Forms.PictureBox();
-            this.pb_MP = new System.Windows.Forms.PictureBox();
-            this.pb_R = new System.Windows.Forms.PictureBox();
-            this.pb_GS = new System.Windows.Forms.PictureBox();
-            this.pb_EFR = new System.Windows.Forms.PictureBox();
-            this.pb_FnC = new System.Windows.Forms.PictureBox();
-            this.pb_MS = new System.Windows.Forms.PictureBox();
-            this.pb_CS = new System.Windows.Forms.PictureBox();
-            this.pb_SC = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel_ViewProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_ViewOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_ViewOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             this.panel_ViewReservation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel_OrderMenu.SuspendLayout();
             this.panel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_T)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_T)).BeginInit();
             this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_NYC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_PC)).BeginInit();
             this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_GT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_GT)).BeginInit();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_NBM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_BM)).BeginInit();
             this.panel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_L)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_L)).BeginInit();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_SB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_SB)).BeginInit();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_MP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_MP)).BeginInit();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_R)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_R)).BeginInit();
             this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_GS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_GS)).BeginInit();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_EFR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_EFR)).BeginInit();
             this.panel13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_FnC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_FnC)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_MS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_MS)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_CS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_CS)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_SC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_SC)).BeginInit();
             this.panel_ReservationRequest.SuspendLayout();
             this.gb_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.panel_Payment.SuspendLayout();
             this.panel_Feedback.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_T)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_NYC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_PC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_GT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_NBM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_L)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_SB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_MP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_R)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_GS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_EFR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_FnC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_MS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_CS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_SC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMakeOrder
             // 
             this.btnMakeOrder.Location = new System.Drawing.Point(4, 331);
-            this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeOrder.Name = "btnMakeOrder";
             this.btnMakeOrder.Size = new System.Drawing.Size(244, 101);
             this.btnMakeOrder.TabIndex = 0;
@@ -340,7 +335,7 @@
             // btnMakeReservation
             // 
             this.btnMakeReservation.Location = new System.Drawing.Point(4, 440);
-            this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeReservation.Name = "btnMakeReservation";
             this.btnMakeReservation.Size = new System.Drawing.Size(244, 101);
             this.btnMakeReservation.TabIndex = 1;
@@ -351,7 +346,7 @@
             // btnFeedback
             // 
             this.btnFeedback.Location = new System.Drawing.Point(4, 658);
-            this.btnFeedback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.Size = new System.Drawing.Size(244, 101);
             this.btnFeedback.TabIndex = 2;
@@ -362,7 +357,7 @@
             // btnLogOut
             // 
             this.btnLogOut.Location = new System.Drawing.Point(4, 767);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(244, 101);
             this.btnLogOut.TabIndex = 3;
@@ -372,7 +367,7 @@
             // btnViewOrders
             // 
             this.btnViewOrders.Location = new System.Drawing.Point(4, 113);
-            this.btnViewOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewOrders.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewOrders.Name = "btnViewOrders";
             this.btnViewOrders.Size = new System.Drawing.Size(244, 101);
             this.btnViewOrders.TabIndex = 4;
@@ -383,7 +378,7 @@
             // btnMakePayment
             // 
             this.btnMakePayment.Location = new System.Drawing.Point(4, 549);
-            this.btnMakePayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMakePayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakePayment.Name = "btnMakePayment";
             this.btnMakePayment.Size = new System.Drawing.Size(244, 101);
             this.btnMakePayment.TabIndex = 5;
@@ -394,7 +389,7 @@
             // btnViewReservations
             // 
             this.btnViewReservations.Location = new System.Drawing.Point(4, 222);
-            this.btnViewReservations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewReservations.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReservations.Name = "btnViewReservations";
             this.btnViewReservations.Size = new System.Drawing.Size(244, 101);
             this.btnViewReservations.TabIndex = 6;
@@ -414,7 +409,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnFeedback);
             this.flowLayoutPanel1.Controls.Add(this.btnLogOut);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(1, 11498);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(275, 432);
             this.flowLayoutPanel1.TabIndex = 8;
@@ -422,7 +417,7 @@
             // btnProfile
             // 
             this.btnProfile.Location = new System.Drawing.Point(4, 4);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(4);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(244, 101);
             this.btnProfile.TabIndex = 9;
@@ -446,7 +441,7 @@
             this.panel_ViewProfile.Controls.Add(this.pictureBox1);
             this.panel_ViewProfile.Controls.Add(this.lbl_Username);
             this.panel_ViewProfile.Location = new System.Drawing.Point(284, 11419);
-            this.panel_ViewProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_ViewProfile.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewProfile.Name = "panel_ViewProfile";
             this.panel_ViewProfile.Size = new System.Drawing.Size(763, 434);
             this.panel_ViewProfile.TabIndex = 9;
@@ -454,7 +449,7 @@
             // btn_Edit
             // 
             this.btn_Edit.Location = new System.Drawing.Point(28, 377);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(119, 39);
             this.btn_Edit.TabIndex = 44;
@@ -552,6 +547,16 @@
             this.lbl_Name.TabIndex = 35;
             this.lbl_Name.Text = "Name :";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(512, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(241, 217);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // lbl_Username
             // 
             this.lbl_Username.AutoSize = true;
@@ -582,7 +587,7 @@
             this.panel_ViewOrders.Controls.Add(this.lbl_OrderID);
             this.panel_ViewOrders.Controls.Add(this.dataGV_ViewOrder);
             this.panel_ViewOrders.Location = new System.Drawing.Point(284, 11889);
-            this.panel_ViewOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_ViewOrders.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewOrders.Name = "panel_ViewOrders";
             this.panel_ViewOrders.Size = new System.Drawing.Size(763, 434);
             this.panel_ViewOrders.TabIndex = 44;
@@ -590,7 +595,7 @@
             // btn_ReturnViewOrders
             // 
             this.btn_ReturnViewOrders.Location = new System.Drawing.Point(28, 21);
-            this.btn_ReturnViewOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ReturnViewOrders.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ReturnViewOrders.Name = "btn_ReturnViewOrders";
             this.btn_ReturnViewOrders.Size = new System.Drawing.Size(61, 41);
             this.btn_ReturnViewOrders.TabIndex = 29;
@@ -620,7 +625,7 @@
             // btn_SearchOrder
             // 
             this.btn_SearchOrder.Location = new System.Drawing.Point(332, 95);
-            this.btn_SearchOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SearchOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SearchOrder.Name = "btn_SearchOrder";
             this.btn_SearchOrder.Size = new System.Drawing.Size(100, 28);
             this.btn_SearchOrder.TabIndex = 26;
@@ -640,7 +645,7 @@
             // txt_SearchOrder
             // 
             this.txt_SearchOrder.Location = new System.Drawing.Point(176, 100);
-            this.txt_SearchOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_SearchOrder.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SearchOrder.Name = "txt_SearchOrder";
             this.txt_SearchOrder.Size = new System.Drawing.Size(132, 22);
             this.txt_SearchOrder.TabIndex = 24;
@@ -677,7 +682,7 @@
             this.listB_Items.FormattingEnabled = true;
             this.listB_Items.ItemHeight = 16;
             this.listB_Items.Location = new System.Drawing.Point(77, 357);
-            this.listB_Items.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listB_Items.Margin = new System.Windows.Forms.Padding(4);
             this.listB_Items.Name = "listB_Items";
             this.listB_Items.Size = new System.Drawing.Size(159, 116);
             this.listB_Items.TabIndex = 20;
@@ -724,45 +729,13 @@
             // 
             // dataGV_ViewOrder
             // 
-            this.dataGV_ViewOrder.AutoGenerateColumns = false;
             this.dataGV_ViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGV_ViewOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
-            this.dataGV_ViewOrder.DataSource = this.orderBindingSource;
             this.dataGV_ViewOrder.Location = new System.Drawing.Point(400, 289);
-            this.dataGV_ViewOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGV_ViewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.dataGV_ViewOrder.Name = "dataGV_ViewOrder";
             this.dataGV_ViewOrder.RowHeadersWidth = 51;
             this.dataGV_ViewOrder.Size = new System.Drawing.Size(324, 185);
             this.dataGV_ViewOrder.TabIndex = 15;
-            // 
-            // orderIDDataGridViewTextBoxColumn
-            // 
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataMember = "Order";
-            // 
-            // assignmentdbDataSet6
-            // 
-            // 
-            // orderTableAdapter
-            // 
             // 
             // panel_ViewReservation
             // 
@@ -788,7 +761,7 @@
             this.panel_ViewReservation.Controls.Add(this.label5);
             this.panel_ViewReservation.Controls.Add(this.lbl_ReservationID);
             this.panel_ViewReservation.Location = new System.Drawing.Point(284, 12331);
-            this.panel_ViewReservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_ViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewReservation.Name = "panel_ViewReservation";
             this.panel_ViewReservation.Size = new System.Drawing.Size(763, 434);
             this.panel_ViewReservation.TabIndex = 45;
@@ -796,7 +769,7 @@
             // btn_ViewReservation
             // 
             this.btn_ViewReservation.Location = new System.Drawing.Point(20, 18);
-            this.btn_ViewReservation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ViewReservation.Name = "btn_ViewReservation";
             this.btn_ViewReservation.Size = new System.Drawing.Size(60, 43);
             this.btn_ViewReservation.TabIndex = 55;
@@ -808,7 +781,7 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(472, 172);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(577, 193);
@@ -893,7 +866,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(372, 86);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 45;
@@ -913,7 +886,7 @@
             // txt_SearchRequest
             // 
             this.txt_SearchRequest.Location = new System.Drawing.Point(216, 91);
-            this.txt_SearchRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_SearchRequest.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SearchRequest.Name = "txt_SearchRequest";
             this.txt_SearchRequest.Size = new System.Drawing.Size(132, 22);
             this.txt_SearchRequest.TabIndex = 43;
@@ -1001,8 +974,8 @@
             this.panel_OrderMenu.Controls.Add(this.panel5);
             this.panel_OrderMenu.Controls.Add(this.panel6);
             this.panel_OrderMenu.Controls.Add(this.panel7);
-            this.panel_OrderMenu.Location = new System.Drawing.Point(281, 12784);
-            this.panel_OrderMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_OrderMenu.Location = new System.Drawing.Point(280, 12784);
+            this.panel_OrderMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_OrderMenu.Name = "panel_OrderMenu";
             this.panel_OrderMenu.Size = new System.Drawing.Size(763, 434);
             this.panel_OrderMenu.TabIndex = 55;
@@ -1010,7 +983,7 @@
             // btn_ReturnOrdersMenu
             // 
             this.btn_ReturnOrdersMenu.Location = new System.Drawing.Point(23, 20);
-            this.btn_ReturnOrdersMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ReturnOrdersMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ReturnOrdersMenu.Name = "btn_ReturnOrdersMenu";
             this.btn_ReturnOrdersMenu.Size = new System.Drawing.Size(69, 44);
             this.btn_ReturnOrdersMenu.TabIndex = 145;
@@ -1021,7 +994,7 @@
             // btnOrderMenu_Next
             // 
             this.btnOrderMenu_Next.Location = new System.Drawing.Point(556, 1941);
-            this.btnOrderMenu_Next.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrderMenu_Next.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrderMenu_Next.Name = "btnOrderMenu_Next";
             this.btnOrderMenu_Next.Size = new System.Drawing.Size(165, 66);
             this.btnOrderMenu_Next.TabIndex = 144;
@@ -1040,7 +1013,7 @@
             this.panel14.Controls.Add(this.lblQuantity_T);
             this.panel14.Controls.Add(this.lblPrice_T);
             this.panel14.Location = new System.Drawing.Point(515, 1585);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(220, 273);
             this.panel14.TabIndex = 143;
@@ -1055,6 +1028,17 @@
             this.lblRequest_T.TabIndex = 115;
             this.lblRequest_T.Text = "Request :";
             // 
+            // pb_T
+            // 
+            this.pb_T.Image = ((System.Drawing.Image)(resources.GetObject("pb_T.Image")));
+            this.pb_T.Location = new System.Drawing.Point(24, 6);
+            this.pb_T.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_T.Name = "pb_T";
+            this.pb_T.Size = new System.Drawing.Size(167, 90);
+            this.pb_T.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_T.TabIndex = 106;
+            this.pb_T.TabStop = false;
+            // 
             // lblD_T
             // 
             this.lblD_T.AutoSize = true;
@@ -1068,7 +1052,7 @@
             // txtRequest_T
             // 
             this.txtRequest_T.Location = new System.Drawing.Point(24, 244);
-            this.txtRequest_T.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_T.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_T.Name = "txtRequest_T";
             this.txtRequest_T.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_T.TabIndex = 114;
@@ -1076,7 +1060,7 @@
             // numUD_T
             // 
             this.numUD_T.Location = new System.Drawing.Point(133, 148);
-            this.numUD_T.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_T.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_T.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1128,10 +1112,21 @@
             this.panel15.Controls.Add(this.lblPrice_NYC);
             this.panel15.Controls.Add(this.txtRequest_NYC);
             this.panel15.Location = new System.Drawing.Point(287, 1585);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(220, 274);
             this.panel15.TabIndex = 142;
+            // 
+            // pb_NYC
+            // 
+            this.pb_NYC.Image = ((System.Drawing.Image)(resources.GetObject("pb_NYC.Image")));
+            this.pb_NYC.Location = new System.Drawing.Point(23, 6);
+            this.pb_NYC.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_NYC.Name = "pb_NYC";
+            this.pb_NYC.Size = new System.Drawing.Size(167, 90);
+            this.pb_NYC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_NYC.TabIndex = 102;
+            this.pb_NYC.TabStop = false;
             // 
             // lblD_NYC
             // 
@@ -1146,7 +1141,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(132, 148);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1189,7 +1184,7 @@
             // txtRequest_NYC
             // 
             this.txtRequest_NYC.Location = new System.Drawing.Point(23, 244);
-            this.txtRequest_NYC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_NYC.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_NYC.Name = "txtRequest_NYC";
             this.txtRequest_NYC.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_NYC.TabIndex = 112;
@@ -1205,10 +1200,21 @@
             this.panel16.Controls.Add(this.txtRequest_PC);
             this.panel16.Controls.Add(this.lblRequest_PC);
             this.panel16.Location = new System.Drawing.Point(59, 1585);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(220, 274);
             this.panel16.TabIndex = 141;
+            // 
+            // pb_PC
+            // 
+            this.pb_PC.Image = ((System.Drawing.Image)(resources.GetObject("pb_PC.Image")));
+            this.pb_PC.Location = new System.Drawing.Point(23, 6);
+            this.pb_PC.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_PC.Name = "pb_PC";
+            this.pb_PC.Size = new System.Drawing.Size(167, 90);
+            this.pb_PC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_PC.TabIndex = 98;
+            this.pb_PC.TabStop = false;
             // 
             // lblD_PC
             // 
@@ -1223,7 +1229,7 @@
             // numUD_PC
             // 
             this.numUD_PC.Location = new System.Drawing.Point(132, 148);
-            this.numUD_PC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_PC.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_PC.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1256,7 +1262,7 @@
             // txtRequest_PC
             // 
             this.txtRequest_PC.Location = new System.Drawing.Point(23, 244);
-            this.txtRequest_PC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_PC.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_PC.Name = "txtRequest_PC";
             this.txtRequest_PC.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_PC.TabIndex = 110;
@@ -1282,7 +1288,7 @@
             this.panel17.Controls.Add(this.lblQuantity_GT);
             this.panel17.Controls.Add(this.lblPrice_GT);
             this.panel17.Location = new System.Drawing.Point(512, 1225);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(220, 273);
             this.panel17.TabIndex = 138;
@@ -1297,10 +1303,21 @@
             this.lblRequest_GT.TabIndex = 132;
             this.lblRequest_GT.Text = "Request :";
             // 
+            // pb_GT
+            // 
+            this.pb_GT.Image = ((System.Drawing.Image)(resources.GetObject("pb_GT.Image")));
+            this.pb_GT.Location = new System.Drawing.Point(24, 7);
+            this.pb_GT.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_GT.Name = "pb_GT";
+            this.pb_GT.Size = new System.Drawing.Size(167, 90);
+            this.pb_GT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_GT.TabIndex = 127;
+            this.pb_GT.TabStop = false;
+            // 
             // txtRequest_GT
             // 
             this.txtRequest_GT.Location = new System.Drawing.Point(24, 241);
-            this.txtRequest_GT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_GT.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_GT.Name = "txtRequest_GT";
             this.txtRequest_GT.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_GT.TabIndex = 131;
@@ -1318,7 +1335,7 @@
             // numUD_GT
             // 
             this.numUD_GT.Location = new System.Drawing.Point(133, 149);
-            this.numUD_GT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_GT.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_GT.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1370,7 +1387,7 @@
             this.panel18.Controls.Add(this.lblQuantityBM);
             this.panel18.Controls.Add(this.lblPrice_BM);
             this.panel18.Location = new System.Drawing.Point(284, 1225);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(220, 274);
             this.panel18.TabIndex = 137;
@@ -1385,10 +1402,21 @@
             this.lblRequest_BM.TabIndex = 125;
             this.lblRequest_BM.Text = "Request :";
             // 
+            // pb_NBM
+            // 
+            this.pb_NBM.Image = ((System.Drawing.Image)(resources.GetObject("pb_NBM.Image")));
+            this.pb_NBM.Location = new System.Drawing.Point(21, 7);
+            this.pb_NBM.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_NBM.Name = "pb_NBM";
+            this.pb_NBM.Size = new System.Drawing.Size(167, 90);
+            this.pb_NBM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_NBM.TabIndex = 120;
+            this.pb_NBM.TabStop = false;
+            // 
             // txtRequest_BM
             // 
             this.txtRequest_BM.Location = new System.Drawing.Point(23, 241);
-            this.txtRequest_BM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_BM.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_BM.Name = "txtRequest_BM";
             this.txtRequest_BM.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_BM.TabIndex = 124;
@@ -1406,7 +1434,7 @@
             // numUD_BM
             // 
             this.numUD_BM.Location = new System.Drawing.Point(131, 149);
-            this.numUD_BM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_BM.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_BM.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1447,7 +1475,7 @@
             this.panel19.Controls.Add(this.lblQuantityL);
             this.panel19.Controls.Add(this.lblPrice_L);
             this.panel19.Location = new System.Drawing.Point(56, 1225);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(220, 274);
             this.panel19.TabIndex = 136;
@@ -1462,10 +1490,21 @@
             this.lblRequest_L.TabIndex = 123;
             this.lblRequest_L.Text = "Request :";
             // 
+            // pb_L
+            // 
+            this.pb_L.Image = ((System.Drawing.Image)(resources.GetObject("pb_L.Image")));
+            this.pb_L.Location = new System.Drawing.Point(23, 7);
+            this.pb_L.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_L.Name = "pb_L";
+            this.pb_L.Size = new System.Drawing.Size(167, 90);
+            this.pb_L.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_L.TabIndex = 118;
+            this.pb_L.TabStop = false;
+            // 
             // txtRequest_L
             // 
             this.txtRequest_L.Location = new System.Drawing.Point(23, 241);
-            this.txtRequest_L.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_L.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_L.Name = "txtRequest_L";
             this.txtRequest_L.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_L.TabIndex = 122;
@@ -1483,7 +1522,7 @@
             // numUD_L
             // 
             this.numUD_L.Location = new System.Drawing.Point(132, 149);
-            this.numUD_L.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_L.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_L.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1524,7 +1563,7 @@
             this.panel8.Controls.Add(this.numUD_SB);
             this.panel8.Controls.Add(this.lblQuantity_SB);
             this.panel8.Location = new System.Drawing.Point(512, 844);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(220, 273);
             this.panel8.TabIndex = 80;
@@ -1539,10 +1578,21 @@
             this.lblRequest_SB.TabIndex = 104;
             this.lblRequest_SB.Text = "Request :";
             // 
+            // pb_SB
+            // 
+            this.pb_SB.Image = ((System.Drawing.Image)(resources.GetObject("pb_SB.Image")));
+            this.pb_SB.Location = new System.Drawing.Point(24, 6);
+            this.pb_SB.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_SB.Name = "pb_SB";
+            this.pb_SB.Size = new System.Drawing.Size(167, 90);
+            this.pb_SB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_SB.TabIndex = 101;
+            this.pb_SB.TabStop = false;
+            // 
             // txtRequest_SB
             // 
             this.txtRequest_SB.Location = new System.Drawing.Point(24, 244);
-            this.txtRequest_SB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_SB.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_SB.Name = "txtRequest_SB";
             this.txtRequest_SB.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_SB.TabIndex = 103;
@@ -1570,7 +1620,7 @@
             // numUD_SB
             // 
             this.numUD_SB.Location = new System.Drawing.Point(133, 148);
-            this.numUD_SB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_SB.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_SB.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1612,7 +1662,7 @@
             this.panel9.Controls.Add(this.numUD_MP);
             this.panel9.Controls.Add(this.lblQuantityMP);
             this.panel9.Location = new System.Drawing.Point(284, 844);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(220, 273);
             this.panel9.TabIndex = 79;
@@ -1627,10 +1677,21 @@
             this.lblRequest_MP.TabIndex = 97;
             this.lblRequest_MP.Text = "Request :";
             // 
+            // pb_MP
+            // 
+            this.pb_MP.Image = ((System.Drawing.Image)(resources.GetObject("pb_MP.Image")));
+            this.pb_MP.Location = new System.Drawing.Point(23, 6);
+            this.pb_MP.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_MP.Name = "pb_MP";
+            this.pb_MP.Size = new System.Drawing.Size(167, 90);
+            this.pb_MP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_MP.TabIndex = 94;
+            this.pb_MP.TabStop = false;
+            // 
             // txtRequest_MP
             // 
             this.txtRequest_MP.Location = new System.Drawing.Point(23, 244);
-            this.txtRequest_MP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_MP.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_MP.Name = "txtRequest_MP";
             this.txtRequest_MP.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_MP.TabIndex = 96;
@@ -1658,7 +1719,7 @@
             // numUD_MP
             // 
             this.numUD_MP.Location = new System.Drawing.Point(132, 148);
-            this.numUD_MP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_MP.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_MP.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1689,7 +1750,7 @@
             this.panel10.Controls.Add(this.numUD_R);
             this.panel10.Controls.Add(this.lblQuantityR);
             this.panel10.Location = new System.Drawing.Point(56, 844);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(220, 273);
             this.panel10.TabIndex = 78;
@@ -1704,10 +1765,21 @@
             this.lblRequest_R.TabIndex = 97;
             this.lblRequest_R.Text = "Request :";
             // 
+            // pb_R
+            // 
+            this.pb_R.Image = ((System.Drawing.Image)(resources.GetObject("pb_R.Image")));
+            this.pb_R.Location = new System.Drawing.Point(23, 6);
+            this.pb_R.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_R.Name = "pb_R";
+            this.pb_R.Size = new System.Drawing.Size(167, 90);
+            this.pb_R.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_R.TabIndex = 94;
+            this.pb_R.TabStop = false;
+            // 
             // txtRequest_R
             // 
             this.txtRequest_R.Location = new System.Drawing.Point(23, 244);
-            this.txtRequest_R.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_R.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_R.Name = "txtRequest_R";
             this.txtRequest_R.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_R.TabIndex = 96;
@@ -1735,7 +1807,7 @@
             // numUD_R
             // 
             this.numUD_R.Location = new System.Drawing.Point(132, 148);
-            this.numUD_R.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_R.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_R.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1766,7 +1838,7 @@
             this.panel11.Controls.Add(this.numUD_GS);
             this.panel11.Controls.Add(this.lblQuantity_GS);
             this.panel11.Location = new System.Drawing.Point(511, 482);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(220, 273);
             this.panel11.TabIndex = 75;
@@ -1781,10 +1853,21 @@
             this.lblRequest_GS.TabIndex = 111;
             this.lblRequest_GS.Text = "Request :";
             // 
+            // pb_GS
+            // 
+            this.pb_GS.Image = ((System.Drawing.Image)(resources.GetObject("pb_GS.Image")));
+            this.pb_GS.Location = new System.Drawing.Point(24, 4);
+            this.pb_GS.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_GS.Name = "pb_GS";
+            this.pb_GS.Size = new System.Drawing.Size(167, 90);
+            this.pb_GS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_GS.TabIndex = 108;
+            this.pb_GS.TabStop = false;
+            // 
             // txtRequest_GS
             // 
             this.txtRequest_GS.Location = new System.Drawing.Point(24, 234);
-            this.txtRequest_GS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_GS.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_GS.Name = "txtRequest_GS";
             this.txtRequest_GS.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_GS.TabIndex = 110;
@@ -1812,7 +1895,7 @@
             // numUD_GS
             // 
             this.numUD_GS.Location = new System.Drawing.Point(133, 145);
-            this.numUD_GS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_GS.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_GS.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1843,7 +1926,7 @@
             this.panel12.Controls.Add(this.numUD_EFR);
             this.panel12.Controls.Add(this.lblQuantityEFR);
             this.panel12.Location = new System.Drawing.Point(283, 482);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(220, 273);
             this.panel12.TabIndex = 76;
@@ -1858,10 +1941,21 @@
             this.lblRequest_EFR.TabIndex = 104;
             this.lblRequest_EFR.Text = "Request :";
             // 
+            // pb_EFR
+            // 
+            this.pb_EFR.Image = ((System.Drawing.Image)(resources.GetObject("pb_EFR.Image")));
+            this.pb_EFR.Location = new System.Drawing.Point(23, 4);
+            this.pb_EFR.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_EFR.Name = "pb_EFR";
+            this.pb_EFR.Size = new System.Drawing.Size(167, 90);
+            this.pb_EFR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_EFR.TabIndex = 101;
+            this.pb_EFR.TabStop = false;
+            // 
             // txtRequest_EFR
             // 
             this.txtRequest_EFR.Location = new System.Drawing.Point(21, 234);
-            this.txtRequest_EFR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_EFR.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_EFR.Name = "txtRequest_EFR";
             this.txtRequest_EFR.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_EFR.TabIndex = 103;
@@ -1889,7 +1983,7 @@
             // numUD_EFR
             // 
             this.numUD_EFR.Location = new System.Drawing.Point(132, 145);
-            this.numUD_EFR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_EFR.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_EFR.Maximum = new decimal(new int[] {
             20,
             0,
@@ -1931,7 +2025,7 @@
             this.panel13.Controls.Add(this.numUD_FnC);
             this.panel13.Controls.Add(this.lblQuantityFnC);
             this.panel13.Location = new System.Drawing.Point(55, 482);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(220, 273);
             this.panel13.TabIndex = 73;
@@ -1946,10 +2040,21 @@
             this.lblRequest_FnC.TabIndex = 97;
             this.lblRequest_FnC.Text = "Request :";
             // 
+            // pb_FnC
+            // 
+            this.pb_FnC.Image = ((System.Drawing.Image)(resources.GetObject("pb_FnC.Image")));
+            this.pb_FnC.Location = new System.Drawing.Point(23, 4);
+            this.pb_FnC.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_FnC.Name = "pb_FnC";
+            this.pb_FnC.Size = new System.Drawing.Size(167, 90);
+            this.pb_FnC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_FnC.TabIndex = 94;
+            this.pb_FnC.TabStop = false;
+            // 
             // txtRequest_FnC
             // 
             this.txtRequest_FnC.Location = new System.Drawing.Point(23, 234);
-            this.txtRequest_FnC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_FnC.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_FnC.Name = "txtRequest_FnC";
             this.txtRequest_FnC.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_FnC.TabIndex = 96;
@@ -1977,7 +2082,7 @@
             // numUD_FnC
             // 
             this.numUD_FnC.Location = new System.Drawing.Point(132, 145);
-            this.numUD_FnC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_FnC.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_FnC.Maximum = new decimal(new int[] {
             20,
             0,
@@ -2019,7 +2124,7 @@
             this.panel5.Controls.Add(this.numUD_MS);
             this.panel5.Controls.Add(this.lblQuantityMS);
             this.panel5.Location = new System.Drawing.Point(61, 116);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(220, 273);
             this.panel5.TabIndex = 69;
@@ -2034,10 +2139,21 @@
             this.lblRequest_MS.TabIndex = 66;
             this.lblRequest_MS.Text = "Request :";
             // 
+            // pb_MS
+            // 
+            this.pb_MS.Image = ((System.Drawing.Image)(resources.GetObject("pb_MS.Image")));
+            this.pb_MS.Location = new System.Drawing.Point(23, 4);
+            this.pb_MS.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_MS.Name = "pb_MS";
+            this.pb_MS.Size = new System.Drawing.Size(167, 90);
+            this.pb_MS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_MS.TabIndex = 63;
+            this.pb_MS.TabStop = false;
+            // 
             // txtRequest_MS
             // 
             this.txtRequest_MS.Location = new System.Drawing.Point(23, 238);
-            this.txtRequest_MS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_MS.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_MS.Name = "txtRequest_MS";
             this.txtRequest_MS.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_MS.TabIndex = 65;
@@ -2065,7 +2181,7 @@
             // numUD_MS
             // 
             this.numUD_MS.Location = new System.Drawing.Point(132, 145);
-            this.numUD_MS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_MS.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_MS.Maximum = new decimal(new int[] {
             20,
             0,
@@ -2096,7 +2212,7 @@
             this.panel6.Controls.Add(this.numUD_CS);
             this.panel6.Controls.Add(this.lblQuantityCS);
             this.panel6.Location = new System.Drawing.Point(289, 116);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(220, 273);
             this.panel6.TabIndex = 71;
@@ -2111,10 +2227,21 @@
             this.lblRequest_CS.TabIndex = 75;
             this.lblRequest_CS.Text = "Request :";
             // 
+            // pb_CS
+            // 
+            this.pb_CS.Image = ((System.Drawing.Image)(resources.GetObject("pb_CS.Image")));
+            this.pb_CS.Location = new System.Drawing.Point(23, 4);
+            this.pb_CS.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_CS.Name = "pb_CS";
+            this.pb_CS.Size = new System.Drawing.Size(167, 90);
+            this.pb_CS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_CS.TabIndex = 72;
+            this.pb_CS.TabStop = false;
+            // 
             // txtRequest_CS
             // 
             this.txtRequest_CS.Location = new System.Drawing.Point(23, 238);
-            this.txtRequest_CS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_CS.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_CS.Name = "txtRequest_CS";
             this.txtRequest_CS.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_CS.TabIndex = 74;
@@ -2142,7 +2269,7 @@
             // numUD_CS
             // 
             this.numUD_CS.Location = new System.Drawing.Point(132, 145);
-            this.numUD_CS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_CS.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_CS.Maximum = new decimal(new int[] {
             20,
             0,
@@ -2173,7 +2300,7 @@
             this.panel7.Controls.Add(this.numUD_SC);
             this.panel7.Controls.Add(this.lblQuantity_SC);
             this.panel7.Location = new System.Drawing.Point(517, 116);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(220, 273);
             this.panel7.TabIndex = 72;
@@ -2188,10 +2315,21 @@
             this.lblRequest_SC.TabIndex = 97;
             this.lblRequest_SC.Text = "Request :";
             // 
+            // pb_SC
+            // 
+            this.pb_SC.Image = ((System.Drawing.Image)(resources.GetObject("pb_SC.Image")));
+            this.pb_SC.Location = new System.Drawing.Point(24, 4);
+            this.pb_SC.Margin = new System.Windows.Forms.Padding(4);
+            this.pb_SC.Name = "pb_SC";
+            this.pb_SC.Size = new System.Drawing.Size(167, 90);
+            this.pb_SC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_SC.TabIndex = 94;
+            this.pb_SC.TabStop = false;
+            // 
             // txtRequest_SC
             // 
             this.txtRequest_SC.Location = new System.Drawing.Point(24, 238);
-            this.txtRequest_SC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRequest_SC.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest_SC.Name = "txtRequest_SC";
             this.txtRequest_SC.Size = new System.Drawing.Size(132, 22);
             this.txtRequest_SC.TabIndex = 96;
@@ -2219,7 +2357,7 @@
             // numUD_SC
             // 
             this.numUD_SC.Location = new System.Drawing.Point(133, 145);
-            this.numUD_SC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numUD_SC.Margin = new System.Windows.Forms.Padding(4);
             this.numUD_SC.Maximum = new decimal(new int[] {
             20,
             0,
@@ -2254,7 +2392,7 @@
             this.panel_ReservationRequest.Controls.Add(this.monthCal_ResDate);
             this.panel_ReservationRequest.Controls.Add(this.btn_SendReq);
             this.panel_ReservationRequest.Location = new System.Drawing.Point(281, 13244);
-            this.panel_ReservationRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_ReservationRequest.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ReservationRequest.Name = "panel_ReservationRequest";
             this.panel_ReservationRequest.Size = new System.Drawing.Size(763, 434);
             this.panel_ReservationRequest.TabIndex = 55;
@@ -2262,7 +2400,7 @@
             // btn_ReturnReserveReq
             // 
             this.btn_ReturnReserveReq.Location = new System.Drawing.Point(23, 18);
-            this.btn_ReturnReserveReq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ReturnReserveReq.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ReturnReserveReq.Name = "btn_ReturnReserveReq";
             this.btn_ReturnReserveReq.Size = new System.Drawing.Size(60, 38);
             this.btn_ReturnReserveReq.TabIndex = 48;
@@ -2287,9 +2425,9 @@
             this.gb_Details.Controls.Add(this.lbl_ReqDate);
             this.gb_Details.Controls.Add(this.lbl_Function_C);
             this.gb_Details.Location = new System.Drawing.Point(80, 358);
-            this.gb_Details.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_Details.Margin = new System.Windows.Forms.Padding(4);
             this.gb_Details.Name = "gb_Details";
-            this.gb_Details.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_Details.Padding = new System.Windows.Forms.Padding(4);
             this.gb_Details.Size = new System.Drawing.Size(267, 222);
             this.gb_Details.TabIndex = 47;
             this.gb_Details.TabStop = false;
@@ -2432,7 +2570,7 @@
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(423, 273);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -2485,7 +2623,7 @@
             "Competition",
             "Performance"});
             this.cb_Function.Location = new System.Drawing.Point(421, 98);
-            this.cb_Function.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_Function.Margin = new System.Windows.Forms.Padding(4);
             this.cb_Function.Name = "cb_Function";
             this.cb_Function.Size = new System.Drawing.Size(160, 24);
             this.cb_Function.TabIndex = 41;
@@ -2503,7 +2641,7 @@
             // txt_Request
             // 
             this.txt_Request.Location = new System.Drawing.Point(421, 182);
-            this.txt_Request.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Request.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Request.Name = "txt_Request";
             this.txt_Request.Size = new System.Drawing.Size(217, 22);
             this.txt_Request.TabIndex = 39;
@@ -2519,7 +2657,7 @@
             // btn_SendReq
             // 
             this.btn_SendReq.Location = new System.Drawing.Point(592, 492);
-            this.btn_SendReq.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SendReq.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SendReq.Name = "btn_SendReq";
             this.btn_SendReq.Size = new System.Drawing.Size(132, 63);
             this.btn_SendReq.TabIndex = 38;
@@ -2533,7 +2671,7 @@
             this.panel_Payment.Controls.Add(this.btn_Orders);
             this.panel_Payment.Controls.Add(this.btn_Reservations);
             this.panel_Payment.Location = new System.Drawing.Point(281, 13703);
-            this.panel_Payment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Payment.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Payment.Name = "panel_Payment";
             this.panel_Payment.Size = new System.Drawing.Size(763, 434);
             this.panel_Payment.TabIndex = 56;
@@ -2541,7 +2679,7 @@
             // btn_ReturnPayment
             // 
             this.btn_ReturnPayment.Location = new System.Drawing.Point(23, 15);
-            this.btn_ReturnPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ReturnPayment.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ReturnPayment.Name = "btn_ReturnPayment";
             this.btn_ReturnPayment.Size = new System.Drawing.Size(59, 43);
             this.btn_ReturnPayment.TabIndex = 18;
@@ -2552,7 +2690,7 @@
             // btn_Orders
             // 
             this.btn_Orders.Location = new System.Drawing.Point(431, 158);
-            this.btn_Orders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Orders.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Orders.Name = "btn_Orders";
             this.btn_Orders.Size = new System.Drawing.Size(204, 98);
             this.btn_Orders.TabIndex = 3;
@@ -2563,7 +2701,7 @@
             // btn_Reservations
             // 
             this.btn_Reservations.Location = new System.Drawing.Point(128, 158);
-            this.btn_Reservations.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Reservations.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Reservations.Name = "btn_Reservations";
             this.btn_Reservations.Size = new System.Drawing.Size(204, 98);
             this.btn_Reservations.TabIndex = 2;
@@ -2590,7 +2728,7 @@
             this.panel_Feedback.Controls.Add(this.label18);
             this.panel_Feedback.Controls.Add(this.label19);
             this.panel_Feedback.Location = new System.Drawing.Point(281, 14166);
-            this.panel_Feedback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Feedback.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Feedback.Name = "panel_Feedback";
             this.panel_Feedback.Size = new System.Drawing.Size(763, 439);
             this.panel_Feedback.TabIndex = 57;
@@ -2598,7 +2736,7 @@
             // btn_ReturnFeedback
             // 
             this.btn_ReturnFeedback.Location = new System.Drawing.Point(19, 17);
-            this.btn_ReturnFeedback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ReturnFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ReturnFeedback.Name = "btn_ReturnFeedback";
             this.btn_ReturnFeedback.Size = new System.Drawing.Size(64, 41);
             this.btn_ReturnFeedback.TabIndex = 98;
@@ -2609,7 +2747,7 @@
             // btn_SubmitFeedback
             // 
             this.btn_SubmitFeedback.Location = new System.Drawing.Point(603, 495);
-            this.btn_SubmitFeedback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SubmitFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SubmitFeedback.Name = "btn_SubmitFeedback";
             this.btn_SubmitFeedback.Size = new System.Drawing.Size(124, 53);
             this.btn_SubmitFeedback.TabIndex = 97;
@@ -2619,7 +2757,7 @@
             // txt_Feedback
             // 
             this.txt_Feedback.Location = new System.Drawing.Point(67, 463);
-            this.txt_Feedback.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Feedback.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Feedback.Name = "txt_Feedback";
             this.txt_Feedback.Size = new System.Drawing.Size(695, 22);
             this.txt_Feedback.TabIndex = 96;
@@ -2656,7 +2794,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(503, 89);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 92;
@@ -2676,7 +2814,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(168, 89);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 22);
             this.textBox1.TabIndex = 90;
@@ -2704,7 +2842,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(115, 268);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(159, 116);
             this.listBox1.TabIndex = 87;
@@ -2739,181 +2877,6 @@
             this.label19.TabIndex = 84;
             this.label19.Text = "Order ID:";
             // 
-            // pb_T
-            // 
-            this.pb_T.Image = ((System.Drawing.Image)(resources.GetObject("pb_T.Image")));
-            this.pb_T.Location = new System.Drawing.Point(24, 6);
-            this.pb_T.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_T.Name = "pb_T";
-            this.pb_T.Size = new System.Drawing.Size(167, 90);
-            this.pb_T.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_T.TabIndex = 106;
-            this.pb_T.TabStop = false;
-            // 
-            // pb_NYC
-            // 
-            this.pb_NYC.Image = ((System.Drawing.Image)(resources.GetObject("pb_NYC.Image")));
-            this.pb_NYC.Location = new System.Drawing.Point(23, 6);
-            this.pb_NYC.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_NYC.Name = "pb_NYC";
-            this.pb_NYC.Size = new System.Drawing.Size(167, 90);
-            this.pb_NYC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_NYC.TabIndex = 102;
-            this.pb_NYC.TabStop = false;
-            // 
-            // pb_PC
-            // 
-            this.pb_PC.Image = ((System.Drawing.Image)(resources.GetObject("pb_PC.Image")));
-            this.pb_PC.Location = new System.Drawing.Point(23, 6);
-            this.pb_PC.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_PC.Name = "pb_PC";
-            this.pb_PC.Size = new System.Drawing.Size(167, 90);
-            this.pb_PC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_PC.TabIndex = 98;
-            this.pb_PC.TabStop = false;
-            // 
-            // pb_GT
-            // 
-            this.pb_GT.Image = ((System.Drawing.Image)(resources.GetObject("pb_GT.Image")));
-            this.pb_GT.Location = new System.Drawing.Point(24, 7);
-            this.pb_GT.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_GT.Name = "pb_GT";
-            this.pb_GT.Size = new System.Drawing.Size(167, 90);
-            this.pb_GT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_GT.TabIndex = 127;
-            this.pb_GT.TabStop = false;
-            // 
-            // pb_NBM
-            // 
-            this.pb_NBM.Image = ((System.Drawing.Image)(resources.GetObject("pb_NBM.Image")));
-            this.pb_NBM.Location = new System.Drawing.Point(21, 7);
-            this.pb_NBM.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_NBM.Name = "pb_NBM";
-            this.pb_NBM.Size = new System.Drawing.Size(167, 90);
-            this.pb_NBM.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_NBM.TabIndex = 120;
-            this.pb_NBM.TabStop = false;
-            // 
-            // pb_L
-            // 
-            this.pb_L.Image = ((System.Drawing.Image)(resources.GetObject("pb_L.Image")));
-            this.pb_L.Location = new System.Drawing.Point(23, 7);
-            this.pb_L.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_L.Name = "pb_L";
-            this.pb_L.Size = new System.Drawing.Size(167, 90);
-            this.pb_L.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_L.TabIndex = 118;
-            this.pb_L.TabStop = false;
-            // 
-            // pb_SB
-            // 
-            this.pb_SB.Image = ((System.Drawing.Image)(resources.GetObject("pb_SB.Image")));
-            this.pb_SB.Location = new System.Drawing.Point(24, 6);
-            this.pb_SB.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_SB.Name = "pb_SB";
-            this.pb_SB.Size = new System.Drawing.Size(167, 90);
-            this.pb_SB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_SB.TabIndex = 101;
-            this.pb_SB.TabStop = false;
-            // 
-            // pb_MP
-            // 
-            this.pb_MP.Image = ((System.Drawing.Image)(resources.GetObject("pb_MP.Image")));
-            this.pb_MP.Location = new System.Drawing.Point(23, 6);
-            this.pb_MP.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_MP.Name = "pb_MP";
-            this.pb_MP.Size = new System.Drawing.Size(167, 90);
-            this.pb_MP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_MP.TabIndex = 94;
-            this.pb_MP.TabStop = false;
-            // 
-            // pb_R
-            // 
-            this.pb_R.Image = ((System.Drawing.Image)(resources.GetObject("pb_R.Image")));
-            this.pb_R.Location = new System.Drawing.Point(23, 6);
-            this.pb_R.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_R.Name = "pb_R";
-            this.pb_R.Size = new System.Drawing.Size(167, 90);
-            this.pb_R.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_R.TabIndex = 94;
-            this.pb_R.TabStop = false;
-            // 
-            // pb_GS
-            // 
-            this.pb_GS.Image = ((System.Drawing.Image)(resources.GetObject("pb_GS.Image")));
-            this.pb_GS.Location = new System.Drawing.Point(24, 4);
-            this.pb_GS.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_GS.Name = "pb_GS";
-            this.pb_GS.Size = new System.Drawing.Size(167, 90);
-            this.pb_GS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_GS.TabIndex = 108;
-            this.pb_GS.TabStop = false;
-            // 
-            // pb_EFR
-            // 
-            this.pb_EFR.Image = ((System.Drawing.Image)(resources.GetObject("pb_EFR.Image")));
-            this.pb_EFR.Location = new System.Drawing.Point(23, 4);
-            this.pb_EFR.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_EFR.Name = "pb_EFR";
-            this.pb_EFR.Size = new System.Drawing.Size(167, 90);
-            this.pb_EFR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_EFR.TabIndex = 101;
-            this.pb_EFR.TabStop = false;
-            // 
-            // pb_FnC
-            // 
-            this.pb_FnC.Image = ((System.Drawing.Image)(resources.GetObject("pb_FnC.Image")));
-            this.pb_FnC.Location = new System.Drawing.Point(23, 4);
-            this.pb_FnC.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_FnC.Name = "pb_FnC";
-            this.pb_FnC.Size = new System.Drawing.Size(167, 90);
-            this.pb_FnC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_FnC.TabIndex = 94;
-            this.pb_FnC.TabStop = false;
-            // 
-            // pb_MS
-            // 
-            this.pb_MS.Image = ((System.Drawing.Image)(resources.GetObject("pb_MS.Image")));
-            this.pb_MS.Location = new System.Drawing.Point(23, 4);
-            this.pb_MS.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_MS.Name = "pb_MS";
-            this.pb_MS.Size = new System.Drawing.Size(167, 90);
-            this.pb_MS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_MS.TabIndex = 63;
-            this.pb_MS.TabStop = false;
-            // 
-            // pb_CS
-            // 
-            this.pb_CS.Image = ((System.Drawing.Image)(resources.GetObject("pb_CS.Image")));
-            this.pb_CS.Location = new System.Drawing.Point(23, 4);
-            this.pb_CS.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_CS.Name = "pb_CS";
-            this.pb_CS.Size = new System.Drawing.Size(167, 90);
-            this.pb_CS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_CS.TabIndex = 72;
-            this.pb_CS.TabStop = false;
-            // 
-            // pb_SC
-            // 
-            this.pb_SC.Image = ((System.Drawing.Image)(resources.GetObject("pb_SC.Image")));
-            this.pb_SC.Location = new System.Drawing.Point(24, 4);
-            this.pb_SC.Margin = new System.Windows.Forms.Padding(4);
-            this.pb_SC.Name = "pb_SC";
-            this.pb_SC.Size = new System.Drawing.Size(167, 90);
-            this.pb_SC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_SC.TabIndex = 94;
-            this.pb_SC.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(512, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(241, 217);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // CustomerHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2928,17 +2891,17 @@
             this.Controls.Add(this.panel_ViewOrders);
             this.Controls.Add(this.panel_ViewProfile);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerHomepage";
             this.Text = "CustomerHomepage";
             this.Load += new System.EventHandler(this.CustomerHomepage_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel_ViewProfile.ResumeLayout(false);
             this.panel_ViewProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_ViewOrders.ResumeLayout(false);
             this.panel_ViewOrders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_ViewOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.panel_ViewReservation.ResumeLayout(false);
             this.panel_ViewReservation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -2946,48 +2909,63 @@
             this.panel_OrderMenu.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_T)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_T)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_NYC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_PC)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_GT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_GT)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_NBM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_BM)).EndInit();
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_L)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_L)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_SB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_SB)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_MP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_MP)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_R)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_R)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_GS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_GS)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_EFR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_EFR)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_FnC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_FnC)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_MS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_MS)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_CS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_CS)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_SC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_SC)).EndInit();
             this.panel_ReservationRequest.ResumeLayout(false);
             this.panel_ReservationRequest.PerformLayout();
@@ -2997,22 +2975,6 @@
             this.panel_Payment.ResumeLayout(false);
             this.panel_Feedback.ResumeLayout(false);
             this.panel_Feedback.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_T)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_NYC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_PC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_GT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_NBM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_L)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_SB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_MP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_R)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_GS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_EFR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_FnC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_MS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_CS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_SC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3055,7 +3017,6 @@
         private System.Windows.Forms.Label lbl_TotalOrder;
         private System.Windows.Forms.Label lbl_OrderID;
         private System.Windows.Forms.DataGridView dataGV_ViewOrder;
-        private System.Windows.Forms.BindingSource orderBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel_ViewReservation;

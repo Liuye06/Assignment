@@ -12,9 +12,14 @@ namespace Assignment
 {
     public partial class ViewCustomerOrder : Form
     {
+        private SidebarManager _sidebarManager;
+
         public ViewCustomerOrder()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
         }
+
+        
     }
 }

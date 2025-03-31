@@ -83,12 +83,6 @@
     <Compile Include="CustomerHomepage.Designer.cs">
       <DependentUpon>CustomerHomepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerMakeAnOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerMakeAnOrder.Designer.cs">
-      <DependentUpon>CustomerMakeAnOrder.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomerMakeAnReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +94,12 @@
     </Compile>
     <Compile Include="CustomerMakePayment.Designer.cs">
       <DependentUpon>CustomerMakePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerMenu.Designer.cs">
+      <DependentUpon>CustomerMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer_EditProfile.cs">
       <SubType>Form</SubType>
@@ -113,6 +113,7 @@
     <Compile Include="Customer_Profile.Designer.cs">
       <DependentUpon>Customer_Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FoodMenuManager.cs" />
     <Compile Include="MakePayment_Orders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,14 +231,14 @@
     <EmbeddedResource Include="CustomerHomepage.resx">
       <DependentUpon>CustomerHomepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerMakeAnOrder.resx">
-      <DependentUpon>CustomerMakeAnOrder.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomerMakeAnReservation.resx">
       <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMakePayment.resx">
       <DependentUpon>CustomerMakePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerMenu.resx">
+      <DependentUpon>CustomerMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_EditProfile.resx">
       <DependentUpon>Customer_EditProfile.cs</DependentUpon>
@@ -358,6 +359,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\default_image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

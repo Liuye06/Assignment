@@ -28,21 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_ViewOrders = new System.Windows.Forms.Panel();
-            this.btn_ReturnViewOrders = new System.Windows.Forms.Button();
-            this.lbl_Req_O = new System.Windows.Forms.Label();
-            this.lbl_RequestOrder = new System.Windows.Forms.Label();
+            this.listB_Items = new System.Windows.Forms.ListBox();
             this.btn_SearchOrder = new System.Windows.Forms.Button();
             this.lbl_SearchOrder = new System.Windows.Forms.Label();
             this.txt_SearchOrder = new System.Windows.Forms.TextBox();
-            this.lbl_PaymentStat_O = new System.Windows.Forms.Label();
             this.lbl_Total_O = new System.Windows.Forms.Label();
             this.lbl_OrderID_O = new System.Windows.Forms.Label();
-            this.listB_Items = new System.Windows.Forms.ListBox();
             this.lbl_Items = new System.Windows.Forms.Label();
-            this.lbl_PaymentStatus = new System.Windows.Forms.Label();
-            this.lbl_TotalOrder = new System.Windows.Forms.Label();
-            this.lbl_OrderID = new System.Windows.Forms.Label();
             this.dataGV_ViewOrder = new System.Windows.Forms.DataGridView();
             this.tableSidebar_CustomerProfile = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
@@ -53,6 +47,10 @@
             this.btnViewReservations = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.ColOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPaymentStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColShowMenu = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel_ViewOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGV_ViewOrder)).BeginInit();
             this.tableSidebar_CustomerProfile.SuspendLayout();
@@ -62,58 +60,33 @@
             // 
             this.panel_ViewOrders.AutoScroll = true;
             this.panel_ViewOrders.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel_ViewOrders.Controls.Add(this.lbl_Req_O);
-            this.panel_ViewOrders.Controls.Add(this.lbl_RequestOrder);
             this.panel_ViewOrders.Controls.Add(this.listB_Items);
             this.panel_ViewOrders.Controls.Add(this.btn_SearchOrder);
+            this.panel_ViewOrders.Controls.Add(this.dataGV_ViewOrder);
             this.panel_ViewOrders.Controls.Add(this.lbl_SearchOrder);
             this.panel_ViewOrders.Controls.Add(this.txt_SearchOrder);
-            this.panel_ViewOrders.Controls.Add(this.lbl_PaymentStat_O);
             this.panel_ViewOrders.Controls.Add(this.lbl_Total_O);
             this.panel_ViewOrders.Controls.Add(this.lbl_OrderID_O);
             this.panel_ViewOrders.Controls.Add(this.lbl_Items);
-            this.panel_ViewOrders.Controls.Add(this.lbl_PaymentStatus);
-            this.panel_ViewOrders.Controls.Add(this.lbl_TotalOrder);
-            this.panel_ViewOrders.Controls.Add(this.lbl_OrderID);
-            this.panel_ViewOrders.Controls.Add(this.dataGV_ViewOrder);
             this.panel_ViewOrders.Location = new System.Drawing.Point(219, 76);
             this.panel_ViewOrders.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewOrders.Name = "panel_ViewOrders";
             this.panel_ViewOrders.Size = new System.Drawing.Size(850, 360);
             this.panel_ViewOrders.TabIndex = 45;
             // 
-            // btn_ReturnViewOrders
+            // listB_Items
             // 
-            this.btn_ReturnViewOrders.Location = new System.Drawing.Point(4, 4);
-            this.btn_ReturnViewOrders.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_ReturnViewOrders.Name = "btn_ReturnViewOrders";
-            this.btn_ReturnViewOrders.Size = new System.Drawing.Size(61, 41);
-            this.btn_ReturnViewOrders.TabIndex = 29;
-            this.btn_ReturnViewOrders.Text = "<";
-            this.btn_ReturnViewOrders.UseVisualStyleBackColor = true;
-            // 
-            // lbl_Req_O
-            // 
-            this.lbl_Req_O.AutoSize = true;
-            this.lbl_Req_O.Location = new System.Drawing.Point(291, 198);
-            this.lbl_Req_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Req_O.Name = "lbl_Req_O";
-            this.lbl_Req_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_Req_O.TabIndex = 28;
-            // 
-            // lbl_RequestOrder
-            // 
-            this.lbl_RequestOrder.AutoSize = true;
-            this.lbl_RequestOrder.Location = new System.Drawing.Point(419, 80);
-            this.lbl_RequestOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_RequestOrder.Name = "lbl_RequestOrder";
-            this.lbl_RequestOrder.Size = new System.Drawing.Size(90, 25);
-            this.lbl_RequestOrder.TabIndex = 27;
-            this.lbl_RequestOrder.Text = "Request:";
+            this.listB_Items.FormattingEnabled = true;
+            this.listB_Items.ItemHeight = 25;
+            this.listB_Items.Location = new System.Drawing.Point(619, 128);
+            this.listB_Items.Margin = new System.Windows.Forms.Padding(4);
+            this.listB_Items.Name = "listB_Items";
+            this.listB_Items.Size = new System.Drawing.Size(203, 179);
+            this.listB_Items.TabIndex = 20;
             // 
             // btn_SearchOrder
             // 
-            this.btn_SearchOrder.Location = new System.Drawing.Point(448, 20);
+            this.btn_SearchOrder.Location = new System.Drawing.Point(546, 22);
             this.btn_SearchOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SearchOrder.Name = "btn_SearchOrder";
             this.btn_SearchOrder.Size = new System.Drawing.Size(276, 35);
@@ -133,20 +106,11 @@
             // 
             // txt_SearchOrder
             // 
-            this.txt_SearchOrder.Location = new System.Drawing.Point(165, 22);
+            this.txt_SearchOrder.Location = new System.Drawing.Point(263, 24);
             this.txt_SearchOrder.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SearchOrder.Name = "txt_SearchOrder";
             this.txt_SearchOrder.Size = new System.Drawing.Size(256, 30);
             this.txt_SearchOrder.TabIndex = 24;
-            // 
-            // lbl_PaymentStat_O
-            // 
-            this.lbl_PaymentStat_O.AutoSize = true;
-            this.lbl_PaymentStat_O.Location = new System.Drawing.Point(299, 165);
-            this.lbl_PaymentStat_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_PaymentStat_O.Name = "lbl_PaymentStat_O";
-            this.lbl_PaymentStat_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_PaymentStat_O.TabIndex = 23;
             // 
             // lbl_Total_O
             // 
@@ -166,64 +130,29 @@
             this.lbl_OrderID_O.Size = new System.Drawing.Size(0, 25);
             this.lbl_OrderID_O.TabIndex = 21;
             // 
-            // listB_Items
-            // 
-            this.listB_Items.FormattingEnabled = true;
-            this.listB_Items.ItemHeight = 25;
-            this.listB_Items.Location = new System.Drawing.Point(638, 198);
-            this.listB_Items.Margin = new System.Windows.Forms.Padding(4);
-            this.listB_Items.Name = "listB_Items";
-            this.listB_Items.Size = new System.Drawing.Size(159, 104);
-            this.listB_Items.TabIndex = 20;
-            // 
             // lbl_Items
             // 
             this.lbl_Items.AutoSize = true;
-            this.lbl_Items.Location = new System.Drawing.Point(616, 120);
+            this.lbl_Items.Location = new System.Drawing.Point(614, 80);
             this.lbl_Items.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Items.Name = "lbl_Items";
             this.lbl_Items.Size = new System.Drawing.Size(65, 25);
             this.lbl_Items.TabIndex = 19;
             this.lbl_Items.Text = "Items:";
             // 
-            // lbl_PaymentStatus
-            // 
-            this.lbl_PaymentStatus.AutoSize = true;
-            this.lbl_PaymentStatus.Location = new System.Drawing.Point(236, 80);
-            this.lbl_PaymentStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_PaymentStatus.Name = "lbl_PaymentStatus";
-            this.lbl_PaymentStatus.Size = new System.Drawing.Size(156, 25);
-            this.lbl_PaymentStatus.TabIndex = 18;
-            this.lbl_PaymentStatus.Text = "Payment Status:";
-            // 
-            // lbl_TotalOrder
-            // 
-            this.lbl_TotalOrder.AutoSize = true;
-            this.lbl_TotalOrder.Location = new System.Drawing.Point(149, 80);
-            this.lbl_TotalOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_TotalOrder.Name = "lbl_TotalOrder";
-            this.lbl_TotalOrder.Size = new System.Drawing.Size(62, 25);
-            this.lbl_TotalOrder.TabIndex = 17;
-            this.lbl_TotalOrder.Text = "Total:";
-            // 
-            // lbl_OrderID
-            // 
-            this.lbl_OrderID.AutoSize = true;
-            this.lbl_OrderID.Location = new System.Drawing.Point(27, 80);
-            this.lbl_OrderID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_OrderID.Name = "lbl_OrderID";
-            this.lbl_OrderID.Size = new System.Drawing.Size(92, 25);
-            this.lbl_OrderID.TabIndex = 16;
-            this.lbl_OrderID.Text = "Order ID:";
-            // 
             // dataGV_ViewOrder
             // 
             this.dataGV_ViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGV_ViewOrder.Location = new System.Drawing.Point(32, 130);
+            this.dataGV_ViewOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColOrderID,
+            this.ColTotal,
+            this.ColPaymentStatus,
+            this.ColShowMenu});
+            this.dataGV_ViewOrder.Location = new System.Drawing.Point(32, 128);
             this.dataGV_ViewOrder.Margin = new System.Windows.Forms.Padding(4);
             this.dataGV_ViewOrder.Name = "dataGV_ViewOrder";
             this.dataGV_ViewOrder.RowHeadersWidth = 51;
-            this.dataGV_ViewOrder.Size = new System.Drawing.Size(524, 185);
+            this.dataGV_ViewOrder.Size = new System.Drawing.Size(579, 179);
             this.dataGV_ViewOrder.TabIndex = 15;
             // 
             // tableSidebar_CustomerProfile
@@ -231,7 +160,6 @@
             this.tableSidebar_CustomerProfile.ColumnCount = 1;
             this.tableSidebar_CustomerProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnLogOut, 0, 8);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btn_ReturnViewOrders, 0, 0);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnFeedback, 0, 7);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakePayment, 0, 6);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeReservation, 0, 5);
@@ -339,6 +267,39 @@
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             // 
+            // ColOrderID
+            // 
+            this.ColOrderID.DataPropertyName = "OrderID";
+            this.ColOrderID.HeaderText = "Order ID";
+            this.ColOrderID.MinimumWidth = 6;
+            this.ColOrderID.Name = "ColOrderID";
+            this.ColOrderID.Width = 120;
+            // 
+            // ColTotal
+            // 
+            this.ColTotal.HeaderText = "Total";
+            this.ColTotal.MinimumWidth = 6;
+            this.ColTotal.Name = "ColTotal";
+            // 
+            // ColPaymentStatus
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.ColPaymentStatus.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ColPaymentStatus.HeaderText = "Payment Status";
+            this.ColPaymentStatus.MinimumWidth = 6;
+            this.ColPaymentStatus.Name = "ColPaymentStatus";
+            this.ColPaymentStatus.Width = 180;
+            // 
+            // ColShowMenu
+            // 
+            this.ColShowMenu.DataPropertyName = "Show";
+            this.ColShowMenu.HeaderText = "Action";
+            this.ColShowMenu.MinimumWidth = 6;
+            this.ColShowMenu.Name = "ColShowMenu";
+            this.ColShowMenu.Text = "Show";
+            this.ColShowMenu.UseColumnTextForButtonValue = true;
+            this.ColShowMenu.Width = 125;
+            // 
             // ViewCustomerOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -359,21 +320,14 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_ViewOrders;
-        private System.Windows.Forms.Label lbl_Req_O;
-        private System.Windows.Forms.Label lbl_RequestOrder;
         private System.Windows.Forms.Button btn_SearchOrder;
         private System.Windows.Forms.Label lbl_SearchOrder;
         private System.Windows.Forms.TextBox txt_SearchOrder;
-        private System.Windows.Forms.Label lbl_PaymentStat_O;
         private System.Windows.Forms.Label lbl_Total_O;
         private System.Windows.Forms.Label lbl_OrderID_O;
         private System.Windows.Forms.ListBox listB_Items;
         private System.Windows.Forms.Label lbl_Items;
-        private System.Windows.Forms.Label lbl_PaymentStatus;
-        private System.Windows.Forms.Label lbl_TotalOrder;
-        private System.Windows.Forms.Label lbl_OrderID;
         private System.Windows.Forms.DataGridView dataGV_ViewOrder;
-        private System.Windows.Forms.Button btn_ReturnViewOrders;
         private System.Windows.Forms.TableLayoutPanel tableSidebar_CustomerProfile;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnFeedback;
@@ -383,5 +337,9 @@
         private System.Windows.Forms.Button btnViewReservations;
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColOrderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPaymentStatus;
+        private System.Windows.Forms.DataGridViewButtonColumn ColShowMenu;
     }
 }

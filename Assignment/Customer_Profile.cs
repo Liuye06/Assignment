@@ -12,9 +12,18 @@ namespace Assignment
 {
     public partial class Customer_Profile : Form
     {
+        private SidebarManager _sidebarManager;
+
         public Customer_Profile()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
         }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

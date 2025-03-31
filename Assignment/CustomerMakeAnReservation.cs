@@ -12,9 +12,19 @@ namespace Assignment
 {
     public partial class CustomerMakeAnReservation : Form
     {
+        private SidebarManager _sidebarManager;
+
         public CustomerMakeAnReservation()
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
         }
+
+        private void btn_SendReq_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
