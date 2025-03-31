@@ -19,10 +19,5 @@ namespace Assignment
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
