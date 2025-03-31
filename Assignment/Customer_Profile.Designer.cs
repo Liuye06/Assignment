@@ -195,6 +195,7 @@
             this.lbl_Username.Size = new System.Drawing.Size(118, 25);
             this.lbl_Username.TabIndex = 33;
             this.lbl_Username.Text = "Username : ";
+            this.lbl_Username.Click += new System.EventHandler(this.lbl_Username_Click);
             // 
             // tableSidebar_CustomerProfile
             // 

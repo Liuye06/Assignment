@@ -25,5 +25,9 @@ namespace Assignment
 
         }
 
+        private void lbl_Username_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

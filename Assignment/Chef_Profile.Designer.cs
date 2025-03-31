@@ -96,7 +96,7 @@
             this.btn_p_back.TabIndex = 10;
             this.btn_p_back.Text = "Back";
             this.btn_p_back.UseVisualStyleBackColor = true;
-            this.btn_p_back.Click += new System.EventHandler(this.button2_Click);
+            this.btn_p_back.Click += new System.EventHandler(this.btn_p_back_Click);
             // 
             // grp_c_information
             // 
@@ -261,6 +261,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Chef_Profile";
             this.Text = "Chef_Profile";
+            this.Load += new System.EventHandler(this.Admin_Load);
             this.grp_c_information.ResumeLayout(false);
             this.grp_c_information.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

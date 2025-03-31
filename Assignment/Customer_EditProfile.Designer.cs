@@ -62,7 +62,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(772, 41);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(241, 217);
             this.pictureBox1.TabIndex = 1;
@@ -141,17 +141,18 @@
             // btnEditUsername
             // 
             this.btnEditUsername.Location = new System.Drawing.Point(172, 99);
-            this.btnEditUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditUsername.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditUsername.Name = "btnEditUsername";
             this.btnEditUsername.Size = new System.Drawing.Size(100, 28);
             this.btnEditUsername.TabIndex = 9;
             this.btnEditUsername.Text = "Edit";
             this.btnEditUsername.UseVisualStyleBackColor = true;
+            this.btnEditUsername.Click += new System.EventHandler(this.btnEditUsername_Click);
             // 
             // btnEditName
             // 
             this.btnEditName.Location = new System.Drawing.Point(423, 99);
-            this.btnEditName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditName.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditName.Name = "btnEditName";
             this.btnEditName.Size = new System.Drawing.Size(100, 28);
             this.btnEditName.TabIndex = 10;
@@ -161,7 +162,7 @@
             // btnEditDOB
             // 
             this.btnEditDOB.Location = new System.Drawing.Point(172, 230);
-            this.btnEditDOB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditDOB.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditDOB.Name = "btnEditDOB";
             this.btnEditDOB.Size = new System.Drawing.Size(100, 28);
             this.btnEditDOB.TabIndex = 11;
@@ -171,7 +172,7 @@
             // btnEditGender
             // 
             this.btnEditGender.Location = new System.Drawing.Point(423, 230);
-            this.btnEditGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditGender.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditGender.Name = "btnEditGender";
             this.btnEditGender.Size = new System.Drawing.Size(100, 28);
             this.btnEditGender.TabIndex = 12;
@@ -181,7 +182,7 @@
             // btnUpload_Pfp
             // 
             this.btnUpload_Pfp.Location = new System.Drawing.Point(844, 265);
-            this.btnUpload_Pfp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpload_Pfp.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload_Pfp.Name = "btnUpload_Pfp";
             this.btnUpload_Pfp.Size = new System.Drawing.Size(100, 46);
             this.btnUpload_Pfp.TabIndex = 13;
@@ -211,7 +212,7 @@
             // btnEditEmail
             // 
             this.btnEditEmail.Location = new System.Drawing.Point(172, 344);
-            this.btnEditEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditEmail.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditEmail.Name = "btnEditEmail";
             this.btnEditEmail.Size = new System.Drawing.Size(100, 28);
             this.btnEditEmail.TabIndex = 16;
@@ -221,7 +222,7 @@
             // btnReturn
             // 
             this.btnReturn.Location = new System.Drawing.Point(16, 15);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(80, 55);
             this.btnReturn.TabIndex = 17;
@@ -251,7 +252,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_Username);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Customer_EditProfile";
             this.Text = "Edit Profile";
             this.Load += new System.EventHandler(this.Customer_Profile_Load);

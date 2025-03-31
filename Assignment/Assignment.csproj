@@ -88,6 +88,11 @@
       <DependentUpon>addStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +194,8 @@
     </Compile>
     <Compile Include="AdminClass.cs" />
     <Compile Include="AdminProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="HallManager.cs" />
     <Compile Include="HallReservationManager.cs" />
     <Compile Include="ImageManager.cs" />
@@ -197,6 +204,7 @@
     </Compile>
     <Compile Include="AdminProfile.Designer.cs">
       <DependentUpon>AdminProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainHallResvReport.Designer.cs">
       <DependentUpon>MainHallResvReport.cs</DependentUpon>
     </Compile>
@@ -254,11 +262,14 @@
       <DependentUpon>Database1DataSet9.xsd</DependentUpon>
     </Compile>
     <Compile Include="DeleteCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chef.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeleteCus.Designer.cs">
       <DependentUpon>DeleteCus.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageHall.Designer.cs">
       <DependentUpon>ManageHall.cs</DependentUpon>
     </Compile>
@@ -269,15 +280,20 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeleteStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chef_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DeleteStaff.Designer.cs">
       <DependentUpon>DeleteStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageMenu.Designer.cs">
       <DependentUpon>ManageMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="EditCus.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Chef_Profile.Designer.cs">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </Compile>
@@ -287,6 +303,7 @@
     </Compile>
     <Compile Include="EditCus.Designer.cs">
       <DependentUpon>EditCus.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerUpdateProfile.Designer.cs">
       <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
     </Compile>
@@ -302,11 +319,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="salesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ViewCustomerOrder.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="salesReport.Designer.cs">
       <DependentUpon>salesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewCustomerOrder.Designer.cs">
       <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
     </Compile>
@@ -335,8 +355,6 @@
     <EmbeddedResource Include="addStaff.resx">
       <DependentUpon>addStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
     <Compile Include="ViewCustomerOrderManager.cs" />
     <Compile Include="ViewCustomerReservation.cs">
       <SubType>Form</SubType>
@@ -344,6 +362,9 @@
     <Compile Include="ViewCustomerReservation.Designer.cs">
       <DependentUpon>ViewCustomerReservation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckoutForm.resx">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,6 +431,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminProfile.resx">
       <DependentUpon>AdminProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageMenu.resx">
       <DependentUpon>ManageMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -421,11 +443,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditCus.resx">
       <DependentUpon>EditCus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chef_Profile.resx">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editStaff.resx">
       <DependentUpon>editStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerUpdateProfile.resx">
       <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,6 +474,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view_CusFeedback.resx">
       <DependentUpon>view_CusFeedback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewCustomerOrder.resx">
       <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
     </EmbeddedResource>

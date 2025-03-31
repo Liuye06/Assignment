@@ -66,7 +66,7 @@ namespace Assignment
 
         private void btn_Home_Click(object sender, EventArgs e)
         {
-            Admin btn_Home = new Admin();
+            Chef_Profile btn_Home = new Admin();
             btn_Home.Show();
         }
     }
