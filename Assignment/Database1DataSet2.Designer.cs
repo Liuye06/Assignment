@@ -1010,7 +1010,7 @@ SELECT User_ID, Email, Real_Name, DOB, Gender, Username, Password, Profile_Pic, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
