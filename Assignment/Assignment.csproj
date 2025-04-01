@@ -142,6 +142,9 @@
     <Compile Include="Customer_Profile.Designer.cs">
       <DependentUpon>Customer_Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database1DataSet.cs">
+      <DependentUpon>Database1DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FoodMenuManager.cs" />
     <Compile Include="MakePayment_Reservations.cs">
       <SubType>Form</SubType>

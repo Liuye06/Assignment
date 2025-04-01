@@ -11,7 +11,7 @@ namespace Assignment
 {
     public class AdminClass
     {
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
+        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
         public static bool DeleteUser(string userId, DataGridView dataGridView = null)
         {
@@ -256,7 +256,7 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Feedback_ID, Order_ID, Feedback FROM [Table]";
+                    string query = "SELECT Feedback_ID, Order_ID, Feedback FROM [Feedback]";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {

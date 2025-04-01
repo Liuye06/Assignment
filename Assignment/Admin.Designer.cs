@@ -63,6 +63,7 @@
             this.button2.Text = "Update Profile";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.UseWaitCursor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_UpCustomer
             // 
@@ -77,6 +78,7 @@
             this.btn_UpCustomer.Text = "Update Customer";
             this.btn_UpCustomer.UseVisualStyleBackColor = true;
             this.btn_UpCustomer.UseWaitCursor = true;
+            this.btn_UpCustomer.Click += new System.EventHandler(this.btn_UpCustomer_Click_1);
             // 
             // btn_UpStaff
             // 
@@ -91,6 +93,7 @@
             this.btn_UpStaff.Text = "Update Staff";
             this.btn_UpStaff.UseVisualStyleBackColor = true;
             this.btn_UpStaff.UseWaitCursor = true;
+            this.btn_UpStaff.Click += new System.EventHandler(this.btn_UpStaff_Click);
             // 
             // btn_Feedback
             // 
@@ -105,6 +108,7 @@
             this.btn_Feedback.Text = "Feedback";
             this.btn_Feedback.UseVisualStyleBackColor = true;
             this.btn_Feedback.UseWaitCursor = true;
+            this.btn_Feedback.Click += new System.EventHandler(this.btn_Feedback_Click_1);
             // 
             // btn_SalesReport
             // 
@@ -119,6 +123,7 @@
             this.btn_SalesReport.Text = "Sales Report";
             this.btn_SalesReport.UseVisualStyleBackColor = true;
             this.btn_SalesReport.UseWaitCursor = true;
+            this.btn_SalesReport.Click += new System.EventHandler(this.btn_SalesReport_Click_1);
             // 
             // pictureBox1
             // 
@@ -163,6 +168,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Admin";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.Admin_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

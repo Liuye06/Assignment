@@ -116,5 +116,10 @@ namespace Assignment
             txt_EditCus.Clear();
             this.Close(); // Close the form
         }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

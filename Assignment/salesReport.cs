@@ -19,16 +19,36 @@ namespace Assignment
         }
         private void salesReport_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database1DataSet9.Payment' table. You can move, or remove it, as needed.
-            this.paymentTableAdapter2.Fill(this.database1DataSet9.Payment);
+            string connectionString = "Data Source=DESKTOP-NV6DCAO;Initial Catalog=DATABASE1;User Id=sa;Password=peb109318051@APU";
+            string query = "SELECT Payment_ID, Amount, Order_ID, Reservation_ID, Status FROM Payment";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    // Debugging: Print values to see if Order_ID and Status exist
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Console.WriteLine($"Order_ID: {row["Order_ID"]}, Status: {row["Status"]}");
+                    }
+
+                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
             // get Menu Item data
             comboBox2.DataSource = AdminClass.GetMenuItems();
-
-            // get the month data
             comboBox1.DataSource = AdminClass.GetPaymentMonths();
-
-            // initialize Payment data
-            dataGridView1.DataSource = AdminClass.GetInitialPayments();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,6 +68,11 @@ namespace Assignment
             string selectedMonth = comboBox1.SelectedItem.ToString();
 
             dataGridView1.DataSource = AdminClass.SearchPayments(selectedItem, selectedMonth);
+        }
+
+        private void lbl_salesR_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
