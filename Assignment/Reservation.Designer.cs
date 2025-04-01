@@ -41,12 +41,9 @@
             this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet2 = new Assignment.Database1DataSet2();
-            this.reservationTableAdapter = new Assignment.Database1DataSet2TableAdapters.ReservationTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -162,16 +159,12 @@
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
-            this.reservationBindingSource.DataSource = this.database1DataSet2;
             // 
             // database1DataSet2
             // 
-            this.database1DataSet2.DataSetName = "Database1DataSet2";
-            this.database1DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reservationTableAdapter
             // 
-            this.reservationTableAdapter.ClearBeforeFill = true;
             // 
             // Reservation
             // 
@@ -185,7 +178,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,9 +190,7 @@
         private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Database1DataSet2 database1DataSet2;
         private System.Windows.Forms.BindingSource reservationBindingSource;
-        private Database1DataSet2TableAdapters.ReservationTableAdapter reservationTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hallIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;

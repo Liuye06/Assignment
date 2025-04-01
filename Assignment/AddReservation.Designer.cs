@@ -39,23 +39,14 @@
             this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pricePDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hallBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet8 = new Assignment.Database1DataSet8();
             this.rRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet6 = new Assignment.Database1DataSet6();
-            this.database1DataSet4 = new Assignment.Database1DataSet4();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reservationTableAdapter = new Assignment.Database1DataSet4TableAdapters.ReservationTableAdapter();
             this.btn_Cancel = new System.Windows.Forms.Button();
-            this.r_RequestTableAdapter = new Assignment.Database1DataSet6TableAdapters.R_RequestTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.hallTableAdapter = new Assignment.Database1DataSet8TableAdapters.HallTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,36 +140,26 @@
             // hallBindingSource
             // 
             this.hallBindingSource.DataMember = "Hall";
-            this.hallBindingSource.DataSource = this.database1DataSet8;
             // 
             // database1DataSet8
             // 
-            this.database1DataSet8.DataSetName = "Database1DataSet8";
-            this.database1DataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rRequestBindingSource
             // 
             this.rRequestBindingSource.DataMember = "R_Request";
-            this.rRequestBindingSource.DataSource = this.database1DataSet6;
             // 
             // database1DataSet6
             // 
-            this.database1DataSet6.DataSetName = "Database1DataSet6";
-            this.database1DataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // database1DataSet4
             // 
-            this.database1DataSet4.DataSetName = "Database1DataSet4";
-            this.database1DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
-            this.reservationBindingSource.DataSource = this.database1DataSet4;
             // 
             // reservationTableAdapter
             // 
-            this.reservationTableAdapter.ClearBeforeFill = true;
             // 
             // btn_Cancel
             // 
@@ -192,7 +173,6 @@
             // 
             // r_RequestTableAdapter
             // 
-            this.r_RequestTableAdapter.ClearBeforeFill = true;
             // 
             // listBox1
             // 
@@ -214,7 +194,6 @@
             // 
             // hallTableAdapter
             // 
-            this.hallTableAdapter.ClearBeforeFill = true;
             // 
             // AddReservation
             // 
@@ -234,10 +213,7 @@
             this.Load += new System.EventHandler(this.AddReservation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hallBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -250,18 +226,12 @@
         private System.Windows.Forms.Label lbl_HallID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Database1DataSet4 database1DataSet4;
         private System.Windows.Forms.BindingSource reservationBindingSource;
-        private Database1DataSet4TableAdapters.ReservationTableAdapter reservationTableAdapter;
         private System.Windows.Forms.Button btn_Cancel;
-        private Database1DataSet6 database1DataSet6;
         private System.Windows.Forms.BindingSource rRequestBindingSource;
-        private Database1DataSet6TableAdapters.R_RequestTableAdapter r_RequestTableAdapter;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
-        private Database1DataSet8 database1DataSet8;
         private System.Windows.Forms.BindingSource hallBindingSource;
-        private Database1DataSet8TableAdapters.HallTableAdapter hallTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn hallIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hallNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;

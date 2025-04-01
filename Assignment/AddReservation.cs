@@ -22,11 +22,8 @@ namespace Assignment
         private void AddReservation_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'database1DataSet8.Hall' table. You can move, or remove it, as needed.
-            this.hallTableAdapter.Fill(this.database1DataSet8.Hall);
             // TODO: This line of code loads data into the 'database1DataSet6.R_Request' table. You can move, or remove it, as needed.
-            this.r_RequestTableAdapter.Fill(this.database1DataSet6.R_Request);
             // TODO: This line of code loads data into the 'database1DataSet4.Reservation' table. You can move, or remove it, as needed.
-            this.reservationTableAdapter.Fill(this.database1DataSet4.Reservation);
         }
         private void LoadAvailableHalls()
         {

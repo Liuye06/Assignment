@@ -36,13 +36,10 @@
             this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet5 = new Assignment.Database1DataSet5();
-            this.reservationTableAdapter = new Assignment.Database1DataSet5TableAdapters.ReservationTableAdapter();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btn_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -107,16 +104,12 @@
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
-            this.reservationBindingSource.DataSource = this.database1DataSet5;
             // 
             // database1DataSet5
             // 
-            this.database1DataSet5.DataSetName = "Database1DataSet5";
-            this.database1DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reservationTableAdapter
             // 
-            this.reservationTableAdapter.ClearBeforeFill = true;
             // 
             // listBox1
             // 
@@ -148,7 +141,6 @@
             this.Text = "DeleteReservation";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,9 +148,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Database1DataSet5 database1DataSet5;
         private System.Windows.Forms.BindingSource reservationBindingSource;
-        private Database1DataSet5TableAdapters.ReservationTableAdapter reservationTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hallIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
