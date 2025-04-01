@@ -6057,7 +6057,7 @@ SELECT CIC_ID, Order_ID, User_ID FROM Chef_InCharge WHERE (CIC_ID = @CIC_ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6370,7 +6370,7 @@ SELECT Hall_ID, Hall_Name, Capacity, Price_P_Day FROM Hall WHERE (Hall_ID = @Hal
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6712,7 +6712,7 @@ SELECT Item_Id, Item, Price, Category, Image FROM Menu WHERE (Item_Id = @Item_Id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7091,7 +7091,7 @@ SELECT MS_ID, Item_ID, Stock_ID FROM Menu_Stock WHERE (MS_ID = @MS_ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7399,7 +7399,7 @@ SELECT MS_ID, Item_ID, Stock_ID FROM Menu_Stock WHERE (MS_ID = @MS_ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7745,7 +7745,7 @@ SELECT Payment_ID, Payment_date, Amount, Order_ID, Reservation_ID, Status FROM P
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8184,7 +8184,7 @@ SELECT R_Req_ID, User_ID, Request, Function, Head_Count, Start_Date, End_Date, R
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8611,7 +8611,7 @@ SELECT Request_ID, Item_ID, Order_ID, Request, DateTime, Quantity FROM Request W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8951,7 +8951,7 @@ SELECT Reservation_ID, Hall_ID, User_ID, R_Req_ID, Status FROM Reservation WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9285,7 +9285,7 @@ SELECT Reservation_ID, Hall_ID, User_ID, R_Req_ID, Status FROM Reservation WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9625,7 +9625,7 @@ SELECT User_ID, Email, Real_Name, DOB, Gender, Username, Password, Profile_Pic, 
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

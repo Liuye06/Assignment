@@ -12,9 +12,12 @@ namespace Assignment
 {
     public partial class CustomerHomepage : Form
     {
-        public CustomerHomepage()
+        private int currentUserID; // Store the userID
+
+        public CustomerHomepage(int userID)
         {
             InitializeComponent();
+            currentUserID = userID; // Store the userID
         }
 
         private void button1_Click(object sender, EventArgs e)

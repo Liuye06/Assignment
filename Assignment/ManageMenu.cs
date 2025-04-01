@@ -18,12 +18,14 @@ namespace Assignment
     {
         private SidebarManager _sidebarManager;
         private BindingSource bindingSource = new BindingSource();
+        private int currentUserID; // Store the userID
 
 
-        public MainManageMenu()
+        public MainManageMenu(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
+            currentUserID = userID; // Store the userID
         }
 
         private void MainManageMenu_Load(object sender, EventArgs e)
@@ -60,7 +62,7 @@ namespace Assignment
 
         private void btnAddMenu_Click(object sender, EventArgs e)
         {
-            AddNewMenuItem form = new AddNewMenuItem();
+            AddNewMenuItem form = new AddNewMenuItem(currentUserID);
 
             if (form.ShowDialog() == DialogResult.OK) // Wait until form is closed
             {
@@ -133,7 +135,7 @@ namespace Assignment
         {
             // Ensure the SidebarManager is passed
             SidebarManager sidebarManager = new SidebarManager(this);
-            EditMenuItemForm editForm = new EditMenuItemForm(menuItem, sidebarManager);
+            EditMenuItemForm editForm = new EditMenuItemForm(menuItem, sidebarManager, currentUserID);
 
             if (editForm.ShowDialog() == DialogResult.OK)
             {
@@ -164,22 +166,22 @@ namespace Assignment
 
         private void btnMMenu_MMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageMenu());
+            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
         }
 
         private void btnMHall_MMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageHall());
+            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
         }
 
         private void btn_HRReport_MMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainHallResvReport());
+            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
         }
 
         private void btnUProfile_MMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
     }
 }

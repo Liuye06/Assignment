@@ -20,11 +20,19 @@ namespace Assignment
         {
             if (_currentForm != null && !_currentForm.IsDisposed)
             {
-                _currentForm.Hide(); // Hide the current form instead of closing it
+                _currentForm.Hide();  // Hide instead of closing
             }
 
-            _currentForm = newForm; // Set new form as the active form
-            _currentForm.FormClosed += (s, e) => Application.Exit(); // Ensure app exits when the last form is closed
+            _currentForm = newForm;
+
+            _currentForm.FormClosed += (s, e) =>
+            {
+                if (Application.OpenForms.Count == 0) // Prevent closing app when switching forms
+                {
+                    Application.Exit();
+                }
+            };
+
             _currentForm.Show();
         }
     }

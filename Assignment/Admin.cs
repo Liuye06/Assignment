@@ -12,12 +12,12 @@ namespace Assignment
 {
     public partial class Admin : Form
     {
-        private string currentUsername; // Store the username
+        private int currentUserID; // Store the userID
 
-        public Admin(string username)
+        public Admin(int userID)
         {
             InitializeComponent();
-            currentUsername = username;
+            currentUserID = userID; // Store the userID
         }
 
         private void button1_Click(object sender, EventArgs e)

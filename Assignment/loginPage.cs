@@ -17,34 +17,20 @@ namespace Assignment
             InitializeComponent();
         }
 
-        private void loginPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-   
 
         private void button1_Click(object sender, EventArgs e)
         {
             User obj1 = new User(txtUsername.Text, txtPassword.Text);
-            string result = obj1.login(txtUsername.Text);
+            string result = obj1.Login(this);  // Pass the current login form to Login() method
 
             if (result != null)
             {
                 MessageBox.Show(result, "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                this.Hide();  // Hide login page after successful login
-            }
 
+            // Clear the textboxes after the login attempt
             txtUsername.Clear();
             txtPassword.Clear();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

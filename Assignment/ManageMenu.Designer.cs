@@ -208,6 +208,7 @@
             // 
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Items.AddRange(new object[] {
+            "All",
             "Appetizer",
             "Main Dish",
             "Side ",

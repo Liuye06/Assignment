@@ -955,7 +955,7 @@ SELECT Payment_ID, Payment_date, Amount, Order_ID, Reservation_ID, Status FROM P
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
             this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
-            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.Database1ConnectionString;
+            this._connection.ConnectionString = global::Assignment.Properties.Settings.Default.AssignmentdbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

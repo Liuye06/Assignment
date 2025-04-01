@@ -15,11 +15,13 @@ namespace Assignment
     public partial class AddNewHall : Form
     {
         private SidebarManager _sidebarManager;
+        private int currentUserID; // Store the userID
 
-        public AddNewHall()
+        public AddNewHall(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
+            currentUserID = userID; // Store the userID
         }
 
         private void btnAddNewHall_Click(object sender, EventArgs e)
@@ -68,22 +70,22 @@ namespace Assignment
 
         private void btnMMenu_AddNewHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageMenu());
+            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
         }
 
         private void btnMHall_AddNewHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageHall());
+            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
         }
 
         private void btnHRReport_AddNewHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainHallResvReport());
+            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
         }
 
         private void btnUProfile_AddNewHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
     }
 }

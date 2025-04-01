@@ -13,17 +13,17 @@ namespace Assignment
     public partial class CustomersOrder: Form
     {
         private SidebarManager _sidebarManager;
-        private int chefID; // Current logged-in chef
+        private int currentUserID; // Store the userID
         private BindingSource bindingSourceOrders;
 
-        public CustomersOrder(int loggedInChefID=6)
+        public CustomersOrder(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
-            chefID = loggedInChefID;
             bindingSourceOrders = new BindingSource();
             LoadOrders();
             dgvChefCusOrder.CellClick += dgvChefCusOrder_CellContentClick;
+            currentUserID = userID; // Store the userID
         }
 
         private void LoadOrders()
@@ -104,7 +104,7 @@ namespace Assignment
                 return;
             }
 
-            bool success = OrderManager.UpdateOrderStatus(orderID, newStatus, chefID);
+            bool success = OrderManager.UpdateOrderStatus(orderID, newStatus, currentUserID);
             if (success)
             {
                 MessageBox.Show("Order status updated successfully!");
@@ -176,12 +176,12 @@ namespace Assignment
 
         private void btninventory_ChefCustomerOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Chef());
+            _sidebarManager.NavigateTo(new Chef(currentUserID));
         }
 
         private void btnCusOrder_ChefCustomerOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomersOrder());
+            _sidebarManager.NavigateTo(new CustomersOrder(currentUserID));
         }
 
         private void btnChefProfile_ChefCustomerOrder_Click(object sender, EventArgs e)

@@ -14,11 +14,13 @@ namespace Assignment
     {
         private SidebarManager _sidebarManager;
         private BindingSource bindingSource = new BindingSource();
+        private int currentUserID; // Store the userID
 
-        public Chef()
+        public Chef(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
+            currentUserID = userID; // Store the userID
         }
 
 
@@ -65,7 +67,7 @@ namespace Assignment
         {
             // Ensure the SidebarManager is passed
             SidebarManager sidebarManager = new SidebarManager(this);
-            EditChefIngredient editForm = new EditChefIngredient(ingredient, sidebarManager);
+            EditChefIngredient editForm = new EditChefIngredient(ingredient, sidebarManager, currentUserID);
 
             if (editForm.ShowDialog() == DialogResult.OK)
             {
@@ -94,7 +96,7 @@ namespace Assignment
         }
         private void btnAddNewIngredient_Click(object sender, EventArgs e)
         {
-            AddChefIngredient form = new AddChefIngredient();
+            AddChefIngredient form = new AddChefIngredient(currentUserID);
 
             if (form.ShowDialog() == DialogResult.OK) // Wait until form is closed
             {
@@ -124,12 +126,12 @@ namespace Assignment
 
         private void btn_inventory_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Chef());
+            _sidebarManager.NavigateTo(new Chef(currentUserID));
         }
 
         private void btn_CusOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomersOrder());
+            _sidebarManager.NavigateTo(new CustomersOrder(currentUserID));
         }
 
         private void btn_ChefProfile_Click(object sender, EventArgs e)

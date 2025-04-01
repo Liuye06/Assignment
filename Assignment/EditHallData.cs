@@ -14,13 +14,15 @@ namespace Assignment
     {
         private string originalHallData;
         private SidebarManager _sidebarManager;
+        private int currentUserID; // Store the userID
 
-        public EditHallData(string hallData, SidebarManager sidebarManager)
+        public EditHallData(string hallData, SidebarManager sidebarManager, int userID)
         {
             InitializeComponent();
             originalHallData = hallData;
             LoadHallDataDetails(hallData);
             _sidebarManager = sidebarManager;
+            currentUserID = userID; // Store the userID
         }
 
 
@@ -79,22 +81,22 @@ namespace Assignment
 
         private void btnMMenu_EditHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageMenu());
+            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
         }
 
         private void btnMHall_EditHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageHall());
+            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
         }
 
         private void btnHRReport_EditHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainHallResvReport());
+            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
         }
 
         private void btnUProfile_EditHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
     }
 }

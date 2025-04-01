@@ -17,11 +17,13 @@ namespace Assignment
     public partial class AddNewMenuItem : Form
     {
         private SidebarManager _sidebarManager;
+        private int currentUserID; // Store the userID
 
-        public AddNewMenuItem()
+        public AddNewMenuItem(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
+            currentUserID = userID; // Store the userID
         }
 
         private void btnBrowseImageMenu_Click(object sender, EventArgs e)
@@ -72,22 +74,22 @@ namespace Assignment
 
         private void btnMMenu_AddMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageMenu());
+            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
         }
 
         private void btnMHall_AddMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageHall());
+            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
         }
 
         private void btnMRReport_AddMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainHallResvReport());
+            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
         }
 
         private void btnUProfile_AddMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
 
         private void btnCancelMenu_Click(object sender, EventArgs e)

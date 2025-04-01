@@ -17,13 +17,15 @@ namespace Assignment
     {
         private string originalMenuItem;
         private SidebarManager _sidebarManager;
+        private int currentUserID; // Store the userID
 
-        public EditMenuItemForm(string menuItem, SidebarManager sidebarManager)
+        public EditMenuItemForm(string menuItem, SidebarManager sidebarManager, int userID)
         {
             InitializeComponent();
             originalMenuItem = menuItem;
             LoadMenuItemDetails(menuItem);
             _sidebarManager =  sidebarManager;
+            currentUserID = userID; // Store the userID
         }
 
         private void LoadMenuItemDetails(string menuItem)
@@ -100,22 +102,22 @@ namespace Assignment
 
         private void btnMMenu_EditMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageMenu());
+            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
         }
 
         private void btnMHall_EditMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageHall());
+            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
         }
 
         private void btn_HRReport_EditMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainHallResvReport());
+            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
         }
 
         private void btnUProfile_EditMenu_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
     }
 }

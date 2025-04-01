@@ -14,13 +14,15 @@ namespace Assignment
     {
         private string originalIngredient;
         private SidebarManager _sidebarManager;
+        private int currentUserID; // Store the userID
 
-        public EditChefIngredient(string ingredient, SidebarManager sidebarManager)
+        public EditChefIngredient(string ingredient, SidebarManager sidebarManager, int userID)
         {
             InitializeComponent();
             originalIngredient = ingredient;
             LoadChefDataDetails(ingredient);
             _sidebarManager = sidebarManager;
+            currentUserID = userID; // Store the userID
         }
 
 
@@ -70,12 +72,12 @@ namespace Assignment
 
         private void btn_ECinventory_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Chef());
+            _sidebarManager.NavigateTo(new Chef(currentUserID));
         }
 
         private void btn_ECCusOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomersOrder());
+            _sidebarManager.NavigateTo(new CustomersOrder(currentUserID));
         }
 
         private void btn_ECChefProfile_Click(object sender, EventArgs e)

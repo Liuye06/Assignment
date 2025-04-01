@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace Assignment
 {
@@ -19,9 +20,9 @@ namespace Assignment
             this.password = password;
         }
 
-        public string Login()
+        public string Login(Form loginForm)
         {
-            string status = "Incorrect username/password"; // Default message
+            string status = null;
             string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -29,40 +30,49 @@ namespace Assignment
                 try
                 {
                     conn.Open();
-                    string query = "SELECT Role FROM [User] WHERE Username = @a AND Password = @b";
 
+                    // Check if the user exists
+                    string query = "SELECT User_ID, Role FROM [User] WHERE Username = @a AND Password = @b";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@a", username);
                         cmd.Parameters.AddWithValue("@b", password);
 
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
                         {
-                            string userRole = result.ToString().ToLower(); // Normalize case
-                            status = "Success";
+                            int userID = reader.GetInt32(reader.GetOrdinal("User_ID"));
+                            string userRole = reader.GetString(reader.GetOrdinal("Role"));
 
-                            // Open the correct form based on role
-                            if (userRole == "admin")
+                            Form newForm = null;
+
+                            // Open different forms based on role
+                            if (userRole.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                                newForm = new Admin(userID);
+                            else if (userRole.Equals("chef", StringComparison.OrdinalIgnoreCase))
+                                newForm = new Chef(userID);
+                            else if (userRole.Equals("manager", StringComparison.OrdinalIgnoreCase))
+                                newForm = new MainManageMenu(userID);
+                            else if (userRole.Equals("customer", StringComparison.OrdinalIgnoreCase))
+                                newForm = new CustomerHomepage(userID);
+
+                            if (newForm != null)
                             {
-                                Admin adminForm = new Admin(username);
-                                adminForm.Show();
+                                newForm.Show();  // ✅ Use Show() instead of ShowDialog()
+                                loginForm.Hide(); // ✅ Hide instead of closing the login form
                             }
-                            else if (userRole == "customer")
-                            {
-                                CustomerHomepage customerForm = new CustomerHomepage(username);
-                                customerForm.Show();
-                            }
+                        }
+                        else
+                        {
+                            status = "Incorrect username/password";
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Database error: " + ex.Message); // Log the error
-                    status = "Database connection error. Please try again.";
+                    status = "Database error: " + ex.Message;
                 }
             }
-
             return status;
         }
     }

@@ -13,31 +13,33 @@ namespace Assignment
     public partial class MainHallResvReport : Form
     {
         private SidebarManager _sidebarManager;
+        private int currentUserID; // Store the userID
 
-        public MainHallResvReport()
+        public MainHallResvReport(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
+            currentUserID = userID; // Store the userID
         }
 
         private void btnMMenu_HRReport_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageMenu());
+            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
         }
 
         private void btnMHall_HRReport_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageHall());
+            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
         }
 
         private void btnHRReport_HRReport_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainHallResvReport());
+            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
         }
 
         private void btnUProfile_HRReport_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
 
         private void btnSearchReport_Click(object sender, EventArgs e)

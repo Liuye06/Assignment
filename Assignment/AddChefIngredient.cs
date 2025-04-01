@@ -13,11 +13,13 @@ namespace Assignment
     public partial class AddChefIngredient : Form
     {
         private SidebarManager _sidebarManager;
+        private int currentUserID; // Store the userID
 
-        public AddChefIngredient()
+        public AddChefIngredient(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
+            currentUserID = userID; // Store the userID
         }
 
         private void btnAddNewIngredient_Click(object sender, EventArgs e)
@@ -59,12 +61,12 @@ namespace Assignment
 
         private void btn_ACinventory_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Chef());
+            _sidebarManager.NavigateTo(new Chef(currentUserID));
         }
 
         private void btn_ACCusOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomersOrder());
+            _sidebarManager.NavigateTo(new CustomersOrder(currentUserID));
         }
 
         private void btn_ACChefProfile_Click(object sender, EventArgs e)

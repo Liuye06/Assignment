@@ -16,12 +16,14 @@ namespace Assignment
     {
         private SidebarManager _sidebarManager;
         private BindingSource bindingSource = new BindingSource();
+        private int currentUserID; // Store the userID
 
 
-        public MainManageHall()
+        public MainManageHall(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
+            currentUserID = userID; // Store the userID
         }
 
 
@@ -68,7 +70,7 @@ namespace Assignment
         {
             // Ensure the SidebarManager is passed
             SidebarManager sidebarManager = new SidebarManager(this);
-            EditHallData editForm = new EditHallData(hallName, sidebarManager);
+            EditHallData editForm = new EditHallData(hallName, sidebarManager, currentUserID);
 
             if (editForm.ShowDialog() == DialogResult.OK)
             {
@@ -98,7 +100,7 @@ namespace Assignment
 
         private void btnAddNewHall_Click(object sender, EventArgs e)
         {
-            AddNewHall form = new AddNewHall();
+            AddNewHall form = new AddNewHall(currentUserID);
 
             if (form.ShowDialog() == DialogResult.OK) // Wait until form is closed
             {
@@ -131,22 +133,22 @@ namespace Assignment
 
         private void btnMMenu_MHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageMenu());
+            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
         }
 
         private void btnMHall_MHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageHall());
+            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
         }
 
         private void btnHRReport_MHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainHallResvReport());
+            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
         }
 
         private void btnUProfile_MHall_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ManagerProfile());
+            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
     }
 }
