@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class btnLogin
+    partial class loginPage
     {
         /// <summary>
         /// Required designer variable.
@@ -54,6 +54,7 @@
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -97,7 +98,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnLogin
+            // loginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +110,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "btnLogin";
+            this.Name = "loginPage";
             this.Text = "loginPage";
             this.Load += new System.EventHandler(this.loginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

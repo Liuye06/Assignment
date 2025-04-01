@@ -12,15 +12,16 @@ namespace Assignment
 {
     public partial class Admin : Form
     {
-        public Admin()
+        private string currentUsername; // Store the username
+
+        public Admin(string username)
         {
             InitializeComponent();
+            currentUsername = username;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admin btnAdmin = new Admin();
-            btnAdmin.Show();
         }
         
 

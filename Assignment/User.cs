@@ -10,54 +10,61 @@ namespace Assignment
 {
     internal class User
     {
-        private string text1;
-        private string text2;
+        private string username;
+        private string password;
 
-        public User(string text1, string text2)
+        public User(string username, string password)
         {
-            this.text1 = text1;
-            this.text2 = text2;
+            this.username = username;
+            this.password = password;
         }
 
-        public object ConfigurationManager { get; private set; }    }
-
-    public string login(string un)
+        public string Login()
         {
-            string status = null;
+            string status = "Incorrect username/password"; // Default message
+            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
-            string connectionString = ConfigurationManager.ConnectionStrings["MyCS"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(connectionString))
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("select count(*) from User where username=@a and password = @b", con);
-            cmd.Parameters.AddWithValue("@a", Username);
-            cmd.Parameters.AddWithValue("@b", Password);
-
-            int count = Convert.ToTnt32(cmd.ExecuteScalar());
-            if (count > 0)
             {
-                SqlCommand cmd2 = new SqlCommand("select count(*) from User where username=@a and password = @b", con);
-                cmd2.Parameters.AddWithValue("@a", Username);
-                cmd2.Parameters.AddWithValue("@b", Password);
-
-                string userRole = cmd2.ExecuteScalar().ToString();
-
-                if (userRole.Equals("admin", StringComparison.OrdinalIgnoreCase))
+                try
                 {
-                    Admin a = new Admin(un);
-                    a.ShowDialog();
+                    conn.Open();
+                    string query = "SELECT Role FROM [User] WHERE Username = @a AND Password = @b";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@a", username);
+                        cmd.Parameters.AddWithValue("@b", password);
+
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            string userRole = result.ToString().ToLower(); // Normalize case
+                            status = "Success";
+
+                            // Open the correct form based on role
+                            if (userRole == "admin")
+                            {
+                                Admin adminForm = new Admin(username);
+                                adminForm.Show();
+                            }
+                            else if (userRole == "customer")
+                            {
+                                CustomerHomepage customerForm = new CustomerHomepage(username);
+                                customerForm.Show();
+                            }
+                        }
+                    }
                 }
-                else if (userRole.Equals("customer", StringComparison.OrdinalIgnoreCase))
+                catch (Exception ex)
                 {
-                    C_Homepage s = new C_Homepage(un);
-                    s.ShowDialog();
+                    Console.WriteLine("Database error: " + ex.Message); // Log the error
+                    status = "Database connection error. Please try again.";
                 }
             }
-            else
-                status = "Incorrect username/password";
-            con.Close();
 
             return status;
-
-}
+        }
     }
+}
+

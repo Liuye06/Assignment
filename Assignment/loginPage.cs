@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class btnLogin : Form
+    public partial class loginPage : Form
     {
-        public btnLogin()
+        public loginPage()
         {
             InitializeComponent();
         }
@@ -26,15 +26,25 @@ namespace Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string press;
             User obj1 = new User(txtUsername.Text, txtPassword.Text);
-            press = obj1.login(txtUsername.Text);
-            if (press!= null)
+            string result = obj1.login(txtUsername.Text);
+
+            if (result != null)
             {
-                MessageBox.Show(press);
+                MessageBox.Show(result, "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            txtUsername.Text = String.Empty;
-            txtPassword.Text = String.Empty;
+            else
+            {
+                this.Hide();  // Hide login page after successful login
+            }
+
+            txtUsername.Clear();
+            txtPassword.Clear();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
