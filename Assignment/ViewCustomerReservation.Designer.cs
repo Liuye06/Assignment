@@ -38,27 +38,13 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.panel_ViewReservation = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.lbl_RequestedD_O = new System.Windows.Forms.Label();
-            this.lbl_EndD_O = new System.Windows.Forms.Label();
-            this.lbl_StartD_O = new System.Windows.Forms.Label();
-            this.lbl_RequestedDate = new System.Windows.Forms.Label();
-            this.lbl_EndDate = new System.Windows.Forms.Label();
-            this.lbl_StartDate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbl_SearchReservation = new System.Windows.Forms.Label();
-            this.txt_SearchRequest = new System.Windows.Forms.TextBox();
-            this.lbl_Stat_O = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_ReservationID_O = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbl_ReservationID = new System.Windows.Forms.Label();
+            this.listView_ReservationRequest = new System.Windows.Forms.ListView();
+            this.lbl_Total_O = new System.Windows.Forms.Label();
+            this.lbl_OrderID_O = new System.Windows.Forms.Label();
+            this.lblViewRevRequest = new System.Windows.Forms.Label();
+            this.btnMakeResvPayment = new System.Windows.Forms.Button();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.panel_ViewReservation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_CustomerProfile
@@ -176,201 +162,68 @@
             // panel_ViewReservation
             // 
             this.panel_ViewReservation.AutoScroll = true;
-            this.panel_ViewReservation.BackColor = System.Drawing.SystemColors.Info;
-            this.panel_ViewReservation.Controls.Add(this.dataGridView2);
-            this.panel_ViewReservation.Controls.Add(this.lbl_RequestedD_O);
-            this.panel_ViewReservation.Controls.Add(this.lbl_EndD_O);
-            this.panel_ViewReservation.Controls.Add(this.lbl_StartD_O);
-            this.panel_ViewReservation.Controls.Add(this.lbl_RequestedDate);
-            this.panel_ViewReservation.Controls.Add(this.lbl_EndDate);
-            this.panel_ViewReservation.Controls.Add(this.lbl_StartDate);
-            this.panel_ViewReservation.Controls.Add(this.label1);
-            this.panel_ViewReservation.Controls.Add(this.label2);
-            this.panel_ViewReservation.Controls.Add(this.button1);
-            this.panel_ViewReservation.Controls.Add(this.lbl_SearchReservation);
-            this.panel_ViewReservation.Controls.Add(this.txt_SearchRequest);
-            this.panel_ViewReservation.Controls.Add(this.lbl_Stat_O);
-            this.panel_ViewReservation.Controls.Add(this.label3);
-            this.panel_ViewReservation.Controls.Add(this.lbl_ReservationID_O);
-            this.panel_ViewReservation.Controls.Add(this.label4);
-            this.panel_ViewReservation.Controls.Add(this.label5);
-            this.panel_ViewReservation.Controls.Add(this.lbl_ReservationID);
-            this.panel_ViewReservation.Location = new System.Drawing.Point(219, 81);
+            this.panel_ViewReservation.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel_ViewReservation.Controls.Add(this.btnMakeResvPayment);
+            this.panel_ViewReservation.Controls.Add(this.listView_ReservationRequest);
+            this.panel_ViewReservation.Controls.Add(this.lbl_Total_O);
+            this.panel_ViewReservation.Controls.Add(this.lbl_OrderID_O);
+            this.panel_ViewReservation.Controls.Add(this.lblViewRevRequest);
+            this.panel_ViewReservation.Location = new System.Drawing.Point(219, 80);
             this.panel_ViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewReservation.Name = "panel_ViewReservation";
-            this.panel_ViewReservation.Size = new System.Drawing.Size(850, 359);
+            this.panel_ViewReservation.Size = new System.Drawing.Size(850, 360);
             this.panel_ViewReservation.TabIndex = 46;
             // 
-            // dataGridView2
+            // listView_ReservationRequest
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(30, 130);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(577, 193);
-            this.dataGridView2.TabIndex = 54;
+            this.listView_ReservationRequest.FullRowSelect = true;
+            this.listView_ReservationRequest.GridLines = true;
+            this.listView_ReservationRequest.HideSelection = false;
+            this.listView_ReservationRequest.Location = new System.Drawing.Point(38, 58);
+            this.listView_ReservationRequest.Name = "listView_ReservationRequest";
+            this.listView_ReservationRequest.Size = new System.Drawing.Size(765, 235);
+            this.listView_ReservationRequest.TabIndex = 23;
+            this.listView_ReservationRequest.UseCompatibleStateImageBehavior = false;
+            this.listView_ReservationRequest.View = System.Windows.Forms.View.Details;
+            this.listView_ReservationRequest.SelectedIndexChanged += new System.EventHandler(this.listView_ReservationRequest_SelectedIndexChanged);
             // 
-            // lbl_RequestedD_O
+            // lbl_Total_O
             // 
-            this.lbl_RequestedD_O.AutoSize = true;
-            this.lbl_RequestedD_O.Location = new System.Drawing.Point(672, 234);
-            this.lbl_RequestedD_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_RequestedD_O.Name = "lbl_RequestedD_O";
-            this.lbl_RequestedD_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_RequestedD_O.TabIndex = 53;
+            this.lbl_Total_O.AutoSize = true;
+            this.lbl_Total_O.Location = new System.Drawing.Point(299, 130);
+            this.lbl_Total_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Total_O.Name = "lbl_Total_O";
+            this.lbl_Total_O.Size = new System.Drawing.Size(0, 25);
+            this.lbl_Total_O.TabIndex = 22;
             // 
-            // lbl_EndD_O
+            // lbl_OrderID_O
             // 
-            this.lbl_EndD_O.AutoSize = true;
-            this.lbl_EndD_O.Location = new System.Drawing.Point(672, 200);
-            this.lbl_EndD_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_EndD_O.Name = "lbl_EndD_O";
-            this.lbl_EndD_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_EndD_O.TabIndex = 52;
+            this.lbl_OrderID_O.AutoSize = true;
+            this.lbl_OrderID_O.Location = new System.Drawing.Point(299, 99);
+            this.lbl_OrderID_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_OrderID_O.Name = "lbl_OrderID_O";
+            this.lbl_OrderID_O.Size = new System.Drawing.Size(0, 25);
+            this.lbl_OrderID_O.TabIndex = 21;
             // 
-            // lbl_StartD_O
+            // lblViewRevRequest
             // 
-            this.lbl_StartD_O.AutoSize = true;
-            this.lbl_StartD_O.Location = new System.Drawing.Point(293, 309);
-            this.lbl_StartD_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_StartD_O.Name = "lbl_StartD_O";
-            this.lbl_StartD_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_StartD_O.TabIndex = 51;
+            this.lblViewRevRequest.AutoSize = true;
+            this.lblViewRevRequest.Location = new System.Drawing.Point(33, 18);
+            this.lblViewRevRequest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblViewRevRequest.Name = "lblViewRevRequest";
+            this.lblViewRevRequest.Size = new System.Drawing.Size(337, 25);
+            this.lblViewRevRequest.TabIndex = 19;
+            this.lblViewRevRequest.Text = "Your Reservation Request and Status";
             // 
-            // lbl_RequestedDate
+            // btnMakeResvPayment
             // 
-            this.lbl_RequestedDate.AutoSize = true;
-            this.lbl_RequestedDate.Location = new System.Drawing.Point(645, 108);
-            this.lbl_RequestedDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_RequestedDate.Name = "lbl_RequestedDate";
-            this.lbl_RequestedDate.Size = new System.Drawing.Size(158, 25);
-            this.lbl_RequestedDate.TabIndex = 50;
-            this.lbl_RequestedDate.Text = "Requested Date:";
-            // 
-            // lbl_EndDate
-            // 
-            this.lbl_EndDate.AutoSize = true;
-            this.lbl_EndDate.Location = new System.Drawing.Point(672, 68);
-            this.lbl_EndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_EndDate.Name = "lbl_EndDate";
-            this.lbl_EndDate.Size = new System.Drawing.Size(99, 25);
-            this.lbl_EndDate.TabIndex = 49;
-            this.lbl_EndDate.Text = "End Date:";
-            // 
-            // lbl_StartDate
-            // 
-            this.lbl_StartDate.AutoSize = true;
-            this.lbl_StartDate.Location = new System.Drawing.Point(543, 79);
-            this.lbl_StartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_StartDate.Name = "lbl_StartDate";
-            this.lbl_StartDate.Size = new System.Drawing.Size(105, 25);
-            this.lbl_StartDate.TabIndex = 48;
-            this.lbl_StartDate.Text = "Start Date:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(293, 274);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
-            this.label1.TabIndex = 47;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(421, 79);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 25);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Request:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(527, 17);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(276, 35);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lbl_SearchReservation
-            // 
-            this.lbl_SearchReservation.AutoSize = true;
-            this.lbl_SearchReservation.Location = new System.Drawing.Point(25, 24);
-            this.lbl_SearchReservation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_SearchReservation.Name = "lbl_SearchReservation";
-            this.lbl_SearchReservation.Size = new System.Drawing.Size(183, 25);
-            this.lbl_SearchReservation.TabIndex = 44;
-            this.lbl_SearchReservation.Text = "Search Reservation";
-            // 
-            // txt_SearchRequest
-            // 
-            this.txt_SearchRequest.Location = new System.Drawing.Point(216, 19);
-            this.txt_SearchRequest.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_SearchRequest.Name = "txt_SearchRequest";
-            this.txt_SearchRequest.Size = new System.Drawing.Size(256, 30);
-            this.txt_SearchRequest.TabIndex = 43;
-            // 
-            // lbl_Stat_O
-            // 
-            this.lbl_Stat_O.AutoSize = true;
-            this.lbl_Stat_O.Location = new System.Drawing.Point(293, 241);
-            this.lbl_Stat_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Stat_O.Name = "lbl_Stat_O";
-            this.lbl_Stat_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_Stat_O.TabIndex = 42;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(293, 213);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 25);
-            this.label3.TabIndex = 41;
-            // 
-            // lbl_ReservationID_O
-            // 
-            this.lbl_ReservationID_O.AutoSize = true;
-            this.lbl_ReservationID_O.Location = new System.Drawing.Point(293, 182);
-            this.lbl_ReservationID_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ReservationID_O.Name = "lbl_ReservationID_O";
-            this.lbl_ReservationID_O.Size = new System.Drawing.Size(0, 25);
-            this.lbl_ReservationID_O.TabIndex = 40;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(309, 79);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 25);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Status:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(208, 79);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 25);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Total:";
-            // 
-            // lbl_ReservationID
-            // 
-            this.lbl_ReservationID.AutoSize = true;
-            this.lbl_ReservationID.Location = new System.Drawing.Point(36, 79);
-            this.lbl_ReservationID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_ReservationID.Name = "lbl_ReservationID";
-            this.lbl_ReservationID.Size = new System.Drawing.Size(145, 25);
-            this.lbl_ReservationID.TabIndex = 37;
-            this.lbl_ReservationID.Text = "Reservation ID:";
+            this.btnMakeResvPayment.Location = new System.Drawing.Point(38, 311);
+            this.btnMakeResvPayment.Name = "btnMakeResvPayment";
+            this.btnMakeResvPayment.Size = new System.Drawing.Size(332, 32);
+            this.btnMakeResvPayment.TabIndex = 24;
+            this.btnMakeResvPayment.Text = "Make Payment";
+            this.btnMakeResvPayment.UseVisualStyleBackColor = true;
+            this.btnMakeResvPayment.Click += new System.EventHandler(this.btnMakeResvPayment_Click);
             // 
             // ViewCustomerReservation
             // 
@@ -384,7 +237,6 @@
             this.tableSidebar_CustomerProfile.ResumeLayout(false);
             this.panel_ViewReservation.ResumeLayout(false);
             this.panel_ViewReservation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,23 +253,10 @@
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Panel panel_ViewReservation;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label lbl_RequestedD_O;
-        private System.Windows.Forms.Label lbl_EndD_O;
-        private System.Windows.Forms.Label lbl_StartD_O;
-        private System.Windows.Forms.Label lbl_RequestedDate;
-        private System.Windows.Forms.Label lbl_EndDate;
-        private System.Windows.Forms.Label lbl_StartDate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbl_SearchReservation;
-        private System.Windows.Forms.TextBox txt_SearchRequest;
-        private System.Windows.Forms.Label lbl_Stat_O;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_ReservationID_O;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbl_ReservationID;
+        private System.Windows.Forms.ListView listView_ReservationRequest;
+        private System.Windows.Forms.Label lbl_Total_O;
+        private System.Windows.Forms.Label lbl_OrderID_O;
+        private System.Windows.Forms.Label lblViewRevRequest;
+        private System.Windows.Forms.Button btnMakeResvPayment;
     }
 }

@@ -19,12 +19,13 @@ namespace Assignment
         private List<OrderItem> cartList;
         private int userId;
 
-        public CheckoutForm(List<OrderItem> cart, int userId)
+        public CheckoutForm(List<OrderItem> cart, int userId=7)
         {
             InitializeComponent();
             this.cartList = cart;
             this.userId = userId;
             LoadCartItems();
+
         }
 
         private void LoadCartItems()

@@ -132,10 +132,11 @@ namespace Assignment
                     decimal totalAmount = 0;
 
                     // Insert cart items into Request table
-                    string requestQuery = "INSERT INTO [dbo].[Request] (Item_ID, Order_ID, DateTime, Quantity) VALUES (@ItemID, @OrderID, GETDATE(), @Quantity)";
+                    string requestQuery = "INSERT INTO [dbo].[Request] (User_ID, Item_ID, Order_ID, DateTime, Quantity) VALUES (@UserID, @ItemID, @OrderID, GETDATE(), @Quantity)";
                     foreach (var item in cartList)
                     {
                         SqlCommand requestCmd = new SqlCommand(requestQuery, conn, transaction);
+                        requestCmd.Parameters.AddWithValue("@UserID", userId); // Add User_ID here
                         requestCmd.Parameters.AddWithValue("@ItemID", item.ItemId);
                         requestCmd.Parameters.AddWithValue("@OrderID", orderId);
                         requestCmd.Parameters.AddWithValue("@Quantity", item.Quantity);

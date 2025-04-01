@@ -20,7 +20,7 @@ namespace Assignment
         private SidebarManager _sidebarManager;
         private int currentUserId; // Store logged-in user's ID
 
-        public CustomerMenu(int userId=1)
+        public CustomerMenu(int userId=7)
         {
             InitializeComponent();
             this.currentUserId = userId; // Assign user ID

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel_ViewOrders = new System.Windows.Forms.Panel();
-            this.listB_Items = new System.Windows.Forms.ListBox();
             this.lbl_Total_O = new System.Windows.Forms.Label();
             this.lbl_OrderID_O = new System.Windows.Forms.Label();
             this.lblViewCusOrder = new System.Windows.Forms.Label();
@@ -42,6 +41,11 @@
             this.btnViewReservations = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.listView_OrderHistory = new System.Windows.Forms.ListView();
+            this.ItemName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.OrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel_ViewOrders.SuspendLayout();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +54,7 @@
             // 
             this.panel_ViewOrders.AutoScroll = true;
             this.panel_ViewOrders.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel_ViewOrders.Controls.Add(this.listB_Items);
+            this.panel_ViewOrders.Controls.Add(this.listView_OrderHistory);
             this.panel_ViewOrders.Controls.Add(this.lbl_Total_O);
             this.panel_ViewOrders.Controls.Add(this.lbl_OrderID_O);
             this.panel_ViewOrders.Controls.Add(this.lblViewCusOrder);
@@ -59,17 +63,6 @@
             this.panel_ViewOrders.Name = "panel_ViewOrders";
             this.panel_ViewOrders.Size = new System.Drawing.Size(850, 360);
             this.panel_ViewOrders.TabIndex = 45;
-            // 
-            // listB_Items
-            // 
-            this.listB_Items.FormattingEnabled = true;
-            this.listB_Items.ItemHeight = 25;
-            this.listB_Items.Location = new System.Drawing.Point(38, 64);
-            this.listB_Items.Margin = new System.Windows.Forms.Padding(4);
-            this.listB_Items.Name = "listB_Items";
-            this.listB_Items.Size = new System.Drawing.Size(784, 254);
-            this.listB_Items.TabIndex = 20;
-            this.listB_Items.SelectedIndexChanged += new System.EventHandler(this.listB_Items_SelectedIndexChanged);
             // 
             // lbl_Total_O
             // 
@@ -146,6 +139,7 @@
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
             this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // btnMakePayment
             // 
@@ -156,6 +150,7 @@
             this.btnMakePayment.TabIndex = 5;
             this.btnMakePayment.Text = "Make Payment";
             this.btnMakePayment.UseVisualStyleBackColor = true;
+            this.btnMakePayment.Click += new System.EventHandler(this.btnMakePayment_Click);
             // 
             // btnMakeReservation
             // 
@@ -166,6 +161,7 @@
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation";
             this.btnMakeReservation.UseVisualStyleBackColor = true;
+            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
             // 
             // btnMakeOrder
             // 
@@ -176,6 +172,7 @@
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
             this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // btnViewReservations
             // 
@@ -186,6 +183,7 @@
             this.btnViewReservations.TabIndex = 6;
             this.btnViewReservations.Text = "View Reservations";
             this.btnViewReservations.UseVisualStyleBackColor = true;
+            this.btnViewReservations.Click += new System.EventHandler(this.btnViewReservations_Click);
             // 
             // btnViewOrders
             // 
@@ -198,6 +196,7 @@
             this.btnViewOrders.TabIndex = 4;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
             // btnProfile
             // 
@@ -210,6 +209,47 @@
             this.btnProfile.TabIndex = 9;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // listView_OrderHistory
+            // 
+            this.listView_OrderHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.OrderID,
+            this.ItemName,
+            this.Status,
+            this.TotalPrice});
+            this.listView_OrderHistory.FullRowSelect = true;
+            this.listView_OrderHistory.GridLines = true;
+            this.listView_OrderHistory.HideSelection = false;
+            this.listView_OrderHistory.Location = new System.Drawing.Point(38, 58);
+            this.listView_OrderHistory.Name = "listView_OrderHistory";
+            this.listView_OrderHistory.Size = new System.Drawing.Size(765, 270);
+            this.listView_OrderHistory.TabIndex = 23;
+            this.listView_OrderHistory.UseCompatibleStateImageBehavior = false;
+            this.listView_OrderHistory.View = System.Windows.Forms.View.Details;
+            // 
+            // ItemName
+            // 
+            this.ItemName.Text = "Food Name";
+            this.ItemName.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.Text = "Status";
+            this.Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Status.Width = 100;
+            // 
+            // OrderID
+            // 
+            this.OrderID.Text = "Order ID";
+            this.OrderID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OrderID.Width = 80;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.Text = "Total Price (RM)";
+            this.TotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TotalPrice.Width = 150;
             // 
             // ViewCustomerOrder
             // 
@@ -232,7 +272,6 @@
         private System.Windows.Forms.Panel panel_ViewOrders;
         private System.Windows.Forms.Label lbl_Total_O;
         private System.Windows.Forms.Label lbl_OrderID_O;
-        private System.Windows.Forms.ListBox listB_Items;
         private System.Windows.Forms.Label lblViewCusOrder;
         private System.Windows.Forms.TableLayoutPanel tableSidebar_CustomerProfile;
         private System.Windows.Forms.Button btnLogOut;
@@ -243,5 +282,10 @@
         private System.Windows.Forms.Button btnViewReservations;
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.ListView listView_OrderHistory;
+        private System.Windows.Forms.ColumnHeader OrderID;
+        private System.Windows.Forms.ColumnHeader ItemName;
+        private System.Windows.Forms.ColumnHeader Status;
+        private System.Windows.Forms.ColumnHeader TotalPrice;
     }
 }
