@@ -78,7 +78,7 @@ namespace Assignment
                             int headCount = reader.GetInt32(6);
                             DateTime requestDate = reader.GetDateTime(7);
                             string status = reader.GetString(8);
-                            string hallID = reader.GetString(9);
+                            string hallID = reader.IsDBNull(9) ? "-" : reader.GetInt32(9).ToString();
 
                             reservationList.Add(new ReservationDetails(r_Req_ID, startDate, endDate, totalDays, function, request, headCount, requestDate, status, hallID));
                         }
@@ -110,7 +110,10 @@ namespace Assignment
                             }
 
                             // Insert into Reservation table
-                            string insertReservationQuery = "INSERT INTO Reservation (Hall_ID, User_ID, R_Req_ID, Status) VALUES (@HallID, (SELECT User_ID FROM R_Request WHERE R_Req_ID = @R_Req_ID), @R_Req_ID, 'Approved')";
+                            string insertReservationQuery = @" INSERT INTO Reservation (Hall_ID, User_ID, R_Req_ID, Status) 
+                                                                SELECT @HallID, User_ID, @R_Req_ID, 'Approved' 
+                                                                FROM R_Request 
+                                                                WHERE R_Req_ID = @R_Req_ID";
                             using (SqlCommand cmdInsert = new SqlCommand(insertReservationQuery, conn, transaction))
                             {
                                 cmdInsert.Parameters.AddWithValue("@HallID", hallID);

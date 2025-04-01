@@ -117,11 +117,11 @@
     <Compile Include="CustomerMakeAnReservation.Designer.cs">
       <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerMakePayment.cs">
+    <Compile Include="CustomerPaymentHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerMakePayment.Designer.cs">
-      <DependentUpon>CustomerMakePayment.cs</DependentUpon>
+    <Compile Include="CustomerPaymentHistory.Designer.cs">
+      <DependentUpon>CustomerPaymentHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerMenu.cs">
       <SubType>Form</SubType>
@@ -385,8 +385,8 @@
     <EmbeddedResource Include="CustomerMakeAnReservation.resx">
       <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerMakePayment.resx">
-      <DependentUpon>CustomerMakePayment.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerPaymentHistory.resx">
+      <DependentUpon>CustomerPaymentHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>

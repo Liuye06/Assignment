@@ -36,6 +36,7 @@ namespace Assignment
             listView_ReservationRequest.Items.Clear();
 
             // Add columns
+            listView_ReservationRequest.Columns.Add("Request ID", 80, HorizontalAlignment.Center); // New column for R_Req_ID
             listView_ReservationRequest.Columns.Add("Start Date", 100, HorizontalAlignment.Center);
             listView_ReservationRequest.Columns.Add("End Date", 100, HorizontalAlignment.Center);
             listView_ReservationRequest.Columns.Add("Total Days", 80, HorizontalAlignment.Center);
@@ -44,20 +45,21 @@ namespace Assignment
             listView_ReservationRequest.Columns.Add("Head Count", 80, HorizontalAlignment.Center);
             listView_ReservationRequest.Columns.Add("Request Date", 100, HorizontalAlignment.Center);
             listView_ReservationRequest.Columns.Add("Status", 100, HorizontalAlignment.Center);
+            listView_ReservationRequest.Columns.Add("Hall ID", 80, HorizontalAlignment.Center);
 
             // Get reservations from class
             List<ReservationDetails> reservations = ReservationDetails.GetReservations(userId);
 
             if (reservations.Count == 0)
             {
-                MessageBox.Show("No reservations found!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                return; // Just leave ListView empty instead of showing a message every time.
             }
 
             foreach (var res in reservations)
             {
                 ListViewItem item = new ListViewItem(new string[]
                 {
+                    res.R_Req_ID.ToString(),
                     res.StartDate.ToString("yyyy-MM-dd"),
                     res.EndDate.ToString("yyyy-MM-dd"),
                     res.TotalDays.ToString(),
@@ -65,7 +67,8 @@ namespace Assignment
                     res.Request,
                     res.HeadCount.ToString(),
                     res.RequestDate.ToString("yyyy-MM-dd"),
-                    res.Status
+                    res.Status,
+                    res.HallID 
                 });
                 item.Tag = res; // Store reservation details in the tag
                 listView_ReservationRequest.Items.Add(item); // Corrected listView reference
@@ -80,7 +83,7 @@ namespace Assignment
                 ReservationDetails reservation = (ReservationDetails)selectedItem.Tag;
 
                 // Enable payment button only if status is "Approved"
-                btnMakeResvPayment.Enabled = reservation.Status == "Approved";
+                btnMakeResvPayment.Enabled = reservation != null && reservation.Status == "Approved";
                 btnMakeResvPayment.Tag = reservation; // Store reservation details in button tag
             }
             else
@@ -99,8 +102,43 @@ namespace Assignment
 
         private void OpenPaymentForm(ReservationDetails reservation)
         {
-            ReservationPayment paymentForm = new ReservationPayment();
+            ReservationPayment paymentForm = new ReservationPayment(reservation);
             paymentForm.ShowDialog();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Customer_Profile());
+        }
+
+        private void btnViewOrders_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ViewCustomerOrder());
+        }
+
+        private void btnViewReservations_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ViewCustomerReservation());
+        }
+
+        private void btnMakeOrder_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMenu());
+        }
+
+        private void btnMakeReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation());
+        }
+
+        private void btnMakePayment_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerPaymentHistory());
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerFeedback());
         }
     }
 }

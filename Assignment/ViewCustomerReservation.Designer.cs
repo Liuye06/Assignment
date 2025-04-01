@@ -38,11 +38,11 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.panel_ViewReservation = new System.Windows.Forms.Panel();
+            this.btnMakeResvPayment = new System.Windows.Forms.Button();
             this.listView_ReservationRequest = new System.Windows.Forms.ListView();
             this.lbl_Total_O = new System.Windows.Forms.Label();
             this.lbl_OrderID_O = new System.Windows.Forms.Label();
             this.lblViewRevRequest = new System.Windows.Forms.Label();
-            this.btnMakeResvPayment = new System.Windows.Forms.Button();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.panel_ViewReservation.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,7 @@
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
             this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // btnMakePayment
             // 
@@ -104,6 +105,7 @@
             this.btnMakePayment.TabIndex = 5;
             this.btnMakePayment.Text = "Make Payment";
             this.btnMakePayment.UseVisualStyleBackColor = true;
+            this.btnMakePayment.Click += new System.EventHandler(this.btnMakePayment_Click);
             // 
             // btnMakeReservation
             // 
@@ -114,6 +116,7 @@
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation";
             this.btnMakeReservation.UseVisualStyleBackColor = true;
+            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
             // 
             // btnMakeOrder
             // 
@@ -124,6 +127,7 @@
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
             this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // btnViewReservations
             // 
@@ -134,6 +138,7 @@
             this.btnViewReservations.TabIndex = 6;
             this.btnViewReservations.Text = "View Reservations";
             this.btnViewReservations.UseVisualStyleBackColor = true;
+            this.btnViewReservations.Click += new System.EventHandler(this.btnViewReservations_Click);
             // 
             // btnViewOrders
             // 
@@ -146,6 +151,7 @@
             this.btnViewOrders.TabIndex = 4;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
             // btnProfile
             // 
@@ -158,6 +164,7 @@
             this.btnProfile.TabIndex = 9;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // panel_ViewReservation
             // 
@@ -173,6 +180,16 @@
             this.panel_ViewReservation.Name = "panel_ViewReservation";
             this.panel_ViewReservation.Size = new System.Drawing.Size(850, 360);
             this.panel_ViewReservation.TabIndex = 46;
+            // 
+            // btnMakeResvPayment
+            // 
+            this.btnMakeResvPayment.Location = new System.Drawing.Point(38, 311);
+            this.btnMakeResvPayment.Name = "btnMakeResvPayment";
+            this.btnMakeResvPayment.Size = new System.Drawing.Size(332, 32);
+            this.btnMakeResvPayment.TabIndex = 24;
+            this.btnMakeResvPayment.Text = "Make Payment";
+            this.btnMakeResvPayment.UseVisualStyleBackColor = true;
+            this.btnMakeResvPayment.Click += new System.EventHandler(this.btnMakeResvPayment_Click);
             // 
             // listView_ReservationRequest
             // 
@@ -214,16 +231,6 @@
             this.lblViewRevRequest.Size = new System.Drawing.Size(337, 25);
             this.lblViewRevRequest.TabIndex = 19;
             this.lblViewRevRequest.Text = "Your Reservation Request and Status";
-            // 
-            // btnMakeResvPayment
-            // 
-            this.btnMakeResvPayment.Location = new System.Drawing.Point(38, 311);
-            this.btnMakeResvPayment.Name = "btnMakeResvPayment";
-            this.btnMakeResvPayment.Size = new System.Drawing.Size(332, 32);
-            this.btnMakeResvPayment.TabIndex = 24;
-            this.btnMakeResvPayment.Text = "Make Payment";
-            this.btnMakeResvPayment.UseVisualStyleBackColor = true;
-            this.btnMakeResvPayment.Click += new System.EventHandler(this.btnMakeResvPayment_Click);
             // 
             // ViewCustomerReservation
             // 

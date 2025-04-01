@@ -81,7 +81,7 @@ namespace Assignment
 
         private void btnMakePayment_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMakePayment());
+            _sidebarManager.NavigateTo(new CustomerPaymentHistory());
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)

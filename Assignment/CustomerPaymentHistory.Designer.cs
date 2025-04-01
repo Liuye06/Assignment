@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class CustomerMakePayment
+    partial class CustomerPaymentHistory
     {
         /// <summary>
         /// Required designer variable.

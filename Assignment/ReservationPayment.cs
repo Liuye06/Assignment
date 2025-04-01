@@ -12,9 +12,18 @@ namespace Assignment
 {
     public partial class ReservationPayment : Form
     {
-        public ReservationPayment()
+        private ReservationDetails _reservation;
+
+
+        public ReservationPayment(ReservationDetails reservation)
         {
             InitializeComponent();
+            _reservation = reservation;
+        }
+
+        private void btnConfirm_Pay_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
