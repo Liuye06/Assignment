@@ -72,12 +72,12 @@ namespace Assignment
         private void ClearForm()
         {
             txt_StaffName.Text = "";
-            dtp_dob_for_staff.Text = DateTime.Now.ToString("DD/MM/YYYY"); // Fixed format
-            cb_StaffGender.SelectedIndex = 0;
+            dtp_dob_for_staff.Value = DateTime.Today;
+            cb_StaffGender.SelectedIndex = -1;
             txt_StaffEmail.Text = "";
             txt_StaffUsername.Text = "";
             txt_StaffPassword.Text = "";
-            cB_StaffRole.SelectedIndex = 0;
+            cB_StaffRole.SelectedIndex = -1;
         }
 
 

@@ -92,13 +92,13 @@ namespace Assignment
 
             // Field mapping remains the same
             var fieldMapping = new Dictionary<string, string>
-    {
-        { "Real Name", "Real_Name" },
-        { "Date of Birth", "DOB" },
-        { "Gender", "Gender" },
-        { "Email", "Email" },
-        { "Username", "Username" }
-    };
+            {
+                { "Real Name", "Real_Name" },
+                { "Date of Birth", "DOB" },
+                { "Gender", "Gender" },
+                { "Email", "Email" },
+                { "Username", "Username" }
+            };
 
             if (!fieldMapping.ContainsKey(selectedField))
             {
@@ -137,6 +137,15 @@ namespace Assignment
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btn_Cancel_Click_1(object sender, EventArgs e)
+        {
+            listBox1.ClearSelected();
+            comboBox1.SelectedIndex = -1;
+            txt_EditCus.Clear();
+            selectedUserId = ""; 
+            this.Close();
         }
     }
 }

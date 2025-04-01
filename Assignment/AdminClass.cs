@@ -573,6 +573,7 @@ namespace Assignment
             }
             return details;
         }
+
         // load admin data
         public static DataTable GetAdminData(string username)
         {
@@ -583,9 +584,20 @@ namespace Assignment
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Username", username);
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    try
                     {
-                        adapter.Fill(dt);
+                        conn.Open();
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                        }
+
+                        // Debugging: Show retrieved data count
+                        MessageBox.Show($"Rows retrieved: {dt.Rows.Count}", "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Database Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

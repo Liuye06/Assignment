@@ -45,6 +45,7 @@
             this.database1DataSet8 = new Assignment.Database1DataSet8();
             this.userTableAdapter = new Assignment.Database1DataSet8TableAdapters.UserTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet8)).BeginInit();
@@ -53,16 +54,16 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(302, 316);
+            this.comboBox1.Location = new System.Drawing.Point(358, 316);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(235, 33);
             this.comboBox1.TabIndex = 0;
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(524, 310);
+            this.btn_delete.Location = new System.Drawing.Point(624, 314);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(96, 35);
+            this.btn_delete.Size = new System.Drawing.Size(251, 35);
             this.btn_delete.TabIndex = 1;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -87,7 +88,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(787, 234);
+            this.dataGridView1.Size = new System.Drawing.Size(1039, 234);
             this.dataGridView1.TabIndex = 2;
             // 
             // userIDDataGridViewTextBoxColumn
@@ -180,21 +181,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 319);
+            this.label1.Location = new System.Drawing.Point(61, 321);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 16);
+            this.label1.Size = new System.Drawing.Size(291, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Please select the User to delete:";
             // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(624, 370);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(251, 35);
+            this.btn_Cancel.TabIndex = 6;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
             // DeleteCus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 493);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1082, 453);
+            this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.comboBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "DeleteCus";
             this.Text = "DeleteCus";
             this.Load += new System.EventHandler(this.DeleteCus_Load);
@@ -224,5 +236,6 @@
         private System.Windows.Forms.DataGridViewImageColumn profilePicDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_Cancel;
     }
 }

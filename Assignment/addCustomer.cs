@@ -23,15 +23,7 @@ namespace Assignment
             if (!ValidateInputs())
                 return;
 
-            DateTime dob;
-            if (!DateTime.TryParseExact(txt_CusDOB.Text, "dd/MM/yyyy",
-                System.Globalization.CultureInfo.InvariantCulture,
-                System.Globalization.DateTimeStyles.None, out dob))
-            {
-                MessageBox.Show("Please enter exactly in DD/MM/YYYY format (e.g. 06/12/2007)",
-                              "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            DateTime dob = dtp_dob_for_cus.Value; // Get date directly
 
             if (!AdminClass.IsUsernameAvailable(txt_CusUsername.Text))
             {
@@ -69,7 +61,7 @@ namespace Assignment
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txt_CusDOB.Text))
+            if (dtp_dob_for_cus.Value > DateTime.Today)
             {
                 ShowError("Please enter date of birth");
                 return false;
@@ -105,11 +97,11 @@ namespace Assignment
         private void refresh()
         {
             txt_CusName.Text = "";
-            txt_CusDOB.Text = DateTime.Now.ToString("DD/MM/YYYY");
+            dtp_dob_for_cus.Value = DateTime.Today;
             txt_CusEmail.Text = "";
             txt_CusUsername.Text = "";
             txt_CusPassword.Text = "";
-            cb_gender.SelectedIndex = 0;
+            cb_gender.SelectedIndex = -1;
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -120,8 +112,13 @@ namespace Assignment
         private void addCustomer_Load(object sender, EventArgs e)
         {
             // Initialize form with default values
-            txt_CusDOB.Text = DateTime.Now.ToString("DD/MM/YYYY");
+            dtp_dob_for_cus.Value = DateTime.Today; // Set default to today
             cb_gender.SelectedIndex = 0; // Select first item (Male)
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
