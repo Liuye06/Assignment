@@ -57,5 +57,10 @@ namespace Assignment
         {
             LoadReservationData();
         }
+
+        private void btn_Home_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

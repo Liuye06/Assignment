@@ -37,9 +37,6 @@
             this.rRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Cancel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rRequestBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.rRequestBindingSource)).BeginInit();
@@ -95,12 +92,6 @@
             // 
             this.rRequestBindingSource.DataMember = "R_Request";
             // 
-            // database1DataSet1
-            // 
-            // 
-            // r_RequestTableAdapter
-            // 
-            // 
             // Cancel
             // 
             this.Cancel.Location = new System.Drawing.Point(454, 321);
@@ -113,10 +104,6 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIDDataGridViewTextBoxColumn,
-            this.rReqIDDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.rRequestBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(55, 32);
             this.dataGridView1.Name = "dataGridView1";
@@ -124,43 +111,15 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(675, 150);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // rReqIDDataGridViewTextBoxColumn
-            // 
-            this.rReqIDDataGridViewTextBoxColumn.DataPropertyName = "R_Req_ID";
-            this.rReqIDDataGridViewTextBoxColumn.HeaderText = "R_Req_ID";
-            this.rReqIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rReqIDDataGridViewTextBoxColumn.Name = "rReqIDDataGridViewTextBoxColumn";
-            this.rReqIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // rRequestBindingSource1
             // 
             this.rRequestBindingSource1.DataMember = "R_Request";
             // 
-            // database1DataSet9
-            // 
-            // 
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
-            // 
-            
             // 
             // ReplyRequest
             // 

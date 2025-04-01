@@ -53,6 +53,8 @@ namespace Assignment
                                 newForm = new Chef(userID);
                             else if (userRole.Equals("manager", StringComparison.OrdinalIgnoreCase))
                                 newForm = new MainManageMenu(userID);
+                            else if (userRole.Equals("Reservation Coordinator", StringComparison.OrdinalIgnoreCase))
+                                newForm = new RCMainPage(userID);
                             else if (userRole.Equals("customer", StringComparison.OrdinalIgnoreCase))
                                 newForm = new CustomerHomepage(userID);
 

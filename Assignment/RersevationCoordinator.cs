@@ -13,8 +13,9 @@ namespace Assignment
 {
     internal class RersevationCoordinator
     {
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
-        public static bool UpdateRCProfile(string username, string realName, string dob, string gender, string email, string password)
+        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+
+        public static bool UpdateRCProfile(int userID, string realName, string dob, string gender, string email, string password)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -26,7 +27,7 @@ namespace Assignment
                     cmd.Parameters.AddWithValue("@Gender", gender);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Password", password);
-                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@User_ID", userID);
 
                     conn.Open();
                     return cmd.ExecuteNonQuery() > 0;
@@ -35,14 +36,14 @@ namespace Assignment
         }
 
         // update profile
-        public static bool UpdateRCProfilePic(string username, string imagePath)
+        public static bool UpdateRCProfilePic(int userID, string imagePath)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "UPDATE [User] SET Profile_Pic = @Profile_Pic WHERE Username = @Username";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@User_ID", userID);
                     byte[] imageBytes = File.ReadAllBytes(imagePath);
                     cmd.Parameters.AddWithValue("@Profile_Pic", imageBytes);
 
@@ -51,7 +52,7 @@ namespace Assignment
                 }
             }
         }
-        public static DataTable GetRCData(string username)//get the RC data
+        public static DataTable GetRCData(int userID)//get the RC data
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -59,7 +60,7 @@ namespace Assignment
                 string query = "SELECT Real_Name, DOB, Gender, Email, Username, Password, Profile_Pic FROM [User] WHERE Username = @Username";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@User_ID", userID);
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         adapter.Fill(dt);

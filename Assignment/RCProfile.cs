@@ -8,12 +8,12 @@ namespace Assignment
 {
     public partial class RCProfile : Form
     {
-        private string username; 
+        private int currentUserID;
 
-        public RCProfile(string loggedInUsername)
+        public RCProfile(int loggedInUserID)
         {
             InitializeComponent();
-            username = loggedInUsername;
+            currentUserID = loggedInUserID; ;
         }
         private void RCProfile_Load(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace Assignment
 
         private void LoadUserProfile()
         {
-            DataTable dt = RersevationCoordinator.GetRCData(username);
+            DataTable dt = RersevationCoordinator.GetRCData(currentUserID);
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
@@ -47,7 +47,7 @@ namespace Assignment
         private void btn_SaveProfile_Click(object sender, EventArgs e)
         {
             bool updated = RersevationCoordinator.UpdateRCProfile(
-                username,
+                currentUserID,
                 txt_RCName.Text,
                 txt_RCDOB.Text,
                 txt_RCGender.Text,
@@ -82,7 +82,7 @@ namespace Assignment
             if (pictureBox1.Tag != null)
             {
                 string imagePath = pictureBox1.Tag.ToString();
-                bool updated = RersevationCoordinator.UpdateRCProfilePic(username, imagePath);
+                bool updated = RersevationCoordinator.UpdateRCProfilePic(currentUserID, imagePath);
 
                 if (updated)
                 {

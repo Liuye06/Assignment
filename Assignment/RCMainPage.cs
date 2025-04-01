@@ -13,16 +13,19 @@ namespace Assignment
 {
     public partial class RCMainPage : Form
     {
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["myCS"].ConnectionString;
-        public RCMainPage()
+        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+        private int currentUserID; // Store the userID
+
+        public RCMainPage(int userID)
         {
             InitializeComponent();
+            currentUserID = userID; // Store the userID
+
         }
 
         private void btn_Profile_Click(object sender, EventArgs e)
         {
-            string username = "admin123"; // get the username from login
-            RCProfile btn_Profile = new RCProfile(username);
+            RCProfile btn_Profile = new RCProfile(currentUserID);
             btn_Profile.Show();
         }
 

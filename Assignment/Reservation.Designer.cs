@@ -35,11 +35,6 @@
             this.btn_view = new System.Windows.Forms.Button();
             this.btn_Home = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -96,17 +91,12 @@
             this.btn_Home.TabIndex = 0;
             this.btn_Home.Text = "Home";
             this.btn_Home.UseVisualStyleBackColor = true;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.reservationIDDataGridViewTextBoxColumn,
-            this.hallIDDataGridViewTextBoxColumn,
-            this.userIDDataGridViewTextBoxColumn,
-            this.rReqIDDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.reservationBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(271, 86);
             this.dataGridView1.Name = "dataGridView1";
@@ -115,56 +105,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(492, 284);
             this.dataGridView1.TabIndex = 2;
             // 
-            // reservationIDDataGridViewTextBoxColumn
-            // 
-            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "Reservation_ID";
-            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "Reservation_ID";
-            this.reservationIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
-            this.reservationIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reservationIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hallIDDataGridViewTextBoxColumn
-            // 
-            this.hallIDDataGridViewTextBoxColumn.DataPropertyName = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.HeaderText = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hallIDDataGridViewTextBoxColumn.Name = "hallIDDataGridViewTextBoxColumn";
-            this.hallIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // rReqIDDataGridViewTextBoxColumn
-            // 
-            this.rReqIDDataGridViewTextBoxColumn.DataPropertyName = "R_Req_ID";
-            this.rReqIDDataGridViewTextBoxColumn.HeaderText = "R_Req_ID";
-            this.rReqIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rReqIDDataGridViewTextBoxColumn.Name = "rReqIDDataGridViewTextBoxColumn";
-            this.rReqIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
-            // 
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
-            // 
-            // database1DataSet2
-            // 
-            // 
-            // reservationTableAdapter
-            // 
             // 
             // Reservation
             // 
