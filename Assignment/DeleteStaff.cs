@@ -9,111 +9,132 @@ namespace Assignment
         {
             InitializeComponent();
 
-            // Set up event handler for listBox selection change
-            listBoxStaff.SelectedIndexChanged += listBoxStaff_SelectedIndexChanged;
+            // Set up event handler for comboBox1 selection change (roles)
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
         }
 
         private void DeleteStaff_Load(object sender, EventArgs e)
         {
-            // Load staff roles from AdminClass
-            listBoxStaff.Items.Clear();
-            listBoxStaff.Items.AddRange(AdminClass.GetStaffRoles().ToArray());
+            // Load staff roles into comboBox1
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(AdminClass.GetStaffRoles().ToArray());
+            comboBox1.Items.Insert(0, "All Roles"); // Add "All Roles" option
 
-            // Select first item by default if available
-            if (listBoxStaff.Items.Count > 0)
-            {
-                listBoxStaff.SelectedIndex = 0;
-            }
+            // Select "All Roles" by default
+            comboBox1.SelectedIndex = 0;
+
+            // Load all staff members into listBoxStaff
+            LoadAllStaff();
         }
 
-        private void listBoxStaff_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void LoadAllStaff()
         {
-            // Automatically load staff when role selection changes
-            LoadStaffForSelectedRole();
-        }
-
-        private void btn_searchStaff_Click(object sender, EventArgs e)
-        {
-            // Reuse the same loading logic
-            LoadStaffForSelectedRole();
-        }
-
-        private void LoadStaffForSelectedRole()
-        {
-            if (listBoxStaff.SelectedItem == null)
-            {
-                MessageBox.Show("Please select a role to search.", "Warning",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string selectedRole = listBoxStaff.SelectedItem.ToString();
-
-            // Get staff names from AdminClass
             try
             {
-                comboBox1.DataSource = AdminClass.GetStaffNamesByRole(selectedRole);
-                comboBox1.SelectedIndex = -1; // Clear any previous selection
+                listBoxStaff.Items.Clear();
+                listBoxStaff.Items.AddRange(AdminClass.GetAllStaffNames().ToArray());
 
-                if (comboBox1.Items.Count == 0)
+                if (listBoxStaff.Items.Count == 0)
                 {
-                    MessageBox.Show("No staff found for the selected role.", "Information",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No staff found.", "Information",
+                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading staff: {ex.Message}", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error loading all staff: {ex.Message}", "Error",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Automatically load staff names when role selection changes
+            LoadStaffForSelectedRole();
+        }
+
+
+        private void LoadStaffForSelectedRole()
+        {
+            if (comboBox1.SelectedItem == null) return;
+
+            string selectedRole = comboBox1.SelectedItem.ToString();
+
+            try
+            {
+                listBoxStaff.Items.Clear();
+
+                // Check if "All Roles" is selected
+                if (selectedRole == "All Roles")
+                {
+                    listBoxStaff.Items.AddRange(AdminClass.GetAllStaffNames().ToArray());
+                }
+                else
+                {
+                    listBoxStaff.Items.AddRange(AdminClass.GetStaffNamesByRole(selectedRole).ToArray());
+                }
+
+                // Do not show message if list is empty after filtering
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading staff: {ex.Message}", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btn_ResetseacrhStaff_Click(object sender, EventArgs e)
+        {
+            // Reset comboBox1 to "All Roles"
+            comboBox1.SelectedIndex = 0;
+
+            // Load all staff members again
+            LoadAllStaff();
+        }
+
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == null)
+            if (listBoxStaff.SelectedItem == null)
             {
                 MessageBox.Show("Please select a staff member to delete.", "Warning",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string selectedStaffName = comboBox1.SelectedItem.ToString();
+            string selectedStaff = listBoxStaff.SelectedItem.ToString();
 
             // Confirm deletion
-            DialogResult result = MessageBox.Show($"Are you sure you want to delete {selectedStaffName}?",
-                                                "Confirm Delete",
-                                                MessageBoxButtons.YesNo,
-                                                MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show($"Are you sure you want to delete {selectedStaff}?",
+                                                  "Confirm Delete",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
-                try
-                {
-                    // Delete through AdminClass
-                    bool isDeleted = AdminClass.DeleteStaffByName(selectedStaffName);
+                bool isDeleted = AdminClass.DeleteStaffById(selectedStaff);
 
-                    if (isDeleted)
-                    {
-                        MessageBox.Show("Staff deleted successfully.", "Success",
-                                      MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // Refresh the staff list
-                        LoadStaffForSelectedRole();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to delete staff.", "Error",
-                                      MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
+                if (isDeleted)
                 {
-                    MessageBox.Show($"Error deleting staff: {ex.Message}", "Error",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Staff deleted successfully.", "Success",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Reload staff list, but suppress "No staff found" message
+                    LoadStaffForSelectedRole();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete staff.", "Error",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void btn_cancel_Click(object sender, EventArgs e)
+
+        private void btn_Cancel_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

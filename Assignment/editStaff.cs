@@ -107,7 +107,14 @@ namespace Assignment
                 }
             }
         }
-        private void btn_Cancel_Click(object sender, EventArgs e)
+
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Cancel_Click_1(object sender, EventArgs e)
         {
             // Clear all selections
             comboBox1.SelectedIndex = -1;
@@ -115,11 +122,6 @@ namespace Assignment
             listBox1.Items.Clear();
             txt_EditCus.Clear();
             this.Close(); // Close the form
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -11,14 +11,14 @@ namespace Assignment
         {
             InitializeComponent();
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            comboBox1.Items.AddRange(new string[] { "Admin", "Manager", "Chef", "Reservation Coordinator" });
+            comboBox1.Items.AddRange(new string[] { "All","Admin", "Manager", "Chef", "Reservation Coordinator" });
             comboBox1.SelectedIndex = 0;
         }
 
         private void update_Staff_Load(object sender, EventArgs e)
         {
             // direct use via AdminClass to get data
-            RefreshDataGrid();
+            
         }
 
         private void btn_view_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Assignment
         }
         private void RefreshDataGrid()
         {
-            string selectedRole = comboBox1.SelectedItem.ToString();
+            string selectedRole = comboBox1.SelectedItem?.ToString() ?? "All";
             AdminClass.RefreshStaffGridView(dataGridView1, selectedRole);
         }
 
@@ -42,10 +42,6 @@ namespace Assignment
         {
         }
 
-        private void Btn_viewStaff_Click(object sender, EventArgs e)
-        {
-            RefreshDataGrid();
-        }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
@@ -61,13 +57,22 @@ namespace Assignment
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            RefreshDataGrid();
         }
 
         private void btn_Home_Click(object sender, EventArgs e)
         {
-            Admin btn_Home = new Admin();
-            btn_Home.Show();
+            this.Close();
+        }
+
+        private void update_Staff_Shown(object sender, EventArgs e)
+        {
+            RefreshDataGrid();
+        }
+
+        private void Btn_resetSearchStaff_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

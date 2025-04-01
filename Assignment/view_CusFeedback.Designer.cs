@@ -30,12 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.feedbackIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feedbackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet7 = new Assignment.Database1DataSet7();
             this.tableTableAdapter = new Assignment.Database1DataSet7TableAdapters.TableTableAdapter();
+            this.btn_Return = new System.Windows.Forms.Button();
+            this.feedbackIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feedbackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet7)).BeginInit();
@@ -50,38 +51,13 @@
             this.orderIDDataGridViewTextBoxColumn,
             this.feedbackDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tableBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(107, 66);
+            this.dataGridView1.Location = new System.Drawing.Point(53, 117);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(564, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(978, 306);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // feedbackIDDataGridViewTextBoxColumn
-            // 
-            this.feedbackIDDataGridViewTextBoxColumn.DataPropertyName = "Feedback_ID";
-            this.feedbackIDDataGridViewTextBoxColumn.HeaderText = "Feedback_ID";
-            this.feedbackIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.feedbackIDDataGridViewTextBoxColumn.Name = "feedbackIDDataGridViewTextBoxColumn";
-            this.feedbackIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.feedbackIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // orderIDDataGridViewTextBoxColumn
-            // 
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // feedbackDataGridViewTextBoxColumn
-            // 
-            this.feedbackDataGridViewTextBoxColumn.DataPropertyName = "Feedback";
-            this.feedbackDataGridViewTextBoxColumn.HeaderText = "Feedback";
-            this.feedbackDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.feedbackDataGridViewTextBoxColumn.Name = "feedbackDataGridViewTextBoxColumn";
-            this.feedbackDataGridViewTextBoxColumn.Width = 125;
             // 
             // tableBindingSource
             // 
@@ -97,15 +73,53 @@
             // 
             this.tableTableAdapter.ClearBeforeFill = true;
             // 
+            // btn_Return
+            // 
+            this.btn_Return.Location = new System.Drawing.Point(20, 20);
+            this.btn_Return.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btn_Return.Name = "btn_Return";
+            this.btn_Return.Size = new System.Drawing.Size(111, 55);
+            this.btn_Return.TabIndex = 71;
+            this.btn_Return.Text = "<";
+            this.btn_Return.UseVisualStyleBackColor = true;
+            this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
+            // 
+            // feedbackIDDataGridViewTextBoxColumn
+            // 
+            this.feedbackIDDataGridViewTextBoxColumn.DataPropertyName = "Feedback_ID";
+            this.feedbackIDDataGridViewTextBoxColumn.HeaderText = "Feedback_ID";
+            this.feedbackIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.feedbackIDDataGridViewTextBoxColumn.Name = "feedbackIDDataGridViewTextBoxColumn";
+            this.feedbackIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.feedbackIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // orderIDDataGridViewTextBoxColumn
+            // 
+            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "Order_ID";
+            this.orderIDDataGridViewTextBoxColumn.HeaderText = "Order_ID";
+            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
+            this.orderIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // feedbackDataGridViewTextBoxColumn
+            // 
+            this.feedbackDataGridViewTextBoxColumn.DataPropertyName = "Feedback";
+            this.feedbackDataGridViewTextBoxColumn.HeaderText = "Feedback";
+            this.feedbackDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.feedbackDataGridViewTextBoxColumn.Name = "feedbackDataGridViewTextBoxColumn";
+            this.feedbackDataGridViewTextBoxColumn.Width = 150;
+            // 
             // view_CusFeedback
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1082, 453);
+            this.Controls.Add(this.btn_Return);
             this.Controls.Add(this.dataGridView1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "view_CusFeedback";
             this.Text = "view_CusFeedback";
-            this.Load += new System.EventHandler(this.view_CusFeedback_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet7)).EndInit();
@@ -122,5 +136,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn feedbackIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn feedbackDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btn_Return;
     }
 }

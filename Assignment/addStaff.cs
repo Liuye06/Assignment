@@ -36,9 +36,9 @@ namespace Assignment
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(txt_StaffDOB.Text))
+            if (dtp_dob_for_staff.Value > DateTime.Today)
             {
-                ShowError("Please enter date of birth");
+                ShowError("Date of birth cannot be in the future.");
                 return false;
             }
 
@@ -72,7 +72,7 @@ namespace Assignment
         private void ClearForm()
         {
             txt_StaffName.Text = "";
-            txt_StaffDOB.Text = DateTime.Now.ToString("DD/MM/YYYY"); // Fixed format
+            dtp_dob_for_staff.Text = DateTime.Now.ToString("DD/MM/YYYY"); // Fixed format
             cb_StaffGender.SelectedIndex = 0;
             txt_StaffEmail.Text = "";
             txt_StaffUsername.Text = "";
@@ -80,32 +80,13 @@ namespace Assignment
             cB_StaffRole.SelectedIndex = 0;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void AddStaffForm_Load(object sender, EventArgs e) // Renamed to match class
-        {
-            txt_StaffDOB.Text = DateTime.Now.ToString("dd/MM/yyyy"); // Fixed format
-            cB_StaffRole.SelectedIndex = 0;
-            cb_StaffGender.SelectedIndex = 0;
-        }
 
         private void btn_addStaff_Click(object sender, EventArgs e)
         {
             if (!ValidateInputs())
                 return;
 
-            DateTime dob;
-            if (!DateTime.TryParseExact(txt_StaffDOB.Text, "dd/MM/yyyy",
-                System.Globalization.CultureInfo.InvariantCulture,
-                System.Globalization.DateTimeStyles.None, out dob))
-            {
-                MessageBox.Show("Please enter exactly in DD/MM/YYYY format (e.g. 06/12/2007)",
-                              "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            DateTime dob = dtp_dob_for_staff.Value; // Get date directly
 
             if (!AdminClass.IsUsernameAvailable(txt_StaffUsername.Text))
             {
@@ -135,9 +116,14 @@ namespace Assignment
         }
         private void addStaff_Load(object sender, EventArgs e)
         {
-            txt_StaffDOB.Text = DateTime.Now.ToString("DD/MM/YYYY");
+            dtp_dob_for_staff.Value = DateTime.Today; // Set default to today
             cb_StaffGender.SelectedIndex = 0;
             cB_StaffRole.SelectedIndex = 0;
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

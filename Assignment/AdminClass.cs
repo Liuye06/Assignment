@@ -332,20 +332,54 @@ namespace Assignment
             }
             return dt;
         }
-        public static void RefreshStaffGridView(DataGridView dataGridView, string role)
-        {
-            if (dataGridView == null || dataGridView.IsDisposed) return;
 
-            try
+        public static void RefreshStaffGridView(DataGridView dataGridView, string role = "")
+        {
+            if (dataGridView == null || !dataGridView.IsHandleCreated) return; // Ensure it's ready
+
+            string query = "SELECT User_ID, Real_Name, Email, DOB, Gender, Role, Username, Password FROM [User]";
+
+            if (!string.IsNullOrEmpty(role) && role != "All")
             {
-                dataGridView.DataSource = GetStaffDataByRole(role);
-                dataGridView.Refresh();
+                query += " WHERE Role = @Role";
             }
-            catch (Exception ex)
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                MessageBox.Show("Error refreshing grid: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+                    if (!string.IsNullOrEmpty(role) && role != "All")
+                    {
+                        cmd.Parameters.AddWithValue("@Role", role);
+                    }
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    if (dataGridView.InvokeRequired)
+                    {
+                        dataGridView.Invoke((MethodInvoker)delegate {
+                            dataGridView.DataSource = dt;
+                            dataGridView.Refresh();
+                        });
+                    }
+                    else
+                    {
+                        dataGridView.DataSource = dt;
+                        dataGridView.Refresh();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading staff: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
+
         public static void LoadStaff(ListBox listBox)
         {
             if (listBox == null || listBox.IsDisposed) return;
@@ -371,6 +405,7 @@ namespace Assignment
                 MessageBox.Show("Error loading staff: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         public static List<string> GetStaffNamesByRole(string role)
         {
@@ -401,13 +436,25 @@ namespace Assignment
             }
             return staffNames;
         }
-        public static bool DeleteStaffByName(string realName)
+
+
+        public static bool DeleteStaffById(string selectedItem)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            using (SqlCommand cmd = new SqlCommand(
-                "DELETE FROM [User] WHERE Real_Name = @RealName", conn))
+            // Extract User_ID from the format "User_ID - Real_Name"
+            string[] parts = selectedItem.Split(new[] { " - " }, 2, StringSplitOptions.None);
+            if (parts.Length < 2) return false; // Prevents error if format is wrong
+
+            int userId;
+            if (!int.TryParse(parts[0], out userId))
             {
-                cmd.Parameters.AddWithValue("@RealName", realName);
+                MessageBox.Show("Invalid User ID format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand("DELETE FROM [User] WHERE User_ID = @UserId", conn))
+            {
+                cmd.Parameters.AddWithValue("@UserId", userId);
 
                 try
                 {
@@ -417,11 +464,43 @@ namespace Assignment
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error deleting staff: " + ex.Message,
-                                  "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
         }
+
+        public static List<string> GetAllStaffNames()
+        {
+            List<string> staffEntries = new List<string>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand("SELECT User_ID, Real_Name FROM [User]", conn))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Format: "User_ID - Real_Name"
+                            string displayText = $"{reader["User_ID"]} - {reader["Real_Name"]}";
+                            staffEntries.Add(displayText);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error retrieving staff names: " + ex.Message,
+                                    "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return staffEntries;
+        }
+
+
         public static List<string> GetEditableFields()
         {
             return new List<string> { "Real_Name", "DOB", "Gender", "Email", "Username" };

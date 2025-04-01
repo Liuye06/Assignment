@@ -31,15 +31,15 @@
             this.btn_delete = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBoxStaff = new System.Windows.Forms.ListBox();
-            this.btn_seacrhStaff = new System.Windows.Forms.Button();
+            this.btn_ResetseacrhStaff = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(434, 272);
+            this.btn_delete.Location = new System.Drawing.Point(315, 340);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(96, 35);
+            this.btn_delete.Size = new System.Drawing.Size(255, 38);
             this.btn_delete.TabIndex = 3;
             this.btn_delete.Text = "Delete";
             this.btn_delete.UseVisualStyleBackColor = true;
@@ -48,48 +48,51 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(136, 278);
+            this.comboBox1.Location = new System.Drawing.Point(209, 66);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(121, 33);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // listBoxStaff
             // 
             this.listBoxStaff.FormattingEnabled = true;
-            this.listBoxStaff.ItemHeight = 16;
-            this.listBoxStaff.Location = new System.Drawing.Point(92, 52);
+            this.listBoxStaff.ItemHeight = 25;
+            this.listBoxStaff.Location = new System.Drawing.Point(109, 162);
             this.listBoxStaff.Name = "listBoxStaff";
-            this.listBoxStaff.Size = new System.Drawing.Size(196, 84);
+            this.listBoxStaff.Size = new System.Drawing.Size(284, 129);
             this.listBoxStaff.TabIndex = 4;
             // 
-            // btn_seacrhStaff
+            // btn_ResetseacrhStaff
             // 
-            this.btn_seacrhStaff.Location = new System.Drawing.Point(434, 75);
-            this.btn_seacrhStaff.Name = "btn_seacrhStaff";
-            this.btn_seacrhStaff.Size = new System.Drawing.Size(96, 35);
-            this.btn_seacrhStaff.TabIndex = 5;
-            this.btn_seacrhStaff.Text = "Search";
-            this.btn_seacrhStaff.UseVisualStyleBackColor = true;
+            this.btn_ResetseacrhStaff.Location = new System.Drawing.Point(470, 64);
+            this.btn_ResetseacrhStaff.Name = "btn_ResetseacrhStaff";
+            this.btn_ResetseacrhStaff.Size = new System.Drawing.Size(207, 35);
+            this.btn_ResetseacrhStaff.TabIndex = 5;
+            this.btn_ResetseacrhStaff.Text = "Reset";
+            this.btn_ResetseacrhStaff.UseVisualStyleBackColor = true;
+            this.btn_ResetseacrhStaff.Click += new System.EventHandler(this.btn_ResetseacrhStaff_Click);
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(581, 272);
+            this.btn_Cancel.Location = new System.Drawing.Point(622, 340);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(96, 35);
+            this.btn_Cancel.Size = new System.Drawing.Size(257, 38);
             this.btn_Cancel.TabIndex = 6;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click_1);
             // 
             // DeleteStaff
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.btn_Cancel);
-            this.Controls.Add(this.btn_seacrhStaff);
+            this.Controls.Add(this.btn_ResetseacrhStaff);
             this.Controls.Add(this.listBoxStaff);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.comboBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "DeleteStaff";
             this.Text = "DeleteStaff";
             this.Load += new System.EventHandler(this.DeleteStaff_Load);
@@ -102,7 +105,7 @@
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListBox listBoxStaff;
-        private System.Windows.Forms.Button btn_seacrhStaff;
+        private System.Windows.Forms.Button btn_ResetseacrhStaff;
         private System.Windows.Forms.Button btn_Cancel;
     }
 }
