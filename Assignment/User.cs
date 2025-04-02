@@ -56,7 +56,7 @@ namespace Assignment
                             else if (userRole.Equals("Reservation Coordinator", StringComparison.OrdinalIgnoreCase))
                                 newForm = new RCMainPage(userID);
                             else if (userRole.Equals("customer", StringComparison.OrdinalIgnoreCase))
-                                newForm = new CustomerHomepage(userID);
+                                newForm = new ViewCustomerOrder(userID);
 
                             if (newForm != null)
                             {

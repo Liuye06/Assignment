@@ -140,5 +140,10 @@ namespace Assignment
         {
             _sidebarManager.NavigateTo(new CustomerFeedback());
         }
+
+        private void lblViewRevRequest_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

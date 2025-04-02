@@ -231,6 +231,7 @@
             this.lblViewRevRequest.Size = new System.Drawing.Size(337, 25);
             this.lblViewRevRequest.TabIndex = 19;
             this.lblViewRevRequest.Text = "Your Reservation Request and Status";
+            this.lblViewRevRequest.Click += new System.EventHandler(this.lblViewRevRequest_Click);
             // 
             // ViewCustomerReservation
             // 

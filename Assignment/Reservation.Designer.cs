@@ -28,116 +28,196 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_Assign = new System.Windows.Forms.Button();
-            this.btn_view = new System.Windows.Forms.Button();
-            this.btn_Home = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
+            this.tableSidebar_Reservation = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnManageReservation = new System.Windows.Forms.Button();
+            this.btnRCProfile = new System.Windows.Forms.Button();
+            this.btnReplyCustomer = new System.Windows.Forms.Button();
+            this.gbManageReservation = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dgvReservation = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtReservation = new System.Windows.Forms.TextBox();
+            this.lblReservation = new System.Windows.Forms.Label();
+            this.tableSidebar_Reservation.SuspendLayout();
+            this.gbManageReservation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReservation)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // tableSidebar_Reservation
             // 
-            this.panel1.Controls.Add(this.btn_Delete);
-            this.panel1.Controls.Add(this.btn_Assign);
-            this.panel1.Controls.Add(this.btn_view);
-            this.panel1.Controls.Add(this.btn_Home);
-            this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 452);
-            this.panel1.TabIndex = 1;
+            this.tableSidebar_Reservation.ColumnCount = 1;
+            this.tableSidebar_Reservation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSidebar_Reservation.Controls.Add(this.btnLogOut, 0, 4);
+            this.tableSidebar_Reservation.Controls.Add(this.btnManageReservation, 0, 1);
+            this.tableSidebar_Reservation.Controls.Add(this.btnReplyCustomer, 0, 2);
+            this.tableSidebar_Reservation.Controls.Add(this.btnRCProfile, 0, 3);
+            this.tableSidebar_Reservation.Location = new System.Drawing.Point(12, 11);
+            this.tableSidebar_Reservation.Name = "tableSidebar_Reservation";
+            this.tableSidebar_Reservation.RowCount = 6;
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableSidebar_Reservation.Size = new System.Drawing.Size(200, 430);
+            this.tableSidebar_Reservation.TabIndex = 7;
             // 
-            // btn_Delete
+            // btnLogOut
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(0, 308);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(228, 77);
-            this.btn_Delete.TabIndex = 3;
-            this.btn_Delete.Text = "Delete Reservation";
-            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 15;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
             // 
-            // btn_Assign
+            // btnManageReservation
             // 
-            this.btn_Assign.Location = new System.Drawing.Point(0, 225);
-            this.btn_Assign.Name = "btn_Assign";
-            this.btn_Assign.Size = new System.Drawing.Size(228, 77);
-            this.btn_Assign.TabIndex = 2;
-            this.btn_Assign.Text = "Assign Hall";
-            this.btn_Assign.UseVisualStyleBackColor = true;
+            this.btnManageReservation.BackColor = System.Drawing.Color.Silver;
+            this.btnManageReservation.FlatAppearance.BorderSize = 0;
+            this.btnManageReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageReservation.Location = new System.Drawing.Point(3, 62);
+            this.btnManageReservation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnManageReservation.Name = "btnManageReservation";
+            this.btnManageReservation.Size = new System.Drawing.Size(194, 36);
+            this.btnManageReservation.TabIndex = 0;
+            this.btnManageReservation.Text = "Manage Reservation";
+            this.btnManageReservation.UseVisualStyleBackColor = false;
             // 
-            // btn_view
+            // btnRCProfile
             // 
-            this.btn_view.Location = new System.Drawing.Point(0, 142);
-            this.btn_view.Name = "btn_view";
-            this.btn_view.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_view.Size = new System.Drawing.Size(228, 77);
-            this.btn_view.TabIndex = 1;
-            this.btn_view.Text = "View Reservation";
-            this.btn_view.UseCompatibleTextRendering = true;
-            this.btn_view.UseVisualStyleBackColor = true;
-            this.btn_view.UseWaitCursor = true;
-            this.btn_view.Click += new System.EventHandler(this.btn_view_Click);
+            this.btnRCProfile.BackColor = System.Drawing.Color.Silver;
+            this.btnRCProfile.FlatAppearance.BorderSize = 0;
+            this.btnRCProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRCProfile.Location = new System.Drawing.Point(3, 142);
+            this.btnRCProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRCProfile.Name = "btnRCProfile";
+            this.btnRCProfile.Size = new System.Drawing.Size(194, 36);
+            this.btnRCProfile.TabIndex = 2;
+            this.btnRCProfile.Text = "Reservation Coordinate Profile";
+            this.btnRCProfile.UseVisualStyleBackColor = false;
             // 
-            // btn_Home
+            // btnReplyCustomer
             // 
-            this.btn_Home.Location = new System.Drawing.Point(0, 59);
-            this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(228, 77);
-            this.btn_Home.TabIndex = 0;
-            this.btn_Home.Text = "Home";
-            this.btn_Home.UseVisualStyleBackColor = true;
-            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
+            this.btnReplyCustomer.BackColor = System.Drawing.Color.Silver;
+            this.btnReplyCustomer.FlatAppearance.BorderSize = 0;
+            this.btnReplyCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReplyCustomer.Location = new System.Drawing.Point(3, 102);
+            this.btnReplyCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReplyCustomer.Name = "btnReplyCustomer";
+            this.btnReplyCustomer.Size = new System.Drawing.Size(194, 36);
+            this.btnReplyCustomer.TabIndex = 1;
+            this.btnReplyCustomer.Text = "Reply Customer";
+            this.btnReplyCustomer.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // gbManageReservation
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.reservationBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(271, 86);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(492, 284);
-            this.dataGridView1.TabIndex = 2;
+            this.gbManageReservation.Controls.Add(this.btnReset);
+            this.gbManageReservation.Controls.Add(this.btnAdd);
+            this.gbManageReservation.Controls.Add(this.dgvReservation);
+            this.gbManageReservation.Controls.Add(this.btnSearch);
+            this.gbManageReservation.Controls.Add(this.txtReservation);
+            this.gbManageReservation.Controls.Add(this.lblReservation);
+            this.gbManageReservation.Location = new System.Drawing.Point(218, 72);
+            this.gbManageReservation.Name = "gbManageReservation";
+            this.gbManageReservation.Size = new System.Drawing.Size(852, 369);
+            this.gbManageReservation.TabIndex = 8;
+            this.gbManageReservation.TabStop = false;
+            this.gbManageReservation.Text = "Manage Reservation";
             // 
-            // reservationBindingSource
+            // btnReset
             // 
-            this.reservationBindingSource.DataMember = "Reservation";
+            this.btnReset.Location = new System.Drawing.Point(541, 39);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(289, 35);
+            this.btnReset.TabIndex = 5;
+            this.btnReset.Text = "Reset Search ";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(45, 320);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(390, 35);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add New Reservation";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // dgvReservation
+            // 
+            this.dgvReservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReservation.Location = new System.Drawing.Point(45, 91);
+            this.dgvReservation.Name = "dgvReservation";
+            this.dgvReservation.RowHeadersWidth = 51;
+            this.dgvReservation.RowTemplate.Height = 24;
+            this.dgvReservation.Size = new System.Drawing.Size(785, 216);
+            this.dgvReservation.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(429, 39);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(106, 35);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtReservation
+            // 
+            this.txtReservation.Location = new System.Drawing.Point(161, 41);
+            this.txtReservation.Name = "txtReservation";
+            this.txtReservation.Size = new System.Drawing.Size(262, 30);
+            this.txtReservation.TabIndex = 1;
+            // 
+            // lblReservation
+            // 
+            this.lblReservation.AutoSize = true;
+            this.lblReservation.Location = new System.Drawing.Point(40, 44);
+            this.lblReservation.Name = "lblReservation";
+            this.lblReservation.Size = new System.Drawing.Size(115, 25);
+            this.lblReservation.TabIndex = 0;
+            this.lblReservation.Text = "Reservation";
             // 
             // Reservation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1082, 453);
+            this.Controls.Add(this.gbManageReservation);
+            this.Controls.Add(this.tableSidebar_Reservation);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Reservation";
             this.Text = "Reservation";
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.Reservation_Load);
+            this.tableSidebar_Reservation.ResumeLayout(false);
+            this.gbManageReservation.ResumeLayout(false);
+            this.gbManageReservation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReservation)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Assign;
-        private System.Windows.Forms.Button btn_view;
-        private System.Windows.Forms.Button btn_Home;
-        private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource reservationBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hallIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rReqIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableSidebar_Reservation;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnManageReservation;
+        private System.Windows.Forms.Button btnRCProfile;
+        private System.Windows.Forms.Button btnReplyCustomer;
+        private System.Windows.Forms.GroupBox gbManageReservation;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dgvReservation;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtReservation;
+        private System.Windows.Forms.Label lblReservation;
     }
 }

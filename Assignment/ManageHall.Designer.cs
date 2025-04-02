@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableSidebar_MHall = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnMMenu_MHall = new System.Windows.Forms.Button();
             this.btnMHall_MHall = new System.Windows.Forms.Button();
             this.btnHRReport_MHall = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.btnSearchHall = new System.Windows.Forms.Button();
             this.txtHall = new System.Windows.Forms.TextBox();
             this.lblHall = new System.Windows.Forms.Label();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.tableSidebar_MHall.SuspendLayout();
             this.gbMHall.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).BeginInit();
@@ -72,6 +72,19 @@
             this.tableSidebar_MHall.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_MHall.Size = new System.Drawing.Size(200, 430);
             this.tableSidebar_MHall.TabIndex = 0;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 253);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 6;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnMMenu_MHall
             // 
@@ -240,19 +253,6 @@
             this.lblHall.Size = new System.Drawing.Size(102, 25);
             this.lblHall.TabIndex = 0;
             this.lblHall.Text = "Hall Name";
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(3, 253);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
-            this.btnLogOut.TabIndex = 6;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // MainManageHall
             // 

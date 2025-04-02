@@ -229,6 +229,7 @@
             this.dgvChefCusOrder.Size = new System.Drawing.Size(785, 224);
             this.dgvChefCusOrder.TabIndex = 3;
             this.dgvChefCusOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellContentClick);
+            this.dgvChefCusOrder.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellValueChanged);
             // 
             // CusOrderID
             // 

@@ -119,6 +119,7 @@
     <Compile Include="AddReservation.Designer.cs">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChefDetails.cs" />
     <Compile Include="ChefEditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -420,6 +421,7 @@
     <Compile Include="ReplyRequest.Designer.cs">
       <DependentUpon>ReplyRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReplyRequestDetails.cs" />
     <Compile Include="RersevationCoordinator.cs" />
     <Compile Include="Reservation.cs">
       <SubType>Form</SubType>

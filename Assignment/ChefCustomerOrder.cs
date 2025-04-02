@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,12 +38,68 @@ namespace Assignment
                 return;
             }
 
+            bindingSourceOrders.DataSource = ordersTable;
+            dgvChefCusOrder.AutoGenerateColumns = false;
+            dgvChefCusOrder.DataSource = bindingSourceOrders;
+            SetupDataGridView();
+        }
 
-            if (ordersTable != null)
+        private void SetupDataGridView()
+        {
+            DataGridViewComboBoxColumn chefInChargeColumn = new DataGridViewComboBoxColumn
             {
-                bindingSourceOrders.DataSource = ordersTable;
-                dgvChefCusOrder.AutoGenerateColumns = false;
-                dgvChefCusOrder.DataSource = bindingSourceOrders;
+                Name = "ChefInCharge",
+                HeaderText = "Chef In Charge",
+                DataSource = OrderManager.GetAvailableChefs(),
+                DisplayMember = "ChefName",
+                ValueMember = "ChefID"
+            };
+            dgvChefCusOrder.Columns.Add(chefInChargeColumn);
+        }
+
+        
+
+        private void dgvChefCusOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ensure the event is triggered by a valid row and column
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return; // Prevent errors from header row clicks
+
+            // Ensure "Status" and "ChefInCharge" columns exist
+            if (dgvChefCusOrder.Columns["Status"] == null || dgvChefCusOrder.Columns["ChefInCharge"] == null)
+            {
+                MessageBox.Show("Required columns are missing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Check if "Status" column was changed
+            if (e.ColumnIndex == dgvChefCusOrder.Columns["Status"].Index)
+            {
+                DataGridViewRow row = dgvChefCusOrder.Rows[e.RowIndex];
+
+                if (row.Cells["FoodID"].Value == null)
+                {
+                    MessageBox.Show("Missing FoodID value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                try
+                {
+                    int foodItemID = Convert.ToInt32(row.Cells["FoodID"].Value);
+
+                    
+                    // Update the database
+                    bool success = OrderManager.UpdateChefInCharge(foodItemID, currentUserID);
+
+                    if (!success)
+                    {
+                        MessageBox.Show("Failed to update Chef In Charge.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
