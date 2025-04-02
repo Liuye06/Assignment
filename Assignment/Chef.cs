@@ -21,6 +21,7 @@ namespace Assignment
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
             currentUserID = userID; // Store the userID
+            UserSessionManager.Login(userID);
         }
 
 
@@ -131,12 +132,17 @@ namespace Assignment
 
         private void btn_CusOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomersOrder(currentUserID));
+            _sidebarManager.NavigateTo(new ChefCustomerOrder(currentUserID));
         }
 
         private void btn_ChefProfile_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Chef_Profile());
+            _sidebarManager.NavigateTo(new Chef_Profile(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

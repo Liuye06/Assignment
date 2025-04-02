@@ -58,20 +58,5 @@ namespace Assignment
         {
             this.Close(); // Closes the current form
         }
-
-        private void btn_ACinventory_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new Chef(currentUserID));
-        }
-
-        private void btn_ACCusOrder_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomersOrder(currentUserID));
-        }
-
-        private void btn_ACChefProfile_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new Chef_Profile());
-        }
     }
 }

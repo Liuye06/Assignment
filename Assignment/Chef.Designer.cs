@@ -44,6 +44,7 @@
             this.btnSearchIngredient = new System.Windows.Forms.Button();
             this.txtIngredient = new System.Windows.Forms.TextBox();
             this.lblIngredient = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.tableSidebar_CInventory.SuspendLayout();
             this.gbCInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredient)).BeginInit();
@@ -105,18 +106,20 @@
             // 
             this.tableSidebar_CInventory.ColumnCount = 1;
             this.tableSidebar_CInventory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSidebar_CInventory.Controls.Add(this.btnLogOut, 0, 4);
             this.tableSidebar_CInventory.Controls.Add(this.btn_inventory, 0, 1);
             this.tableSidebar_CInventory.Controls.Add(this.btn_CusOrder, 0, 2);
             this.tableSidebar_CInventory.Controls.Add(this.lbl_chef, 0, 0);
             this.tableSidebar_CInventory.Controls.Add(this.btn_ChefProfile, 0, 3);
             this.tableSidebar_CInventory.Location = new System.Drawing.Point(12, 12);
             this.tableSidebar_CInventory.Name = "tableSidebar_CInventory";
-            this.tableSidebar_CInventory.RowCount = 5;
+            this.tableSidebar_CInventory.RowCount = 6;
             this.tableSidebar_CInventory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableSidebar_CInventory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CInventory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CInventory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CInventory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_CInventory.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_CInventory.Size = new System.Drawing.Size(200, 430);
             this.tableSidebar_CInventory.TabIndex = 5;
             // 
@@ -231,6 +234,19 @@
             this.lblIngredient.TabIndex = 0;
             this.lblIngredient.Text = "Ingredient";
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 16;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // Chef
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -269,5 +285,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColStock;
         private System.Windows.Forms.DataGridViewButtonColumn ColIngredientEdit;
         private System.Windows.Forms.DataGridViewButtonColumn ColIngredientDelete;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

@@ -8,120 +8,214 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Assignment;
 
 namespace Assignment
 {
     public partial class salesReport : Form
     {
+        // Database connection string
         string connectionString = "Data Source=DESKTOP-NV6DCAO;Initial Catalog=DATABASE1;User Id=sa;Password=peb109318051@APU";
 
         private int currentUserID;
 
+        // Constructor to initialize the form with current user ID
         public salesReport(int userID)
         {
-            // Ensure the form's properties are set correctly for the close button
-            this.ControlBox = true;  // Ensure the close button is enabled
-            this.FormBorderStyle = FormBorderStyle.Sizable; // Allow resizing and the "X" button to appear
-            this.MaximizeBox = true; // Allow maximizing the form
-            this.MinimizeBox = true; // Allow minimizing the form
-
             InitializeComponent();
             currentUserID = userID;
         }
+
+        // Form load event to populate ComboBoxes and load initial sales data
         private void salesReport_Load(object sender, EventArgs e)
         {
-            // Populate ComboBoxes with values
-            cmbMonth.DataSource = AdminClass.GetPaymentMonths(); // Populate months
-            cmbChefName.DataSource = AdminClass.GetChefs(); // Populate chefs
+            // Disable automatic column generation
+            dataGridView1.AutoGenerateColumns = false;
 
-            // Populate the DataGridView initially
+            // Clear existing columns
+            dataGridView1.Columns.Clear();
+
+            // Add columns manually
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Payment_ID",
+                HeaderText = "Payment ID",
+                DataPropertyName = "Payment_ID",
+                Width = 100
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Payment_date",
+                HeaderText = "Payment Date",
+                DataPropertyName = "Payment_date",
+                Width = 150,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "yyyy-MM-dd HH:mm:ss" }
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Amount",
+                HeaderText = "Amount (RM)",
+                DataPropertyName = "Amount",
+                Width = 100,
+                DefaultCellStyle = new DataGridViewCellStyle { Format = "C2" } // Currency format
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Order_ID",
+                HeaderText = "Order ID",
+                DataPropertyName = "Order_ID",
+                Width = 100
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Reservation_ID",
+                HeaderText = "Reservation ID",
+                DataPropertyName = "Reservation_ID",
+                Width = 120
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Status",
+                HeaderText = "Status",
+                DataPropertyName = "Status",
+                Width = 120
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "ChefName",
+                HeaderText = "Chef Name",
+                DataPropertyName = "ChefName",
+                Width = 150
+            });
+
+            dataGridView1.Columns.Add(new DataGridViewTextBoxColumn()
+            {
+                Name = "Reservation_Coordinator_Name",
+                HeaderText = "Reservation Coordinator",
+                DataPropertyName = "Reservation_Coordinator_Name",
+                Width = 180
+            });
+
+            // Populate filters
+            cmbTransactionType.DataSource = AdminClass.GetTransactionTypes();
+            cmbMonth.DataSource = AdminClass.GetPaymentMonths();
+            cmbUserName.DataSource = AdminClass.GetChefs();
+
+            // Load sales data
             LoadSalesData();
         }
 
+
+        // Method to load the initial sales data without any filters
         private void LoadSalesData()
         {
-            string query = "SELECT Payment_ID, Amount, Order_ID, Reservation_ID, Status FROM Payment";
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            string query = "SELECT p.Payment_ID, p.Payment_date, p.Amount, " +
+                   "p.Order_ID, p.Reservation_ID, p.Status, " +
+                   "COALESCE(u1.Real_Name, 'N/A') AS ChefName, " +
+                   "COALESCE(u2.Real_Name, 'N/A') AS Reservation_Coordinator_Name " +
+                   "FROM Payment p " +
+                   "LEFT JOIN Chef_InCharge cic ON p.Order_ID = cic.Order_ID " +
+                   "LEFT JOIN [User] u1 ON cic.User_ID = u1.User_ID AND u1.Role = 'Chef' " +
+                   "LEFT JOIN Reservation r ON p.Reservation_ID = r.Reservation_ID " +
+                   "LEFT JOIN [User] u2 ON r.User_ID = u2.User_ID AND u2.Role = 'Reservation Coordinator'";
+
+            DataTable salesData = AdminClass.GetSalesReportData(query);
+
+            if (salesData.Rows.Count == 0)
             {
-                try
+                MessageBox.Show("No records found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            dataGridView1.DataSource = salesData;
+        }
+
+
+        // Method to filter sales data based on selected filters
+        private void FilterSalesData()
+        {
+            string selectedTransactionType = cmbTransactionType.SelectedItem?.ToString();
+            string selectedMonth = cmbMonth.SelectedItem?.ToString();
+            string selectedChef = cmbUserName.SelectedItem?.ToString();
+
+            string query = "SELECT p.Payment_ID, p.Payment_date, p.Amount, " +
+                           "p.Order_ID, p.Reservation_ID, p.Status, " +
+                           "COALESCE(u1.Real_Name, 'N/A') AS ChefName, " +
+                           "COALESCE(u2.Real_Name, 'N/A') AS Reservation_Coordinator_Name " +
+                           "FROM Payment p " +
+                           "LEFT JOIN Chef_InCharge cic ON p.Order_ID = cic.Order_ID " +
+                           "LEFT JOIN [User] u1 ON cic.User_ID = u1.User_ID AND u1.Role = 'Chef' " +
+                           "LEFT JOIN Reservation r ON p.Reservation_ID = r.Reservation_ID " +
+                           "LEFT JOIN [User] u2 ON r.User_ID = u2.User_ID AND u2.Role = 'Reservation Coordinator' WHERE 1=1";
+
+            // Apply transaction type filter
+            if (!string.IsNullOrEmpty(selectedTransactionType))
+            {
+                if (selectedTransactionType == "Order")
                 {
-                    conn.Open();
-                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dataGridView1.AutoGenerateColumns = true;
-                    dataGridView1.DataSource = dt;
+                    query += " AND p.Order_ID IS NOT NULL";
                 }
-                catch (Exception ex)
+                else if (selectedTransactionType == "Reservation")
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    query += " AND p.Reservation_ID IS NOT NULL";
                 }
             }
-        }
 
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            string selectedMonth = cmbMonth.SelectedItem?.ToString();
-            string selectedChef = cmbChefName.SelectedItem?.ToString();
-
-            // Build the SQL query based on selected filters
-            string query = "SELECT Payment.Payment_ID, Payment.Amount, Payment.Order_ID, Payment.Reservation_ID, Payment.Status " +
-                           "FROM Payment " +
-                           "INNER JOIN Chef_InCharge cic ON Payment.Order_ID = cic.Order_ID " +
-                           "INNER JOIN Chefs c ON cic.User_ID = c.User_ID WHERE 1 = 1";
-
-            // Add conditions based on selected filters
+            // Apply month filter (assuming it's a valid month number)
             if (!string.IsNullOrEmpty(selectedMonth))
             {
-                query += " AND MONTH(Payment.Payment_date) = @Month";
+                // Validate if selectedMonth is a valid month number
+                if (int.TryParse(selectedMonth, out int month))
+                {
+                    query += " AND MONTH(p.Payment_date) = @Month";
+                }
             }
+
+            // Apply chef filter (matching chef name)
             if (!string.IsNullOrEmpty(selectedChef))
             {
-                query += " AND c.ChefName = @Chef";  // Assuming ChefName is in the Chefs table
+                query += " AND u1.Real_Name = @Chef";
             }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand(query, conn);
-
-                    // Add parameters to prevent SQL injection
-                    if (!string.IsNullOrEmpty(selectedMonth))
-                        cmd.Parameters.AddWithValue("@Month", selectedMonth); // For the month filter
-                    if (!string.IsNullOrEmpty(selectedChef))
-                        cmd.Parameters.AddWithValue("@Chef", selectedChef); // For chef filter
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    // Show data in DataGridView
-                    if (dt.Rows.Count > 0)
-                    {
-                        dataGridView1.DataSource = dt;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No records found for the selected criteria.", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
+            // Get filtered sales data
+            DataTable filteredSalesData = AdminClass.GetSalesReportData(query, selectedMonth, selectedChef);
+            dataGridView1.DataSource = filteredSalesData;
         }
 
 
-        private void btn_Return_Click(object sender, EventArgs e)
+        // ComboBox change event to filter data based on selected values
+        private void cmbTransactionType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterSalesData();
+        }
+
+        private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterSalesData();
+        }
+
+        private void cmbUserName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilterSalesData();
+        }
+
+        // Reset button event to clear filters and reload all sales data
+        private void btnResetSearch_Click_1(object sender, EventArgs e)
+        {
+            cmbTransactionType.SelectedIndex = 0;
+            cmbMonth.SelectedIndex = 0;
+            cmbUserName.SelectedIndex = 0;
+
+            LoadSalesData();
+        }
+
+        // Cancel button event to close the report form
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
             Admin adminForm = new Admin(currentUserID);
             adminForm.Show();

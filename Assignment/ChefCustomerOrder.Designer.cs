@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class CustomersOrder
+    partial class ChefCustomerOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,7 @@
             this.btnCusOrder_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.btnChefProfile_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.gbShowCusOrder = new System.Windows.Forms.GroupBox();
+            this.lblFoodName = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
             this.cmbNewCusOrderStatus = new System.Windows.Forms.ComboBox();
             this.btnRefreshStatusCusOrder = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@
             this.ColCusOrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateCusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColChefInCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblFoodName = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.tableSidebar_ChefCustomerOrder.SuspendLayout();
             this.gbShowCusOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChefCusOrder)).BeginInit();
@@ -56,18 +57,20 @@
             // 
             this.tableSidebar_ChefCustomerOrder.ColumnCount = 1;
             this.tableSidebar_ChefCustomerOrder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSidebar_ChefCustomerOrder.Controls.Add(this.btnLogOut, 0, 4);
             this.tableSidebar_ChefCustomerOrder.Controls.Add(this.lbl_chef, 0, 0);
             this.tableSidebar_ChefCustomerOrder.Controls.Add(this.btninventory_ChefCustomerOrder, 0, 1);
             this.tableSidebar_ChefCustomerOrder.Controls.Add(this.btnCusOrder_ChefCustomerOrder, 0, 2);
             this.tableSidebar_ChefCustomerOrder.Controls.Add(this.btnChefProfile_ChefCustomerOrder, 0, 3);
             this.tableSidebar_ChefCustomerOrder.Location = new System.Drawing.Point(12, 11);
             this.tableSidebar_ChefCustomerOrder.Name = "tableSidebar_ChefCustomerOrder";
-            this.tableSidebar_ChefCustomerOrder.RowCount = 5;
+            this.tableSidebar_ChefCustomerOrder.RowCount = 6;
             this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_ChefCustomerOrder.Size = new System.Drawing.Size(200, 430);
             this.tableSidebar_ChefCustomerOrder.TabIndex = 6;
             // 
@@ -139,6 +142,14 @@
             this.gbShowCusOrder.TabIndex = 7;
             this.gbShowCusOrder.TabStop = false;
             this.gbShowCusOrder.Text = "Customer Order";
+            // 
+            // lblFoodName
+            // 
+            this.lblFoodName.AutoSize = true;
+            this.lblFoodName.Location = new System.Drawing.Point(211, 327);
+            this.lblFoodName.Name = "lblFoodName";
+            this.lblFoodName.Size = new System.Drawing.Size(0, 25);
+            this.lblFoodName.TabIndex = 17;
             // 
             // lblOrderID
             // 
@@ -262,15 +273,20 @@
             this.ColChefInCharge.Name = "ColChefInCharge";
             this.ColChefInCharge.Width = 187;
             // 
-            // lblFoodName
+            // btnLogOut
             // 
-            this.lblFoodName.AutoSize = true;
-            this.lblFoodName.Location = new System.Drawing.Point(211, 327);
-            this.lblFoodName.Name = "lblFoodName";
-            this.lblFoodName.Size = new System.Drawing.Size(0, 25);
-            this.lblFoodName.TabIndex = 17;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 15;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // CustomersOrder
+            // ChefCustomerOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
@@ -278,7 +294,7 @@
             this.Controls.Add(this.tableSidebar_ChefCustomerOrder);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "CustomersOrder";
+            this.Name = "ChefCustomerOrder";
             this.Text = "CustomersOrder";
             this.tableSidebar_ChefCustomerOrder.ResumeLayout(false);
             this.tableSidebar_ChefCustomerOrder.PerformLayout();
@@ -310,5 +326,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn UpdateCusOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColChefInCharge;
         private System.Windows.Forms.Label lblFoodName;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

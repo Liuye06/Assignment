@@ -18,6 +18,7 @@ namespace Assignment
         {
             InitializeComponent();
             currentUserID = userID; // Store the userID
+            UserSessionManager.Login(userID);
         }
 
 
@@ -54,6 +55,11 @@ namespace Assignment
             AdminProfile adminProfileForm = new AdminProfile(currentUserID);
             adminProfileForm.Show();
             this.Close();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

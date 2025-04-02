@@ -47,6 +47,7 @@
             this.lblResvType = new System.Windows.Forms.Label();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lblMonth = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.tableSidebar_HRReport.SuspendLayout();
             this.gbHRReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
@@ -60,15 +61,17 @@
             this.tableSidebar_HRReport.Controls.Add(this.btnMHall_HRReport, 0, 2);
             this.tableSidebar_HRReport.Controls.Add(this.btnHRReport_HRReport, 0, 3);
             this.tableSidebar_HRReport.Controls.Add(this.btnUProfile_HRReport, 0, 4);
+            this.tableSidebar_HRReport.Controls.Add(this.btnLogOut, 0, 5);
             this.tableSidebar_HRReport.Location = new System.Drawing.Point(13, 13);
             this.tableSidebar_HRReport.Name = "tableSidebar_HRReport";
-            this.tableSidebar_HRReport.RowCount = 6;
+            this.tableSidebar_HRReport.RowCount = 7;
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_HRReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_HRReport.Size = new System.Drawing.Size(200, 428);
             this.tableSidebar_HRReport.TabIndex = 0;
             // 
@@ -144,7 +147,6 @@
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Export to Excel";
             this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnGenerate
             // 
@@ -214,7 +216,6 @@
             this.btnSearchReport.TabIndex = 4;
             this.btnSearchReport.Text = "Search";
             this.btnSearchReport.UseVisualStyleBackColor = true;
-            this.btnSearchReport.Click += new System.EventHandler(this.btnSearchReport_Click);
             // 
             // cmbResvType
             // 
@@ -263,6 +264,19 @@
             this.lblMonth.TabIndex = 0;
             this.lblMonth.Text = "Month";
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 253);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 8;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // MainHallResvReport
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -301,5 +315,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColHallName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColResvType;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColStatus;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

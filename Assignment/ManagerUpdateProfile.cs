@@ -24,43 +24,55 @@ namespace Assignment
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
             currentUserID = userID; // Store the userID
+            UserSessionManager.Login(userID);
+        }
+
+        private void ManagerProfile_Load(object sender, EventArgs e)
+        {
+            LoadManagerProfile(currentUserID);
         }
 
 
+        public void ReloadManagerProfile()
+        {
+            LoadManagerProfile(currentUserID); // Reload the manager profile with the updated data
+        }
+
         private void LoadManagerProfile(int loggedInUserID)
         {
-            string query = "SELECT Email, Real_Name, DOB, Gender, Username, Profile_Pic FROM User WHERE User_ID = @UserID AND Role = 'Manager'";
+            Dictionary<string, object> managerData = ManagerProfileDB.GetManagerProfile(loggedInUserID);
 
-            string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
-
-            using (SqlConnection con = new SqlConnection(connectionString))
+            if (managerData.Count > 0)
             {
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@UserID", loggedInUserID);
+                txtMangerEmail.Text = managerData["Email"].ToString();
+                txtManagerName.Text = managerData["Real_Name"].ToString();
+                dtpDOB.Value = (DateTime)managerData["DOB"];
+                cmbManagerGender.SelectedItem = managerData["Gender"].ToString();
+                txtManagerUsername.Text = managerData["Username"].ToString();
+                txtManagerPassword.Text = managerData["Password"].ToString(); // Load password
 
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
+                // Make all fields read-only
+                txtMangerEmail.ReadOnly = true;
+                txtManagerName.ReadOnly = true;
+                txtManagerUsername.ReadOnly = true;
+                txtManagerPassword.ReadOnly = true;
 
-                if (reader.Read())
+                // Disable DateTimePicker and ComboBox
+                dtpDOB.Enabled = false;
+                cmbManagerGender.Enabled = false;
+
+                if (managerData.ContainsKey("Profile_Pic"))
                 {
-                    txtMangerEmail.Text = reader["Email"].ToString();
-                    txtManagerName.Text = reader["Real_Name"].ToString();
-                    dtpDOB.Value = Convert.ToDateTime(reader["DOB"]);
-                    cmbManagerGender.SelectedItem = reader["Gender"].ToString();
-                    txtManagerUsername.Text = reader["Username"].ToString();
-
-                    // Load Profile Picture
-                    if (!reader.IsDBNull(reader.GetOrdinal("Profile_Pic")))
-                    {
-                        byte[] imgData = (byte[])reader["Profile_Pic"];
-                        using (MemoryStream ms = new MemoryStream(imgData))
-                        {
-                            picManagerProfilePic.Image = Image.FromStream(ms);
-                        }
-                    }
+                    picManagerProfilePic.Image = (Image)managerData["Profile_Pic"];
                 }
-                reader.Close();
             }
+        }
+
+        private void btnUpdateManagerProfile_Click(object sender, EventArgs e)
+        {
+            // Open the UpdateManagerProfileForm when the update button is clicked
+            ManagerEditProfile updateForm = new ManagerEditProfile(currentUserID, this);
+            updateForm.Show();
         }
 
         private void btnMMenu_UProfile_Click(object sender, EventArgs e)
@@ -83,14 +95,9 @@ namespace Assignment
             _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
 
-        private void btnUpdateManagerProfile_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void ManagerProfile_Load(object sender, EventArgs e)
-        {
-            
+            UserSessionManager.Logout(this);
         }
     }
 }

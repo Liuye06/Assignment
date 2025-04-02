@@ -119,6 +119,19 @@
     <Compile Include="AddReservation.Designer.cs">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChefEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefEditProfile.Designer.cs">
+      <DependentUpon>ChefEditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChefHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChefHomepage.Designer.cs">
+      <DependentUpon>ChefHomepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChefProfileDB.cs" />
     <Compile Include="DeleteReservation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +221,19 @@
     <Compile Include="MakePayment_Reservations.Designer.cs">
       <DependentUpon>MakePayment_Reservations.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerEditProfile.Designer.cs">
+      <DependentUpon>ManagerEditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerHomepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerHomepage.Designer.cs">
+      <DependentUpon>ManagerHomepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerProfileDB.cs" />
     <Compile Include="Orders_Confirmation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,7 +382,6 @@
     <Compile Include="Chef_Profile.Designer.cs">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerProfileManager.cs" />
     <Compile Include="ManagerUpdateProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,15 +430,15 @@
     <EmbeddedResource Include="AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChefEditProfile.resx">
+      <DependentUpon>ChefEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChefHomepage.resx">
+      <DependentUpon>ChefHomepage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteReservation.resx">
       <DependentUpon>DeleteReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="staff_login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="staff_login.Designer.cs">
-      <DependentUpon>staff_login.cs</DependentUpon>
-    </Compile>
     <Compile Include="User.cs" />
     <EmbeddedResource Include="loginPage.resx">
       <DependentUpon>loginPage.cs</DependentUpon>
@@ -429,6 +454,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="UserSessionManager.cs" />
     <Compile Include="ViewCustomerOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -500,15 +526,21 @@
     <EmbeddedResource Include="MakePayment_Reservations.resx">
       <DependentUpon>MakePayment_Reservations.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerEditProfile.resx">
+      <DependentUpon>ManagerEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerHomepage.resx">
+      <DependentUpon>ManagerHomepage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Orders_Confirmation.resx">
       <DependentUpon>Orders_Confirmation.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="SidebarManager.cs" />
-    <Compile Include="CustomersOrder.cs">
+    <Compile Include="ChefCustomerOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomersOrder.Designer.cs">
-      <DependentUpon>CustomersOrder.cs</DependentUpon>
+    <Compile Include="ChefCustomerOrder.Designer.cs">
+      <DependentUpon>ChefCustomerOrder.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddChefIngredient.resx">
       <DependentUpon>AddChefIngredient.cs</DependentUpon>
@@ -583,9 +615,6 @@
     <EmbeddedResource Include="Reservation.resx">
       <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="staff_login.resx">
-      <DependentUpon>staff_login.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <EmbeddedResource Include="ReservationPayment.resx">
       <DependentUpon>ReservationPayment.cs</DependentUpon>
@@ -608,8 +637,8 @@
     <EmbeddedResource Include="ViewCustomerReservation.resx">
       <DependentUpon>ViewCustomerReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomersOrder.resx">
-      <DependentUpon>CustomersOrder.cs</DependentUpon>
+    <EmbeddedResource Include="ChefCustomerOrder.resx">
+      <DependentUpon>ChefCustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>

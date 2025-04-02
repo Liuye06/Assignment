@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class CustomersOrder: Form
+    public partial class ChefCustomerOrder: Form
     {
         private SidebarManager _sidebarManager;
         private int currentUserID; // Store the userID
         private BindingSource bindingSourceOrders;
 
-        public CustomersOrder(int userID)
+        public ChefCustomerOrder(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
@@ -24,6 +24,7 @@ namespace Assignment
             LoadOrders();
             dgvChefCusOrder.CellClick += dgvChefCusOrder_CellContentClick;
             currentUserID = userID; // Store the userID
+            UserSessionManager.Login(userID);
         }
 
         private void LoadOrders()
@@ -181,12 +182,17 @@ namespace Assignment
 
         private void btnCusOrder_ChefCustomerOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomersOrder(currentUserID));
+            _sidebarManager.NavigateTo(new ChefCustomerOrder(currentUserID));
         }
 
         private void btnChefProfile_ChefCustomerOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Chef_Profile());
+            _sidebarManager.NavigateTo(new Chef_Profile(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

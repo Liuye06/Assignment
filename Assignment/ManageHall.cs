@@ -24,6 +24,7 @@ namespace Assignment
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
             currentUserID = userID; // Store the userID
+            UserSessionManager.Login(userID);
         }
 
 
@@ -149,6 +150,11 @@ namespace Assignment
         private void btnUProfile_MHall_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

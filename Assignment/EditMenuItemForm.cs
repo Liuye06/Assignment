@@ -99,25 +99,5 @@ namespace Assignment
         {
             this.Close();
         }
-
-        private void btnMMenu_EditMenu_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
-        }
-
-        private void btnMHall_EditMenu_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
-        }
-
-        private void btn_HRReport_EditMenu_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
-        }
-
-        private void btnUProfile_EditMenu_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
-        }
     }
 }

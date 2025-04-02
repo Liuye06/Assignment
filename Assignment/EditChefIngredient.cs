@@ -77,12 +77,12 @@ namespace Assignment
 
         private void btn_ECCusOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomersOrder(currentUserID));
+            _sidebarManager.NavigateTo(new ChefCustomerOrder(currentUserID));
         }
 
         private void btn_ECChefProfile_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Chef_Profile());
+            _sidebarManager.NavigateTo(new Chef_Profile(currentUserID));
         }
     }
 }

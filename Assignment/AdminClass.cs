@@ -58,6 +58,7 @@ namespace Assignment
             }
         }
 
+
         public static bool AddUser(string realName, DateTime dob, string gender, string email,
                                  string role, string username, string password, DataGridView dataGridView)
         {
@@ -94,10 +95,13 @@ namespace Assignment
                 }
             }
         }
+
+
         public static List<string> GetStaffRoles()
         {
             return new List<string> { "Admin", "Chef", "Manager", "Reservation Coordinator" };
         }
+
 
         public static bool AddStaff(string realName, DateTime dob, string gender, string email,
                                   string role, string username, string password, DataGridView dataGridView)
@@ -135,6 +139,7 @@ namespace Assignment
                 }
             }
         }
+
         public static bool IsUsernameAvailable(string username) // Validate if username already exists
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -158,6 +163,7 @@ namespace Assignment
                 }
             }
         }
+
         //  after edit refresh the DataGridView
         public static bool EditUser(string user_Id, string field, string newValue, DataGridView dataGridView)
         {
@@ -234,6 +240,7 @@ namespace Assignment
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         public static void LoadCustomers(ListBox listBox)
         {
             listBox.Items.Clear();
@@ -248,6 +255,7 @@ namespace Assignment
                 ));
             }
         }
+
         public static DataTable GetCustomerFeedbacks()
         {
             DataTable dt = new DataTable();
@@ -298,40 +306,7 @@ namespace Assignment
                               "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static DataTable GetStaffDataByRole(string role)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT User_ID, Real_Name, Email, DOB, Gender, Role, Username, Password FROM [User]";
 
-                    if (!string.IsNullOrEmpty(role))
-                    {
-                        query += " WHERE Role = @Role";
-                    }
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        if (!string.IsNullOrEmpty(role))
-                        {
-                            cmd.Parameters.AddWithValue("@Role", role);
-                        }
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                        {
-                            adapter.Fill(dt);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading staff data: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            return dt;
-        }
 
         public static void RefreshStaffGridView(DataGridView dataGridView, string role = "")
         {
@@ -380,31 +355,6 @@ namespace Assignment
             }
         }
 
-        public static void LoadStaff(ListBox listBox)
-        {
-            if (listBox == null || listBox.IsDisposed) return;
-
-            try
-            {
-                listBox.Invoke((MethodInvoker)delegate
-                {
-                    listBox.Items.Clear();
-                    DataTable dt = GetStaffDataByRole(""); 
-
-                    if (dt == null || dt.Rows.Count == 0) return;
-
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        string displayText = $"{row["User_ID"]} - {row["Real_Name"]} | {row["Email"]} | {row["DOB"]} | {row["Gender"]} | {row["Role"]} | {row["Username"]} | {row["Password"]}";
-                        listBox.Items.Add(displayText);
-                    }
-                });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading staff: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
 
         public static List<string> GetStaffNamesByRole(string role)
@@ -541,6 +491,8 @@ namespace Assignment
                 }
             }
         }
+
+
         public static Dictionary<string, string> GetStaffDetails(string realName)
         {
             var details = new Dictionary<string, string>();
@@ -643,81 +595,82 @@ namespace Assignment
             }
         }
 
-        public static List<string> GetMenuItems()
+
+        // Method to get the sales report data based on a query and filters
+        public static DataTable GetSalesReportData(string query, string selectedMonth = null, string selectedChef = null)
         {
-            List<string> menuItems = new List<string>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT Item FROM Menu";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    // Add parameters for filters, if any
+                    if (!string.IsNullOrEmpty(selectedMonth))
                     {
-                        menuItems.Add(reader["Item"].ToString());
+                        cmd.Parameters.AddWithValue("@Month", selectedMonth);
                     }
+
+                    if (!string.IsNullOrEmpty(selectedChef))
+                    {
+                        cmd.Parameters.AddWithValue("@Chef", selectedChef);
+                    }
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
                 }
             }
-            return menuItems;
         }
 
+        // Method to get transaction types for the ComboBox
+        public static List<string> GetTransactionTypes()
+        {
+            List<string> transactionTypes = new List<string>
+            {
+                "Order",
+                "Reservation",
+            };
+            return transactionTypes;
+        }
+
+        // Method to get payment months for the ComboBox
         public static List<string> GetPaymentMonths()
         {
-            List<string> months = new List<string>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            return new List<string>
             {
-                string query = "SELECT DISTINCT MONTH(Payment_Date) AS Month FROM Payment";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        months.Add(reader["Month"].ToString());
-                    }
-                }
-            }
-            return months;
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            };
         }
 
-        public static List<string> GetMenuCategories()
-        {
-            List<string> categories = new List<string>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = "SELECT DISTINCT Category FROM Menu";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        categories.Add(reader["Category"].ToString());
-                    }
-                }
-            }
-            return categories;
-        }
-
+        // Method to get chefs for the ComboBox
         public static List<string> GetChefs()
         {
             List<string> chefs = new List<string>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
+
+            try
             {
-                string query = "SELECT DISTINCT u.Real_Name " +
-                       "FROM Chef_InCharge cic " +
-                       "INNER JOIN [User] u ON cic.User_ID = u.User_ID";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    while (reader.Read())
+                    // SQL query to get the chefs from the User table with role 'Chef'
+                    string query = "SELECT DISTINCT Real_Name FROM [User] WHERE Role = 'Chef'";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        chefs.Add(reader["Real_Name"].ToString());
+                        conn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            chefs.Add(reader["Real_Name"].ToString()); // Add the real name of the chef
+                        }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching chef data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             return chefs;
         }
     }

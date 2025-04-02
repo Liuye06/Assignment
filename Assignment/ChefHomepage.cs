@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class MainHallResvReport : Form
+    public partial class ChefHomepage : Form
     {
         private SidebarManager _sidebarManager;
         private int currentUserID; // Store the userID
 
-        public MainHallResvReport(int userID)
+        public ChefHomepage(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
@@ -23,24 +23,19 @@ namespace Assignment
             UserSessionManager.Login(userID);
         }
 
-        private void btnMMenu_HRReport_Click(object sender, EventArgs e)
+        private void btninventory_ChefCustomerOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
+            _sidebarManager.NavigateTo(new Chef(currentUserID));
         }
 
-        private void btnMHall_HRReport_Click(object sender, EventArgs e)
+        private void btnCusOrder_ChefCustomerOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
+            _sidebarManager.NavigateTo(new ChefCustomerOrder(currentUserID));
         }
 
-        private void btnHRReport_HRReport_Click(object sender, EventArgs e)
+        private void btnChefProfile_ChefCustomerOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
-        }
-
-        private void btnUProfile_HRReport_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
+            _sidebarManager.NavigateTo(new Chef_Profile(currentUserID));
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

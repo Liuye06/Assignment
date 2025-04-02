@@ -33,12 +33,6 @@
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lbl_salesR = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.paymentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet9 = new Assignment.Database1DataSet9();
             this.paymentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -48,9 +42,13 @@
             this.paymentTableAdapter = new Assignment.Database1DataSet1TableAdapters.PaymentTableAdapter();
             this.paymentTableAdapter1 = new Assignment.Database1DataSet3TableAdapters.PaymentTableAdapter();
             this.paymentTableAdapter2 = new Assignment.Database1DataSet9TableAdapters.PaymentTableAdapter();
-            this.cmbChefName = new System.Windows.Forms.ComboBox();
+            this.cmbUserName = new System.Windows.Forms.ComboBox();
             this.lblUser = new System.Windows.Forms.Label();
-            this.btn_Return = new System.Windows.Forms.Button();
+            this.btnResetSearch = new System.Windows.Forms.Button();
+            this.cmbTransactionType = new System.Windows.Forms.ComboBox();
+            this.lblTransactionType = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.ChefName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).BeginInit();
@@ -64,7 +62,7 @@
             // 
             this.lbl_month.AutoSize = true;
             this.lbl_month.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_month.Location = new System.Drawing.Point(30, 90);
+            this.lbl_month.Location = new System.Drawing.Point(434, 95);
             this.lbl_month.Name = "lbl_month";
             this.lbl_month.Size = new System.Drawing.Size(67, 25);
             this.lbl_month.TabIndex = 1;
@@ -86,17 +84,17 @@
             "October",
             "November",
             "December"});
-            this.cmbMonth.Location = new System.Drawing.Point(103, 87);
+            this.cmbMonth.Location = new System.Drawing.Point(507, 92);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(228, 33);
             this.cmbMonth.TabIndex = 2;
-            this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
             // 
             // lbl_salesR
             // 
             this.lbl_salesR.AutoSize = true;
             this.lbl_salesR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_salesR.Location = new System.Drawing.Point(152, 25);
+            this.lbl_salesR.Location = new System.Drawing.Point(22, 26);
             this.lbl_salesR.Name = "lbl_salesR";
             this.lbl_salesR.Size = new System.Drawing.Size(136, 25);
             this.lbl_salesR.TabIndex = 0;
@@ -104,71 +102,15 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.paymentIDDataGridViewTextBoxColumn,
-            this.paymentdateDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn,
-            this.orderIDDataGridViewTextBoxColumn,
-            this.reservationIDDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.paymentBindingSource2;
+            this.ChefName});
             this.dataGridView1.Location = new System.Drawing.Point(23, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1032, 269);
+            this.dataGridView1.Size = new System.Drawing.Size(1032, 219);
             this.dataGridView1.TabIndex = 6;
-            // 
-            // paymentIDDataGridViewTextBoxColumn
-            // 
-            this.paymentIDDataGridViewTextBoxColumn.DataPropertyName = "Payment_ID";
-            this.paymentIDDataGridViewTextBoxColumn.HeaderText = "Payment_ID";
-            this.paymentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.paymentIDDataGridViewTextBoxColumn.Name = "paymentIDDataGridViewTextBoxColumn";
-            this.paymentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.paymentIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // paymentdateDataGridViewTextBoxColumn
-            // 
-            this.paymentdateDataGridViewTextBoxColumn.DataPropertyName = "Payment_date";
-            this.paymentdateDataGridViewTextBoxColumn.HeaderText = "Payment_date";
-            this.paymentdateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.paymentdateDataGridViewTextBoxColumn.Name = "paymentdateDataGridViewTextBoxColumn";
-            this.paymentdateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // orderIDDataGridViewTextBoxColumn
-            // 
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // reservationIDDataGridViewTextBoxColumn
-            // 
-            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "Reservation_ID";
-            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "Reservation_ID";
-            this.reservationIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
-            this.reservationIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
             // 
             // paymentBindingSource2
             // 
@@ -212,10 +154,10 @@
             // 
             this.paymentTableAdapter2.ClearBeforeFill = true;
             // 
-            // cmbChefName
+            // cmbUserName
             // 
-            this.cmbChefName.FormattingEnabled = true;
-            this.cmbChefName.Items.AddRange(new object[] {
+            this.cmbUserName.FormattingEnabled = true;
+            this.cmbUserName.Items.AddRange(new object[] {
             "January",
             "February",
             "March",
@@ -228,31 +170,80 @@
             "October",
             "November",
             "December"});
-            this.cmbChefName.Location = new System.Drawing.Point(491, 87);
-            this.cmbChefName.Name = "cmbChefName";
-            this.cmbChefName.Size = new System.Drawing.Size(228, 33);
-            this.cmbChefName.TabIndex = 7;
+            this.cmbUserName.Location = new System.Drawing.Point(857, 92);
+            this.cmbUserName.Name = "cmbUserName";
+            this.cmbUserName.Size = new System.Drawing.Size(198, 33);
+            this.cmbUserName.TabIndex = 7;
+            this.cmbUserName.SelectedIndexChanged += new System.EventHandler(this.cmbUserName_SelectedIndexChanged);
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(357, 90);
+            this.lblUser.Location = new System.Drawing.Point(741, 92);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(110, 25);
             this.lblUser.TabIndex = 8;
             this.lblUser.Text = "User Name";
             // 
-            // btn_Return
+            // btnResetSearch
             // 
-            this.btn_Return.Location = new System.Drawing.Point(23, 15);
-            this.btn_Return.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Return.Name = "btn_Return";
-            this.btn_Return.Size = new System.Drawing.Size(95, 44);
-            this.btn_Return.TabIndex = 71;
-            this.btn_Return.Text = "<";
-            this.btn_Return.UseVisualStyleBackColor = true;
-            this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
+            this.btnResetSearch.Location = new System.Drawing.Point(23, 389);
+            this.btnResetSearch.Name = "btnResetSearch";
+            this.btnResetSearch.Size = new System.Drawing.Size(499, 34);
+            this.btnResetSearch.TabIndex = 72;
+            this.btnResetSearch.Text = "Reset Search ";
+            this.btnResetSearch.UseVisualStyleBackColor = true;
+            this.btnResetSearch.Click += new System.EventHandler(this.btnResetSearch_Click_1);
+            // 
+            // cmbTransactionType
+            // 
+            this.cmbTransactionType.FormattingEnabled = true;
+            this.cmbTransactionType.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "Jun",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmbTransactionType.Location = new System.Drawing.Point(193, 92);
+            this.cmbTransactionType.Name = "cmbTransactionType";
+            this.cmbTransactionType.Size = new System.Drawing.Size(228, 33);
+            this.cmbTransactionType.TabIndex = 74;
+            this.cmbTransactionType.SelectedIndexChanged += new System.EventHandler(this.cmbTransactionType_SelectedIndexChanged);
+            // 
+            // lblTransactionType
+            // 
+            this.lblTransactionType.AutoSize = true;
+            this.lblTransactionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransactionType.Location = new System.Drawing.Point(22, 95);
+            this.lblTransactionType.Name = "lblTransactionType";
+            this.lblTransactionType.Size = new System.Drawing.Size(165, 25);
+            this.lblTransactionType.TabIndex = 73;
+            this.lblTransactionType.Text = "Transaction Type";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(528, 389);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(527, 34);
+            this.btnCancel.TabIndex = 75;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
+            // 
+            // ChefName
+            // 
+            this.ChefName.HeaderText = "Chef Name";
+            this.ChefName.MinimumWidth = 6;
+            this.ChefName.Name = "ChefName";
+            this.ChefName.Width = 125;
             // 
             // salesReport
             // 
@@ -260,9 +251,12 @@
             this.BackColor = System.Drawing.Color.Linen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.btn_Return);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.cmbTransactionType);
+            this.Controls.Add(this.lblTransactionType);
+            this.Controls.Add(this.btnResetSearch);
             this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.cmbChefName);
+            this.Controls.Add(this.cmbUserName);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.lbl_month);
@@ -293,20 +287,18 @@
         private Database1DataSet1 database1DataSet1;
         private System.Windows.Forms.BindingSource paymentBindingSource;
         private Database1DataSet1TableAdapters.PaymentTableAdapter paymentTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paymentIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paymentdateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reservationIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private Database1DataSet3 database1DataSet3;
         private System.Windows.Forms.BindingSource paymentBindingSource1;
         private Database1DataSet3TableAdapters.PaymentTableAdapter paymentTableAdapter1;
         private Database1DataSet9 database1DataSet9;
         private System.Windows.Forms.BindingSource paymentBindingSource2;
         private Database1DataSet9TableAdapters.PaymentTableAdapter paymentTableAdapter2;
-        private System.Windows.Forms.ComboBox cmbChefName;
+        private System.Windows.Forms.ComboBox cmbUserName;
         private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.Button btn_Return;
+        private System.Windows.Forms.Button btnResetSearch;
+        private System.Windows.Forms.ComboBox cmbTransactionType;
+        private System.Windows.Forms.Label lblTransactionType;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChefName;
     }
 }

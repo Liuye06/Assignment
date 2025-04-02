@@ -45,6 +45,7 @@
             this.btnSearchHall = new System.Windows.Forms.Button();
             this.txtHall = new System.Windows.Forms.TextBox();
             this.lblHall = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.tableSidebar_MHall.SuspendLayout();
             this.gbMHall.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHall)).BeginInit();
@@ -54,19 +55,21 @@
             // 
             this.tableSidebar_MHall.ColumnCount = 1;
             this.tableSidebar_MHall.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSidebar_MHall.Controls.Add(this.btnLogOut, 0, 5);
             this.tableSidebar_MHall.Controls.Add(this.btnMMenu_MHall, 0, 1);
             this.tableSidebar_MHall.Controls.Add(this.btnMHall_MHall, 0, 2);
             this.tableSidebar_MHall.Controls.Add(this.btnHRReport_MHall, 0, 3);
             this.tableSidebar_MHall.Controls.Add(this.btnUProfile_MHall, 0, 4);
             this.tableSidebar_MHall.Location = new System.Drawing.Point(12, 12);
             this.tableSidebar_MHall.Name = "tableSidebar_MHall";
-            this.tableSidebar_MHall.RowCount = 6;
+            this.tableSidebar_MHall.RowCount = 7;
             this.tableSidebar_MHall.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableSidebar_MHall.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MHall.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MHall.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableSidebar_MHall.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MHall.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_MHall.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_MHall.Size = new System.Drawing.Size(200, 430);
             this.tableSidebar_MHall.TabIndex = 0;
             // 
@@ -238,6 +241,19 @@
             this.lblHall.TabIndex = 0;
             this.lblHall.Text = "Hall Name";
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 253);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 6;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // MainManageHall
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -275,5 +291,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrice;
         private System.Windows.Forms.DataGridViewButtonColumn ColHallEdit;
         private System.Windows.Forms.DataGridViewButtonColumn ColHallDelete;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

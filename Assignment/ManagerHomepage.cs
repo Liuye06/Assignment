@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class MainHallResvReport : Form
+    public partial class ManagerHomepage : Form
     {
         private SidebarManager _sidebarManager;
         private int currentUserID; // Store the userID
 
-        public MainHallResvReport(int userID)
+        public ManagerHomepage(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
@@ -23,22 +23,22 @@ namespace Assignment
             UserSessionManager.Login(userID);
         }
 
-        private void btnMMenu_HRReport_Click(object sender, EventArgs e)
+        private void btnMMenu_MMenu_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
         }
 
-        private void btnMHall_HRReport_Click(object sender, EventArgs e)
+        private void btnMHall_MMenu_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
         }
 
-        private void btnHRReport_HRReport_Click(object sender, EventArgs e)
+        private void btn_HRReport_MMenu_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
         }
 
-        private void btnUProfile_HRReport_Click(object sender, EventArgs e)
+        private void btnUProfile_MMenu_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }

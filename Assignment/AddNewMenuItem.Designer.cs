@@ -39,14 +39,8 @@
             this.lblCategoryMenu = new System.Windows.Forms.Label();
             this.lblPriceMenu = new System.Windows.Forms.Label();
             this.lblAddMenu = new System.Windows.Forms.Label();
-            this.btnUProfile_AddMenu = new System.Windows.Forms.Button();
-            this.btnMRReport_AddMenu = new System.Windows.Forms.Button();
-            this.btnMHall_AddMenu = new System.Windows.Forms.Button();
-            this.btnMMenu_AddMenu = new System.Windows.Forms.Button();
-            this.tableSidebar_AddMenu = new System.Windows.Forms.TableLayoutPanel();
             this.gbAddMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddMenu)).BeginInit();
-            this.tableSidebar_AddMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbAddMenu
@@ -61,16 +55,16 @@
             this.gbAddMenu.Controls.Add(this.lblCategoryMenu);
             this.gbAddMenu.Controls.Add(this.lblPriceMenu);
             this.gbAddMenu.Controls.Add(this.lblAddMenu);
-            this.gbAddMenu.Location = new System.Drawing.Point(216, 71);
+            this.gbAddMenu.Location = new System.Drawing.Point(24, 12);
             this.gbAddMenu.Name = "gbAddMenu";
-            this.gbAddMenu.Size = new System.Drawing.Size(850, 370);
+            this.gbAddMenu.Size = new System.Drawing.Size(1042, 429);
             this.gbAddMenu.TabIndex = 1;
             this.gbAddMenu.TabStop = false;
             this.gbAddMenu.Text = "Add New Menu Item";
             // 
             // btnCancelMenu
             // 
-            this.btnCancelMenu.Location = new System.Drawing.Point(421, 316);
+            this.btnCancelMenu.Location = new System.Drawing.Point(512, 351);
             this.btnCancelMenu.Name = "btnCancelMenu";
             this.btnCancelMenu.Size = new System.Drawing.Size(370, 34);
             this.btnCancelMenu.TabIndex = 9;
@@ -80,7 +74,7 @@
             // 
             // btnAddMenuItem
             // 
-            this.btnAddMenuItem.Location = new System.Drawing.Point(45, 316);
+            this.btnAddMenuItem.Location = new System.Drawing.Point(136, 351);
             this.btnAddMenuItem.Name = "btnAddMenuItem";
             this.btnAddMenuItem.Size = new System.Drawing.Size(370, 34);
             this.btnAddMenuItem.TabIndex = 8;
@@ -90,7 +84,7 @@
             // 
             // btnBrowseImageMenu
             // 
-            this.btnBrowseImageMenu.Location = new System.Drawing.Point(572, 265);
+            this.btnBrowseImageMenu.Location = new System.Drawing.Point(663, 300);
             this.btnBrowseImageMenu.Name = "btnBrowseImageMenu";
             this.btnBrowseImageMenu.Size = new System.Drawing.Size(219, 34);
             this.btnBrowseImageMenu.TabIndex = 7;
@@ -100,7 +94,7 @@
             // 
             // picAddMenu
             // 
-            this.picAddMenu.Location = new System.Drawing.Point(572, 45);
+            this.picAddMenu.Location = new System.Drawing.Point(663, 80);
             this.picAddMenu.Name = "picAddMenu";
             this.picAddMenu.Size = new System.Drawing.Size(219, 210);
             this.picAddMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -116,21 +110,21 @@
             "Side ",
             "Beverage",
             "Dessert"});
-            this.cmbCategoryMenu.Location = new System.Drawing.Point(207, 222);
+            this.cmbCategoryMenu.Location = new System.Drawing.Point(298, 257);
             this.cmbCategoryMenu.Name = "cmbCategoryMenu";
             this.cmbCategoryMenu.Size = new System.Drawing.Size(301, 33);
             this.cmbCategoryMenu.TabIndex = 5;
             // 
             // txtPriceMenu
             // 
-            this.txtPriceMenu.Location = new System.Drawing.Point(207, 141);
+            this.txtPriceMenu.Location = new System.Drawing.Point(298, 176);
             this.txtPriceMenu.Name = "txtPriceMenu";
             this.txtPriceMenu.Size = new System.Drawing.Size(301, 30);
             this.txtPriceMenu.TabIndex = 4;
             // 
             // txtAddMenu
             // 
-            this.txtAddMenu.Location = new System.Drawing.Point(207, 63);
+            this.txtAddMenu.Location = new System.Drawing.Point(298, 98);
             this.txtAddMenu.Name = "txtAddMenu";
             this.txtAddMenu.Size = new System.Drawing.Size(301, 30);
             this.txtAddMenu.TabIndex = 3;
@@ -138,7 +132,7 @@
             // lblCategoryMenu
             // 
             this.lblCategoryMenu.AutoSize = true;
-            this.lblCategoryMenu.Location = new System.Drawing.Point(68, 225);
+            this.lblCategoryMenu.Location = new System.Drawing.Point(159, 260);
             this.lblCategoryMenu.Name = "lblCategoryMenu";
             this.lblCategoryMenu.Size = new System.Drawing.Size(92, 25);
             this.lblCategoryMenu.TabIndex = 2;
@@ -147,7 +141,7 @@
             // lblPriceMenu
             // 
             this.lblPriceMenu.AutoSize = true;
-            this.lblPriceMenu.Location = new System.Drawing.Point(68, 144);
+            this.lblPriceMenu.Location = new System.Drawing.Point(159, 179);
             this.lblPriceMenu.Name = "lblPriceMenu";
             this.lblPriceMenu.Size = new System.Drawing.Size(56, 25);
             this.lblPriceMenu.TabIndex = 1;
@@ -156,94 +150,23 @@
             // lblAddMenu
             // 
             this.lblAddMenu.AutoSize = true;
-            this.lblAddMenu.Location = new System.Drawing.Point(68, 66);
+            this.lblAddMenu.Location = new System.Drawing.Point(159, 101);
             this.lblAddMenu.Name = "lblAddMenu";
             this.lblAddMenu.Size = new System.Drawing.Size(64, 25);
             this.lblAddMenu.TabIndex = 0;
             this.lblAddMenu.Text = "Name";
-            // 
-            // btnUProfile_AddMenu
-            // 
-            this.btnUProfile_AddMenu.FlatAppearance.BorderSize = 0;
-            this.btnUProfile_AddMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUProfile_AddMenu.Location = new System.Drawing.Point(3, 213);
-            this.btnUProfile_AddMenu.Name = "btnUProfile_AddMenu";
-            this.btnUProfile_AddMenu.Size = new System.Drawing.Size(194, 34);
-            this.btnUProfile_AddMenu.TabIndex = 3;
-            this.btnUProfile_AddMenu.Text = "Manager Profile";
-            this.btnUProfile_AddMenu.UseVisualStyleBackColor = true;
-            this.btnUProfile_AddMenu.Click += new System.EventHandler(this.btnUProfile_AddMenu_Click);
-            // 
-            // btnMRReport_AddMenu
-            // 
-            this.btnMRReport_AddMenu.FlatAppearance.BorderSize = 0;
-            this.btnMRReport_AddMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMRReport_AddMenu.Location = new System.Drawing.Point(3, 143);
-            this.btnMRReport_AddMenu.Name = "btnMRReport_AddMenu";
-            this.btnMRReport_AddMenu.Size = new System.Drawing.Size(194, 64);
-            this.btnMRReport_AddMenu.TabIndex = 2;
-            this.btnMRReport_AddMenu.Text = "Hall Reservation Report";
-            this.btnMRReport_AddMenu.UseVisualStyleBackColor = true;
-            this.btnMRReport_AddMenu.Click += new System.EventHandler(this.btnMRReport_AddMenu_Click);
-            // 
-            // btnMHall_AddMenu
-            // 
-            this.btnMHall_AddMenu.FlatAppearance.BorderSize = 0;
-            this.btnMHall_AddMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMHall_AddMenu.Location = new System.Drawing.Point(3, 103);
-            this.btnMHall_AddMenu.Name = "btnMHall_AddMenu";
-            this.btnMHall_AddMenu.Size = new System.Drawing.Size(194, 34);
-            this.btnMHall_AddMenu.TabIndex = 1;
-            this.btnMHall_AddMenu.Text = "Manage Hall";
-            this.btnMHall_AddMenu.UseVisualStyleBackColor = true;
-            this.btnMHall_AddMenu.Click += new System.EventHandler(this.btnMHall_AddMenu_Click);
-            // 
-            // btnMMenu_AddMenu
-            // 
-            this.btnMMenu_AddMenu.FlatAppearance.BorderSize = 0;
-            this.btnMMenu_AddMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMMenu_AddMenu.Location = new System.Drawing.Point(3, 63);
-            this.btnMMenu_AddMenu.Name = "btnMMenu_AddMenu";
-            this.btnMMenu_AddMenu.Size = new System.Drawing.Size(194, 34);
-            this.btnMMenu_AddMenu.TabIndex = 0;
-            this.btnMMenu_AddMenu.Text = "Manage Menu";
-            this.btnMMenu_AddMenu.UseVisualStyleBackColor = true;
-            this.btnMMenu_AddMenu.Click += new System.EventHandler(this.btnMMenu_AddMenu_Click);
-            // 
-            // tableSidebar_AddMenu
-            // 
-            this.tableSidebar_AddMenu.AutoScroll = true;
-            this.tableSidebar_AddMenu.ColumnCount = 1;
-            this.tableSidebar_AddMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSidebar_AddMenu.Controls.Add(this.btnMMenu_AddMenu, 0, 1);
-            this.tableSidebar_AddMenu.Controls.Add(this.btnMHall_AddMenu, 0, 2);
-            this.tableSidebar_AddMenu.Controls.Add(this.btnMRReport_AddMenu, 0, 3);
-            this.tableSidebar_AddMenu.Controls.Add(this.btnUProfile_AddMenu, 0, 4);
-            this.tableSidebar_AddMenu.Location = new System.Drawing.Point(12, 13);
-            this.tableSidebar_AddMenu.Name = "tableSidebar_AddMenu";
-            this.tableSidebar_AddMenu.RowCount = 6;
-            this.tableSidebar_AddMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableSidebar_AddMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_AddMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_AddMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableSidebar_AddMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_AddMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_AddMenu.Size = new System.Drawing.Size(200, 428);
-            this.tableSidebar_AddMenu.TabIndex = 0;
             // 
             // AddNewMenuItem
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbAddMenu);
-            this.Controls.Add(this.tableSidebar_AddMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AddNewMenuItem";
             this.Text = "Add New Menu Item";
             this.gbAddMenu.ResumeLayout(false);
             this.gbAddMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAddMenu)).EndInit();
-            this.tableSidebar_AddMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -260,10 +183,5 @@
         private System.Windows.Forms.Button btnBrowseImageMenu;
         private System.Windows.Forms.Button btnCancelMenu;
         private System.Windows.Forms.Button btnAddMenuItem;
-        private System.Windows.Forms.Button btnUProfile_AddMenu;
-        private System.Windows.Forms.Button btnMRReport_AddMenu;
-        private System.Windows.Forms.Button btnMHall_AddMenu;
-        private System.Windows.Forms.Button btnMMenu_AddMenu;
-        private System.Windows.Forms.TableLayoutPanel tableSidebar_AddMenu;
     }
 }

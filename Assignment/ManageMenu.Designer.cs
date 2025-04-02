@@ -50,6 +50,7 @@
             this.btnMHall_MMenu = new System.Windows.Forms.Button();
             this.btn_HRReport_MMenu = new System.Windows.Forms.Button();
             this.btnUProfile_MMenu = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.gbMMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.tableSidebar_MMenu.SuspendLayout();
@@ -244,15 +245,17 @@
             this.tableSidebar_MMenu.Controls.Add(this.btnMHall_MMenu, 0, 2);
             this.tableSidebar_MMenu.Controls.Add(this.btn_HRReport_MMenu, 0, 3);
             this.tableSidebar_MMenu.Controls.Add(this.btnUProfile_MMenu, 0, 4);
+            this.tableSidebar_MMenu.Controls.Add(this.btnLogOut, 0, 5);
             this.tableSidebar_MMenu.Location = new System.Drawing.Point(12, 12);
             this.tableSidebar_MMenu.Name = "tableSidebar_MMenu";
-            this.tableSidebar_MMenu.RowCount = 6;
+            this.tableSidebar_MMenu.RowCount = 7;
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_MMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_MMenu.Size = new System.Drawing.Size(200, 430);
             this.tableSidebar_MMenu.TabIndex = 2;
             // 
@@ -308,6 +311,19 @@
             this.btnUProfile_MMenu.UseVisualStyleBackColor = true;
             this.btnUProfile_MMenu.Click += new System.EventHandler(this.btnUProfile_MMenu_Click);
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 253);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 5;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // MainManageMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -348,5 +364,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMenuCategory;
         private System.Windows.Forms.DataGridViewButtonColumn ColMenuEdit;
         private System.Windows.Forms.DataGridViewButtonColumn ColMenuDelete;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

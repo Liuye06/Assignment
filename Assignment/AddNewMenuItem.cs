@@ -72,26 +72,6 @@ namespace Assignment
         }
 
 
-        private void btnMMenu_AddMenu_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
-        }
-
-        private void btnMHall_AddMenu_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
-        }
-
-        private void btnMRReport_AddMenu_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
-        }
-
-        private void btnUProfile_AddMenu_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
-        }
-
         private void btnCancelMenu_Click(object sender, EventArgs e)
         {
             this.Close(); // Closes the current form
