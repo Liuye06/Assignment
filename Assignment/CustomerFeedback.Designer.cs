@@ -38,20 +38,16 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.panel_Feedback = new System.Windows.Forms.Panel();
+            this.listViewOrder = new System.Windows.Forms.ListView();
             this.btn_SubmitFeedback = new System.Windows.Forms.Button();
             this.txt_Feedback = new System.Windows.Forms.TextBox();
             this.lbl_Feedback = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.lblSearchOrderID = new System.Windows.Forms.Label();
+            this.txtSearchOrder = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.panel_Feedback.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +89,7 @@
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnFeedback
             // 
@@ -171,32 +168,37 @@
             // panel_Feedback
             // 
             this.panel_Feedback.AutoScroll = true;
+            this.panel_Feedback.Controls.Add(this.listViewOrder);
             this.panel_Feedback.Controls.Add(this.btn_SubmitFeedback);
             this.panel_Feedback.Controls.Add(this.txt_Feedback);
             this.panel_Feedback.Controls.Add(this.lbl_Feedback);
             this.panel_Feedback.Controls.Add(this.label12);
-            this.panel_Feedback.Controls.Add(this.label13);
-            this.panel_Feedback.Controls.Add(this.button2);
-            this.panel_Feedback.Controls.Add(this.label14);
-            this.panel_Feedback.Controls.Add(this.textBox1);
+            this.panel_Feedback.Controls.Add(this.btnSearch);
+            this.panel_Feedback.Controls.Add(this.lblSearchOrderID);
+            this.panel_Feedback.Controls.Add(this.txtSearchOrder);
             this.panel_Feedback.Controls.Add(this.label15);
             this.panel_Feedback.Controls.Add(this.label16);
-            this.panel_Feedback.Controls.Add(this.listBox1);
-            this.panel_Feedback.Controls.Add(this.label17);
-            this.panel_Feedback.Controls.Add(this.label18);
-            this.panel_Feedback.Controls.Add(this.label19);
             this.panel_Feedback.Location = new System.Drawing.Point(219, 81);
             this.panel_Feedback.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Feedback.Name = "panel_Feedback";
             this.panel_Feedback.Size = new System.Drawing.Size(850, 360);
             this.panel_Feedback.TabIndex = 58;
             // 
+            // listViewOrder
+            // 
+            this.listViewOrder.HideSelection = false;
+            this.listViewOrder.Location = new System.Drawing.Point(49, 70);
+            this.listViewOrder.Name = "listViewOrder";
+            this.listViewOrder.Size = new System.Drawing.Size(754, 159);
+            this.listViewOrder.TabIndex = 98;
+            this.listViewOrder.UseCompatibleStateImageBehavior = false;
+            // 
             // btn_SubmitFeedback
             // 
-            this.btn_SubmitFeedback.Location = new System.Drawing.Point(579, 242);
+            this.btn_SubmitFeedback.Location = new System.Drawing.Point(520, 310);
             this.btn_SubmitFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SubmitFeedback.Name = "btn_SubmitFeedback";
-            this.btn_SubmitFeedback.Size = new System.Drawing.Size(146, 35);
+            this.btn_SubmitFeedback.Size = new System.Drawing.Size(283, 35);
             this.btn_SubmitFeedback.TabIndex = 97;
             this.btn_SubmitFeedback.Text = "Submit Feedback";
             this.btn_SubmitFeedback.UseVisualStyleBackColor = true;
@@ -204,16 +206,16 @@
             // 
             // txt_Feedback
             // 
-            this.txt_Feedback.Location = new System.Drawing.Point(49, 295);
+            this.txt_Feedback.Location = new System.Drawing.Point(49, 270);
             this.txt_Feedback.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Feedback.Name = "txt_Feedback";
-            this.txt_Feedback.Size = new System.Drawing.Size(695, 30);
+            this.txt_Feedback.Size = new System.Drawing.Size(754, 30);
             this.txt_Feedback.TabIndex = 96;
             // 
             // lbl_Feedback
             // 
             this.lbl_Feedback.AutoSize = true;
-            this.lbl_Feedback.Location = new System.Drawing.Point(44, 266);
+            this.lbl_Feedback.Location = new System.Drawing.Point(44, 241);
             this.lbl_Feedback.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Feedback.Name = "lbl_Feedback";
             this.lbl_Feedback.Size = new System.Drawing.Size(99, 25);
@@ -229,43 +231,34 @@
             this.label12.Size = new System.Drawing.Size(0, 25);
             this.label12.TabIndex = 94;
             // 
-            // label13
+            // btnSearch
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(318, 66);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 25);
-            this.label13.TabIndex = 93;
-            this.label13.Text = "Request:";
+            this.btnSearch.Location = new System.Drawing.Point(527, 17);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(276, 35);
+            this.btnSearch.TabIndex = 92;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button2
+            // lblSearchOrderID
             // 
-            this.button2.Location = new System.Drawing.Point(527, 17);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(276, 35);
-            this.button2.TabIndex = 92;
-            this.button2.Text = "Search";
-            this.button2.UseVisualStyleBackColor = true;
+            this.lblSearchOrderID.AutoSize = true;
+            this.lblSearchOrderID.Location = new System.Drawing.Point(25, 24);
+            this.lblSearchOrderID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSearchOrderID.Name = "lblSearchOrderID";
+            this.lblSearchOrderID.Size = new System.Drawing.Size(154, 25);
+            this.lblSearchOrderID.TabIndex = 91;
+            this.lblSearchOrderID.Text = "Search Order ID";
             // 
-            // label14
+            // txtSearchOrder
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(25, 24);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(130, 25);
-            this.label14.TabIndex = 91;
-            this.label14.Text = "Search Order";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(168, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 30);
-            this.textBox1.TabIndex = 90;
+            this.txtSearchOrder.Location = new System.Drawing.Point(187, 21);
+            this.txtSearchOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearchOrder.Name = "txtSearchOrder";
+            this.txtSearchOrder.Size = new System.Drawing.Size(306, 30);
+            this.txtSearchOrder.TabIndex = 90;
             // 
             // label15
             // 
@@ -284,46 +277,6 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(0, 25);
             this.label16.TabIndex = 88;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(49, 139);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(159, 104);
-            this.listBox1.TabIndex = 87;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(44, 106);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 25);
-            this.label17.TabIndex = 86;
-            this.label17.Text = "Items:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(318, 103);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(62, 25);
-            this.label18.TabIndex = 85;
-            this.label18.Text = "Total:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(44, 63);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(92, 25);
-            this.label19.TabIndex = 84;
-            this.label19.Text = "Order ID:";
             // 
             // CustomerFeedback
             // 
@@ -357,15 +310,11 @@
         private System.Windows.Forms.TextBox txt_Feedback;
         private System.Windows.Forms.Label lbl_Feedback;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label lblSearchOrderID;
+        private System.Windows.Forms.TextBox txtSearchOrder;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ListView listViewOrder;
     }
 }

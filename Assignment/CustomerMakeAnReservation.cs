@@ -22,6 +22,7 @@ namespace Assignment
             InitializeComponent();
             this.currentUserId = userId;
             _sidebarManager = new SidebarManager(this);
+            UserSessionManager.Login(userId);
         }
 
         private void btn_SendReq_Click(object sender, EventArgs e)
@@ -150,6 +151,11 @@ namespace Assignment
         private void btnFeedback_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerFeedback(currentUserId));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

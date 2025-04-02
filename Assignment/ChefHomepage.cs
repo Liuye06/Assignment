@@ -42,5 +42,10 @@ namespace Assignment
         {
             UserSessionManager.Logout(this);
         }
+
+        private void tableSidebar_ChefCustomerOrder_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

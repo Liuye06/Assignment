@@ -12,120 +12,60 @@ namespace Assignment
 {
     public partial class CustomerHomepage : Form
     {
+        private SidebarManager _sidebarManager;
         private int currentUserID; // Store the userID
 
         public CustomerHomepage(int userID)
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
             currentUserID = userID; // Store the userID
+            UserSessionManager.Login(userID);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void tableSidebar_CustomerProfile_Paint(object sender, PaintEventArgs e)
         {
-            panel_ReservationRequest.Visible = !panel_ReservationRequest.Visible;
-        }
 
-        private void btnOrders_Click(object sender, EventArgs e)
-        {
-            panel_OrderMenu.Visible = !panel_OrderMenu.Visible;
-        }
-
-        private void pb_ProfilePic_Click(object sender, EventArgs e)
-        {
-            Customer_EditProfile c_profile = new Customer_EditProfile();
-            c_profile.Show();
-        }
-
-        private void CustomerHomepage_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'assignmentdbDataSet6.Order' table. You can move, or remove it, as needed.
-            panel_ViewOrders.Visible = false;
-            panel_ViewReservation.Visible = false;
-            panel_OrderMenu.Visible = false;
-            panel_ReservationRequest.Visible = false;
-            panel_Payment.Visible = false;
-            panel_Feedback.Visible = false;
-
-        }
-
-        private void btnViewOrders_Click(object sender, EventArgs e)
-        {
-            panel_ViewOrders.Visible = !panel_ViewOrders.Visible;
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            panel_ViewProfile.Visible = !panel_ViewProfile.Visible;
+            _sidebarManager.NavigateTo(new Customer_Profile(currentUserID));
+        }
+
+        private void btnViewOrders_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserID));
         }
 
         private void btnViewReservations_Click(object sender, EventArgs e)
         {
-            panel_ViewReservation.Visible = !panel_ViewReservation.Visible;
+            _sidebarManager.NavigateTo(new ViewCustomerReservation(currentUserID));
+        }
+
+        private void btnMakeOrder_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMenu(currentUserID));
+        }
+
+        private void btnMakeReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserID));
         }
 
         private void btnMakePayment_Click(object sender, EventArgs e)
         {
-            panel_Payment.Visible = !panel_Payment.Visible;
+            _sidebarManager.NavigateTo(new CustomerPaymentHistory());
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            panel_Feedback.Visible = !panel_Feedback.Visible;
+            _sidebarManager.NavigateTo(new CustomerFeedback(currentUserID));
         }
 
-        private void btn_ReturnViewOrders_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-            panel_ViewOrders.Visible = false;
-        }
-
-        private void btn_ViewReservation_Click(object sender, EventArgs e)
-        {
-            panel_ViewReservation.Visible = false;
-        }
-
-        private void btn_ReturnOrdersMenu_Click(object sender, EventArgs e)
-        {
-            panel_OrderMenu.Visible = false;
-        }
-
-        private void btn_ReturnReserveReq_Click(object sender, EventArgs e)
-        {
-            panel_ReservationRequest.Visible = false;
-        }
-
-        private void btn_ReturnPayment_Click(object sender, EventArgs e)
-        {
-            panel_Payment.Visible = false;
-        }
-
-        private void btn_ReturnFeedback_Click(object sender, EventArgs e)
-        {
-            panel_Feedback.Visible = false;
-        }
-
-        private void btnOrderMenu_Next_Click(object sender, EventArgs e)
-        {
-            Orders_Confirmation o_confirmation = new Orders_Confirmation();
-            o_confirmation.Show();
-        }
-
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-            Customer_EditProfile c_editprof = new Customer_EditProfile();
-            c_editprof.Show();
-        }
-
-        private void btn_Reservations_Click(object sender, EventArgs e)
-        {
-            MakePayment_Reservations mp_reservation = new MakePayment_Reservations();
-            mp_reservation.Show();
-        }
-
-        
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            UserSessionManager.Logout(this);
         }
     }
 }

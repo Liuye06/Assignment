@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel_ViewOrders = new System.Windows.Forms.Panel();
+            this.listView_OrderHistory = new System.Windows.Forms.ListView();
+            this.OrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ItemName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_Total_O = new System.Windows.Forms.Label();
             this.lbl_OrderID_O = new System.Windows.Forms.Label();
             this.lblViewCusOrder = new System.Windows.Forms.Label();
@@ -41,11 +46,6 @@
             this.btnViewReservations = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.listView_OrderHistory = new System.Windows.Forms.ListView();
-            this.ItemName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.OrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel_ViewOrders.SuspendLayout();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,46 @@
             this.panel_ViewOrders.Name = "panel_ViewOrders";
             this.panel_ViewOrders.Size = new System.Drawing.Size(850, 360);
             this.panel_ViewOrders.TabIndex = 45;
+            // 
+            // listView_OrderHistory
+            // 
+            this.listView_OrderHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.OrderID,
+            this.ItemName,
+            this.Status,
+            this.TotalPrice});
+            this.listView_OrderHistory.FullRowSelect = true;
+            this.listView_OrderHistory.GridLines = true;
+            this.listView_OrderHistory.HideSelection = false;
+            this.listView_OrderHistory.Location = new System.Drawing.Point(38, 58);
+            this.listView_OrderHistory.Name = "listView_OrderHistory";
+            this.listView_OrderHistory.Size = new System.Drawing.Size(765, 270);
+            this.listView_OrderHistory.TabIndex = 23;
+            this.listView_OrderHistory.UseCompatibleStateImageBehavior = false;
+            this.listView_OrderHistory.View = System.Windows.Forms.View.Details;
+            // 
+            // OrderID
+            // 
+            this.OrderID.Text = "Order ID";
+            this.OrderID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OrderID.Width = 80;
+            // 
+            // ItemName
+            // 
+            this.ItemName.Text = "Food Name";
+            this.ItemName.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.Text = "Status";
+            this.Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Status.Width = 100;
+            // 
+            // TotalPrice
+            // 
+            this.TotalPrice.Text = "Total Price (RM)";
+            this.TotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TotalPrice.Width = 150;
             // 
             // lbl_Total_O
             // 
@@ -129,6 +169,7 @@
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnFeedback
             // 
@@ -210,46 +251,6 @@
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
-            // listView_OrderHistory
-            // 
-            this.listView_OrderHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.OrderID,
-            this.ItemName,
-            this.Status,
-            this.TotalPrice});
-            this.listView_OrderHistory.FullRowSelect = true;
-            this.listView_OrderHistory.GridLines = true;
-            this.listView_OrderHistory.HideSelection = false;
-            this.listView_OrderHistory.Location = new System.Drawing.Point(38, 58);
-            this.listView_OrderHistory.Name = "listView_OrderHistory";
-            this.listView_OrderHistory.Size = new System.Drawing.Size(765, 270);
-            this.listView_OrderHistory.TabIndex = 23;
-            this.listView_OrderHistory.UseCompatibleStateImageBehavior = false;
-            this.listView_OrderHistory.View = System.Windows.Forms.View.Details;
-            // 
-            // ItemName
-            // 
-            this.ItemName.Text = "Food Name";
-            this.ItemName.Width = 150;
-            // 
-            // Status
-            // 
-            this.Status.Text = "Status";
-            this.Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Status.Width = 100;
-            // 
-            // OrderID
-            // 
-            this.OrderID.Text = "Order ID";
-            this.OrderID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.OrderID.Width = 80;
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.Text = "Total Price (RM)";
-            this.TotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.TotalPrice.Width = 150;
             // 
             // ViewCustomerOrder
             // 

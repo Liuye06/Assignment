@@ -20,13 +20,14 @@ namespace Assignment
         private SidebarManager _sidebarManager;
         private int currentUserId; // Store logged-in user's ID
 
-        public CustomerMenu(int userId=7)
+        public CustomerMenu(int userId)
         {
             InitializeComponent();
             this.currentUserId = userId; // Assign user ID
             LoadCategories();
             LoadFoodMenu();
             _sidebarManager = new SidebarManager(this);
+            UserSessionManager.Login(userId);
         }
 
 
@@ -216,7 +217,7 @@ namespace Assignment
 
         private void btnMakeOrder_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMenu());
+            _sidebarManager.NavigateTo(new CustomerMenu(currentUserId));
         }
 
         private void btnMakeReservation_Click_1(object sender, EventArgs e)
@@ -232,6 +233,11 @@ namespace Assignment
         private void btnFeedback_Click_1(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerFeedback(currentUserId));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

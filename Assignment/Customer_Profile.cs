@@ -26,7 +26,8 @@ namespace Assignment
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-
+            CustomerEditProfile updateForm = new CustomerEditProfile(currentUserID, this);
+            updateForm.Show();
         }
 
         private void Customer_Profile_Load(object sender, EventArgs e)
@@ -71,7 +72,42 @@ namespace Assignment
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            _sidebarManager.NavigateTo(new Customer_Profile(currentUserID));
+        }
 
+        private void btnViewOrders_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserID));
+        }
+
+        private void btnViewReservations_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ViewCustomerReservation(currentUserID));
+        }
+
+        private void btnMakeOrder_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMenu(currentUserID));
+        }
+
+        private void btnMakeReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserID));
+        }
+
+        private void btnMakePayment_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerPaymentHistory());
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerFeedback(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

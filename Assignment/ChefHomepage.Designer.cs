@@ -57,6 +57,7 @@
             this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_ChefCustomerOrder.Size = new System.Drawing.Size(200, 430);
             this.tableSidebar_ChefCustomerOrder.TabIndex = 7;
+            this.tableSidebar_ChefCustomerOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.tableSidebar_ChefCustomerOrder_Paint);
             // 
             // btnLogOut
             // 

@@ -40,6 +40,7 @@
             this.gbCustomerProfile = new System.Windows.Forms.GroupBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.lblProfilePic = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.gbCustomerProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
@@ -95,6 +95,7 @@
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnFeedback
             // 
@@ -105,6 +106,7 @@
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
             this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // btnMakePayment
             // 
@@ -115,6 +117,7 @@
             this.btnMakePayment.TabIndex = 5;
             this.btnMakePayment.Text = "Make Payment";
             this.btnMakePayment.UseVisualStyleBackColor = true;
+            this.btnMakePayment.Click += new System.EventHandler(this.btnMakePayment_Click);
             // 
             // btnMakeReservation
             // 
@@ -125,6 +128,7 @@
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation";
             this.btnMakeReservation.UseVisualStyleBackColor = true;
+            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
             // 
             // btnMakeOrder
             // 
@@ -135,6 +139,7 @@
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
             this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // btnViewReservations
             // 
@@ -145,6 +150,7 @@
             this.btnViewReservations.TabIndex = 6;
             this.btnViewReservations.Text = "View Reservations";
             this.btnViewReservations.UseVisualStyleBackColor = true;
+            this.btnViewReservations.Click += new System.EventHandler(this.btnViewReservations_Click);
             // 
             // btnViewOrders
             // 
@@ -157,6 +163,7 @@
             this.btnViewOrders.TabIndex = 4;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
             // btnProfile
             // 
@@ -212,6 +219,15 @@
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(271, 33);
             this.cmbGender.TabIndex = 19;
+            // 
+            // picProfilePic
+            // 
+            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
+            this.picProfilePic.Name = "picProfilePic";
+            this.picProfilePic.Size = new System.Drawing.Size(219, 210);
+            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfilePic.TabIndex = 18;
+            this.picProfilePic.TabStop = false;
             // 
             // txtPassword
             // 
@@ -313,15 +329,6 @@
             this.lblName.Size = new System.Drawing.Size(64, 25);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
-            // 
-            // picProfilePic
-            // 
-            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
-            this.picProfilePic.Name = "picProfilePic";
-            this.picProfilePic.Size = new System.Drawing.Size(219, 210);
-            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProfilePic.TabIndex = 18;
-            this.picProfilePic.TabStop = false;
             // 
             // Customer_Profile
             // 

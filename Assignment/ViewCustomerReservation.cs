@@ -16,12 +16,13 @@ namespace Assignment
         private int userId; // Assuming this is passed or set somewhere in the form
 
 
-        public ViewCustomerReservation(int userId=1)
+        public ViewCustomerReservation(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this); 
-            this.userId = userId;
+            this.userId = userID;
             LoadReservations(); // Automatically load reservations when form opens
+            UserSessionManager.Login(userID);
         }
 
 
@@ -108,27 +109,27 @@ namespace Assignment
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Customer_Profile());
+            _sidebarManager.NavigateTo(new Customer_Profile(userId));
         }
 
         private void btnViewOrders_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerOrder());
+            _sidebarManager.NavigateTo(new ViewCustomerOrder(userId));
         }
 
         private void btnViewReservations_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerReservation());
+            _sidebarManager.NavigateTo(new ViewCustomerReservation(userId));
         }
 
         private void btnMakeOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMenu());
+            _sidebarManager.NavigateTo(new CustomerMenu(userId));
         }
 
         private void btnMakeReservation_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMakeAnReservation());
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(userId));
         }
 
         private void btnMakePayment_Click(object sender, EventArgs e)
@@ -138,12 +139,17 @@ namespace Assignment
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerFeedback());
+            _sidebarManager.NavigateTo(new CustomerFeedback(userId));
         }
 
         private void lblViewRevRequest_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

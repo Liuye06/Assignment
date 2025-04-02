@@ -38,6 +38,8 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.panel_ReservationRequest = new System.Windows.Forms.Panel();
+            this.monthCalendarEnd = new System.Windows.Forms.MonthCalendar();
+            this.lblEndReservationDate = new System.Windows.Forms.Label();
             this.numHeadCount = new System.Windows.Forms.NumericUpDown();
             this.lbl_HeadCount = new System.Windows.Forms.Label();
             this.lblStartReservationDate = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.txtRequest = new System.Windows.Forms.TextBox();
             this.monthCalendarStart = new System.Windows.Forms.MonthCalendar();
             this.btn_SendReq = new System.Windows.Forms.Button();
-            this.lblEndReservationDate = new System.Windows.Forms.Label();
-            this.monthCalendarEnd = new System.Windows.Forms.MonthCalendar();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.panel_ReservationRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHeadCount)).BeginInit();
@@ -91,6 +91,7 @@
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnFeedback
             // 
@@ -194,6 +195,25 @@
             this.panel_ReservationRequest.Size = new System.Drawing.Size(850, 360);
             this.panel_ReservationRequest.TabIndex = 56;
             // 
+            // monthCalendarEnd
+            // 
+            this.monthCalendarEnd.Location = new System.Drawing.Point(300, 53);
+            this.monthCalendarEnd.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.monthCalendarEnd.MinDate = new System.DateTime(2025, 3, 12, 0, 0, 0, 0);
+            this.monthCalendarEnd.Name = "monthCalendarEnd";
+            this.monthCalendarEnd.TabIndex = 49;
+            this.monthCalendarEnd.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarEnd_DateChanged);
+            // 
+            // lblEndReservationDate
+            // 
+            this.lblEndReservationDate.AutoSize = true;
+            this.lblEndReservationDate.Location = new System.Drawing.Point(317, 17);
+            this.lblEndReservationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEndReservationDate.Name = "lblEndReservationDate";
+            this.lblEndReservationDate.Size = new System.Drawing.Size(201, 25);
+            this.lblEndReservationDate.TabIndex = 48;
+            this.lblEndReservationDate.Text = "End Reservation Date";
+            // 
             // numHeadCount
             // 
             this.numHeadCount.Location = new System.Drawing.Point(448, 311);
@@ -292,25 +312,6 @@
             this.btn_SendReq.Text = "Send Request";
             this.btn_SendReq.UseVisualStyleBackColor = true;
             this.btn_SendReq.Click += new System.EventHandler(this.btn_SendReq_Click);
-            // 
-            // lblEndReservationDate
-            // 
-            this.lblEndReservationDate.AutoSize = true;
-            this.lblEndReservationDate.Location = new System.Drawing.Point(317, 17);
-            this.lblEndReservationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEndReservationDate.Name = "lblEndReservationDate";
-            this.lblEndReservationDate.Size = new System.Drawing.Size(201, 25);
-            this.lblEndReservationDate.TabIndex = 48;
-            this.lblEndReservationDate.Text = "End Reservation Date";
-            // 
-            // monthCalendarEnd
-            // 
-            this.monthCalendarEnd.Location = new System.Drawing.Point(300, 53);
-            this.monthCalendarEnd.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
-            this.monthCalendarEnd.MinDate = new System.DateTime(2025, 3, 12, 0, 0, 0, 0);
-            this.monthCalendarEnd.Name = "monthCalendarEnd";
-            this.monthCalendarEnd.TabIndex = 49;
-            this.monthCalendarEnd.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendarEnd_DateChanged);
             // 
             // CustomerMakeAnReservation
             // 

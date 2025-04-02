@@ -20,6 +20,7 @@ namespace Assignment
             InitializeComponent();
             this.currentUserId = userId;
             _sidebarManager = new SidebarManager(this);
+            UserSessionManager.Login(userId);
         }
 
         private void btn_SubmitFeedback_Click(object sender, EventArgs e)
@@ -42,8 +43,6 @@ namespace Assignment
             _sidebarManager.NavigateTo(new ViewCustomerReservation(currentUserId));
         }
 
-        
-
         private void btnMakeReservation_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserId));
@@ -57,6 +56,16 @@ namespace Assignment
         private void btnFeedback_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerFeedback(currentUserId));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
