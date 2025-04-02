@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class ChefEditProfile
+    partial class RCEditProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnSaveProfile = new System.Windows.Forms.Button();
+            this.btnEditBrowseImageMenu = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -41,20 +44,46 @@
             this.lblProfilePic = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnEditBrowseImageMenu = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSaveProfile = new System.Windows.Forms.Button();
             this.picProfilePic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
             this.SuspendLayout();
             // 
+            // btnSaveProfile
+            // 
+            this.btnSaveProfile.Location = new System.Drawing.Point(149, 380);
+            this.btnSaveProfile.Name = "btnSaveProfile";
+            this.btnSaveProfile.Size = new System.Drawing.Size(390, 35);
+            this.btnSaveProfile.TabIndex = 56;
+            this.btnSaveProfile.Text = "Save Profile";
+            this.btnSaveProfile.UseVisualStyleBackColor = true;
+            this.btnSaveProfile.Click += new System.EventHandler(this.btnSaveProfile_Click_1);
+            // 
+            // btnEditBrowseImageMenu
+            // 
+            this.btnEditBrowseImageMenu.Location = new System.Drawing.Point(651, 305);
+            this.btnEditBrowseImageMenu.Name = "btnEditBrowseImageMenu";
+            this.btnEditBrowseImageMenu.Size = new System.Drawing.Size(219, 34);
+            this.btnEditBrowseImageMenu.TabIndex = 55;
+            this.btnEditBrowseImageMenu.Text = "Browse Image";
+            this.btnEditBrowseImageMenu.UseVisualStyleBackColor = true;
+            this.btnEditBrowseImageMenu.Click += new System.EventHandler(this.btnEditBrowseImageMenu_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(545, 381);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(393, 34);
+            this.btnCancel.TabIndex = 54;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(268, 262);
+            this.dtpDOB.Location = new System.Drawing.Point(268, 256);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(271, 30);
-            this.dtpDOB.TabIndex = 22;
-            this.dtpDOB.ValueChanged += new System.EventHandler(this.dtpDOB_ValueChanged);
+            this.dtpDOB.TabIndex = 42;
             // 
             // cmbGender
             // 
@@ -62,155 +91,112 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbGender.Location = new System.Drawing.Point(268, 315);
+            this.cmbGender.Location = new System.Drawing.Point(268, 309);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(271, 33);
-            this.cmbGender.TabIndex = 34;
-            this.cmbGender.SelectedIndexChanged += new System.EventHandler(this.cmbGender_SelectedIndexChanged);
+            this.cmbGender.TabIndex = 53;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(268, 98);
+            this.txtPassword.Location = new System.Drawing.Point(268, 92);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(271, 30);
-            this.txtPassword.TabIndex = 32;
-            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.TabIndex = 51;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(268, 44);
+            this.txtUsername.Location = new System.Drawing.Point(268, 38);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(271, 30);
-            this.txtUsername.TabIndex = 31;
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
+            this.txtUsername.TabIndex = 50;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(144, 101);
+            this.lblPassword.Location = new System.Drawing.Point(144, 95);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(98, 25);
-            this.lblPassword.TabIndex = 30;
+            this.lblPassword.TabIndex = 49;
             this.lblPassword.Text = "Password";
-            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(144, 47);
+            this.lblUsername.Location = new System.Drawing.Point(144, 41);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(102, 25);
-            this.lblUsername.TabIndex = 29;
+            this.lblUsername.TabIndex = 48;
             this.lblUsername.Text = "Username";
-            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(144, 316);
+            this.lblGender.Location = new System.Drawing.Point(144, 310);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(77, 25);
-            this.lblGender.TabIndex = 28;
+            this.lblGender.TabIndex = 47;
             this.lblGender.Text = "Gender";
-            this.lblGender.Click += new System.EventHandler(this.lblGender_Click);
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(144, 267);
+            this.lblDOB.Location = new System.Drawing.Point(144, 261);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(118, 25);
-            this.lblDOB.TabIndex = 27;
+            this.lblDOB.TabIndex = 46;
             this.lblDOB.Text = "Date of Birth";
-            this.lblDOB.Click += new System.EventHandler(this.lblDOB_Click);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(268, 207);
+            this.txtEmail.Location = new System.Drawing.Point(268, 201);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(271, 30);
-            this.txtEmail.TabIndex = 25;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            this.txtEmail.TabIndex = 45;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(268, 153);
+            this.txtName.Location = new System.Drawing.Point(268, 147);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(271, 30);
-            this.txtName.TabIndex = 24;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
+            this.txtName.TabIndex = 44;
             // 
             // lblProfilePic
             // 
             this.lblProfilePic.AutoSize = true;
-            this.lblProfilePic.Location = new System.Drawing.Point(646, 49);
+            this.lblProfilePic.Location = new System.Drawing.Point(646, 43);
             this.lblProfilePic.Name = "lblProfilePic";
             this.lblProfilePic.Size = new System.Drawing.Size(131, 25);
-            this.lblProfilePic.TabIndex = 23;
+            this.lblProfilePic.TabIndex = 43;
             this.lblProfilePic.Text = "Profile Picture";
-            this.lblProfilePic.Click += new System.EventHandler(this.lblProfilePic_Click);
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(144, 210);
+            this.lblEmail.Location = new System.Drawing.Point(144, 204);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(60, 25);
-            this.lblEmail.TabIndex = 21;
+            this.lblEmail.TabIndex = 41;
             this.lblEmail.Text = "Email";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(144, 156);
+            this.lblName.Location = new System.Drawing.Point(144, 150);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(64, 25);
-            this.lblName.TabIndex = 20;
+            this.lblName.TabIndex = 40;
             this.lblName.Text = "Name";
-            this.lblName.Click += new System.EventHandler(this.lblName_Click);
-            // 
-            // btnEditBrowseImageMenu
-            // 
-            this.btnEditBrowseImageMenu.Location = new System.Drawing.Point(651, 311);
-            this.btnEditBrowseImageMenu.Name = "btnEditBrowseImageMenu";
-            this.btnEditBrowseImageMenu.Size = new System.Drawing.Size(219, 34);
-            this.btnEditBrowseImageMenu.TabIndex = 38;
-            this.btnEditBrowseImageMenu.Text = "Browse Image";
-            this.btnEditBrowseImageMenu.UseVisualStyleBackColor = true;
-            this.btnEditBrowseImageMenu.Click += new System.EventHandler(this.btnEditBrowseImageMenu_Click_1);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(545, 387);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(393, 34);
-            this.btnCancel.TabIndex = 37;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnSaveProfile
-            // 
-            this.btnSaveProfile.Location = new System.Drawing.Point(149, 386);
-            this.btnSaveProfile.Name = "btnSaveProfile";
-            this.btnSaveProfile.Size = new System.Drawing.Size(390, 35);
-            this.btnSaveProfile.TabIndex = 39;
-            this.btnSaveProfile.Text = "Save Profile";
-            this.btnSaveProfile.UseVisualStyleBackColor = true;
-            this.btnSaveProfile.Click += new System.EventHandler(this.btnSaveProfile_Click);
             // 
             // picProfilePic
             // 
-            this.picProfilePic.Location = new System.Drawing.Point(651, 82);
+            this.picProfilePic.Location = new System.Drawing.Point(651, 76);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
             this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProfilePic.TabIndex = 33;
+            this.picProfilePic.TabIndex = 52;
             this.picProfilePic.TabStop = false;
-            this.picProfilePic.Click += new System.EventHandler(this.picProfilePic_Click);
             // 
-            // ChefEditProfile
+            // RCEditProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
@@ -232,9 +218,9 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblName);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "ChefEditProfile";
-            this.Text = "ChefEditProfile";
-            this.Load += new System.EventHandler(this.ChefEditProfile_Load_1);
+            this.Name = "RCEditProfile";
+            this.Text = "RCEditProfile";
+            this.Load += new System.EventHandler(this.RCEditProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -243,6 +229,9 @@
 
         #endregion
 
+        private System.Windows.Forms.Button btnSaveProfile;
+        private System.Windows.Forms.Button btnEditBrowseImageMenu;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DateTimePicker dtpDOB;
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.PictureBox picProfilePic;
@@ -257,8 +246,5 @@
         private System.Windows.Forms.Label lblProfilePic;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Button btnEditBrowseImageMenu;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSaveProfile;
     }
 }

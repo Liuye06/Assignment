@@ -20,13 +20,13 @@ namespace Assignment
             UserSessionManager.Login(userID);
         }
 
-        private void LoadReservations()
-        {
-        }
+
         private void ReplyRequest_Load(object sender, EventArgs e)
         {
-            LoadReservations();
+            // Load reservation data into DataGridView
+            ReplyRequestDetails.LoadReservationsRequest(dgvReplyRequest);
         }
+
 
 
         private void btnManageReservation_Click(object sender, EventArgs e)
@@ -35,6 +35,11 @@ namespace Assignment
         }
 
         private void AddStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddNewReservation_Click(object sender, EventArgs e)
         {
 
         }

@@ -17,7 +17,7 @@ namespace Assignment
         private SidebarManager _sidebarManager;
         private int currentUserId;
 
-        public CustomerMakeAnReservation(int userId=1)
+        public CustomerMakeAnReservation(int userId)
         {
             InitializeComponent();
             this.currentUserId = userId;
@@ -119,27 +119,27 @@ namespace Assignment
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Customer_Profile());
+            _sidebarManager.NavigateTo(new Customer_Profile(currentUserId));
         }
 
         private void btnViewOrders_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerOrder());
+            _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserId));
         }
 
         private void btnViewReservations_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerReservation());
+            _sidebarManager.NavigateTo(new ViewCustomerReservation(currentUserId));
         }
 
         private void btnMakeOrder_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMenu());
+            _sidebarManager.NavigateTo(new CustomerMenu(currentUserId));
         }
 
         private void btnMakeReservation_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMakeAnReservation());
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserId));
         }
 
         private void btnMakePayment_Click(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace Assignment
 
         private void btnFeedback_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerFeedback());
+            _sidebarManager.NavigateTo(new CustomerFeedback(currentUserId));
         }
     }
 }

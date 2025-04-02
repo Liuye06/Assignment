@@ -28,19 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel_ViewProfile = new System.Windows.Forms.Panel();
-            this.btn_Edit = new System.Windows.Forms.Button();
-            this.lbl_Email_O = new System.Windows.Forms.Label();
-            this.lbl_Email = new System.Windows.Forms.Label();
-            this.lbl_Gender_O = new System.Windows.Forms.Label();
-            this.lbl_DOB_O = new System.Windows.Forms.Label();
-            this.lbl_Name_O = new System.Windows.Forms.Label();
-            this.lbl_Username_O = new System.Windows.Forms.Label();
-            this.lbl_Gender = new System.Windows.Forms.Label();
-            this.lbl_DOB = new System.Windows.Forms.Label();
-            this.lbl_Name = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl_Username = new System.Windows.Forms.Label();
             this.tableSidebar_CustomerProfile = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnFeedback = new System.Windows.Forms.Button();
@@ -50,152 +37,26 @@
             this.btnViewReservations = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.panel_ViewProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbCustomerProfile = new System.Windows.Forms.GroupBox();
+            this.dtpDOB = new System.Windows.Forms.DateTimePicker();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblDOB = new System.Windows.Forms.Label();
+            this.btnUpdateProfile = new System.Windows.Forms.Button();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblProfilePic = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.tableSidebar_CustomerProfile.SuspendLayout();
+            this.gbCustomerProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel_ViewProfile
-            // 
-            this.panel_ViewProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.panel_ViewProfile.Controls.Add(this.btn_Edit);
-            this.panel_ViewProfile.Controls.Add(this.lbl_Email_O);
-            this.panel_ViewProfile.Controls.Add(this.lbl_Email);
-            this.panel_ViewProfile.Controls.Add(this.lbl_Gender_O);
-            this.panel_ViewProfile.Controls.Add(this.lbl_DOB_O);
-            this.panel_ViewProfile.Controls.Add(this.lbl_Name_O);
-            this.panel_ViewProfile.Controls.Add(this.lbl_Username_O);
-            this.panel_ViewProfile.Controls.Add(this.lbl_Gender);
-            this.panel_ViewProfile.Controls.Add(this.lbl_DOB);
-            this.panel_ViewProfile.Controls.Add(this.lbl_Name);
-            this.panel_ViewProfile.Controls.Add(this.pictureBox1);
-            this.panel_ViewProfile.Controls.Add(this.lbl_Username);
-            this.panel_ViewProfile.Location = new System.Drawing.Point(219, 81);
-            this.panel_ViewProfile.Margin = new System.Windows.Forms.Padding(4);
-            this.panel_ViewProfile.Name = "panel_ViewProfile";
-            this.panel_ViewProfile.Size = new System.Drawing.Size(850, 360);
-            this.panel_ViewProfile.TabIndex = 10;
-            // 
-            // btn_Edit
-            // 
-            this.btn_Edit.Location = new System.Drawing.Point(585, 303);
-            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(241, 39);
-            this.btn_Edit.TabIndex = 44;
-            this.btn_Edit.Text = "Edit";
-            this.btn_Edit.UseVisualStyleBackColor = true;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
-            // 
-            // lbl_Email_O
-            // 
-            this.lbl_Email_O.AutoSize = true;
-            this.lbl_Email_O.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Email_O.Location = new System.Drawing.Point(81, 268);
-            this.lbl_Email_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Email_O.Name = "lbl_Email_O";
-            this.lbl_Email_O.Size = new System.Drawing.Size(2, 27);
-            this.lbl_Email_O.TabIndex = 43;
-            // 
-            // lbl_Email
-            // 
-            this.lbl_Email.AutoSize = true;
-            this.lbl_Email.Location = new System.Drawing.Point(22, 268);
-            this.lbl_Email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Email.Name = "lbl_Email";
-            this.lbl_Email.Size = new System.Drawing.Size(71, 25);
-            this.lbl_Email.TabIndex = 42;
-            this.lbl_Email.Text = "Email :";
-            // 
-            // lbl_Gender_O
-            // 
-            this.lbl_Gender_O.AutoSize = true;
-            this.lbl_Gender_O.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Gender_O.Location = new System.Drawing.Point(346, 160);
-            this.lbl_Gender_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Gender_O.Name = "lbl_Gender_O";
-            this.lbl_Gender_O.Size = new System.Drawing.Size(2, 27);
-            this.lbl_Gender_O.TabIndex = 41;
-            // 
-            // lbl_DOB_O
-            // 
-            this.lbl_DOB_O.AutoSize = true;
-            this.lbl_DOB_O.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_DOB_O.Location = new System.Drawing.Point(129, 157);
-            this.lbl_DOB_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_DOB_O.Name = "lbl_DOB_O";
-            this.lbl_DOB_O.Size = new System.Drawing.Size(2, 27);
-            this.lbl_DOB_O.TabIndex = 40;
-            // 
-            // lbl_Name_O
-            // 
-            this.lbl_Name_O.AutoSize = true;
-            this.lbl_Name_O.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Name_O.Location = new System.Drawing.Point(335, 37);
-            this.lbl_Name_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Name_O.Name = "lbl_Name_O";
-            this.lbl_Name_O.Size = new System.Drawing.Size(2, 27);
-            this.lbl_Name_O.TabIndex = 39;
-            // 
-            // lbl_Username_O
-            // 
-            this.lbl_Username_O.AutoSize = true;
-            this.lbl_Username_O.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl_Username_O.Location = new System.Drawing.Point(115, 37);
-            this.lbl_Username_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Username_O.Name = "lbl_Username_O";
-            this.lbl_Username_O.Size = new System.Drawing.Size(2, 27);
-            this.lbl_Username_O.TabIndex = 38;
-            // 
-            // lbl_Gender
-            // 
-            this.lbl_Gender.AutoSize = true;
-            this.lbl_Gender.Location = new System.Drawing.Point(274, 160);
-            this.lbl_Gender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Gender.Name = "lbl_Gender";
-            this.lbl_Gender.Size = new System.Drawing.Size(88, 25);
-            this.lbl_Gender.TabIndex = 37;
-            this.lbl_Gender.Text = "Gender :";
-            // 
-            // lbl_DOB
-            // 
-            this.lbl_DOB.AutoSize = true;
-            this.lbl_DOB.Location = new System.Drawing.Point(22, 157);
-            this.lbl_DOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_DOB.Name = "lbl_DOB";
-            this.lbl_DOB.Size = new System.Drawing.Size(134, 25);
-            this.lbl_DOB.TabIndex = 36;
-            this.lbl_DOB.Text = "Date Of Birth :";
-            // 
-            // lbl_Name
-            // 
-            this.lbl_Name.AutoSize = true;
-            this.lbl_Name.Location = new System.Drawing.Point(273, 37);
-            this.lbl_Name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Name.Name = "lbl_Name";
-            this.lbl_Name.Size = new System.Drawing.Size(75, 25);
-            this.lbl_Name.TabIndex = 35;
-            this.lbl_Name.Text = "Name :";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(585, 37);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(241, 217);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbl_Username
-            // 
-            this.lbl_Username.AutoSize = true;
-            this.lbl_Username.Location = new System.Drawing.Point(22, 37);
-            this.lbl_Username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_Username.Name = "lbl_Username";
-            this.lbl_Username.Size = new System.Drawing.Size(118, 25);
-            this.lbl_Username.TabIndex = 33;
-            this.lbl_Username.Text = "Username : ";
-            this.lbl_Username.Click += new System.EventHandler(this.lbl_Username_Click);
             // 
             // tableSidebar_CustomerProfile
             // 
@@ -308,40 +169,180 @@
             this.btnProfile.TabIndex = 9;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // gbCustomerProfile
+            // 
+            this.gbCustomerProfile.Controls.Add(this.dtpDOB);
+            this.gbCustomerProfile.Controls.Add(this.cmbGender);
+            this.gbCustomerProfile.Controls.Add(this.picProfilePic);
+            this.gbCustomerProfile.Controls.Add(this.txtPassword);
+            this.gbCustomerProfile.Controls.Add(this.txtUsername);
+            this.gbCustomerProfile.Controls.Add(this.lblPassword);
+            this.gbCustomerProfile.Controls.Add(this.lblUsername);
+            this.gbCustomerProfile.Controls.Add(this.lblGender);
+            this.gbCustomerProfile.Controls.Add(this.lblDOB);
+            this.gbCustomerProfile.Controls.Add(this.btnUpdateProfile);
+            this.gbCustomerProfile.Controls.Add(this.txtEmail);
+            this.gbCustomerProfile.Controls.Add(this.txtName);
+            this.gbCustomerProfile.Controls.Add(this.lblProfilePic);
+            this.gbCustomerProfile.Controls.Add(this.lblEmail);
+            this.gbCustomerProfile.Controls.Add(this.lblName);
+            this.gbCustomerProfile.Location = new System.Drawing.Point(218, 72);
+            this.gbCustomerProfile.Name = "gbCustomerProfile";
+            this.gbCustomerProfile.Size = new System.Drawing.Size(852, 369);
+            this.gbCustomerProfile.TabIndex = 16;
+            this.gbCustomerProfile.TabStop = false;
+            this.gbCustomerProfile.Text = "Customer Profile";
+            // 
+            // dtpDOB
+            // 
+            this.dtpDOB.Location = new System.Drawing.Point(161, 256);
+            this.dtpDOB.Name = "dtpDOB";
+            this.dtpDOB.Size = new System.Drawing.Size(271, 30);
+            this.dtpDOB.TabIndex = 3;
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.cmbGender.Location = new System.Drawing.Point(161, 309);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(271, 33);
+            this.cmbGender.TabIndex = 19;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(161, 92);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(271, 30);
+            this.txtPassword.TabIndex = 17;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(161, 38);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(271, 30);
+            this.txtUsername.TabIndex = 16;
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(37, 95);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblPassword.TabIndex = 15;
+            this.lblPassword.Text = "Password";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(37, 41);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(102, 25);
+            this.lblUsername.TabIndex = 14;
+            this.lblUsername.Text = "Username";
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(37, 310);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(77, 25);
+            this.lblGender.TabIndex = 11;
+            this.lblGender.Text = "Gender";
+            // 
+            // lblDOB
+            // 
+            this.lblDOB.AutoSize = true;
+            this.lblDOB.Location = new System.Drawing.Point(37, 261);
+            this.lblDOB.Name = "lblDOB";
+            this.lblDOB.Size = new System.Drawing.Size(118, 25);
+            this.lblDOB.TabIndex = 10;
+            this.lblDOB.Text = "Date of Birth";
+            // 
+            // btnUpdateProfile
+            // 
+            this.btnUpdateProfile.Location = new System.Drawing.Point(461, 307);
+            this.btnUpdateProfile.Name = "btnUpdateProfile";
+            this.btnUpdateProfile.Size = new System.Drawing.Size(371, 35);
+            this.btnUpdateProfile.TabIndex = 9;
+            this.btnUpdateProfile.Text = "Update Profile";
+            this.btnUpdateProfile.UseVisualStyleBackColor = true;
+            this.btnUpdateProfile.Click += new System.EventHandler(this.btnUpdateProfile_Click);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(161, 201);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(271, 30);
+            this.txtEmail.TabIndex = 8;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(161, 147);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(271, 30);
+            this.txtName.TabIndex = 7;
+            // 
+            // lblProfilePic
+            // 
+            this.lblProfilePic.AutoSize = true;
+            this.lblProfilePic.Location = new System.Drawing.Point(539, 43);
+            this.lblProfilePic.Name = "lblProfilePic";
+            this.lblProfilePic.Size = new System.Drawing.Size(131, 25);
+            this.lblProfilePic.TabIndex = 4;
+            this.lblProfilePic.Text = "Profile Picture";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(37, 204);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(60, 25);
+            this.lblEmail.TabIndex = 2;
+            this.lblEmail.Text = "Email";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(37, 150);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(64, 25);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name";
+            // 
+            // picProfilePic
+            // 
+            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
+            this.picProfilePic.Name = "picProfilePic";
+            this.picProfilePic.Size = new System.Drawing.Size(219, 210);
+            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfilePic.TabIndex = 18;
+            this.picProfilePic.TabStop = false;
             // 
             // Customer_Profile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
+            this.Controls.Add(this.gbCustomerProfile);
             this.Controls.Add(this.tableSidebar_CustomerProfile);
-            this.Controls.Add(this.panel_ViewProfile);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Customer_Profile";
             this.Text = "Customer_Profile";
-            this.panel_ViewProfile.ResumeLayout(false);
-            this.panel_ViewProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Customer_Profile_Load);
             this.tableSidebar_CustomerProfile.ResumeLayout(false);
+            this.gbCustomerProfile.ResumeLayout(false);
+            this.gbCustomerProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel_ViewProfile;
-        private System.Windows.Forms.Button btn_Edit;
-        private System.Windows.Forms.Label lbl_Email_O;
-        private System.Windows.Forms.Label lbl_Email;
-        private System.Windows.Forms.Label lbl_Gender_O;
-        private System.Windows.Forms.Label lbl_DOB_O;
-        private System.Windows.Forms.Label lbl_Name_O;
-        private System.Windows.Forms.Label lbl_Username_O;
-        private System.Windows.Forms.Label lbl_Gender;
-        private System.Windows.Forms.Label lbl_DOB;
-        private System.Windows.Forms.Label lbl_Name;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lbl_Username;
         private System.Windows.Forms.TableLayoutPanel tableSidebar_CustomerProfile;
         private System.Windows.Forms.Button btnViewReservations;
         private System.Windows.Forms.Button btnViewOrders;
@@ -351,5 +352,21 @@
         private System.Windows.Forms.Button btnMakePayment;
         private System.Windows.Forms.Button btnFeedback;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.GroupBox gbCustomerProfile;
+        private System.Windows.Forms.DateTimePicker dtpDOB;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.PictureBox picProfilePic;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label lblDOB;
+        private System.Windows.Forms.Button btnUpdateProfile;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblProfilePic;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblName;
     }
 }

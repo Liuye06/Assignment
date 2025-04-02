@@ -29,7 +29,7 @@ namespace Assignment
             LoadChefProfile(currentUserID);
         }
 
-        public void ReloadManagerProfile()
+        public void ReloadChefProfile()
         {
             LoadChefProfile(currentUserID); // Reload the chef profile with the updated data
         }
@@ -67,7 +67,6 @@ namespace Assignment
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-            // Open the UpdateManagerProfileForm when the update button is clicked
             ChefEditProfile updateForm = new ChefEditProfile(currentUserID, this);
             updateForm.Show();
         }

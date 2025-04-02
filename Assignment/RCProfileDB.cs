@@ -10,16 +10,16 @@ using System.Drawing;
 
 namespace Assignment
 {
-    public class ChefProfileDB
+    public class RCProfileDB
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
-        // Method to get chef profile data
-        public static Dictionary<string, object> GetChefProfile(int userID)
+        // Method to get manager profile data
+        public static Dictionary<string, object> GetRCProfile(int userID)
         {
-            Dictionary<string, object> chefdata = new Dictionary<string, object>();
+            Dictionary<string, object> rcData = new Dictionary<string, object>();
 
-            string query = "SELECT Email, Real_Name, DOB, Gender, Username, Password, Profile_Pic FROM [User] WHERE User_ID = @UserID AND Role = 'Chef'";
+            string query = "SELECT Email, Real_Name, DOB, Gender, Username, Password, Profile_Pic FROM [User] WHERE User_ID = @UserID AND Role = 'Reservation Coordinate'";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -31,30 +31,30 @@ namespace Assignment
 
                 if (reader.Read())
                 {
-                    chefdata["Email"] = reader["Email"].ToString();
-                    chefdata["Real_Name"] = reader["Real_Name"].ToString();
-                    chefdata["DOB"] = Convert.ToDateTime(reader["DOB"]);
-                    chefdata["Gender"] = reader["Gender"].ToString();
-                    chefdata["Username"] = reader["Username"].ToString(); // Username is loaded but not editable
-                    chefdata["Password"] = reader["Password"].ToString(); // Load password
+                    rcData["Email"] = reader["Email"].ToString();
+                    rcData["Real_Name"] = reader["Real_Name"].ToString();
+                    rcData["DOB"] = Convert.ToDateTime(reader["DOB"]);
+                    rcData["Gender"] = reader["Gender"].ToString();
+                    rcData["Username"] = reader["Username"].ToString(); // Username is loaded but not editable
+                    rcData["Password"] = reader["Password"].ToString(); // Load password
 
                     if (!reader.IsDBNull(reader.GetOrdinal("Profile_Pic")))
                     {
                         byte[] imgData = (byte[])reader["Profile_Pic"];
                         using (MemoryStream ms = new MemoryStream(imgData))
                         {
-                            chefdata["Profile_Pic"] = Image.FromStream(ms);
+                            rcData["Profile_Pic"] = Image.FromStream(ms);
                         }
                     }
                 }
                 reader.Close();
             }
 
-            return chefdata;
+            return rcData;
         }
 
         // Method to update chef profile (excluding Username)
-        public static bool UpdateChefProfile(int userID, string email, string realName, DateTime dob, string gender, string password, byte[] profilePic)
+        public static bool UpdateRCProfile(int userID, string email, string realName, DateTime dob, string gender, string password, byte[] profilePic)
         {
             string query = "UPDATE [User] SET Email = @Email, Real_Name = @RealName, DOB = @DOB, Gender = @Gender, Password = @Password, Profile_Pic = @ProfilePic WHERE User_ID = @UserID";
 

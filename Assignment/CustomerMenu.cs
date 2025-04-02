@@ -201,17 +201,17 @@ namespace Assignment
 
         private void btnProfile_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Customer_Profile());
+            _sidebarManager.NavigateTo(new Customer_Profile(currentUserId));
         }
 
         private void btnViewOrders_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerOrder());
+            _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserId));
         }
 
         private void btnViewReservations_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerReservation());
+            _sidebarManager.NavigateTo(new ViewCustomerReservation(currentUserId));
         }
 
         private void btnMakeOrder_Click_1(object sender, EventArgs e)
@@ -221,7 +221,7 @@ namespace Assignment
 
         private void btnMakeReservation_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMakeAnReservation());
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserId));
         }
 
         private void btnMakePayment_Click_1(object sender, EventArgs e)
@@ -231,7 +231,7 @@ namespace Assignment
 
         private void btnFeedback_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerFeedback());
+            _sidebarManager.NavigateTo(new CustomerFeedback(currentUserId));
         }
     }
 }

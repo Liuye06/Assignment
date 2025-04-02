@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tableSidebar_CProfile = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btn_inventory_CProfile = new System.Windows.Forms.Button();
             this.btn_CusOrder_CProfile = new System.Windows.Forms.Button();
             this.lbl_chef = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.picProfilePic = new System.Windows.Forms.PictureBox();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.tableSidebar_CProfile.SuspendLayout();
             this.gbChefProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
@@ -75,6 +75,19 @@
             this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_CProfile.Size = new System.Drawing.Size(200, 430);
             this.tableSidebar_CProfile.TabIndex = 14;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 16;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btn_inventory_CProfile
             // 
@@ -279,19 +292,6 @@
             this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picProfilePic.TabIndex = 18;
             this.picProfilePic.TabStop = false;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
-            this.btnLogOut.TabIndex = 16;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // Chef_Profile
             // 

@@ -13,37 +13,43 @@ namespace Assignment
 {
     public partial class RCMainPage : Form
     {
-        private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
+        private SidebarManager _sidebarManager;
         private int currentUserID; // Store the userID
 
         public RCMainPage(int userID)
         {
             InitializeComponent();
+            _sidebarManager = new SidebarManager(this);
             currentUserID = userID; // Store the userID
-
+            UserSessionManager.Login(userID);
         }
 
-        private void btn_Profile_Click(object sender, EventArgs e)
-        {
-            RCProfile btn_Profile = new RCProfile(currentUserID);
-            btn_Profile.Show();
-        }
 
-        private void btn_Reservation_Click(object sender, EventArgs e)
-        {
-            Reservation btn_Reservation = new Reservation(currentUserID);
-            btn_Reservation.Show();
-        }
-
-        private void btn_Reply_Click(object sender, EventArgs e)
-        {
-            ReplyRequest btn_Reply = new ReplyRequest(currentUserID);
-            btn_Reply.Show();
-        }
 
         private void RCMainPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnManageReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Reservation(currentUserID));
+        }
+        
+
+        private void btnReplyCustomer_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ReplyRequest(currentUserID));
+        }
+
+        private void btnRCProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new RCProfile(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

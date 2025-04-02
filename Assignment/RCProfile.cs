@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -8,95 +9,111 @@ namespace Assignment
 {
     public partial class RCProfile : Form
     {
-        private int currentUserID;
+        private SidebarManager _sidebarManager;
+        private int currentUserID; // Store the userID
 
-        public RCProfile(int loggedInUserID)
+        public RCProfile(int userID)
         {
             InitializeComponent();
-            currentUserID = loggedInUserID; ;
+            _sidebarManager = new SidebarManager(this);
+            currentUserID = userID; // Store the userID
+            UserSessionManager.Login(userID);
         }
+
+
+
+        private void btnUpdateProfile_Click(object sender, EventArgs e)
+        {
+            // Open the UpdateManagerProfileForm when the update button is clicked
+            
+            
+        }
+
+        private void btn_inventory_CProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Chef(currentUserID));
+        }
+
+        private void btn_CusOrder_CProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ChefCustomerOrder(currentUserID));
+        }
+
+        private void btn_ChefProfile_CProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Chef_Profile(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
+        }
+
         private void RCProfile_Load(object sender, EventArgs e)
         {
-            LoadUserProfile();
+            LoadRCProfile(currentUserID);
         }
 
-        private void LoadUserProfile()
+        public void ReloadRCProfile()
         {
-            DataTable dt = RersevationCoordinator.GetRCData(currentUserID);
-            if (dt.Rows.Count > 0)
-            {
-                DataRow row = dt.Rows[0];
-                txt_RCName.Text = row["Real_Name"].ToString();
-                txt_RCDOB.Text = Convert.ToDateTime(row["DOB"]).ToString("yyyy-MM-dd");
-                txt_RCGender.Text = row["Gender"].ToString();
-                txt_RCEmail.Text = row["Email"].ToString();
-                txt_RCUsername.Text = row["Username"].ToString();
-                txt_RCPassword.Text = row["Password"].ToString();
+            LoadRCProfile(currentUserID); 
+        }
 
-                // load profile
-                if (row["Profile_Pic"] != DBNull.Value)
+        private void LoadRCProfile(int loggedInUserID)
+        {
+            Dictionary<string, object> rcData = ChefProfileDB.GetChefProfile(loggedInUserID);
+
+            if (rcData.Count > 0)
+            {
+                txtEmail.Text = rcData["Email"].ToString();
+                txtName.Text = rcData["Real_Name"].ToString();
+                dtpDOB.Value = (DateTime)rcData["DOB"];
+                cmbGender.SelectedItem = rcData["Gender"].ToString();
+                txtUsername.Text = rcData["Username"].ToString();
+                txtPassword.Text = rcData["Password"].ToString(); // Load password
+
+                // Make all fields read-only
+                txtEmail.ReadOnly = true;
+                txtName.ReadOnly = true;
+                txtUsername.ReadOnly = true;
+                txtPassword.ReadOnly = true;
+
+                // Disable DateTimePicker and ComboBox
+                dtpDOB.Enabled = false;
+                cmbGender.Enabled = false;
+
+                if (rcData.ContainsKey("Profile_Pic"))
                 {
-                    byte[] imageBytes = (byte[])row["Profile_Pic"];
-                    using (MemoryStream ms = new MemoryStream(imageBytes))
-                    {
-                        pictureBox1.Image = Image.FromStream(ms);
-                    }
+                    picProfilePic.Image = (Image)rcData["Profile_Pic"];
                 }
             }
         }
-        private void btn_SaveProfile_Click(object sender, EventArgs e)
-        {
-            bool updated = RersevationCoordinator.UpdateRCProfile(
-                currentUserID,
-                txt_RCName.Text,
-                txt_RCDOB.Text,
-                txt_RCGender.Text,
-                txt_RCEmail.Text,
-                txt_RCPassword.Text
-            );
 
-            if (updated)
-            {
-                MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Failed to update profile.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private void btnUpdateProfile_Click_1(object sender, EventArgs e)
+        {
+            RCEditProfile updateForm = new RCEditProfile(currentUserID, this);
+            updateForm.Show();
         }
-        private void btn_EditProfile_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofd = new OpenFileDialog
-            {
-                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
-            };
 
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox1.Image = Image.FromFile(ofd.FileName);
-                pictureBox1.Tag = ofd.FileName; 
-            }
+        private void btnManageReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Reservation(currentUserID));
         }
-        private void btn_SaveProfilePic_Click(object sender, EventArgs e)
-        {
-            if (pictureBox1.Tag != null)
-            {
-                string imagePath = pictureBox1.Tag.ToString();
-                bool updated = RersevationCoordinator.UpdateRCProfilePic(currentUserID, imagePath);
 
-                if (updated)
-                {
-                    MessageBox.Show("Profile picture updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Failed to update profile picture.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please select an image first.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+        private void btnReplyCustomer_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ReplyRequest(currentUserID));
+        }
+
+        private void btnRCProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new RCProfile(currentUserID));
+        }
+
+        private void btnLogOut_Click_1(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }
+    

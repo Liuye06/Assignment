@@ -33,6 +33,7 @@
             this.btnMHall_UProfile = new System.Windows.Forms.Button();
             this.btnHRReport_UProfile = new System.Windows.Forms.Button();
             this.btnUProfile_UProfile = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.gbMangerProfile = new System.Windows.Forms.GroupBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cmbManagerGender = new System.Windows.Forms.ComboBox();
@@ -49,7 +50,6 @@
             this.lblManagerProfilePic = new System.Windows.Forms.Label();
             this.lblManagerEmail = new System.Windows.Forms.Label();
             this.lblManagerName = new System.Windows.Forms.Label();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.tableSidebar_UProfile.SuspendLayout();
             this.gbMangerProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picManagerProfilePic)).BeginInit();
@@ -124,6 +124,19 @@
             this.btnUProfile_UProfile.Text = "Manager Profile";
             this.btnUProfile_UProfile.UseVisualStyleBackColor = true;
             this.btnUProfile_UProfile.Click += new System.EventHandler(this.btnUProfile_UProfile_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 253);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 7;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // gbMangerProfile
             // 
@@ -276,19 +289,6 @@
             this.lblManagerName.Size = new System.Drawing.Size(64, 25);
             this.lblManagerName.TabIndex = 0;
             this.lblManagerName.Text = "Name";
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(3, 253);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
-            this.btnLogOut.TabIndex = 7;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // ManagerProfile
             // 

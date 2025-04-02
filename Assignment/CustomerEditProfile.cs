@@ -11,28 +11,27 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class ChefEditProfile : Form
+    public partial class CustomerEditProfile : Form
     {
-        private int currentUserID; // Store the userID for the chef
-        private Chef_Profile _chefProfile;
+        private int currentUserID; // Store the userID for the customer
+        private Customer_Profile _customerProfile;
         private byte[] profilePicData = null; // Store the image data
 
-        public ChefEditProfile(int userID, Chef_Profile chefProfile)
+        public CustomerEditProfile(int userID, Customer_Profile customerProfile)
         {
             InitializeComponent();
             currentUserID = userID; // Store the userID
-            _chefProfile = chefProfile; // Store reference to the parent form
+            _customerProfile = customerProfile; // Store reference to the parent form
         }
-       
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void ChefEditProfile_Load_1(object sender, EventArgs e)
+        private void CustomerEditProfile_Load(object sender, EventArgs e)
         {
-            Dictionary<string, object> chefData = ChefProfileDB.GetChefProfile(currentUserID);
+            Dictionary<string, object> chefData = CustomerProfileDB.GetCusProfile(currentUserID);
 
             if (chefData.Count > 0)
             {
@@ -58,7 +57,7 @@ namespace Assignment
             // Convert image to byte array using the service method
             byte[] imageBytes = ImageManager.ImageToByteArray(picProfilePic.Image);
 
-            bool isUpdated = ChefProfileDB.UpdateChefProfile(
+            bool isUpdated = CustomerProfileDB.UpdateCusProfile(
                 currentUserID,
                 txtEmail.Text,
                 txtName.Text,
@@ -73,9 +72,9 @@ namespace Assignment
                 MessageBox.Show("Profile updated successfully.");
 
                 // Call ReloadManagerProfile from the parent form to refresh the data
-                if (_chefProfile != null)
+                if (_customerProfile != null)
                 {
-                    _chefProfile.ReloadChefProfile();
+                    _customerProfile.ReloadCustomerProfile();
                 }
 
                 this.Close();
@@ -86,7 +85,7 @@ namespace Assignment
             }
         }
 
-        private void btnEditBrowseImageMenu_Click_1(object sender, EventArgs e)
+        private void btnEditBrowseImageMenu_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -106,76 +105,6 @@ namespace Assignment
                     profilePicData = ms.ToArray();
                 }
             }
-        }
-
-        private void dtpDOB_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbGender_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblGender_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDOB_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtEmail_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblProfilePic_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblEmail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picProfilePic_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

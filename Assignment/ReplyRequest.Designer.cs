@@ -34,14 +34,14 @@
             this.btnReplyCustomer = new System.Windows.Forms.Button();
             this.btnRCProfile = new System.Windows.Forms.Button();
             this.gbReplyRequest = new System.Windows.Forms.GroupBox();
+            this.dgvReplyRequest = new System.Windows.Forms.DataGridView();
+            this.cmbChangeStatus = new System.Windows.Forms.ComboBox();
             this.btnAddNewReservation = new System.Windows.Forms.Button();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.lblChangeStatus = new System.Windows.Forms.Label();
-            this.cmbChangeStatus = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableSidebar_Reservation.SuspendLayout();
             this.gbReplyRequest.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReplyRequest)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_Reservation
@@ -118,7 +118,7 @@
             // 
             // gbReplyRequest
             // 
-            this.gbReplyRequest.Controls.Add(this.dataGridView1);
+            this.gbReplyRequest.Controls.Add(this.dgvReplyRequest);
             this.gbReplyRequest.Controls.Add(this.cmbChangeStatus);
             this.gbReplyRequest.Controls.Add(this.btnAddNewReservation);
             this.gbReplyRequest.Controls.Add(this.btnUpdateStatus);
@@ -130,6 +130,28 @@
             this.gbReplyRequest.TabStop = false;
             this.gbReplyRequest.Text = "Reply Request";
             // 
+            // dgvReplyRequest
+            // 
+            this.dgvReplyRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReplyRequest.Location = new System.Drawing.Point(45, 92);
+            this.dgvReplyRequest.Name = "dgvReplyRequest";
+            this.dgvReplyRequest.RowHeadersWidth = 51;
+            this.dgvReplyRequest.RowTemplate.Height = 24;
+            this.dgvReplyRequest.Size = new System.Drawing.Size(785, 207);
+            this.dgvReplyRequest.TabIndex = 11;
+            // 
+            // cmbChangeStatus
+            // 
+            this.cmbChangeStatus.FormattingEnabled = true;
+            this.cmbChangeStatus.Items.AddRange(new object[] {
+            "Approved",
+            "Not Approved"});
+            this.cmbChangeStatus.Location = new System.Drawing.Point(189, 41);
+            this.cmbChangeStatus.Name = "cmbChangeStatus";
+            this.cmbChangeStatus.Size = new System.Drawing.Size(285, 33);
+            this.cmbChangeStatus.TabIndex = 10;
+            this.cmbChangeStatus.SelectedIndexChanged += new System.EventHandler(this.AddStatusComboBox_SelectedIndexChanged);
+            // 
             // btnAddNewReservation
             // 
             this.btnAddNewReservation.Location = new System.Drawing.Point(45, 320);
@@ -137,6 +159,7 @@
             this.btnAddNewReservation.Size = new System.Drawing.Size(390, 35);
             this.btnAddNewReservation.TabIndex = 4;
             this.btnAddNewReservation.Text = "Add New Into Reservation";
+            this.btnAddNewReservation.Click += new System.EventHandler(this.btnAddNewReservation_Click);
             // 
             // btnUpdateStatus
             // 
@@ -156,28 +179,6 @@
             this.lblChangeStatus.TabIndex = 0;
             this.lblChangeStatus.Text = "Change Status";
             // 
-            // cmbChangeStatus
-            // 
-            this.cmbChangeStatus.FormattingEnabled = true;
-            this.cmbChangeStatus.Items.AddRange(new object[] {
-            "Approved",
-            "Not Approved"});
-            this.cmbChangeStatus.Location = new System.Drawing.Point(189, 41);
-            this.cmbChangeStatus.Name = "cmbChangeStatus";
-            this.cmbChangeStatus.Size = new System.Drawing.Size(285, 33);
-            this.cmbChangeStatus.TabIndex = 10;
-            this.cmbChangeStatus.SelectedIndexChanged += new System.EventHandler(this.AddStatusComboBox_SelectedIndexChanged);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(785, 207);
-            this.dataGridView1.TabIndex = 11;
-            // 
             // ReplyRequest
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -191,7 +192,7 @@
             this.tableSidebar_Reservation.ResumeLayout(false);
             this.gbReplyRequest.ResumeLayout(false);
             this.gbReplyRequest.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReplyRequest)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,6 +211,6 @@
         private System.Windows.Forms.Button btnUpdateStatus;
         private System.Windows.Forms.Label lblChangeStatus;
         private System.Windows.Forms.ComboBox cmbChangeStatus;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvReplyRequest;
     }
 }
