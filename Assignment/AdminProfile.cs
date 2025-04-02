@@ -14,12 +14,12 @@ namespace Assignment
 {
     public partial class AdminProfile : Form
     {
-        private string currentUsername;
+        private int currentUserID;
 
-        public AdminProfile(string username)
+        public AdminProfile(int userID)
         {
             InitializeComponent();
-            currentUsername = username;
+            currentUserID = userID;
         }
 
         private void AdminProfile_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace Assignment
         private void LoadAdminData()
         {
             // Get admin data using current username
-            DataTable dt = AdminClass.GetAdminData(currentUsername);
+            DataTable dt = AdminClass.GetAdminData(currentUserID);
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
@@ -73,7 +73,8 @@ namespace Assignment
 
             // Call the method to update the admin profile in the database
             bool updated = AdminClass.UpdateAdminProfile(
-                currentUsername,
+                currentUserID,
+                updatedUsername,
                 updatedName,
                 updatedDOB,
                 updatedGender,
@@ -86,6 +87,10 @@ namespace Assignment
                 MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("Update failed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            Admin adminForm = new Admin(currentUserID);
+            adminForm.Show();
+            this.Close();
         }
 
 
@@ -104,12 +109,19 @@ namespace Assignment
                 pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
 
                 // Update the profile picture in the database
-                bool updated = AdminClass.UpdateAdminProfilePic(currentUsername, openFileDialog.FileName);
+                bool updated = AdminClass.UpdateAdminProfilePic(currentUserID, openFileDialog.FileName);
                 if (updated)
                     MessageBox.Show("Profile picture updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Failed to update profile picture.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Admin adminForm = new Admin(currentUserID);
+            adminForm.Show();
+            this.Close();
         }
     }
 }

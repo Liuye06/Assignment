@@ -5,11 +5,13 @@ namespace Assignment
 {
     public partial class view_CusFeedback : Form
     {
+        private int currentUserID; // Store the userID
 
-        public view_CusFeedback()
+        public view_CusFeedback(int userID)
         {
             InitializeComponent();
             this.Load += View_CusFeedback_Load;
+            currentUserID = userID; // Store the userID
         }
 
         private void View_CusFeedback_Load(object sender, EventArgs e)
@@ -23,9 +25,10 @@ namespace Assignment
             dataGridView1.DataSource = AdminClass.GetCustomerFeedbacks();
         }
 
-
         private void btn_Return_Click(object sender, EventArgs e)
         {
+            Admin adminForm = new Admin(currentUserID);
+            adminForm.Show();
             this.Close();
         }
     }

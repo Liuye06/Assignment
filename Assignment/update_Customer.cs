@@ -13,20 +13,36 @@ namespace Assignment
 {
     public partial class update_Customer : Form
     {
-        private DataGridView dataGridView;
+        private int currentUserID;
 
-        public update_Customer()
+        public update_Customer(int userID)
         {
             InitializeComponent();
+            currentUserID = userID;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
         }
+
+
         private void update_Customer_Load(object sender, EventArgs e)
         {
             RefreshDataGrid();
         }
+
         private void RefreshDataGrid()
         {    
             AdminClass.RefreshDataGridView(dataGridView1);
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)//view customer
+        {
+            RefreshDataGrid();
+        }
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
 
         private void btn_AddCus_Click(object sender, EventArgs e)
@@ -36,16 +52,11 @@ namespace Assignment
             RefreshDataGrid();
         }
 
-        private void button1_Click(object sender, EventArgs e)//view customer
-        {
-            RefreshDataGrid();
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
         private void btn_Home_Click(object sender, EventArgs e)
         {
+            Admin adminForm = new Admin(currentUserID);
+            adminForm.Show();
             this.Close();
         }
 
@@ -53,12 +64,14 @@ namespace Assignment
         {
             EditCus editCusForm = new EditCus(this.dataGridView1);
             editCusForm.ShowDialog();
+            RefreshDataGrid();
         }
 
         private void btn_DeleteCus_Click(object sender, EventArgs e)
         {
             DeleteCus deleteForm = new DeleteCus(this.dataGridView1);
             deleteForm.ShowDialog();
+            RefreshDataGrid();
         }
     }
 }

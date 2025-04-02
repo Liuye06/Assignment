@@ -7,9 +7,12 @@ namespace Assignment
 {
     public partial class update_Staff : Form
     {
-        public update_Staff()
+        private int currentUserID; // Variable to store the current user ID
+
+        public update_Staff(int userID)
         {
             InitializeComponent();
+            currentUserID = userID; // Store the current user ID
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             comboBox1.Items.AddRange(new string[] { "All","Admin", "Manager", "Chef", "Reservation Coordinator" });
             comboBox1.SelectedIndex = 0;
@@ -17,19 +20,21 @@ namespace Assignment
 
         private void update_Staff_Load(object sender, EventArgs e)
         {
-            // direct use via AdminClass to get data
-            
+            RefreshDataGrid();
+
         }
 
         private void btn_view_Click(object sender, EventArgs e)
         {
             RefreshDataGrid();
         }
+
         private void RefreshDataGrid()
         {
             string selectedRole = comboBox1.SelectedItem?.ToString() ?? "All";
             AdminClass.RefreshStaffGridView(dataGridView1, selectedRole);
         }
+
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
@@ -45,14 +50,16 @@ namespace Assignment
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            DeleteStaff btn_Delete = new DeleteStaff();
-            btn_Delete.ShowDialog();
+            DeleteStaff deleteForm = new DeleteStaff();
+            deleteForm.ShowDialog(); // Show delete staff form
+            RefreshDataGrid(); // Refresh the data grid after deleting staff
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             editStaff form = new editStaff(dataGridView1);
-            form.ShowDialog();
+            form.ShowDialog(); // Show edit staff form
+            RefreshDataGrid();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,6 +69,8 @@ namespace Assignment
 
         private void btn_Home_Click(object sender, EventArgs e)
         {
+            Admin adminForm = new Admin(currentUserID);
+            adminForm.Show();
             this.Close();
         }
 

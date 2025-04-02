@@ -9,26 +9,23 @@ namespace Assignment
     public partial class addCustomer : Form
     {
         private DataGridView _dataGridView; // Store reference to main form's DataGridView
+
         public addCustomer(DataGridView dataGridView)// Modify constructor to accept DataGridView
         {
             InitializeComponent();
             _dataGridView = dataGridView;
         }
-        public addCustomer()
-        {
-            InitializeComponent();
-        }
+
+        
         private void btn_addCus_Click(object sender, EventArgs e)
         {
-            if (!ValidateInputs())
-                return;
+            if (!ValidateInputs()) return;
 
-            DateTime dob = dtp_dob_for_cus.Value; // Get date directly
+            DateTime dob = dtp_dob_for_cus.Value; // Get selected date
 
             if (!AdminClass.IsUsernameAvailable(txt_CusUsername.Text))
             {
-                MessageBox.Show("Username already exists", "Error",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Username already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -40,16 +37,14 @@ namespace Assignment
                 "Customer",
                 txt_CusUsername.Text,
                 txt_CusPassword.Text,
-                null);
+                null
+            );
 
             if (success)
             {
-                MessageBox.Show("Registration successful!", "Success",
-                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 refresh();
-
-                // Refresh the DataGridView
-                AdminClass.RefreshDataGridView(_dataGridView);
+                AdminClass.RefreshDataGridView(_dataGridView); // Refresh the DataGridView
             }
         }
 
@@ -101,13 +96,9 @@ namespace Assignment
             txt_CusEmail.Text = "";
             txt_CusUsername.Text = "";
             txt_CusPassword.Text = "";
-            cb_gender.SelectedIndex = -1;
+            cb_gender.SelectedIndex = 0;
         }
 
-        private void btn_Cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void addCustomer_Load(object sender, EventArgs e)
         {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbltitle = new System.Windows.Forms.Label();
             this.lbl_CusName = new System.Windows.Forms.Label();
             this.lbl_DOB = new System.Windows.Forms.Label();
             this.lbl_email = new System.Windows.Forms.Label();
@@ -45,14 +45,14 @@
             this.dtp_dob_for_cus = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // label1
+            // lbltitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(486, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Add Customer";
+            this.lbltitle.AutoSize = true;
+            this.lbltitle.Location = new System.Drawing.Point(486, 35);
+            this.lbltitle.Name = "lbltitle";
+            this.lbltitle.Size = new System.Drawing.Size(138, 25);
+            this.lbltitle.TabIndex = 0;
+            this.lbltitle.Text = "Add Customer";
             // 
             // lbl_CusName
             // 
@@ -198,7 +198,7 @@
             this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.lbl_DOB);
             this.Controls.Add(this.lbl_CusName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbltitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "addCustomer";
             this.Text = "addCustomer";
@@ -210,7 +210,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbltitle;
         private System.Windows.Forms.Label lbl_CusName;
         private System.Windows.Forms.Label lbl_DOB;
         private System.Windows.Forms.Label lbl_email;

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_AdminProfile = new System.Windows.Forms.Button();
             this.btn_UpCustomer = new System.Windows.Forms.Button();
             this.btn_UpStaff = new System.Windows.Forms.Button();
             this.btn_Feedback = new System.Windows.Forms.Button();
@@ -49,20 +49,20 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btn_AdminProfile
             // 
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(30, 357);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(258, 78);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Update Profile";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.UseWaitCursor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_AdminProfile.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
+            this.btn_AdminProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AdminProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AdminProfile.ForeColor = System.Drawing.Color.Black;
+            this.btn_AdminProfile.Location = new System.Drawing.Point(30, 357);
+            this.btn_AdminProfile.Name = "btn_AdminProfile";
+            this.btn_AdminProfile.Size = new System.Drawing.Size(258, 78);
+            this.btn_AdminProfile.TabIndex = 18;
+            this.btn_AdminProfile.Text = "Update Profile";
+            this.btn_AdminProfile.UseVisualStyleBackColor = true;
+            this.btn_AdminProfile.UseWaitCursor = true;
+            this.btn_AdminProfile.Click += new System.EventHandler(this.btn_AdminProfile_Click);
             // 
             // btn_UpCustomer
             // 
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_AdminProfile);
             this.Controls.Add(this.btn_UpCustomer);
             this.Controls.Add(this.btn_UpStaff);
             this.Controls.Add(this.btn_Feedback);
@@ -167,7 +167,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Admin";
             this.Text = "Admin";
-            this.Load += new System.EventHandler(this.Admin_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,7 +176,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_AdminProfile;
         private System.Windows.Forms.Button btn_UpCustomer;
         private System.Windows.Forms.Button btn_UpStaff;
         private System.Windows.Forms.Button btn_Feedback;

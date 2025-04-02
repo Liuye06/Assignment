@@ -575,15 +575,15 @@ namespace Assignment
         }
 
         // load admin data
-        public static DataTable GetAdminData(string username)
+        public static DataTable GetAdminData(int userID)
         {
             DataTable dt = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT Real_Name, DOB, Gender, Email, Username, Password, Profile_Pic FROM [User] WHERE Username = @Username";
+                string query = "SELECT Real_Name, DOB, Gender, Email, Username, Password, Profile_Pic FROM [User] WHERE User_ID = @UserID";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@UserID", userID);
                     try
                     {
                         conn.Open();
@@ -591,9 +591,6 @@ namespace Assignment
                         {
                             adapter.Fill(dt);
                         }
-
-                        // Debugging: Show retrieved data count
-                        MessageBox.Show($"Rows retrieved: {dt.Rows.Count}", "Debug Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
@@ -604,12 +601,13 @@ namespace Assignment
             return dt;
         }
 
+
         // update admin info excluding profile
-        public static bool UpdateAdminProfile(string username, string realName, string dob, string gender, string email, string password)
+        public static bool UpdateAdminProfile(int userID, string username, string realName, string dob, string gender, string email, string password)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "UPDATE [User] SET Real_Name = @Real_Name, DOB = @DOB, Gender = @Gender, Email = @Email, Password = @Password WHERE Username = @Username";
+                string query = "UPDATE [User] SET Real_Name = @Real_Name, DOB = @DOB, Gender = @Gender, Email = @Email, Password = @Password, Username = @Username WHERE User_ID = @User_ID";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Real_Name", realName);
@@ -617,7 +615,8 @@ namespace Assignment
                     cmd.Parameters.AddWithValue("@Gender", gender);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Password", password);
-                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@Username", username); // Include username update
+                    cmd.Parameters.AddWithValue("@User_ID", userID); // Use User_ID to identify the record
 
                     conn.Open();
                     return cmd.ExecuteNonQuery() > 0;
@@ -626,14 +625,14 @@ namespace Assignment
         }
 
         // update admin profile
-        public static bool UpdateAdminProfilePic(string username, string imagePath)
+        public static bool UpdateAdminProfilePic(int userID, string imagePath)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "UPDATE [User] SET Profile_Pic = @Profile_Pic WHERE Username = @Username";
+                string query = "UPDATE [User] SET Profile_Pic = @Profile_Pic WHERE User_ID = @UserID";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@UserID", userID);
 
                     byte[] imageBytes = File.ReadAllBytes(imagePath);
                     cmd.Parameters.AddWithValue("@Profile_Pic", imageBytes);
@@ -643,6 +642,7 @@ namespace Assignment
                 }
             }
         }
+
         public static List<string> GetMenuItems()
         {
             List<string> menuItems = new List<string>();
@@ -661,64 +661,65 @@ namespace Assignment
             }
             return menuItems;
         }
+
         public static List<string> GetPaymentMonths()
         {
             List<string> months = new List<string>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT DISTINCT FORMAT(Payment_date, 'MMMM yyyy') AS MonthYear FROM Payment";
+                string query = "SELECT DISTINCT MONTH(Payment_Date) AS Month FROM Payment";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     conn.Open();
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        months.Add(reader["MonthYear"].ToString());
+                        months.Add(reader["Month"].ToString());
                     }
                 }
             }
             return months;
         }
-        public static DataTable GetInitialPayments()
+
+        public static List<string> GetMenuCategories()
         {
-            DataTable dt = new DataTable();
+            List<string> categories = new List<string>();
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT Payment_ID, Payment_date, Amount, Item_ID FROM Payment";
+                string query = "SELECT DISTINCT Category FROM Menu";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
-                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                 {
                     conn.Open();
-                    adapter.Fill(dt);
-                }
-            }
-            return dt;
-        }
-        public static DataTable SearchPayments(string item, string month)
-        {
-            DataTable dt = new DataTable();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                string query = @"SELECT p.Payment_ID, p.Payment_date, p.Amount, p.Order_ID, p.Reservation_ID, p.Status 
-                         FROM Payment p
-                         JOIN Menu m ON p.Item_ID = m.Item_ID
-                         WHERE m.Item = @Item AND FORMAT(p.Payment_date, 'MMMM yyyy') = @MonthYear";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@Item", item);
-                    cmd.Parameters.AddWithValue("@MonthYear", month);
-
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
-                        conn.Open();
-                        adapter.Fill(dt);
+                        categories.Add(reader["Category"].ToString());
                     }
                 }
             }
-            return dt;
+            return categories;
         }
 
+        public static List<string> GetChefs()
+        {
+            List<string> chefs = new List<string>();
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT DISTINCT u.Real_Name " +
+                       "FROM Chef_InCharge cic " +
+                       "INNER JOIN [User] u ON cic.User_ID = u.User_ID";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        chefs.Add(reader["Real_Name"].ToString());
+                    }
+                }
+            }
+            return chefs;
+        }
     }
 }
         

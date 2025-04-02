@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_Profile = new System.Windows.Forms.Button();
-            this.btn_Reply = new System.Windows.Forms.Button();
             this.btn_Reservation = new System.Windows.Forms.Button();
+            this.btn_Reply = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,16 +55,6 @@
             this.btn_Profile.UseVisualStyleBackColor = true;
             this.btn_Profile.Click += new System.EventHandler(this.btn_Profile_Click);
             // 
-            // btn_Reply
-            // 
-            this.btn_Reply.Location = new System.Drawing.Point(0, 103);
-            this.btn_Reply.Name = "btn_Reply";
-            this.btn_Reply.Size = new System.Drawing.Size(228, 77);
-            this.btn_Reply.TabIndex = 1;
-            this.btn_Reply.Text = "Reply Request";
-            this.btn_Reply.UseVisualStyleBackColor = true;
-            this.btn_Reply.Click += new System.EventHandler(this.btn_Reply_Click);
-            // 
             // btn_Reservation
             // 
             this.btn_Reservation.Location = new System.Drawing.Point(0, 186);
@@ -75,12 +65,22 @@
             this.btn_Reservation.UseVisualStyleBackColor = true;
             this.btn_Reservation.Click += new System.EventHandler(this.btn_Reservation_Click);
             // 
+            // btn_Reply
+            // 
+            this.btn_Reply.Location = new System.Drawing.Point(0, 103);
+            this.btn_Reply.Name = "btn_Reply";
+            this.btn_Reply.Size = new System.Drawing.Size(228, 77);
+            this.btn_Reply.TabIndex = 1;
+            this.btn_Reply.Text = "Reply Request";
+            this.btn_Reply.UseVisualStyleBackColor = true;
+            this.btn_Reply.Click += new System.EventHandler(this.btn_Reply_Click);
+            // 
             // RCMainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "RCMainPage";
             this.Text = "RCMainPage";
             this.Load += new System.EventHandler(this.RCMainPage_Load);
