@@ -48,6 +48,7 @@
             this.txtSearchOrder = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.btnResetSearch = new System.Windows.Forms.Button();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.panel_Feedback.SuspendLayout();
             this.SuspendLayout();
@@ -168,6 +169,7 @@
             // panel_Feedback
             // 
             this.panel_Feedback.AutoScroll = true;
+            this.panel_Feedback.Controls.Add(this.btnResetSearch);
             this.panel_Feedback.Controls.Add(this.listViewOrder);
             this.panel_Feedback.Controls.Add(this.btn_SubmitFeedback);
             this.panel_Feedback.Controls.Add(this.txt_Feedback);
@@ -189,7 +191,7 @@
             this.listViewOrder.HideSelection = false;
             this.listViewOrder.Location = new System.Drawing.Point(49, 70);
             this.listViewOrder.Name = "listViewOrder";
-            this.listViewOrder.Size = new System.Drawing.Size(754, 159);
+            this.listViewOrder.Size = new System.Drawing.Size(754, 152);
             this.listViewOrder.TabIndex = 98;
             this.listViewOrder.UseCompatibleStateImageBehavior = false;
             // 
@@ -233,10 +235,10 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(527, 17);
+            this.btnSearch.Location = new System.Drawing.Point(324, 19);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(276, 35);
+            this.btnSearch.Size = new System.Drawing.Size(226, 35);
             this.btnSearch.TabIndex = 92;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -257,7 +259,7 @@
             this.txtSearchOrder.Location = new System.Drawing.Point(187, 21);
             this.txtSearchOrder.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchOrder.Name = "txtSearchOrder";
-            this.txtSearchOrder.Size = new System.Drawing.Size(306, 30);
+            this.txtSearchOrder.Size = new System.Drawing.Size(129, 30);
             this.txtSearchOrder.TabIndex = 90;
             // 
             // label15
@@ -278,6 +280,17 @@
             this.label16.Size = new System.Drawing.Size(0, 25);
             this.label16.TabIndex = 88;
             // 
+            // btnResetSearch
+            // 
+            this.btnResetSearch.Location = new System.Drawing.Point(551, 19);
+            this.btnResetSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnResetSearch.Name = "btnResetSearch";
+            this.btnResetSearch.Size = new System.Drawing.Size(252, 35);
+            this.btnResetSearch.TabIndex = 99;
+            this.btnResetSearch.Text = "Reset Search";
+            this.btnResetSearch.UseVisualStyleBackColor = true;
+            this.btnResetSearch.Click += new System.EventHandler(this.btnResetSearch_Click);
+            // 
             // CustomerFeedback
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -287,6 +300,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerFeedback";
             this.Text = "CustomerFeedback";
+            this.Load += new System.EventHandler(this.CustomerFeedback_Load);
             this.tableSidebar_CustomerProfile.ResumeLayout(false);
             this.panel_Feedback.ResumeLayout(false);
             this.panel_Feedback.PerformLayout();
@@ -316,5 +330,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ListView listViewOrder;
+        private System.Windows.Forms.Button btnResetSearch;
     }
 }
