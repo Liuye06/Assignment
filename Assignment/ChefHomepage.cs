@@ -47,5 +47,10 @@ namespace Assignment
         {
 
         }
+
+        private void ChefHomepage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

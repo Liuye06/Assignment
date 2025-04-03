@@ -56,7 +56,7 @@
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReservations, 0, 3);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewOrders, 0, 2);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnProfile, 0, 1);
-            this.tableSidebar_CustomerProfile.Location = new System.Drawing.Point(12, 17);
+            this.tableSidebar_CustomerProfile.Location = new System.Drawing.Point(12, -5);
             this.tableSidebar_CustomerProfile.Name = "tableSidebar_CustomerProfile";
             this.tableSidebar_CustomerProfile.RowCount = 10;
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
@@ -69,7 +69,7 @@
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSidebar_CustomerProfile.Size = new System.Drawing.Size(200, 424);
+            this.tableSidebar_CustomerProfile.Size = new System.Drawing.Size(200, 460);
             this.tableSidebar_CustomerProfile.TabIndex = 32;
             // 
             // btnLogOut
@@ -187,14 +187,14 @@
             this.btn_Reservations.Text = "Make Payment For Reservation";
             this.btn_Reservations.UseVisualStyleBackColor = true;
             // 
-            // CustomerMakePayment
+            // CustomerPaymentHistory
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.panel_Payment);
             this.Controls.Add(this.tableSidebar_CustomerProfile);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "CustomerMakePayment";
+            this.Name = "CustomerPaymentHistory";
             this.Text = "CustomerMakePayment";
             this.tableSidebar_CustomerProfile.ResumeLayout(false);
             this.panel_Payment.ResumeLayout(false);

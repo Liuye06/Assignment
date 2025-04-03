@@ -841,6 +841,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\default_image.png" />
+    <None Include="Resources\Screenshot 2025-04-03 144735.png" />
+    <None Include="Resources\Screenshot_2025-04-03_142941-removebg-preview.png" />
+    <None Include="Resources\Screenshot 2025-04-03 142941.png" />
+    <None Include="Resources\inventory.png" />
+    <None Include="Resources\Screenshot 2025-04-03 135954.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

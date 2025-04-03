@@ -37,6 +37,7 @@
             this.gbChefProfile = new System.Windows.Forms.GroupBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.lblProfilePic = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.tableSidebar_CProfile.SuspendLayout();
             this.gbChefProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
@@ -59,21 +59,21 @@
             // 
             this.tableSidebar_CProfile.ColumnCount = 1;
             this.tableSidebar_CProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableSidebar_CProfile.Controls.Add(this.btnLogOut, 0, 4);
             this.tableSidebar_CProfile.Controls.Add(this.btn_inventory_CProfile, 0, 1);
             this.tableSidebar_CProfile.Controls.Add(this.btn_CusOrder_CProfile, 0, 2);
             this.tableSidebar_CProfile.Controls.Add(this.lbl_chef, 0, 0);
+            this.tableSidebar_CProfile.Controls.Add(this.btnLogOut, 0, 4);
             this.tableSidebar_CProfile.Controls.Add(this.btn_ChefProfile_CProfile, 0, 3);
-            this.tableSidebar_CProfile.Location = new System.Drawing.Point(12, 11);
+            this.tableSidebar_CProfile.Location = new System.Drawing.Point(12, 0);
             this.tableSidebar_CProfile.Name = "tableSidebar_CProfile";
             this.tableSidebar_CProfile.RowCount = 6;
-            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSidebar_CProfile.Size = new System.Drawing.Size(200, 430);
+            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableSidebar_CProfile.Size = new System.Drawing.Size(200, 456);
             this.tableSidebar_CProfile.TabIndex = 14;
             // 
             // btnLogOut
@@ -81,7 +81,7 @@
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
+            this.btnLogOut.Location = new System.Drawing.Point(3, 203);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(194, 34);
             this.btnLogOut.TabIndex = 16;
@@ -94,7 +94,7 @@
             this.btn_inventory_CProfile.BackColor = System.Drawing.Color.Silver;
             this.btn_inventory_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_inventory_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inventory_CProfile.Location = new System.Drawing.Point(3, 62);
+            this.btn_inventory_CProfile.Location = new System.Drawing.Point(3, 82);
             this.btn_inventory_CProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_inventory_CProfile.Name = "btn_inventory_CProfile";
             this.btn_inventory_CProfile.Size = new System.Drawing.Size(194, 36);
@@ -108,7 +108,7 @@
             this.btn_CusOrder_CProfile.BackColor = System.Drawing.Color.Silver;
             this.btn_CusOrder_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_CusOrder_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CusOrder_CProfile.Location = new System.Drawing.Point(3, 102);
+            this.btn_CusOrder_CProfile.Location = new System.Drawing.Point(3, 122);
             this.btn_CusOrder_CProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CusOrder_CProfile.Name = "btn_CusOrder_CProfile";
             this.btn_CusOrder_CProfile.Size = new System.Drawing.Size(194, 36);
@@ -132,7 +132,7 @@
             this.btn_ChefProfile_CProfile.BackColor = System.Drawing.Color.Silver;
             this.btn_ChefProfile_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_ChefProfile_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ChefProfile_CProfile.Location = new System.Drawing.Point(3, 142);
+            this.btn_ChefProfile_CProfile.Location = new System.Drawing.Point(3, 162);
             this.btn_ChefProfile_CProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_ChefProfile_CProfile.Name = "btn_ChefProfile_CProfile";
             this.btn_ChefProfile_CProfile.Size = new System.Drawing.Size(194, 36);
@@ -158,7 +158,7 @@
             this.gbChefProfile.Controls.Add(this.lblProfilePic);
             this.gbChefProfile.Controls.Add(this.lblEmail);
             this.gbChefProfile.Controls.Add(this.lblName);
-            this.gbChefProfile.Location = new System.Drawing.Point(215, 72);
+            this.gbChefProfile.Location = new System.Drawing.Point(218, 82);
             this.gbChefProfile.Name = "gbChefProfile";
             this.gbChefProfile.Size = new System.Drawing.Size(852, 369);
             this.gbChefProfile.TabIndex = 15;
@@ -182,6 +182,15 @@
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(271, 33);
             this.cmbGender.TabIndex = 19;
+            // 
+            // picProfilePic
+            // 
+            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
+            this.picProfilePic.Name = "picProfilePic";
+            this.picProfilePic.Size = new System.Drawing.Size(219, 210);
+            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfilePic.TabIndex = 18;
+            this.picProfilePic.TabStop = false;
             // 
             // txtPassword
             // 
@@ -283,15 +292,6 @@
             this.lblName.Size = new System.Drawing.Size(64, 25);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
-            // 
-            // picProfilePic
-            // 
-            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
-            this.picProfilePic.Name = "picProfilePic";
-            this.picProfilePic.Size = new System.Drawing.Size(219, 210);
-            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProfilePic.TabIndex = 18;
-            this.picProfilePic.TabStop = false;
             // 
             // Chef_Profile
             // 
