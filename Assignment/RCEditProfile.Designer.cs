@@ -199,6 +199,7 @@
             // RCEditProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.btnSaveProfile);
             this.Controls.Add(this.btnEditBrowseImageMenu);

@@ -35,6 +35,8 @@
             this.lbl_chef = new System.Windows.Forms.Label();
             this.tableSidebar_CInventory = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.gbCInventory = new System.Windows.Forms.GroupBox();
             this.btnResetIngredientSearch = new System.Windows.Forms.Button();
             this.btnAddNewIngredient = new System.Windows.Forms.Button();
@@ -47,14 +49,12 @@
             this.txtIngredient = new System.Windows.Forms.TextBox();
             this.lblIngredient = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.tableSidebar_CInventory.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.gbCInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredient)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_inventory
@@ -155,6 +155,25 @@
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pic_logo);
+            this.panel2.Controls.Add(this.lbl_chef);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(230, 144);
+            this.panel2.TabIndex = 17;
+            // 
+            // pic_logo
+            // 
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(0, 42);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(138, 102);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 9;
+            this.pic_logo.TabStop = false;
             // 
             // gbCInventory
             // 
@@ -281,25 +300,6 @@
             this.panel1.Size = new System.Drawing.Size(1054, 452);
             this.panel1.TabIndex = 7;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pic_logo);
-            this.panel2.Controls.Add(this.lbl_chef);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(230, 144);
-            this.panel2.TabIndex = 17;
-            // 
-            // pic_logo
-            // 
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(0, 42);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(138, 102);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 9;
-            this.pic_logo.TabStop = false;
-            // 
             // Chef
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -315,13 +315,13 @@
             this.Text = "ChefInventory";
             this.Load += new System.EventHandler(this.Chef_Load);
             this.tableSidebar_CInventory.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.gbCInventory.ResumeLayout(false);
             this.gbCInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngredient)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
