@@ -33,9 +33,9 @@ namespace Assignment
             txtPassword.Clear();
         }
 
-        private void loginPage_Load(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

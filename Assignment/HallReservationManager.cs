@@ -14,40 +14,38 @@ namespace Assignment
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
-        public static DataTable LoadHallResvReport()
+        public List<Reservation> LoadReservations()
         {
-            DataTable dt = new DataTable();
+            List<Reservation> reservations = new List<Reservation>();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT" +
-                                       "R.Reservation_ID, " +
-                                       "H.Hall_Name, " +
-                                       "U.User_Name AS Customer, " +
-                                       "RR.Function AS Reservation_Type, " +
-                                       "RR.Start_Date AS Reservation_Date, " +
-                                       "R.Status" +
-                                   "FROM Reservations R" +
-                                   "JOIN Hall H ON R.Hall_ID = H.Hall_ID" +
-                                   "JOIN User U ON R.User_ID = U.User_ID" +
-                                   "JOIN Reservation_Requests RR ON R.R_Req_ID = RR.R_Req_ID;";
+                string query = @"
+                    SELECT rr.Start_Date, u.Real_Name AS CustomerName, h.Hall_Name, rr.[Function], r.Status
+                    FROM Reservation r
+                    JOIN R_Request rr ON r.R_Req_ID = rr.R_Req_ID
+                    JOIN [User] u ON rr.User_ID = u.User_ID
+                    JOIN Hall h ON r.Hall_ID = h.Hall_ID";
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
-                    {
-                        adapter.Fill(dt);
-                    }
-                }
-                catch (Exception ex)
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    MessageBox.Show("Error loading hall reservation report: " + ex.Message);
+                    Reservation reservation = new Reservation
+                    {
+                        StartDate = reader.GetDateTime(0),
+                        CustomerName = reader.GetString(1),
+                        HallName = reader.GetString(2),
+                        Function = reader.GetString(3),
+                        Status = reader.GetString(4)
+                    };
+                    reservations.Add(reservation);
                 }
             }
 
-            return dt; // Return the loaded data
+            return reservations;
         }
     }
 }

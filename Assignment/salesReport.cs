@@ -125,7 +125,8 @@ namespace Assignment
                    "LEFT JOIN Reservation r ON p.Reservation_ID = r.Reservation_ID " +
                    "LEFT JOIN [User] u2 ON r.User_ID = u2.User_ID AND u2.Role = 'Reservation Coordinator'";
 
-            DataTable salesData = AdminClass.GetSalesReportData(query);
+            // **Pass an empty dictionary since no filters are needed**
+            DataTable salesData = AdminClass.GetSalesReportData(query, new Dictionary<string, object>());
 
             if (salesData.Rows.Count == 0)
             {
@@ -140,8 +141,9 @@ namespace Assignment
         private void FilterSalesData()
         {
             string selectedTransactionType = cmbTransactionType.SelectedItem?.ToString();
-            string selectedMonth = cmbMonth.SelectedItem?.ToString();
+            string selectedMonth = cmbMonth.SelectedItem?.ToString();  // This line gets the month from the ComboBox
             string selectedChef = cmbUserName.SelectedItem?.ToString();
+
 
             string query = "SELECT p.Payment_ID, p.Payment_date, p.Amount, " +
                            "p.Order_ID, p.Reservation_ID, p.Status, " +
@@ -152,6 +154,9 @@ namespace Assignment
                            "LEFT JOIN [User] u1 ON cic.User_ID = u1.User_ID AND u1.Role = 'Chef' " +
                            "LEFT JOIN Reservation r ON p.Reservation_ID = r.Reservation_ID " +
                            "LEFT JOIN [User] u2 ON r.User_ID = u2.User_ID AND u2.Role = 'Reservation Coordinator' WHERE 1=1";
+
+            // Dictionary to hold SQL parameters
+            Dictionary<string, object> sqlParams = new Dictionary<string, object>();
 
             // Apply transaction type filter
             if (!string.IsNullOrEmpty(selectedTransactionType))
@@ -166,27 +171,42 @@ namespace Assignment
                 }
             }
 
-            // Apply month filter (assuming it's a valid month number)
+            // Check if selectedMonth has a valid value, then convert it to a month number
             if (!string.IsNullOrEmpty(selectedMonth))
             {
-                // Validate if selectedMonth is a valid month number
-                if (int.TryParse(selectedMonth, out int month))
+                int monthNumber = GetMonthNumber(selectedMonth);
+                if (monthNumber != -1)
                 {
                     query += " AND MONTH(p.Payment_date) = @Month";
+                    sqlParams["@Month"] = monthNumber; // Assign the month number as a parameter for SQL
                 }
             }
 
-            // Apply chef filter (matching chef name)
+            // Apply chef filter
             if (!string.IsNullOrEmpty(selectedChef))
             {
                 query += " AND u1.Real_Name = @Chef";
+                sqlParams["@Chef"] = selectedChef;
             }
 
             // Get filtered sales data
-            DataTable filteredSalesData = AdminClass.GetSalesReportData(query, selectedMonth, selectedChef);
+            DataTable filteredSalesData = AdminClass.GetSalesReportData(query, sqlParams);
+
             dataGridView1.DataSource = filteredSalesData;
         }
 
+        private int GetMonthNumber(string monthName)
+        {
+            Dictionary<string, int> monthMap = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase)
+            {
+                { "January", 1 }, { "February", 2 }, { "March", 3 },
+                { "April", 4 }, { "May", 5 }, { "June", 6 },
+                { "July", 7 }, { "August", 8 }, { "September", 9 },
+                { "October", 10 }, { "November", 11 }, { "December", 12 }
+            };
+
+            return monthMap.TryGetValue(monthName, out int monthNumber) ? monthNumber : -1;
+        }
 
         // ComboBox change event to filter data based on selected values
         private void cmbTransactionType_SelectedIndexChanged(object sender, EventArgs e)
@@ -207,9 +227,9 @@ namespace Assignment
         // Reset button event to clear filters and reload all sales data
         private void btnResetSearch_Click_1(object sender, EventArgs e)
         {
-            cmbTransactionType.SelectedIndex = 0;
-            cmbMonth.SelectedIndex = 0;
-            cmbUserName.SelectedIndex = 0;
+            if (cmbTransactionType.Items.Count > 0) cmbTransactionType.SelectedIndex = -1;
+            if (cmbMonth.Items.Count > 0) cmbMonth.SelectedIndex = -1;
+            if (cmbUserName.Items.Count > 0) cmbUserName.SelectedIndex = -1;
 
             LoadSalesData();
         }

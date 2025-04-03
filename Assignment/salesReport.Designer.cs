@@ -33,6 +33,7 @@
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lbl_salesR = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ChefName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet9 = new Assignment.Database1DataSet9();
             this.paymentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -48,7 +49,6 @@
             this.cmbTransactionType = new System.Windows.Forms.ComboBox();
             this.lblTransactionType = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.ChefName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet9)).BeginInit();
@@ -111,6 +111,13 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1032, 219);
             this.dataGridView1.TabIndex = 6;
+            // 
+            // ChefName
+            // 
+            this.ChefName.HeaderText = "Chef Name";
+            this.ChefName.MinimumWidth = 6;
+            this.ChefName.Name = "ChefName";
+            this.ChefName.Width = 125;
             // 
             // paymentBindingSource2
             // 
@@ -182,9 +189,9 @@
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.Location = new System.Drawing.Point(741, 92);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(110, 25);
+            this.lblUser.Size = new System.Drawing.Size(111, 25);
             this.lblUser.TabIndex = 8;
-            this.lblUser.Text = "User Name";
+            this.lblUser.Text = "Chef Name";
             // 
             // btnResetSearch
             // 
@@ -237,13 +244,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
-            // 
-            // ChefName
-            // 
-            this.ChefName.HeaderText = "Chef Name";
-            this.ChefName.MinimumWidth = 6;
-            this.ChefName.Name = "ChefName";
-            this.ChefName.Width = 125;
             // 
             // salesReport
             // 

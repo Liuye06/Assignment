@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class Reservation
+    partial class ReservationForm
     {
         /// <summary>
         /// Required designer variable.

@@ -443,11 +443,12 @@
     </Compile>
     <Compile Include="RequestHandler.cs" />
     <Compile Include="RersevationCoordinator.cs" />
-    <Compile Include="Reservation.cs">
+    <Compile Include="Reservation.cs" />
+    <Compile Include="ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reservation.Designer.cs">
-      <DependentUpon>Reservation.cs</DependentUpon>
+    <Compile Include="ReservationForm.Designer.cs">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddReservation.resx">
       <DependentUpon>AddReservation.cs</DependentUpon>
@@ -636,8 +637,8 @@
     <EmbeddedResource Include="ReplyRequest.resx">
       <DependentUpon>ReplyRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reservation.resx">
-      <DependentUpon>Reservation.cs</DependentUpon>
+    <EmbeddedResource Include="ReservationForm.resx">
+      <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <EmbeddedResource Include="ReservationPayment.resx">
