@@ -14,35 +14,24 @@ namespace Assignment
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
-
-        // ✅ Assign an available hall based on start & end time
-        private static int? AssignHall(DateTime startDateTime, DateTime endDateTime)
+        public void LoadHalls(ComboBox comboBox)
         {
-            int? hallID = null;
-            string query = @"
-            SELECT TOP 1 Hall_ID 
-            FROM Hall 
-            WHERE Hall_ID NOT IN (
-                SELECT Hall_ID FROM Reservation 
-                WHERE (@StartDateTime BETWEEN Start_DateTime AND End_DateTime)
-                OR (@EndDateTime BETWEEN Start_DateTime AND End_DateTime)
-            )
-            ORDER BY Hall_ID ASC"; // Pick the first available hall
+            string query = "SELECT Hall_ID, Hall_Name FROM Hall";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@StartDateTime", startDateTime);
-                    cmd.Parameters.AddWithValue("@EndDateTime", endDateTime);
-
                     try
                     {
                         conn.Open();
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            hallID = Convert.ToInt32(result);
+                            DataTable dt = new DataTable();
+                            dt.Load(reader);
+                            comboBox.DataSource = dt;
+                            comboBox.DisplayMember = "Hall_Name";
+                            comboBox.ValueMember = "Hall_ID";
                         }
                     }
                     catch (Exception ex)
@@ -51,47 +40,50 @@ namespace Assignment
                     }
                 }
             }
-            return hallID;
         }
 
-        // ✅ Add a reservation (Assigns a hall automatically)
-        public static bool AddReservation(int userID, int requestID, DateTime startDateTime, DateTime endDateTime)
+        // Method to load reservations into DataGridView
+        public void LoadReservations(DataGridView dgv)
         {
-            int? hallID = AssignHall(startDateTime, endDateTime);
-
-            if (hallID == null)
-            {
-                MessageBox.Show("No available hall for the selected date.");
-                return false;
-            }
-
-            string query = "INSERT INTO Reservation (Hall_ID, User_ID, R_Req_ID, Status) VALUES (@HallID, @UserID, @RequestID, 'Confirmed')";
+            string query = @"
+                SELECT 
+                    r.Reservation_ID, 
+                    u.UserName, 
+                    r.Hall_ID, 
+                    h.Hall_Name, 
+                    r.Status, 
+                    rr.Head_Count, 
+                    h.Capacity
+                FROM 
+                    Reservation r
+                JOIN 
+                    [User] u ON r.User_ID = u.User_ID
+                LEFT JOIN 
+                    Hall h ON r.Hall_ID = h.Hall_ID
+                JOIN 
+                    R_Request rr ON r.R_Req_ID = rr.R_Req_ID";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@HallID", hallID);
-                    cmd.Parameters.AddWithValue("@UserID", userID);
-                    cmd.Parameters.AddWithValue("@RequestID", requestID);
-
+                    DataTable dt = new DataTable();
                     try
                     {
                         conn.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        return rowsAffected > 0;
+                        adapter.Fill(dt);
+                        dgv.DataSource = dt; // Bind data to DataGridView
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error: " + ex.Message);
-                        return false;
                     }
                 }
             }
         }
 
-        // ✅ Edit a reservation (Change status)
-        public static bool EditReservation(int reservationID, string newStatus)
+        // Method to update reservation status
+        public bool UpdateReservationStatus(int reservationID, string newStatus)
         {
             string query = "UPDATE Reservation SET Status = @Status WHERE Reservation_ID = @ReservationID";
 
@@ -106,7 +98,7 @@ namespace Assignment
                     {
                         conn.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
-                        return rowsAffected > 0;
+                        return rowsAffected > 0; // Return true if update was successful
                     }
                     catch (Exception ex)
                     {
@@ -117,10 +109,60 @@ namespace Assignment
             }
         }
 
-        // ✅ Delete a reservation
-        public static bool DeleteReservation(int reservationID)
+        // Method to assign hall
+        public bool AssignHall(int reservationID, int hallID)
         {
-            string query = "DELETE FROM Reservation WHERE Reservation_ID = @ReservationID";
+            // Fetch the R_Req_ID from the Reservation table
+            int requestID = GetRequestID(reservationID);
+
+            if (requestID == -1)
+            {
+                MessageBox.Show("Failed to fetch request ID.");
+                return false;
+            }
+
+            // Fetch the Start_Date and End_Date from the R_Request table
+            (DateTime startDate, DateTime endDate) = GetRequestDates(requestID);
+
+            if (startDate == DateTime.MinValue || endDate == DateTime.MinValue)
+            {
+                MessageBox.Show("Failed to fetch request dates.");
+                return false;
+            }
+
+            if (!IsHallAvailable(hallID, startDate, endDate))
+            {
+                MessageBox.Show("The selected hall is already booked for the specified dates.");
+                return false;
+            }
+
+            string query = "UPDATE Reservation SET Hall_ID = @Hall_ID WHERE Reservation_ID = @ReservationID";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Hall_ID", hallID);
+                    cmd.Parameters.AddWithValue("@ReservationID", reservationID);
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0; // Return true if update was successful
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+        }
+
+        private int GetRequestID(int reservationID)
+        {
+            string query = "SELECT R_Req_ID FROM Reservation WHERE Reservation_ID = @ReservationID";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -131,8 +173,76 @@ namespace Assignment
                     try
                     {
                         conn.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        return rowsAffected > 0;
+                        object result = cmd.ExecuteScalar();
+                        return result != null ? Convert.ToInt32(result) : -1;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        private (DateTime, DateTime) GetRequestDates(int requestID)
+        {
+            string query = "SELECT Start_Date, End_Date FROM R_Request WHERE R_Req_ID = @RequestID";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@RequestID", requestID);
+
+                    try
+                    {
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                DateTime startDate = reader.GetDateTime(0);
+                                DateTime endDate = reader.GetDateTime(1);
+                                return (startDate, endDate);
+                            }
+                            else
+                            {
+                                return (DateTime.MinValue, DateTime.MinValue);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                        return (DateTime.MinValue, DateTime.MinValue);
+                    }
+                }
+            }
+        }
+
+        // Method to check hall availability
+        public bool IsHallAvailable(int hallID, DateTime startDate, DateTime endDate)
+        {
+            string query = @"
+                SELECT COUNT(*) 
+                FROM Reservation 
+                WHERE Hall_ID = @Hall_ID 
+                AND ((Start_Date <= @EndDate AND End_Date >= @StartDate))";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Hall_ID", hallID);
+                    cmd.Parameters.AddWithValue("@StartDate", startDate);
+                    cmd.Parameters.AddWithValue("@EndDate", endDate);
+
+                    try
+                    {
+                        conn.Open();
+                        int count = (int)cmd.ExecuteScalar();
+                        return count == 0; // Return true if no overlapping reservations
                     }
                     catch (Exception ex)
                     {
@@ -142,29 +252,6 @@ namespace Assignment
                 }
             }
         }
-
-        // ✅ Load reservations into DataGridView
-        public static void LoadReservations(DataGridView dgv)
-        {
-            string query = "SELECT Reservation_ID, Hall_ID, User_ID, R_Req_ID, Status FROM Reservation";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
-                {
-                    DataTable dt = new DataTable();
-                    try
-                    {
-                        conn.Open();
-                        adapter.Fill(dt);
-                        dgv.DataSource = dt;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
-                }
-            }
-        }
     }
 }
+

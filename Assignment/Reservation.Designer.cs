@@ -34,12 +34,12 @@
             this.btnReplyCustomer = new System.Windows.Forms.Button();
             this.btnRCProfile = new System.Windows.Forms.Button();
             this.gbManageReservation = new System.Windows.Forms.GroupBox();
-            this.btnResetReservationSearch = new System.Windows.Forms.Button();
             this.dgvReservation = new System.Windows.Forms.DataGridView();
-            this.btnSearchReservation = new System.Windows.Forms.Button();
-            this.txtReservation = new System.Windows.Forms.TextBox();
-            this.lblReservation = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAssignHall = new System.Windows.Forms.Button();
+            this.cmbChangeStatus = new System.Windows.Forms.ComboBox();
+            this.btnUpdateStatus = new System.Windows.Forms.Button();
+            this.lblChangeStatus = new System.Windows.Forms.Label();
+            this.cmbAssignHall = new System.Windows.Forms.ComboBox();
             this.tableSidebar_Reservation.SuspendLayout();
             this.gbManageReservation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservation)).BeginInit();
@@ -118,26 +118,18 @@
             // 
             // gbManageReservation
             // 
-            this.gbManageReservation.Controls.Add(this.button1);
-            this.gbManageReservation.Controls.Add(this.btnResetReservationSearch);
+            this.gbManageReservation.Controls.Add(this.cmbAssignHall);
+            this.gbManageReservation.Controls.Add(this.cmbChangeStatus);
+            this.gbManageReservation.Controls.Add(this.btnUpdateStatus);
+            this.gbManageReservation.Controls.Add(this.lblChangeStatus);
+            this.gbManageReservation.Controls.Add(this.btnAssignHall);
             this.gbManageReservation.Controls.Add(this.dgvReservation);
-            this.gbManageReservation.Controls.Add(this.btnSearchReservation);
-            this.gbManageReservation.Controls.Add(this.txtReservation);
-            this.gbManageReservation.Controls.Add(this.lblReservation);
             this.gbManageReservation.Location = new System.Drawing.Point(218, 72);
             this.gbManageReservation.Name = "gbManageReservation";
             this.gbManageReservation.Size = new System.Drawing.Size(852, 369);
             this.gbManageReservation.TabIndex = 8;
             this.gbManageReservation.TabStop = false;
             this.gbManageReservation.Text = "Manage Reservation";
-            // 
-            // btnResetReservationSearch
-            // 
-            this.btnResetReservationSearch.Location = new System.Drawing.Point(526, 41);
-            this.btnResetReservationSearch.Name = "btnResetReservationSearch";
-            this.btnResetReservationSearch.Size = new System.Drawing.Size(289, 35);
-            this.btnResetReservationSearch.TabIndex = 11;
-            this.btnResetReservationSearch.Text = "Reset Search Reservation";
             // 
             // dgvReservation
             // 
@@ -146,43 +138,56 @@
             this.dgvReservation.Name = "dgvReservation";
             this.dgvReservation.RowHeadersWidth = 51;
             this.dgvReservation.RowTemplate.Height = 24;
-            this.dgvReservation.Size = new System.Drawing.Size(785, 216);
+            this.dgvReservation.Size = new System.Drawing.Size(785, 207);
             this.dgvReservation.TabIndex = 9;
             // 
-            // btnSearchReservation
+            // btnAssignHall
             // 
-            this.btnSearchReservation.Location = new System.Drawing.Point(414, 41);
-            this.btnSearchReservation.Name = "btnSearchReservation";
-            this.btnSearchReservation.Size = new System.Drawing.Size(106, 35);
-            this.btnSearchReservation.TabIndex = 8;
-            this.btnSearchReservation.Text = "Search";
-            this.btnSearchReservation.UseVisualStyleBackColor = true;
-            this.btnSearchReservation.Click += new System.EventHandler(this.btnSearchReservation_Click);
+            this.btnAssignHall.Location = new System.Drawing.Point(601, 315);
+            this.btnAssignHall.Name = "btnAssignHall";
+            this.btnAssignHall.Size = new System.Drawing.Size(214, 34);
+            this.btnAssignHall.TabIndex = 12;
+            this.btnAssignHall.Text = "Assign Hall";
+            this.btnAssignHall.UseVisualStyleBackColor = true;
+            this.btnAssignHall.Click += new System.EventHandler(this.btnAssignHall_Click);
             // 
-            // txtReservation
+            // cmbChangeStatus
             // 
-            this.txtReservation.Location = new System.Drawing.Point(146, 43);
-            this.txtReservation.Name = "txtReservation";
-            this.txtReservation.Size = new System.Drawing.Size(262, 30);
-            this.txtReservation.TabIndex = 7;
+            this.cmbChangeStatus.FormattingEnabled = true;
+            this.cmbChangeStatus.Items.AddRange(new object[] {
+            "Completed ",
+            "Confirmed"});
+            this.cmbChangeStatus.Location = new System.Drawing.Point(174, 43);
+            this.cmbChangeStatus.Name = "cmbChangeStatus";
+            this.cmbChangeStatus.Size = new System.Drawing.Size(285, 33);
+            this.cmbChangeStatus.TabIndex = 15;
             // 
-            // lblReservation
+            // btnUpdateStatus
             // 
-            this.lblReservation.AutoSize = true;
-            this.lblReservation.Location = new System.Drawing.Point(25, 46);
-            this.lblReservation.Name = "lblReservation";
-            this.lblReservation.Size = new System.Drawing.Size(115, 25);
-            this.lblReservation.TabIndex = 6;
-            this.lblReservation.Text = "Reservation";
+            this.btnUpdateStatus.Location = new System.Drawing.Point(485, 41);
+            this.btnUpdateStatus.Name = "btnUpdateStatus";
+            this.btnUpdateStatus.Size = new System.Drawing.Size(330, 37);
+            this.btnUpdateStatus.TabIndex = 14;
+            this.btnUpdateStatus.Text = "Update Status";
+            this.btnUpdateStatus.UseVisualStyleBackColor = true;
+            this.btnUpdateStatus.Click += new System.EventHandler(this.btnUpdateStatus_Click);
             // 
-            // button1
+            // lblChangeStatus
             // 
-            this.button1.Location = new System.Drawing.Point(601, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(214, 33);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblChangeStatus.AutoSize = true;
+            this.lblChangeStatus.Location = new System.Drawing.Point(25, 46);
+            this.lblChangeStatus.Name = "lblChangeStatus";
+            this.lblChangeStatus.Size = new System.Drawing.Size(143, 25);
+            this.lblChangeStatus.TabIndex = 13;
+            this.lblChangeStatus.Text = "Change Status";
+            // 
+            // cmbAssignHall
+            // 
+            this.cmbAssignHall.FormattingEnabled = true;
+            this.cmbAssignHall.Location = new System.Drawing.Point(357, 316);
+            this.cmbAssignHall.Name = "cmbAssignHall";
+            this.cmbAssignHall.Size = new System.Drawing.Size(229, 33);
+            this.cmbAssignHall.TabIndex = 16;
             // 
             // Reservation
             // 
@@ -214,11 +219,11 @@
         private System.Windows.Forms.Button btnRCProfile;
         private System.Windows.Forms.Button btnReplyCustomer;
         private System.Windows.Forms.GroupBox gbManageReservation;
-        private System.Windows.Forms.Button btnResetReservationSearch;
         private System.Windows.Forms.DataGridView dgvReservation;
-        private System.Windows.Forms.Button btnSearchReservation;
-        private System.Windows.Forms.TextBox txtReservation;
-        private System.Windows.Forms.Label lblReservation;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAssignHall;
+        private System.Windows.Forms.ComboBox cmbChangeStatus;
+        private System.Windows.Forms.Button btnUpdateStatus;
+        private System.Windows.Forms.Label lblChangeStatus;
+        private System.Windows.Forms.ComboBox cmbAssignHall;
     }
 }

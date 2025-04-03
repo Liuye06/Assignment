@@ -9,7 +9,7 @@ namespace Assignment
         private SidebarManager _sidebarManager;
         private BindingSource bindingSource = new BindingSource();
         private int currentUserID; // Store the userID
-        private ReservationManager reservationManager;
+        private ReservationManager reservationManager = new ReservationManager();
 
         public Reservation(int userID)
         {
@@ -21,34 +21,61 @@ namespace Assignment
 
         private void Reservation_Load(object sender, EventArgs e)
         {
-            LoadReservationData();
-            
+            reservationManager.LoadReservations(dgvReservation);
+            reservationManager.LoadHalls(cmbAssignHall); // Populate the combo box with hall data
+
         }
 
-        private void LoadReservationData()
+        private void btnUpdateStatus_Click(object sender, EventArgs e)
         {
-            
-            
-        }
-
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnSearchReservation_Click(object sender, EventArgs e)
-        {
-            string searchText = txtReservation.Text.Trim().Replace("'", "''");
-
-            if (!string.IsNullOrEmpty(searchText))
+            if (dgvReservation.SelectedRows.Count > 0)
             {
-                bindingSource.Filter = $"Reservation_ID LIKE '%{searchText}%'";
+                int reservationID = Convert.ToInt32(dgvReservation.SelectedRows[0].Cells["Reservation_ID"].Value);
+                string newStatus = cmbChangeStatus.SelectedItem.ToString();
+
+                bool success = reservationManager.UpdateReservationStatus(reservationID, newStatus);
+
+                if (success)
+                {
+                    MessageBox.Show("Status updated successfully!");
+                    reservationManager.LoadReservations(dgvReservation); // Refresh DataGridView
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update status.");
+                }
             }
             else
             {
-                bindingSource.RemoveFilter();
+                MessageBox.Show("Please select a reservation from the table.");
+            }
+        }
+
+        private void btnAssignHall_Click(object sender, EventArgs e)
+        {
+            if (dgvReservation.SelectedRows.Count > 0)
+            {
+                int reservationID = Convert.ToInt32(dgvReservation.SelectedRows[0].Cells["Reservation_ID"].Value);
+                int hallID = Convert.ToInt32(cmbAssignHall.SelectedValue);
+
+                bool success = reservationManager.AssignHall(reservationID, hallID);
+
+                if (success)
+                {
+                    MessageBox.Show("Hall assigned successfully!");
+                    reservationManager.LoadReservations(dgvReservation); // Refresh DataGridView
+                }
+                else
+                {
+                    MessageBox.Show("Failed to assign hall.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a reservation from the table.");
             }
         }
     }
 }
+
+
