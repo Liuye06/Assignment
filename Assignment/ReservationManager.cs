@@ -16,7 +16,7 @@ namespace Assignment
 
 
         // ✅ Assign an available hall based on start & end time
-        private int? AssignHall(DateTime startDateTime, DateTime endDateTime)
+        private static int? AssignHall(DateTime startDateTime, DateTime endDateTime)
         {
             int? hallID = null;
             string query = @"
@@ -55,7 +55,7 @@ namespace Assignment
         }
 
         // ✅ Add a reservation (Assigns a hall automatically)
-        public bool AddReservation(int userID, int requestID, DateTime startDateTime, DateTime endDateTime)
+        public static bool AddReservation(int userID, int requestID, DateTime startDateTime, DateTime endDateTime)
         {
             int? hallID = AssignHall(startDateTime, endDateTime);
 
@@ -91,7 +91,7 @@ namespace Assignment
         }
 
         // ✅ Edit a reservation (Change status)
-        public bool EditReservation(int reservationID, string newStatus)
+        public static bool EditReservation(int reservationID, string newStatus)
         {
             string query = "UPDATE Reservation SET Status = @Status WHERE Reservation_ID = @ReservationID";
 
@@ -118,7 +118,7 @@ namespace Assignment
         }
 
         // ✅ Delete a reservation
-        public bool DeleteReservation(int reservationID)
+        public static bool DeleteReservation(int reservationID)
         {
             string query = "DELETE FROM Reservation WHERE Reservation_ID = @ReservationID";
 
@@ -144,7 +144,7 @@ namespace Assignment
         }
 
         // ✅ Load reservations into DataGridView
-        public void LoadReservations(DataGridView dgv)
+        public static void LoadReservations(DataGridView dgv)
         {
             string query = "SELECT Reservation_ID, Hall_ID, User_ID, R_Req_ID, Status FROM Reservation";
 

@@ -9,6 +9,7 @@ namespace Assignment
         private SidebarManager _sidebarManager;
         private BindingSource bindingSource = new BindingSource();
         private int currentUserID; // Store the userID
+        private ReservationManager reservationManager;
 
         public Reservation(int userID)
         {
@@ -20,7 +21,7 @@ namespace Assignment
 
         private void Reservation_Load(object sender, EventArgs e)
         {
-
+            ReservationManager.LoadReservations(dgvReservation);
         }
     }
 }
