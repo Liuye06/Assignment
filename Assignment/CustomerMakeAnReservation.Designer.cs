@@ -32,7 +32,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnFeedback = new System.Windows.Forms.Button();
             this.btnMakePayment = new System.Windows.Forms.Button();
-            this.btnMakeReservation = new System.Windows.Forms.Button();
+            this.btnMakeReservationRequest = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
             this.btnViewReservations = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnLogOut, 0, 8);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnFeedback, 0, 7);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakePayment, 0, 6);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeReservation, 0, 5);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeReservationRequest, 0, 5);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeOrder, 0, 4);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReservations, 0, 3);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewOrders, 0, 2);
@@ -115,16 +115,16 @@
             this.btnMakePayment.UseVisualStyleBackColor = true;
             this.btnMakePayment.Click += new System.EventHandler(this.btnMakePayment_Click);
             // 
-            // btnMakeReservation
+            // btnMakeReservationRequest
             // 
-            this.btnMakeReservation.Location = new System.Drawing.Point(4, 224);
-            this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMakeReservation.Name = "btnMakeReservation";
-            this.btnMakeReservation.Size = new System.Drawing.Size(192, 62);
-            this.btnMakeReservation.TabIndex = 1;
-            this.btnMakeReservation.Text = "Make a Reservation";
-            this.btnMakeReservation.UseVisualStyleBackColor = true;
-            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
+            this.btnMakeReservationRequest.Location = new System.Drawing.Point(4, 224);
+            this.btnMakeReservationRequest.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMakeReservationRequest.Name = "btnMakeReservationRequest";
+            this.btnMakeReservationRequest.Size = new System.Drawing.Size(192, 62);
+            this.btnMakeReservationRequest.TabIndex = 1;
+            this.btnMakeReservationRequest.Text = "Make a Reservation";
+            this.btnMakeReservationRequest.UseVisualStyleBackColor = true;
+            this.btnMakeReservationRequest.Click += new System.EventHandler(this.btnMakeReservation_Click);
             // 
             // btnMakeOrder
             // 
@@ -216,7 +216,7 @@
             // 
             // numHeadCount
             // 
-            this.numHeadCount.Location = new System.Drawing.Point(448, 311);
+            this.numHeadCount.Location = new System.Drawing.Point(621, 160);
             this.numHeadCount.Margin = new System.Windows.Forms.Padding(4);
             this.numHeadCount.Maximum = new decimal(new int[] {
             1000,
@@ -230,7 +230,7 @@
             // lbl_HeadCount
             // 
             this.lbl_HeadCount.AutoSize = true;
-            this.lbl_HeadCount.Location = new System.Drawing.Point(443, 277);
+            this.lbl_HeadCount.Location = new System.Drawing.Point(616, 126);
             this.lbl_HeadCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_HeadCount.Name = "lbl_HeadCount";
             this.lbl_HeadCount.Size = new System.Drawing.Size(117, 25);
@@ -250,7 +250,7 @@
             // lbl_Function
             // 
             this.lbl_Function.AutoSize = true;
-            this.lbl_Function.Location = new System.Drawing.Point(26, 277);
+            this.lbl_Function.Location = new System.Drawing.Point(616, 28);
             this.lbl_Function.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Function.Name = "lbl_Function";
             this.lbl_Function.Size = new System.Drawing.Size(87, 25);
@@ -269,7 +269,7 @@
             "Anniversary",
             "Competition",
             "Performance"});
-            this.cmbFunction.Location = new System.Drawing.Point(31, 311);
+            this.cmbFunction.Location = new System.Drawing.Point(621, 62);
             this.cmbFunction.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFunction.Name = "cmbFunction";
             this.cmbFunction.Size = new System.Drawing.Size(160, 33);
@@ -278,7 +278,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(211, 277);
+            this.label11.Location = new System.Drawing.Point(26, 277);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(84, 25);
@@ -287,10 +287,10 @@
             // 
             // txtRequest
             // 
-            this.txtRequest.Location = new System.Drawing.Point(216, 311);
+            this.txtRequest.Location = new System.Drawing.Point(31, 311);
             this.txtRequest.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest.Name = "txtRequest";
-            this.txtRequest.Size = new System.Drawing.Size(217, 30);
+            this.txtRequest.Size = new System.Drawing.Size(588, 30);
             this.txtRequest.TabIndex = 39;
             // 
             // monthCalendarStart
@@ -304,7 +304,7 @@
             // 
             // btn_SendReq
             // 
-            this.btn_SendReq.Location = new System.Drawing.Point(649, 285);
+            this.btn_SendReq.Location = new System.Drawing.Point(663, 279);
             this.btn_SendReq.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SendReq.Name = "btn_SendReq";
             this.btn_SendReq.Size = new System.Drawing.Size(132, 63);
@@ -337,7 +337,7 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnFeedback;
         private System.Windows.Forms.Button btnMakePayment;
-        private System.Windows.Forms.Button btnMakeReservation;
+        private System.Windows.Forms.Button btnMakeReservationRequest;
         private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.Button btnViewReservations;
         private System.Windows.Forms.Button btnViewOrders;

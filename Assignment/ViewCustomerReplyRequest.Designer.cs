@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class ViewCustomerReservation
+    partial class ViewCustomerReplyRequest
     {
         /// <summary>
         /// Required designer variable.

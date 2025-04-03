@@ -22,15 +22,5 @@ namespace Assignment
         {
 
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            AddNewHall form = new AddNewHall(currentUserID);
-
-            if (form.ShowDialog() == DialogResult.OK) // Wait until form is closed
-            {
-               
-            }
-        }
     }
 }

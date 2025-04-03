@@ -194,11 +194,11 @@
     <Compile Include="CustomerMakeAnReservation.Designer.cs">
       <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerPaymentHistory.cs">
+    <Compile Include="CustomerViewReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerPaymentHistory.Designer.cs">
-      <DependentUpon>CustomerPaymentHistory.cs</DependentUpon>
+    <Compile Include="CustomerViewReservation.Designer.cs">
+      <DependentUpon>CustomerViewReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerMenu.cs">
       <SubType>Form</SubType>
@@ -436,7 +436,7 @@
     <Compile Include="ReplyRequest.Designer.cs">
       <DependentUpon>ReplyRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReplyRequestDetails.cs" />
+    <Compile Include="RequestHandler.cs" />
     <Compile Include="RersevationCoordinator.cs" />
     <Compile Include="Reservation.cs">
       <SubType>Form</SubType>
@@ -459,11 +459,12 @@
     <EmbeddedResource Include="DeleteReservation.resx">
       <DependentUpon>DeleteReservation.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="ReservationDetails.cs" />
+    <Compile Include="ReservationManager.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="loginPage.resx">
       <DependentUpon>loginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="ReservationDetails.cs" />
     <Compile Include="ReservationPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,11 +511,11 @@
       <DependentUpon>addStaff.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="OrderDetails.cs" />
-    <Compile Include="ViewCustomerReservation.cs">
+    <Compile Include="ViewCustomerReplyRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomerReservation.Designer.cs">
-      <DependentUpon>ViewCustomerReservation.cs</DependentUpon>
+    <Compile Include="ViewCustomerReplyRequest.Designer.cs">
+      <DependentUpon>ViewCustomerReplyRequest.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
@@ -531,8 +532,8 @@
     <EmbeddedResource Include="CustomerMakeAnReservation.resx">
       <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerPaymentHistory.resx">
-      <DependentUpon>CustomerPaymentHistory.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerViewReservation.resx">
+      <DependentUpon>CustomerViewReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
@@ -657,8 +658,8 @@
     <EmbeddedResource Include="ViewCustomerOrder.resx">
       <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomerReservation.resx">
-      <DependentUpon>ViewCustomerReservation.cs</DependentUpon>
+    <EmbeddedResource Include="ViewCustomerReplyRequest.resx">
+      <DependentUpon>ViewCustomerReplyRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChefCustomerOrder.resx">
       <DependentUpon>ChefCustomerOrder.cs</DependentUpon>

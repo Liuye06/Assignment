@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class CustomerPaymentHistory
+    partial class CustomerViewReservation
     {
         /// <summary>
         /// Required designer variable.
@@ -50,12 +50,12 @@
             this.tableSidebar_CustomerProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnLogOut, 0, 8);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnFeedback, 0, 7);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakePayment, 0, 6);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeReservation, 0, 5);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeOrder, 0, 4);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReservations, 0, 3);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakePayment, 0, 4);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewOrders, 0, 2);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnProfile, 0, 1);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeReservation, 0, 6);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeOrder, 0, 5);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReservations, 0, 3);
             this.tableSidebar_CustomerProfile.Location = new System.Drawing.Point(12, 17);
             this.tableSidebar_CustomerProfile.Name = "tableSidebar_CustomerProfile";
             this.tableSidebar_CustomerProfile.RowCount = 10;
@@ -64,7 +64,7 @@
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
@@ -74,7 +74,7 @@
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(4, 374);
+            this.btnLogOut.Location = new System.Drawing.Point(4, 344);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(192, 32);
@@ -84,7 +84,7 @@
             // 
             // btnFeedback
             // 
-            this.btnFeedback.Location = new System.Drawing.Point(4, 334);
+            this.btnFeedback.Location = new System.Drawing.Point(4, 304);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.Size = new System.Drawing.Size(192, 32);
@@ -94,7 +94,7 @@
             // 
             // btnMakePayment
             // 
-            this.btnMakePayment.Location = new System.Drawing.Point(4, 294);
+            this.btnMakePayment.Location = new System.Drawing.Point(4, 184);
             this.btnMakePayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakePayment.Name = "btnMakePayment";
             this.btnMakePayment.Size = new System.Drawing.Size(192, 32);
@@ -104,17 +104,17 @@
             // 
             // btnMakeReservation
             // 
-            this.btnMakeReservation.Location = new System.Drawing.Point(4, 224);
+            this.btnMakeReservation.Location = new System.Drawing.Point(4, 264);
             this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeReservation.Name = "btnMakeReservation";
-            this.btnMakeReservation.Size = new System.Drawing.Size(192, 62);
+            this.btnMakeReservation.Size = new System.Drawing.Size(192, 32);
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation";
             this.btnMakeReservation.UseVisualStyleBackColor = true;
             // 
             // btnMakeOrder
             // 
-            this.btnMakeOrder.Location = new System.Drawing.Point(4, 184);
+            this.btnMakeOrder.Location = new System.Drawing.Point(4, 224);
             this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeOrder.Name = "btnMakeOrder";
             this.btnMakeOrder.Size = new System.Drawing.Size(192, 32);
@@ -187,14 +187,14 @@
             this.btn_Reservations.Text = "Make Payment For Reservation";
             this.btn_Reservations.UseVisualStyleBackColor = true;
             // 
-            // CustomerMakePayment
+            // CustomerViewReservation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.panel_Payment);
             this.Controls.Add(this.tableSidebar_CustomerProfile);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "CustomerMakePayment";
+            this.Name = "CustomerViewReservation";
             this.Text = "CustomerMakePayment";
             this.tableSidebar_CustomerProfile.ResumeLayout(false);
             this.panel_Payment.ResumeLayout(false);
