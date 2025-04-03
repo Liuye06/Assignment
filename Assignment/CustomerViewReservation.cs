@@ -40,6 +40,7 @@ namespace Assignment
             listView_ReservationRequest.Columns.Add("Hall Name", -2, HorizontalAlignment.Left);
             listView_ReservationRequest.Columns.Add("Status", -2, HorizontalAlignment.Left);
             listView_ReservationRequest.Columns.Add("Head Count", -2, HorizontalAlignment.Left);
+            listView_ReservationRequest.Columns.Add("Price Per Day", -2, HorizontalAlignment.Left);
             listView_ReservationRequest.Columns.Add("Total Price", -2, HorizontalAlignment.Left);
             listView_ReservationRequest.Columns.Add("Payment Status", -2, HorizontalAlignment.Left);
             listView_ReservationRequest.Columns.Add("Start Date", -2, HorizontalAlignment.Left);
@@ -98,7 +99,7 @@ namespace Assignment
             {
                 // Get the Reservation ID and Payment Status from the selected row
                 string reservationId = listView_ReservationRequest.SelectedItems[0].SubItems[0].Text;
-                string paymentStatus = listView_ReservationRequest.SelectedItems[0].SubItems[7].Text;
+                string paymentStatus = listView_ReservationRequest.SelectedItems[0].SubItems[8].Text;
 
                 // Check if the payment is already made or not
                 if (paymentStatus.ToLower() == "paid")
@@ -125,13 +126,13 @@ namespace Assignment
 
                 string selectedReservationId = selectedItem.SubItems[0].Text;
                 string hallName = selectedItem.SubItems[3].Text;
-                string pricePerDayText = selectedItem.SubItems[5].Text; // Assuming this is the Price_P_Day column
+                string pricePerDayText = selectedItem.SubItems[6].Text; // Assuming this is the Price_P_Day column
 
                 // Fetch Start and End Dates from the Tag property as DateTime
-                DateTime startDate = (DateTime)selectedItem.SubItems[8].Tag;  // Start Date stored in Tag
-                DateTime endDate = (DateTime)selectedItem.SubItems[9].Tag;    // End Date stored in Tag
+                DateTime startDate = (DateTime)selectedItem.SubItems[9].Tag;  // Start Date stored in Tag
+                DateTime endDate = (DateTime)selectedItem.SubItems[10].Tag;    // End Date stored in Tag
 
-                string paymentStatus = selectedItem.SubItems[7].Text; // Payment Status column
+                string paymentStatus = selectedItem.SubItems[8].Text; // Payment Status column
 
                 if (selectedReservationId != reservationId)
                 {
@@ -139,13 +140,16 @@ namespace Assignment
                     return;
                 }
 
-                // Validate price per day
+                // Remove RM, commas, and extra spaces before parsing
+                pricePerDayText = pricePerDayText.Replace("RM", "").Replace(",", "").Trim();
+
                 decimal pricePerDay;
                 if (!decimal.TryParse(pricePerDayText, out pricePerDay))
                 {
-                    MessageBox.Show("Invalid price per day.");
+                    MessageBox.Show("Invalid price per day: " + pricePerDayText);
                     return;
                 }
+
 
                 // Calculate the total price based on price per day and the number of days between start and end dates
                 TimeSpan duration = endDate - startDate;

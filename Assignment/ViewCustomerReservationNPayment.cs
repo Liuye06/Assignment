@@ -80,13 +80,14 @@ namespace Assignment
                     item.SubItems.Add(hallName);  // Fourth column (Hall Name)
                     item.SubItems.Add(status);    // Fifth column (Status)
                     item.SubItems.Add(headCount); // Sixth column (Head Count)
-                    item.SubItems.Add(totalPrice.ToString("C"));  // Seventh column (Total Price)
-                    item.SubItems.Add(paymentStatus);  // Eighth column (Payment Status)
-                    item.SubItems.Add(startDate.ToString("dd/MM/yyyy"));   // Ninth column (Start Date)
-                    item.SubItems.Add(endDate.ToString("dd/MM/yyyy"));    // Tenth column (End Date)
+                    item.SubItems.Add(pricePerDayDecimal.ToString("C"));  // Seventh column (Price Per Day)
+                    item.SubItems.Add(totalPrice.ToString("C"));  // Eighth column (Total Price)
+                    item.SubItems.Add(paymentStatus);  // Ninth column (Payment Status)
+                    item.SubItems.Add(startDate.ToString("dd/MM/yyyy"));   // Tenth column (Start Date)
+                    item.SubItems.Add(endDate.ToString("dd/MM/yyyy"));    // Eleventh column (End Date)
 
-                    item.SubItems[8].Tag = startDate;  // Store Start Date DateTime in Tag
-                    item.SubItems[9].Tag = endDate;  // Store End Date DateTime in Tag
+                    item.SubItems[9].Tag = startDate;  // Store Start Date DateTime in Tag
+                    item.SubItems[10].Tag = endDate;  // Store End Date DateTime in Tag
 
                     listView.Items.Add(item);  // Add the item to the ListView
                 }
