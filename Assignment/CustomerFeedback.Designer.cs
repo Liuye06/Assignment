@@ -38,6 +38,7 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.panel_Feedback = new System.Windows.Forms.Panel();
+            this.btnResetSearch = new System.Windows.Forms.Button();
             this.listViewOrder = new System.Windows.Forms.ListView();
             this.btn_SubmitFeedback = new System.Windows.Forms.Button();
             this.txt_Feedback = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@
             this.txtSearchOrder = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnResetSearch = new System.Windows.Forms.Button();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.panel_Feedback.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReservations, 0, 3);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewOrders, 0, 2);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnProfile, 0, 1);
-            this.tableSidebar_CustomerProfile.Location = new System.Drawing.Point(12, 17);
+            this.tableSidebar_CustomerProfile.Location = new System.Drawing.Point(12, -5);
             this.tableSidebar_CustomerProfile.Name = "tableSidebar_CustomerProfile";
             this.tableSidebar_CustomerProfile.RowCount = 10;
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
@@ -78,7 +78,7 @@
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSidebar_CustomerProfile.Size = new System.Drawing.Size(200, 424);
+            this.tableSidebar_CustomerProfile.Size = new System.Drawing.Size(200, 468);
             this.tableSidebar_CustomerProfile.TabIndex = 33;
             // 
             // btnLogOut
@@ -186,6 +186,17 @@
             this.panel_Feedback.Size = new System.Drawing.Size(850, 360);
             this.panel_Feedback.TabIndex = 58;
             // 
+            // btnResetSearch
+            // 
+            this.btnResetSearch.Location = new System.Drawing.Point(551, 19);
+            this.btnResetSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnResetSearch.Name = "btnResetSearch";
+            this.btnResetSearch.Size = new System.Drawing.Size(252, 35);
+            this.btnResetSearch.TabIndex = 99;
+            this.btnResetSearch.Text = "Reset Search";
+            this.btnResetSearch.UseVisualStyleBackColor = true;
+            this.btnResetSearch.Click += new System.EventHandler(this.btnResetSearch_Click);
+            // 
             // listViewOrder
             // 
             this.listViewOrder.HideSelection = false;
@@ -279,17 +290,6 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(0, 25);
             this.label16.TabIndex = 88;
-            // 
-            // btnResetSearch
-            // 
-            this.btnResetSearch.Location = new System.Drawing.Point(551, 19);
-            this.btnResetSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.btnResetSearch.Name = "btnResetSearch";
-            this.btnResetSearch.Size = new System.Drawing.Size(252, 35);
-            this.btnResetSearch.TabIndex = 99;
-            this.btnResetSearch.Text = "Reset Search";
-            this.btnResetSearch.UseVisualStyleBackColor = true;
-            this.btnResetSearch.Click += new System.EventHandler(this.btnResetSearch_Click);
             // 
             // CustomerFeedback
             // 
