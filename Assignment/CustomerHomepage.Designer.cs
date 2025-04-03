@@ -85,7 +85,6 @@
             this.btnLogOut.Size = new System.Drawing.Size(228, 32);
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
@@ -157,6 +156,8 @@
             this.btnViewReservations.FlatAppearance.BorderSize = 0;
             this.btnViewReservations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewReservations.ForeColor = System.Drawing.Color.White;
+            this.btnViewReservations.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReservations.Image")));
+            this.btnViewReservations.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewReservations.Location = new System.Drawing.Point(4, 184);
             this.btnViewReservations.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReservations.Name = "btnViewReservations";
@@ -173,13 +174,13 @@
             this.btnViewOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewOrders.ForeColor = System.Drawing.Color.White;
             this.btnViewOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrders.Image")));
+            this.btnViewOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewOrders.Location = new System.Drawing.Point(4, 144);
             this.btnViewOrders.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewOrders.Name = "btnViewOrders";
             this.btnViewOrders.Size = new System.Drawing.Size(228, 32);
             this.btnViewOrders.TabIndex = 4;
             this.btnViewOrders.Text = "View Orders";
-            this.btnViewOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnViewOrders.UseVisualStyleBackColor = false;
             this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
@@ -189,6 +190,8 @@
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
+            this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnProfile.Location = new System.Drawing.Point(4, 104);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(4);
             this.btnProfile.Name = "btnProfile";

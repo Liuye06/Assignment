@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RCProfile));
             this.tableSidebar_Reservation = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnManageReservation = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.gbRCProfile = new System.Windows.Forms.GroupBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.picProfilePic = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
@@ -48,10 +50,14 @@
             this.lblProfilePic = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.picProfilePic = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.lbl_RC = new System.Windows.Forms.Label();
             this.tableSidebar_Reservation.SuspendLayout();
             this.gbRCProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_Reservation
@@ -62,16 +68,17 @@
             this.tableSidebar_Reservation.Controls.Add(this.btnManageReservation, 0, 1);
             this.tableSidebar_Reservation.Controls.Add(this.btnReplyCustomer, 0, 2);
             this.tableSidebar_Reservation.Controls.Add(this.btnRCProfile, 0, 3);
-            this.tableSidebar_Reservation.Location = new System.Drawing.Point(12, 12);
+            this.tableSidebar_Reservation.Controls.Add(this.panel1, 0, 0);
+            this.tableSidebar_Reservation.Location = new System.Drawing.Point(12, -7);
             this.tableSidebar_Reservation.Name = "tableSidebar_Reservation";
             this.tableSidebar_Reservation.RowCount = 6;
-            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSidebar_Reservation.Size = new System.Drawing.Size(200, 430);
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_Reservation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableSidebar_Reservation.Size = new System.Drawing.Size(216, 464);
             this.tableSidebar_Reservation.TabIndex = 9;
             // 
             // btnLogOut
@@ -79,7 +86,7 @@
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
+            this.btnLogOut.Location = new System.Drawing.Point(3, 288);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(194, 34);
             this.btnLogOut.TabIndex = 15;
@@ -92,10 +99,10 @@
             this.btnManageReservation.BackColor = System.Drawing.Color.Silver;
             this.btnManageReservation.FlatAppearance.BorderSize = 0;
             this.btnManageReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageReservation.Location = new System.Drawing.Point(3, 62);
+            this.btnManageReservation.Location = new System.Drawing.Point(3, 152);
             this.btnManageReservation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnManageReservation.Name = "btnManageReservation";
-            this.btnManageReservation.Size = new System.Drawing.Size(194, 36);
+            this.btnManageReservation.Size = new System.Drawing.Size(210, 36);
             this.btnManageReservation.TabIndex = 0;
             this.btnManageReservation.Text = "Manage Reservation";
             this.btnManageReservation.UseVisualStyleBackColor = false;
@@ -106,10 +113,10 @@
             this.btnReplyCustomer.BackColor = System.Drawing.Color.Silver;
             this.btnReplyCustomer.FlatAppearance.BorderSize = 0;
             this.btnReplyCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReplyCustomer.Location = new System.Drawing.Point(3, 102);
+            this.btnReplyCustomer.Location = new System.Drawing.Point(3, 197);
             this.btnReplyCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReplyCustomer.Name = "btnReplyCustomer";
-            this.btnReplyCustomer.Size = new System.Drawing.Size(194, 36);
+            this.btnReplyCustomer.Size = new System.Drawing.Size(210, 36);
             this.btnReplyCustomer.TabIndex = 1;
             this.btnReplyCustomer.Text = "Reply Customer";
             this.btnReplyCustomer.UseVisualStyleBackColor = false;
@@ -120,10 +127,10 @@
             this.btnRCProfile.BackColor = System.Drawing.Color.Silver;
             this.btnRCProfile.FlatAppearance.BorderSize = 0;
             this.btnRCProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRCProfile.Location = new System.Drawing.Point(3, 142);
+            this.btnRCProfile.Location = new System.Drawing.Point(3, 242);
             this.btnRCProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRCProfile.Name = "btnRCProfile";
-            this.btnRCProfile.Size = new System.Drawing.Size(194, 36);
+            this.btnRCProfile.Size = new System.Drawing.Size(210, 36);
             this.btnRCProfile.TabIndex = 2;
             this.btnRCProfile.Text = "Reservation Coordinate Profile";
             this.btnRCProfile.UseVisualStyleBackColor = false;
@@ -146,12 +153,12 @@
             this.gbRCProfile.Controls.Add(this.lblProfilePic);
             this.gbRCProfile.Controls.Add(this.lblEmail);
             this.gbRCProfile.Controls.Add(this.lblName);
-            this.gbRCProfile.Location = new System.Drawing.Point(218, 74);
+            this.gbRCProfile.Location = new System.Drawing.Point(234, 74);
             this.gbRCProfile.Name = "gbRCProfile";
-            this.gbRCProfile.Size = new System.Drawing.Size(852, 369);
+            this.gbRCProfile.Size = new System.Drawing.Size(836, 369);
             this.gbRCProfile.TabIndex = 16;
             this.gbRCProfile.TabStop = false;
-            this.gbRCProfile.Text = "Reservation Coordinate Profile";
+            this.gbRCProfile.Text = "Reservation Coordinator Profile";
             // 
             // dtpDOB
             // 
@@ -170,6 +177,15 @@
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(271, 33);
             this.cmbGender.TabIndex = 19;
+            // 
+            // picProfilePic
+            // 
+            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
+            this.picProfilePic.Name = "picProfilePic";
+            this.picProfilePic.Size = new System.Drawing.Size(219, 210);
+            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfilePic.TabIndex = 18;
+            this.picProfilePic.TabStop = false;
             // 
             // txtPassword
             // 
@@ -272,14 +288,34 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
-            // picProfilePic
+            // panel1
             // 
-            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
-            this.picProfilePic.Name = "picProfilePic";
-            this.picProfilePic.Size = new System.Drawing.Size(219, 210);
-            this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picProfilePic.TabIndex = 18;
-            this.picProfilePic.TabStop = false;
+            this.panel1.Controls.Add(this.lbl_RC);
+            this.panel1.Controls.Add(this.pic_logo);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(210, 144);
+            this.panel1.TabIndex = 16;
+            // 
+            // pic_logo
+            // 
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(3, 45);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(130, 99);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 18;
+            this.pic_logo.TabStop = false;
+            // 
+            // lbl_RC
+            // 
+            this.lbl_RC.AutoSize = true;
+            this.lbl_RC.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RC.Location = new System.Drawing.Point(-2, 0);
+            this.lbl_RC.Name = "lbl_RC";
+            this.lbl_RC.Size = new System.Drawing.Size(159, 58);
+            this.lbl_RC.TabIndex = 19;
+            this.lbl_RC.Text = "Reservation \r\nCoordinator";
             // 
             // RCProfile
             // 
@@ -295,6 +331,9 @@
             this.gbRCProfile.ResumeLayout(false);
             this.gbRCProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,5 +361,8 @@
         private System.Windows.Forms.Label lblProfilePic;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Label lbl_RC;
     }
 }

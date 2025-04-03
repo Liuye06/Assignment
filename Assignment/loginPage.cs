@@ -32,5 +32,10 @@ namespace Assignment
             txtUsername.Clear();
             txtPassword.Clear();
         }
+
+        private void loginPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

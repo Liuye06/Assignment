@@ -40,15 +40,16 @@
             // 
             // gbAddNewIngredient
             // 
+            this.gbAddNewIngredient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.gbAddNewIngredient.Controls.Add(this.btnCancelIngredient);
             this.gbAddNewIngredient.Controls.Add(this.txtAddStock);
             this.gbAddNewIngredient.Controls.Add(this.lblAddStock);
             this.gbAddNewIngredient.Controls.Add(this.btnAddNewIngredient);
             this.gbAddNewIngredient.Controls.Add(this.lblAddIngredient);
             this.gbAddNewIngredient.Controls.Add(this.txtAddIngredient);
-            this.gbAddNewIngredient.Location = new System.Drawing.Point(23, 12);
+            this.gbAddNewIngredient.Location = new System.Drawing.Point(71, 27);
             this.gbAddNewIngredient.Name = "gbAddNewIngredient";
-            this.gbAddNewIngredient.Size = new System.Drawing.Size(1047, 429);
+            this.gbAddNewIngredient.Size = new System.Drawing.Size(963, 402);
             this.gbAddNewIngredient.TabIndex = 7;
             this.gbAddNewIngredient.TabStop = false;
             this.gbAddNewIngredient.Text = "Add New Ingredient";
@@ -108,6 +109,7 @@
             // AddChefIngredient
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbAddNewIngredient);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -66,7 +66,7 @@
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReservations, 0, 3);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewOrders, 0, 2);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnProfile, 0, 1);
-            this.tableSidebar_CustomerProfile.Location = new System.Drawing.Point(12, 12);
+            this.tableSidebar_CustomerProfile.Location = new System.Drawing.Point(12, -2);
             this.tableSidebar_CustomerProfile.Name = "tableSidebar_CustomerProfile";
             this.tableSidebar_CustomerProfile.RowCount = 10;
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
@@ -79,7 +79,7 @@
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_CustomerProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSidebar_CustomerProfile.Size = new System.Drawing.Size(200, 424);
+            this.tableSidebar_CustomerProfile.Size = new System.Drawing.Size(236, 460);
             this.tableSidebar_CustomerProfile.TabIndex = 31;
             // 
             // btnLogOut
@@ -87,7 +87,7 @@
             this.btnLogOut.Location = new System.Drawing.Point(4, 374);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(192, 32);
+            this.btnLogOut.Size = new System.Drawing.Size(228, 32);
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.btnFeedback.Location = new System.Drawing.Point(4, 334);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeedback.Name = "btnFeedback";
-            this.btnFeedback.Size = new System.Drawing.Size(192, 32);
+            this.btnFeedback.Size = new System.Drawing.Size(228, 32);
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
             this.btnFeedback.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             this.btnMakePayment.Location = new System.Drawing.Point(4, 294);
             this.btnMakePayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakePayment.Name = "btnMakePayment";
-            this.btnMakePayment.Size = new System.Drawing.Size(192, 32);
+            this.btnMakePayment.Size = new System.Drawing.Size(228, 32);
             this.btnMakePayment.TabIndex = 5;
             this.btnMakePayment.Text = "Make Payment";
             this.btnMakePayment.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.btnMakeReservationRequest.Location = new System.Drawing.Point(4, 224);
             this.btnMakeReservationRequest.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeReservationRequest.Name = "btnMakeReservationRequest";
-            this.btnMakeReservationRequest.Size = new System.Drawing.Size(192, 62);
+            this.btnMakeReservationRequest.Size = new System.Drawing.Size(228, 62);
             this.btnMakeReservationRequest.TabIndex = 1;
             this.btnMakeReservationRequest.Text = "Make a Reservation";
             this.btnMakeReservationRequest.UseVisualStyleBackColor = true;
@@ -131,7 +131,7 @@
             this.btnMakeOrder.Location = new System.Drawing.Point(4, 184);
             this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeOrder.Name = "btnMakeOrder";
-            this.btnMakeOrder.Size = new System.Drawing.Size(192, 32);
+            this.btnMakeOrder.Size = new System.Drawing.Size(228, 32);
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
             this.btnMakeOrder.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@
             this.btnViewReservations.Location = new System.Drawing.Point(4, 144);
             this.btnViewReservations.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReservations.Name = "btnViewReservations";
-            this.btnViewReservations.Size = new System.Drawing.Size(192, 32);
+            this.btnViewReservations.Size = new System.Drawing.Size(228, 32);
             this.btnViewReservations.TabIndex = 6;
             this.btnViewReservations.Text = "View Reservations";
             this.btnViewReservations.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.btnViewOrders.Location = new System.Drawing.Point(4, 104);
             this.btnViewOrders.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewOrders.Name = "btnViewOrders";
-            this.btnViewOrders.Size = new System.Drawing.Size(192, 32);
+            this.btnViewOrders.Size = new System.Drawing.Size(228, 32);
             this.btnViewOrders.TabIndex = 4;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             this.btnProfile.Location = new System.Drawing.Point(4, 64);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(4);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(192, 32);
+            this.btnProfile.Size = new System.Drawing.Size(228, 32);
             this.btnProfile.TabIndex = 9;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
@@ -189,10 +189,10 @@
             this.panel_ReservationRequest.Controls.Add(this.txtRequest);
             this.panel_ReservationRequest.Controls.Add(this.monthCalendarStart);
             this.panel_ReservationRequest.Controls.Add(this.btn_SendReq);
-            this.panel_ReservationRequest.Location = new System.Drawing.Point(219, 76);
+            this.panel_ReservationRequest.Location = new System.Drawing.Point(255, 76);
             this.panel_ReservationRequest.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ReservationRequest.Name = "panel_ReservationRequest";
-            this.panel_ReservationRequest.Size = new System.Drawing.Size(850, 360);
+            this.panel_ReservationRequest.Size = new System.Drawing.Size(814, 360);
             this.panel_ReservationRequest.TabIndex = 56;
             // 
             // monthCalendarEnd

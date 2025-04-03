@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chef_Profile));
             this.tableSidebar_CProfile = new System.Windows.Forms.TableLayoutPanel();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this.btn_inventory_CProfile = new System.Windows.Forms.Button();
             this.btn_CusOrder_CProfile = new System.Windows.Forms.Button();
             this.lbl_chef = new System.Windows.Forms.Label();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btn_ChefProfile_CProfile = new System.Windows.Forms.Button();
             this.gbChefProfile = new System.Windows.Forms.GroupBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
@@ -50,54 +51,49 @@
             this.lblProfilePic = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableSidebar_CProfile.SuspendLayout();
             this.gbChefProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSidebar_CProfile
             // 
+            this.tableSidebar_CProfile.BackColor = System.Drawing.Color.SandyBrown;
             this.tableSidebar_CProfile.ColumnCount = 1;
             this.tableSidebar_CProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSidebar_CProfile.Controls.Add(this.btn_inventory_CProfile, 0, 1);
             this.tableSidebar_CProfile.Controls.Add(this.btn_CusOrder_CProfile, 0, 2);
-            this.tableSidebar_CProfile.Controls.Add(this.lbl_chef, 0, 0);
             this.tableSidebar_CProfile.Controls.Add(this.btnLogOut, 0, 4);
             this.tableSidebar_CProfile.Controls.Add(this.btn_ChefProfile_CProfile, 0, 3);
+            this.tableSidebar_CProfile.Controls.Add(this.panel1, 0, 0);
             this.tableSidebar_CProfile.Location = new System.Drawing.Point(12, 0);
             this.tableSidebar_CProfile.Name = "tableSidebar_CProfile";
             this.tableSidebar_CProfile.RowCount = 6;
-            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableSidebar_CProfile.Size = new System.Drawing.Size(200, 456);
+            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_CProfile.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableSidebar_CProfile.Size = new System.Drawing.Size(236, 458);
             this.tableSidebar_CProfile.TabIndex = 14;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(3, 203);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
-            this.btnLogOut.TabIndex = 16;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btn_inventory_CProfile
             // 
-            this.btn_inventory_CProfile.BackColor = System.Drawing.Color.Silver;
+            this.btn_inventory_CProfile.BackColor = System.Drawing.Color.Gainsboro;
             this.btn_inventory_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_inventory_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inventory_CProfile.Location = new System.Drawing.Point(3, 82);
+            this.btn_inventory_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventory_CProfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_inventory_CProfile.Image")));
+            this.btn_inventory_CProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_inventory_CProfile.Location = new System.Drawing.Point(3, 152);
             this.btn_inventory_CProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_inventory_CProfile.Name = "btn_inventory_CProfile";
-            this.btn_inventory_CProfile.Size = new System.Drawing.Size(194, 36);
+            this.btn_inventory_CProfile.Size = new System.Drawing.Size(230, 41);
             this.btn_inventory_CProfile.TabIndex = 0;
             this.btn_inventory_CProfile.Text = "Manage Inventory";
             this.btn_inventory_CProfile.UseVisualStyleBackColor = false;
@@ -105,13 +101,16 @@
             // 
             // btn_CusOrder_CProfile
             // 
-            this.btn_CusOrder_CProfile.BackColor = System.Drawing.Color.Silver;
+            this.btn_CusOrder_CProfile.BackColor = System.Drawing.Color.Gainsboro;
             this.btn_CusOrder_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_CusOrder_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CusOrder_CProfile.Location = new System.Drawing.Point(3, 122);
+            this.btn_CusOrder_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CusOrder_CProfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_CusOrder_CProfile.Image")));
+            this.btn_CusOrder_CProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_CusOrder_CProfile.Location = new System.Drawing.Point(3, 197);
             this.btn_CusOrder_CProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CusOrder_CProfile.Name = "btn_CusOrder_CProfile";
-            this.btn_CusOrder_CProfile.Size = new System.Drawing.Size(194, 36);
+            this.btn_CusOrder_CProfile.Size = new System.Drawing.Size(230, 41);
             this.btn_CusOrder_CProfile.TabIndex = 1;
             this.btn_CusOrder_CProfile.Text = "Customer\'s Orders";
             this.btn_CusOrder_CProfile.UseVisualStyleBackColor = false;
@@ -121,21 +120,40 @@
             // 
             this.lbl_chef.AutoSize = true;
             this.lbl_chef.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_chef.Location = new System.Drawing.Point(3, 0);
+            this.lbl_chef.Location = new System.Drawing.Point(-3, 0);
             this.lbl_chef.Name = "lbl_chef";
             this.lbl_chef.Size = new System.Drawing.Size(93, 39);
             this.lbl_chef.TabIndex = 3;
             this.lbl_chef.Text = "Chef";
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogOut.Location = new System.Drawing.Point(3, 288);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(230, 39);
+            this.btnLogOut.TabIndex = 16;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // btn_ChefProfile_CProfile
             // 
-            this.btn_ChefProfile_CProfile.BackColor = System.Drawing.Color.Silver;
+            this.btn_ChefProfile_CProfile.BackColor = System.Drawing.Color.Gainsboro;
             this.btn_ChefProfile_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_ChefProfile_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ChefProfile_CProfile.Location = new System.Drawing.Point(3, 162);
+            this.btn_ChefProfile_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ChefProfile_CProfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChefProfile_CProfile.Image")));
+            this.btn_ChefProfile_CProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_ChefProfile_CProfile.Location = new System.Drawing.Point(3, 242);
             this.btn_ChefProfile_CProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_ChefProfile_CProfile.Name = "btn_ChefProfile_CProfile";
-            this.btn_ChefProfile_CProfile.Size = new System.Drawing.Size(194, 36);
+            this.btn_ChefProfile_CProfile.Size = new System.Drawing.Size(230, 41);
             this.btn_ChefProfile_CProfile.TabIndex = 2;
             this.btn_ChefProfile_CProfile.Text = "Chef Profile";
             this.btn_ChefProfile_CProfile.UseVisualStyleBackColor = false;
@@ -143,6 +161,7 @@
             // 
             // gbChefProfile
             // 
+            this.gbChefProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.gbChefProfile.Controls.Add(this.dtpDOB);
             this.gbChefProfile.Controls.Add(this.cmbGender);
             this.gbChefProfile.Controls.Add(this.picProfilePic);
@@ -158,9 +177,9 @@
             this.gbChefProfile.Controls.Add(this.lblProfilePic);
             this.gbChefProfile.Controls.Add(this.lblEmail);
             this.gbChefProfile.Controls.Add(this.lblName);
-            this.gbChefProfile.Location = new System.Drawing.Point(218, 82);
+            this.gbChefProfile.Location = new System.Drawing.Point(265, 28);
             this.gbChefProfile.Name = "gbChefProfile";
-            this.gbChefProfile.Size = new System.Drawing.Size(852, 369);
+            this.gbChefProfile.Size = new System.Drawing.Size(805, 379);
             this.gbChefProfile.TabIndex = 15;
             this.gbChefProfile.TabStop = false;
             this.gbChefProfile.Text = "Chef Profile";
@@ -185,7 +204,7 @@
             // 
             // picProfilePic
             // 
-            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
+            this.picProfilePic.Location = new System.Drawing.Point(513, 76);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
             this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -246,7 +265,7 @@
             // 
             this.btnUpdateProfile.Location = new System.Drawing.Point(461, 307);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(371, 35);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(336, 35);
             this.btnUpdateProfile.TabIndex = 9;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
@@ -269,7 +288,7 @@
             // lblProfilePic
             // 
             this.lblProfilePic.AutoSize = true;
-            this.lblProfilePic.Location = new System.Drawing.Point(539, 43);
+            this.lblProfilePic.Location = new System.Drawing.Point(508, 43);
             this.lblProfilePic.Name = "lblProfilePic";
             this.lblProfilePic.Size = new System.Drawing.Size(131, 25);
             this.lblProfilePic.TabIndex = 4;
@@ -293,9 +312,29 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
+            // pic_logo
+            // 
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(-3, 42);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(138, 102);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 17;
+            this.pic_logo.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pic_logo);
+            this.panel1.Controls.Add(this.lbl_chef);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(230, 144);
+            this.panel1.TabIndex = 18;
+            // 
             // Chef_Profile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbChefProfile);
             this.Controls.Add(this.tableSidebar_CProfile);
@@ -305,10 +344,12 @@
             this.Text = "Chef_Profile";
             this.Load += new System.EventHandler(this.Chef_Profile_Load);
             this.tableSidebar_CProfile.ResumeLayout(false);
-            this.tableSidebar_CProfile.PerformLayout();
             this.gbChefProfile.ResumeLayout(false);
             this.gbChefProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -336,5 +377,7 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pic_logo;
     }
 }
