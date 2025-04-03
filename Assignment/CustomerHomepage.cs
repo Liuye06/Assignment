@@ -51,7 +51,7 @@ namespace Assignment
 
         private void btnViewReservation_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerViewReservation());
+            _sidebarManager.NavigateTo(new CustomerViewReservation(currentUserID));
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
