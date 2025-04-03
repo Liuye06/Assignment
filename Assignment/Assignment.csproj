@@ -242,6 +242,7 @@
       <DependentUpon>ManagerHomepage.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerProfileDB.cs" />
+    <Compile Include="OrderFeedback.cs" />
     <Compile Include="Orders_Confirmation.cs">
       <SubType>Form</SubType>
     </Compile>

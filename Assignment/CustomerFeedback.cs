@@ -23,10 +23,6 @@ namespace Assignment
             UserSessionManager.Login(userId);
         }
 
-        private void btn_SubmitFeedback_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
@@ -65,7 +61,64 @@ namespace Assignment
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            int orderId;
+            if (int.TryParse(txtSearchOrder.Text, out orderId))
+            {
+                OrderFeedback feedbackHandler = new OrderFeedback();
+                feedbackHandler.SearchOrderFeedback(orderId, listViewOrder); // Call function to filter ListView
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Order ID.");
+            }
+        }
 
+        private void btn_SubmitFeedback_Click(object sender, EventArgs e)
+        {
+            if (listViewOrder.SelectedItems.Count > 0 && !string.IsNullOrWhiteSpace(txt_Feedback.Text))
+            {
+                int orderId = int.Parse(listViewOrder.SelectedItems[0].SubItems[0].Text); 
+
+                OrderFeedback feedbackHandler = new OrderFeedback();
+                if (feedbackHandler.SubmitFeedback(orderId, txt_Feedback.Text))
+                {
+                    MessageBox.Show("Feedback submitted successfully.");
+
+                    // ✅ Refresh the ListView to show the updated feedback
+                    feedbackHandler.LoadOrders(listViewOrder);
+                }
+                else
+                {
+                    MessageBox.Show("Error submitting feedback.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order and enter feedback.");
+            }
+        }
+
+        private void CustomerFeedback_Load(object sender, EventArgs e)
+        {
+            listViewOrder.View = View.Details;
+            listViewOrder.FullRowSelect = true;
+            listViewOrder.GridLines = true;
+
+            listViewOrder.Columns.Clear();
+            listViewOrder.Columns.Add("Order ID", 100);
+            listViewOrder.Columns.Add("Item Name", 150); 
+            listViewOrder.Columns.Add("Feedback", 300);
+
+            OrderFeedback feedbackHandler = new OrderFeedback();
+            feedbackHandler.LoadOrders(listViewOrder);
+        }
+
+        private void btnResetSearch_Click(object sender, EventArgs e)
+        {
+            txtSearchOrder.Text = ""; // Clear search box
+            listViewOrder.Items.Clear(); // Clear list
+            OrderFeedback feedbackHandler = new OrderFeedback();
+            feedbackHandler.LoadOrders(listViewOrder); // Reload all orders
         }
     }
 }
