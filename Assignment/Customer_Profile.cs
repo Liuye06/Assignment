@@ -82,7 +82,7 @@ namespace Assignment
 
         private void btnViewReservations_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerReservation(currentUserID));
+            _sidebarManager.NavigateTo(new ViewCustomerReplyRequest(currentUserID));
         }
 
         private void btnMakeOrder_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace Assignment
 
         private void btnMakePayment_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerPaymentHistory());
+            _sidebarManager.NavigateTo(new CustomerViewReservation());
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)

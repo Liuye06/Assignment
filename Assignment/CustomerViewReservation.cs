@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class CustomerPaymentHistory : Form
+    public partial class CustomerViewReservation : Form
     {
         private SidebarManager _sidebarManager;
 
-        public CustomerPaymentHistory()
+        public CustomerViewReservation()
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);

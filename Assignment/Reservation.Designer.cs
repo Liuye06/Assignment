@@ -31,15 +31,15 @@
             this.tableSidebar_Reservation = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnManageReservation = new System.Windows.Forms.Button();
-            this.btnRCProfile = new System.Windows.Forms.Button();
             this.btnReplyCustomer = new System.Windows.Forms.Button();
+            this.btnRCProfile = new System.Windows.Forms.Button();
             this.gbManageReservation = new System.Windows.Forms.GroupBox();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.dgvReservation = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtReservation = new System.Windows.Forms.TextBox();
-            this.lblReservation = new System.Windows.Forms.Label();
+            this.btnAssignHall = new System.Windows.Forms.Button();
+            this.cmbChangeStatus = new System.Windows.Forms.ComboBox();
+            this.btnUpdateStatus = new System.Windows.Forms.Button();
+            this.lblChangeStatus = new System.Windows.Forms.Label();
+            this.cmbAssignHall = new System.Windows.Forms.ComboBox();
             this.tableSidebar_Reservation.SuspendLayout();
             this.gbManageReservation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservation)).BeginInit();
@@ -76,6 +76,7 @@
             this.btnLogOut.TabIndex = 15;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnManageReservation
             // 
@@ -89,19 +90,7 @@
             this.btnManageReservation.TabIndex = 0;
             this.btnManageReservation.Text = "Manage Reservation";
             this.btnManageReservation.UseVisualStyleBackColor = false;
-            // 
-            // btnRCProfile
-            // 
-            this.btnRCProfile.BackColor = System.Drawing.Color.Silver;
-            this.btnRCProfile.FlatAppearance.BorderSize = 0;
-            this.btnRCProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRCProfile.Location = new System.Drawing.Point(3, 142);
-            this.btnRCProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRCProfile.Name = "btnRCProfile";
-            this.btnRCProfile.Size = new System.Drawing.Size(194, 36);
-            this.btnRCProfile.TabIndex = 2;
-            this.btnRCProfile.Text = "Reservation Coordinate Profile";
-            this.btnRCProfile.UseVisualStyleBackColor = false;
+            this.btnManageReservation.Click += new System.EventHandler(this.btnManageReservation_Click);
             // 
             // btnReplyCustomer
             // 
@@ -115,15 +104,30 @@
             this.btnReplyCustomer.TabIndex = 1;
             this.btnReplyCustomer.Text = "Reply Customer";
             this.btnReplyCustomer.UseVisualStyleBackColor = false;
+            this.btnReplyCustomer.Click += new System.EventHandler(this.btnReplyCustomer_Click);
+            // 
+            // btnRCProfile
+            // 
+            this.btnRCProfile.BackColor = System.Drawing.Color.Silver;
+            this.btnRCProfile.FlatAppearance.BorderSize = 0;
+            this.btnRCProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRCProfile.Location = new System.Drawing.Point(3, 142);
+            this.btnRCProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRCProfile.Name = "btnRCProfile";
+            this.btnRCProfile.Size = new System.Drawing.Size(194, 36);
+            this.btnRCProfile.TabIndex = 2;
+            this.btnRCProfile.Text = "Reservation Coordinate Profile";
+            this.btnRCProfile.UseVisualStyleBackColor = false;
+            this.btnRCProfile.Click += new System.EventHandler(this.btnRCProfile_Click);
             // 
             // gbManageReservation
             // 
-            this.gbManageReservation.Controls.Add(this.btnReset);
-            this.gbManageReservation.Controls.Add(this.btnAdd);
+            this.gbManageReservation.Controls.Add(this.cmbAssignHall);
+            this.gbManageReservation.Controls.Add(this.cmbChangeStatus);
+            this.gbManageReservation.Controls.Add(this.btnUpdateStatus);
+            this.gbManageReservation.Controls.Add(this.lblChangeStatus);
+            this.gbManageReservation.Controls.Add(this.btnAssignHall);
             this.gbManageReservation.Controls.Add(this.dgvReservation);
-            this.gbManageReservation.Controls.Add(this.btnSearch);
-            this.gbManageReservation.Controls.Add(this.txtReservation);
-            this.gbManageReservation.Controls.Add(this.lblReservation);
             this.gbManageReservation.Location = new System.Drawing.Point(218, 72);
             this.gbManageReservation.Name = "gbManageReservation";
             this.gbManageReservation.Size = new System.Drawing.Size(852, 369);
@@ -131,57 +135,64 @@
             this.gbManageReservation.TabStop = false;
             this.gbManageReservation.Text = "Manage Reservation";
             // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(541, 39);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(289, 35);
-            this.btnReset.TabIndex = 5;
-            this.btnReset.Text = "Reset Search ";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(45, 320);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(390, 35);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add New Reservation";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // dgvReservation
             // 
             this.dgvReservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReservation.Location = new System.Drawing.Point(45, 91);
+            this.dgvReservation.Location = new System.Drawing.Point(30, 93);
             this.dgvReservation.Name = "dgvReservation";
             this.dgvReservation.RowHeadersWidth = 51;
             this.dgvReservation.RowTemplate.Height = 24;
-            this.dgvReservation.Size = new System.Drawing.Size(785, 216);
-            this.dgvReservation.TabIndex = 3;
+            this.dgvReservation.Size = new System.Drawing.Size(785, 207);
+            this.dgvReservation.TabIndex = 9;
+            this.dgvReservation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservation_CellClick);
             // 
-            // btnSearch
+            // btnAssignHall
             // 
-            this.btnSearch.Location = new System.Drawing.Point(429, 39);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(106, 35);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnAssignHall.Location = new System.Drawing.Point(601, 315);
+            this.btnAssignHall.Name = "btnAssignHall";
+            this.btnAssignHall.Size = new System.Drawing.Size(214, 34);
+            this.btnAssignHall.TabIndex = 12;
+            this.btnAssignHall.Text = "Assign Hall";
+            this.btnAssignHall.UseVisualStyleBackColor = true;
+            this.btnAssignHall.Click += new System.EventHandler(this.btnAssignHall_Click);
             // 
-            // txtReservation
+            // cmbChangeStatus
             // 
-            this.txtReservation.Location = new System.Drawing.Point(161, 41);
-            this.txtReservation.Name = "txtReservation";
-            this.txtReservation.Size = new System.Drawing.Size(262, 30);
-            this.txtReservation.TabIndex = 1;
+            this.cmbChangeStatus.FormattingEnabled = true;
+            this.cmbChangeStatus.Items.AddRange(new object[] {
+            "Completed ",
+            "Confirmed"});
+            this.cmbChangeStatus.Location = new System.Drawing.Point(174, 43);
+            this.cmbChangeStatus.Name = "cmbChangeStatus";
+            this.cmbChangeStatus.Size = new System.Drawing.Size(285, 33);
+            this.cmbChangeStatus.TabIndex = 15;
             // 
-            // lblReservation
+            // btnUpdateStatus
             // 
-            this.lblReservation.AutoSize = true;
-            this.lblReservation.Location = new System.Drawing.Point(40, 44);
-            this.lblReservation.Name = "lblReservation";
-            this.lblReservation.Size = new System.Drawing.Size(115, 25);
-            this.lblReservation.TabIndex = 0;
-            this.lblReservation.Text = "Reservation";
+            this.btnUpdateStatus.Location = new System.Drawing.Point(485, 41);
+            this.btnUpdateStatus.Name = "btnUpdateStatus";
+            this.btnUpdateStatus.Size = new System.Drawing.Size(330, 37);
+            this.btnUpdateStatus.TabIndex = 14;
+            this.btnUpdateStatus.Text = "Update Status";
+            this.btnUpdateStatus.UseVisualStyleBackColor = true;
+            this.btnUpdateStatus.Click += new System.EventHandler(this.btnUpdateStatus_Click);
+            // 
+            // lblChangeStatus
+            // 
+            this.lblChangeStatus.AutoSize = true;
+            this.lblChangeStatus.Location = new System.Drawing.Point(25, 46);
+            this.lblChangeStatus.Name = "lblChangeStatus";
+            this.lblChangeStatus.Size = new System.Drawing.Size(143, 25);
+            this.lblChangeStatus.TabIndex = 13;
+            this.lblChangeStatus.Text = "Change Status";
+            // 
+            // cmbAssignHall
+            // 
+            this.cmbAssignHall.FormattingEnabled = true;
+            this.cmbAssignHall.Location = new System.Drawing.Point(357, 316);
+            this.cmbAssignHall.Name = "cmbAssignHall";
+            this.cmbAssignHall.Size = new System.Drawing.Size(229, 33);
+            this.cmbAssignHall.TabIndex = 16;
             // 
             // Reservation
             // 
@@ -213,11 +224,11 @@
         private System.Windows.Forms.Button btnRCProfile;
         private System.Windows.Forms.Button btnReplyCustomer;
         private System.Windows.Forms.GroupBox gbManageReservation;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvReservation;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtReservation;
-        private System.Windows.Forms.Label lblReservation;
+        private System.Windows.Forms.Button btnAssignHall;
+        private System.Windows.Forms.ComboBox cmbChangeStatus;
+        private System.Windows.Forms.Button btnUpdateStatus;
+        private System.Windows.Forms.Label lblChangeStatus;
+        private System.Windows.Forms.ComboBox cmbAssignHall;
     }
 }

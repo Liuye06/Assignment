@@ -16,9 +16,7 @@ namespace Assignment
     {
         private static readonly string connectionString = ConfigurationManager.ConnectionStrings["MyDBConnection"].ConnectionString;
 
-
-        // Load Orders into DataGridView
-        public static DataTable GetOrders()
+        public static DataTable GetOrders(int currentUserId)
         {
             DataTable ordersTable = new DataTable();
 
@@ -27,19 +25,21 @@ namespace Assignment
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = @"
-                SELECT 
-                    O.Order_ID As OrderID, 
-                    M.Item AS FoodName, 
-                    O.Status AS OrderStatus, 
-                    COALESCE(U.Real_Name, 'Unassigned') AS ChefInCharge
-                FROM [dbo].[Request] R
-                JOIN [dbo].[Menu] M ON R.Item_ID = M.Item_Id
-                JOIN [dbo].[Order] O ON R.Order_ID = O.Order_ID
-                LEFT JOIN [dbo].[Chef_InCharge] CIC ON O.Order_ID = CIC.Order_ID
-                LEFT JOIN [dbo].[User] U ON CIC.User_ID = U.User_ID;"; 
-        
-            using (SqlCommand cmd = new SqlCommand(query, conn))
+            SELECT 
+                O.Order_ID AS OrderID, 
+                M.Item AS FoodName, 
+                O.Status AS OrderStatus, 
+                COALESCE(U.Real_Name, 'Unassigned') AS ChefInCharge
+            FROM [dbo].[Request] R
+            JOIN [dbo].[Menu] M ON R.Item_ID = M.Item_Id
+            JOIN [dbo].[Order] O ON R.Order_ID = O.Order_ID
+            LEFT JOIN [dbo].[Chef_InCharge] CIC ON O.Order_ID = CIC.Order_ID
+            LEFT JOIN [dbo].[User] U ON CIC.User_ID = U.User_ID;";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@CurrentUserId", currentUserId);
+
                         conn.Open();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -57,6 +57,7 @@ namespace Assignment
         }
 
 
+
         // Update Order Status
         public static bool UpdateOrderStatus(int orderID, string newStatus, int chefID)
         {
@@ -65,9 +66,9 @@ namespace Assignment
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = @"
-                UPDATE [dbo].[Order] 
-                SET Status = @NewStatus 
-                WHERE Order_ID = @OrderID";
+                        UPDATE [dbo].[Order] 
+                        SET Status = @NewStatus 
+                        WHERE Order_ID = @OrderID";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -77,12 +78,7 @@ namespace Assignment
                         conn.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            // Automatically assign chef if none is assigned yet
-                            return UpdateChefInCharge(orderID, chefID);
-                        }
-                        return false;
+                        return rowsAffected > 0; // If rows are affected, return true
                     }
                 }
             }
@@ -93,77 +89,77 @@ namespace Assignment
             }
         }
 
-        public static List<ChefDetails> GetAvailableChefs()
-        {
-            List<ChefDetails> chefs = new List<ChefDetails>();
+        
 
-            string query = "SELECT User_ID, Real_Name FROM [User] WHERE Role = 'Chef'";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                chefs.Add(new ChefDetails
-                                {
-                                    ChefID = Convert.ToInt32(reader["User_ID"]),
-                                    ChefName = reader["Real_Name"].ToString()
-                                });
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error fetching chefs: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return chefs;
-        }
-
-        public static bool UpdateChefInCharge(int foodID, int chefID)
+        public static bool UpdateChefInCharge(int orderID, int chefID)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = @"
-                MERGE INTO [dbo].[Chef_InCharge] AS target
-                USING (
-                    SELECT O.Order_ID
-                    FROM [dbo].[Request] R
-                    JOIN [dbo].[Order] O ON R.Order_ID = O.Order_ID
-                    WHERE R.Item_ID = @FoodID
-                ) AS source
-                ON target.Order_ID = source.Order_ID
-                WHEN MATCHED THEN 
-                    UPDATE SET User_ID = @ChefID
-                WHEN NOT MATCHED THEN
-                    INSERT (Order_ID, User_ID) VALUES (source.Order_ID, @ChefID);";
+                        IF EXISTS (SELECT 1 FROM [dbo].[Chef_InCharge] WHERE Order_ID = @OrderID)
+                        BEGIN
+                            UPDATE [dbo].[Chef_InCharge]
+                            SET User_ID = @ChefID
+                            WHERE Order_ID = @OrderID;
+                        END
+                        ELSE
+                        BEGIN
+                            INSERT INTO [dbo].[Chef_InCharge] (Order_ID, User_ID)
+                            VALUES (@OrderID, @ChefID);
+                        END";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@FoodID", foodID);
+                        cmd.Parameters.AddWithValue("@OrderID", orderID);
                         cmd.Parameters.AddWithValue("@ChefID", chefID);
 
                         conn.Open();
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        return rowsAffected > 0;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating chef in charge: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+
+        public static DataTable GetAvailableChefs()
+        {
+            DataTable chefsTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                        SELECT 
+                            User_ID AS ChefID, 
+                            Real_Name AS ChefName 
+                        FROM [dbo].[User] 
+                        WHERE Role = 'chef';";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        conn.Open();
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            chefsTable.Load(reader);
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error updating Chef In Charge: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                MessageBox.Show("Error loading chefs: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            return chefsTable;
         }
     }
 }

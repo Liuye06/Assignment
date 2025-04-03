@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.tableSidebar_ChefCustomerOrder = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.lbl_chef = new System.Windows.Forms.Label();
             this.btninventory_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.btnCusOrder_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.btnChefProfile_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.gbShowCusOrder = new System.Windows.Forms.GroupBox();
-            this.lblFoodName = new System.Windows.Forms.Label();
-            this.lblOrderID = new System.Windows.Forms.Label();
-            this.cmbNewCusOrderStatus = new System.Windows.Forms.ComboBox();
+            this.btnUpdateChef = new System.Windows.Forms.Button();
+            this.cmbChef = new System.Windows.Forms.ComboBox();
             this.btnRefreshStatusCusOrder = new System.Windows.Forms.Button();
             this.btnUpdateCusOrderStatus = new System.Windows.Forms.Button();
             this.lblCusStatusOrder = new System.Windows.Forms.Label();
@@ -44,10 +44,9 @@
             this.dgvChefCusOrder = new System.Windows.Forms.DataGridView();
             this.CusOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCusOrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UpdateCusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ColChefInCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnLogOut = new System.Windows.Forms.Button();
+            this.OrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChefInCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CanUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableSidebar_ChefCustomerOrder.SuspendLayout();
             this.gbShowCusOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChefCusOrder)).BeginInit();
@@ -73,6 +72,19 @@
             this.tableSidebar_ChefCustomerOrder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableSidebar_ChefCustomerOrder.Size = new System.Drawing.Size(200, 430);
             this.tableSidebar_ChefCustomerOrder.TabIndex = 6;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
+            this.btnLogOut.TabIndex = 15;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // lbl_chef
             // 
@@ -128,9 +140,8 @@
             // 
             // gbShowCusOrder
             // 
-            this.gbShowCusOrder.Controls.Add(this.lblFoodName);
-            this.gbShowCusOrder.Controls.Add(this.lblOrderID);
-            this.gbShowCusOrder.Controls.Add(this.cmbNewCusOrderStatus);
+            this.gbShowCusOrder.Controls.Add(this.btnUpdateChef);
+            this.gbShowCusOrder.Controls.Add(this.cmbChef);
             this.gbShowCusOrder.Controls.Add(this.btnRefreshStatusCusOrder);
             this.gbShowCusOrder.Controls.Add(this.btnUpdateCusOrderStatus);
             this.gbShowCusOrder.Controls.Add(this.lblCusStatusOrder);
@@ -143,38 +154,32 @@
             this.gbShowCusOrder.TabStop = false;
             this.gbShowCusOrder.Text = "Customer Order";
             // 
-            // lblFoodName
+            // btnUpdateChef
             // 
-            this.lblFoodName.AutoSize = true;
-            this.lblFoodName.Location = new System.Drawing.Point(211, 327);
-            this.lblFoodName.Name = "lblFoodName";
-            this.lblFoodName.Size = new System.Drawing.Size(0, 25);
-            this.lblFoodName.TabIndex = 17;
+            this.btnUpdateChef.Location = new System.Drawing.Point(455, 325);
+            this.btnUpdateChef.Name = "btnUpdateChef";
+            this.btnUpdateChef.Size = new System.Drawing.Size(184, 33);
+            this.btnUpdateChef.TabIndex = 19;
+            this.btnUpdateChef.Text = "Update Chef";
+            this.btnUpdateChef.UseVisualStyleBackColor = true;
+            this.btnUpdateChef.Click += new System.EventHandler(this.btnUpdateChef_Click);
             // 
-            // lblOrderID
+            // cmbChef
             // 
-            this.lblOrderID.AutoSize = true;
-            this.lblOrderID.Location = new System.Drawing.Point(40, 328);
-            this.lblOrderID.Name = "lblOrderID";
-            this.lblOrderID.Size = new System.Drawing.Size(0, 25);
-            this.lblOrderID.TabIndex = 16;
-            // 
-            // cmbNewCusOrderStatus
-            // 
-            this.cmbNewCusOrderStatus.FormattingEnabled = true;
-            this.cmbNewCusOrderStatus.Items.AddRange(new object[] {
+            this.cmbChef.FormattingEnabled = true;
+            this.cmbChef.Items.AddRange(new object[] {
             "In Progress",
             "Completed"});
-            this.cmbNewCusOrderStatus.Location = new System.Drawing.Point(485, 325);
-            this.cmbNewCusOrderStatus.Name = "cmbNewCusOrderStatus";
-            this.cmbNewCusOrderStatus.Size = new System.Drawing.Size(176, 33);
-            this.cmbNewCusOrderStatus.TabIndex = 15;
+            this.cmbChef.Location = new System.Drawing.Point(45, 326);
+            this.cmbChef.Name = "cmbChef";
+            this.cmbChef.Size = new System.Drawing.Size(404, 33);
+            this.cmbChef.TabIndex = 18;
             // 
             // btnRefreshStatusCusOrder
             // 
             this.btnRefreshStatusCusOrder.Location = new System.Drawing.Point(440, 40);
             this.btnRefreshStatusCusOrder.Name = "btnRefreshStatusCusOrder";
-            this.btnRefreshStatusCusOrder.Size = new System.Drawing.Size(390, 28);
+            this.btnRefreshStatusCusOrder.Size = new System.Drawing.Size(390, 36);
             this.btnRefreshStatusCusOrder.TabIndex = 14;
             this.btnRefreshStatusCusOrder.Text = "Refresh Status";
             this.btnRefreshStatusCusOrder.UseVisualStyleBackColor = true;
@@ -182,9 +187,9 @@
             // 
             // btnUpdateCusOrderStatus
             // 
-            this.btnUpdateCusOrderStatus.Location = new System.Drawing.Point(667, 325);
+            this.btnUpdateCusOrderStatus.Location = new System.Drawing.Point(645, 325);
             this.btnUpdateCusOrderStatus.Name = "btnUpdateCusOrderStatus";
-            this.btnUpdateCusOrderStatus.Size = new System.Drawing.Size(163, 28);
+            this.btnUpdateCusOrderStatus.Size = new System.Drawing.Size(185, 33);
             this.btnUpdateCusOrderStatus.TabIndex = 13;
             this.btnUpdateCusOrderStatus.Text = "Update Status";
             this.btnUpdateCusOrderStatus.UseVisualStyleBackColor = true;
@@ -219,16 +224,16 @@
             this.dgvChefCusOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CusOrderID,
             this.ColFoodName,
-            this.ColCusOrderStatus,
-            this.UpdateCusOrder,
-            this.ColChefInCharge});
+            this.OrderStatus,
+            this.ChefInCharge,
+            this.CanUpdate});
             this.dgvChefCusOrder.Location = new System.Drawing.Point(45, 91);
             this.dgvChefCusOrder.Name = "dgvChefCusOrder";
             this.dgvChefCusOrder.RowHeadersWidth = 51;
             this.dgvChefCusOrder.RowTemplate.Height = 30;
             this.dgvChefCusOrder.Size = new System.Drawing.Size(785, 224);
             this.dgvChefCusOrder.TabIndex = 3;
-            this.dgvChefCusOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellContentClick);
+            this.dgvChefCusOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellContentClick_1);
             this.dgvChefCusOrder.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellValueChanged);
             // 
             // CusOrderID
@@ -247,45 +252,31 @@
             this.ColFoodName.Name = "ColFoodName";
             this.ColFoodName.Width = 170;
             // 
-            // ColCusOrderStatus
+            // OrderStatus
             // 
-            this.ColCusOrderStatus.DataPropertyName = "OrderStatus";
-            this.ColCusOrderStatus.HeaderText = "Status";
-            this.ColCusOrderStatus.MinimumWidth = 6;
-            this.ColCusOrderStatus.Name = "ColCusOrderStatus";
-            this.ColCusOrderStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColCusOrderStatus.Width = 125;
+            this.OrderStatus.DataPropertyName = "OrderStatus";
+            this.OrderStatus.HeaderText = "Status";
+            this.OrderStatus.MinimumWidth = 6;
+            this.OrderStatus.Name = "OrderStatus";
+            this.OrderStatus.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.OrderStatus.Width = 125;
             // 
-            // UpdateCusOrder
+            // ChefInCharge
             // 
-            this.UpdateCusOrder.DataPropertyName = "Update";
-            this.UpdateCusOrder.HeaderText = "Action";
-            this.UpdateCusOrder.MinimumWidth = 6;
-            this.UpdateCusOrder.Name = "UpdateCusOrder";
-            this.UpdateCusOrder.Text = "Update";
-            this.UpdateCusOrder.UseColumnTextForButtonValue = true;
-            this.UpdateCusOrder.Width = 125;
+            this.ChefInCharge.DataPropertyName = "ChefInCharge";
+            this.ChefInCharge.HeaderText = "Chef In Charge";
+            this.ChefInCharge.MinimumWidth = 6;
+            this.ChefInCharge.Name = "ChefInCharge";
+            this.ChefInCharge.Width = 187;
             // 
-            // ColChefInCharge
+            // CanUpdate
             // 
-            this.ColChefInCharge.DataPropertyName = "ChefInCharge";
-            this.ColChefInCharge.HeaderText = "Chef In Charge";
-            this.ColChefInCharge.MinimumWidth = 6;
-            this.ColChefInCharge.Name = "ColChefInCharge";
-            this.ColChefInCharge.Width = 187;
-            // 
-            // btnLogOut
-            // 
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(3, 183);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(194, 34);
-            this.btnLogOut.TabIndex = 15;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            this.CanUpdate.DataPropertyName = "CanUpdate";
+            this.CanUpdate.HeaderText = "CanUpdate";
+            this.CanUpdate.MinimumWidth = 6;
+            this.CanUpdate.Name = "CanUpdate";
+            this.CanUpdate.Visible = false;
+            this.CanUpdate.Width = 125;
             // 
             // ChefCustomerOrder
             // 
@@ -319,14 +310,13 @@
         private System.Windows.Forms.Button btnUpdateCusOrderStatus;
         private System.Windows.Forms.Label lbl_chef;
         private System.Windows.Forms.Button btnRefreshStatusCusOrder;
-        private System.Windows.Forms.ComboBox cmbNewCusOrderStatus;
-        private System.Windows.Forms.Label lblOrderID;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.ComboBox cmbChef;
+        private System.Windows.Forms.Button btnUpdateChef;
         private System.Windows.Forms.DataGridViewTextBoxColumn CusOrderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColFoodName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCusOrderStatus;
-        private System.Windows.Forms.DataGridViewButtonColumn UpdateCusOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColChefInCharge;
-        private System.Windows.Forms.Label lblFoodName;
-        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChefInCharge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CanUpdate;
     }
 }

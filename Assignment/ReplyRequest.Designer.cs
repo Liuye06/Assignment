@@ -34,9 +34,9 @@
             this.btnReplyCustomer = new System.Windows.Forms.Button();
             this.btnRCProfile = new System.Windows.Forms.Button();
             this.gbReplyRequest = new System.Windows.Forms.GroupBox();
+            this.btnAddNewReservation = new System.Windows.Forms.Button();
             this.dgvReplyRequest = new System.Windows.Forms.DataGridView();
             this.cmbChangeStatus = new System.Windows.Forms.ComboBox();
-            this.btnAddNewReservation = new System.Windows.Forms.Button();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.lblChangeStatus = new System.Windows.Forms.Label();
             this.tableSidebar_Reservation.SuspendLayout();
@@ -75,6 +75,7 @@
             this.btnLogOut.TabIndex = 15;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnManageReservation
             // 
@@ -102,6 +103,7 @@
             this.btnReplyCustomer.TabIndex = 1;
             this.btnReplyCustomer.Text = "Reply Customer";
             this.btnReplyCustomer.UseVisualStyleBackColor = false;
+            this.btnReplyCustomer.Click += new System.EventHandler(this.btnReplyCustomer_Click);
             // 
             // btnRCProfile
             // 
@@ -115,12 +117,13 @@
             this.btnRCProfile.TabIndex = 2;
             this.btnRCProfile.Text = "Reservation Coordinate Profile";
             this.btnRCProfile.UseVisualStyleBackColor = false;
+            this.btnRCProfile.Click += new System.EventHandler(this.btnRCProfile_Click);
             // 
             // gbReplyRequest
             // 
+            this.gbReplyRequest.Controls.Add(this.btnAddNewReservation);
             this.gbReplyRequest.Controls.Add(this.dgvReplyRequest);
             this.gbReplyRequest.Controls.Add(this.cmbChangeStatus);
-            this.gbReplyRequest.Controls.Add(this.btnAddNewReservation);
             this.gbReplyRequest.Controls.Add(this.btnUpdateStatus);
             this.gbReplyRequest.Controls.Add(this.lblChangeStatus);
             this.gbReplyRequest.Location = new System.Drawing.Point(218, 74);
@@ -130,6 +133,16 @@
             this.gbReplyRequest.TabStop = false;
             this.gbReplyRequest.Text = "Reply Request";
             // 
+            // btnAddNewReservation
+            // 
+            this.btnAddNewReservation.Location = new System.Drawing.Point(45, 316);
+            this.btnAddNewReservation.Name = "btnAddNewReservation";
+            this.btnAddNewReservation.Size = new System.Drawing.Size(370, 34);
+            this.btnAddNewReservation.TabIndex = 12;
+            this.btnAddNewReservation.Text = "Add New Reservation";
+            this.btnAddNewReservation.UseVisualStyleBackColor = true;
+            this.btnAddNewReservation.Click += new System.EventHandler(this.btnAddNewReservation_Click_1);
+            // 
             // dgvReplyRequest
             // 
             this.dgvReplyRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -137,8 +150,9 @@
             this.dgvReplyRequest.Name = "dgvReplyRequest";
             this.dgvReplyRequest.RowHeadersWidth = 51;
             this.dgvReplyRequest.RowTemplate.Height = 24;
-            this.dgvReplyRequest.Size = new System.Drawing.Size(785, 207);
+            this.dgvReplyRequest.Size = new System.Drawing.Size(785, 218);
             this.dgvReplyRequest.TabIndex = 11;
+            this.dgvReplyRequest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReplyRequest_CellClick);
             // 
             // cmbChangeStatus
             // 
@@ -152,15 +166,6 @@
             this.cmbChangeStatus.TabIndex = 10;
             this.cmbChangeStatus.SelectedIndexChanged += new System.EventHandler(this.AddStatusComboBox_SelectedIndexChanged);
             // 
-            // btnAddNewReservation
-            // 
-            this.btnAddNewReservation.Location = new System.Drawing.Point(45, 320);
-            this.btnAddNewReservation.Name = "btnAddNewReservation";
-            this.btnAddNewReservation.Size = new System.Drawing.Size(390, 35);
-            this.btnAddNewReservation.TabIndex = 4;
-            this.btnAddNewReservation.Text = "Add New Into Reservation";
-            this.btnAddNewReservation.Click += new System.EventHandler(this.btnAddNewReservation_Click);
-            // 
             // btnUpdateStatus
             // 
             this.btnUpdateStatus.Location = new System.Drawing.Point(500, 39);
@@ -169,6 +174,7 @@
             this.btnUpdateStatus.TabIndex = 2;
             this.btnUpdateStatus.Text = "Update Status";
             this.btnUpdateStatus.UseVisualStyleBackColor = true;
+            this.btnUpdateStatus.Click += new System.EventHandler(this.btnUpdateStatus_Click);
             // 
             // lblChangeStatus
             // 
@@ -207,10 +213,10 @@
         private System.Windows.Forms.Button btnReplyCustomer;
         private System.Windows.Forms.Button btnRCProfile;
         private System.Windows.Forms.GroupBox gbReplyRequest;
-        private System.Windows.Forms.Button btnAddNewReservation;
         private System.Windows.Forms.Button btnUpdateStatus;
         private System.Windows.Forms.Label lblChangeStatus;
         private System.Windows.Forms.ComboBox cmbChangeStatus;
         private System.Windows.Forms.DataGridView dgvReplyRequest;
+        private System.Windows.Forms.Button btnAddNewReservation;
     }
 }

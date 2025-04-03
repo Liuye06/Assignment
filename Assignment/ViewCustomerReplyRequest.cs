@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class ViewCustomerReservation : Form
+    public partial class ViewCustomerReplyRequest : Form
     {
         private SidebarManager _sidebarManager;
         private int userId; // Assuming this is passed or set somewhere in the form
 
 
-        public ViewCustomerReservation(int userID)
+        public ViewCustomerReplyRequest(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this); 
@@ -119,7 +119,7 @@ namespace Assignment
 
         private void btnViewReservations_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerReservation(userId));
+            _sidebarManager.NavigateTo(new ViewCustomerReplyRequest(userId));
         }
 
         private void btnMakeOrder_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace Assignment
 
         private void btnMakePayment_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerPaymentHistory());
+            _sidebarManager.NavigateTo(new CustomerViewReservation());
         }
 
         private void btnFeedback_Click(object sender, EventArgs e)
