@@ -4,14 +4,14 @@ using System.Windows.Forms;
 
 namespace Assignment
 {
-    public partial class Reservation : Form
+    public partial class ReservationForm : Form
     {
         private SidebarManager _sidebarManager;
         private BindingSource bindingSource = new BindingSource();
         private int currentUserID; // Store the userID
         private ReservationManager reservationManager = new ReservationManager();
 
-        public Reservation(int userID)
+        public ReservationForm(int userID)
         {
             InitializeComponent();
             _sidebarManager = new SidebarManager(this);
@@ -111,7 +111,7 @@ namespace Assignment
 
         private void btnManageReservation_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Reservation(currentUserID));
+            _sidebarManager.NavigateTo(new ReservationForm(currentUserID));
         }
 
         private void btnReplyCustomer_Click(object sender, EventArgs e)

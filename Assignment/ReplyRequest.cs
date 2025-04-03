@@ -32,7 +32,7 @@ namespace Assignment
 
         private void btnManageReservation_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Reservation(currentUserID));
+            _sidebarManager.NavigateTo(new ReservationForm(currentUserID));
         }
 
         private void AddStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
