@@ -147,7 +147,7 @@ namespace Assignment
                     }
 
                     // Insert payment record
-                    string paymentQuery = "INSERT INTO [dbo].[Payment] (Payment_date, Amount, Order_ID, Status) VALUES (GETDATE(), @Amount, @OrderID, 'Done')";
+                    string paymentQuery = "INSERT INTO [dbo].[Payment] (Payment_date, Amount, Order_ID, Status) VALUES (GETDATE(), @Amount, @OrderID, 'Paid')";
                     SqlCommand paymentCmd = new SqlCommand(paymentQuery, conn, transaction);
                     paymentCmd.Parameters.AddWithValue("@Amount", totalAmount);
                     paymentCmd.Parameters.AddWithValue("@OrderID", orderId);

@@ -46,10 +46,10 @@ namespace Assignment
             {
                 ListViewItem listItem = new ListViewItem(new string[]
                 {
-            item.ItemName,
-            item.Quantity.ToString(),
-            item.Price.ToString("F2"), // Format price
-            item.TotalPrice.ToString("F2") // Format total price
+                    item.ItemName,
+                    item.Quantity.ToString(),
+                    item.Price.ToString("F2"), // Format price
+                    item.TotalPrice.ToString("F2") // Format total price
                 });
 
                 lstCartFood.Items.Add(listItem);
@@ -62,6 +62,12 @@ namespace Assignment
 
         private void btnConfirm_Pay_Click(object sender, EventArgs e)
         {
+            if (cartList.Count == 0)
+            {
+                MessageBox.Show("Your cart is empty. Please add items before proceeding to payment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             // Save order into the database
             FoodMenuManager.PlaceOrder(userId, cartList);
             MessageBox.Show("Order confirmed and saved!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

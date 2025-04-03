@@ -46,7 +46,6 @@ namespace Assignment
             listView_ReservationRequest.Columns.Add("Head Count", 80, HorizontalAlignment.Center);
             listView_ReservationRequest.Columns.Add("Request Date", 100, HorizontalAlignment.Center);
             listView_ReservationRequest.Columns.Add("Status", 100, HorizontalAlignment.Center);
-            listView_ReservationRequest.Columns.Add("Hall ID", 80, HorizontalAlignment.Center);
 
             // Get reservations from class
             List<ReservationDetails> reservations = ReservationDetails.GetReservations(userId);
@@ -69,42 +68,10 @@ namespace Assignment
                     res.HeadCount.ToString(),
                     res.RequestDate.ToString("yyyy-MM-dd"),
                     res.Status,
-                    res.HallID 
                 });
                 item.Tag = res; // Store reservation details in the tag
                 listView_ReservationRequest.Items.Add(item); // Corrected listView reference
             }
-        }
-
-        private void listView_ReservationRequest_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView_ReservationRequest.SelectedItems.Count > 0)
-            {
-                ListViewItem selectedItem = listView_ReservationRequest.SelectedItems[0];
-                ReservationDetails reservation = (ReservationDetails)selectedItem.Tag;
-
-                // Enable payment button only if status is "Approved"
-                btnMakeResvPayment.Enabled = reservation != null && reservation.Status == "Approved";
-                btnMakeResvPayment.Tag = reservation; // Store reservation details in button tag
-            }
-            else
-            {
-                btnMakeResvPayment.Enabled = false;
-            }
-        }
-
-        private void btnMakeResvPayment_Click(object sender, EventArgs e)
-        {
-            if (btnMakeResvPayment.Tag is ReservationDetails reservation)
-            {
-                OpenPaymentForm(reservation);
-            }
-        }
-
-        private void OpenPaymentForm(ReservationDetails reservation)
-        {
-            ReservationPayment paymentForm = new ReservationPayment(reservation);
-            paymentForm.ShowDialog();
         }
 
 

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel_ViewReservation = new System.Windows.Forms.Panel();
-            this.btnMakeResvPayment = new System.Windows.Forms.Button();
             this.listView_ReservationRequest = new System.Windows.Forms.ListView();
             this.lbl_Total_O = new System.Windows.Forms.Label();
             this.lbl_OrderID_O = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             // 
             this.panel_ViewReservation.AutoScroll = true;
             this.panel_ViewReservation.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel_ViewReservation.Controls.Add(this.btnMakeResvPayment);
             this.panel_ViewReservation.Controls.Add(this.listView_ReservationRequest);
             this.panel_ViewReservation.Controls.Add(this.lbl_Total_O);
             this.panel_ViewReservation.Controls.Add(this.lbl_OrderID_O);
@@ -62,16 +60,6 @@
             this.panel_ViewReservation.Size = new System.Drawing.Size(850, 360);
             this.panel_ViewReservation.TabIndex = 46;
             // 
-            // btnMakeResvPayment
-            // 
-            this.btnMakeResvPayment.Location = new System.Drawing.Point(38, 311);
-            this.btnMakeResvPayment.Name = "btnMakeResvPayment";
-            this.btnMakeResvPayment.Size = new System.Drawing.Size(332, 32);
-            this.btnMakeResvPayment.TabIndex = 24;
-            this.btnMakeResvPayment.Text = "Make Payment";
-            this.btnMakeResvPayment.UseVisualStyleBackColor = true;
-            this.btnMakeResvPayment.Click += new System.EventHandler(this.btnMakeResvPayment_Click);
-            // 
             // listView_ReservationRequest
             // 
             this.listView_ReservationRequest.FullRowSelect = true;
@@ -79,11 +67,10 @@
             this.listView_ReservationRequest.HideSelection = false;
             this.listView_ReservationRequest.Location = new System.Drawing.Point(38, 58);
             this.listView_ReservationRequest.Name = "listView_ReservationRequest";
-            this.listView_ReservationRequest.Size = new System.Drawing.Size(765, 235);
+            this.listView_ReservationRequest.Size = new System.Drawing.Size(765, 280);
             this.listView_ReservationRequest.TabIndex = 23;
             this.listView_ReservationRequest.UseCompatibleStateImageBehavior = false;
             this.listView_ReservationRequest.View = System.Windows.Forms.View.Details;
-            this.listView_ReservationRequest.SelectedIndexChanged += new System.EventHandler(this.listView_ReservationRequest_SelectedIndexChanged);
             // 
             // lbl_Total_O
             // 
@@ -255,7 +242,6 @@
         private System.Windows.Forms.Label lbl_Total_O;
         private System.Windows.Forms.Label lbl_OrderID_O;
         private System.Windows.Forms.Label lblViewRevRequest;
-        private System.Windows.Forms.Button btnMakeResvPayment;
         private System.Windows.Forms.TableLayoutPanel tableSidebar_Customer;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnMakeReservation;

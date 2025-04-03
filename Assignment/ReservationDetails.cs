@@ -22,9 +22,8 @@ namespace Assignment
         public int HeadCount { get; set; }
         public DateTime RequestDate { get; set; }
         public string Status { get; set; }
-        public string HallID { get; set; } // Nullable, will be assigned only when approved
 
-        public ReservationDetails(int r_Req_ID, DateTime startDate, DateTime endDate, int totalDays, string function, string request, int headCount, DateTime requestDate, string status, string hallID)
+        public ReservationDetails(int r_Req_ID, DateTime startDate, DateTime endDate, int totalDays, string function, string request, int headCount, DateTime requestDate, string status)
         {
             R_Req_ID = r_Req_ID;
             StartDate = startDate;
@@ -35,7 +34,6 @@ namespace Assignment
             HeadCount = headCount;
             RequestDate = requestDate;
             Status = status;
-            HallID = hallID;
         }
 
         // Fetch reservations with R_Req_ID and Hall_ID (if approved)
@@ -56,8 +54,7 @@ namespace Assignment
                         RR.Request,
                         RR.Head_Count,
                         RR.R_Date AS Request_Date,
-                        RR.Status,
-                        ISNULL(R.Hall_ID, '-') AS Hall_ID  -- Show '-' if Hall_ID is NULL
+                        RR.Status
                     FROM [dbo].[R_Request] RR
                     LEFT JOIN [dbo].[Reservation] R ON RR.R_Req_ID = R.R_Req_ID
                     WHERE RR.User_ID = @UserID;";
@@ -78,65 +75,14 @@ namespace Assignment
                             int headCount = reader.GetInt32(6);
                             DateTime requestDate = reader.GetDateTime(7);
                             string status = reader.GetString(8);
-                            string hallID = reader.IsDBNull(9) ? "-" : reader.GetInt32(9).ToString();
 
-                            reservationList.Add(new ReservationDetails(r_Req_ID, startDate, endDate, totalDays, function, request, headCount, requestDate, status, hallID));
+                            reservationList.Add(new ReservationDetails(r_Req_ID, startDate, endDate, totalDays, function, request, headCount, requestDate, status));
                         }
                     }
                 }
             }
 
             return reservationList;
-        }
-
-        // Approve a reservation request and insert into Reservation table
-        public static bool ApproveReservation(int r_Req_ID, int hallID)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    using (SqlTransaction transaction = conn.BeginTransaction())
-                    {
-                        try
-                        {
-                            // Update R_Request status to 'Approved'
-                            string updateRequestQuery = "UPDATE R_Request SET Status = 'Approved' WHERE R_Req_ID = @R_Req_ID";
-                            using (SqlCommand cmdUpdate = new SqlCommand(updateRequestQuery, conn, transaction))
-                            {
-                                cmdUpdate.Parameters.AddWithValue("@R_Req_ID", r_Req_ID);
-                                cmdUpdate.ExecuteNonQuery();
-                            }
-
-                            // Insert into Reservation table
-                            string insertReservationQuery = @" INSERT INTO Reservation (Hall_ID, User_ID, R_Req_ID, Status) 
-                                                                SELECT @HallID, User_ID, @R_Req_ID, 'Approved' 
-                                                                FROM R_Request 
-                                                                WHERE R_Req_ID = @R_Req_ID";
-                            using (SqlCommand cmdInsert = new SqlCommand(insertReservationQuery, conn, transaction))
-                            {
-                                cmdInsert.Parameters.AddWithValue("@HallID", hallID);
-                                cmdInsert.Parameters.AddWithValue("@R_Req_ID", r_Req_ID);
-                                cmdInsert.ExecuteNonQuery();
-                            }
-
-                            transaction.Commit();
-                            return true;
-                        }
-                        catch
-                        {
-                            transaction.Rollback();
-                            throw;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error approving reservation: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
         }
     }
 }
