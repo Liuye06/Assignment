@@ -438,6 +438,7 @@
     </Compile>
     <Compile Include="RequestHandler.cs" />
     <Compile Include="RersevationCoordinator.cs" />
+    <Compile Include="Reservation.cs" />
     <Compile Include="ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
