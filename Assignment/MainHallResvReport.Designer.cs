@@ -36,7 +36,6 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.gbHRReport = new System.Windows.Forms.GroupBox();
             this.btnExport = new System.Windows.Forms.Button();
-            this.btnGenerate = new System.Windows.Forms.Button();
             this.dgvReport = new System.Windows.Forms.DataGridView();
             this.btnResetReport = new System.Windows.Forms.Button();
             this.cmbResvType = new System.Windows.Forms.ComboBox();
@@ -133,7 +132,6 @@
             // gbHRReport
             // 
             this.gbHRReport.Controls.Add(this.btnExport);
-            this.gbHRReport.Controls.Add(this.btnGenerate);
             this.gbHRReport.Controls.Add(this.dgvReport);
             this.gbHRReport.Controls.Add(this.btnResetReport);
             this.gbHRReport.Controls.Add(this.cmbResvType);
@@ -149,22 +147,13 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(441, 316);
+            this.btnExport.Location = new System.Drawing.Point(45, 316);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(385, 34);
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Export to Excel";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click_1);
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Location = new System.Drawing.Point(45, 316);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(385, 34);
-            this.btnGenerate.TabIndex = 6;
-            this.btnGenerate.Text = "Generate PDF Report";
-            this.btnGenerate.UseVisualStyleBackColor = true;
             // 
             // dgvReport
             // 
@@ -189,6 +178,16 @@
             // cmbResvType
             // 
             this.cmbResvType.FormattingEnabled = true;
+            this.cmbResvType.Items.AddRange(new object[] {
+            "All",
+            "Birthday",
+            "Wedding",
+            "Conference",
+            "Seminar",
+            "Ceremony",
+            "Anniversary",
+            "Competition",
+            "Performance"});
             this.cmbResvType.Location = new System.Drawing.Point(494, 42);
             this.cmbResvType.Name = "cmbResvType";
             this.cmbResvType.Size = new System.Drawing.Size(189, 33);
@@ -266,7 +265,6 @@
         private System.Windows.Forms.ComboBox cmbResvType;
         private System.Windows.Forms.Label lblResvType;
         private System.Windows.Forms.DataGridView dgvReport;
-        private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnLogOut;
     }

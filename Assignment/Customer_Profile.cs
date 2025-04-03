@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Assignment;
 
 namespace Assignment
 {
@@ -70,44 +71,45 @@ namespace Assignment
             }
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
+        private void btnProfile_Click_1(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new Customer_Profile(currentUserID));
         }
 
-        private void btnViewOrders_Click(object sender, EventArgs e)
+        private void btnViewOrders_Click_1(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserID));
         }
 
-        private void btnViewReservations_Click(object sender, EventArgs e)
+        private void btnViewReplyRequest_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ViewCustomerReplyRequest(currentUserID));
         }
 
-        private void btnMakeOrder_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerMenu(currentUserID));
-        }
-
-        private void btnMakeReservation_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserID));
-        }
-
-        private void btnMakePayment_Click(object sender, EventArgs e)
+        private void btnViewReservation_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerViewReservation());
         }
 
-        private void btnFeedback_Click(object sender, EventArgs e)
+        private void btnMakeReservation_Click_1(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserID));
+        }
+
+        private void btnMakeOrder_Click_1(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMenu(currentUserID));
+        }
+
+        private void btnFeedback_Click_1(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerFeedback(currentUserID));
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
+        private void btnLogOut_Click_1(object sender, EventArgs e)
         {
             UserSessionManager.Logout(this);
         }
     }
 }
+

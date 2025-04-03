@@ -28,35 +28,7 @@ namespace Assignment
             LoadReservations();
         }
 
-        private void btnMMenu_HRReport_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
-        }
 
-        private void btnMHall_HRReport_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
-        }
-
-        private void btnHRReport_HRReport_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
-        }
-
-        private void btnUProfile_HRReport_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            UserSessionManager.Logout(this);
-        }
-
-        private void btnExport_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void LoadReservations()
         {
@@ -75,44 +47,6 @@ namespace Assignment
             LoadMonthFilter();
         }
 
-        private void btnExport_Click_1(object sender, EventArgs e)
-        {
-            if (dgvReport.Rows.Count == 0)
-            {
-                MessageBox.Show("No data to export.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "CSV Files (*.csv)|*.csv";
-            saveFileDialog.FileName = "Reservations.csv";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                StringBuilder csvContent = new StringBuilder();
-
-                // Add column headers
-                foreach (DataGridViewColumn column in dgvReport.Columns)
-                {
-                    csvContent.Append(column.HeaderText + ",");
-                }
-                csvContent.AppendLine();
-
-                // Add rows
-                foreach (DataGridViewRow row in dgvReport.Rows)
-                {
-                    foreach (DataGridViewCell cell in row.Cells)
-                    {
-                        csvContent.Append(cell.Value + ",");
-                    }
-                    csvContent.AppendLine();
-                }
-
-                // Write to file
-                System.IO.File.WriteAllText(saveFileDialog.FileName, csvContent.ToString());
-                MessageBox.Show("Data exported successfully!", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
 
         private void LoadMonthFilter()
         {
@@ -172,6 +106,71 @@ namespace Assignment
             cmbResvType.SelectedIndex = 0; // Reset to "All"
             bindingSourceReservations.DataSource = reservationManager.LoadReservations();
             dgvReport.DataSource = bindingSourceReservations;
+        }
+
+        private void btnExport_Click_1(object sender, EventArgs e)
+        {
+            if (dgvReport.Rows.Count == 0)
+            {
+                MessageBox.Show("No data to export.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV Files (*.csv)|*.csv";
+            saveFileDialog.FileName = "Reservations.csv";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                StringBuilder csvContent = new StringBuilder();
+
+                // Add column headers
+                foreach (DataGridViewColumn column in dgvReport.Columns)
+                {
+                    csvContent.Append(column.HeaderText + ",");
+                }
+                csvContent.AppendLine();
+
+                // Add rows
+                foreach (DataGridViewRow row in dgvReport.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        csvContent.Append(cell.Value + ",");
+                    }
+                    csvContent.AppendLine();
+                }
+
+                // Write to file
+                System.IO.File.WriteAllText(saveFileDialog.FileName, csvContent.ToString());
+                MessageBox.Show("Data exported successfully!", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+        private void btnMMenu_HRReport_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainManageMenu(currentUserID));
+        }
+
+        private void btnMHall_HRReport_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainManageHall(currentUserID));
+        }
+
+        private void btnHRReport_HRReport_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new MainHallResvReport(currentUserID));
+        }
+
+        private void btnUProfile_HRReport_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

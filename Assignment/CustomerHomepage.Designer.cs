@@ -30,13 +30,13 @@
         {
             this.tableSidebar_CustomerProfile = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnViewReservation = new System.Windows.Forms.Button();
             this.btnFeedback = new System.Windows.Forms.Button();
-            this.btnMakePayment = new System.Windows.Forms.Button();
-            this.btnMakeReservation = new System.Windows.Forms.Button();
-            this.btnMakeOrder = new System.Windows.Forms.Button();
-            this.btnViewReservations = new System.Windows.Forms.Button();
+            this.btnViewReplyRequest = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.btnMakeReservation = new System.Windows.Forms.Button();
+            this.btnMakeOrder = new System.Windows.Forms.Button();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,13 +45,13 @@
             this.tableSidebar_CustomerProfile.ColumnCount = 1;
             this.tableSidebar_CustomerProfile.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnLogOut, 0, 8);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnFeedback, 0, 7);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakePayment, 0, 6);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeReservation, 0, 5);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeOrder, 0, 4);
-            this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReservations, 0, 3);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReservation, 0, 4);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnFeedback, 0, 7);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewReplyRequest, 0, 3);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnViewOrders, 0, 2);
             this.tableSidebar_CustomerProfile.Controls.Add(this.btnProfile, 0, 1);
+            this.tableSidebar_CustomerProfile.Controls.Add(this.btnMakeOrder, 0, 6);
             this.tableSidebar_CustomerProfile.Location = new System.Drawing.Point(12, 12);
             this.tableSidebar_CustomerProfile.Name = "tableSidebar_CustomerProfile";
             this.tableSidebar_CustomerProfile.RowCount = 10;
@@ -79,6 +79,17 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // btnViewReservation
+            // 
+            this.btnViewReservation.Location = new System.Drawing.Point(4, 184);
+            this.btnViewReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewReservation.Name = "btnViewReservation";
+            this.btnViewReservation.Size = new System.Drawing.Size(192, 32);
+            this.btnViewReservation.TabIndex = 5;
+            this.btnViewReservation.Text = "View Reservation";
+            this.btnViewReservation.UseVisualStyleBackColor = true;
+            this.btnViewReservation.Click += new System.EventHandler(this.btnViewReservation_Click);
+            // 
             // btnFeedback
             // 
             this.btnFeedback.Location = new System.Drawing.Point(4, 334);
@@ -90,49 +101,16 @@
             this.btnFeedback.UseVisualStyleBackColor = true;
             this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
-            // btnMakePayment
+            // btnViewReplyRequest
             // 
-            this.btnMakePayment.Location = new System.Drawing.Point(4, 294);
-            this.btnMakePayment.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMakePayment.Name = "btnMakePayment";
-            this.btnMakePayment.Size = new System.Drawing.Size(192, 32);
-            this.btnMakePayment.TabIndex = 5;
-            this.btnMakePayment.Text = "Make Payment";
-            this.btnMakePayment.UseVisualStyleBackColor = true;
-            this.btnMakePayment.Click += new System.EventHandler(this.btnMakePayment_Click);
-            // 
-            // btnMakeReservation
-            // 
-            this.btnMakeReservation.Location = new System.Drawing.Point(4, 224);
-            this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMakeReservation.Name = "btnMakeReservation";
-            this.btnMakeReservation.Size = new System.Drawing.Size(192, 62);
-            this.btnMakeReservation.TabIndex = 1;
-            this.btnMakeReservation.Text = "Make a Reservation";
-            this.btnMakeReservation.UseVisualStyleBackColor = true;
-            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
-            // 
-            // btnMakeOrder
-            // 
-            this.btnMakeOrder.Location = new System.Drawing.Point(4, 184);
-            this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMakeOrder.Name = "btnMakeOrder";
-            this.btnMakeOrder.Size = new System.Drawing.Size(192, 32);
-            this.btnMakeOrder.TabIndex = 0;
-            this.btnMakeOrder.Text = "Make an Order";
-            this.btnMakeOrder.UseVisualStyleBackColor = true;
-            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
-            // 
-            // btnViewReservations
-            // 
-            this.btnViewReservations.Location = new System.Drawing.Point(4, 144);
-            this.btnViewReservations.Margin = new System.Windows.Forms.Padding(4);
-            this.btnViewReservations.Name = "btnViewReservations";
-            this.btnViewReservations.Size = new System.Drawing.Size(192, 32);
-            this.btnViewReservations.TabIndex = 6;
-            this.btnViewReservations.Text = "View Reservations";
-            this.btnViewReservations.UseVisualStyleBackColor = true;
-            this.btnViewReservations.Click += new System.EventHandler(this.btnViewReservations_Click);
+            this.btnViewReplyRequest.Location = new System.Drawing.Point(4, 144);
+            this.btnViewReplyRequest.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewReplyRequest.Name = "btnViewReplyRequest";
+            this.btnViewReplyRequest.Size = new System.Drawing.Size(192, 32);
+            this.btnViewReplyRequest.TabIndex = 6;
+            this.btnViewReplyRequest.Text = "View Reply Request";
+            this.btnViewReplyRequest.UseVisualStyleBackColor = true;
+            this.btnViewReplyRequest.Click += new System.EventHandler(this.btnViewReplyRequest_Click);
             // 
             // btnViewOrders
             // 
@@ -160,6 +138,28 @@
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // btnMakeReservation
+            // 
+            this.btnMakeReservation.Location = new System.Drawing.Point(4, 224);
+            this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMakeReservation.Name = "btnMakeReservation";
+            this.btnMakeReservation.Size = new System.Drawing.Size(192, 62);
+            this.btnMakeReservation.TabIndex = 1;
+            this.btnMakeReservation.Text = "Make a Reservation Request";
+            this.btnMakeReservation.UseVisualStyleBackColor = true;
+            this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
+            // 
+            // btnMakeOrder
+            // 
+            this.btnMakeOrder.Location = new System.Drawing.Point(4, 294);
+            this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMakeOrder.Name = "btnMakeOrder";
+            this.btnMakeOrder.Size = new System.Drawing.Size(192, 32);
+            this.btnMakeOrder.TabIndex = 0;
+            this.btnMakeOrder.Text = "Make an Order";
+            this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
+            // 
             // CustomerHomepage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -181,10 +181,10 @@
         private System.Windows.Forms.TableLayoutPanel tableSidebar_CustomerProfile;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnFeedback;
-        private System.Windows.Forms.Button btnMakePayment;
+        private System.Windows.Forms.Button btnViewReservation;
         private System.Windows.Forms.Button btnMakeReservation;
         private System.Windows.Forms.Button btnMakeOrder;
-        private System.Windows.Forms.Button btnViewReservations;
+        private System.Windows.Forms.Button btnViewReplyRequest;
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
     }

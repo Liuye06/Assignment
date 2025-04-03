@@ -199,43 +199,42 @@ namespace Assignment
             checkout.ShowDialog();
         }
 
-
-        private void btnProfile_Click_1(object sender, EventArgs e)
+        private void btnProfile_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new Customer_Profile(currentUserId));
         }
 
-        private void btnViewOrders_Click_1(object sender, EventArgs e)
+        private void btnViewOrders_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserId));
         }
 
-        private void btnViewReservations_Click_1(object sender, EventArgs e)
+        private void btnViewReplyRequest_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ViewCustomerReplyRequest(currentUserId));
         }
 
-        private void btnMakeOrder_Click_1(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerMenu(currentUserId));
-        }
-
-        private void btnMakeReservation_Click_1(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserId));
-        }
-
-        private void btnMakePayment_Click_1(object sender, EventArgs e)
+        private void btnViewReservation_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerViewReservation());
         }
 
-        private void btnFeedback_Click_1(object sender, EventArgs e)
+        private void btnMakeReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserId));
+        }
+
+        private void btnMakeOrder_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMenu(currentUserId));
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerFeedback(currentUserId));
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
+        private void btnLogOut_Click_1(object sender, EventArgs e)
         {
             UserSessionManager.Logout(this);
         }

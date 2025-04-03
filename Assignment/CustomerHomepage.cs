@@ -23,10 +23,6 @@ namespace Assignment
             UserSessionManager.Login(userID);
         }
 
-        private void tableSidebar_CustomerProfile_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
@@ -38,7 +34,7 @@ namespace Assignment
             _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserID));
         }
 
-        private void btnViewReservations_Click(object sender, EventArgs e)
+        private void btnViewReplyRequest_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new ViewCustomerReplyRequest(currentUserID));
         }
@@ -53,7 +49,7 @@ namespace Assignment
             _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserID));
         }
 
-        private void btnMakePayment_Click(object sender, EventArgs e)
+        private void btnViewReservation_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new CustomerViewReservation());
         }

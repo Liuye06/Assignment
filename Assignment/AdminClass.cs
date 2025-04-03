@@ -597,29 +597,28 @@ namespace Assignment
 
 
         // Method to get the sales report data based on a query and filters
-        public static DataTable GetSalesReportData(string query, string selectedMonth = null, string selectedChef = null)
+        public static DataTable GetSalesReportData(string query, Dictionary<string, object> parameters)
         {
+            DataTable dt = new DataTable();
+
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    // Add parameters for filters, if any
-                    if (!string.IsNullOrEmpty(selectedMonth))
+                    // Add SQL parameters
+                    foreach (var param in parameters)
                     {
-                        cmd.Parameters.AddWithValue("@Month", selectedMonth);
+                        cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
                     }
 
-                    if (!string.IsNullOrEmpty(selectedChef))
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
-                        cmd.Parameters.AddWithValue("@Chef", selectedChef);
+                        da.Fill(dt);
                     }
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
                 }
             }
+
+            return dt;
         }
 
         // Method to get transaction types for the ComboBox

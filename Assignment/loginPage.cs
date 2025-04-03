@@ -32,5 +32,10 @@ namespace Assignment
             txtUsername.Clear();
             txtPassword.Clear();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
