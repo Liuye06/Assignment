@@ -16,7 +16,7 @@ namespace Assignment
 
         public void LoadHalls(ComboBox comboBox)
         {
-            string query = "SELECT Hall_ID, Hall_Name FROM Hall";
+            string query = "SELECT Hall_ID, Hall_Name, Capacity FROM Hall";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -29,8 +29,12 @@ namespace Assignment
                         {
                             DataTable dt = new DataTable();
                             dt.Load(reader);
+
+                            // Add a new column for display
+                            dt.Columns.Add("Display", typeof(string), "Hall_Name + ' (Capacity: ' + Capacity + ')'");
+
                             comboBox.DataSource = dt;
-                            comboBox.DisplayMember = "Hall_Name";
+                            comboBox.DisplayMember = "Display";
                             comboBox.ValueMember = "Hall_ID";
                         }
                     }
@@ -48,12 +52,11 @@ namespace Assignment
             string query = @"
                 SELECT 
                     r.Reservation_ID, 
-                    u.UserName, 
+                    u.Real_Name, 
                     r.Hall_ID, 
                     h.Hall_Name, 
                     r.Status, 
-                    rr.Head_Count, 
-                    h.Capacity
+                    rr.Head_Count
                 FROM 
                     Reservation r
                 JOIN 
@@ -225,10 +228,11 @@ namespace Assignment
         public bool IsHallAvailable(int hallID, DateTime startDate, DateTime endDate)
         {
             string query = @"
-                SELECT COUNT(*) 
-                FROM Reservation 
-                WHERE Hall_ID = @Hall_ID 
-                AND ((Start_Date <= @EndDate AND End_Date >= @StartDate))";
+        SELECT COUNT(*) 
+        FROM Reservation r
+        JOIN R_Request rr ON r.R_Req_ID = rr.R_Req_ID
+        WHERE r.Hall_ID = @Hall_ID 
+        AND ((rr.Start_Date <= @EndDate AND rr.End_Date >= @StartDate))";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -252,6 +256,44 @@ namespace Assignment
                 }
             }
         }
+
+        // Method to add delete button column
+        public void AddDeleteButtonColumn(DataGridView dgv)
+        {
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "Delete";
+            deleteButtonColumn.HeaderText = "Delete";
+            deleteButtonColumn.Text = "Delete";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            dgv.Columns.Add(deleteButtonColumn);
+        }
+
+        // Method to delete reservation
+        public bool DeleteReservation(int reservationID)
+        {
+            string query = "DELETE FROM Reservation WHERE Reservation_ID = @ReservationID";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ReservationID", reservationID);
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0; // Return true if deletion was successful
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }
+
 

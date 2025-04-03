@@ -32,7 +32,7 @@ namespace Assignment
 
         private void btnManageReservation_Click(object sender, EventArgs e)
         {
-
+            _sidebarManager.NavigateTo(new Reservation(currentUserID));
         }
 
         private void AddStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,6 +112,21 @@ namespace Assignment
             {
                 MessageBox.Show("Please select a request from the table.");
             }
+        }
+
+        private void btnReplyCustomer_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ReplyRequest(currentUserID));
+        }
+
+        private void btnRCProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new RCProfile(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

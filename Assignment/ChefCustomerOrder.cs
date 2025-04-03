@@ -23,14 +23,15 @@ namespace Assignment
             _sidebarManager = new SidebarManager(this);
             bindingSourceOrders = new BindingSource();
             LoadOrders();
-            dgvChefCusOrder.CellClick += dgvChefCusOrder_CellContentClick;
+            LoadChefsIntoComboBox(); // Load chefs into ComboBox
+            dgvChefCusOrder.CellClick += dgvChefCusOrder_CellContentClick_1;
             currentUserID = userID; // Store the userID
             UserSessionManager.Login(userID);
         }
 
         private void LoadOrders()
         {
-            DataTable ordersTable = OrderManager.GetOrders();
+            DataTable ordersTable = OrderManager.GetOrders(currentUserID);
 
             if (ordersTable == null || ordersTable.Rows.Count == 0)
             {
@@ -41,23 +42,8 @@ namespace Assignment
             bindingSourceOrders.DataSource = ordersTable;
             dgvChefCusOrder.AutoGenerateColumns = false;
             dgvChefCusOrder.DataSource = bindingSourceOrders;
-            SetupDataGridView();
         }
 
-        private void SetupDataGridView()
-        {
-            DataGridViewComboBoxColumn chefInChargeColumn = new DataGridViewComboBoxColumn
-            {
-                Name = "ChefInCharge",
-                HeaderText = "Chef In Charge",
-                DataSource = OrderManager.GetAvailableChefs(),
-                DisplayMember = "ChefName",
-                ValueMember = "ChefID"
-            };
-            dgvChefCusOrder.Columns.Add(chefInChargeColumn);
-        }
-
-        
 
         private void dgvChefCusOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -72,11 +58,11 @@ namespace Assignment
                 return;
             }
 
-            // Check if "Status" column was changed
-            if (e.ColumnIndex == dgvChefCusOrder.Columns["Status"].Index)
-            {
-                DataGridViewRow row = dgvChefCusOrder.Rows[e.RowIndex];
+            DataGridViewRow row = dgvChefCusOrder.Rows[e.RowIndex];
 
+            // Check if "ChefInCharge" column was changed
+            if (e.ColumnIndex == dgvChefCusOrder.Columns["ChefInCharge"].Index)
+            {
                 if (row.Cells["FoodID"].Value == null)
                 {
                     MessageBox.Show("Missing FoodID value.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -86,12 +72,24 @@ namespace Assignment
                 try
                 {
                     int foodItemID = Convert.ToInt32(row.Cells["FoodID"].Value);
+                    int chefID = Convert.ToInt32(row.Cells["ChefInCharge"].Value);
 
-                    
-                    // Update the database
-                    bool success = OrderManager.UpdateChefInCharge(foodItemID, currentUserID);
+                    // Update the Chef in Charge
+                    bool chefUpdateSuccess = OrderManager.UpdateChefInCharge(foodItemID, chefID);
 
-                    if (!success)
+                    if (chefUpdateSuccess)
+                    {
+                        // Automatically update the order status once a chef is assigned
+                        string newStatus = "In Progress"; // You can change this as per your requirements
+
+                        bool statusUpdateSuccess = OrderManager.UpdateOrderStatus(foodItemID, newStatus, chefID);
+
+                        if (!statusUpdateSuccess)
+                        {
+                            MessageBox.Show("Failed to update order status.");
+                        }
+                    }
+                    else
                     {
                         MessageBox.Show("Failed to update Chef In Charge.");
                     }
@@ -147,42 +145,58 @@ namespace Assignment
 
         private void btnUpdateCusOrderStatus_Click(object sender, EventArgs e)
         {
-            if (lblOrderID.Tag == null)
+            if (dgvChefCusOrder.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select an order first.");
                 return;
             }
 
-            int orderID = (int)lblOrderID.Tag;
-            string newStatus = cmbNewCusOrderStatus.SelectedItem?.ToString();
+            DataGridViewRow selectedRow = dgvChefCusOrder.SelectedRows[0];
+            int orderID = Convert.ToInt32(selectedRow.Cells["CusOrderID"].Value);
+            string currentStatus = selectedRow.Cells["OrderStatus"].Value?.ToString();
 
-            if (string.IsNullOrEmpty(newStatus))
+            if (string.IsNullOrEmpty(currentStatus))
             {
-                MessageBox.Show("Please select a valid status.");
+                MessageBox.Show("Order status is not available.");
                 return;
             }
 
-            bool success = OrderManager.UpdateOrderStatus(orderID, newStatus, currentUserID);
-            if (success)
+            // Define the new status to update based on current status
+            string newStatus = string.Empty;
+
+            if (currentStatus == "In Progress")
             {
-                MessageBox.Show("Order status updated successfully!");
+                newStatus = "Completed"; // Update to "Completed" if current status is "In Progress"
+            }
+            else if (currentStatus == "Completed")
+            {
+                MessageBox.Show("This order is already completed.");
+                return; // No update needed if the order is already completed
+            }
+            else
+            {
+                newStatus = "In Progress"; // Update to "In Progress" for other statuses
+            }
+
+            // Update the status to the new value
+            bool statusUpdateSuccess = OrderManager.UpdateOrderStatus(orderID, newStatus, currentUserID);
+
+            if (statusUpdateSuccess)
+            {
+                MessageBox.Show($"Order status updated to {newStatus}.");
                 LoadOrders(); // Refresh DataGridView
             }
             else
             {
-                MessageBox.Show("You are not authorized to update this order.");
+                MessageBox.Show("Failed to update order status.");
             }
         }
 
 
-        private void dgvChefCusOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvChefCusOrder_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             // Ensure a valid row is clicked
             if (e.RowIndex < 0 || e.RowIndex >= dgvChefCusOrder.RowCount || e.ColumnIndex < 0)
-                return;
-
-            // Check if the clicked column is a button column
-            if (!(dgvChefCusOrder.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
                 return;
 
             // Get the selected row
@@ -204,7 +218,7 @@ namespace Assignment
 
             string foodName = selectedRow.Cells["ColFoodName"].Value?.ToString() ?? "Unknown";
 
-            // Find all rows that have the same CusOrderID
+            // Find all rows that have the same CusOrderID and change their color
             foreach (DataGridViewRow row in dgvChefCusOrder.Rows)
             {
                 if (row.Cells["CusOrderID"].Value != null && Convert.ToInt32(row.Cells["CusOrderID"].Value) == orderID)
@@ -216,19 +230,53 @@ namespace Assignment
                     row.DefaultCellStyle.BackColor = Color.White; // Reset other rows
                 }
             }
-
-            // Display confirmation info at the bottom
-            lblOrderID.Text = $"Order: {orderID}";
-            lblFoodName.Text = $"Food: {foodName}";
-
-            // Save selected order ID for updating later
-            lblOrderID.Tag = orderID;
         }
 
 
-        private void btnResetMMenu_Click(object sender, EventArgs e)
+        private void btnUpdateChef_Click(object sender, EventArgs e)
         {
-            cmbNewCusOrderStatus.SelectedIndex = -1; // Reset dropdown
+            if (dgvChefCusOrder.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select an order first.");
+                return;
+            }
+
+            DataGridViewRow selectedRow = dgvChefCusOrder.SelectedRows[0];
+            int orderID = Convert.ToInt32(selectedRow.Cells["CusOrderID"].Value);
+            int? newChefID = cmbChef.SelectedValue as int?;
+
+            if (!newChefID.HasValue)
+            {
+                MessageBox.Show("Please select a valid chef.");
+                return;
+            }
+
+            bool chefUpdateSuccess = OrderManager.UpdateChefInCharge(orderID, newChefID.Value);
+
+            if (chefUpdateSuccess)
+            {
+                MessageBox.Show("Chef updated successfully!");
+                LoadOrders(); // Refresh DataGridView
+            }
+            else
+            {
+                MessageBox.Show("Failed to update chef.");
+            }
+        }
+
+        private void LoadChefsIntoComboBox()
+        {
+            DataTable chefsTable = OrderManager.GetAvailableChefs();
+
+            if (chefsTable == null || chefsTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No chefs found! Check your database connection.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            cmbChef.DataSource = chefsTable;
+            cmbChef.DisplayMember = "ChefName";
+            cmbChef.ValueMember = "ChefID";
         }
 
 

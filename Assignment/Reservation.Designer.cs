@@ -76,6 +76,7 @@
             this.btnLogOut.TabIndex = 15;
             this.btnLogOut.Text = "Log Out";
             this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnManageReservation
             // 
@@ -89,6 +90,7 @@
             this.btnManageReservation.TabIndex = 0;
             this.btnManageReservation.Text = "Manage Reservation";
             this.btnManageReservation.UseVisualStyleBackColor = false;
+            this.btnManageReservation.Click += new System.EventHandler(this.btnManageReservation_Click);
             // 
             // btnReplyCustomer
             // 
@@ -102,6 +104,7 @@
             this.btnReplyCustomer.TabIndex = 1;
             this.btnReplyCustomer.Text = "Reply Customer";
             this.btnReplyCustomer.UseVisualStyleBackColor = false;
+            this.btnReplyCustomer.Click += new System.EventHandler(this.btnReplyCustomer_Click);
             // 
             // btnRCProfile
             // 
@@ -115,6 +118,7 @@
             this.btnRCProfile.TabIndex = 2;
             this.btnRCProfile.Text = "Reservation Coordinate Profile";
             this.btnRCProfile.UseVisualStyleBackColor = false;
+            this.btnRCProfile.Click += new System.EventHandler(this.btnRCProfile_Click);
             // 
             // gbManageReservation
             // 
@@ -140,6 +144,7 @@
             this.dgvReservation.RowTemplate.Height = 24;
             this.dgvReservation.Size = new System.Drawing.Size(785, 207);
             this.dgvReservation.TabIndex = 9;
+            this.dgvReservation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservation_CellClick);
             // 
             // btnAssignHall
             // 
