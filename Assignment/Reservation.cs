@@ -21,7 +21,34 @@ namespace Assignment
 
         private void Reservation_Load(object sender, EventArgs e)
         {
-            ReservationManager.LoadReservations(dgvReservation);
+            LoadReservationData();
+            
+        }
+
+        private void LoadReservationData()
+        {
+            
+            
+        }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnSearchReservation_Click(object sender, EventArgs e)
+        {
+            string searchText = txtReservation.Text.Trim().Replace("'", "''");
+
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                bindingSource.Filter = $"Reservation_ID LIKE '%{searchText}%'";
+            }
+            else
+            {
+                bindingSource.RemoveFilter();
+            }
         }
     }
 }

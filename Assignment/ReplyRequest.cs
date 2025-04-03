@@ -82,6 +82,38 @@ namespace Assignment
                 cmbChangeStatus.SelectedItem = row.Cells["Status"].Value.ToString();
             }
         }
+
+        private void btnAddNewReservation_Click_1(object sender, EventArgs e)
+        {
+            if (dgvReplyRequest.SelectedRows.Count > 0)
+            {
+                // Get selected data
+                int requestID = Convert.ToInt32(dgvReplyRequest.SelectedRows[0].Cells["R_Req_ID"].Value);
+                int userID = Convert.ToInt32(dgvReplyRequest.SelectedRows[0].Cells["User_ID"].Value);
+
+                // Set Hall_ID to NULL and Status to Approved
+                int? hallID = null; // Nullable int for Hall_ID
+                string status = "Approved"; // Default Status
+
+                // Add to Reservation
+                RequestHandler handler = new RequestHandler();
+                bool success = handler.AddToReservation(hallID, userID, requestID, status);
+
+                if (success)
+                {
+                    MessageBox.Show("Request successfully added to Reservations!");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add the request to Reservations.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a request from the table.");
+            }
+        }
     }
 }
+
 

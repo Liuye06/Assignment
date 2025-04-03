@@ -62,5 +62,35 @@ namespace Assignment
                 }
             }
         }
+
+        public bool AddToReservation(int? hallID, int userID, int requestID, string status)
+        {
+            string query = "INSERT INTO Reservation (Hall_ID, User_ID, R_Req_ID, Status) VALUES (@Hall_ID, @User_ID, @R_Req_ID, @Status)";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Hall_ID", (object)hallID ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@User_ID", userID);
+                    cmd.Parameters.AddWithValue("@R_Req_ID", requestID);
+                    cmd.Parameters.AddWithValue("@Status", status);
+
+                    try
+                    {
+                        conn.Open();
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        return rowsAffected > 0; // Success
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}");
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }
+
+

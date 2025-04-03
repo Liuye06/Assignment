@@ -34,17 +34,12 @@
             this.btnReplyCustomer = new System.Windows.Forms.Button();
             this.btnRCProfile = new System.Windows.Forms.Button();
             this.gbManageReservation = new System.Windows.Forms.GroupBox();
-            this.btnResetHallSearch = new System.Windows.Forms.Button();
-            this.btnAddNewHall = new System.Windows.Forms.Button();
+            this.btnResetReservationSearch = new System.Windows.Forms.Button();
             this.dgvReservation = new System.Windows.Forms.DataGridView();
-            this.ColHallName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHallEdit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ColHallDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSearchReservation = new System.Windows.Forms.Button();
             this.txtReservation = new System.Windows.Forms.TextBox();
             this.lblReservation = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableSidebar_Reservation.SuspendLayout();
             this.gbManageReservation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservation)).BeginInit();
@@ -123,8 +118,8 @@
             // 
             // gbManageReservation
             // 
-            this.gbManageReservation.Controls.Add(this.btnResetHallSearch);
-            this.gbManageReservation.Controls.Add(this.btnAddNewHall);
+            this.gbManageReservation.Controls.Add(this.button1);
+            this.gbManageReservation.Controls.Add(this.btnResetReservationSearch);
             this.gbManageReservation.Controls.Add(this.dgvReservation);
             this.gbManageReservation.Controls.Add(this.btnSearchReservation);
             this.gbManageReservation.Controls.Add(this.txtReservation);
@@ -136,81 +131,23 @@
             this.gbManageReservation.TabStop = false;
             this.gbManageReservation.Text = "Manage Reservation";
             // 
-            // btnResetHallSearch
+            // btnResetReservationSearch
             // 
-            this.btnResetHallSearch.Location = new System.Drawing.Point(425, 322);
-            this.btnResetHallSearch.Name = "btnResetHallSearch";
-            this.btnResetHallSearch.Size = new System.Drawing.Size(390, 35);
-            this.btnResetHallSearch.TabIndex = 11;
-            this.btnResetHallSearch.Text = "Reset Search Hall Name";
-            // 
-            // btnAddNewHall
-            // 
-            this.btnAddNewHall.Location = new System.Drawing.Point(30, 322);
-            this.btnAddNewHall.Name = "btnAddNewHall";
-            this.btnAddNewHall.Size = new System.Drawing.Size(390, 35);
-            this.btnAddNewHall.TabIndex = 10;
-            this.btnAddNewHall.Text = "Add New Hall Name";
+            this.btnResetReservationSearch.Location = new System.Drawing.Point(526, 41);
+            this.btnResetReservationSearch.Name = "btnResetReservationSearch";
+            this.btnResetReservationSearch.Size = new System.Drawing.Size(289, 35);
+            this.btnResetReservationSearch.TabIndex = 11;
+            this.btnResetReservationSearch.Text = "Reset Search Reservation";
             // 
             // dgvReservation
             // 
             this.dgvReservation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReservation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColHallName,
-            this.ColCapacity,
-            this.ColPrice,
-            this.ColHallEdit,
-            this.ColHallDelete});
             this.dgvReservation.Location = new System.Drawing.Point(30, 93);
             this.dgvReservation.Name = "dgvReservation";
             this.dgvReservation.RowHeadersWidth = 51;
             this.dgvReservation.RowTemplate.Height = 24;
             this.dgvReservation.Size = new System.Drawing.Size(785, 216);
             this.dgvReservation.TabIndex = 9;
-            // 
-            // ColHallName
-            // 
-            this.ColHallName.DataPropertyName = "Hall_Name";
-            this.ColHallName.HeaderText = "Hall Name";
-            this.ColHallName.MinimumWidth = 6;
-            this.ColHallName.Name = "ColHallName";
-            this.ColHallName.Width = 160;
-            // 
-            // ColCapacity
-            // 
-            this.ColCapacity.DataPropertyName = "Capacity";
-            this.ColCapacity.HeaderText = "Capacity";
-            this.ColCapacity.MinimumWidth = 6;
-            this.ColCapacity.Name = "ColCapacity";
-            this.ColCapacity.Width = 160;
-            // 
-            // ColPrice
-            // 
-            this.ColPrice.DataPropertyName = "Price_P_Day";
-            this.ColPrice.HeaderText = "Price";
-            this.ColPrice.MinimumWidth = 6;
-            this.ColPrice.Name = "ColPrice";
-            this.ColPrice.Width = 150;
-            // 
-            // ColHallEdit
-            // 
-            this.ColHallEdit.DataPropertyName = "Edit";
-            this.ColHallEdit.HeaderText = "Action";
-            this.ColHallEdit.MinimumWidth = 6;
-            this.ColHallEdit.Name = "ColHallEdit";
-            this.ColHallEdit.Text = "Edit";
-            this.ColHallEdit.UseColumnTextForButtonValue = true;
-            this.ColHallEdit.Width = 130;
-            // 
-            // ColHallDelete
-            // 
-            this.ColHallDelete.DataPropertyName = "Delete";
-            this.ColHallDelete.HeaderText = "Action";
-            this.ColHallDelete.MinimumWidth = 6;
-            this.ColHallDelete.Name = "ColHallDelete";
-            this.ColHallDelete.Text = "Delete";
-            this.ColHallDelete.UseColumnTextForButtonValue = true;
-            this.ColHallDelete.Width = 130;
             // 
             // btnSearchReservation
             // 
@@ -220,6 +157,7 @@
             this.btnSearchReservation.TabIndex = 8;
             this.btnSearchReservation.Text = "Search";
             this.btnSearchReservation.UseVisualStyleBackColor = true;
+            this.btnSearchReservation.Click += new System.EventHandler(this.btnSearchReservation_Click);
             // 
             // txtReservation
             // 
@@ -236,6 +174,15 @@
             this.lblReservation.Size = new System.Drawing.Size(115, 25);
             this.lblReservation.TabIndex = 6;
             this.lblReservation.Text = "Reservation";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(601, 315);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(214, 33);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Reservation
             // 
@@ -267,16 +214,11 @@
         private System.Windows.Forms.Button btnRCProfile;
         private System.Windows.Forms.Button btnReplyCustomer;
         private System.Windows.Forms.GroupBox gbManageReservation;
-        private System.Windows.Forms.Button btnResetHallSearch;
-        private System.Windows.Forms.Button btnAddNewHall;
+        private System.Windows.Forms.Button btnResetReservationSearch;
         private System.Windows.Forms.DataGridView dgvReservation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColHallName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColCapacity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrice;
-        private System.Windows.Forms.DataGridViewButtonColumn ColHallEdit;
-        private System.Windows.Forms.DataGridViewButtonColumn ColHallDelete;
         private System.Windows.Forms.Button btnSearchReservation;
         private System.Windows.Forms.TextBox txtReservation;
         private System.Windows.Forms.Label lblReservation;
+        private System.Windows.Forms.Button button1;
     }
 }

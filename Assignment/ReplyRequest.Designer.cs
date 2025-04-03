@@ -38,6 +38,7 @@
             this.cmbChangeStatus = new System.Windows.Forms.ComboBox();
             this.btnUpdateStatus = new System.Windows.Forms.Button();
             this.lblChangeStatus = new System.Windows.Forms.Label();
+            this.btnAddNewReservation = new System.Windows.Forms.Button();
             this.tableSidebar_Reservation.SuspendLayout();
             this.gbReplyRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReplyRequest)).BeginInit();
@@ -117,6 +118,7 @@
             // 
             // gbReplyRequest
             // 
+            this.gbReplyRequest.Controls.Add(this.btnAddNewReservation);
             this.gbReplyRequest.Controls.Add(this.dgvReplyRequest);
             this.gbReplyRequest.Controls.Add(this.cmbChangeStatus);
             this.gbReplyRequest.Controls.Add(this.btnUpdateStatus);
@@ -135,7 +137,7 @@
             this.dgvReplyRequest.Name = "dgvReplyRequest";
             this.dgvReplyRequest.RowHeadersWidth = 51;
             this.dgvReplyRequest.RowTemplate.Height = 24;
-            this.dgvReplyRequest.Size = new System.Drawing.Size(785, 253);
+            this.dgvReplyRequest.Size = new System.Drawing.Size(785, 218);
             this.dgvReplyRequest.TabIndex = 11;
             this.dgvReplyRequest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReplyRequest_CellClick);
             // 
@@ -170,6 +172,16 @@
             this.lblChangeStatus.TabIndex = 0;
             this.lblChangeStatus.Text = "Change Status";
             // 
+            // btnAddNewReservation
+            // 
+            this.btnAddNewReservation.Location = new System.Drawing.Point(45, 316);
+            this.btnAddNewReservation.Name = "btnAddNewReservation";
+            this.btnAddNewReservation.Size = new System.Drawing.Size(370, 34);
+            this.btnAddNewReservation.TabIndex = 12;
+            this.btnAddNewReservation.Text = "Add New Reservation";
+            this.btnAddNewReservation.UseVisualStyleBackColor = true;
+            this.btnAddNewReservation.Click += new System.EventHandler(this.btnAddNewReservation_Click_1);
+            // 
             // ReplyRequest
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Label lblChangeStatus;
         private System.Windows.Forms.ComboBox cmbChangeStatus;
         private System.Windows.Forms.DataGridView dgvReplyRequest;
+        private System.Windows.Forms.Button btnAddNewReservation;
     }
 }
