@@ -32,9 +32,11 @@
             this.tableSidebar_CProfile = new System.Windows.Forms.TableLayoutPanel();
             this.btn_inventory_CProfile = new System.Windows.Forms.Button();
             this.btn_CusOrder_CProfile = new System.Windows.Forms.Button();
-            this.lbl_chef = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btn_ChefProfile_CProfile = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.lbl_chef = new System.Windows.Forms.Label();
             this.gbChefProfile = new System.Windows.Forms.GroupBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
@@ -51,13 +53,13 @@
             this.lblProfilePic = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableSidebar_CProfile.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.gbChefProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSidebar_CProfile
@@ -85,6 +87,7 @@
             // btn_inventory_CProfile
             // 
             this.btn_inventory_CProfile.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inventory_CProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_inventory_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_inventory_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_inventory_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,6 +105,7 @@
             // btn_CusOrder_CProfile
             // 
             this.btn_CusOrder_CProfile.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_CusOrder_CProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_CusOrder_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_CusOrder_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CusOrder_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,19 +120,10 @@
             this.btn_CusOrder_CProfile.UseVisualStyleBackColor = false;
             this.btn_CusOrder_CProfile.Click += new System.EventHandler(this.btn_CusOrder_CProfile_Click);
             // 
-            // lbl_chef
-            // 
-            this.lbl_chef.AutoSize = true;
-            this.lbl_chef.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_chef.Location = new System.Drawing.Point(-3, 0);
-            this.lbl_chef.Name = "lbl_chef";
-            this.lbl_chef.Size = new System.Drawing.Size(93, 39);
-            this.lbl_chef.TabIndex = 3;
-            this.lbl_chef.Text = "Chef";
-            // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,6 +140,7 @@
             // btn_ChefProfile_CProfile
             // 
             this.btn_ChefProfile_CProfile.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_ChefProfile_CProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ChefProfile_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_ChefProfile_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ChefProfile_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,9 +155,38 @@
             this.btn_ChefProfile_CProfile.UseVisualStyleBackColor = false;
             this.btn_ChefProfile_CProfile.Click += new System.EventHandler(this.btn_ChefProfile_CProfile_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pic_logo);
+            this.panel1.Controls.Add(this.lbl_chef);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(230, 144);
+            this.panel1.TabIndex = 18;
+            // 
+            // pic_logo
+            // 
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(-3, 42);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(138, 102);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 17;
+            this.pic_logo.TabStop = false;
+            // 
+            // lbl_chef
+            // 
+            this.lbl_chef.AutoSize = true;
+            this.lbl_chef.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_chef.Location = new System.Drawing.Point(-3, -3);
+            this.lbl_chef.Name = "lbl_chef";
+            this.lbl_chef.Size = new System.Drawing.Size(90, 54);
+            this.lbl_chef.TabIndex = 3;
+            this.lbl_chef.Text = "Chef";
+            // 
             // gbChefProfile
             // 
-            this.gbChefProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.gbChefProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.gbChefProfile.Controls.Add(this.dtpDOB);
             this.gbChefProfile.Controls.Add(this.cmbGender);
             this.gbChefProfile.Controls.Add(this.picProfilePic);
@@ -177,9 +202,9 @@
             this.gbChefProfile.Controls.Add(this.lblProfilePic);
             this.gbChefProfile.Controls.Add(this.lblEmail);
             this.gbChefProfile.Controls.Add(this.lblName);
-            this.gbChefProfile.Location = new System.Drawing.Point(265, 28);
+            this.gbChefProfile.Location = new System.Drawing.Point(44, 62);
             this.gbChefProfile.Name = "gbChefProfile";
-            this.gbChefProfile.Size = new System.Drawing.Size(805, 379);
+            this.gbChefProfile.Size = new System.Drawing.Size(805, 367);
             this.gbChefProfile.TabIndex = 15;
             this.gbChefProfile.TabStop = false;
             this.gbChefProfile.Text = "Chef Profile";
@@ -312,44 +337,36 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
-            // pic_logo
+            // panel2
             // 
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(-3, 42);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(138, 102);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 17;
-            this.pic_logo.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pic_logo);
-            this.panel1.Controls.Add(this.lbl_chef);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 144);
-            this.panel1.TabIndex = 18;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.gbChefProfile);
+            this.panel2.Location = new System.Drawing.Point(221, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(863, 458);
+            this.panel2.TabIndex = 16;
             // 
             // Chef_Profile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.gbChefProfile);
             this.Controls.Add(this.tableSidebar_CProfile);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Chef_Profile";
             this.Text = "Chef_Profile";
             this.Load += new System.EventHandler(this.Chef_Profile_Load);
             this.tableSidebar_CProfile.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.gbChefProfile.ResumeLayout(false);
             this.gbChefProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -379,5 +396,6 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel2;
     }
 }

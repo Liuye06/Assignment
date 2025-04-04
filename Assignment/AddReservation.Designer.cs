@@ -34,10 +34,6 @@
             this.lbl_HallID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hallNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pricePDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hallBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,7 +48,7 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(90, 343);
+            this.btn_Add.Location = new System.Drawing.Point(161, 348);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(95, 31);
             this.btn_Add.TabIndex = 29;
@@ -62,7 +58,7 @@
             // 
             // txt_HallID
             // 
-            this.txt_HallID.Location = new System.Drawing.Point(179, 270);
+            this.txt_HallID.Location = new System.Drawing.Point(281, 270);
             this.txt_HallID.Name = "txt_HallID";
             this.txt_HallID.Size = new System.Drawing.Size(100, 22);
             this.txt_HallID.TabIndex = 24;
@@ -71,7 +67,7 @@
             // 
             this.lbl_HallID.AutoSize = true;
             this.lbl_HallID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HallID.Location = new System.Drawing.Point(57, 267);
+            this.lbl_HallID.Location = new System.Drawing.Point(159, 267);
             this.lbl_HallID.Name = "lbl_HallID";
             this.lbl_HallID.Size = new System.Drawing.Size(83, 25);
             this.lbl_HallID.TabIndex = 18;
@@ -80,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 231);
+            this.label1.Location = new System.Drawing.Point(157, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 16);
             this.label1.TabIndex = 17;
@@ -91,79 +87,29 @@
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.hallIDDataGridViewTextBoxColumn,
-            this.hallNameDataGridViewTextBoxColumn,
-            this.capacityDataGridViewTextBoxColumn,
-            this.pricePDayDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.hallBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(58, 46);
+            this.dataGridView1.Location = new System.Drawing.Point(170, 37);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(552, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(765, 150);
             this.dataGridView1.TabIndex = 30;
-            // 
-            // hallIDDataGridViewTextBoxColumn
-            // 
-            this.hallIDDataGridViewTextBoxColumn.DataPropertyName = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.HeaderText = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hallIDDataGridViewTextBoxColumn.Name = "hallIDDataGridViewTextBoxColumn";
-            this.hallIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hallIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hallNameDataGridViewTextBoxColumn
-            // 
-            this.hallNameDataGridViewTextBoxColumn.DataPropertyName = "Hall_Name";
-            this.hallNameDataGridViewTextBoxColumn.HeaderText = "Hall_Name";
-            this.hallNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hallNameDataGridViewTextBoxColumn.Name = "hallNameDataGridViewTextBoxColumn";
-            this.hallNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // capacityDataGridViewTextBoxColumn
-            // 
-            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
-            this.capacityDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // pricePDayDataGridViewTextBoxColumn
-            // 
-            this.pricePDayDataGridViewTextBoxColumn.DataPropertyName = "Price_P_Day";
-            this.pricePDayDataGridViewTextBoxColumn.HeaderText = "Price_P_Day";
-            this.pricePDayDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.pricePDayDataGridViewTextBoxColumn.Name = "pricePDayDataGridViewTextBoxColumn";
-            this.pricePDayDataGridViewTextBoxColumn.Width = 125;
             // 
             // hallBindingSource
             // 
             this.hallBindingSource.DataMember = "Hall";
             // 
-            // database1DataSet8
-            // 
-            // 
             // rRequestBindingSource
             // 
             this.rRequestBindingSource.DataMember = "R_Request";
-            // 
-            // database1DataSet6
-            // 
-            // 
-            // database1DataSet4
-            // 
             // 
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
             // 
-            // reservationTableAdapter
-            // 
-            // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(261, 343);
+            this.btn_Cancel.Location = new System.Drawing.Point(332, 348);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(95, 31);
             this.btn_Cancel.TabIndex = 31;
@@ -171,14 +117,11 @@
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // r_RequestTableAdapter
-            // 
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(411, 247);
+            this.listBox1.Location = new System.Drawing.Point(623, 263);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(243, 116);
             this.listBox1.TabIndex = 32;
@@ -186,20 +129,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(408, 215);
+            this.label2.Location = new System.Drawing.Point(620, 231);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(238, 16);
             this.label2.TabIndex = 33;
             this.label2.Text = "Select the Customer for assign the Hall:";
             // 
-            // hallTableAdapter
-            // 
-            // 
             // AddReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btn_Cancel);

@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChefHomepage));
             this.tableSidebar_ChefCustomerOrder = new System.Windows.Forms.TableLayoutPanel();
-            this.lbl_chef = new System.Windows.Forms.Label();
             this.btninventory_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.btnCusOrder_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.btnChefProfile_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_chef = new System.Windows.Forms.Label();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableSidebar_ChefCustomerOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,16 +68,6 @@
             this.tableSidebar_ChefCustomerOrder.TabIndex = 7;
             this.tableSidebar_ChefCustomerOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.tableSidebar_ChefCustomerOrder_Paint);
             // 
-            // lbl_chef
-            // 
-            this.lbl_chef.AutoSize = true;
-            this.lbl_chef.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_chef.Location = new System.Drawing.Point(-3, -3);
-            this.lbl_chef.Name = "lbl_chef";
-            this.lbl_chef.Size = new System.Drawing.Size(93, 39);
-            this.lbl_chef.TabIndex = 14;
-            this.lbl_chef.Text = "Chef";
-            // 
             // btninventory_ChefCustomerOrder
             // 
             this.btninventory_ChefCustomerOrder.BackColor = System.Drawing.Color.Gainsboro;
@@ -99,6 +89,7 @@
             // btnCusOrder_ChefCustomerOrder
             // 
             this.btnCusOrder_ChefCustomerOrder.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnCusOrder_ChefCustomerOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCusOrder_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
             this.btnCusOrder_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCusOrder_ChefCustomerOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -116,6 +107,7 @@
             // btnChefProfile_ChefCustomerOrder
             // 
             this.btnChefProfile_ChefCustomerOrder.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnChefProfile_ChefCustomerOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChefProfile_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
             this.btnChefProfile_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChefProfile_ChefCustomerOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,6 +125,7 @@
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +139,25 @@
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pic_logo);
+            this.panel1.Controls.Add(this.lbl_chef);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(230, 144);
+            this.panel1.TabIndex = 16;
+            // 
+            // lbl_chef
+            // 
+            this.lbl_chef.AutoSize = true;
+            this.lbl_chef.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_chef.Location = new System.Drawing.Point(-3, -3);
+            this.lbl_chef.Name = "lbl_chef";
+            this.lbl_chef.Size = new System.Drawing.Size(90, 54);
+            this.lbl_chef.TabIndex = 14;
+            this.lbl_chef.Text = "Chef";
+            // 
             // pic_logo
             // 
             this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
@@ -155,15 +167,6 @@
             this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pic_logo.TabIndex = 8;
             this.pic_logo.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lbl_chef);
-            this.panel1.Controls.Add(this.pic_logo);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 144);
-            this.panel1.TabIndex = 16;
             // 
             // label1
             // 
@@ -201,9 +204,9 @@
             this.Text = "ChefHomepage";
             this.Load += new System.EventHandler(this.ChefHomepage_Load);
             this.tableSidebar_ChefCustomerOrder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

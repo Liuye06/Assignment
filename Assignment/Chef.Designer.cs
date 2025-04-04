@@ -60,6 +60,7 @@
             // btn_inventory
             // 
             this.btn_inventory.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_inventory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_inventory.FlatAppearance.BorderSize = 0;
             this.btn_inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -77,6 +78,7 @@
             // btn_ChefProfile
             // 
             this.btn_ChefProfile.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_ChefProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ChefProfile.FlatAppearance.BorderSize = 0;
             this.btn_ChefProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ChefProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,6 +96,7 @@
             // btn_CusOrder
             // 
             this.btn_CusOrder.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_CusOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_CusOrder.FlatAppearance.BorderSize = 0;
             this.btn_CusOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_CusOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,10 +114,10 @@
             // lbl_chef
             // 
             this.lbl_chef.AutoSize = true;
-            this.lbl_chef.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_chef.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_chef.Location = new System.Drawing.Point(0, 0);
             this.lbl_chef.Name = "lbl_chef";
-            this.lbl_chef.Size = new System.Drawing.Size(93, 39);
+            this.lbl_chef.Size = new System.Drawing.Size(90, 54);
             this.lbl_chef.TabIndex = 3;
             this.lbl_chef.Text = "Chef";
             // 
@@ -143,6 +146,7 @@
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,7 +181,7 @@
             // 
             // gbCInventory
             // 
-            this.gbCInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.gbCInventory.BackColor = System.Drawing.Color.Maroon;
             this.gbCInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gbCInventory.Controls.Add(this.btnResetIngredientSearch);
             this.gbCInventory.Controls.Add(this.btnAddNewIngredient);

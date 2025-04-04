@@ -62,7 +62,7 @@
             // 
             // tableSidebar_Reservation
             // 
-            this.tableSidebar_Reservation.BackColor = System.Drawing.Color.SandyBrown;
+            this.tableSidebar_Reservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(119)))), ((int)(((byte)(81)))));
             this.tableSidebar_Reservation.ColumnCount = 1;
             this.tableSidebar_Reservation.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSidebar_Reservation.Controls.Add(this.btnLogOut, 0, 4);
@@ -85,6 +85,7 @@
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -102,6 +103,7 @@
             // btnManageReservation
             // 
             this.btnManageReservation.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnManageReservation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageReservation.FlatAppearance.BorderSize = 0;
             this.btnManageReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -120,6 +122,7 @@
             // btnReplyCustomer
             // 
             this.btnReplyCustomer.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnReplyCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReplyCustomer.FlatAppearance.BorderSize = 0;
             this.btnReplyCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReplyCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,6 +141,7 @@
             // btnRCProfile
             // 
             this.btnRCProfile.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnRCProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRCProfile.FlatAppearance.BorderSize = 0;
             this.btnRCProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRCProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -148,7 +152,7 @@
             this.btnRCProfile.Name = "btnRCProfile";
             this.btnRCProfile.Size = new System.Drawing.Size(210, 71);
             this.btnRCProfile.TabIndex = 2;
-            this.btnRCProfile.Text = "Reservation Coordinate Profile";
+            this.btnRCProfile.Text = "Reservation Coordinator Profile";
             this.btnRCProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnRCProfile.UseVisualStyleBackColor = false;
             this.btnRCProfile.Click += new System.EventHandler(this.btnRCProfile_Click);

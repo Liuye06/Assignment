@@ -40,22 +40,23 @@
             // 
             // gbECIngredient
             // 
+            this.gbECIngredient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.gbECIngredient.Controls.Add(this.btnCancelEditIngredient);
             this.gbECIngredient.Controls.Add(this.btnSaveIngredient);
             this.gbECIngredient.Controls.Add(this.txtEditStock);
             this.gbECIngredient.Controls.Add(this.txtEditIngredient);
             this.gbECIngredient.Controls.Add(this.lblEditStock);
             this.gbECIngredient.Controls.Add(this.lblEditIngredient);
-            this.gbECIngredient.Location = new System.Drawing.Point(12, 12);
+            this.gbECIngredient.Location = new System.Drawing.Point(87, 30);
             this.gbECIngredient.Name = "gbECIngredient";
-            this.gbECIngredient.Size = new System.Drawing.Size(1058, 429);
+            this.gbECIngredient.Size = new System.Drawing.Size(920, 386);
             this.gbECIngredient.TabIndex = 8;
             this.gbECIngredient.TabStop = false;
             this.gbECIngredient.Text = "Edit Ingredient";
             // 
             // btnCancelEditIngredient
             // 
-            this.btnCancelEditIngredient.Location = new System.Drawing.Point(493, 335);
+            this.btnCancelEditIngredient.Location = new System.Drawing.Point(457, 316);
             this.btnCancelEditIngredient.Name = "btnCancelEditIngredient";
             this.btnCancelEditIngredient.Size = new System.Drawing.Size(370, 34);
             this.btnCancelEditIngredient.TabIndex = 9;
@@ -65,7 +66,7 @@
             // 
             // btnSaveIngredient
             // 
-            this.btnSaveIngredient.Location = new System.Drawing.Point(117, 335);
+            this.btnSaveIngredient.Location = new System.Drawing.Point(81, 316);
             this.btnSaveIngredient.Name = "btnSaveIngredient";
             this.btnSaveIngredient.Size = new System.Drawing.Size(370, 34);
             this.btnSaveIngredient.TabIndex = 8;
@@ -75,14 +76,14 @@
             // 
             // txtEditStock
             // 
-            this.txtEditStock.Location = new System.Drawing.Point(400, 188);
+            this.txtEditStock.Location = new System.Drawing.Point(347, 182);
             this.txtEditStock.Name = "txtEditStock";
             this.txtEditStock.Size = new System.Drawing.Size(301, 30);
             this.txtEditStock.TabIndex = 4;
             // 
             // txtEditIngredient
             // 
-            this.txtEditIngredient.Location = new System.Drawing.Point(400, 110);
+            this.txtEditIngredient.Location = new System.Drawing.Point(347, 104);
             this.txtEditIngredient.Name = "txtEditIngredient";
             this.txtEditIngredient.Size = new System.Drawing.Size(301, 30);
             this.txtEditIngredient.TabIndex = 3;
@@ -90,7 +91,7 @@
             // lblEditStock
             // 
             this.lblEditStock.AutoSize = true;
-            this.lblEditStock.Location = new System.Drawing.Point(261, 191);
+            this.lblEditStock.Location = new System.Drawing.Point(208, 185);
             this.lblEditStock.Name = "lblEditStock";
             this.lblEditStock.Size = new System.Drawing.Size(62, 25);
             this.lblEditStock.TabIndex = 1;
@@ -99,7 +100,7 @@
             // lblEditIngredient
             // 
             this.lblEditIngredient.AutoSize = true;
-            this.lblEditIngredient.Location = new System.Drawing.Point(261, 113);
+            this.lblEditIngredient.Location = new System.Drawing.Point(208, 107);
             this.lblEditIngredient.Name = "lblEditIngredient";
             this.lblEditIngredient.Size = new System.Drawing.Size(98, 25);
             this.lblEditIngredient.TabIndex = 0;
@@ -108,6 +109,7 @@
             // EditChefIngredient
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbECIngredient);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

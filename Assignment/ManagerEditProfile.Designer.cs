@@ -199,6 +199,8 @@
             // ManagerEditProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.btnEditBrowseImageMenu);
             this.Controls.Add(this.btnCancel);
@@ -217,6 +219,7 @@
             this.Controls.Add(this.lblManagerProfilePic);
             this.Controls.Add(this.lblManagerEmail);
             this.Controls.Add(this.lblManagerName);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ManagerEditProfile";
             this.Text = "ManagerEditProfile";
