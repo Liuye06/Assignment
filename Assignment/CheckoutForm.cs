@@ -154,5 +154,10 @@ namespace Assignment
             customerMenu.Show();
             this.Close();
         }
+
+        private void CheckoutForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

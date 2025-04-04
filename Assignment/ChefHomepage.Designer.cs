@@ -37,7 +37,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pic_logo = new System.Windows.Forms.PictureBox();
             this.lbl_chef = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_welcomeChef = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableSidebar_ChefCustomerOrder.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -168,18 +168,18 @@
             this.lbl_chef.TabIndex = 14;
             this.lbl_chef.Text = "Chef";
             // 
-            // label1
+            // lbl_welcomeChef
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.WindowText;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 26F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(460, 196);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 53);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Welcome Back To Work";
+            this.lbl_welcomeChef.AutoSize = true;
+            this.lbl_welcomeChef.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lbl_welcomeChef.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_welcomeChef.Font = new System.Drawing.Font("Monotype Corsiva", 26F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_welcomeChef.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_welcomeChef.Location = new System.Drawing.Point(460, 196);
+            this.lbl_welcomeChef.Name = "lbl_welcomeChef";
+            this.lbl_welcomeChef.Size = new System.Drawing.Size(420, 53);
+            this.lbl_welcomeChef.TabIndex = 8;
+            this.lbl_welcomeChef.Text = "Welcome Back To Work";
             // 
             // pictureBox1
             // 
@@ -196,7 +196,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_welcomeChef);
             this.Controls.Add(this.tableSidebar_ChefCustomerOrder);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +223,7 @@
         private System.Windows.Forms.Button btnChefProfile_ChefCustomerOrder;
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_welcomeChef;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
