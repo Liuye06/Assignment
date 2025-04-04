@@ -190,23 +190,24 @@
             this.gbShowCusOrder.Controls.Add(this.btnRefreshStatusCusOrder);
             this.gbShowCusOrder.Controls.Add(this.btnUpdateCusOrderStatus);
             this.gbShowCusOrder.Controls.Add(this.lblCusStatusOrder);
-            this.gbShowCusOrder.Controls.Add(this.cmbCusOrderStatus);
             this.gbShowCusOrder.Controls.Add(this.dgvChefCusOrder);
-            this.gbShowCusOrder.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbShowCusOrder.Controls.Add(this.cmbCusOrderStatus);
+            this.gbShowCusOrder.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbShowCusOrder.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gbShowCusOrder.Location = new System.Drawing.Point(16, 37);
             this.gbShowCusOrder.Name = "gbShowCusOrder";
-            this.gbShowCusOrder.Size = new System.Drawing.Size(816, 387);
+            this.gbShowCusOrder.Size = new System.Drawing.Size(837, 434);
             this.gbShowCusOrder.TabIndex = 7;
             this.gbShowCusOrder.TabStop = false;
             this.gbShowCusOrder.Text = "Customer Order";
             // 
             // btnUpdateChef
             // 
+            this.btnUpdateChef.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateChef.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnUpdateChef.Location = new System.Drawing.Point(426, 336);
+            this.btnUpdateChef.Location = new System.Drawing.Point(449, 360);
             this.btnUpdateChef.Name = "btnUpdateChef";
-            this.btnUpdateChef.Size = new System.Drawing.Size(184, 33);
+            this.btnUpdateChef.Size = new System.Drawing.Size(168, 33);
             this.btnUpdateChef.TabIndex = 19;
             this.btnUpdateChef.Text = "Update Chef";
             this.btnUpdateChef.UseVisualStyleBackColor = true;
@@ -218,17 +219,17 @@
             this.cmbChef.Items.AddRange(new object[] {
             "In Progress",
             "Completed"});
-            this.cmbChef.Location = new System.Drawing.Point(16, 337);
+            this.cmbChef.Location = new System.Drawing.Point(23, 361);
             this.cmbChef.Name = "cmbChef";
-            this.cmbChef.Size = new System.Drawing.Size(404, 33);
+            this.cmbChef.Size = new System.Drawing.Size(404, 37);
             this.cmbChef.TabIndex = 18;
             // 
             // btnRefreshStatusCusOrder
             // 
             this.btnRefreshStatusCusOrder.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnRefreshStatusCusOrder.Location = new System.Drawing.Point(449, 41);
+            this.btnRefreshStatusCusOrder.Location = new System.Drawing.Point(476, 41);
             this.btnRefreshStatusCusOrder.Name = "btnRefreshStatusCusOrder";
-            this.btnRefreshStatusCusOrder.Size = new System.Drawing.Size(355, 36);
+            this.btnRefreshStatusCusOrder.Size = new System.Drawing.Size(310, 36);
             this.btnRefreshStatusCusOrder.TabIndex = 14;
             this.btnRefreshStatusCusOrder.Text = "Refresh Status";
             this.btnRefreshStatusCusOrder.UseVisualStyleBackColor = true;
@@ -236,10 +237,11 @@
             // 
             // btnUpdateCusOrderStatus
             // 
+            this.btnUpdateCusOrderStatus.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateCusOrderStatus.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnUpdateCusOrderStatus.Location = new System.Drawing.Point(616, 336);
+            this.btnUpdateCusOrderStatus.Location = new System.Drawing.Point(642, 360);
             this.btnUpdateCusOrderStatus.Name = "btnUpdateCusOrderStatus";
-            this.btnUpdateCusOrderStatus.Size = new System.Drawing.Size(185, 33);
+            this.btnUpdateCusOrderStatus.Size = new System.Drawing.Size(166, 33);
             this.btnUpdateCusOrderStatus.TabIndex = 13;
             this.btnUpdateCusOrderStatus.Text = "Update Status";
             this.btnUpdateCusOrderStatus.UseVisualStyleBackColor = true;
@@ -248,9 +250,10 @@
             // lblCusStatusOrder
             // 
             this.lblCusStatusOrder.AutoSize = true;
-            this.lblCusStatusOrder.Location = new System.Drawing.Point(14, 44);
+            this.lblCusStatusOrder.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCusStatusOrder.Location = new System.Drawing.Point(6, 44);
             this.lblCusStatusOrder.Name = "lblCusStatusOrder";
-            this.lblCusStatusOrder.Size = new System.Drawing.Size(140, 25);
+            this.lblCusStatusOrder.Size = new System.Drawing.Size(168, 30);
             this.lblCusStatusOrder.TabIndex = 12;
             this.lblCusStatusOrder.Text = "Order Status";
             // 
@@ -262,9 +265,9 @@
             "Pending",
             "In Progress",
             "Completed"});
-            this.cmbCusOrderStatus.Location = new System.Drawing.Point(160, 44);
+            this.cmbCusOrderStatus.Location = new System.Drawing.Point(186, 44);
             this.cmbCusOrderStatus.Name = "cmbCusOrderStatus";
-            this.cmbCusOrderStatus.Size = new System.Drawing.Size(265, 33);
+            this.cmbCusOrderStatus.Size = new System.Drawing.Size(265, 37);
             this.cmbCusOrderStatus.TabIndex = 11;
             this.cmbCusOrderStatus.SelectedIndexChanged += new System.EventHandler(this.cmbCusOrderStatus_SelectedIndexChanged);
             // 
@@ -277,11 +280,11 @@
             this.OrderStatus,
             this.ChefInCharge,
             this.CanUpdate});
-            this.dgvChefCusOrder.Location = new System.Drawing.Point(40, 92);
+            this.dgvChefCusOrder.Location = new System.Drawing.Point(36, 104);
             this.dgvChefCusOrder.Name = "dgvChefCusOrder";
             this.dgvChefCusOrder.RowHeadersWidth = 51;
             this.dgvChefCusOrder.RowTemplate.Height = 30;
-            this.dgvChefCusOrder.Size = new System.Drawing.Size(734, 224);
+            this.dgvChefCusOrder.Size = new System.Drawing.Size(772, 224);
             this.dgvChefCusOrder.TabIndex = 3;
             this.dgvChefCusOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellContentClick_1);
             this.dgvChefCusOrder.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellValueChanged);

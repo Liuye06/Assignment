@@ -195,6 +195,7 @@
             // btnEditBrowseImageMenu
             // 
             this.btnEditBrowseImageMenu.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditBrowseImageMenu.ForeColor = System.Drawing.Color.Goldenrod;
             this.btnEditBrowseImageMenu.Location = new System.Drawing.Point(678, 311);
             this.btnEditBrowseImageMenu.Name = "btnEditBrowseImageMenu";
             this.btnEditBrowseImageMenu.Size = new System.Drawing.Size(219, 34);
@@ -206,6 +207,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnCancel.Location = new System.Drawing.Point(545, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(393, 34);
@@ -217,6 +219,7 @@
             // btnSaveProfile
             // 
             this.btnSaveProfile.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProfile.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnSaveProfile.Location = new System.Drawing.Point(149, 386);
             this.btnSaveProfile.Name = "btnSaveProfile";
             this.btnSaveProfile.Size = new System.Drawing.Size(390, 35);

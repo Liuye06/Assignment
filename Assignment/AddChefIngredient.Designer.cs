@@ -48,7 +48,7 @@
             this.gbAddNewIngredient.Controls.Add(this.btnAddNewIngredient);
             this.gbAddNewIngredient.Controls.Add(this.lblAddIngredient);
             this.gbAddNewIngredient.Controls.Add(this.txtAddIngredient);
-            this.gbAddNewIngredient.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAddNewIngredient.Font = new System.Drawing.Font("Modern No. 20", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAddNewIngredient.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.gbAddNewIngredient.Location = new System.Drawing.Point(73, 28);
             this.gbAddNewIngredient.Name = "gbAddNewIngredient";
@@ -72,17 +72,17 @@
             // txtAddStock
             // 
             this.txtAddStock.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtAddStock.Location = new System.Drawing.Point(408, 188);
+            this.txtAddStock.Location = new System.Drawing.Point(434, 197);
             this.txtAddStock.Name = "txtAddStock";
-            this.txtAddStock.Size = new System.Drawing.Size(309, 36);
+            this.txtAddStock.Size = new System.Drawing.Size(309, 43);
             this.txtAddStock.TabIndex = 7;
             // 
             // lblAddStock
             // 
             this.lblAddStock.AutoSize = true;
-            this.lblAddStock.Location = new System.Drawing.Point(217, 188);
+            this.lblAddStock.Location = new System.Drawing.Point(243, 197);
             this.lblAddStock.Name = "lblAddStock";
-            this.lblAddStock.Size = new System.Drawing.Size(81, 30);
+            this.lblAddStock.Size = new System.Drawing.Size(92, 34);
             this.lblAddStock.TabIndex = 5;
             this.lblAddStock.Text = "Stock";
             // 
@@ -101,18 +101,18 @@
             // lblAddIngredient
             // 
             this.lblAddIngredient.AutoSize = true;
-            this.lblAddIngredient.Location = new System.Drawing.Point(217, 104);
+            this.lblAddIngredient.Location = new System.Drawing.Point(243, 113);
             this.lblAddIngredient.Name = "lblAddIngredient";
-            this.lblAddIngredient.Size = new System.Drawing.Size(142, 30);
+            this.lblAddIngredient.Size = new System.Drawing.Size(165, 34);
             this.lblAddIngredient.TabIndex = 1;
             this.lblAddIngredient.Text = "Ingredient";
             // 
             // txtAddIngredient
             // 
             this.txtAddIngredient.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtAddIngredient.Location = new System.Drawing.Point(408, 104);
+            this.txtAddIngredient.Location = new System.Drawing.Point(434, 113);
             this.txtAddIngredient.Name = "txtAddIngredient";
-            this.txtAddIngredient.Size = new System.Drawing.Size(309, 36);
+            this.txtAddIngredient.Size = new System.Drawing.Size(309, 43);
             this.txtAddIngredient.TabIndex = 0;
             // 
             // AddChefIngredient

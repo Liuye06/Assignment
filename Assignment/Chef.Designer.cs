@@ -181,7 +181,7 @@
             // 
             // gbCInventory
             // 
-            this.gbCInventory.BackColor = System.Drawing.Color.Maroon;
+            this.gbCInventory.BackColor = System.Drawing.Color.Transparent;
             this.gbCInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.gbCInventory.Controls.Add(this.btnResetIngredientSearch);
             this.gbCInventory.Controls.Add(this.btnAddNewIngredient);
@@ -189,35 +189,44 @@
             this.gbCInventory.Controls.Add(this.btnSearchIngredient);
             this.gbCInventory.Controls.Add(this.txtIngredient);
             this.gbCInventory.Controls.Add(this.lblIngredient);
-            this.gbCInventory.Location = new System.Drawing.Point(232, 62);
+            this.gbCInventory.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCInventory.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gbCInventory.Location = new System.Drawing.Point(232, 45);
             this.gbCInventory.Name = "gbCInventory";
-            this.gbCInventory.Size = new System.Drawing.Size(810, 362);
+            this.gbCInventory.Size = new System.Drawing.Size(810, 384);
             this.gbCInventory.TabIndex = 6;
             this.gbCInventory.TabStop = false;
             this.gbCInventory.Text = "Manage Inventory";
             // 
             // btnResetIngredientSearch
             // 
+            this.btnResetIngredientSearch.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnResetIngredientSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnResetIngredientSearch.Location = new System.Drawing.Point(414, 320);
+            this.btnResetIngredientSearch.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnResetIngredientSearch.Location = new System.Drawing.Point(414, 331);
             this.btnResetIngredientSearch.Name = "btnResetIngredientSearch";
             this.btnResetIngredientSearch.Size = new System.Drawing.Size(372, 35);
             this.btnResetIngredientSearch.TabIndex = 5;
             this.btnResetIngredientSearch.Text = "Reset Search Ingredient";
+            this.btnResetIngredientSearch.UseVisualStyleBackColor = false;
             this.btnResetIngredientSearch.Click += new System.EventHandler(this.btnResetIngredientSearch_Click);
             // 
             // btnAddNewIngredient
             // 
+            this.btnAddNewIngredient.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnAddNewIngredient.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAddNewIngredient.Location = new System.Drawing.Point(19, 320);
+            this.btnAddNewIngredient.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnAddNewIngredient.Location = new System.Drawing.Point(38, 331);
             this.btnAddNewIngredient.Name = "btnAddNewIngredient";
             this.btnAddNewIngredient.Size = new System.Drawing.Size(370, 35);
             this.btnAddNewIngredient.TabIndex = 4;
             this.btnAddNewIngredient.Text = "Add New Ingredient";
+            this.btnAddNewIngredient.UseVisualStyleBackColor = false;
             this.btnAddNewIngredient.Click += new System.EventHandler(this.btnAddNewIngredient_Click);
             // 
             // dgvIngredient
             // 
+            this.dgvIngredient.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dgvIngredient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIngredient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColIngredientName,
@@ -270,27 +279,30 @@
             // 
             // btnSearchIngredient
             // 
-            this.btnSearchIngredient.Location = new System.Drawing.Point(461, 41);
+            this.btnSearchIngredient.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSearchIngredient.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnSearchIngredient.Location = new System.Drawing.Point(516, 41);
             this.btnSearchIngredient.Name = "btnSearchIngredient";
             this.btnSearchIngredient.Size = new System.Drawing.Size(106, 35);
             this.btnSearchIngredient.TabIndex = 2;
             this.btnSearchIngredient.Text = "Search";
-            this.btnSearchIngredient.UseVisualStyleBackColor = true;
+            this.btnSearchIngredient.UseVisualStyleBackColor = false;
             this.btnSearchIngredient.Click += new System.EventHandler(this.btnSearchIngredient_Click);
             // 
             // txtIngredient
             // 
-            this.txtIngredient.Location = new System.Drawing.Point(193, 43);
+            this.txtIngredient.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtIngredient.Location = new System.Drawing.Point(248, 43);
             this.txtIngredient.Name = "txtIngredient";
-            this.txtIngredient.Size = new System.Drawing.Size(262, 30);
+            this.txtIngredient.Size = new System.Drawing.Size(262, 32);
             this.txtIngredient.TabIndex = 1;
             // 
             // lblIngredient
             // 
             this.lblIngredient.AutoSize = true;
-            this.lblIngredient.Location = new System.Drawing.Point(85, 46);
+            this.lblIngredient.Location = new System.Drawing.Point(103, 46);
             this.lblIngredient.Name = "lblIngredient";
-            this.lblIngredient.Size = new System.Drawing.Size(98, 25);
+            this.lblIngredient.Size = new System.Drawing.Size(118, 25);
             this.lblIngredient.TabIndex = 0;
             this.lblIngredient.Text = "Ingredient";
             // 
@@ -298,6 +310,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.gbCInventory);
             this.panel1.Location = new System.Drawing.Point(22, -1);
             this.panel1.Name = "panel1";
