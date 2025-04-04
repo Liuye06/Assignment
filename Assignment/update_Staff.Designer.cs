@@ -73,6 +73,7 @@
             this.panel1.Size = new System.Drawing.Size(257, 453);
             this.panel1.TabIndex = 5;
             this.panel1.UseWaitCursor = true;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btn_view
             // 

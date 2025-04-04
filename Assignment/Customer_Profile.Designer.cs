@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_Profile));
             this.gbCustomerProfile = new System.Windows.Forms.GroupBox();
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cmbGender = new System.Windows.Forms.ComboBox();
@@ -53,9 +54,11 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.gbCustomerProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
             this.tableSidebar_Customer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // gbCustomerProfile
@@ -75,16 +78,16 @@
             this.gbCustomerProfile.Controls.Add(this.lblProfilePic);
             this.gbCustomerProfile.Controls.Add(this.lblEmail);
             this.gbCustomerProfile.Controls.Add(this.lblName);
-            this.gbCustomerProfile.Location = new System.Drawing.Point(218, 72);
+            this.gbCustomerProfile.Location = new System.Drawing.Point(260, 51);
             this.gbCustomerProfile.Name = "gbCustomerProfile";
-            this.gbCustomerProfile.Size = new System.Drawing.Size(852, 369);
+            this.gbCustomerProfile.Size = new System.Drawing.Size(796, 369);
             this.gbCustomerProfile.TabIndex = 16;
             this.gbCustomerProfile.TabStop = false;
             this.gbCustomerProfile.Text = "Customer Profile";
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(161, 256);
+            this.dtpDOB.Location = new System.Drawing.Point(142, 262);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(271, 30);
             this.dtpDOB.TabIndex = 3;
@@ -95,14 +98,14 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbGender.Location = new System.Drawing.Point(161, 309);
+            this.cmbGender.Location = new System.Drawing.Point(142, 315);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(271, 33);
             this.cmbGender.TabIndex = 19;
             // 
             // picProfilePic
             // 
-            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
+            this.picProfilePic.Location = new System.Drawing.Point(509, 82);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
             this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,14 +114,14 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(161, 92);
+            this.txtPassword.Location = new System.Drawing.Point(142, 98);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(271, 30);
             this.txtPassword.TabIndex = 17;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(161, 38);
+            this.txtUsername.Location = new System.Drawing.Point(142, 44);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(271, 30);
             this.txtUsername.TabIndex = 16;
@@ -126,7 +129,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(37, 95);
+            this.lblPassword.Location = new System.Drawing.Point(18, 101);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(98, 25);
             this.lblPassword.TabIndex = 15;
@@ -135,7 +138,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(37, 41);
+            this.lblUsername.Location = new System.Drawing.Point(18, 47);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(102, 25);
             this.lblUsername.TabIndex = 14;
@@ -144,7 +147,7 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(37, 310);
+            this.lblGender.Location = new System.Drawing.Point(18, 316);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(77, 25);
             this.lblGender.TabIndex = 11;
@@ -153,7 +156,7 @@
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(37, 261);
+            this.lblDOB.Location = new System.Drawing.Point(18, 267);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(118, 25);
             this.lblDOB.TabIndex = 10;
@@ -161,9 +164,9 @@
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(461, 307);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(489, 313);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(371, 35);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(286, 35);
             this.btnUpdateProfile.TabIndex = 9;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
@@ -171,14 +174,14 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(161, 201);
+            this.txtEmail.Location = new System.Drawing.Point(142, 207);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(271, 30);
             this.txtEmail.TabIndex = 8;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(161, 147);
+            this.txtName.Location = new System.Drawing.Point(142, 153);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(271, 30);
             this.txtName.TabIndex = 7;
@@ -186,7 +189,7 @@
             // lblProfilePic
             // 
             this.lblProfilePic.AutoSize = true;
-            this.lblProfilePic.Location = new System.Drawing.Point(539, 43);
+            this.lblProfilePic.Location = new System.Drawing.Point(504, 49);
             this.lblProfilePic.Name = "lblProfilePic";
             this.lblProfilePic.Size = new System.Drawing.Size(131, 25);
             this.lblProfilePic.TabIndex = 4;
@@ -195,7 +198,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(37, 204);
+            this.lblEmail.Location = new System.Drawing.Point(18, 210);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(60, 25);
             this.lblEmail.TabIndex = 2;
@@ -204,7 +207,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(37, 150);
+            this.lblName.Location = new System.Drawing.Point(18, 156);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(64, 25);
             this.lblName.TabIndex = 0;
@@ -212,8 +215,11 @@
             // 
             // tableSidebar_Customer
             // 
+            this.tableSidebar_Customer.AutoScroll = true;
+            this.tableSidebar_Customer.BackColor = System.Drawing.Color.Firebrick;
             this.tableSidebar_Customer.ColumnCount = 1;
             this.tableSidebar_Customer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableSidebar_Customer.Controls.Add(this.pic_logo, 0, 0);
             this.tableSidebar_Customer.Controls.Add(this.btnLogOut, 0, 8);
             this.tableSidebar_Customer.Controls.Add(this.btnMakeReservation, 0, 5);
             this.tableSidebar_Customer.Controls.Add(this.btnViewReservation, 0, 4);
@@ -222,113 +228,176 @@
             this.tableSidebar_Customer.Controls.Add(this.btnViewOrders, 0, 2);
             this.tableSidebar_Customer.Controls.Add(this.btnProfile, 0, 1);
             this.tableSidebar_Customer.Controls.Add(this.btnMakeOrder, 0, 6);
-            this.tableSidebar_Customer.Location = new System.Drawing.Point(12, 17);
+            this.tableSidebar_Customer.Location = new System.Drawing.Point(12, -1);
             this.tableSidebar_Customer.Name = "tableSidebar_Customer";
             this.tableSidebar_Customer.RowCount = 10;
-            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableSidebar_Customer.Size = new System.Drawing.Size(200, 424);
+            this.tableSidebar_Customer.Size = new System.Drawing.Size(228, 450);
             this.tableSidebar_Customer.TabIndex = 20;
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(4, 374);
+            this.btnLogOut.BackColor = System.Drawing.Color.IndianRed;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogOut.Location = new System.Drawing.Point(4, 519);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(192, 32);
+            this.btnLogOut.Size = new System.Drawing.Size(199, 37);
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click_1);
             // 
             // btnMakeReservation
             // 
-            this.btnMakeReservation.Location = new System.Drawing.Point(4, 224);
+            this.btnMakeReservation.BackColor = System.Drawing.Color.IndianRed;
+            this.btnMakeReservation.FlatAppearance.BorderSize = 0;
+            this.btnMakeReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMakeReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnMakeReservation.Image")));
+            this.btnMakeReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMakeReservation.Location = new System.Drawing.Point(4, 359);
             this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeReservation.Name = "btnMakeReservation";
-            this.btnMakeReservation.Size = new System.Drawing.Size(192, 62);
+            this.btnMakeReservation.Size = new System.Drawing.Size(199, 62);
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation Request";
-            this.btnMakeReservation.UseVisualStyleBackColor = true;
+            this.btnMakeReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnMakeReservation.UseVisualStyleBackColor = false;
             this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click_1);
             // 
             // btnViewReservation
             // 
-            this.btnViewReservation.Location = new System.Drawing.Point(4, 184);
+            this.btnViewReservation.BackColor = System.Drawing.Color.IndianRed;
+            this.btnViewReservation.FlatAppearance.BorderSize = 0;
+            this.btnViewReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReservation.Image")));
+            this.btnViewReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewReservation.Location = new System.Drawing.Point(4, 314);
             this.btnViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReservation.Name = "btnViewReservation";
-            this.btnViewReservation.Size = new System.Drawing.Size(192, 32);
+            this.btnViewReservation.Size = new System.Drawing.Size(199, 37);
             this.btnViewReservation.TabIndex = 5;
             this.btnViewReservation.Text = "View Reservation";
-            this.btnViewReservation.UseVisualStyleBackColor = true;
+            this.btnViewReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnViewReservation.UseVisualStyleBackColor = false;
             this.btnViewReservation.Click += new System.EventHandler(this.btnViewReservation_Click);
             // 
             // btnFeedback
             // 
-            this.btnFeedback.Location = new System.Drawing.Point(4, 334);
+            this.btnFeedback.BackColor = System.Drawing.Color.IndianRed;
+            this.btnFeedback.FlatAppearance.BorderSize = 0;
+            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedback.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback.Image = ((System.Drawing.Image)(resources.GetObject("btnFeedback.Image")));
+            this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFeedback.Location = new System.Drawing.Point(4, 474);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeedback.Name = "btnFeedback";
-            this.btnFeedback.Size = new System.Drawing.Size(192, 32);
+            this.btnFeedback.Size = new System.Drawing.Size(199, 37);
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
-            this.btnFeedback.UseVisualStyleBackColor = true;
+            this.btnFeedback.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnFeedback.UseVisualStyleBackColor = false;
             this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click_1);
             // 
             // btnViewReplyRequest
             // 
-            this.btnViewReplyRequest.Location = new System.Drawing.Point(4, 144);
+            this.btnViewReplyRequest.BackColor = System.Drawing.Color.IndianRed;
+            this.btnViewReplyRequest.FlatAppearance.BorderSize = 0;
+            this.btnViewReplyRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewReplyRequest.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReplyRequest.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReplyRequest.Image")));
+            this.btnViewReplyRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewReplyRequest.Location = new System.Drawing.Point(4, 244);
             this.btnViewReplyRequest.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReplyRequest.Name = "btnViewReplyRequest";
-            this.btnViewReplyRequest.Size = new System.Drawing.Size(192, 32);
+            this.btnViewReplyRequest.Size = new System.Drawing.Size(199, 62);
             this.btnViewReplyRequest.TabIndex = 6;
             this.btnViewReplyRequest.Text = "View Reply Request";
-            this.btnViewReplyRequest.UseVisualStyleBackColor = true;
+            this.btnViewReplyRequest.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnViewReplyRequest.UseVisualStyleBackColor = false;
             this.btnViewReplyRequest.Click += new System.EventHandler(this.btnViewReplyRequest_Click);
             // 
             // btnViewOrders
             // 
+            this.btnViewOrders.BackColor = System.Drawing.Color.IndianRed;
             this.btnViewOrders.FlatAppearance.BorderSize = 0;
             this.btnViewOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewOrders.Location = new System.Drawing.Point(4, 104);
+            this.btnViewOrders.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnViewOrders.Image")));
+            this.btnViewOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnViewOrders.Location = new System.Drawing.Point(4, 199);
             this.btnViewOrders.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewOrders.Name = "btnViewOrders";
-            this.btnViewOrders.Size = new System.Drawing.Size(192, 32);
+            this.btnViewOrders.Size = new System.Drawing.Size(199, 37);
             this.btnViewOrders.TabIndex = 4;
             this.btnViewOrders.Text = "View Orders";
-            this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnViewOrders.UseVisualStyleBackColor = false;
             this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click_1);
             // 
             // btnProfile
             // 
+            this.btnProfile.BackColor = System.Drawing.Color.IndianRed;
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Location = new System.Drawing.Point(4, 64);
+            this.btnProfile.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
+            this.btnProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProfile.Location = new System.Drawing.Point(4, 154);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(4);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(192, 32);
+            this.btnProfile.Size = new System.Drawing.Size(199, 37);
             this.btnProfile.TabIndex = 9;
             this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click_1);
             // 
             // btnMakeOrder
             // 
-            this.btnMakeOrder.Location = new System.Drawing.Point(4, 294);
+            this.btnMakeOrder.BackColor = System.Drawing.Color.IndianRed;
+            this.btnMakeOrder.FlatAppearance.BorderSize = 0;
+            this.btnMakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMakeOrder.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnMakeOrder.Image")));
+            this.btnMakeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMakeOrder.Location = new System.Drawing.Point(4, 429);
             this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeOrder.Name = "btnMakeOrder";
-            this.btnMakeOrder.Size = new System.Drawing.Size(192, 32);
+            this.btnMakeOrder.Size = new System.Drawing.Size(199, 37);
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
-            this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click_1);
+            // 
+            // pic_logo
+            // 
+            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(3, 3);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(201, 144);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 11;
+            this.pic_logo.TabStop = false;
             // 
             // Customer_Profile
             // 
@@ -345,6 +414,7 @@
             this.gbCustomerProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
             this.tableSidebar_Customer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,5 +445,6 @@
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnMakeOrder;
+        private System.Windows.Forms.PictureBox pic_logo;
     }
 }
