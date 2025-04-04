@@ -179,12 +179,6 @@
       <DependentUpon>CustomerMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerReservationManager.cs" />
-    <Compile Include="Customer_EditProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Customer_EditProfile.Designer.cs">
-      <DependentUpon>Customer_EditProfile.cs</DependentUpon>
-    </Compile>
     <Compile Include="Customer_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,12 +209,6 @@
     </Compile>
     <Compile Include="ManagerProfileDB.cs" />
     <Compile Include="OrderFeedback.cs" />
-    <Compile Include="Orders_Confirmation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Orders_Confirmation.Designer.cs">
-      <DependentUpon>Orders_Confirmation.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddChefIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -511,9 +499,6 @@
     <EmbeddedResource Include="CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer_EditProfile.resx">
-      <DependentUpon>Customer_EditProfile.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Customer_Profile.resx">
       <DependentUpon>Customer_Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,9 +510,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerHomepage.resx">
       <DependentUpon>ManagerHomepage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Orders_Confirmation.resx">
-      <DependentUpon>Orders_Confirmation.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="SidebarManager.cs" />
     <Compile Include="ChefCustomerOrder.cs">

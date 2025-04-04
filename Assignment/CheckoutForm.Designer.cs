@@ -153,6 +153,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CheckoutForm";
             this.Text = "CheckoutForm";
+            this.Load += new System.EventHandler(this.CheckoutForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

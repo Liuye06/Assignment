@@ -38,7 +38,7 @@
             this.btnMHall_MMenu = new System.Windows.Forms.Button();
             this.btn_HRReport_MMenu = new System.Windows.Forms.Button();
             this.btnUProfile_MMenu = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_welcomeManager = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableSidebar_MMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -189,18 +189,18 @@
             this.btnUProfile_MMenu.UseVisualStyleBackColor = false;
             this.btnUProfile_MMenu.Click += new System.EventHandler(this.btnUProfile_MMenu_Click);
             // 
-            // label2
+            // lbl_welcomeManager
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.WindowText;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 26F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(451, 177);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(420, 53);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Welcome Back To Work";
+            this.lbl_welcomeManager.AutoSize = true;
+            this.lbl_welcomeManager.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lbl_welcomeManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_welcomeManager.Font = new System.Drawing.Font("Monotype Corsiva", 26F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_welcomeManager.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_welcomeManager.Location = new System.Drawing.Point(451, 177);
+            this.lbl_welcomeManager.Name = "lbl_welcomeManager";
+            this.lbl_welcomeManager.Size = new System.Drawing.Size(420, 53);
+            this.lbl_welcomeManager.TabIndex = 9;
+            this.lbl_welcomeManager.Text = "Welcome Back To Work";
             // 
             // pictureBox1
             // 
@@ -216,7 +216,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_welcomeManager);
             this.Controls.Add(this.tableSidebar_MMenu);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -243,7 +243,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pic_logo;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_welcomeManager;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
