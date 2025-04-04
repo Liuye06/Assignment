@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel_Payment = new System.Windows.Forms.Panel();
-            this.btn_Orders = new System.Windows.Forms.Button();
-            this.btn_Reservations = new System.Windows.Forms.Button();
             this.tableSidebar_Customer = new System.Windows.Forms.TableLayoutPanel();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnMakeReservation = new System.Windows.Forms.Button();
@@ -40,40 +37,15 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
-            this.panel_Payment.SuspendLayout();
+            this.panel_ViewReservation = new System.Windows.Forms.Panel();
+            this.btnConfirmNPay = new System.Windows.Forms.Button();
+            this.listView_ReservationRequest = new System.Windows.Forms.ListView();
+            this.lbl_Total_O = new System.Windows.Forms.Label();
+            this.lbl_OrderID_O = new System.Windows.Forms.Label();
+            this.lblViewReservation = new System.Windows.Forms.Label();
             this.tableSidebar_Customer.SuspendLayout();
+            this.panel_ViewReservation.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel_Payment
-            // 
-            this.panel_Payment.AutoScroll = true;
-            this.panel_Payment.Controls.Add(this.btn_Orders);
-            this.panel_Payment.Controls.Add(this.btn_Reservations);
-            this.panel_Payment.Location = new System.Drawing.Point(219, 81);
-            this.panel_Payment.Margin = new System.Windows.Forms.Padding(4);
-            this.panel_Payment.Name = "panel_Payment";
-            this.panel_Payment.Size = new System.Drawing.Size(850, 360);
-            this.panel_Payment.TabIndex = 57;
-            // 
-            // btn_Orders
-            // 
-            this.btn_Orders.Location = new System.Drawing.Point(431, 158);
-            this.btn_Orders.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Orders.Name = "btn_Orders";
-            this.btn_Orders.Size = new System.Drawing.Size(204, 98);
-            this.btn_Orders.TabIndex = 3;
-            this.btn_Orders.Text = "Make Payment For Orders";
-            this.btn_Orders.UseVisualStyleBackColor = true;
-            // 
-            // btn_Reservations
-            // 
-            this.btn_Reservations.Location = new System.Drawing.Point(128, 158);
-            this.btn_Reservations.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_Reservations.Name = "btn_Reservations";
-            this.btn_Reservations.Size = new System.Drawing.Size(204, 98);
-            this.btn_Reservations.TabIndex = 2;
-            this.btn_Reservations.Text = "Make Payment For Reservation";
-            this.btn_Reservations.UseVisualStyleBackColor = true;
             // 
             // tableSidebar_Customer
             // 
@@ -195,25 +167,88 @@
             this.btnMakeOrder.UseVisualStyleBackColor = true;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
+            // panel_ViewReservation
+            // 
+            this.panel_ViewReservation.AutoScroll = true;
+            this.panel_ViewReservation.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel_ViewReservation.Controls.Add(this.btnConfirmNPay);
+            this.panel_ViewReservation.Controls.Add(this.listView_ReservationRequest);
+            this.panel_ViewReservation.Controls.Add(this.lbl_Total_O);
+            this.panel_ViewReservation.Controls.Add(this.lbl_OrderID_O);
+            this.panel_ViewReservation.Controls.Add(this.lblViewReservation);
+            this.panel_ViewReservation.Location = new System.Drawing.Point(219, 81);
+            this.panel_ViewReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.panel_ViewReservation.Name = "panel_ViewReservation";
+            this.panel_ViewReservation.Size = new System.Drawing.Size(850, 360);
+            this.panel_ViewReservation.TabIndex = 47;
+            // 
+            // btnConfirmNPay
+            // 
+            this.btnConfirmNPay.Location = new System.Drawing.Point(591, 305);
+            this.btnConfirmNPay.Name = "btnConfirmNPay";
+            this.btnConfirmNPay.Size = new System.Drawing.Size(212, 42);
+            this.btnConfirmNPay.TabIndex = 24;
+            this.btnConfirmNPay.Text = "Confirm and Pay";
+            this.btnConfirmNPay.UseVisualStyleBackColor = true;
+            this.btnConfirmNPay.Click += new System.EventHandler(this.btnMakePayment_Click);
+            // 
+            // listView_ReservationRequest
+            // 
+            this.listView_ReservationRequest.FullRowSelect = true;
+            this.listView_ReservationRequest.GridLines = true;
+            this.listView_ReservationRequest.HideSelection = false;
+            this.listView_ReservationRequest.Location = new System.Drawing.Point(38, 58);
+            this.listView_ReservationRequest.Name = "listView_ReservationRequest";
+            this.listView_ReservationRequest.Size = new System.Drawing.Size(765, 235);
+            this.listView_ReservationRequest.TabIndex = 23;
+            this.listView_ReservationRequest.UseCompatibleStateImageBehavior = false;
+            this.listView_ReservationRequest.View = System.Windows.Forms.View.Details;
+            // 
+            // lbl_Total_O
+            // 
+            this.lbl_Total_O.AutoSize = true;
+            this.lbl_Total_O.Location = new System.Drawing.Point(299, 130);
+            this.lbl_Total_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_Total_O.Name = "lbl_Total_O";
+            this.lbl_Total_O.Size = new System.Drawing.Size(0, 25);
+            this.lbl_Total_O.TabIndex = 22;
+            // 
+            // lbl_OrderID_O
+            // 
+            this.lbl_OrderID_O.AutoSize = true;
+            this.lbl_OrderID_O.Location = new System.Drawing.Point(299, 99);
+            this.lbl_OrderID_O.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_OrderID_O.Name = "lbl_OrderID_O";
+            this.lbl_OrderID_O.Size = new System.Drawing.Size(0, 25);
+            this.lbl_OrderID_O.TabIndex = 21;
+            // 
+            // lblViewReservation
+            // 
+            this.lblViewReservation.AutoSize = true;
+            this.lblViewReservation.Location = new System.Drawing.Point(33, 18);
+            this.lblViewReservation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblViewReservation.Name = "lblViewReservation";
+            this.lblViewReservation.Size = new System.Drawing.Size(260, 25);
+            this.lblViewReservation.TabIndex = 19;
+            this.lblViewReservation.Text = "Your Reservation and Status";
+            // 
             // CustomerViewReservation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
+            this.Controls.Add(this.panel_ViewReservation);
             this.Controls.Add(this.tableSidebar_Customer);
-            this.Controls.Add(this.panel_Payment);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerViewReservation";
             this.Text = "CustomerMakePayment";
-            this.panel_Payment.ResumeLayout(false);
             this.tableSidebar_Customer.ResumeLayout(false);
+            this.panel_ViewReservation.ResumeLayout(false);
+            this.panel_ViewReservation.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel_Payment;
-        private System.Windows.Forms.Button btn_Orders;
-        private System.Windows.Forms.Button btn_Reservations;
         private System.Windows.Forms.TableLayoutPanel tableSidebar_Customer;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnMakeReservation;
@@ -223,5 +258,11 @@
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnMakeOrder;
+        private System.Windows.Forms.Panel panel_ViewReservation;
+        private System.Windows.Forms.ListView listView_ReservationRequest;
+        private System.Windows.Forms.Label lbl_Total_O;
+        private System.Windows.Forms.Label lbl_OrderID_O;
+        private System.Windows.Forms.Label lblViewReservation;
+        private System.Windows.Forms.Button btnConfirmNPay;
     }
 }

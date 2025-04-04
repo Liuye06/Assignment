@@ -471,12 +471,6 @@
     <EmbeddedResource Include="loginPage.resx">
       <DependentUpon>loginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="ReservationPayment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReservationPayment.Designer.cs">
-      <DependentUpon>ReservationPayment.cs</DependentUpon>
-    </Compile>
     <Compile Include="salesReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +498,7 @@
     <Compile Include="update_Staff.Designer.cs">
       <DependentUpon>update_Staff.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewCustomerReservationNPayment.cs" />
     <Compile Include="view_CusFeedback.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -641,9 +636,6 @@
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EmbeddedResource Include="ReservationPayment.resx">
-      <DependentUpon>ReservationPayment.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="salesReport.resx">
       <DependentUpon>salesReport.cs</DependentUpon>
     </EmbeddedResource>
