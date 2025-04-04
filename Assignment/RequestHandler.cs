@@ -95,7 +95,7 @@ namespace Assignment
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT COUNT(*) FROM Reservation WHERE Request_ID = @RequestID";
+                string query = "SELECT COUNT(*) FROM Reservation WHERE R_Req_ID = @RequestID";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {

@@ -85,12 +85,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddReservation.Designer.cs">
-      <DependentUpon>AddReservation.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChefDetails.cs" />
     <Compile Include="ChefEditProfile.cs">
       <SubType>Form</SubType>
@@ -396,7 +390,6 @@
       <DependentUpon>ReplyRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="RequestHandler.cs" />
-    <Compile Include="RersevationCoordinator.cs" />
     <Compile Include="Reservation.cs" />
     <Compile Include="ReservationForm.cs">
       <SubType>Form</SubType>
@@ -404,9 +397,6 @@
     <Compile Include="ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddReservation.resx">
-      <DependentUpon>AddReservation.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChefEditProfile.resx">
       <DependentUpon>ChefEditProfile.cs</DependentUpon>
     </EmbeddedResource>
