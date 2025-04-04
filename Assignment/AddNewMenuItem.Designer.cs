@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewMenuItem));
             this.gbAddMenu = new System.Windows.Forms.GroupBox();
             this.btnCancelMenu = new System.Windows.Forms.Button();
             this.btnAddMenuItem = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             // 
             // gbAddMenu
             // 
+            this.gbAddMenu.BackColor = System.Drawing.Color.Transparent;
             this.gbAddMenu.Controls.Add(this.btnCancelMenu);
             this.gbAddMenu.Controls.Add(this.btnAddMenuItem);
             this.gbAddMenu.Controls.Add(this.btnBrowseImageMenu);
@@ -55,16 +57,19 @@
             this.gbAddMenu.Controls.Add(this.lblCategoryMenu);
             this.gbAddMenu.Controls.Add(this.lblPriceMenu);
             this.gbAddMenu.Controls.Add(this.lblAddMenu);
-            this.gbAddMenu.Location = new System.Drawing.Point(24, 12);
+            this.gbAddMenu.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAddMenu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbAddMenu.Location = new System.Drawing.Point(142, 34);
             this.gbAddMenu.Name = "gbAddMenu";
-            this.gbAddMenu.Size = new System.Drawing.Size(1042, 429);
+            this.gbAddMenu.Size = new System.Drawing.Size(852, 407);
             this.gbAddMenu.TabIndex = 1;
             this.gbAddMenu.TabStop = false;
             this.gbAddMenu.Text = "Add New Menu Item";
             // 
             // btnCancelMenu
             // 
-            this.btnCancelMenu.Location = new System.Drawing.Point(512, 351);
+            this.btnCancelMenu.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnCancelMenu.Location = new System.Drawing.Point(419, 331);
             this.btnCancelMenu.Name = "btnCancelMenu";
             this.btnCancelMenu.Size = new System.Drawing.Size(370, 34);
             this.btnCancelMenu.TabIndex = 9;
@@ -74,7 +79,8 @@
             // 
             // btnAddMenuItem
             // 
-            this.btnAddMenuItem.Location = new System.Drawing.Point(136, 351);
+            this.btnAddMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnAddMenuItem.Location = new System.Drawing.Point(43, 331);
             this.btnAddMenuItem.Name = "btnAddMenuItem";
             this.btnAddMenuItem.Size = new System.Drawing.Size(370, 34);
             this.btnAddMenuItem.TabIndex = 8;
@@ -84,7 +90,8 @@
             // 
             // btnBrowseImageMenu
             // 
-            this.btnBrowseImageMenu.Location = new System.Drawing.Point(663, 300);
+            this.btnBrowseImageMenu.ForeColor = System.Drawing.Color.Orange;
+            this.btnBrowseImageMenu.Location = new System.Drawing.Point(570, 280);
             this.btnBrowseImageMenu.Name = "btnBrowseImageMenu";
             this.btnBrowseImageMenu.Size = new System.Drawing.Size(219, 34);
             this.btnBrowseImageMenu.TabIndex = 7;
@@ -94,7 +101,8 @@
             // 
             // picAddMenu
             // 
-            this.picAddMenu.Location = new System.Drawing.Point(663, 80);
+            this.picAddMenu.BackColor = System.Drawing.Color.Gainsboro;
+            this.picAddMenu.Location = new System.Drawing.Point(570, 60);
             this.picAddMenu.Name = "picAddMenu";
             this.picAddMenu.Size = new System.Drawing.Size(219, 210);
             this.picAddMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,57 +118,62 @@
             "Side ",
             "Beverage",
             "Dessert"});
-            this.cmbCategoryMenu.Location = new System.Drawing.Point(298, 257);
+            this.cmbCategoryMenu.Location = new System.Drawing.Point(205, 237);
             this.cmbCategoryMenu.Name = "cmbCategoryMenu";
             this.cmbCategoryMenu.Size = new System.Drawing.Size(301, 33);
             this.cmbCategoryMenu.TabIndex = 5;
             // 
             // txtPriceMenu
             // 
-            this.txtPriceMenu.Location = new System.Drawing.Point(298, 176);
+            this.txtPriceMenu.Location = new System.Drawing.Point(205, 156);
             this.txtPriceMenu.Name = "txtPriceMenu";
-            this.txtPriceMenu.Size = new System.Drawing.Size(301, 30);
+            this.txtPriceMenu.Size = new System.Drawing.Size(301, 32);
             this.txtPriceMenu.TabIndex = 4;
             // 
             // txtAddMenu
             // 
-            this.txtAddMenu.Location = new System.Drawing.Point(298, 98);
+            this.txtAddMenu.Location = new System.Drawing.Point(205, 78);
             this.txtAddMenu.Name = "txtAddMenu";
-            this.txtAddMenu.Size = new System.Drawing.Size(301, 30);
+            this.txtAddMenu.Size = new System.Drawing.Size(301, 32);
             this.txtAddMenu.TabIndex = 3;
             // 
             // lblCategoryMenu
             // 
             this.lblCategoryMenu.AutoSize = true;
-            this.lblCategoryMenu.Location = new System.Drawing.Point(159, 260);
+            this.lblCategoryMenu.Location = new System.Drawing.Point(66, 240);
             this.lblCategoryMenu.Name = "lblCategoryMenu";
-            this.lblCategoryMenu.Size = new System.Drawing.Size(92, 25);
+            this.lblCategoryMenu.Size = new System.Drawing.Size(99, 25);
             this.lblCategoryMenu.TabIndex = 2;
             this.lblCategoryMenu.Text = "Category";
             // 
             // lblPriceMenu
             // 
             this.lblPriceMenu.AutoSize = true;
-            this.lblPriceMenu.Location = new System.Drawing.Point(159, 179);
+            this.lblPriceMenu.Location = new System.Drawing.Point(66, 159);
             this.lblPriceMenu.Name = "lblPriceMenu";
-            this.lblPriceMenu.Size = new System.Drawing.Size(56, 25);
+            this.lblPriceMenu.Size = new System.Drawing.Size(66, 25);
             this.lblPriceMenu.TabIndex = 1;
             this.lblPriceMenu.Text = "Price";
             // 
             // lblAddMenu
             // 
             this.lblAddMenu.AutoSize = true;
-            this.lblAddMenu.Location = new System.Drawing.Point(159, 101);
+            this.lblAddMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAddMenu.Location = new System.Drawing.Point(66, 81);
             this.lblAddMenu.Name = "lblAddMenu";
-            this.lblAddMenu.Size = new System.Drawing.Size(64, 25);
+            this.lblAddMenu.Size = new System.Drawing.Size(69, 25);
             this.lblAddMenu.TabIndex = 0;
             this.lblAddMenu.Text = "Name";
             // 
             // AddNewMenuItem
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbAddMenu);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AddNewMenuItem";
             this.Text = "Add New Menu Item";

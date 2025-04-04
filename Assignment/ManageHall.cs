@@ -156,5 +156,10 @@ namespace Assignment
         {
             UserSessionManager.Logout(this);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
