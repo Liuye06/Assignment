@@ -41,14 +41,14 @@
             // 
             // gbAddNewIngredient
             // 
-            this.gbAddNewIngredient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.gbAddNewIngredient.BackColor = System.Drawing.Color.Maroon;
             this.gbAddNewIngredient.Controls.Add(this.btnCancelIngredient);
             this.gbAddNewIngredient.Controls.Add(this.txtAddStock);
             this.gbAddNewIngredient.Controls.Add(this.lblAddStock);
             this.gbAddNewIngredient.Controls.Add(this.btnAddNewIngredient);
             this.gbAddNewIngredient.Controls.Add(this.lblAddIngredient);
             this.gbAddNewIngredient.Controls.Add(this.txtAddIngredient);
-            this.gbAddNewIngredient.Location = new System.Drawing.Point(71, 27);
+            this.gbAddNewIngredient.Location = new System.Drawing.Point(71, 39);
             this.gbAddNewIngredient.Name = "gbAddNewIngredient";
             this.gbAddNewIngredient.Size = new System.Drawing.Size(963, 402);
             this.gbAddNewIngredient.TabIndex = 7;

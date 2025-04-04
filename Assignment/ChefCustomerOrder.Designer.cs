@@ -50,6 +50,7 @@
             this.OrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChefInCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CanUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableSidebar_ChefCustomerOrder.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
@@ -189,7 +190,7 @@
             this.gbShowCusOrder.Controls.Add(this.lblCusStatusOrder);
             this.gbShowCusOrder.Controls.Add(this.cmbCusOrderStatus);
             this.gbShowCusOrder.Controls.Add(this.dgvChefCusOrder);
-            this.gbShowCusOrder.Location = new System.Drawing.Point(254, 73);
+            this.gbShowCusOrder.Location = new System.Drawing.Point(254, 55);
             this.gbShowCusOrder.Name = "gbShowCusOrder";
             this.gbShowCusOrder.Size = new System.Drawing.Size(816, 369);
             this.gbShowCusOrder.TabIndex = 7;
@@ -320,6 +321,13 @@
             this.CanUpdate.Visible = false;
             this.CanUpdate.Width = 125;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(238, -6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(844, 458);
+            this.panel1.TabIndex = 8;
+            // 
             // ChefCustomerOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -327,6 +335,7 @@
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbShowCusOrder);
             this.Controls.Add(this.tableSidebar_ChefCustomerOrder);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ChefCustomerOrder";
@@ -365,5 +374,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.Label lbl_chef;
+        private System.Windows.Forms.Panel panel1;
     }
 }

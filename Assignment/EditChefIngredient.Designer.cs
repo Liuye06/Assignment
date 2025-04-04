@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditChefIngredient));
             this.gbECIngredient = new System.Windows.Forms.GroupBox();
             this.btnCancelEditIngredient = new System.Windows.Forms.Button();
             this.btnSaveIngredient = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@
             // 
             // gbECIngredient
             // 
-            this.gbECIngredient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.gbECIngredient.BackColor = System.Drawing.Color.Maroon;
             this.gbECIngredient.Controls.Add(this.btnCancelEditIngredient);
             this.gbECIngredient.Controls.Add(this.btnSaveIngredient);
             this.gbECIngredient.Controls.Add(this.txtEditStock);
@@ -110,6 +111,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbECIngredient);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
