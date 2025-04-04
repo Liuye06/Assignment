@@ -87,5 +87,10 @@ namespace Assignment
         {
             _sidebarManager.NavigateTo(new ManagerProfile(currentUserID));
         }
+
+        private void txtPriceHall_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

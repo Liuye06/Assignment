@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainManageHall));
             this.tableSidebar_MHall = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnMMenu_MHall = new System.Windows.Forms.Button();
             this.btnMHall_MHall = new System.Windows.Forms.Button();
@@ -92,6 +92,16 @@
             this.panel1.Size = new System.Drawing.Size(194, 144);
             this.panel1.TabIndex = 18;
             // 
+            // pic_logo
+            // 
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(0, 42);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(138, 102);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 8;
+            this.pic_logo.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -103,23 +113,13 @@
             this.label1.Text = "Manager";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pic_logo
-            // 
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(0, 42);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(138, 102);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 8;
-            this.pic_logo.TabStop = false;
-            // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Gainsboro;
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 343);
@@ -137,7 +137,7 @@
             this.btnMMenu_MHall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMMenu_MHall.FlatAppearance.BorderSize = 0;
             this.btnMMenu_MHall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMMenu_MHall.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMMenu_MHall.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMMenu_MHall.Image = ((System.Drawing.Image)(resources.GetObject("btnMMenu_MHall.Image")));
             this.btnMMenu_MHall.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMMenu_MHall.Location = new System.Drawing.Point(3, 153);
@@ -155,7 +155,7 @@
             this.btnMHall_MHall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMHall_MHall.FlatAppearance.BorderSize = 0;
             this.btnMHall_MHall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMHall_MHall.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMHall_MHall.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMHall_MHall.Image = ((System.Drawing.Image)(resources.GetObject("btnMHall_MHall.Image")));
             this.btnMHall_MHall.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMHall_MHall.Location = new System.Drawing.Point(3, 193);
@@ -173,7 +173,7 @@
             this.btnHRReport_MHall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHRReport_MHall.FlatAppearance.BorderSize = 0;
             this.btnHRReport_MHall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHRReport_MHall.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHRReport_MHall.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHRReport_MHall.Image = ((System.Drawing.Image)(resources.GetObject("btnHRReport_MHall.Image")));
             this.btnHRReport_MHall.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHRReport_MHall.Location = new System.Drawing.Point(3, 233);
@@ -191,7 +191,7 @@
             this.btnUProfile_MHall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUProfile_MHall.FlatAppearance.BorderSize = 0;
             this.btnUProfile_MHall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUProfile_MHall.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUProfile_MHall.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUProfile_MHall.Image = ((System.Drawing.Image)(resources.GetObject("btnUProfile_MHall.Image")));
             this.btnUProfile_MHall.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUProfile_MHall.Location = new System.Drawing.Point(3, 303);
@@ -205,15 +205,16 @@
             // 
             // gbMHall
             // 
-            this.gbMHall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.gbMHall.BackColor = System.Drawing.Color.Transparent;
             this.gbMHall.Controls.Add(this.btnResetHallSearch);
             this.gbMHall.Controls.Add(this.btnAddNewHall);
             this.gbMHall.Controls.Add(this.dgvHall);
             this.gbMHall.Controls.Add(this.btnSearchHall);
             this.gbMHall.Controls.Add(this.txtHall);
             this.gbMHall.Controls.Add(this.lblHall);
+            this.gbMHall.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMHall.ForeColor = System.Drawing.SystemColors.Menu;
-            this.gbMHall.Location = new System.Drawing.Point(48, 55);
+            this.gbMHall.Location = new System.Drawing.Point(52, 42);
             this.gbMHall.Name = "gbMHall";
             this.gbMHall.Size = new System.Drawing.Size(852, 369);
             this.gbMHall.TabIndex = 1;
@@ -223,7 +224,7 @@
             // btnResetHallSearch
             // 
             this.btnResetHallSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnResetHallSearch.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnResetHallSearch.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnResetHallSearch.Location = new System.Drawing.Point(440, 320);
             this.btnResetHallSearch.Name = "btnResetHallSearch";
             this.btnResetHallSearch.Size = new System.Drawing.Size(390, 35);
@@ -235,7 +236,8 @@
             // btnAddNewHall
             // 
             this.btnAddNewHall.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAddNewHall.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnAddNewHall.Font = new System.Drawing.Font("Modern No. 20", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewHall.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnAddNewHall.Location = new System.Drawing.Point(45, 320);
             this.btnAddNewHall.Name = "btnAddNewHall";
             this.btnAddNewHall.Size = new System.Drawing.Size(390, 35);
@@ -307,8 +309,9 @@
             // 
             // btnSearchHall
             // 
-            this.btnSearchHall.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btnSearchHall.Location = new System.Drawing.Point(416, 39);
+            this.btnSearchHall.Font = new System.Drawing.Font("Modern No. 20", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchHall.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnSearchHall.Location = new System.Drawing.Point(440, 39);
             this.btnSearchHall.Name = "btnSearchHall";
             this.btnSearchHall.Size = new System.Drawing.Size(106, 35);
             this.btnSearchHall.TabIndex = 2;
@@ -318,9 +321,9 @@
             // 
             // txtHall
             // 
-            this.txtHall.Location = new System.Drawing.Point(148, 41);
+            this.txtHall.Location = new System.Drawing.Point(172, 41);
             this.txtHall.Name = "txtHall";
-            this.txtHall.Size = new System.Drawing.Size(262, 30);
+            this.txtHall.Size = new System.Drawing.Size(262, 32);
             this.txtHall.TabIndex = 1;
             // 
             // lblHall
@@ -329,7 +332,7 @@
             this.lblHall.ForeColor = System.Drawing.SystemColors.Info;
             this.lblHall.Location = new System.Drawing.Point(40, 44);
             this.lblHall.Name = "lblHall";
-            this.lblHall.Size = new System.Drawing.Size(102, 25);
+            this.lblHall.Size = new System.Drawing.Size(124, 25);
             this.lblHall.TabIndex = 0;
             this.lblHall.Text = "Hall Name";
             // 

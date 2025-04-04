@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerEditProfile));
             this.dtpDOB = new System.Windows.Forms.DateTimePicker();
             this.cmbManagerGender = new System.Windows.Forms.ComboBox();
             this.picManagerProfilePic = new System.Windows.Forms.PictureBox();
@@ -50,7 +51,7 @@
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(295, 266);
+            this.dtpDOB.Location = new System.Drawing.Point(331, 269);
             this.dtpDOB.Name = "dtpDOB";
             this.dtpDOB.Size = new System.Drawing.Size(271, 30);
             this.dtpDOB.TabIndex = 22;
@@ -61,14 +62,15 @@
             this.cmbManagerGender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbManagerGender.Location = new System.Drawing.Point(295, 319);
+            this.cmbManagerGender.Location = new System.Drawing.Point(331, 322);
             this.cmbManagerGender.Name = "cmbManagerGender";
             this.cmbManagerGender.Size = new System.Drawing.Size(271, 33);
             this.cmbManagerGender.TabIndex = 34;
             // 
             // picManagerProfilePic
             // 
-            this.picManagerProfilePic.Location = new System.Drawing.Point(678, 86);
+            this.picManagerProfilePic.BackColor = System.Drawing.Color.Gainsboro;
+            this.picManagerProfilePic.Location = new System.Drawing.Point(689, 86);
             this.picManagerProfilePic.Name = "picManagerProfilePic";
             this.picManagerProfilePic.Size = new System.Drawing.Size(219, 210);
             this.picManagerProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -77,14 +79,14 @@
             // 
             // txtManagerPassword
             // 
-            this.txtManagerPassword.Location = new System.Drawing.Point(295, 102);
+            this.txtManagerPassword.Location = new System.Drawing.Point(331, 105);
             this.txtManagerPassword.Name = "txtManagerPassword";
             this.txtManagerPassword.Size = new System.Drawing.Size(271, 30);
             this.txtManagerPassword.TabIndex = 32;
             // 
             // txtManagerUsername
             // 
-            this.txtManagerUsername.Location = new System.Drawing.Point(295, 48);
+            this.txtManagerUsername.Location = new System.Drawing.Point(331, 51);
             this.txtManagerUsername.Name = "txtManagerUsername";
             this.txtManagerUsername.Size = new System.Drawing.Size(271, 30);
             this.txtManagerUsername.TabIndex = 31;
@@ -92,41 +94,55 @@
             // lblManagerPassword
             // 
             this.lblManagerPassword.AutoSize = true;
-            this.lblManagerPassword.Location = new System.Drawing.Point(171, 105);
+            this.lblManagerPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblManagerPassword.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblManagerPassword.Location = new System.Drawing.Point(155, 105);
             this.lblManagerPassword.Name = "lblManagerPassword";
-            this.lblManagerPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblManagerPassword.Size = new System.Drawing.Size(107, 25);
             this.lblManagerPassword.TabIndex = 30;
             this.lblManagerPassword.Text = "Password";
             // 
             // lblManagerUsername
             // 
             this.lblManagerUsername.AutoSize = true;
-            this.lblManagerUsername.Location = new System.Drawing.Point(171, 51);
+            this.lblManagerUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lblManagerUsername.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerUsername.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblManagerUsername.Location = new System.Drawing.Point(155, 51);
             this.lblManagerUsername.Name = "lblManagerUsername";
-            this.lblManagerUsername.Size = new System.Drawing.Size(102, 25);
+            this.lblManagerUsername.Size = new System.Drawing.Size(111, 25);
             this.lblManagerUsername.TabIndex = 29;
             this.lblManagerUsername.Text = "Username";
             // 
             // lblManagerGender
             // 
             this.lblManagerGender.AutoSize = true;
-            this.lblManagerGender.Location = new System.Drawing.Point(171, 320);
+            this.lblManagerGender.BackColor = System.Drawing.Color.Transparent;
+            this.lblManagerGender.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerGender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblManagerGender.Location = new System.Drawing.Point(155, 320);
             this.lblManagerGender.Name = "lblManagerGender";
-            this.lblManagerGender.Size = new System.Drawing.Size(77, 25);
+            this.lblManagerGender.Size = new System.Drawing.Size(83, 25);
             this.lblManagerGender.TabIndex = 28;
             this.lblManagerGender.Text = "Gender";
             // 
             // lblManagerDOB
             // 
             this.lblManagerDOB.AutoSize = true;
-            this.lblManagerDOB.Location = new System.Drawing.Point(171, 271);
+            this.lblManagerDOB.BackColor = System.Drawing.Color.Transparent;
+            this.lblManagerDOB.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerDOB.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblManagerDOB.Location = new System.Drawing.Point(155, 271);
             this.lblManagerDOB.Name = "lblManagerDOB";
-            this.lblManagerDOB.Size = new System.Drawing.Size(118, 25);
+            this.lblManagerDOB.Size = new System.Drawing.Size(151, 25);
             this.lblManagerDOB.TabIndex = 27;
             this.lblManagerDOB.Text = "Date of Birth";
             // 
             // btnSaveManagerProfile
             // 
+            this.btnSaveManagerProfile.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveManagerProfile.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnSaveManagerProfile.Location = new System.Drawing.Point(149, 393);
             this.btnSaveManagerProfile.Name = "btnSaveManagerProfile";
             this.btnSaveManagerProfile.Size = new System.Drawing.Size(390, 35);
@@ -137,14 +153,14 @@
             // 
             // txtMangerEmail
             // 
-            this.txtMangerEmail.Location = new System.Drawing.Point(295, 211);
+            this.txtMangerEmail.Location = new System.Drawing.Point(331, 214);
             this.txtMangerEmail.Name = "txtMangerEmail";
             this.txtMangerEmail.Size = new System.Drawing.Size(271, 30);
             this.txtMangerEmail.TabIndex = 25;
             // 
             // txtManagerName
             // 
-            this.txtManagerName.Location = new System.Drawing.Point(295, 157);
+            this.txtManagerName.Location = new System.Drawing.Point(331, 160);
             this.txtManagerName.Name = "txtManagerName";
             this.txtManagerName.Size = new System.Drawing.Size(271, 30);
             this.txtManagerName.TabIndex = 24;
@@ -152,32 +168,42 @@
             // lblManagerProfilePic
             // 
             this.lblManagerProfilePic.AutoSize = true;
-            this.lblManagerProfilePic.Location = new System.Drawing.Point(673, 53);
+            this.lblManagerProfilePic.BackColor = System.Drawing.Color.Transparent;
+            this.lblManagerProfilePic.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerProfilePic.Location = new System.Drawing.Point(684, 53);
             this.lblManagerProfilePic.Name = "lblManagerProfilePic";
-            this.lblManagerProfilePic.Size = new System.Drawing.Size(131, 25);
+            this.lblManagerProfilePic.Size = new System.Drawing.Size(146, 22);
             this.lblManagerProfilePic.TabIndex = 23;
             this.lblManagerProfilePic.Text = "Profile Picture";
             // 
             // lblManagerEmail
             // 
             this.lblManagerEmail.AutoSize = true;
-            this.lblManagerEmail.Location = new System.Drawing.Point(171, 214);
+            this.lblManagerEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblManagerEmail.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblManagerEmail.Location = new System.Drawing.Point(155, 214);
             this.lblManagerEmail.Name = "lblManagerEmail";
-            this.lblManagerEmail.Size = new System.Drawing.Size(60, 25);
+            this.lblManagerEmail.Size = new System.Drawing.Size(75, 25);
             this.lblManagerEmail.TabIndex = 21;
             this.lblManagerEmail.Text = "Email";
             // 
             // lblManagerName
             // 
             this.lblManagerName.AutoSize = true;
-            this.lblManagerName.Location = new System.Drawing.Point(171, 160);
+            this.lblManagerName.BackColor = System.Drawing.Color.Transparent;
+            this.lblManagerName.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManagerName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblManagerName.Location = new System.Drawing.Point(155, 160);
             this.lblManagerName.Name = "lblManagerName";
-            this.lblManagerName.Size = new System.Drawing.Size(64, 25);
+            this.lblManagerName.Size = new System.Drawing.Size(69, 25);
             this.lblManagerName.TabIndex = 20;
             this.lblManagerName.Text = "Name";
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancel.Location = new System.Drawing.Point(545, 394);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(393, 34);
@@ -188,7 +214,9 @@
             // 
             // btnEditBrowseImageMenu
             // 
-            this.btnEditBrowseImageMenu.Location = new System.Drawing.Point(678, 320);
+            this.btnEditBrowseImageMenu.Font = new System.Drawing.Font("Modern No. 20", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditBrowseImageMenu.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnEditBrowseImageMenu.Location = new System.Drawing.Point(689, 320);
             this.btnEditBrowseImageMenu.Name = "btnEditBrowseImageMenu";
             this.btnEditBrowseImageMenu.Size = new System.Drawing.Size(219, 34);
             this.btnEditBrowseImageMenu.TabIndex = 36;
@@ -200,6 +228,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.btnEditBrowseImageMenu);

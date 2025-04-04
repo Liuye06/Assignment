@@ -38,9 +38,11 @@
             this.btnReplyCustomer = new System.Windows.Forms.Button();
             this.btnRCProfile = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableSidebar_Reservation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableSidebar_Reservation
@@ -100,7 +102,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 318);
@@ -118,7 +120,7 @@
             this.btnManageReservation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageReservation.FlatAppearance.BorderSize = 0;
             this.btnManageReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnManageReservation.Image")));
             this.btnManageReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnManageReservation.Location = new System.Drawing.Point(3, 152);
@@ -137,7 +139,7 @@
             this.btnReplyCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReplyCustomer.FlatAppearance.BorderSize = 0;
             this.btnReplyCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReplyCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReplyCustomer.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReplyCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnReplyCustomer.Image")));
             this.btnReplyCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReplyCustomer.Location = new System.Drawing.Point(3, 197);
@@ -156,7 +158,7 @@
             this.btnRCProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRCProfile.FlatAppearance.BorderSize = 0;
             this.btnRCProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRCProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRCProfile.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRCProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnRCProfile.Image")));
             this.btnRCProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRCProfile.Location = new System.Drawing.Point(3, 242);
@@ -176,11 +178,20 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 26F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(440, 91);
+            this.label1.Location = new System.Drawing.Point(453, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(420, 53);
             this.label1.TabIndex = 18;
             this.label1.Text = "Welcome Back To Work";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(250, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(811, 419);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
             // RCMainPage
             // 
@@ -189,6 +200,7 @@
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableSidebar_Reservation);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "RCMainPage";
             this.Text = "RCMainPage";
@@ -197,6 +209,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +226,6 @@
         private System.Windows.Forms.Label lbl_RC;
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteReservation));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -44,7 +45,7 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.DataSource = this.reservationBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(135, 59);
+            this.dataGridView1.Location = new System.Drawing.Point(156, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -59,29 +60,33 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(135, 242);
+            this.listBox1.Location = new System.Drawing.Point(156, 238);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(281, 129);
             this.listBox1.TabIndex = 1;
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(639, 295);
+            this.btn_Delete.ForeColor = System.Drawing.Color.Brown;
+            this.btn_Delete.Location = new System.Drawing.Point(647, 272);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(106, 41);
+            this.btn_Delete.Size = new System.Drawing.Size(158, 75);
             this.btn_Delete.TabIndex = 2;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             // 
             // grpB_DelRervation
             // 
+            this.grpB_DelRervation.BackColor = System.Drawing.Color.Transparent;
+            this.grpB_DelRervation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.grpB_DelRervation.Controls.Add(this.dataGridView1);
             this.grpB_DelRervation.Controls.Add(this.listBox1);
             this.grpB_DelRervation.Controls.Add(this.btn_Delete);
-            this.grpB_DelRervation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpB_DelRervation.Location = new System.Drawing.Point(68, 28);
+            this.grpB_DelRervation.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpB_DelRervation.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.grpB_DelRervation.Location = new System.Drawing.Point(88, 24);
             this.grpB_DelRervation.Name = "grpB_DelRervation";
-            this.grpB_DelRervation.Size = new System.Drawing.Size(943, 392);
+            this.grpB_DelRervation.Size = new System.Drawing.Size(946, 392);
             this.grpB_DelRervation.TabIndex = 3;
             this.grpB_DelRervation.TabStop = false;
             this.grpB_DelRervation.Text = "Delete Reservation";
@@ -91,8 +96,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.grpB_DelRervation);
+            this.DoubleBuffered = true;
             this.Name = "DeleteReservation";
             this.Text = "DeleteReservation";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

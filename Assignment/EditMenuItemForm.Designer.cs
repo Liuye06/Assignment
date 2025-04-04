@@ -46,6 +46,7 @@
             // 
             // gbEditMenu
             // 
+            this.gbEditMenu.BackColor = System.Drawing.Color.Transparent;
             this.gbEditMenu.Controls.Add(this.btnCancelEditMenu);
             this.gbEditMenu.Controls.Add(this.btnSaveMenuItem);
             this.gbEditMenu.Controls.Add(this.btnEditBrowseImageMenu);
@@ -56,7 +57,9 @@
             this.gbEditMenu.Controls.Add(this.lblEditCategoryMenu);
             this.gbEditMenu.Controls.Add(this.lblEditPriceMenu);
             this.gbEditMenu.Controls.Add(this.lblEditMenu);
-            this.gbEditMenu.Location = new System.Drawing.Point(91, 34);
+            this.gbEditMenu.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEditMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbEditMenu.Location = new System.Drawing.Point(125, 33);
             this.gbEditMenu.Name = "gbEditMenu";
             this.gbEditMenu.Size = new System.Drawing.Size(877, 397);
             this.gbEditMenu.TabIndex = 4;
@@ -65,6 +68,8 @@
             // 
             // btnCancelEditMenu
             // 
+            this.btnCancelEditMenu.Font = new System.Drawing.Font("Modern No. 20", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelEditMenu.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnCancelEditMenu.Location = new System.Drawing.Point(432, 333);
             this.btnCancelEditMenu.Name = "btnCancelEditMenu";
             this.btnCancelEditMenu.Size = new System.Drawing.Size(370, 34);
@@ -75,6 +80,8 @@
             // 
             // btnSaveMenuItem
             // 
+            this.btnSaveMenuItem.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveMenuItem.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnSaveMenuItem.Location = new System.Drawing.Point(56, 333);
             this.btnSaveMenuItem.Name = "btnSaveMenuItem";
             this.btnSaveMenuItem.Size = new System.Drawing.Size(370, 34);
@@ -85,6 +92,8 @@
             // 
             // btnEditBrowseImageMenu
             // 
+            this.btnEditBrowseImageMenu.Font = new System.Drawing.Font("Modern No. 20", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditBrowseImageMenu.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnEditBrowseImageMenu.Location = new System.Drawing.Point(583, 282);
             this.btnEditBrowseImageMenu.Name = "btnEditBrowseImageMenu";
             this.btnEditBrowseImageMenu.Size = new System.Drawing.Size(219, 34);
@@ -95,6 +104,7 @@
             // 
             // picEditMenu
             // 
+            this.picEditMenu.BackColor = System.Drawing.Color.Gainsboro;
             this.picEditMenu.Location = new System.Drawing.Point(583, 62);
             this.picEditMenu.Name = "picEditMenu";
             this.picEditMenu.Size = new System.Drawing.Size(219, 210);
@@ -120,14 +130,14 @@
             // 
             this.txtEditPriceMenu.Location = new System.Drawing.Point(218, 158);
             this.txtEditPriceMenu.Name = "txtEditPriceMenu";
-            this.txtEditPriceMenu.Size = new System.Drawing.Size(301, 30);
+            this.txtEditPriceMenu.Size = new System.Drawing.Size(301, 32);
             this.txtEditPriceMenu.TabIndex = 4;
             // 
             // txtEditMenu
             // 
             this.txtEditMenu.Location = new System.Drawing.Point(218, 80);
             this.txtEditMenu.Name = "txtEditMenu";
-            this.txtEditMenu.Size = new System.Drawing.Size(301, 30);
+            this.txtEditMenu.Size = new System.Drawing.Size(301, 32);
             this.txtEditMenu.TabIndex = 3;
             // 
             // lblEditCategoryMenu
@@ -135,7 +145,7 @@
             this.lblEditCategoryMenu.AutoSize = true;
             this.lblEditCategoryMenu.Location = new System.Drawing.Point(79, 242);
             this.lblEditCategoryMenu.Name = "lblEditCategoryMenu";
-            this.lblEditCategoryMenu.Size = new System.Drawing.Size(92, 25);
+            this.lblEditCategoryMenu.Size = new System.Drawing.Size(99, 25);
             this.lblEditCategoryMenu.TabIndex = 2;
             this.lblEditCategoryMenu.Text = "Category";
             // 
@@ -144,7 +154,7 @@
             this.lblEditPriceMenu.AutoSize = true;
             this.lblEditPriceMenu.Location = new System.Drawing.Point(79, 161);
             this.lblEditPriceMenu.Name = "lblEditPriceMenu";
-            this.lblEditPriceMenu.Size = new System.Drawing.Size(56, 25);
+            this.lblEditPriceMenu.Size = new System.Drawing.Size(66, 25);
             this.lblEditPriceMenu.TabIndex = 1;
             this.lblEditPriceMenu.Text = "Price";
             // 
@@ -153,7 +163,7 @@
             this.lblEditMenu.AutoSize = true;
             this.lblEditMenu.Location = new System.Drawing.Point(79, 83);
             this.lblEditMenu.Name = "lblEditMenu";
-            this.lblEditMenu.Size = new System.Drawing.Size(64, 25);
+            this.lblEditMenu.Size = new System.Drawing.Size(69, 25);
             this.lblEditMenu.TabIndex = 0;
             this.lblEditMenu.Text = "Name";
             // 
@@ -162,8 +172,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbEditMenu);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "EditMenuItemForm";
             this.Text = "Edit Menu Item";

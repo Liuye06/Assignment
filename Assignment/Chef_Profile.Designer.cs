@@ -186,7 +186,7 @@
             // 
             // gbChefProfile
             // 
-            this.gbChefProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.gbChefProfile.BackColor = System.Drawing.Color.Transparent;
             this.gbChefProfile.Controls.Add(this.dtpDOB);
             this.gbChefProfile.Controls.Add(this.cmbGender);
             this.gbChefProfile.Controls.Add(this.picProfilePic);
@@ -202,7 +202,9 @@
             this.gbChefProfile.Controls.Add(this.lblProfilePic);
             this.gbChefProfile.Controls.Add(this.lblEmail);
             this.gbChefProfile.Controls.Add(this.lblName);
-            this.gbChefProfile.Location = new System.Drawing.Point(44, 62);
+            this.gbChefProfile.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbChefProfile.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gbChefProfile.Location = new System.Drawing.Point(44, 45);
             this.gbChefProfile.Name = "gbChefProfile";
             this.gbChefProfile.Size = new System.Drawing.Size(805, 367);
             this.gbChefProfile.TabIndex = 15;
@@ -211,9 +213,9 @@
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(161, 256);
+            this.dtpDOB.Location = new System.Drawing.Point(171, 258);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(271, 30);
+            this.dtpDOB.Size = new System.Drawing.Size(271, 32);
             this.dtpDOB.TabIndex = 3;
             // 
             // cmbGender
@@ -222,13 +224,14 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbGender.Location = new System.Drawing.Point(161, 309);
+            this.cmbGender.Location = new System.Drawing.Point(171, 311);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(271, 33);
             this.cmbGender.TabIndex = 19;
             // 
             // picProfilePic
             // 
+            this.picProfilePic.BackColor = System.Drawing.Color.Gainsboro;
             this.picProfilePic.Location = new System.Drawing.Point(513, 76);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
@@ -238,56 +241,57 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(161, 92);
+            this.txtPassword.Location = new System.Drawing.Point(171, 94);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(271, 30);
+            this.txtPassword.Size = new System.Drawing.Size(271, 32);
             this.txtPassword.TabIndex = 17;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(161, 38);
+            this.txtUsername.Location = new System.Drawing.Point(171, 40);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(271, 30);
+            this.txtUsername.Size = new System.Drawing.Size(271, 32);
             this.txtUsername.TabIndex = 16;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(37, 95);
+            this.lblPassword.Location = new System.Drawing.Point(23, 96);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblPassword.Size = new System.Drawing.Size(107, 25);
             this.lblPassword.TabIndex = 15;
             this.lblPassword.Text = "Password";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(37, 41);
+            this.lblUsername.Location = new System.Drawing.Point(23, 42);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(102, 25);
+            this.lblUsername.Size = new System.Drawing.Size(111, 25);
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Username";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(37, 310);
+            this.lblGender.Location = new System.Drawing.Point(23, 311);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(77, 25);
+            this.lblGender.Size = new System.Drawing.Size(83, 25);
             this.lblGender.TabIndex = 11;
             this.lblGender.Text = "Gender";
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(37, 261);
+            this.lblDOB.Location = new System.Drawing.Point(23, 262);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(118, 25);
+            this.lblDOB.Size = new System.Drawing.Size(151, 25);
             this.lblDOB.TabIndex = 10;
             this.lblDOB.Text = "Date of Birth";
             // 
             // btnUpdateProfile
             // 
+            this.btnUpdateProfile.ForeColor = System.Drawing.Color.IndianRed;
             this.btnUpdateProfile.Location = new System.Drawing.Point(461, 307);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
             this.btnUpdateProfile.Size = new System.Drawing.Size(336, 35);
@@ -298,16 +302,16 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(161, 201);
+            this.txtEmail.Location = new System.Drawing.Point(171, 203);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(271, 30);
+            this.txtEmail.Size = new System.Drawing.Size(271, 32);
             this.txtEmail.TabIndex = 8;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(161, 147);
+            this.txtName.Location = new System.Drawing.Point(171, 149);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(271, 30);
+            this.txtName.Size = new System.Drawing.Size(271, 32);
             this.txtName.TabIndex = 7;
             // 
             // lblProfilePic
@@ -315,25 +319,25 @@
             this.lblProfilePic.AutoSize = true;
             this.lblProfilePic.Location = new System.Drawing.Point(508, 43);
             this.lblProfilePic.Name = "lblProfilePic";
-            this.lblProfilePic.Size = new System.Drawing.Size(131, 25);
+            this.lblProfilePic.Size = new System.Drawing.Size(166, 25);
             this.lblProfilePic.TabIndex = 4;
             this.lblProfilePic.Text = "Profile Picture";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(37, 204);
+            this.lblEmail.Location = new System.Drawing.Point(23, 205);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(60, 25);
+            this.lblEmail.Size = new System.Drawing.Size(75, 25);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(37, 150);
+            this.lblName.Location = new System.Drawing.Point(23, 151);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(64, 25);
+            this.lblName.Size = new System.Drawing.Size(69, 25);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddReservation));
             this.btn_Add = new System.Windows.Forms.Button();
             this.txt_HallID = new System.Windows.Forms.TextBox();
             this.lbl_HallID = new System.Windows.Forms.Label();
@@ -48,6 +49,8 @@
             // 
             // btn_Add
             // 
+            this.btn_Add.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.ForeColor = System.Drawing.Color.LightCoral;
             this.btn_Add.Location = new System.Drawing.Point(161, 348);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(95, 31);
@@ -66,19 +69,24 @@
             // lbl_HallID
             // 
             this.lbl_HallID.AutoSize = true;
-            this.lbl_HallID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_HallID.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_HallID.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_HallID.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lbl_HallID.Location = new System.Drawing.Point(159, 267);
             this.lbl_HallID.Name = "lbl_HallID";
-            this.lbl_HallID.Size = new System.Drawing.Size(83, 25);
+            this.lbl_HallID.Size = new System.Drawing.Size(85, 21);
             this.lbl_HallID.TabIndex = 18;
             this.lbl_HallID.Text = "Hall ID:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label1.Location = new System.Drawing.Point(157, 231);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 16);
+            this.label1.Size = new System.Drawing.Size(227, 21);
             this.label1.TabIndex = 17;
             this.label1.Text = "Add the Available Hall:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -109,6 +117,8 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.LightCoral;
             this.btn_Cancel.Location = new System.Drawing.Point(332, 348);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(95, 31);
@@ -129,9 +139,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(620, 231);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(238, 16);
+            this.label2.Size = new System.Drawing.Size(293, 16);
             this.label2.TabIndex = 33;
             this.label2.Text = "Select the Customer for assign the Hall:";
             // 
@@ -140,6 +153,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox1);
@@ -149,6 +164,7 @@
             this.Controls.Add(this.txt_HallID);
             this.Controls.Add(this.lbl_HallID);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "AddReservation";
             this.Text = "AddReservation";
             this.Load += new System.EventHandler(this.AddReservation_Load);

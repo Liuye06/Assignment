@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainHallResvReport));
             this.tableSidebar_HRReport = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnMMenu_HRReport = new System.Windows.Forms.Button();
             this.btnMHall_HRReport = new System.Windows.Forms.Button();
             this.btnHRReport_HRReport = new System.Windows.Forms.Button();
@@ -88,6 +88,16 @@
             this.panel1.Size = new System.Drawing.Size(194, 144);
             this.panel1.TabIndex = 18;
             // 
+            // pic_logo
+            // 
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(0, 42);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(138, 102);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 8;
+            this.pic_logo.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -99,23 +109,13 @@
             this.label1.Text = "Manager";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pic_logo
-            // 
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(0, 42);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(138, 102);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 8;
-            this.pic_logo.TabStop = false;
-            // 
             // btnMMenu_HRReport
             // 
             this.btnMMenu_HRReport.BackColor = System.Drawing.Color.Gainsboro;
             this.btnMMenu_HRReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMMenu_HRReport.FlatAppearance.BorderSize = 0;
             this.btnMMenu_HRReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMMenu_HRReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMMenu_HRReport.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMMenu_HRReport.Image = ((System.Drawing.Image)(resources.GetObject("btnMMenu_HRReport.Image")));
             this.btnMMenu_HRReport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMMenu_HRReport.Location = new System.Drawing.Point(3, 153);
@@ -133,7 +133,7 @@
             this.btnMHall_HRReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMHall_HRReport.FlatAppearance.BorderSize = 0;
             this.btnMHall_HRReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMHall_HRReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMHall_HRReport.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMHall_HRReport.Image = ((System.Drawing.Image)(resources.GetObject("btnMHall_HRReport.Image")));
             this.btnMHall_HRReport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMHall_HRReport.Location = new System.Drawing.Point(3, 193);
@@ -151,7 +151,7 @@
             this.btnHRReport_HRReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHRReport_HRReport.FlatAppearance.BorderSize = 0;
             this.btnHRReport_HRReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHRReport_HRReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHRReport_HRReport.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHRReport_HRReport.Image = ((System.Drawing.Image)(resources.GetObject("btnHRReport_HRReport.Image")));
             this.btnHRReport_HRReport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHRReport_HRReport.Location = new System.Drawing.Point(3, 233);
@@ -169,7 +169,7 @@
             this.btnUProfile_HRReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUProfile_HRReport.FlatAppearance.BorderSize = 0;
             this.btnUProfile_HRReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUProfile_HRReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUProfile_HRReport.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUProfile_HRReport.Image = ((System.Drawing.Image)(resources.GetObject("btnUProfile_HRReport.Image")));
             this.btnUProfile_HRReport.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUProfile_HRReport.Location = new System.Drawing.Point(3, 303);
@@ -187,7 +187,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 343);
@@ -201,6 +201,7 @@
             // 
             // gbHRReport
             // 
+            this.gbHRReport.BackColor = System.Drawing.Color.Transparent;
             this.gbHRReport.Controls.Add(this.btnExport);
             this.gbHRReport.Controls.Add(this.dgvReport);
             this.gbHRReport.Controls.Add(this.btnResetReport);
@@ -208,7 +209,9 @@
             this.gbHRReport.Controls.Add(this.lblResvType);
             this.gbHRReport.Controls.Add(this.cmbMonth);
             this.gbHRReport.Controls.Add(this.lblMonth);
-            this.gbHRReport.Location = new System.Drawing.Point(28, 42);
+            this.gbHRReport.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbHRReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbHRReport.Location = new System.Drawing.Point(32, 45);
             this.gbHRReport.Name = "gbHRReport";
             this.gbHRReport.Size = new System.Drawing.Size(851, 365);
             this.gbHRReport.TabIndex = 1;
@@ -217,6 +220,8 @@
             // 
             // btnExport
             // 
+            this.btnExport.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.Color.RosyBrown;
             this.btnExport.Location = new System.Drawing.Point(45, 316);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(385, 34);
@@ -237,7 +242,9 @@
             // 
             // btnResetReport
             // 
-            this.btnResetReport.Location = new System.Drawing.Point(689, 40);
+            this.btnResetReport.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetReport.ForeColor = System.Drawing.Color.RosyBrown;
+            this.btnResetReport.Location = new System.Drawing.Point(708, 40);
             this.btnResetReport.Name = "btnResetReport";
             this.btnResetReport.Size = new System.Drawing.Size(137, 35);
             this.btnResetReport.TabIndex = 4;
@@ -258,7 +265,7 @@
             "Anniversary",
             "Competition",
             "Performance"});
-            this.cmbResvType.Location = new System.Drawing.Point(494, 42);
+            this.cmbResvType.Location = new System.Drawing.Point(513, 41);
             this.cmbResvType.Name = "cmbResvType";
             this.cmbResvType.Size = new System.Drawing.Size(189, 33);
             this.cmbResvType.TabIndex = 3;
@@ -267,9 +274,10 @@
             // lblResvType
             // 
             this.lblResvType.AutoSize = true;
+            this.lblResvType.ForeColor = System.Drawing.SystemColors.Control;
             this.lblResvType.Location = new System.Drawing.Point(323, 45);
             this.lblResvType.Name = "lblResvType";
-            this.lblResvType.Size = new System.Drawing.Size(165, 25);
+            this.lblResvType.Size = new System.Drawing.Size(186, 25);
             this.lblResvType.TabIndex = 2;
             this.lblResvType.Text = "Reservation Type";
             // 
@@ -300,7 +308,7 @@
             this.lblMonth.AutoSize = true;
             this.lblMonth.Location = new System.Drawing.Point(40, 44);
             this.lblMonth.Name = "lblMonth";
-            this.lblMonth.Size = new System.Drawing.Size(67, 25);
+            this.lblMonth.Size = new System.Drawing.Size(79, 25);
             this.lblMonth.TabIndex = 0;
             this.lblMonth.Text = "Month";
             // 

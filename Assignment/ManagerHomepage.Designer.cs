@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerHomepage));
             this.tableSidebar_MMenu = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnMMenu_MMenu = new System.Windows.Forms.Button();
             this.btnMHall_MMenu = new System.Windows.Forms.Button();
@@ -79,16 +79,6 @@
             this.panel1.Size = new System.Drawing.Size(194, 144);
             this.panel1.TabIndex = 17;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-12, -17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 67);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Manager";
-            // 
             // pic_logo
             // 
             this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
@@ -99,13 +89,23 @@
             this.pic_logo.TabIndex = 8;
             this.pic_logo.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Script", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-12, -17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 67);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Manager";
+            // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Gainsboro;
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 343);
@@ -123,7 +123,7 @@
             this.btnMMenu_MMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMMenu_MMenu.FlatAppearance.BorderSize = 0;
             this.btnMMenu_MMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMMenu_MMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMMenu_MMenu.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMMenu_MMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMMenu_MMenu.Image")));
             this.btnMMenu_MMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMMenu_MMenu.Location = new System.Drawing.Point(3, 153);
@@ -141,7 +141,7 @@
             this.btnMHall_MMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMHall_MMenu.FlatAppearance.BorderSize = 0;
             this.btnMHall_MMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMHall_MMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMHall_MMenu.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMHall_MMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMHall_MMenu.Image")));
             this.btnMHall_MMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMHall_MMenu.Location = new System.Drawing.Point(3, 193);
@@ -159,7 +159,7 @@
             this.btn_HRReport_MMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_HRReport_MMenu.FlatAppearance.BorderSize = 0;
             this.btn_HRReport_MMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_HRReport_MMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HRReport_MMenu.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HRReport_MMenu.Image = ((System.Drawing.Image)(resources.GetObject("btn_HRReport_MMenu.Image")));
             this.btn_HRReport_MMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_HRReport_MMenu.Location = new System.Drawing.Point(3, 233);
@@ -177,7 +177,7 @@
             this.btnUProfile_MMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUProfile_MMenu.FlatAppearance.BorderSize = 0;
             this.btnUProfile_MMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUProfile_MMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUProfile_MMenu.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUProfile_MMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnUProfile_MMenu.Image")));
             this.btnUProfile_MMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUProfile_MMenu.Location = new System.Drawing.Point(3, 303);
@@ -205,9 +205,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(237, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(237, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(833, 389);
+            this.pictureBox1.Size = new System.Drawing.Size(833, 429);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 

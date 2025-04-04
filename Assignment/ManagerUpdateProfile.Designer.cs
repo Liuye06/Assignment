@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerProfile));
             this.tableSidebar_UProfile = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnMMenu_UProfile = new System.Windows.Forms.Button();
             this.btnMHall_UProfile = new System.Windows.Forms.Button();
             this.btnHRReport_UProfile = new System.Windows.Forms.Button();
@@ -60,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.gbMangerProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picManagerProfilePic)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSidebar_UProfile
@@ -95,16 +96,6 @@
             this.panel1.Size = new System.Drawing.Size(194, 144);
             this.panel1.TabIndex = 18;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-12, -13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 67);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Manager";
-            // 
             // pic_logo
             // 
             this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
@@ -115,13 +106,23 @@
             this.pic_logo.TabIndex = 8;
             this.pic_logo.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Script", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-12, -13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 67);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Manager";
+            // 
             // btnMMenu_UProfile
             // 
             this.btnMMenu_UProfile.BackColor = System.Drawing.Color.Gainsboro;
             this.btnMMenu_UProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMMenu_UProfile.FlatAppearance.BorderSize = 0;
             this.btnMMenu_UProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMMenu_UProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMMenu_UProfile.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMMenu_UProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnMMenu_UProfile.Image")));
             this.btnMMenu_UProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMMenu_UProfile.Location = new System.Drawing.Point(3, 153);
@@ -139,7 +140,7 @@
             this.btnMHall_UProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMHall_UProfile.FlatAppearance.BorderSize = 0;
             this.btnMHall_UProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMHall_UProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMHall_UProfile.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMHall_UProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnMHall_UProfile.Image")));
             this.btnMHall_UProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMHall_UProfile.Location = new System.Drawing.Point(3, 193);
@@ -157,7 +158,7 @@
             this.btnHRReport_UProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHRReport_UProfile.FlatAppearance.BorderSize = 0;
             this.btnHRReport_UProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHRReport_UProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHRReport_UProfile.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHRReport_UProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnHRReport_UProfile.Image")));
             this.btnHRReport_UProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHRReport_UProfile.Location = new System.Drawing.Point(3, 233);
@@ -175,7 +176,7 @@
             this.btnUProfile_UProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUProfile_UProfile.FlatAppearance.BorderSize = 0;
             this.btnUProfile_UProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUProfile_UProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUProfile_UProfile.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUProfile_UProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnUProfile_UProfile.Image")));
             this.btnUProfile_UProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUProfile_UProfile.Location = new System.Drawing.Point(3, 303);
@@ -193,7 +194,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 343);
@@ -207,6 +208,7 @@
             // 
             // gbMangerProfile
             // 
+            this.gbMangerProfile.BackColor = System.Drawing.Color.Transparent;
             this.gbMangerProfile.Controls.Add(this.dtpDOB);
             this.gbMangerProfile.Controls.Add(this.cmbManagerGender);
             this.gbMangerProfile.Controls.Add(this.picManagerProfilePic);
@@ -222,7 +224,9 @@
             this.gbMangerProfile.Controls.Add(this.lblManagerProfilePic);
             this.gbMangerProfile.Controls.Add(this.lblManagerEmail);
             this.gbMangerProfile.Controls.Add(this.lblManagerName);
-            this.gbMangerProfile.Location = new System.Drawing.Point(218, 72);
+            this.gbMangerProfile.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMangerProfile.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbMangerProfile.Location = new System.Drawing.Point(37, 67);
             this.gbMangerProfile.Name = "gbMangerProfile";
             this.gbMangerProfile.Size = new System.Drawing.Size(852, 369);
             this.gbMangerProfile.TabIndex = 1;
@@ -231,9 +235,9 @@
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(161, 256);
+            this.dtpDOB.Location = new System.Drawing.Point(175, 254);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(271, 30);
+            this.dtpDOB.Size = new System.Drawing.Size(271, 32);
             this.dtpDOB.TabIndex = 3;
             // 
             // cmbManagerGender
@@ -242,13 +246,14 @@
             this.cmbManagerGender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbManagerGender.Location = new System.Drawing.Point(161, 309);
+            this.cmbManagerGender.Location = new System.Drawing.Point(175, 307);
             this.cmbManagerGender.Name = "cmbManagerGender";
             this.cmbManagerGender.Size = new System.Drawing.Size(271, 33);
             this.cmbManagerGender.TabIndex = 19;
             // 
             // picManagerProfilePic
             // 
+            this.picManagerProfilePic.BackColor = System.Drawing.Color.Gainsboro;
             this.picManagerProfilePic.Location = new System.Drawing.Point(544, 76);
             this.picManagerProfilePic.Name = "picManagerProfilePic";
             this.picManagerProfilePic.Size = new System.Drawing.Size(219, 210);
@@ -258,16 +263,16 @@
             // 
             // txtManagerPassword
             // 
-            this.txtManagerPassword.Location = new System.Drawing.Point(161, 92);
+            this.txtManagerPassword.Location = new System.Drawing.Point(175, 90);
             this.txtManagerPassword.Name = "txtManagerPassword";
-            this.txtManagerPassword.Size = new System.Drawing.Size(271, 30);
+            this.txtManagerPassword.Size = new System.Drawing.Size(271, 32);
             this.txtManagerPassword.TabIndex = 17;
             // 
             // txtManagerUsername
             // 
-            this.txtManagerUsername.Location = new System.Drawing.Point(161, 38);
+            this.txtManagerUsername.Location = new System.Drawing.Point(175, 36);
             this.txtManagerUsername.Name = "txtManagerUsername";
-            this.txtManagerUsername.Size = new System.Drawing.Size(271, 30);
+            this.txtManagerUsername.Size = new System.Drawing.Size(271, 32);
             this.txtManagerUsername.TabIndex = 16;
             // 
             // lblManagerPassword
@@ -275,7 +280,7 @@
             this.lblManagerPassword.AutoSize = true;
             this.lblManagerPassword.Location = new System.Drawing.Point(37, 95);
             this.lblManagerPassword.Name = "lblManagerPassword";
-            this.lblManagerPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblManagerPassword.Size = new System.Drawing.Size(107, 25);
             this.lblManagerPassword.TabIndex = 15;
             this.lblManagerPassword.Text = "Password";
             // 
@@ -284,7 +289,7 @@
             this.lblManagerUsername.AutoSize = true;
             this.lblManagerUsername.Location = new System.Drawing.Point(37, 41);
             this.lblManagerUsername.Name = "lblManagerUsername";
-            this.lblManagerUsername.Size = new System.Drawing.Size(102, 25);
+            this.lblManagerUsername.Size = new System.Drawing.Size(111, 25);
             this.lblManagerUsername.TabIndex = 14;
             this.lblManagerUsername.Text = "Username";
             // 
@@ -293,21 +298,22 @@
             this.lblManagerGender.AutoSize = true;
             this.lblManagerGender.Location = new System.Drawing.Point(37, 310);
             this.lblManagerGender.Name = "lblManagerGender";
-            this.lblManagerGender.Size = new System.Drawing.Size(77, 25);
+            this.lblManagerGender.Size = new System.Drawing.Size(83, 25);
             this.lblManagerGender.TabIndex = 11;
             this.lblManagerGender.Text = "Gender";
             // 
             // lblManagerDOB
             // 
             this.lblManagerDOB.AutoSize = true;
-            this.lblManagerDOB.Location = new System.Drawing.Point(37, 261);
+            this.lblManagerDOB.Location = new System.Drawing.Point(18, 261);
             this.lblManagerDOB.Name = "lblManagerDOB";
-            this.lblManagerDOB.Size = new System.Drawing.Size(118, 25);
+            this.lblManagerDOB.Size = new System.Drawing.Size(151, 25);
             this.lblManagerDOB.TabIndex = 10;
             this.lblManagerDOB.Text = "Date of Birth";
             // 
             // btnUpdateManagerProfile
             // 
+            this.btnUpdateManagerProfile.ForeColor = System.Drawing.Color.DarkOrange;
             this.btnUpdateManagerProfile.Location = new System.Drawing.Point(461, 307);
             this.btnUpdateManagerProfile.Name = "btnUpdateManagerProfile";
             this.btnUpdateManagerProfile.Size = new System.Drawing.Size(371, 35);
@@ -318,16 +324,16 @@
             // 
             // txtMangerEmail
             // 
-            this.txtMangerEmail.Location = new System.Drawing.Point(161, 201);
+            this.txtMangerEmail.Location = new System.Drawing.Point(175, 199);
             this.txtMangerEmail.Name = "txtMangerEmail";
-            this.txtMangerEmail.Size = new System.Drawing.Size(271, 30);
+            this.txtMangerEmail.Size = new System.Drawing.Size(271, 32);
             this.txtMangerEmail.TabIndex = 8;
             // 
             // txtManagerName
             // 
-            this.txtManagerName.Location = new System.Drawing.Point(161, 147);
+            this.txtManagerName.Location = new System.Drawing.Point(175, 145);
             this.txtManagerName.Name = "txtManagerName";
-            this.txtManagerName.Size = new System.Drawing.Size(271, 30);
+            this.txtManagerName.Size = new System.Drawing.Size(271, 32);
             this.txtManagerName.TabIndex = 7;
             // 
             // lblManagerProfilePic
@@ -335,7 +341,7 @@
             this.lblManagerProfilePic.AutoSize = true;
             this.lblManagerProfilePic.Location = new System.Drawing.Point(539, 43);
             this.lblManagerProfilePic.Name = "lblManagerProfilePic";
-            this.lblManagerProfilePic.Size = new System.Drawing.Size(131, 25);
+            this.lblManagerProfilePic.Size = new System.Drawing.Size(166, 25);
             this.lblManagerProfilePic.TabIndex = 4;
             this.lblManagerProfilePic.Text = "Profile Picture";
             // 
@@ -344,7 +350,7 @@
             this.lblManagerEmail.AutoSize = true;
             this.lblManagerEmail.Location = new System.Drawing.Point(37, 204);
             this.lblManagerEmail.Name = "lblManagerEmail";
-            this.lblManagerEmail.Size = new System.Drawing.Size(60, 25);
+            this.lblManagerEmail.Size = new System.Drawing.Size(75, 25);
             this.lblManagerEmail.TabIndex = 2;
             this.lblManagerEmail.Text = "Email";
             // 
@@ -353,16 +359,18 @@
             this.lblManagerName.AutoSize = true;
             this.lblManagerName.Location = new System.Drawing.Point(37, 150);
             this.lblManagerName.Name = "lblManagerName";
-            this.lblManagerName.Size = new System.Drawing.Size(64, 25);
+            this.lblManagerName.Size = new System.Drawing.Size(69, 25);
             this.lblManagerName.TabIndex = 0;
             this.lblManagerName.Text = "Name";
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Location = new System.Drawing.Point(198, -29);
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.gbMangerProfile);
+            this.panel2.Location = new System.Drawing.Point(198, -11);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(889, 484);
+            this.panel2.Size = new System.Drawing.Size(889, 466);
             this.panel2.TabIndex = 3;
             // 
             // ManagerProfile
@@ -370,7 +378,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.gbMangerProfile);
             this.Controls.Add(this.tableSidebar_UProfile);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,6 +391,7 @@
             this.gbMangerProfile.ResumeLayout(false);
             this.gbMangerProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picManagerProfilePic)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

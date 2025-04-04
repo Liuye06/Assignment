@@ -53,11 +53,13 @@
             this.lblProfilePic = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableSidebar_Reservation.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.gbRCProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSidebar_Reservation
@@ -88,7 +90,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 318);
@@ -106,7 +108,7 @@
             this.btnManageReservation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageReservation.FlatAppearance.BorderSize = 0;
             this.btnManageReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnManageReservation.Image")));
             this.btnManageReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnManageReservation.Location = new System.Drawing.Point(3, 152);
@@ -125,7 +127,7 @@
             this.btnReplyCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReplyCustomer.FlatAppearance.BorderSize = 0;
             this.btnReplyCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReplyCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReplyCustomer.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReplyCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnReplyCustomer.Image")));
             this.btnReplyCustomer.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReplyCustomer.Location = new System.Drawing.Point(3, 197);
@@ -144,7 +146,7 @@
             this.btnRCProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRCProfile.FlatAppearance.BorderSize = 0;
             this.btnRCProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRCProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRCProfile.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRCProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnRCProfile.Image")));
             this.btnRCProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRCProfile.Location = new System.Drawing.Point(3, 242);
@@ -188,6 +190,7 @@
             // 
             // gbRCProfile
             // 
+            this.gbRCProfile.BackColor = System.Drawing.Color.Transparent;
             this.gbRCProfile.Controls.Add(this.dtpDOB);
             this.gbRCProfile.Controls.Add(this.cmbGender);
             this.gbRCProfile.Controls.Add(this.picProfilePic);
@@ -203,18 +206,20 @@
             this.gbRCProfile.Controls.Add(this.lblProfilePic);
             this.gbRCProfile.Controls.Add(this.lblEmail);
             this.gbRCProfile.Controls.Add(this.lblName);
-            this.gbRCProfile.Location = new System.Drawing.Point(234, 41);
+            this.gbRCProfile.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbRCProfile.ForeColor = System.Drawing.Color.White;
+            this.gbRCProfile.Location = new System.Drawing.Point(19, 78);
             this.gbRCProfile.Name = "gbRCProfile";
-            this.gbRCProfile.Size = new System.Drawing.Size(836, 369);
+            this.gbRCProfile.Size = new System.Drawing.Size(805, 380);
             this.gbRCProfile.TabIndex = 16;
             this.gbRCProfile.TabStop = false;
             this.gbRCProfile.Text = "Reservation Coordinator Profile";
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(161, 256);
+            this.dtpDOB.Location = new System.Drawing.Point(153, 259);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(271, 30);
+            this.dtpDOB.Size = new System.Drawing.Size(271, 29);
             this.dtpDOB.TabIndex = 3;
             // 
             // cmbGender
@@ -223,14 +228,14 @@
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbGender.Location = new System.Drawing.Point(161, 309);
+            this.cmbGender.Location = new System.Drawing.Point(153, 312);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(271, 33);
+            this.cmbGender.Size = new System.Drawing.Size(271, 30);
             this.cmbGender.TabIndex = 19;
             // 
             // picProfilePic
             // 
-            this.picProfilePic.Location = new System.Drawing.Point(544, 76);
+            this.picProfilePic.Location = new System.Drawing.Point(508, 79);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
             this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -239,59 +244,59 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(161, 92);
+            this.txtPassword.Location = new System.Drawing.Point(153, 95);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(271, 30);
+            this.txtPassword.Size = new System.Drawing.Size(271, 29);
             this.txtPassword.TabIndex = 17;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(161, 38);
+            this.txtUsername.Location = new System.Drawing.Point(153, 41);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(271, 30);
+            this.txtUsername.Size = new System.Drawing.Size(271, 29);
             this.txtUsername.TabIndex = 16;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(37, 95);
+            this.lblPassword.Location = new System.Drawing.Point(18, 98);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblPassword.Size = new System.Drawing.Size(94, 22);
             this.lblPassword.TabIndex = 15;
             this.lblPassword.Text = "Password";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(37, 41);
+            this.lblUsername.Location = new System.Drawing.Point(18, 44);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(102, 25);
+            this.lblUsername.Size = new System.Drawing.Size(98, 22);
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Username";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(37, 310);
+            this.lblGender.Location = new System.Drawing.Point(18, 313);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(77, 25);
+            this.lblGender.Size = new System.Drawing.Size(74, 22);
             this.lblGender.TabIndex = 11;
             this.lblGender.Text = "Gender";
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(37, 261);
+            this.lblDOB.Location = new System.Drawing.Point(18, 264);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(118, 25);
+            this.lblDOB.Size = new System.Drawing.Size(132, 22);
             this.lblDOB.TabIndex = 10;
             this.lblDOB.Text = "Date of Birth";
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(461, 307);
+            this.btnUpdateProfile.Location = new System.Drawing.Point(447, 312);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(371, 35);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(339, 35);
             this.btnUpdateProfile.TabIndex = 9;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
@@ -299,52 +304,61 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(161, 201);
+            this.txtEmail.Location = new System.Drawing.Point(153, 204);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(271, 30);
+            this.txtEmail.Size = new System.Drawing.Size(271, 29);
             this.txtEmail.TabIndex = 8;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(161, 147);
+            this.txtName.Location = new System.Drawing.Point(153, 150);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(271, 30);
+            this.txtName.Size = new System.Drawing.Size(271, 29);
             this.txtName.TabIndex = 7;
             // 
             // lblProfilePic
             // 
             this.lblProfilePic.AutoSize = true;
-            this.lblProfilePic.Location = new System.Drawing.Point(539, 43);
+            this.lblProfilePic.Location = new System.Drawing.Point(503, 46);
             this.lblProfilePic.Name = "lblProfilePic";
-            this.lblProfilePic.Size = new System.Drawing.Size(131, 25);
+            this.lblProfilePic.Size = new System.Drawing.Size(146, 22);
             this.lblProfilePic.TabIndex = 4;
             this.lblProfilePic.Text = "Profile Picture";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(37, 204);
+            this.lblEmail.Location = new System.Drawing.Point(18, 207);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(60, 25);
+            this.lblEmail.Size = new System.Drawing.Size(65, 22);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(37, 150);
+            this.lblName.Location = new System.Drawing.Point(18, 153);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(64, 25);
+            this.lblName.Size = new System.Drawing.Size(60, 22);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Controls.Add(this.gbRCProfile);
+            this.panel2.Location = new System.Drawing.Point(215, -4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(869, 461);
+            this.panel2.TabIndex = 17;
             // 
             // RCProfile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.gbRCProfile);
             this.Controls.Add(this.tableSidebar_Reservation);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "RCProfile";
             this.Text = "RCProfile";
@@ -356,6 +370,7 @@
             this.gbRCProfile.ResumeLayout(false);
             this.gbRCProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -386,5 +401,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.Label lbl_RC;
+        private System.Windows.Forms.Panel panel2;
     }
 }

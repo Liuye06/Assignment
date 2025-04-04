@@ -56,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.gbShowCusOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChefCusOrder)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSidebar_ChefCustomerOrder
@@ -190,7 +191,7 @@
             this.gbShowCusOrder.Controls.Add(this.lblCusStatusOrder);
             this.gbShowCusOrder.Controls.Add(this.cmbCusOrderStatus);
             this.gbShowCusOrder.Controls.Add(this.dgvChefCusOrder);
-            this.gbShowCusOrder.Location = new System.Drawing.Point(254, 55);
+            this.gbShowCusOrder.Location = new System.Drawing.Point(16, 51);
             this.gbShowCusOrder.Name = "gbShowCusOrder";
             this.gbShowCusOrder.Size = new System.Drawing.Size(816, 369);
             this.gbShowCusOrder.TabIndex = 7;
@@ -323,6 +324,8 @@
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.gbShowCusOrder);
             this.panel1.Location = new System.Drawing.Point(238, -6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(844, 458);
@@ -333,7 +336,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.gbShowCusOrder);
             this.Controls.Add(this.tableSidebar_ChefCustomerOrder);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -347,6 +349,7 @@
             this.gbShowCusOrder.ResumeLayout(false);
             this.gbShowCusOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChefCusOrder)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
