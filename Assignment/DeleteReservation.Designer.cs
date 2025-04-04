@@ -29,118 +29,83 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteReservation));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hallIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rReqIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btn_Delete = new System.Windows.Forms.Button();
+            this.grpB_DelRervation = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
+            this.grpB_DelRervation.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.reservationIDDataGridViewTextBoxColumn,
-            this.hallIDDataGridViewTextBoxColumn,
-            this.userIDDataGridViewTextBoxColumn,
-            this.rReqIDDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.reservationBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(67, 53);
+            this.dataGridView1.Location = new System.Drawing.Point(156, 48);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(676, 150);
             this.dataGridView1.TabIndex = 0;
             // 
-            // reservationIDDataGridViewTextBoxColumn
-            // 
-            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "Reservation_ID";
-            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "Reservation_ID";
-            this.reservationIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
-            this.reservationIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reservationIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // hallIDDataGridViewTextBoxColumn
-            // 
-            this.hallIDDataGridViewTextBoxColumn.DataPropertyName = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.HeaderText = "Hall_ID";
-            this.hallIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.hallIDDataGridViewTextBoxColumn.Name = "hallIDDataGridViewTextBoxColumn";
-            this.hallIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "User_ID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // rReqIDDataGridViewTextBoxColumn
-            // 
-            this.rReqIDDataGridViewTextBoxColumn.DataPropertyName = "R_Req_ID";
-            this.rReqIDDataGridViewTextBoxColumn.HeaderText = "R_Req_ID";
-            this.rReqIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.rReqIDDataGridViewTextBoxColumn.Name = "rReqIDDataGridViewTextBoxColumn";
-            this.rReqIDDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.Width = 125;
-            // 
             // reservationBindingSource
             // 
             this.reservationBindingSource.DataMember = "Reservation";
             // 
-            // database1DataSet5
-            // 
-            // 
-            // reservationTableAdapter
-            // 
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(67, 231);
+            this.listBox1.ItemHeight = 25;
+            this.listBox1.Location = new System.Drawing.Point(156, 238);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(281, 148);
+            this.listBox1.Size = new System.Drawing.Size(281, 129);
             this.listBox1.TabIndex = 1;
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(412, 283);
+            this.btn_Delete.ForeColor = System.Drawing.Color.Brown;
+            this.btn_Delete.Location = new System.Drawing.Point(647, 272);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(106, 41);
+            this.btn_Delete.Size = new System.Drawing.Size(158, 75);
             this.btn_Delete.TabIndex = 2;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            // 
+            // grpB_DelRervation
+            // 
+            this.grpB_DelRervation.BackColor = System.Drawing.Color.Transparent;
+            this.grpB_DelRervation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.grpB_DelRervation.Controls.Add(this.dataGridView1);
+            this.grpB_DelRervation.Controls.Add(this.listBox1);
+            this.grpB_DelRervation.Controls.Add(this.btn_Delete);
+            this.grpB_DelRervation.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpB_DelRervation.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.grpB_DelRervation.Location = new System.Drawing.Point(88, 24);
+            this.grpB_DelRervation.Name = "grpB_DelRervation";
+            this.grpB_DelRervation.Size = new System.Drawing.Size(946, 392);
+            this.grpB_DelRervation.TabIndex = 3;
+            this.grpB_DelRervation.TabStop = false;
+            this.grpB_DelRervation.Text = "Delete Reservation";
             // 
             // DeleteReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1082, 453);
+            this.Controls.Add(this.grpB_DelRervation);
+            this.DoubleBuffered = true;
             this.Name = "DeleteReservation";
             this.Text = "DeleteReservation";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
+            this.grpB_DelRervation.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -156,5 +121,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.GroupBox grpB_DelRervation;
     }
 }

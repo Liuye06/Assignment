@@ -128,6 +128,11 @@ namespace Assignment
         {
             UserSessionManager.Logout(this);
         }
+
+        private void gbReplyRequest_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
