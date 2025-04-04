@@ -228,11 +228,11 @@ namespace Assignment
         public bool IsHallAvailable(int hallID, DateTime startDate, DateTime endDate)
         {
             string query = @"
-        SELECT COUNT(*) 
-        FROM Reservation r
-        JOIN R_Request rr ON r.R_Req_ID = rr.R_Req_ID
-        WHERE r.Hall_ID = @Hall_ID 
-        AND ((rr.Start_Date <= @EndDate AND rr.End_Date >= @StartDate))";
+                SELECT COUNT(*) 
+                FROM Reservation r
+                JOIN R_Request rr ON r.R_Req_ID = rr.R_Req_ID
+                WHERE r.Hall_ID = @Hall_ID 
+                AND ((rr.Start_Date <= @EndDate AND rr.End_Date >= @StartDate))";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

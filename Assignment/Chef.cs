@@ -125,6 +125,7 @@ namespace Assignment
             bindingSource.RemoveFilter(); // Reset all filters 
         }
 
+
         private void btn_inventory_Click(object sender, EventArgs e)
         {
             _sidebarManager.NavigateTo(new Chef(currentUserID));

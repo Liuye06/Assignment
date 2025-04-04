@@ -21,34 +21,6 @@ namespace Assignment
         }
 
 
-
-        private void btnUpdateProfile_Click(object sender, EventArgs e)
-        {
-            // Open the UpdateManagerProfileForm when the update button is clicked
-            
-            
-        }
-
-        private void btn_inventory_CProfile_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new Chef(currentUserID));
-        }
-
-        private void btn_CusOrder_CProfile_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new ChefCustomerOrder(currentUserID));
-        }
-
-        private void btn_ChefProfile_CProfile_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new Chef_Profile(currentUserID));
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            UserSessionManager.Logout(this);
-        }
-
         private void RCProfile_Load(object sender, EventArgs e)
         {
             LoadRCProfile(currentUserID);
@@ -61,7 +33,7 @@ namespace Assignment
 
         private void LoadRCProfile(int loggedInUserID)
         {
-            Dictionary<string, object> rcData = ChefProfileDB.GetChefProfile(loggedInUserID);
+            Dictionary<string, object> rcData = RCProfileDB.GetRCProfile(loggedInUserID);
 
             if (rcData.Count > 0)
             {
@@ -78,7 +50,11 @@ namespace Assignment
                 txtUsername.ReadOnly = true;
                 txtPassword.ReadOnly = true;
 
-                // Disable DateTimePicker and ComboBox
+                // Disable All
+                txtEmail.Enabled = false;
+                txtName.Enabled = false;
+                txtUsername.Enabled = false;
+                txtPassword.Enabled = false;
                 dtpDOB.Enabled = false;
                 cmbGender.Enabled = false;
 

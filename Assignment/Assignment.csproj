@@ -112,12 +112,6 @@
       <DependentUpon>CustomerEditProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerProfileDB.cs" />
-    <Compile Include="DeleteReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteReservation.Designer.cs">
-      <DependentUpon>DeleteReservation.cs</DependentUpon>
-    </Compile>
     <Compile Include="loginPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,9 +415,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerEditProfile.resx">
       <DependentUpon>CustomerEditProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeleteReservation.resx">
-      <DependentUpon>DeleteReservation.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="ReservationDetails.cs" />
     <Compile Include="ReservationManager.cs" />

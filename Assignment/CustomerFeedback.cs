@@ -30,7 +30,7 @@ namespace Assignment
             if (int.TryParse(txtSearchOrder.Text, out orderId))
             {
                 OrderFeedback feedbackHandler = new OrderFeedback();
-                feedbackHandler.SearchOrderFeedback(orderId, listViewOrder); // Call function to filter ListView
+                feedbackHandler.SearchOrderFeedback(currentUserId, orderId, listViewOrder); // Call function to filter ListView
             }
             else
             {
@@ -45,12 +45,12 @@ namespace Assignment
                 int orderId = int.Parse(listViewOrder.SelectedItems[0].SubItems[0].Text); 
 
                 OrderFeedback feedbackHandler = new OrderFeedback();
-                if (feedbackHandler.SubmitFeedback(orderId, txt_Feedback.Text))
+                if (feedbackHandler.SubmitFeedback(currentUserId, orderId, txt_Feedback.Text))
                 {
                     MessageBox.Show("Feedback submitted successfully.");
 
                     // ✅ Refresh the ListView to show the updated feedback
-                    feedbackHandler.LoadOrders(listViewOrder);
+                    feedbackHandler.LoadOrders(currentUserId, listViewOrder);
                 }
                 else
                 {
@@ -61,6 +61,7 @@ namespace Assignment
             {
                 MessageBox.Show("Please select an order and enter feedback.");
             }
+            txt_Feedback.Text = ""; // Clear feedback box
         }
 
         private void CustomerFeedback_Load(object sender, EventArgs e)
@@ -75,7 +76,7 @@ namespace Assignment
             listViewOrder.Columns.Add("Feedback", 300);
 
             OrderFeedback feedbackHandler = new OrderFeedback();
-            feedbackHandler.LoadOrders(listViewOrder);
+            feedbackHandler.LoadOrders(currentUserId, listViewOrder);
         }
 
         private void btnResetSearch_Click(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace Assignment
             txtSearchOrder.Text = ""; // Clear search box
             listViewOrder.Items.Clear(); // Clear list
             OrderFeedback feedbackHandler = new OrderFeedback();
-            feedbackHandler.LoadOrders(listViewOrder); // Reload all orders
+            feedbackHandler.LoadOrders(currentUserId, listViewOrder); // Reload all orders
         }
 
         private void btnProfile_Click_1(object sender, EventArgs e)

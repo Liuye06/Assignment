@@ -90,13 +90,27 @@ namespace Assignment
                 // Get selected data
                 int requestID = Convert.ToInt32(dgvReplyRequest.SelectedRows[0].Cells["R_Req_ID"].Value);
                 int userID = Convert.ToInt32(dgvReplyRequest.SelectedRows[0].Cells["User_ID"].Value);
+                string status = dgvReplyRequest.SelectedRows[0].Cells["Status"].Value.ToString();
 
-                // Set Hall_ID to NULL and Status to Approved
-                int? hallID = null; // Nullable int for Hall_ID
-                string status = "Approved"; // Default Status
+                // ✅ Step 1: Prevent adding requests that are NOT approved
+                if (status != "Approved")
+                {
+                    MessageBox.Show("Only requests with 'Approved' status can be added to Reservations.");
+                    return; // Stop further execution
+                }
 
-                // Add to Reservation
                 RequestHandler handler = new RequestHandler();
+
+                // ✅ Step 2: Prevent duplicate additions
+                bool alreadyExists = handler.CheckIfRequestExistsInReservation(requestID);
+                if (alreadyExists)
+                {
+                    MessageBox.Show("This request has already been added to Reservations.");
+                    return; // Stop further execution
+                }
+
+                // ✅ Step 3: If valid, proceed with adding to Reservation
+                int? hallID = null; // Nullable int for Hall_ID
                 bool success = handler.AddToReservation(hallID, userID, requestID, status);
 
                 if (success)

@@ -50,8 +50,8 @@ namespace Assignment
                 JOIN [dbo].[Request] r ON o.Order_ID = r.Order_ID
                 JOIN [dbo].[Menu] m ON r.Item_ID = m.Item_ID
                 WHERE o.User_ID = @UserID
-                GROUP BY o.Order_ID, m.Item, o.Status;
-            ";
+                GROUP BY o.Order_ID, m.Item, o.Status
+                ORDER BY o.Order_ID;";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@UserID", userId);

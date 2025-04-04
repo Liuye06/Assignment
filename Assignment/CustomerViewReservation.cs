@@ -53,46 +53,6 @@ namespace Assignment
         }
 
 
-        private void btnProfile_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new Customer_Profile(currentUserID));
-        }
-
-        private void btnViewOrders_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserID));
-        }
-
-        private void btnViewReplyRequest_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new ViewCustomerReplyRequest(currentUserID));
-        }
-
-        private void btnViewReservation_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerViewReservation(currentUserID));
-        }
-
-        private void btnMakeReservation_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserID));
-        }
-
-        private void btnMakeOrder_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerMenu(currentUserID));
-        }
-
-        private void btnFeedback_Click(object sender, EventArgs e)
-        {
-            _sidebarManager.NavigateTo(new CustomerFeedback(currentUserID));
-        }
-
-        private void btnLogOut_Click(object sender, EventArgs e)
-        {
-            UserSessionManager.Logout(this);
-        }
-
         private void btnMakePayment_Click(object sender, EventArgs e)
         {
             if (listView_ReservationRequest.SelectedItems.Count > 0)
@@ -115,6 +75,7 @@ namespace Assignment
             {
                 MessageBox.Show("Please select a reservation to make a payment.");
             }
+            viewCustomerReservationNPayment.LoadDataWithPaymentStatus(listView_ReservationRequest, currentUserID);
         }
 
         private void ConfirmAndPay(string reservationId)
@@ -191,6 +152,47 @@ namespace Assignment
             {
                 MessageBox.Show("Error while processing the payment: " + ex.Message);
             }
+        }
+
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Customer_Profile(currentUserID));
+        }
+
+        private void btnViewOrders_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserID));
+        }
+
+        private void btnViewReplyRequest_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new ViewCustomerReplyRequest(currentUserID));
+        }
+
+        private void btnViewReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerViewReservation(currentUserID));
+        }
+
+        private void btnMakeReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserID));
+        }
+
+        private void btnMakeOrder_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMenu(currentUserID));
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerFeedback(currentUserID));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
         }
     }
 }

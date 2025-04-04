@@ -90,6 +90,22 @@ namespace Assignment
                 }
             }
         }
+
+        public bool CheckIfRequestExistsInReservation(int requestID)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                string query = "SELECT COUNT(*) FROM Reservation WHERE Request_ID = @RequestID";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@RequestID", requestID);
+                    conn.Open();
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0; // If count > 0, request already exists
+                }
+            }
+        }
     }
 }
 

@@ -127,10 +127,10 @@
             this.tableSidebar_CInventory.ColumnCount = 1;
             this.tableSidebar_CInventory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSidebar_CInventory.Controls.Add(this.btnLogOut, 0, 4);
-            this.tableSidebar_CInventory.Controls.Add(this.btn_inventory, 0, 1);
             this.tableSidebar_CInventory.Controls.Add(this.btn_CusOrder, 0, 2);
             this.tableSidebar_CInventory.Controls.Add(this.btn_ChefProfile, 0, 3);
             this.tableSidebar_CInventory.Controls.Add(this.panel2, 0, 0);
+            this.tableSidebar_CInventory.Controls.Add(this.btn_inventory, 0, 1);
             this.tableSidebar_CInventory.Location = new System.Drawing.Point(12, -1);
             this.tableSidebar_CInventory.Name = "tableSidebar_CInventory";
             this.tableSidebar_CInventory.RowCount = 6;
