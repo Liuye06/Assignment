@@ -294,9 +294,10 @@
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(447, 312);
+            this.btnUpdateProfile.ForeColor = System.Drawing.Color.RosyBrown;
+            this.btnUpdateProfile.Location = new System.Drawing.Point(476, 312);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
-            this.btnUpdateProfile.Size = new System.Drawing.Size(339, 35);
+            this.btnUpdateProfile.Size = new System.Drawing.Size(310, 35);
             this.btnUpdateProfile.TabIndex = 9;
             this.btnUpdateProfile.Text = "Update Profile";
             this.btnUpdateProfile.UseVisualStyleBackColor = true;
