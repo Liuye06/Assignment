@@ -35,8 +35,8 @@
             this.btnChefProfile_ChefCustomerOrder = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_chef = new System.Windows.Forms.Label();
             this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.lbl_chef = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableSidebar_ChefCustomerOrder.SuspendLayout();
@@ -74,7 +74,7 @@
             this.btninventory_ChefCustomerOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btninventory_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
             this.btninventory_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btninventory_ChefCustomerOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btninventory_ChefCustomerOrder.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btninventory_ChefCustomerOrder.Image = ((System.Drawing.Image)(resources.GetObject("btninventory_ChefCustomerOrder.Image")));
             this.btninventory_ChefCustomerOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btninventory_ChefCustomerOrder.Location = new System.Drawing.Point(3, 152);
@@ -92,7 +92,7 @@
             this.btnCusOrder_ChefCustomerOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCusOrder_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
             this.btnCusOrder_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCusOrder_ChefCustomerOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCusOrder_ChefCustomerOrder.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCusOrder_ChefCustomerOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnCusOrder_ChefCustomerOrder.Image")));
             this.btnCusOrder_ChefCustomerOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCusOrder_ChefCustomerOrder.Location = new System.Drawing.Point(3, 197);
@@ -110,7 +110,7 @@
             this.btnChefProfile_ChefCustomerOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChefProfile_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
             this.btnChefProfile_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChefProfile_ChefCustomerOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChefProfile_ChefCustomerOrder.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChefProfile_ChefCustomerOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnChefProfile_ChefCustomerOrder.Image")));
             this.btnChefProfile_ChefCustomerOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChefProfile_ChefCustomerOrder.Location = new System.Drawing.Point(3, 242);
@@ -128,7 +128,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 288);
@@ -148,16 +148,6 @@
             this.panel1.Size = new System.Drawing.Size(230, 144);
             this.panel1.TabIndex = 16;
             // 
-            // lbl_chef
-            // 
-            this.lbl_chef.AutoSize = true;
-            this.lbl_chef.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_chef.Location = new System.Drawing.Point(-3, -3);
-            this.lbl_chef.Name = "lbl_chef";
-            this.lbl_chef.Size = new System.Drawing.Size(90, 54);
-            this.lbl_chef.TabIndex = 14;
-            this.lbl_chef.Text = "Chef";
-            // 
             // pic_logo
             // 
             this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
@@ -167,6 +157,16 @@
             this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pic_logo.TabIndex = 8;
             this.pic_logo.TabStop = false;
+            // 
+            // lbl_chef
+            // 
+            this.lbl_chef.AutoSize = true;
+            this.lbl_chef.Font = new System.Drawing.Font("Segoe Print", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_chef.Location = new System.Drawing.Point(-3, -3);
+            this.lbl_chef.Name = "lbl_chef";
+            this.lbl_chef.Size = new System.Drawing.Size(90, 54);
+            this.lbl_chef.TabIndex = 14;
+            this.lbl_chef.Text = "Chef";
             // 
             // label1
             // 

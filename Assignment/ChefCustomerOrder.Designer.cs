@@ -117,7 +117,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 288);
@@ -134,7 +134,7 @@
             this.btninventory_ChefCustomerOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btninventory_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
             this.btninventory_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btninventory_ChefCustomerOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btninventory_ChefCustomerOrder.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btninventory_ChefCustomerOrder.Image = ((System.Drawing.Image)(resources.GetObject("btninventory_ChefCustomerOrder.Image")));
             this.btninventory_ChefCustomerOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btninventory_ChefCustomerOrder.Location = new System.Drawing.Point(3, 152);
@@ -152,7 +152,7 @@
             this.btnCusOrder_ChefCustomerOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCusOrder_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
             this.btnCusOrder_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCusOrder_ChefCustomerOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCusOrder_ChefCustomerOrder.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCusOrder_ChefCustomerOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnCusOrder_ChefCustomerOrder.Image")));
             this.btnCusOrder_ChefCustomerOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCusOrder_ChefCustomerOrder.Location = new System.Drawing.Point(3, 197);
@@ -170,7 +170,7 @@
             this.btnChefProfile_ChefCustomerOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChefProfile_ChefCustomerOrder.FlatAppearance.BorderSize = 0;
             this.btnChefProfile_ChefCustomerOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChefProfile_ChefCustomerOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChefProfile_ChefCustomerOrder.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChefProfile_ChefCustomerOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnChefProfile_ChefCustomerOrder.Image")));
             this.btnChefProfile_ChefCustomerOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChefProfile_ChefCustomerOrder.Location = new System.Drawing.Point(3, 242);
@@ -184,6 +184,7 @@
             // 
             // gbShowCusOrder
             // 
+            this.gbShowCusOrder.BackColor = System.Drawing.Color.Transparent;
             this.gbShowCusOrder.Controls.Add(this.btnUpdateChef);
             this.gbShowCusOrder.Controls.Add(this.cmbChef);
             this.gbShowCusOrder.Controls.Add(this.btnRefreshStatusCusOrder);
@@ -191,16 +192,19 @@
             this.gbShowCusOrder.Controls.Add(this.lblCusStatusOrder);
             this.gbShowCusOrder.Controls.Add(this.cmbCusOrderStatus);
             this.gbShowCusOrder.Controls.Add(this.dgvChefCusOrder);
-            this.gbShowCusOrder.Location = new System.Drawing.Point(16, 51);
+            this.gbShowCusOrder.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbShowCusOrder.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gbShowCusOrder.Location = new System.Drawing.Point(16, 37);
             this.gbShowCusOrder.Name = "gbShowCusOrder";
-            this.gbShowCusOrder.Size = new System.Drawing.Size(816, 369);
+            this.gbShowCusOrder.Size = new System.Drawing.Size(816, 387);
             this.gbShowCusOrder.TabIndex = 7;
             this.gbShowCusOrder.TabStop = false;
             this.gbShowCusOrder.Text = "Customer Order";
             // 
             // btnUpdateChef
             // 
-            this.btnUpdateChef.Location = new System.Drawing.Point(429, 326);
+            this.btnUpdateChef.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnUpdateChef.Location = new System.Drawing.Point(426, 336);
             this.btnUpdateChef.Name = "btnUpdateChef";
             this.btnUpdateChef.Size = new System.Drawing.Size(184, 33);
             this.btnUpdateChef.TabIndex = 19;
@@ -214,16 +218,17 @@
             this.cmbChef.Items.AddRange(new object[] {
             "In Progress",
             "Completed"});
-            this.cmbChef.Location = new System.Drawing.Point(19, 327);
+            this.cmbChef.Location = new System.Drawing.Point(16, 337);
             this.cmbChef.Name = "cmbChef";
             this.cmbChef.Size = new System.Drawing.Size(404, 33);
             this.cmbChef.TabIndex = 18;
             // 
             // btnRefreshStatusCusOrder
             // 
-            this.btnRefreshStatusCusOrder.Location = new System.Drawing.Point(414, 41);
+            this.btnRefreshStatusCusOrder.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRefreshStatusCusOrder.Location = new System.Drawing.Point(449, 41);
             this.btnRefreshStatusCusOrder.Name = "btnRefreshStatusCusOrder";
-            this.btnRefreshStatusCusOrder.Size = new System.Drawing.Size(390, 36);
+            this.btnRefreshStatusCusOrder.Size = new System.Drawing.Size(355, 36);
             this.btnRefreshStatusCusOrder.TabIndex = 14;
             this.btnRefreshStatusCusOrder.Text = "Refresh Status";
             this.btnRefreshStatusCusOrder.UseVisualStyleBackColor = true;
@@ -231,7 +236,8 @@
             // 
             // btnUpdateCusOrderStatus
             // 
-            this.btnUpdateCusOrderStatus.Location = new System.Drawing.Point(619, 326);
+            this.btnUpdateCusOrderStatus.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnUpdateCusOrderStatus.Location = new System.Drawing.Point(616, 336);
             this.btnUpdateCusOrderStatus.Name = "btnUpdateCusOrderStatus";
             this.btnUpdateCusOrderStatus.Size = new System.Drawing.Size(185, 33);
             this.btnUpdateCusOrderStatus.TabIndex = 13;
@@ -244,7 +250,7 @@
             this.lblCusStatusOrder.AutoSize = true;
             this.lblCusStatusOrder.Location = new System.Drawing.Point(14, 44);
             this.lblCusStatusOrder.Name = "lblCusStatusOrder";
-            this.lblCusStatusOrder.Size = new System.Drawing.Size(123, 25);
+            this.lblCusStatusOrder.Size = new System.Drawing.Size(140, 25);
             this.lblCusStatusOrder.TabIndex = 12;
             this.lblCusStatusOrder.Text = "Order Status";
             // 
@@ -256,7 +262,7 @@
             "Pending",
             "In Progress",
             "Completed"});
-            this.cmbCusOrderStatus.Location = new System.Drawing.Point(143, 41);
+            this.cmbCusOrderStatus.Location = new System.Drawing.Point(160, 44);
             this.cmbCusOrderStatus.Name = "cmbCusOrderStatus";
             this.cmbCusOrderStatus.Size = new System.Drawing.Size(265, 33);
             this.cmbCusOrderStatus.TabIndex = 11;
@@ -271,11 +277,11 @@
             this.OrderStatus,
             this.ChefInCharge,
             this.CanUpdate});
-            this.dgvChefCusOrder.Location = new System.Drawing.Point(19, 92);
+            this.dgvChefCusOrder.Location = new System.Drawing.Point(40, 92);
             this.dgvChefCusOrder.Name = "dgvChefCusOrder";
             this.dgvChefCusOrder.RowHeadersWidth = 51;
             this.dgvChefCusOrder.RowTemplate.Height = 30;
-            this.dgvChefCusOrder.Size = new System.Drawing.Size(785, 224);
+            this.dgvChefCusOrder.Size = new System.Drawing.Size(734, 224);
             this.dgvChefCusOrder.TabIndex = 3;
             this.dgvChefCusOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellContentClick_1);
             this.dgvChefCusOrder.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChefCusOrder_CellValueChanged);
@@ -328,7 +334,7 @@
             this.panel1.Controls.Add(this.gbShowCusOrder);
             this.panel1.Location = new System.Drawing.Point(238, -6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(844, 458);
+            this.panel1.Size = new System.Drawing.Size(853, 458);
             this.panel1.TabIndex = 8;
             // 
             // ChefCustomerOrder

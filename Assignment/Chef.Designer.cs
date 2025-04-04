@@ -63,7 +63,7 @@
             this.btn_inventory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_inventory.FlatAppearance.BorderSize = 0;
             this.btn_inventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventory.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_inventory.Image = ((System.Drawing.Image)(resources.GetObject("btn_inventory.Image")));
             this.btn_inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_inventory.Location = new System.Drawing.Point(3, 152);
@@ -81,7 +81,7 @@
             this.btn_ChefProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ChefProfile.FlatAppearance.BorderSize = 0;
             this.btn_ChefProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ChefProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ChefProfile.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ChefProfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChefProfile.Image")));
             this.btn_ChefProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_ChefProfile.Location = new System.Drawing.Point(3, 242);
@@ -99,7 +99,7 @@
             this.btn_CusOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_CusOrder.FlatAppearance.BorderSize = 0;
             this.btn_CusOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CusOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CusOrder.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CusOrder.Image = ((System.Drawing.Image)(resources.GetObject("btn_CusOrder.Image")));
             this.btn_CusOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_CusOrder.Location = new System.Drawing.Point(3, 197);
@@ -149,7 +149,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 288);

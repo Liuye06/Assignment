@@ -41,14 +41,16 @@
             // 
             // gbAddNewIngredient
             // 
-            this.gbAddNewIngredient.BackColor = System.Drawing.Color.Maroon;
+            this.gbAddNewIngredient.BackColor = System.Drawing.Color.Transparent;
             this.gbAddNewIngredient.Controls.Add(this.btnCancelIngredient);
             this.gbAddNewIngredient.Controls.Add(this.txtAddStock);
             this.gbAddNewIngredient.Controls.Add(this.lblAddStock);
             this.gbAddNewIngredient.Controls.Add(this.btnAddNewIngredient);
             this.gbAddNewIngredient.Controls.Add(this.lblAddIngredient);
             this.gbAddNewIngredient.Controls.Add(this.txtAddIngredient);
-            this.gbAddNewIngredient.Location = new System.Drawing.Point(71, 39);
+            this.gbAddNewIngredient.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbAddNewIngredient.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.gbAddNewIngredient.Location = new System.Drawing.Point(73, 28);
             this.gbAddNewIngredient.Name = "gbAddNewIngredient";
             this.gbAddNewIngredient.Size = new System.Drawing.Size(963, 402);
             this.gbAddNewIngredient.TabIndex = 7;
@@ -57,6 +59,8 @@
             // 
             // btnCancelIngredient
             // 
+            this.btnCancelIngredient.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelIngredient.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnCancelIngredient.Location = new System.Drawing.Point(492, 324);
             this.btnCancelIngredient.Name = "btnCancelIngredient";
             this.btnCancelIngredient.Size = new System.Drawing.Size(370, 34);
@@ -67,22 +71,25 @@
             // 
             // txtAddStock
             // 
-            this.txtAddStock.Location = new System.Drawing.Point(377, 192);
+            this.txtAddStock.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtAddStock.Location = new System.Drawing.Point(408, 188);
             this.txtAddStock.Name = "txtAddStock";
-            this.txtAddStock.Size = new System.Drawing.Size(309, 30);
+            this.txtAddStock.Size = new System.Drawing.Size(309, 36);
             this.txtAddStock.TabIndex = 7;
             // 
             // lblAddStock
             // 
             this.lblAddStock.AutoSize = true;
-            this.lblAddStock.Location = new System.Drawing.Point(245, 195);
+            this.lblAddStock.Location = new System.Drawing.Point(217, 188);
             this.lblAddStock.Name = "lblAddStock";
-            this.lblAddStock.Size = new System.Drawing.Size(62, 25);
+            this.lblAddStock.Size = new System.Drawing.Size(81, 30);
             this.lblAddStock.TabIndex = 5;
             this.lblAddStock.Text = "Stock";
             // 
             // btnAddNewIngredient
             // 
+            this.btnAddNewIngredient.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewIngredient.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.btnAddNewIngredient.Location = new System.Drawing.Point(117, 324);
             this.btnAddNewIngredient.Name = "btnAddNewIngredient";
             this.btnAddNewIngredient.Size = new System.Drawing.Size(370, 34);
@@ -94,17 +101,18 @@
             // lblAddIngredient
             // 
             this.lblAddIngredient.AutoSize = true;
-            this.lblAddIngredient.Location = new System.Drawing.Point(245, 111);
+            this.lblAddIngredient.Location = new System.Drawing.Point(217, 104);
             this.lblAddIngredient.Name = "lblAddIngredient";
-            this.lblAddIngredient.Size = new System.Drawing.Size(98, 25);
+            this.lblAddIngredient.Size = new System.Drawing.Size(142, 30);
             this.lblAddIngredient.TabIndex = 1;
             this.lblAddIngredient.Text = "Ingredient";
             // 
             // txtAddIngredient
             // 
-            this.txtAddIngredient.Location = new System.Drawing.Point(377, 108);
+            this.txtAddIngredient.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtAddIngredient.Location = new System.Drawing.Point(408, 104);
             this.txtAddIngredient.Name = "txtAddIngredient";
-            this.txtAddIngredient.Size = new System.Drawing.Size(309, 30);
+            this.txtAddIngredient.Size = new System.Drawing.Size(309, 36);
             this.txtAddIngredient.TabIndex = 0;
             // 
             // AddChefIngredient
@@ -112,6 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.gbAddNewIngredient);
             this.DoubleBuffered = true;

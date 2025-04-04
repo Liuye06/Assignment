@@ -90,7 +90,7 @@
             this.btn_inventory_CProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_inventory_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_inventory_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_inventory_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_inventory_CProfile.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_inventory_CProfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_inventory_CProfile.Image")));
             this.btn_inventory_CProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_inventory_CProfile.Location = new System.Drawing.Point(3, 152);
@@ -108,7 +108,7 @@
             this.btn_CusOrder_CProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_CusOrder_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_CusOrder_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_CusOrder_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CusOrder_CProfile.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CusOrder_CProfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_CusOrder_CProfile.Image")));
             this.btn_CusOrder_CProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_CusOrder_CProfile.Location = new System.Drawing.Point(3, 197);
@@ -126,7 +126,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(3, 288);
@@ -143,7 +143,7 @@
             this.btn_ChefProfile_CProfile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_ChefProfile_CProfile.FlatAppearance.BorderSize = 0;
             this.btn_ChefProfile_CProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ChefProfile_CProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ChefProfile_CProfile.Font = new System.Drawing.Font("Gadugi", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ChefProfile_CProfile.Image = ((System.Drawing.Image)(resources.GetObject("btn_ChefProfile_CProfile.Image")));
             this.btn_ChefProfile_CProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_ChefProfile_CProfile.Location = new System.Drawing.Point(3, 242);
@@ -204,7 +204,7 @@
             this.gbChefProfile.Controls.Add(this.lblName);
             this.gbChefProfile.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbChefProfile.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.gbChefProfile.Location = new System.Drawing.Point(44, 45);
+            this.gbChefProfile.Location = new System.Drawing.Point(44, 35);
             this.gbChefProfile.Name = "gbChefProfile";
             this.gbChefProfile.Size = new System.Drawing.Size(805, 367);
             this.gbChefProfile.TabIndex = 15;
