@@ -45,9 +45,11 @@
             this.lbl_Total_O = new System.Windows.Forms.Label();
             this.lbl_OrderID_O = new System.Windows.Forms.Label();
             this.lblViewReservation = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableSidebar_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.panel_ViewReservation.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSidebar_Customer
@@ -239,21 +241,23 @@
             // panel_ViewReservation
             // 
             this.panel_ViewReservation.AutoScroll = true;
-            this.panel_ViewReservation.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel_ViewReservation.BackColor = System.Drawing.Color.Transparent;
             this.panel_ViewReservation.Controls.Add(this.btnConfirmNPay);
             this.panel_ViewReservation.Controls.Add(this.listView_ReservationRequest);
             this.panel_ViewReservation.Controls.Add(this.lbl_Total_O);
             this.panel_ViewReservation.Controls.Add(this.lbl_OrderID_O);
             this.panel_ViewReservation.Controls.Add(this.lblViewReservation);
-            this.panel_ViewReservation.Location = new System.Drawing.Point(260, 56);
+            this.panel_ViewReservation.Location = new System.Drawing.Point(24, 31);
             this.panel_ViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewReservation.Name = "panel_ViewReservation";
-            this.panel_ViewReservation.Size = new System.Drawing.Size(809, 360);
+            this.panel_ViewReservation.Size = new System.Drawing.Size(809, 405);
             this.panel_ViewReservation.TabIndex = 47;
             // 
             // btnConfirmNPay
             // 
-            this.btnConfirmNPay.Location = new System.Drawing.Point(573, 307);
+            this.btnConfirmNPay.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmNPay.ForeColor = System.Drawing.Color.Coral;
+            this.btnConfirmNPay.Location = new System.Drawing.Point(512, 336);
             this.btnConfirmNPay.Name = "btnConfirmNPay";
             this.btnConfirmNPay.Size = new System.Drawing.Size(212, 42);
             this.btnConfirmNPay.TabIndex = 24;
@@ -263,12 +267,13 @@
             // 
             // listView_ReservationRequest
             // 
+            this.listView_ReservationRequest.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_ReservationRequest.FullRowSelect = true;
             this.listView_ReservationRequest.GridLines = true;
             this.listView_ReservationRequest.HideSelection = false;
-            this.listView_ReservationRequest.Location = new System.Drawing.Point(20, 59);
+            this.listView_ReservationRequest.Location = new System.Drawing.Point(41, 85);
             this.listView_ReservationRequest.Name = "listView_ReservationRequest";
-            this.listView_ReservationRequest.Size = new System.Drawing.Size(765, 235);
+            this.listView_ReservationRequest.Size = new System.Drawing.Size(683, 235);
             this.listView_ReservationRequest.TabIndex = 23;
             this.listView_ReservationRequest.UseCompatibleStateImageBehavior = false;
             this.listView_ReservationRequest.View = System.Windows.Forms.View.Details;
@@ -294,19 +299,31 @@
             // lblViewReservation
             // 
             this.lblViewReservation.AutoSize = true;
-            this.lblViewReservation.Location = new System.Drawing.Point(15, 16);
+            this.lblViewReservation.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblViewReservation.Location = new System.Drawing.Point(4, 0);
             this.lblViewReservation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblViewReservation.Name = "lblViewReservation";
-            this.lblViewReservation.Size = new System.Drawing.Size(260, 25);
+            this.lblViewReservation.Size = new System.Drawing.Size(366, 30);
             this.lblViewReservation.TabIndex = 19;
             this.lblViewReservation.Text = "Your Reservation and Status";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel_ViewReservation);
+            this.panel1.Location = new System.Drawing.Point(246, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(846, 450);
+            this.panel1.TabIndex = 48;
             // 
             // CustomerViewReservation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.panel_ViewReservation);
             this.Controls.Add(this.tableSidebar_Customer);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerViewReservation";
             this.Text = "CustomerMakePayment";
@@ -314,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel_ViewReservation.ResumeLayout(false);
             this.panel_ViewReservation.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -335,5 +353,6 @@
         private System.Windows.Forms.Label lblViewReservation;
         private System.Windows.Forms.Button btnConfirmNPay;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

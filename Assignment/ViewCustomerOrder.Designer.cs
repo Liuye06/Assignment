@@ -48,23 +48,25 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel_ViewOrders.SuspendLayout();
             this.tableSidebar_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_ViewOrders
             // 
             this.panel_ViewOrders.AutoScroll = true;
-            this.panel_ViewOrders.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel_ViewOrders.BackColor = System.Drawing.Color.Transparent;
             this.panel_ViewOrders.Controls.Add(this.listView_OrderHistory);
             this.panel_ViewOrders.Controls.Add(this.lbl_Total_O);
             this.panel_ViewOrders.Controls.Add(this.lbl_OrderID_O);
             this.panel_ViewOrders.Controls.Add(this.lblViewCusOrder);
-            this.panel_ViewOrders.Location = new System.Drawing.Point(247, 62);
+            this.panel_ViewOrders.Location = new System.Drawing.Point(4, 55);
             this.panel_ViewOrders.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewOrders.Name = "panel_ViewOrders";
-            this.panel_ViewOrders.Size = new System.Drawing.Size(822, 360);
+            this.panel_ViewOrders.Size = new System.Drawing.Size(857, 398);
             this.panel_ViewOrders.TabIndex = 45;
             // 
             // listView_OrderHistory
@@ -74,12 +76,13 @@
             this.ItemName,
             this.Status,
             this.TotalPrice});
+            this.listView_OrderHistory.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_OrderHistory.FullRowSelect = true;
             this.listView_OrderHistory.GridLines = true;
             this.listView_OrderHistory.HideSelection = false;
-            this.listView_OrderHistory.Location = new System.Drawing.Point(57, 62);
+            this.listView_OrderHistory.Location = new System.Drawing.Point(20, 99);
             this.listView_OrderHistory.Name = "listView_OrderHistory";
-            this.listView_OrderHistory.Size = new System.Drawing.Size(709, 266);
+            this.listView_OrderHistory.Size = new System.Drawing.Size(834, 299);
             this.listView_OrderHistory.TabIndex = 23;
             this.listView_OrderHistory.UseCompatibleStateImageBehavior = false;
             this.listView_OrderHistory.View = System.Windows.Forms.View.Details;
@@ -128,10 +131,12 @@
             // lblViewCusOrder
             // 
             this.lblViewCusOrder.AutoSize = true;
-            this.lblViewCusOrder.Location = new System.Drawing.Point(33, 18);
+            this.lblViewCusOrder.Font = new System.Drawing.Font("Modern No. 20", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewCusOrder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblViewCusOrder.Location = new System.Drawing.Point(53, 43);
             this.lblViewCusOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblViewCusOrder.Name = "lblViewCusOrder";
-            this.lblViewCusOrder.Size = new System.Drawing.Size(272, 25);
+            this.lblViewCusOrder.Size = new System.Drawing.Size(414, 31);
             this.lblViewCusOrder.TabIndex = 19;
             this.lblViewCusOrder.Text = "Your Order History and Status";
             // 
@@ -321,12 +326,22 @@
             this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click_1);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel_ViewOrders);
+            this.panel1.Location = new System.Drawing.Point(222, -6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(865, 457);
+            this.panel1.TabIndex = 46;
+            // 
             // ViewCustomerOrder
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.tableSidebar_Customer);
-            this.Controls.Add(this.panel_ViewOrders);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ViewCustomerOrder";
             this.Text = "ViewCustomerOrder";
@@ -334,6 +349,7 @@
             this.panel_ViewOrders.PerformLayout();
             this.tableSidebar_Customer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -359,5 +375,6 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

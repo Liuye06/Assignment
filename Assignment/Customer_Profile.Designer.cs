@@ -46,6 +46,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.tableSidebar_Customer = new System.Windows.Forms.TableLayoutPanel();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnMakeReservation = new System.Windows.Forms.Button();
             this.btnViewReservation = new System.Windows.Forms.Button();
@@ -54,15 +55,17 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.panel_Cus = new System.Windows.Forms.Panel();
             this.gbCustomerProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).BeginInit();
             this.tableSidebar_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel_Cus.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCustomerProfile
             // 
+            this.gbCustomerProfile.BackColor = System.Drawing.Color.Transparent;
             this.gbCustomerProfile.Controls.Add(this.dtpDOB);
             this.gbCustomerProfile.Controls.Add(this.cmbGender);
             this.gbCustomerProfile.Controls.Add(this.picProfilePic);
@@ -78,34 +81,40 @@
             this.gbCustomerProfile.Controls.Add(this.lblProfilePic);
             this.gbCustomerProfile.Controls.Add(this.lblEmail);
             this.gbCustomerProfile.Controls.Add(this.lblName);
-            this.gbCustomerProfile.Location = new System.Drawing.Point(260, 51);
+            this.gbCustomerProfile.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCustomerProfile.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbCustomerProfile.Location = new System.Drawing.Point(36, 25);
             this.gbCustomerProfile.Name = "gbCustomerProfile";
-            this.gbCustomerProfile.Size = new System.Drawing.Size(796, 369);
+            this.gbCustomerProfile.Size = new System.Drawing.Size(848, 453);
             this.gbCustomerProfile.TabIndex = 16;
             this.gbCustomerProfile.TabStop = false;
             this.gbCustomerProfile.Text = "Customer Profile";
             // 
             // dtpDOB
             // 
-            this.dtpDOB.Location = new System.Drawing.Point(142, 262);
+            this.dtpDOB.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDOB.Location = new System.Drawing.Point(158, 295);
             this.dtpDOB.Name = "dtpDOB";
-            this.dtpDOB.Size = new System.Drawing.Size(271, 30);
+            this.dtpDOB.Size = new System.Drawing.Size(271, 32);
             this.dtpDOB.TabIndex = 3;
             // 
             // cmbGender
             // 
+            this.cmbGender.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbGender.Location = new System.Drawing.Point(142, 315);
+            this.cmbGender.Location = new System.Drawing.Point(158, 348);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(271, 33);
             this.cmbGender.TabIndex = 19;
             // 
             // picProfilePic
             // 
-            this.picProfilePic.Location = new System.Drawing.Point(509, 82);
+            this.picProfilePic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.picProfilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picProfilePic.Location = new System.Drawing.Point(552, 80);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
             this.picProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,57 +123,65 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(142, 98);
+            this.txtPassword.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(158, 131);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(271, 30);
+            this.txtPassword.Size = new System.Drawing.Size(271, 32);
             this.txtPassword.TabIndex = 17;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(142, 44);
+            this.txtUsername.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(158, 77);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(271, 30);
+            this.txtUsername.Size = new System.Drawing.Size(271, 32);
             this.txtUsername.TabIndex = 16;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(18, 101);
+            this.lblPassword.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(34, 134);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(98, 25);
+            this.lblPassword.Size = new System.Drawing.Size(107, 25);
             this.lblPassword.TabIndex = 15;
             this.lblPassword.Text = "Password";
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(18, 47);
+            this.lblUsername.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(34, 80);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(102, 25);
+            this.lblUsername.Size = new System.Drawing.Size(111, 25);
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Username";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(18, 316);
+            this.lblGender.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(34, 349);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(77, 25);
+            this.lblGender.Size = new System.Drawing.Size(83, 25);
             this.lblGender.TabIndex = 11;
             this.lblGender.Text = "Gender";
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(18, 267);
+            this.lblDOB.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDOB.Location = new System.Drawing.Point(34, 300);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(118, 25);
+            this.lblDOB.Size = new System.Drawing.Size(151, 25);
             this.lblDOB.TabIndex = 10;
             this.lblDOB.Text = "Date of Birth";
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.Location = new System.Drawing.Point(489, 313);
+            this.btnUpdateProfile.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateProfile.ForeColor = System.Drawing.Color.Coral;
+            this.btnUpdateProfile.Location = new System.Drawing.Point(506, 339);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
             this.btnUpdateProfile.Size = new System.Drawing.Size(286, 35);
             this.btnUpdateProfile.TabIndex = 9;
@@ -174,42 +191,47 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(142, 207);
+            this.txtEmail.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(158, 240);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(271, 30);
+            this.txtEmail.Size = new System.Drawing.Size(271, 32);
             this.txtEmail.TabIndex = 8;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(142, 153);
+            this.txtName.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(158, 186);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(271, 30);
+            this.txtName.Size = new System.Drawing.Size(271, 32);
             this.txtName.TabIndex = 7;
             // 
             // lblProfilePic
             // 
             this.lblProfilePic.AutoSize = true;
-            this.lblProfilePic.Location = new System.Drawing.Point(504, 49);
+            this.lblProfilePic.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProfilePic.Location = new System.Drawing.Point(547, 45);
             this.lblProfilePic.Name = "lblProfilePic";
-            this.lblProfilePic.Size = new System.Drawing.Size(131, 25);
+            this.lblProfilePic.Size = new System.Drawing.Size(166, 25);
             this.lblProfilePic.TabIndex = 4;
             this.lblProfilePic.Text = "Profile Picture";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(18, 210);
+            this.lblEmail.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(34, 243);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(60, 25);
+            this.lblEmail.Size = new System.Drawing.Size(75, 25);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(18, 156);
+            this.lblName.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(34, 189);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(64, 25);
+            this.lblName.Size = new System.Drawing.Size(69, 25);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             // 
@@ -243,6 +265,17 @@
             this.tableSidebar_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableSidebar_Customer.Size = new System.Drawing.Size(228, 450);
             this.tableSidebar_Customer.TabIndex = 20;
+            // 
+            // pic_logo
+            // 
+            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(3, 3);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(201, 144);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 11;
+            this.pic_logo.TabStop = false;
             // 
             // btnLogOut
             // 
@@ -388,23 +421,24 @@
             this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click_1);
             // 
-            // pic_logo
+            // panel_Cus
             // 
-            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(3, 3);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(201, 144);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 11;
-            this.pic_logo.TabStop = false;
+            this.panel_Cus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.panel_Cus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_Cus.BackgroundImage")));
+            this.panel_Cus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_Cus.Controls.Add(this.gbCustomerProfile);
+            this.panel_Cus.Location = new System.Drawing.Point(222, -1);
+            this.panel_Cus.Name = "panel_Cus";
+            this.panel_Cus.Size = new System.Drawing.Size(864, 466);
+            this.panel_Cus.TabIndex = 21;
             // 
             // Customer_Profile
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.tableSidebar_Customer);
-            this.Controls.Add(this.gbCustomerProfile);
+            this.Controls.Add(this.panel_Cus);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Customer_Profile";
@@ -415,6 +449,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePic)).EndInit();
             this.tableSidebar_Customer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel_Cus.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -446,5 +481,6 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel_Cus;
     }
 }

@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.feedbackIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.feedbackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.database1DataSet7 = new Assignment.Database1DataSet7();
             this.tableTableAdapter = new Assignment.Database1DataSet7TableAdapters.TableTableAdapter();
             this.btn_Return = new System.Windows.Forms.Button();
-            this.feedbackIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.feedbackDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet7)).BeginInit();
@@ -58,31 +58,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(978, 306);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.database1DataSet7;
-            // 
-            // database1DataSet7
-            // 
-            this.database1DataSet7.DataSetName = "Database1DataSet7";
-            this.database1DataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tableTableAdapter
-            // 
-            this.tableTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_Return
-            // 
-            this.btn_Return.Location = new System.Drawing.Point(20, 20);
-            this.btn_Return.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btn_Return.Name = "btn_Return";
-            this.btn_Return.Size = new System.Drawing.Size(111, 55);
-            this.btn_Return.TabIndex = 71;
-            this.btn_Return.Text = "<";
-            this.btn_Return.UseVisualStyleBackColor = true;
-            this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
             // 
             // feedbackIDDataGridViewTextBoxColumn
             // 
@@ -109,10 +84,36 @@
             this.feedbackDataGridViewTextBoxColumn.Name = "feedbackDataGridViewTextBoxColumn";
             this.feedbackDataGridViewTextBoxColumn.Width = 150;
             // 
+            // tableBindingSource
+            // 
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.database1DataSet7;
+            // 
+            // database1DataSet7
+            // 
+            this.database1DataSet7.DataSetName = "Database1DataSet7";
+            this.database1DataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableTableAdapter
+            // 
+            this.tableTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_Return
+            // 
+            this.btn_Return.Location = new System.Drawing.Point(20, 20);
+            this.btn_Return.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_Return.Name = "btn_Return";
+            this.btn_Return.Size = new System.Drawing.Size(111, 55);
+            this.btn_Return.TabIndex = 71;
+            this.btn_Return.Text = "<";
+            this.btn_Return.UseVisualStyleBackColor = true;
+            this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
+            // 
             // view_CusFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.btn_Return);
             this.Controls.Add(this.dataGridView1);

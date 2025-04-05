@@ -51,16 +51,18 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel_ReservationRequest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numHeadCount)).BeginInit();
             this.tableSidebar_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_ReservationRequest
             // 
             this.panel_ReservationRequest.AutoScroll = true;
-            this.panel_ReservationRequest.BackColor = System.Drawing.Color.MistyRose;
+            this.panel_ReservationRequest.BackColor = System.Drawing.Color.Transparent;
             this.panel_ReservationRequest.Controls.Add(this.monthCalendarEnd);
             this.panel_ReservationRequest.Controls.Add(this.lblEndReservationDate);
             this.panel_ReservationRequest.Controls.Add(this.numHeadCount);
@@ -72,7 +74,8 @@
             this.panel_ReservationRequest.Controls.Add(this.txtRequest);
             this.panel_ReservationRequest.Controls.Add(this.monthCalendarStart);
             this.panel_ReservationRequest.Controls.Add(this.btn_SendReq);
-            this.panel_ReservationRequest.Location = new System.Drawing.Point(245, 65);
+            this.panel_ReservationRequest.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel_ReservationRequest.Location = new System.Drawing.Point(43, 61);
             this.panel_ReservationRequest.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ReservationRequest.Name = "panel_ReservationRequest";
             this.panel_ReservationRequest.Size = new System.Drawing.Size(809, 360);
@@ -90,10 +93,11 @@
             // lblEndReservationDate
             // 
             this.lblEndReservationDate.AutoSize = true;
+            this.lblEndReservationDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblEndReservationDate.Location = new System.Drawing.Point(317, 17);
             this.lblEndReservationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndReservationDate.Name = "lblEndReservationDate";
-            this.lblEndReservationDate.Size = new System.Drawing.Size(201, 25);
+            this.lblEndReservationDate.Size = new System.Drawing.Size(235, 25);
             this.lblEndReservationDate.TabIndex = 48;
             this.lblEndReservationDate.Text = "End Reservation Date";
             // 
@@ -107,36 +111,39 @@
             0,
             0});
             this.numHeadCount.Name = "numHeadCount";
-            this.numHeadCount.Size = new System.Drawing.Size(160, 30);
+            this.numHeadCount.Size = new System.Drawing.Size(160, 32);
             this.numHeadCount.TabIndex = 45;
             // 
             // lbl_HeadCount
             // 
             this.lbl_HeadCount.AutoSize = true;
+            this.lbl_HeadCount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_HeadCount.Location = new System.Drawing.Point(616, 126);
             this.lbl_HeadCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_HeadCount.Name = "lbl_HeadCount";
-            this.lbl_HeadCount.Size = new System.Drawing.Size(117, 25);
+            this.lbl_HeadCount.Size = new System.Drawing.Size(132, 25);
             this.lbl_HeadCount.TabIndex = 44;
             this.lbl_HeadCount.Text = "Head Count";
             // 
             // lblStartReservationDate
             // 
             this.lblStartReservationDate.AutoSize = true;
+            this.lblStartReservationDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblStartReservationDate.Location = new System.Drawing.Point(26, 17);
             this.lblStartReservationDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStartReservationDate.Name = "lblStartReservationDate";
-            this.lblStartReservationDate.Size = new System.Drawing.Size(207, 25);
+            this.lblStartReservationDate.Size = new System.Drawing.Size(244, 25);
             this.lblStartReservationDate.TabIndex = 43;
             this.lblStartReservationDate.Text = "Start Reservation Date";
             // 
             // lbl_Function
             // 
             this.lbl_Function.AutoSize = true;
+            this.lbl_Function.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbl_Function.Location = new System.Drawing.Point(616, 28);
             this.lbl_Function.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Function.Name = "lbl_Function";
-            this.lbl_Function.Size = new System.Drawing.Size(87, 25);
+            this.lbl_Function.Size = new System.Drawing.Size(103, 25);
             this.lbl_Function.TabIndex = 42;
             this.lbl_Function.Text = "Function";
             // 
@@ -161,10 +168,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label11.Location = new System.Drawing.Point(26, 277);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 25);
+            this.label11.Size = new System.Drawing.Size(91, 25);
             this.label11.TabIndex = 40;
             this.label11.Text = "Request";
             // 
@@ -173,7 +181,7 @@
             this.txtRequest.Location = new System.Drawing.Point(31, 311);
             this.txtRequest.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest.Name = "txtRequest";
-            this.txtRequest.Size = new System.Drawing.Size(588, 30);
+            this.txtRequest.Size = new System.Drawing.Size(588, 32);
             this.txtRequest.TabIndex = 39;
             // 
             // monthCalendarStart
@@ -187,6 +195,7 @@
             // 
             // btn_SendReq
             // 
+            this.btn_SendReq.ForeColor = System.Drawing.Color.Coral;
             this.btn_SendReq.Location = new System.Drawing.Point(663, 279);
             this.btn_SendReq.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SendReq.Name = "btn_SendReq";
@@ -379,12 +388,23 @@
             this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click_1);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel_ReservationRequest);
+            this.panel1.Location = new System.Drawing.Point(217, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(876, 450);
+            this.panel1.TabIndex = 57;
+            // 
             // CustomerMakeAnReservation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.tableSidebar_Customer);
-            this.Controls.Add(this.panel_ReservationRequest);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerMakeAnReservation";
             this.Text = "CustomerMakeAnReservation";
@@ -394,6 +414,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numHeadCount)).EndInit();
             this.tableSidebar_Customer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -421,5 +442,6 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

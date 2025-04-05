@@ -44,23 +44,25 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel_ViewReservation.SuspendLayout();
             this.tableSidebar_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_ViewReservation
             // 
             this.panel_ViewReservation.AutoScroll = true;
-            this.panel_ViewReservation.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel_ViewReservation.BackColor = System.Drawing.Color.Transparent;
             this.panel_ViewReservation.Controls.Add(this.listView_ReservationRequest);
             this.panel_ViewReservation.Controls.Add(this.lbl_Total_O);
             this.panel_ViewReservation.Controls.Add(this.lbl_OrderID_O);
             this.panel_ViewReservation.Controls.Add(this.lblViewRevRequest);
-            this.panel_ViewReservation.Location = new System.Drawing.Point(247, 62);
+            this.panel_ViewReservation.Location = new System.Drawing.Point(23, 52);
             this.panel_ViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewReservation.Name = "panel_ViewReservation";
-            this.panel_ViewReservation.Size = new System.Drawing.Size(822, 360);
+            this.panel_ViewReservation.Size = new System.Drawing.Size(809, 360);
             this.panel_ViewReservation.TabIndex = 46;
             // 
             // listView_ReservationRequest
@@ -68,9 +70,9 @@
             this.listView_ReservationRequest.FullRowSelect = true;
             this.listView_ReservationRequest.GridLines = true;
             this.listView_ReservationRequest.HideSelection = false;
-            this.listView_ReservationRequest.Location = new System.Drawing.Point(38, 58);
+            this.listView_ReservationRequest.Location = new System.Drawing.Point(71, 62);
             this.listView_ReservationRequest.Name = "listView_ReservationRequest";
-            this.listView_ReservationRequest.Size = new System.Drawing.Size(737, 276);
+            this.listView_ReservationRequest.Size = new System.Drawing.Size(651, 276);
             this.listView_ReservationRequest.TabIndex = 23;
             this.listView_ReservationRequest.UseCompatibleStateImageBehavior = false;
             this.listView_ReservationRequest.View = System.Windows.Forms.View.Details;
@@ -96,10 +98,12 @@
             // lblViewRevRequest
             // 
             this.lblViewRevRequest.AutoSize = true;
+            this.lblViewRevRequest.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewRevRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblViewRevRequest.Location = new System.Drawing.Point(16, 16);
             this.lblViewRevRequest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblViewRevRequest.Name = "lblViewRevRequest";
-            this.lblViewRevRequest.Size = new System.Drawing.Size(337, 25);
+            this.lblViewRevRequest.Size = new System.Drawing.Size(469, 30);
             this.lblViewRevRequest.TabIndex = 19;
             this.lblViewRevRequest.Text = "Your Reservation Request and Status";
             // 
@@ -289,12 +293,22 @@
             this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel_ViewReservation);
+            this.panel1.Location = new System.Drawing.Point(237, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(849, 466);
+            this.panel1.TabIndex = 47;
+            // 
             // ViewCustomerReplyRequest
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.tableSidebar_Customer);
-            this.Controls.Add(this.panel_ViewReservation);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ViewCustomerReplyRequest";
             this.Text = "ViewCustomerReservation";
@@ -302,6 +316,7 @@
             this.panel_ViewReservation.PerformLayout();
             this.tableSidebar_Customer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -322,5 +337,6 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

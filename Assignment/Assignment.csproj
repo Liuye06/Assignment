@@ -177,12 +177,6 @@
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FoodMenuManager.cs" />
-    <Compile Include="MakePayment_Reservations.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MakePayment_Reservations.Designer.cs">
-      <DependentUpon>MakePayment_Reservations.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerEditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -482,9 +476,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Profile.resx">
       <DependentUpon>Customer_Profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MakePayment_Reservations.resx">
-      <DependentUpon>MakePayment_Reservations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerEditProfile.resx">
       <DependentUpon>ManagerEditProfile.cs</DependentUpon>
