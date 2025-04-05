@@ -19,7 +19,7 @@ namespace Assignment
         {
             Dictionary<string, object> rcData = new Dictionary<string, object>();
 
-            string query = "SELECT Email, Real_Name, DOB, Gender, Username, Password, Profile_Pic FROM [User] WHERE User_ID = @UserID AND Role = 'Reservation Coordinate'";
+            string query = "SELECT Email, Real_Name, DOB, Gender, Username, Password, Profile_Pic FROM [User] WHERE User_ID = @UserID AND Role = 'Reservation Coordinator'";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {

@@ -23,7 +23,9 @@ namespace Assignment
         {
             reservationManager.LoadReservations(dgvReservation);
             reservationManager.LoadHalls(cmbAssignHall); // Populate the combo box with hall data
-            reservationManager.AddDeleteButtonColumn(dgvReservation); // Add the delete button column
+            reservationManager.AddDeleteButtonColumn(dgvReservation);
+
+            dgvReservation.Columns["R_Req_ID"].Visible = true;
 
         }
 

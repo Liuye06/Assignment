@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChefCustomerOrder));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableSidebar_ChefCustomerOrder = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pic_logo = new System.Windows.Forms.PictureBox();
@@ -43,13 +46,13 @@
             this.btnRefreshStatusCusOrder = new System.Windows.Forms.Button();
             this.btnUpdateCusOrderStatus = new System.Windows.Forms.Button();
             this.lblCusStatusOrder = new System.Windows.Forms.Label();
-            this.cmbCusOrderStatus = new System.Windows.Forms.ComboBox();
             this.dgvChefCusOrder = new System.Windows.Forms.DataGridView();
             this.CusOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColFoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrderStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChefInCharge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CanUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbCusOrderStatus = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableSidebar_ChefCustomerOrder.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -257,22 +260,16 @@
             this.lblCusStatusOrder.TabIndex = 12;
             this.lblCusStatusOrder.Text = "Order Status";
             // 
-            // cmbCusOrderStatus
-            // 
-            this.cmbCusOrderStatus.FormattingEnabled = true;
-            this.cmbCusOrderStatus.Items.AddRange(new object[] {
-            "All",
-            "Pending",
-            "In Progress",
-            "Completed"});
-            this.cmbCusOrderStatus.Location = new System.Drawing.Point(186, 44);
-            this.cmbCusOrderStatus.Name = "cmbCusOrderStatus";
-            this.cmbCusOrderStatus.Size = new System.Drawing.Size(265, 37);
-            this.cmbCusOrderStatus.TabIndex = 11;
-            this.cmbCusOrderStatus.SelectedIndexChanged += new System.EventHandler(this.cmbCusOrderStatus_SelectedIndexChanged);
-            // 
             // dgvChefCusOrder
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChefCusOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvChefCusOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChefCusOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CusOrderID,
@@ -280,8 +277,24 @@
             this.OrderStatus,
             this.ChefInCharge,
             this.CanUpdate});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChefCusOrder.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChefCusOrder.Location = new System.Drawing.Point(36, 104);
             this.dgvChefCusOrder.Name = "dgvChefCusOrder";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChefCusOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvChefCusOrder.RowHeadersWidth = 51;
             this.dgvChefCusOrder.RowTemplate.Height = 30;
             this.dgvChefCusOrder.Size = new System.Drawing.Size(772, 224);
@@ -330,6 +343,20 @@
             this.CanUpdate.Name = "CanUpdate";
             this.CanUpdate.Visible = false;
             this.CanUpdate.Width = 125;
+            // 
+            // cmbCusOrderStatus
+            // 
+            this.cmbCusOrderStatus.FormattingEnabled = true;
+            this.cmbCusOrderStatus.Items.AddRange(new object[] {
+            "All",
+            "Pending",
+            "In Progress",
+            "Completed"});
+            this.cmbCusOrderStatus.Location = new System.Drawing.Point(186, 44);
+            this.cmbCusOrderStatus.Name = "cmbCusOrderStatus";
+            this.cmbCusOrderStatus.Size = new System.Drawing.Size(265, 37);
+            this.cmbCusOrderStatus.TabIndex = 11;
+            this.cmbCusOrderStatus.SelectedIndexChanged += new System.EventHandler(this.cmbCusOrderStatus_SelectedIndexChanged);
             // 
             // panel1
             // 

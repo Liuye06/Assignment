@@ -52,6 +52,7 @@ namespace Assignment
             string query = @"
                 SELECT 
                     r.Reservation_ID, 
+                    rr.R_Req_ID,
                     u.Real_Name, 
                     r.Hall_ID, 
                     h.Hall_Name, 
@@ -75,7 +76,13 @@ namespace Assignment
                     {
                         conn.Open();
                         adapter.Fill(dt);
-                        dgv.DataSource = dt; // Bind data to DataGridView
+                        dgv.DataSource = dt;
+
+                        // Ensure R_Req_ID is visible
+                        if (dgv.Columns["R_Req_ID"] != null)
+                        {
+                            dgv.Columns["R_Req_ID"].Visible = true;
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -228,11 +235,11 @@ namespace Assignment
         public bool IsHallAvailable(int hallID, DateTime startDate, DateTime endDate)
         {
             string query = @"
-        SELECT COUNT(*) 
-        FROM Reservation r
-        JOIN R_Request rr ON r.R_Req_ID = rr.R_Req_ID
-        WHERE r.Hall_ID = @Hall_ID 
-        AND ((rr.Start_Date <= @EndDate AND rr.End_Date >= @StartDate))";
+                SELECT COUNT(*) 
+                FROM Reservation r
+                JOIN R_Request rr ON r.R_Req_ID = rr.R_Req_ID
+                WHERE r.Hall_ID = @Hall_ID 
+                AND ((rr.Start_Date <= @EndDate AND rr.End_Date >= @StartDate))";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {

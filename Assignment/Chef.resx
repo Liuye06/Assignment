@@ -331,22 +331,10 @@
   <metadata name="ColIngredientDelete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="ColIngredientName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColStock.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColIngredientEdit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ColIngredientDelete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA1gAAAHhCAYAAABzxR88AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7s/QdUHEmXtouWwRVUUVB4TxWmgMJ770GAJJAFIYOEvEESMkgg5L2E
+        wAAADsABataJCQAA/7JJREFUeF7s/QdUHEmXtouWwRVUUVB4TxWmgMJ770GAJJAFIYOEvEESMkgg5L2E
         vPfe+5ZXe++9963ulm33+Tkz5/zzP3cnSN3qHn3fzNyZe9f51zRrvSuyMiMjIyMj994PkRmpkj9+l4og
         0WCjA/PD3FluMbAs2JEFAWrmhWhYGuXMilg3VsS7sSzOlVUpnqzN8GVZigetMU5MilQzOlLLUFG91Y5e
         UfaUhKvIDtOQHmFHktWBGKs9FouGUFGERY0tVEWKWUWPdEdahsVweN0APnh6BX/49BDfvr2T92T55cut

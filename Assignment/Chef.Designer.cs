@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chef));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_inventory = new System.Windows.Forms.Button();
             this.btn_ChefProfile = new System.Windows.Forms.Button();
             this.btn_CusOrder = new System.Windows.Forms.Button();
@@ -127,10 +129,10 @@
             this.tableSidebar_CInventory.ColumnCount = 1;
             this.tableSidebar_CInventory.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableSidebar_CInventory.Controls.Add(this.btnLogOut, 0, 4);
-            this.tableSidebar_CInventory.Controls.Add(this.btn_inventory, 0, 1);
             this.tableSidebar_CInventory.Controls.Add(this.btn_CusOrder, 0, 2);
             this.tableSidebar_CInventory.Controls.Add(this.btn_ChefProfile, 0, 3);
             this.tableSidebar_CInventory.Controls.Add(this.panel2, 0, 0);
+            this.tableSidebar_CInventory.Controls.Add(this.btn_inventory, 0, 1);
             this.tableSidebar_CInventory.Location = new System.Drawing.Point(12, -1);
             this.tableSidebar_CInventory.Name = "tableSidebar_CInventory";
             this.tableSidebar_CInventory.RowCount = 6;
@@ -233,9 +235,21 @@
             this.ColStock,
             this.ColIngredientEdit,
             this.ColIngredientDelete});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvIngredient.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvIngredient.Location = new System.Drawing.Point(19, 98);
             this.dgvIngredient.Name = "dgvIngredient";
             this.dgvIngredient.RowHeadersWidth = 51;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvIngredient.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvIngredient.RowTemplate.Height = 24;
             this.dgvIngredient.Size = new System.Drawing.Size(767, 216);
             this.dgvIngredient.TabIndex = 3;
