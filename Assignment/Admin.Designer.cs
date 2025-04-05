@@ -136,34 +136,40 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(358, 116);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(296, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(596, 296);
+            this.pictureBox1.Size = new System.Drawing.Size(757, 429);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_exit
             // 
-            this.btn_exit.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_exit.BackgroundImage")));
+            this.btn_exit.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_exit.FlatAppearance.BorderSize = 0;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Location = new System.Drawing.Point(991, 26);
+            this.btn_exit.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_exit.Image")));
+            this.btn_exit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_exit.Location = new System.Drawing.Point(3, 362);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(49, 54);
+            this.btn_exit.Size = new System.Drawing.Size(258, 41);
             this.btn_exit.TabIndex = 12;
+            this.btn_exit.Text = "Logout";
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Font = new System.Drawing.Font("Modern No. 20", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(474, 46);
+            this.lbl1.BackColor = System.Drawing.Color.Black;
+            this.lbl1.Font = new System.Drawing.Font("Mongolian Baiti", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbl1.Location = new System.Drawing.Point(464, 135);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(360, 34);
+            this.lbl1.Size = new System.Drawing.Size(442, 43);
             this.lbl1.TabIndex = 11;
             this.lbl1.Text = "Welcome to Admin page";
             this.lbl1.Click += new System.EventHandler(this.lbl1_Click);
@@ -177,6 +183,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btn_Feedback);
             this.flowLayoutPanel1.Controls.Add(this.btn_UpCustomer);
             this.flowLayoutPanel1.Controls.Add(this.btn_AdminProfile);
+            this.flowLayoutPanel1.Controls.Add(this.btn_exit);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(-1, -3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(265, 458);
@@ -197,9 +204,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Admin";
             this.Text = "Admin";
