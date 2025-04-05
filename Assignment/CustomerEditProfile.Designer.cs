@@ -52,6 +52,7 @@
             // btnSaveProfile
             // 
             this.btnSaveProfile.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveProfile.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnSaveProfile.Location = new System.Drawing.Point(105, 387);
             this.btnSaveProfile.Name = "btnSaveProfile";
             this.btnSaveProfile.Size = new System.Drawing.Size(356, 35);
@@ -74,6 +75,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnCancel.Location = new System.Drawing.Point(562, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(359, 34);

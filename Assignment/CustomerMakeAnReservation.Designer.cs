@@ -37,7 +37,7 @@
             this.lblStartReservationDate = new System.Windows.Forms.Label();
             this.lbl_Function = new System.Windows.Forms.Label();
             this.cmbFunction = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lbl_request = new System.Windows.Forms.Label();
             this.txtRequest = new System.Windows.Forms.TextBox();
             this.monthCalendarStart = new System.Windows.Forms.MonthCalendar();
             this.btn_SendReq = new System.Windows.Forms.Button();
@@ -70,7 +70,7 @@
             this.panel_ReservationRequest.Controls.Add(this.lblStartReservationDate);
             this.panel_ReservationRequest.Controls.Add(this.lbl_Function);
             this.panel_ReservationRequest.Controls.Add(this.cmbFunction);
-            this.panel_ReservationRequest.Controls.Add(this.label11);
+            this.panel_ReservationRequest.Controls.Add(this.lbl_request);
             this.panel_ReservationRequest.Controls.Add(this.txtRequest);
             this.panel_ReservationRequest.Controls.Add(this.monthCalendarStart);
             this.panel_ReservationRequest.Controls.Add(this.btn_SendReq);
@@ -165,16 +165,16 @@
             this.cmbFunction.Size = new System.Drawing.Size(160, 33);
             this.cmbFunction.TabIndex = 41;
             // 
-            // label11
+            // lbl_request
             // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(26, 277);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(91, 25);
-            this.label11.TabIndex = 40;
-            this.label11.Text = "Request";
+            this.lbl_request.AutoSize = true;
+            this.lbl_request.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_request.Location = new System.Drawing.Point(26, 277);
+            this.lbl_request.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_request.Name = "lbl_request";
+            this.lbl_request.Size = new System.Drawing.Size(91, 25);
+            this.lbl_request.TabIndex = 40;
+            this.lbl_request.Text = "Request";
             // 
             // txtRequest
             // 
@@ -426,7 +426,7 @@
         private System.Windows.Forms.Label lblStartReservationDate;
         private System.Windows.Forms.Label lbl_Function;
         private System.Windows.Forms.ComboBox cmbFunction;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbl_request;
         private System.Windows.Forms.TextBox txtRequest;
         private System.Windows.Forms.MonthCalendar monthCalendarStart;
         private System.Windows.Forms.Button btn_SendReq;
