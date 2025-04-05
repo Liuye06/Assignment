@@ -37,6 +37,7 @@
             this.btnResetCMenu = new System.Windows.Forms.Button();
             this.gbCMenu = new System.Windows.Forms.GroupBox();
             this.tableSidebar_Customer = new System.Windows.Forms.TableLayoutPanel();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnMakeReservation = new System.Windows.Forms.Button();
             this.btnViewReservation = new System.Windows.Forms.Button();
@@ -45,23 +46,28 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.gbCMenu.SuspendLayout();
             this.tableSidebar_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowPanelMenu
             // 
             this.flowPanelMenu.AutoScroll = true;
-            this.flowPanelMenu.Location = new System.Drawing.Point(45, 79);
+            this.flowPanelMenu.BackColor = System.Drawing.Color.Gainsboro;
+            this.flowPanelMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowPanelMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.flowPanelMenu.Location = new System.Drawing.Point(174, 93);
             this.flowPanelMenu.Name = "flowPanelMenu";
-            this.flowPanelMenu.Size = new System.Drawing.Size(745, 228);
+            this.flowPanelMenu.Size = new System.Drawing.Size(451, 228);
             this.flowPanelMenu.TabIndex = 148;
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.Location = new System.Drawing.Point(54, 320);
+            this.btnCheckOut.ForeColor = System.Drawing.Color.Coral;
+            this.btnCheckOut.Location = new System.Drawing.Point(95, 352);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(390, 34);
             this.btnCheckOut.TabIndex = 0;
@@ -88,7 +94,7 @@
             "Side ",
             "Beverage",
             "Dessert"});
-            this.cmbCategory.Location = new System.Drawing.Point(120, 40);
+            this.cmbCategory.Location = new System.Drawing.Point(147, 40);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(313, 33);
             this.cmbCategory.TabIndex = 6;
@@ -97,17 +103,18 @@
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(22, 43);
+            this.lblCategory.Location = new System.Drawing.Point(30, 40);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(92, 25);
+            this.lblCategory.Size = new System.Drawing.Size(99, 25);
             this.lblCategory.TabIndex = 7;
             this.lblCategory.Text = "Category";
             // 
             // btnResetCMenu
             // 
-            this.btnResetCMenu.Location = new System.Drawing.Point(464, 40);
+            this.btnResetCMenu.ForeColor = System.Drawing.Color.Coral;
+            this.btnResetCMenu.Location = new System.Drawing.Point(484, 33);
             this.btnResetCMenu.Name = "btnResetCMenu";
-            this.btnResetCMenu.Size = new System.Drawing.Size(341, 30);
+            this.btnResetCMenu.Size = new System.Drawing.Size(305, 45);
             this.btnResetCMenu.TabIndex = 9;
             this.btnResetCMenu.Text = "Reset Category";
             this.btnResetCMenu.UseVisualStyleBackColor = true;
@@ -115,16 +122,18 @@
             // 
             // gbCMenu
             // 
+            this.gbCMenu.BackColor = System.Drawing.Color.Transparent;
             this.gbCMenu.Controls.Add(this.flowPanelMenu);
             this.gbCMenu.Controls.Add(this.btnResetCMenu);
             this.gbCMenu.Controls.Add(this.lblCategory);
             this.gbCMenu.Controls.Add(this.cmbCategory);
             this.gbCMenu.Controls.Add(this.button3);
             this.gbCMenu.Controls.Add(this.btnCheckOut);
-            this.gbCMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCMenu.Location = new System.Drawing.Point(246, 51);
+            this.gbCMenu.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCMenu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbCMenu.Location = new System.Drawing.Point(41, 40);
             this.gbCMenu.Name = "gbCMenu";
-            this.gbCMenu.Size = new System.Drawing.Size(824, 371);
+            this.gbCMenu.Size = new System.Drawing.Size(831, 444);
             this.gbCMenu.TabIndex = 147;
             this.gbCMenu.TabStop = false;
             this.gbCMenu.Text = "Food Menu";
@@ -160,18 +169,32 @@
             this.tableSidebar_Customer.Size = new System.Drawing.Size(228, 450);
             this.tableSidebar_Customer.TabIndex = 149;
             // 
+            // pic_logo
+            // 
+            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(3, 3);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(198, 144);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 12;
+            this.pic_logo.TabStop = false;
+            // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.IndianRed;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(4, 519);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(199, 37);
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click_1);
             // 
@@ -181,12 +204,15 @@
             this.btnMakeReservation.FlatAppearance.BorderSize = 0;
             this.btnMakeReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnMakeReservation.Image")));
+            this.btnMakeReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMakeReservation.Location = new System.Drawing.Point(4, 359);
             this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeReservation.Name = "btnMakeReservation";
             this.btnMakeReservation.Size = new System.Drawing.Size(199, 62);
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation Request";
+            this.btnMakeReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMakeReservation.UseVisualStyleBackColor = false;
             this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
             // 
@@ -196,12 +222,15 @@
             this.btnViewReservation.FlatAppearance.BorderSize = 0;
             this.btnViewReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReservation.Image")));
+            this.btnViewReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewReservation.Location = new System.Drawing.Point(4, 314);
             this.btnViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReservation.Name = "btnViewReservation";
             this.btnViewReservation.Size = new System.Drawing.Size(199, 37);
             this.btnViewReservation.TabIndex = 5;
             this.btnViewReservation.Text = "View Reservation";
+            this.btnViewReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnViewReservation.UseVisualStyleBackColor = false;
             this.btnViewReservation.Click += new System.EventHandler(this.btnViewReservation_Click);
             // 
@@ -211,12 +240,15 @@
             this.btnFeedback.FlatAppearance.BorderSize = 0;
             this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeedback.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback.Image = ((System.Drawing.Image)(resources.GetObject("btnFeedback.Image")));
+            this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFeedback.Location = new System.Drawing.Point(4, 474);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.Size = new System.Drawing.Size(199, 37);
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
+            this.btnFeedback.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFeedback.UseVisualStyleBackColor = false;
             this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
@@ -226,12 +258,15 @@
             this.btnViewReplyRequest.FlatAppearance.BorderSize = 0;
             this.btnViewReplyRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewReplyRequest.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReplyRequest.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReplyRequest.Image")));
+            this.btnViewReplyRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewReplyRequest.Location = new System.Drawing.Point(4, 244);
             this.btnViewReplyRequest.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReplyRequest.Name = "btnViewReplyRequest";
             this.btnViewReplyRequest.Size = new System.Drawing.Size(199, 62);
             this.btnViewReplyRequest.TabIndex = 6;
             this.btnViewReplyRequest.Text = "View Reply Request";
+            this.btnViewReplyRequest.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnViewReplyRequest.UseVisualStyleBackColor = false;
             this.btnViewReplyRequest.Click += new System.EventHandler(this.btnViewReplyRequest_Click);
             // 
@@ -277,32 +312,34 @@
             this.btnMakeOrder.FlatAppearance.BorderSize = 0;
             this.btnMakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeOrder.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnMakeOrder.Image")));
+            this.btnMakeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMakeOrder.Location = new System.Drawing.Point(4, 429);
             this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeOrder.Name = "btnMakeOrder";
             this.btnMakeOrder.Size = new System.Drawing.Size(199, 37);
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
+            this.btnMakeOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
-            // pic_logo
+            // panel1
             // 
-            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(3, 3);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(198, 144);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 12;
-            this.pic_logo.TabStop = false;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.gbCMenu);
+            this.panel1.Location = new System.Drawing.Point(222, -4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(887, 458);
+            this.panel1.TabIndex = 150;
             // 
             // CustomerMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.tableSidebar_Customer);
-            this.Controls.Add(this.gbCMenu);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerMenu";
             this.Text = "CustomerMenu";
@@ -310,6 +347,7 @@
             this.gbCMenu.PerformLayout();
             this.tableSidebar_Customer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -332,5 +370,6 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel1;
     }
 }
