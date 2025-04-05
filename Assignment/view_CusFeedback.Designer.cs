@@ -38,6 +38,7 @@
             this.database1DataSet7 = new Assignment.Database1DataSet7();
             this.tableTableAdapter = new Assignment.Database1DataSet7TableAdapters.TableTableAdapter();
             this.btn_Return = new System.Windows.Forms.Button();
+            this.lbl_CusFeedback = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet7)).BeginInit();
@@ -52,12 +53,12 @@
             this.orderIDDataGridViewTextBoxColumn,
             this.feedbackDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tableBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(128, 85);
+            this.dataGridView1.Location = new System.Drawing.Point(153, 153);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(842, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(782, 238);
             this.dataGridView1.TabIndex = 0;
             // 
             // feedbackIDDataGridViewTextBoxColumn
@@ -113,6 +114,17 @@
             this.btn_Return.UseVisualStyleBackColor = false;
             this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
             // 
+            // lbl_CusFeedback
+            // 
+            this.lbl_CusFeedback.AutoSize = true;
+            this.lbl_CusFeedback.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CusFeedback.Font = new System.Drawing.Font("Modern No. 20", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CusFeedback.Location = new System.Drawing.Point(398, 97);
+            this.lbl_CusFeedback.Name = "lbl_CusFeedback";
+            this.lbl_CusFeedback.Size = new System.Drawing.Size(288, 34);
+            this.lbl_CusFeedback.TabIndex = 72;
+            this.lbl_CusFeedback.Text = "Customer Feedback";
+            // 
             // view_CusFeedback
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -121,6 +133,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
+            this.Controls.Add(this.lbl_CusFeedback);
             this.Controls.Add(this.btn_Return);
             this.Controls.Add(this.dataGridView1);
             this.DoubleBuffered = true;
@@ -132,6 +145,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet7)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -145,5 +159,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn feedbackDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btn_Return;
+        private System.Windows.Forms.Label lbl_CusFeedback;
     }
 }
