@@ -53,6 +53,7 @@
             this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.userTableAdapter1 = new Assignment.Database1DataSet2TableAdapters.UserTableAdapter();
             this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
@@ -309,12 +310,21 @@
             this.pic_logo.TabIndex = 20;
             this.pic_logo.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Location = new System.Drawing.Point(264, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(820, 453);
+            this.panel2.TabIndex = 6;
+            // 
             // update_Customer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "update_Customer";
             this.Text = "update_Customer";
@@ -355,5 +365,6 @@
         private System.Windows.Forms.BindingSource userBindingSource1;
         private Database1DataSet2TableAdapters.UserTableAdapter userTableAdapter1;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel2;
     }
 }

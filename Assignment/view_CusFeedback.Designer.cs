@@ -101,15 +101,16 @@
             // 
             // btn_Return
             // 
+            this.btn_Return.BackColor = System.Drawing.Color.Transparent;
             this.btn_Return.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Return.BackgroundImage")));
             this.btn_Return.FlatAppearance.BorderSize = 0;
             this.btn_Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Return.Location = new System.Drawing.Point(42, 15);
+            this.btn_Return.Location = new System.Drawing.Point(36, 26);
             this.btn_Return.Margin = new System.Windows.Forms.Padding(6);
             this.btn_Return.Name = "btn_Return";
             this.btn_Return.Size = new System.Drawing.Size(61, 52);
             this.btn_Return.TabIndex = 71;
-            this.btn_Return.UseVisualStyleBackColor = true;
+            this.btn_Return.UseVisualStyleBackColor = false;
             this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
             // 
             // view_CusFeedback
