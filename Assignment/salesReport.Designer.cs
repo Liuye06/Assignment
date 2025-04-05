@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(salesReport));
             this.lbl_month = new System.Windows.Forms.Label();
             this.cmbMonth = new System.Windows.Forms.ComboBox();
             this.lbl_salesR = new System.Windows.Forms.Label();
@@ -61,10 +62,12 @@
             // lbl_month
             // 
             this.lbl_month.AutoSize = true;
-            this.lbl_month.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_month.Location = new System.Drawing.Point(434, 95);
+            this.lbl_month.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_month.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_month.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_month.Location = new System.Drawing.Point(459, 98);
             this.lbl_month.Name = "lbl_month";
-            this.lbl_month.Size = new System.Drawing.Size(67, 25);
+            this.lbl_month.Size = new System.Drawing.Size(79, 25);
             this.lbl_month.TabIndex = 1;
             this.lbl_month.Text = "Month";
             // 
@@ -84,19 +87,21 @@
             "October",
             "November",
             "December"});
-            this.cmbMonth.Location = new System.Drawing.Point(507, 92);
+            this.cmbMonth.Location = new System.Drawing.Point(544, 92);
             this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(228, 33);
+            this.cmbMonth.Size = new System.Drawing.Size(191, 33);
             this.cmbMonth.TabIndex = 2;
             this.cmbMonth.SelectedIndexChanged += new System.EventHandler(this.cmbMonth_SelectedIndexChanged);
             // 
             // lbl_salesR
             // 
             this.lbl_salesR.AutoSize = true;
-            this.lbl_salesR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_salesR.Location = new System.Drawing.Point(22, 26);
+            this.lbl_salesR.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_salesR.Font = new System.Drawing.Font("Modern No. 20", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_salesR.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_salesR.Location = new System.Drawing.Point(60, 27);
             this.lbl_salesR.Name = "lbl_salesR";
-            this.lbl_salesR.Size = new System.Drawing.Size(136, 25);
+            this.lbl_salesR.Size = new System.Drawing.Size(176, 31);
             this.lbl_salesR.TabIndex = 0;
             this.lbl_salesR.Text = "Sales Report";
             // 
@@ -105,11 +110,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ChefName});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 150);
+            this.dataGridView1.Location = new System.Drawing.Point(113, 150);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1032, 219);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 219);
             this.dataGridView1.TabIndex = 6;
             // 
             // ChefName
@@ -177,27 +182,31 @@
             "October",
             "November",
             "December"});
-            this.cmbUserName.Location = new System.Drawing.Point(857, 92);
+            this.cmbUserName.Location = new System.Drawing.Point(888, 92);
             this.cmbUserName.Name = "cmbUserName";
-            this.cmbUserName.Size = new System.Drawing.Size(198, 33);
+            this.cmbUserName.Size = new System.Drawing.Size(167, 33);
             this.cmbUserName.TabIndex = 7;
             this.cmbUserName.SelectedIndexChanged += new System.EventHandler(this.cmbUserName_SelectedIndexChanged);
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(741, 92);
+            this.lblUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblUser.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblUser.Location = new System.Drawing.Point(759, 98);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(111, 25);
+            this.lblUser.Size = new System.Drawing.Size(123, 25);
             this.lblUser.TabIndex = 8;
             this.lblUser.Text = "Chef Name";
             // 
             // btnResetSearch
             // 
-            this.btnResetSearch.Location = new System.Drawing.Point(23, 389);
+            this.btnResetSearch.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetSearch.ForeColor = System.Drawing.Color.LightSalmon;
+            this.btnResetSearch.Location = new System.Drawing.Point(113, 389);
             this.btnResetSearch.Name = "btnResetSearch";
-            this.btnResetSearch.Size = new System.Drawing.Size(499, 34);
+            this.btnResetSearch.Size = new System.Drawing.Size(384, 34);
             this.btnResetSearch.TabIndex = 72;
             this.btnResetSearch.Text = "Reset Search ";
             this.btnResetSearch.UseVisualStyleBackColor = true;
@@ -219,7 +228,7 @@
             "October",
             "November",
             "December"});
-            this.cmbTransactionType.Location = new System.Drawing.Point(193, 92);
+            this.cmbTransactionType.Location = new System.Drawing.Point(225, 92);
             this.cmbTransactionType.Name = "cmbTransactionType";
             this.cmbTransactionType.Size = new System.Drawing.Size(228, 33);
             this.cmbTransactionType.TabIndex = 74;
@@ -228,18 +237,22 @@
             // lblTransactionType
             // 
             this.lblTransactionType.AutoSize = true;
-            this.lblTransactionType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransactionType.Location = new System.Drawing.Point(22, 95);
+            this.lblTransactionType.BackColor = System.Drawing.Color.Transparent;
+            this.lblTransactionType.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransactionType.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblTransactionType.Location = new System.Drawing.Point(31, 95);
             this.lblTransactionType.Name = "lblTransactionType";
-            this.lblTransactionType.Size = new System.Drawing.Size(165, 25);
+            this.lblTransactionType.Size = new System.Drawing.Size(188, 25);
             this.lblTransactionType.TabIndex = 73;
             this.lblTransactionType.Text = "Transaction Type";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(528, 389);
+            this.btnCancel.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.LightSalmon;
+            this.btnCancel.Location = new System.Drawing.Point(586, 389);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(527, 34);
+            this.btnCancel.Size = new System.Drawing.Size(380, 34);
             this.btnCancel.TabIndex = 75;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -249,7 +262,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Linen;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cmbTransactionType);
@@ -261,6 +275,7 @@
             this.Controls.Add(this.cmbMonth);
             this.Controls.Add(this.lbl_month);
             this.Controls.Add(this.lbl_salesR);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "salesReport";
