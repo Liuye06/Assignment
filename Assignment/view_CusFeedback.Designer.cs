@@ -119,11 +119,11 @@
             this.lbl_CusFeedback.AutoSize = true;
             this.lbl_CusFeedback.BackColor = System.Drawing.Color.Transparent;
             this.lbl_CusFeedback.Font = new System.Drawing.Font("Modern No. 20", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_CusFeedback.Location = new System.Drawing.Point(398, 97);
+            this.lbl_CusFeedback.Location = new System.Drawing.Point(366, 96);
             this.lbl_CusFeedback.Name = "lbl_CusFeedback";
-            this.lbl_CusFeedback.Size = new System.Drawing.Size(288, 34);
+            this.lbl_CusFeedback.Size = new System.Drawing.Size(309, 34);
             this.lbl_CusFeedback.TabIndex = 72;
-            this.lbl_CusFeedback.Text = "Customer Feedback";
+            this.lbl_CusFeedback.Text = "Customer\'s Feedback";
             // 
             // view_CusFeedback
             // 
