@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckoutForm));
             this.lstCartFood = new System.Windows.Forms.ListView();
             this.btnConfirm_Pay = new System.Windows.Forms.Button();
             this.lblTotalFood = new System.Windows.Forms.Label();
@@ -44,18 +45,20 @@
             // lstCartFood
             // 
             this.lstCartFood.HideSelection = false;
-            this.lstCartFood.Location = new System.Drawing.Point(78, 135);
+            this.lstCartFood.Location = new System.Drawing.Point(205, 135);
             this.lstCartFood.Name = "lstCartFood";
-            this.lstCartFood.Size = new System.Drawing.Size(601, 210);
+            this.lstCartFood.Size = new System.Drawing.Size(461, 210);
             this.lstCartFood.TabIndex = 0;
             this.lstCartFood.UseCompatibleStateImageBehavior = false;
             this.lstCartFood.SelectedIndexChanged += new System.EventHandler(this.lstCartFood_SelectedIndexChanged);
             // 
             // btnConfirm_Pay
             // 
-            this.btnConfirm_Pay.Location = new System.Drawing.Point(686, 385);
+            this.btnConfirm_Pay.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm_Pay.ForeColor = System.Drawing.Color.Coral;
+            this.btnConfirm_Pay.Location = new System.Drawing.Point(739, 367);
             this.btnConfirm_Pay.Name = "btnConfirm_Pay";
-            this.btnConfirm_Pay.Size = new System.Drawing.Size(364, 46);
+            this.btnConfirm_Pay.Size = new System.Drawing.Size(308, 46);
             this.btnConfirm_Pay.TabIndex = 1;
             this.btnConfirm_Pay.Text = "Confirm and Pay";
             this.btnConfirm_Pay.UseVisualStyleBackColor = true;
@@ -64,9 +67,12 @@
             // lblTotalFood
             // 
             this.lblTotalFood.AutoSize = true;
-            this.lblTotalFood.Location = new System.Drawing.Point(734, 340);
+            this.lblTotalFood.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalFood.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFood.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTotalFood.Location = new System.Drawing.Point(734, 315);
             this.lblTotalFood.Name = "lblTotalFood";
-            this.lblTotalFood.Size = new System.Drawing.Size(62, 25);
+            this.lblTotalFood.Size = new System.Drawing.Size(86, 30);
             this.lblTotalFood.TabIndex = 2;
             this.lblTotalFood.Text = "Total:";
             // 
@@ -91,26 +97,34 @@
             // lbl_Items
             // 
             this.lbl_Items.AutoSize = true;
-            this.lbl_Items.Location = new System.Drawing.Point(73, 95);
+            this.lbl_Items.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Items.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Items.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_Items.Location = new System.Drawing.Point(200, 84);
             this.lbl_Items.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Items.Name = "lbl_Items";
-            this.lbl_Items.Size = new System.Drawing.Size(65, 25);
+            this.lbl_Items.Size = new System.Drawing.Size(88, 30);
             this.lbl_Items.TabIndex = 73;
             this.lbl_Items.Text = "Items:";
             // 
             // btn_Return
             // 
-            this.btn_Return.Location = new System.Drawing.Point(22, 13);
+            this.btn_Return.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Return.FlatAppearance.BorderSize = 0;
+            this.btn_Return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Return.Image = ((System.Drawing.Image)(resources.GetObject("btn_Return.Image")));
+            this.btn_Return.Location = new System.Drawing.Point(32, 13);
             this.btn_Return.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Return.Name = "btn_Return";
-            this.btn_Return.Size = new System.Drawing.Size(95, 44);
+            this.btn_Return.Size = new System.Drawing.Size(66, 61);
             this.btn_Return.TabIndex = 70;
-            this.btn_Return.Text = "<";
-            this.btn_Return.UseVisualStyleBackColor = true;
+            this.btn_Return.UseVisualStyleBackColor = false;
             this.btn_Return.Click += new System.EventHandler(this.btn_Return_Click);
             // 
             // btnUpdateOrder
             // 
+            this.btnUpdateOrder.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateOrder.ForeColor = System.Drawing.Color.Coral;
             this.btnUpdateOrder.Location = new System.Drawing.Point(883, 129);
             this.btnUpdateOrder.Name = "btnUpdateOrder";
             this.btnUpdateOrder.Size = new System.Drawing.Size(176, 41);
@@ -121,6 +135,8 @@
             // 
             // btnRemoveButton
             // 
+            this.btnRemoveButton.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveButton.ForeColor = System.Drawing.Color.Coral;
             this.btnRemoveButton.Location = new System.Drawing.Point(883, 187);
             this.btnRemoveButton.Name = "btnRemoveButton";
             this.btnRemoveButton.Size = new System.Drawing.Size(176, 40);
@@ -139,6 +155,8 @@
             // CheckoutForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.numQuantity);
             this.Controls.Add(this.btnRemoveButton);
@@ -150,6 +168,7 @@
             this.Controls.Add(this.lblTotalFood);
             this.Controls.Add(this.btnConfirm_Pay);
             this.Controls.Add(this.lstCartFood);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CheckoutForm";
             this.Text = "CheckoutForm";

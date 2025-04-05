@@ -47,46 +47,28 @@ namespace Assignment
 
         private void btnUpdateStatus_Click(object sender, EventArgs e)
         {
-            if (dgvReplyRequest.SelectedRows.Count > 0)
+            if (cmbChangeStatus.SelectedItem != null && dgvReplyRequest.SelectedRows.Count > 0)
             {
-                // Get selected data
+                // Get the selected row's request ID (even though it's hidden)
                 int requestID = Convert.ToInt32(dgvReplyRequest.SelectedRows[0].Cells["R_Req_ID"].Value);
-                int userID = Convert.ToInt32(dgvReplyRequest.SelectedRows[0].Cells["User_ID"].Value);
-                string status = dgvReplyRequest.SelectedRows[0].Cells["Status"].Value.ToString(); // Get status
-
-                // ✅ Step 1: Prevent adding requests that are NOT approved
-                if (status != "Approved")
-                {
-                    MessageBox.Show("Only 'Approved' requests can be added to Reservations.");
-                    return; // Stop further execution
-                }
+                string newStatus = cmbChangeStatus.SelectedItem.ToString();
 
                 RequestHandler handler = new RequestHandler();
-
-                // ✅ Step 2: Check if request is already in Reservation
-                bool alreadyExists = handler.CheckIfRequestExistsInReservation(requestID);
-                if (alreadyExists)
-                {
-                    MessageBox.Show("This request has already been added to Reservations.");
-                    return; // Stop further execution
-                }
-
-                // ✅ Step 3: Add to Reservation if valid
-                int? hallID = null; // Nullable int for Hall_ID
-                bool success = handler.AddToReservation(hallID, userID, requestID, status);
+                bool success = handler.UpdateRequestStatus(requestID, newStatus);
 
                 if (success)
                 {
-                    MessageBox.Show("Request successfully added to Reservations!");
+                    MessageBox.Show("Status updated successfully!");
+                    handler.LoadRequests(dgvReplyRequest); // Refresh DataGridView
                 }
                 else
                 {
-                    MessageBox.Show("Failed to add the request to Reservations.");
+                    MessageBox.Show("Failed to update status.");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a request from the table.");
+                MessageBox.Show("Please select a request and a status.");
             }
         }
 

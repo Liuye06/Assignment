@@ -126,5 +126,10 @@ namespace Assignment
         {
             UserSessionManager.Logout(this);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

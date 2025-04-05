@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerViewReservation));
             this.tableSidebar_Customer = new System.Windows.Forms.TableLayoutPanel();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnMakeReservation = new System.Windows.Forms.Button();
             this.btnViewReservation = new System.Windows.Forms.Button();
@@ -44,10 +45,11 @@
             this.lbl_Total_O = new System.Windows.Forms.Label();
             this.lbl_OrderID_O = new System.Windows.Forms.Label();
             this.lblViewReservation = new System.Windows.Forms.Label();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableSidebar_Customer.SuspendLayout();
-            this.panel_ViewReservation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel_ViewReservation.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSidebar_Customer
@@ -81,18 +83,32 @@
             this.tableSidebar_Customer.Size = new System.Drawing.Size(228, 450);
             this.tableSidebar_Customer.TabIndex = 26;
             // 
+            // pic_logo
+            // 
+            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(3, 3);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(198, 144);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 12;
+            this.pic_logo.TabStop = false;
+            // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.IndianRed;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
+            this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(4, 519);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(199, 37);
             this.btnLogOut.TabIndex = 3;
             this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
@@ -102,12 +118,15 @@
             this.btnMakeReservation.FlatAppearance.BorderSize = 0;
             this.btnMakeReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnMakeReservation.Image")));
+            this.btnMakeReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMakeReservation.Location = new System.Drawing.Point(4, 359);
             this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeReservation.Name = "btnMakeReservation";
             this.btnMakeReservation.Size = new System.Drawing.Size(199, 62);
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation Request";
+            this.btnMakeReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMakeReservation.UseVisualStyleBackColor = false;
             this.btnMakeReservation.Click += new System.EventHandler(this.btnMakeReservation_Click);
             // 
@@ -117,12 +136,15 @@
             this.btnViewReservation.FlatAppearance.BorderSize = 0;
             this.btnViewReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReservation.Image")));
+            this.btnViewReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewReservation.Location = new System.Drawing.Point(4, 314);
             this.btnViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReservation.Name = "btnViewReservation";
             this.btnViewReservation.Size = new System.Drawing.Size(199, 37);
             this.btnViewReservation.TabIndex = 5;
             this.btnViewReservation.Text = "View Reservation";
+            this.btnViewReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnViewReservation.UseVisualStyleBackColor = false;
             this.btnViewReservation.Click += new System.EventHandler(this.btnViewReservation_Click);
             // 
@@ -132,12 +154,15 @@
             this.btnFeedback.FlatAppearance.BorderSize = 0;
             this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeedback.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback.Image = ((System.Drawing.Image)(resources.GetObject("btnFeedback.Image")));
+            this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFeedback.Location = new System.Drawing.Point(4, 474);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btnFeedback.Name = "btnFeedback";
             this.btnFeedback.Size = new System.Drawing.Size(199, 37);
             this.btnFeedback.TabIndex = 2;
             this.btnFeedback.Text = "Feedback";
+            this.btnFeedback.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFeedback.UseVisualStyleBackColor = false;
             this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
@@ -147,12 +172,15 @@
             this.btnViewReplyRequest.FlatAppearance.BorderSize = 0;
             this.btnViewReplyRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewReplyRequest.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReplyRequest.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReplyRequest.Image")));
+            this.btnViewReplyRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewReplyRequest.Location = new System.Drawing.Point(4, 244);
             this.btnViewReplyRequest.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReplyRequest.Name = "btnViewReplyRequest";
             this.btnViewReplyRequest.Size = new System.Drawing.Size(199, 62);
             this.btnViewReplyRequest.TabIndex = 6;
             this.btnViewReplyRequest.Text = "View Reply Request";
+            this.btnViewReplyRequest.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnViewReplyRequest.UseVisualStyleBackColor = false;
             this.btnViewReplyRequest.Click += new System.EventHandler(this.btnViewReplyRequest_Click);
             // 
@@ -198,33 +226,38 @@
             this.btnMakeOrder.FlatAppearance.BorderSize = 0;
             this.btnMakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeOrder.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnMakeOrder.Image")));
+            this.btnMakeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMakeOrder.Location = new System.Drawing.Point(4, 429);
             this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeOrder.Name = "btnMakeOrder";
             this.btnMakeOrder.Size = new System.Drawing.Size(199, 37);
             this.btnMakeOrder.TabIndex = 0;
             this.btnMakeOrder.Text = "Make an Order";
+            this.btnMakeOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // panel_ViewReservation
             // 
             this.panel_ViewReservation.AutoScroll = true;
-            this.panel_ViewReservation.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel_ViewReservation.BackColor = System.Drawing.Color.Transparent;
             this.panel_ViewReservation.Controls.Add(this.btnConfirmNPay);
             this.panel_ViewReservation.Controls.Add(this.listView_ReservationRequest);
             this.panel_ViewReservation.Controls.Add(this.lbl_Total_O);
             this.panel_ViewReservation.Controls.Add(this.lbl_OrderID_O);
             this.panel_ViewReservation.Controls.Add(this.lblViewReservation);
-            this.panel_ViewReservation.Location = new System.Drawing.Point(260, 56);
+            this.panel_ViewReservation.Location = new System.Drawing.Point(24, 31);
             this.panel_ViewReservation.Margin = new System.Windows.Forms.Padding(4);
             this.panel_ViewReservation.Name = "panel_ViewReservation";
-            this.panel_ViewReservation.Size = new System.Drawing.Size(809, 360);
+            this.panel_ViewReservation.Size = new System.Drawing.Size(809, 405);
             this.panel_ViewReservation.TabIndex = 47;
             // 
             // btnConfirmNPay
             // 
-            this.btnConfirmNPay.Location = new System.Drawing.Point(573, 307);
+            this.btnConfirmNPay.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmNPay.ForeColor = System.Drawing.Color.Coral;
+            this.btnConfirmNPay.Location = new System.Drawing.Point(512, 336);
             this.btnConfirmNPay.Name = "btnConfirmNPay";
             this.btnConfirmNPay.Size = new System.Drawing.Size(212, 42);
             this.btnConfirmNPay.TabIndex = 24;
@@ -234,12 +267,13 @@
             // 
             // listView_ReservationRequest
             // 
+            this.listView_ReservationRequest.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_ReservationRequest.FullRowSelect = true;
             this.listView_ReservationRequest.GridLines = true;
             this.listView_ReservationRequest.HideSelection = false;
-            this.listView_ReservationRequest.Location = new System.Drawing.Point(20, 59);
+            this.listView_ReservationRequest.Location = new System.Drawing.Point(41, 85);
             this.listView_ReservationRequest.Name = "listView_ReservationRequest";
-            this.listView_ReservationRequest.Size = new System.Drawing.Size(765, 235);
+            this.listView_ReservationRequest.Size = new System.Drawing.Size(683, 235);
             this.listView_ReservationRequest.TabIndex = 23;
             this.listView_ReservationRequest.UseCompatibleStateImageBehavior = false;
             this.listView_ReservationRequest.View = System.Windows.Forms.View.Details;
@@ -265,37 +299,39 @@
             // lblViewReservation
             // 
             this.lblViewReservation.AutoSize = true;
-            this.lblViewReservation.Location = new System.Drawing.Point(15, 16);
+            this.lblViewReservation.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewReservation.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblViewReservation.Location = new System.Drawing.Point(4, 0);
             this.lblViewReservation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblViewReservation.Name = "lblViewReservation";
-            this.lblViewReservation.Size = new System.Drawing.Size(260, 25);
+            this.lblViewReservation.Size = new System.Drawing.Size(366, 30);
             this.lblViewReservation.TabIndex = 19;
             this.lblViewReservation.Text = "Your Reservation and Status";
             // 
-            // pic_logo
+            // panel1
             // 
-            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(3, 3);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(198, 144);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 12;
-            this.pic_logo.TabStop = false;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel_ViewReservation);
+            this.panel1.Location = new System.Drawing.Point(246, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(846, 450);
+            this.panel1.TabIndex = 48;
             // 
             // CustomerViewReservation
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
-            this.Controls.Add(this.panel_ViewReservation);
             this.Controls.Add(this.tableSidebar_Customer);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerViewReservation";
             this.Text = "CustomerMakePayment";
             this.tableSidebar_Customer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel_ViewReservation.ResumeLayout(false);
             this.panel_ViewReservation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -317,5 +353,6 @@
         private System.Windows.Forms.Label lblViewReservation;
         private System.Windows.Forms.Button btnConfirmNPay;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

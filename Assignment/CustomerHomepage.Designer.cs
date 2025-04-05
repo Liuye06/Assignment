@@ -37,10 +37,13 @@
             this.btnViewReplyRequest = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.btnMakeOrder = new System.Windows.Forms.Button();
             this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.btnMakeOrder = new System.Windows.Forms.Button();
+            this.lbl_WelCus = new System.Windows.Forms.Label();
+            this.panel_CusHome = new System.Windows.Forms.Panel();
             this.tableSidebar_CustomerProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel_CusHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableSidebar_CustomerProfile
@@ -200,6 +203,17 @@
             this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // pic_logo
+            // 
+            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(3, 3);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(201, 144);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 10;
+            this.pic_logo.TabStop = false;
+            // 
             // btnMakeOrder
             // 
             this.btnMakeOrder.BackColor = System.Drawing.Color.IndianRed;
@@ -218,29 +232,45 @@
             this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
-            // pic_logo
+            // lbl_WelCus
             // 
-            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(3, 3);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(201, 144);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 10;
-            this.pic_logo.TabStop = false;
+            this.lbl_WelCus.AutoSize = true;
+            this.lbl_WelCus.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_WelCus.Font = new System.Drawing.Font("Monotype Corsiva", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_WelCus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_WelCus.Location = new System.Drawing.Point(247, 69);
+            this.lbl_WelCus.Name = "lbl_WelCus";
+            this.lbl_WelCus.Size = new System.Drawing.Size(284, 72);
+            this.lbl_WelCus.TabIndex = 14;
+            this.lbl_WelCus.Text = "Welcome to";
+            // 
+            // panel_CusHome
+            // 
+            this.panel_CusHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
+            this.panel_CusHome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_CusHome.BackgroundImage")));
+            this.panel_CusHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_CusHome.Controls.Add(this.lbl_WelCus);
+            this.panel_CusHome.Location = new System.Drawing.Point(267, 12);
+            this.panel_CusHome.Name = "panel_CusHome";
+            this.panel_CusHome.Size = new System.Drawing.Size(787, 429);
+            this.panel_CusHome.TabIndex = 15;
             // 
             // CustomerHomepage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.tableSidebar_CustomerProfile);
+            this.Controls.Add(this.panel_CusHome);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerHomepage";
             this.Text = "CustomerHomepage";
             this.tableSidebar_CustomerProfile.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel_CusHome.ResumeLayout(false);
+            this.panel_CusHome.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +288,7 @@
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Label lbl_WelCus;
+        private System.Windows.Forms.Panel panel_CusHome;
     }
 }

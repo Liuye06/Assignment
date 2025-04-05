@@ -42,6 +42,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tableSidebar_Customer = new System.Windows.Forms.TableLayoutPanel();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnMakeReservation = new System.Windows.Forms.Button();
             this.btnViewReservation = new System.Windows.Forms.Button();
@@ -50,15 +51,17 @@
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel_Feedback.SuspendLayout();
             this.tableSidebar_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Feedback
             // 
             this.panel_Feedback.AutoScroll = true;
+            this.panel_Feedback.BackColor = System.Drawing.Color.Transparent;
             this.panel_Feedback.Controls.Add(this.btnResetSearch);
             this.panel_Feedback.Controls.Add(this.listViewOrder);
             this.panel_Feedback.Controls.Add(this.btn_SubmitFeedback);
@@ -70,18 +73,20 @@
             this.panel_Feedback.Controls.Add(this.txtSearchOrder);
             this.panel_Feedback.Controls.Add(this.label15);
             this.panel_Feedback.Controls.Add(this.label16);
-            this.panel_Feedback.Location = new System.Drawing.Point(244, 63);
+            this.panel_Feedback.Location = new System.Drawing.Point(4, 61);
             this.panel_Feedback.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Feedback.Name = "panel_Feedback";
-            this.panel_Feedback.Size = new System.Drawing.Size(825, 360);
+            this.panel_Feedback.Size = new System.Drawing.Size(825, 389);
             this.panel_Feedback.TabIndex = 58;
             // 
             // btnResetSearch
             // 
-            this.btnResetSearch.Location = new System.Drawing.Point(551, 19);
+            this.btnResetSearch.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetSearch.ForeColor = System.Drawing.Color.Coral;
+            this.btnResetSearch.Location = new System.Drawing.Point(621, 19);
             this.btnResetSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnResetSearch.Name = "btnResetSearch";
-            this.btnResetSearch.Size = new System.Drawing.Size(252, 35);
+            this.btnResetSearch.Size = new System.Drawing.Size(160, 35);
             this.btnResetSearch.TabIndex = 99;
             this.btnResetSearch.Text = "Reset Search";
             this.btnResetSearch.UseVisualStyleBackColor = true;
@@ -90,18 +95,20 @@
             // listViewOrder
             // 
             this.listViewOrder.HideSelection = false;
-            this.listViewOrder.Location = new System.Drawing.Point(49, 70);
+            this.listViewOrder.Location = new System.Drawing.Point(95, 70);
             this.listViewOrder.Name = "listViewOrder";
-            this.listViewOrder.Size = new System.Drawing.Size(754, 152);
+            this.listViewOrder.Size = new System.Drawing.Size(669, 152);
             this.listViewOrder.TabIndex = 98;
             this.listViewOrder.UseCompatibleStateImageBehavior = false;
             // 
             // btn_SubmitFeedback
             // 
-            this.btn_SubmitFeedback.Location = new System.Drawing.Point(520, 310);
+            this.btn_SubmitFeedback.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SubmitFeedback.ForeColor = System.Drawing.Color.Coral;
+            this.btn_SubmitFeedback.Location = new System.Drawing.Point(520, 325);
             this.btn_SubmitFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SubmitFeedback.Name = "btn_SubmitFeedback";
-            this.btn_SubmitFeedback.Size = new System.Drawing.Size(283, 35);
+            this.btn_SubmitFeedback.Size = new System.Drawing.Size(261, 35);
             this.btn_SubmitFeedback.TabIndex = 97;
             this.btn_SubmitFeedback.Text = "Submit Feedback";
             this.btn_SubmitFeedback.UseVisualStyleBackColor = true;
@@ -109,19 +116,21 @@
             // 
             // txt_Feedback
             // 
-            this.txt_Feedback.Location = new System.Drawing.Point(49, 270);
+            this.txt_Feedback.Location = new System.Drawing.Point(95, 270);
             this.txt_Feedback.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Feedback.Name = "txt_Feedback";
-            this.txt_Feedback.Size = new System.Drawing.Size(754, 30);
+            this.txt_Feedback.Size = new System.Drawing.Size(669, 30);
             this.txt_Feedback.TabIndex = 96;
             // 
             // lbl_Feedback
             // 
             this.lbl_Feedback.AutoSize = true;
-            this.lbl_Feedback.Location = new System.Drawing.Point(44, 241);
+            this.lbl_Feedback.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Feedback.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_Feedback.Location = new System.Drawing.Point(90, 241);
             this.lbl_Feedback.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Feedback.Name = "lbl_Feedback";
-            this.lbl_Feedback.Size = new System.Drawing.Size(99, 25);
+            this.lbl_Feedback.Size = new System.Drawing.Size(106, 25);
             this.lbl_Feedback.TabIndex = 95;
             this.lbl_Feedback.Text = "Feedback";
             // 
@@ -136,10 +145,12 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(324, 19);
+            this.btnSearch.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Coral;
+            this.btnSearch.Location = new System.Drawing.Point(452, 19);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(226, 35);
+            this.btnSearch.Size = new System.Drawing.Size(149, 35);
             this.btnSearch.TabIndex = 92;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -148,16 +159,18 @@
             // lblSearchOrderID
             // 
             this.lblSearchOrderID.AutoSize = true;
-            this.lblSearchOrderID.Location = new System.Drawing.Point(25, 24);
+            this.lblSearchOrderID.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchOrderID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblSearchOrderID.Location = new System.Drawing.Point(57, 21);
             this.lblSearchOrderID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchOrderID.Name = "lblSearchOrderID";
-            this.lblSearchOrderID.Size = new System.Drawing.Size(154, 25);
+            this.lblSearchOrderID.Size = new System.Drawing.Size(216, 30);
             this.lblSearchOrderID.TabIndex = 91;
             this.lblSearchOrderID.Text = "Search Order ID";
             // 
             // txtSearchOrder
             // 
-            this.txtSearchOrder.Location = new System.Drawing.Point(187, 21);
+            this.txtSearchOrder.Location = new System.Drawing.Point(281, 21);
             this.txtSearchOrder.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchOrder.Name = "txtSearchOrder";
             this.txtSearchOrder.Size = new System.Drawing.Size(129, 30);
@@ -212,12 +225,24 @@
             this.tableSidebar_Customer.Size = new System.Drawing.Size(225, 450);
             this.tableSidebar_Customer.TabIndex = 100;
             // 
+            // pic_logo
+            // 
+            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(3, 3);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(198, 144);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 11;
+            this.pic_logo.TabStop = false;
+            // 
             // btnLogOut
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.IndianRed;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Image = ((System.Drawing.Image)(resources.GetObject("btnLogOut.Image")));
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogOut.Location = new System.Drawing.Point(4, 519);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
@@ -235,11 +260,12 @@
             this.btnMakeReservation.FlatAppearance.BorderSize = 0;
             this.btnMakeReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnMakeReservation.Image")));
             this.btnMakeReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMakeReservation.Location = new System.Drawing.Point(4, 359);
             this.btnMakeReservation.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeReservation.Name = "btnMakeReservation";
-            this.btnMakeReservation.Size = new System.Drawing.Size(196, 62);
+            this.btnMakeReservation.Size = new System.Drawing.Size(199, 62);
             this.btnMakeReservation.TabIndex = 1;
             this.btnMakeReservation.Text = "Make a Reservation Request";
             this.btnMakeReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -252,6 +278,7 @@
             this.btnViewReservation.FlatAppearance.BorderSize = 0;
             this.btnViewReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewReservation.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReservation.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReservation.Image")));
             this.btnViewReservation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewReservation.Location = new System.Drawing.Point(4, 314);
             this.btnViewReservation.Margin = new System.Windows.Forms.Padding(4);
@@ -269,6 +296,7 @@
             this.btnFeedback.FlatAppearance.BorderSize = 0;
             this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFeedback.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFeedback.Image = ((System.Drawing.Image)(resources.GetObject("btnFeedback.Image")));
             this.btnFeedback.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFeedback.Location = new System.Drawing.Point(4, 474);
             this.btnFeedback.Margin = new System.Windows.Forms.Padding(4);
@@ -286,6 +314,7 @@
             this.btnViewReplyRequest.FlatAppearance.BorderSize = 0;
             this.btnViewReplyRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewReplyRequest.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewReplyRequest.Image = ((System.Drawing.Image)(resources.GetObject("btnViewReplyRequest.Image")));
             this.btnViewReplyRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewReplyRequest.Location = new System.Drawing.Point(4, 244);
             this.btnViewReplyRequest.Margin = new System.Windows.Forms.Padding(4);
@@ -339,6 +368,7 @@
             this.btnMakeOrder.FlatAppearance.BorderSize = 0;
             this.btnMakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeOrder.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMakeOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnMakeOrder.Image")));
             this.btnMakeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMakeOrder.Location = new System.Drawing.Point(4, 429);
             this.btnMakeOrder.Margin = new System.Windows.Forms.Padding(4);
@@ -350,23 +380,23 @@
             this.btnMakeOrder.UseVisualStyleBackColor = false;
             this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
-            // pic_logo
+            // panel1
             // 
-            this.pic_logo.BackColor = System.Drawing.Color.Firebrick;
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(3, 3);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(198, 144);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 11;
-            this.pic_logo.TabStop = false;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panel_Feedback);
+            this.panel1.Location = new System.Drawing.Point(243, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(848, 466);
+            this.panel1.TabIndex = 101;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // CustomerFeedback
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(237)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.tableSidebar_Customer);
-            this.Controls.Add(this.panel_Feedback);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerFeedback";
             this.Text = "CustomerFeedback";
@@ -375,6 +405,7 @@
             this.panel_Feedback.PerformLayout();
             this.tableSidebar_Customer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -402,5 +433,6 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel1;
     }
 }
