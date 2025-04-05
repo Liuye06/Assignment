@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(update_Customer));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_viewCus = new System.Windows.Forms.Button();
             this.btn_DeleteCus = new System.Windows.Forms.Button();
@@ -51,18 +52,22 @@
             this.database1DataSet2 = new Assignment.Database1DataSet2();
             this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.userTableAdapter1 = new Assignment.Database1DataSet2TableAdapters.UserTableAdapter();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.AntiqueWhite;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pic_logo);
             this.panel1.Controls.Add(this.btn_viewCus);
             this.panel1.Controls.Add(this.btn_DeleteCus);
             this.panel1.Controls.Add(this.btn_EditCus);
@@ -78,76 +83,96 @@
             // 
             // btn_viewCus
             // 
+            this.btn_viewCus.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_viewCus.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
             this.btn_viewCus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_viewCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_viewCus.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_viewCus.ForeColor = System.Drawing.Color.Black;
-            this.btn_viewCus.Location = new System.Drawing.Point(-1, 109);
+            this.btn_viewCus.Image = ((System.Drawing.Image)(resources.GetObject("btn_viewCus.Image")));
+            this.btn_viewCus.Location = new System.Drawing.Point(-2, 170);
             this.btn_viewCus.Name = "btn_viewCus";
-            this.btn_viewCus.Size = new System.Drawing.Size(258, 78);
+            this.btn_viewCus.Size = new System.Drawing.Size(258, 41);
             this.btn_viewCus.TabIndex = 11;
             this.btn_viewCus.Text = "View";
-            this.btn_viewCus.UseVisualStyleBackColor = true;
+            this.btn_viewCus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_viewCus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_viewCus.UseVisualStyleBackColor = false;
             this.btn_viewCus.UseWaitCursor = true;
             this.btn_viewCus.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_DeleteCus
             // 
+            this.btn_DeleteCus.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_DeleteCus.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
             this.btn_DeleteCus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_DeleteCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteCus.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteCus.ForeColor = System.Drawing.Color.Black;
-            this.btn_DeleteCus.Location = new System.Drawing.Point(-2, 354);
+            this.btn_DeleteCus.Image = ((System.Drawing.Image)(resources.GetObject("btn_DeleteCus.Image")));
+            this.btn_DeleteCus.Location = new System.Drawing.Point(-1, 311);
             this.btn_DeleteCus.Name = "btn_DeleteCus";
-            this.btn_DeleteCus.Size = new System.Drawing.Size(258, 78);
+            this.btn_DeleteCus.Size = new System.Drawing.Size(258, 41);
             this.btn_DeleteCus.TabIndex = 8;
             this.btn_DeleteCus.Text = "Delete";
-            this.btn_DeleteCus.UseVisualStyleBackColor = true;
+            this.btn_DeleteCus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_DeleteCus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_DeleteCus.UseVisualStyleBackColor = false;
             this.btn_DeleteCus.UseWaitCursor = true;
             this.btn_DeleteCus.Click += new System.EventHandler(this.btn_DeleteCus_Click);
             // 
             // btn_EditCus
             // 
+            this.btn_EditCus.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_EditCus.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
             this.btn_EditCus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_EditCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditCus.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditCus.ForeColor = System.Drawing.Color.Black;
-            this.btn_EditCus.Location = new System.Drawing.Point(-1, 270);
+            this.btn_EditCus.Image = ((System.Drawing.Image)(resources.GetObject("btn_EditCus.Image")));
+            this.btn_EditCus.Location = new System.Drawing.Point(-1, 264);
             this.btn_EditCus.Name = "btn_EditCus";
-            this.btn_EditCus.Size = new System.Drawing.Size(258, 78);
+            this.btn_EditCus.Size = new System.Drawing.Size(258, 41);
             this.btn_EditCus.TabIndex = 7;
             this.btn_EditCus.Text = "Edit";
-            this.btn_EditCus.UseVisualStyleBackColor = true;
+            this.btn_EditCus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_EditCus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_EditCus.UseVisualStyleBackColor = false;
             this.btn_EditCus.UseWaitCursor = true;
             this.btn_EditCus.Click += new System.EventHandler(this.btn_EditCus_Click);
             // 
             // btn_AddCus
             // 
+            this.btn_AddCus.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_AddCus.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
             this.btn_AddCus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_AddCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddCus.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddCus.ForeColor = System.Drawing.Color.Black;
-            this.btn_AddCus.Location = new System.Drawing.Point(-1, 186);
+            this.btn_AddCus.Image = ((System.Drawing.Image)(resources.GetObject("btn_AddCus.Image")));
+            this.btn_AddCus.Location = new System.Drawing.Point(-1, 217);
             this.btn_AddCus.Name = "btn_AddCus";
-            this.btn_AddCus.Size = new System.Drawing.Size(258, 78);
+            this.btn_AddCus.Size = new System.Drawing.Size(258, 41);
             this.btn_AddCus.TabIndex = 6;
             this.btn_AddCus.Text = "Add";
-            this.btn_AddCus.UseVisualStyleBackColor = true;
+            this.btn_AddCus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_AddCus.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_AddCus.UseVisualStyleBackColor = false;
             this.btn_AddCus.UseWaitCursor = true;
             this.btn_AddCus.Click += new System.EventHandler(this.btn_AddCus_Click);
             // 
             // btn_Home
             // 
+            this.btn_Home.BackColor = System.Drawing.Color.PeachPuff;
             this.btn_Home.FlatAppearance.BorderColor = System.Drawing.Color.AntiqueWhite;
             this.btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Home.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Home.Font = new System.Drawing.Font("Gadugi", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Home.ForeColor = System.Drawing.Color.Black;
-            this.btn_Home.Location = new System.Drawing.Point(-2, 25);
+            this.btn_Home.Image = ((System.Drawing.Image)(resources.GetObject("btn_Home.Image")));
+            this.btn_Home.Location = new System.Drawing.Point(-2, 123);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(258, 78);
+            this.btn_Home.Size = new System.Drawing.Size(258, 41);
             this.btn_Home.TabIndex = 2;
             this.btn_Home.Text = "Home";
-            this.btn_Home.UseVisualStyleBackColor = true;
+            this.btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_Home.UseVisualStyleBackColor = false;
             this.btn_Home.UseWaitCursor = true;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
@@ -275,12 +300,31 @@
             // 
             this.userTableAdapter1.ClearBeforeFill = true;
             // 
+            // pic_logo
+            // 
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(-2, -1);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(262, 118);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 20;
+            this.pic_logo.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Location = new System.Drawing.Point(264, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(820, 453);
+            this.panel2.TabIndex = 6;
+            // 
             // update_Customer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "update_Customer";
             this.Text = "update_Customer";
@@ -291,6 +335,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,5 +364,7 @@
         private Database1DataSet2 database1DataSet2;
         private System.Windows.Forms.BindingSource userBindingSource1;
         private Database1DataSet2TableAdapters.UserTableAdapter userTableAdapter1;
+        private System.Windows.Forms.PictureBox pic_logo;
+        private System.Windows.Forms.Panel panel2;
     }
 }

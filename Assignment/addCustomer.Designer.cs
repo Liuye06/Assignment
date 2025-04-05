@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(addCustomer));
             this.lbltitle = new System.Windows.Forms.Label();
             this.lbl_CusName = new System.Windows.Forms.Label();
             this.lbl_DOB = new System.Windows.Forms.Label();
@@ -48,46 +49,57 @@
             // lbltitle
             // 
             this.lbltitle.AutoSize = true;
-            this.lbltitle.Location = new System.Drawing.Point(486, 35);
+            this.lbltitle.BackColor = System.Drawing.Color.Transparent;
+            this.lbltitle.Font = new System.Drawing.Font("Modern No. 20", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltitle.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbltitle.Location = new System.Drawing.Point(440, 33);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(138, 25);
+            this.lbltitle.Size = new System.Drawing.Size(240, 38);
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Add Customer";
             // 
             // lbl_CusName
             // 
             this.lbl_CusName.AutoSize = true;
-            this.lbl_CusName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CusName.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CusName.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CusName.ForeColor = System.Drawing.SystemColors.Info;
             this.lbl_CusName.Location = new System.Drawing.Point(268, 97);
             this.lbl_CusName.Name = "lbl_CusName";
-            this.lbl_CusName.Size = new System.Drawing.Size(81, 25);
+            this.lbl_CusName.Size = new System.Drawing.Size(82, 25);
             this.lbl_CusName.TabIndex = 1;
             this.lbl_CusName.Text = "Name :";
             // 
             // lbl_DOB
             // 
             this.lbl_DOB.AutoSize = true;
-            this.lbl_DOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DOB.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_DOB.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DOB.ForeColor = System.Drawing.SystemColors.Info;
             this.lbl_DOB.Location = new System.Drawing.Point(268, 141);
             this.lbl_DOB.Name = "lbl_DOB";
-            this.lbl_DOB.Size = new System.Drawing.Size(145, 25);
+            this.lbl_DOB.Size = new System.Drawing.Size(158, 25);
             this.lbl_DOB.TabIndex = 2;
             this.lbl_DOB.Text = "Date of Born :";
             // 
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_email.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.ForeColor = System.Drawing.SystemColors.Info;
             this.lbl_email.Location = new System.Drawing.Point(268, 228);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(78, 25);
+            this.lbl_email.Size = new System.Drawing.Size(88, 25);
             this.lbl_email.TabIndex = 3;
             this.lbl_email.Text = "Email :";
             // 
             // lbl_GenderCus
             // 
             this.lbl_GenderCus.AutoSize = true;
-            this.lbl_GenderCus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GenderCus.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_GenderCus.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GenderCus.ForeColor = System.Drawing.SystemColors.Info;
             this.lbl_GenderCus.Location = new System.Drawing.Point(268, 182);
             this.lbl_GenderCus.Name = "lbl_GenderCus";
             this.lbl_GenderCus.Size = new System.Drawing.Size(96, 25);
@@ -97,20 +109,24 @@
             // lbl_CusPassword
             // 
             this.lbl_CusPassword.AutoSize = true;
-            this.lbl_CusPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CusPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CusPassword.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CusPassword.ForeColor = System.Drawing.SystemColors.Info;
             this.lbl_CusPassword.Location = new System.Drawing.Point(271, 315);
             this.lbl_CusPassword.Name = "lbl_CusPassword";
-            this.lbl_CusPassword.Size = new System.Drawing.Size(119, 25);
+            this.lbl_CusPassword.Size = new System.Drawing.Size(120, 25);
             this.lbl_CusPassword.TabIndex = 6;
             this.lbl_CusPassword.Text = "Password :";
             // 
             // lbl_CusUsername
             // 
             this.lbl_CusUsername.AutoSize = true;
-            this.lbl_CusUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CusUsername.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_CusUsername.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_CusUsername.ForeColor = System.Drawing.SystemColors.Info;
             this.lbl_CusUsername.Location = new System.Drawing.Point(268, 269);
             this.lbl_CusUsername.Name = "lbl_CusUsername";
-            this.lbl_CusUsername.Size = new System.Drawing.Size(123, 25);
+            this.lbl_CusUsername.Size = new System.Drawing.Size(124, 25);
             this.lbl_CusUsername.TabIndex = 7;
             this.lbl_CusUsername.Text = "Username :";
             // 
@@ -144,6 +160,8 @@
             // 
             // btn_addCus
             // 
+            this.btn_addCus.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addCus.ForeColor = System.Drawing.Color.Chocolate;
             this.btn_addCus.Location = new System.Drawing.Point(273, 372);
             this.btn_addCus.Name = "btn_addCus";
             this.btn_addCus.Size = new System.Drawing.Size(262, 39);
@@ -165,6 +183,8 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Chocolate;
             this.btnCancel.Location = new System.Drawing.Point(541, 372);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(281, 39);
@@ -183,6 +203,8 @@
             // addCustomer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.dtp_dob_for_cus);
             this.Controls.Add(this.btnCancel);
@@ -199,6 +221,7 @@
             this.Controls.Add(this.lbl_DOB);
             this.Controls.Add(this.lbl_CusName);
             this.Controls.Add(this.lbltitle);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "addCustomer";
             this.Text = "addCustomer";

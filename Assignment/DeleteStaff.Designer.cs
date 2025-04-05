@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteStaff));
             this.btn_delete = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBoxStaff = new System.Windows.Forms.ListBox();
@@ -37,7 +38,9 @@
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(315, 340);
+            this.btn_delete.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.ForeColor = System.Drawing.Color.LightSalmon;
+            this.btn_delete.Location = new System.Drawing.Point(236, 353);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(255, 38);
             this.btn_delete.TabIndex = 3;
@@ -48,9 +51,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(209, 66);
+            this.comboBox1.Location = new System.Drawing.Point(244, 66);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 33);
+            this.comboBox1.Size = new System.Drawing.Size(247, 33);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -58,14 +61,16 @@
             // 
             this.listBoxStaff.FormattingEnabled = true;
             this.listBoxStaff.ItemHeight = 25;
-            this.listBoxStaff.Location = new System.Drawing.Point(109, 162);
+            this.listBoxStaff.Location = new System.Drawing.Point(235, 158);
             this.listBoxStaff.Name = "listBoxStaff";
-            this.listBoxStaff.Size = new System.Drawing.Size(284, 129);
+            this.listBoxStaff.Size = new System.Drawing.Size(594, 129);
             this.listBoxStaff.TabIndex = 4;
             // 
             // btn_ResetseacrhStaff
             // 
-            this.btn_ResetseacrhStaff.Location = new System.Drawing.Point(470, 64);
+            this.btn_ResetseacrhStaff.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ResetseacrhStaff.ForeColor = System.Drawing.Color.LightSalmon;
+            this.btn_ResetseacrhStaff.Location = new System.Drawing.Point(658, 66);
             this.btn_ResetseacrhStaff.Name = "btn_ResetseacrhStaff";
             this.btn_ResetseacrhStaff.Size = new System.Drawing.Size(207, 35);
             this.btn_ResetseacrhStaff.TabIndex = 5;
@@ -75,7 +80,9 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(622, 340);
+            this.btn_Cancel.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.ForeColor = System.Drawing.Color.LightSalmon;
+            this.btn_Cancel.Location = new System.Drawing.Point(572, 353);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(257, 38);
             this.btn_Cancel.TabIndex = 6;
@@ -86,12 +93,15 @@
             // DeleteStaff
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1082, 453);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_ResetseacrhStaff);
             this.Controls.Add(this.listBoxStaff);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.comboBox1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "DeleteStaff";
             this.Text = "DeleteStaff";
