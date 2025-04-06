@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainManageHall));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableSidebar_MHall = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pic_logo = new System.Windows.Forms.PictureBox();
@@ -206,7 +205,6 @@
             // 
             // gbMHall
             // 
-            this.gbMHall.BackColor = System.Drawing.Color.Transparent;
             this.gbMHall.Controls.Add(this.btnResetHallSearch);
             this.gbMHall.Controls.Add(this.btnAddNewHall);
             this.gbMHall.Controls.Add(this.dgvHall);
@@ -256,14 +254,6 @@
             this.ColPrice,
             this.ColHallEdit,
             this.ColHallDelete});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHall.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHall.Location = new System.Drawing.Point(45, 91);
             this.dgvHall.Name = "dgvHall";
             this.dgvHall.RowHeadersWidth = 51;
@@ -330,6 +320,7 @@
             // 
             // txtHall
             // 
+            this.txtHall.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtHall.Location = new System.Drawing.Point(172, 41);
             this.txtHall.Name = "txtHall";
             this.txtHall.Size = new System.Drawing.Size(262, 32);

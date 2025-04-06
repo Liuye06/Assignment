@@ -103,6 +103,7 @@
             // 
             // numHeadCount
             // 
+            this.numHeadCount.BackColor = System.Drawing.Color.LightGray;
             this.numHeadCount.Location = new System.Drawing.Point(621, 160);
             this.numHeadCount.Margin = new System.Windows.Forms.Padding(4);
             this.numHeadCount.Maximum = new decimal(new int[] {
@@ -149,6 +150,7 @@
             // 
             // cmbFunction
             // 
+            this.cmbFunction.BackColor = System.Drawing.Color.LightGray;
             this.cmbFunction.FormattingEnabled = true;
             this.cmbFunction.Items.AddRange(new object[] {
             "Birthday",
@@ -178,6 +180,7 @@
             // 
             // txtRequest
             // 
+            this.txtRequest.BackColor = System.Drawing.Color.LightGray;
             this.txtRequest.Location = new System.Drawing.Point(31, 311);
             this.txtRequest.Margin = new System.Windows.Forms.Padding(4);
             this.txtRequest.Name = "txtRequest";
@@ -196,7 +199,7 @@
             // btn_SendReq
             // 
             this.btn_SendReq.ForeColor = System.Drawing.Color.Coral;
-            this.btn_SendReq.Location = new System.Drawing.Point(663, 279);
+            this.btn_SendReq.Location = new System.Drawing.Point(649, 293);
             this.btn_SendReq.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SendReq.Name = "btn_SendReq";
             this.btn_SendReq.Size = new System.Drawing.Size(132, 63);

@@ -94,6 +94,7 @@
             // 
             // listViewOrder
             // 
+            this.listViewOrder.BackColor = System.Drawing.Color.Silver;
             this.listViewOrder.HideSelection = false;
             this.listViewOrder.Location = new System.Drawing.Point(95, 70);
             this.listViewOrder.Name = "listViewOrder";
@@ -105,10 +106,10 @@
             // 
             this.btn_SubmitFeedback.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SubmitFeedback.ForeColor = System.Drawing.Color.Coral;
-            this.btn_SubmitFeedback.Location = new System.Drawing.Point(520, 325);
+            this.btn_SubmitFeedback.Location = new System.Drawing.Point(510, 325);
             this.btn_SubmitFeedback.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SubmitFeedback.Name = "btn_SubmitFeedback";
-            this.btn_SubmitFeedback.Size = new System.Drawing.Size(261, 35);
+            this.btn_SubmitFeedback.Size = new System.Drawing.Size(244, 35);
             this.btn_SubmitFeedback.TabIndex = 97;
             this.btn_SubmitFeedback.Text = "Submit Feedback";
             this.btn_SubmitFeedback.UseVisualStyleBackColor = true;
@@ -116,6 +117,7 @@
             // 
             // txt_Feedback
             // 
+            this.txt_Feedback.BackColor = System.Drawing.Color.LightGray;
             this.txt_Feedback.Location = new System.Drawing.Point(95, 270);
             this.txt_Feedback.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Feedback.Name = "txt_Feedback";
@@ -126,7 +128,7 @@
             // 
             this.lbl_Feedback.AutoSize = true;
             this.lbl_Feedback.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Feedback.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_Feedback.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
             this.lbl_Feedback.Location = new System.Drawing.Point(90, 241);
             this.lbl_Feedback.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Feedback.Name = "lbl_Feedback";
@@ -159,17 +161,18 @@
             // lblSearchOrderID
             // 
             this.lblSearchOrderID.AutoSize = true;
-            this.lblSearchOrderID.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchOrderID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSearchOrderID.Location = new System.Drawing.Point(57, 21);
+            this.lblSearchOrderID.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchOrderID.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.lblSearchOrderID.Location = new System.Drawing.Point(90, 21);
             this.lblSearchOrderID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSearchOrderID.Name = "lblSearchOrderID";
-            this.lblSearchOrderID.Size = new System.Drawing.Size(216, 30);
+            this.lblSearchOrderID.Size = new System.Drawing.Size(182, 25);
             this.lblSearchOrderID.TabIndex = 91;
             this.lblSearchOrderID.Text = "Search Order ID";
             // 
             // txtSearchOrder
             // 
+            this.txtSearchOrder.BackColor = System.Drawing.Color.LightGray;
             this.txtSearchOrder.Location = new System.Drawing.Point(281, 21);
             this.txtSearchOrder.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchOrder.Name = "txtSearchOrder";

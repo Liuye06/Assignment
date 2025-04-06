@@ -67,7 +67,7 @@
             // btnCheckOut
             // 
             this.btnCheckOut.ForeColor = System.Drawing.Color.Coral;
-            this.btnCheckOut.Location = new System.Drawing.Point(95, 352);
+            this.btnCheckOut.Location = new System.Drawing.Point(201, 347);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(390, 34);
             this.btnCheckOut.TabIndex = 0;
@@ -86,6 +86,7 @@
             // 
             // cmbCategory
             // 
+            this.cmbCategory.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Items.AddRange(new object[] {
             "All",

@@ -100,6 +100,7 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.BackColor = System.Drawing.Color.Gainsboro;
             this.cmbGender.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
@@ -123,6 +124,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.Gainsboro;
             this.txtPassword.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(158, 131);
             this.txtPassword.Name = "txtPassword";
@@ -131,6 +133,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.Gainsboro;
             this.txtUsername.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(158, 77);
             this.txtUsername.Name = "txtUsername";
@@ -191,6 +194,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.Color.Gainsboro;
             this.txtEmail.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(158, 240);
             this.txtEmail.Name = "txtEmail";
@@ -199,6 +203,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.Gainsboro;
             this.txtName.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(158, 186);
             this.txtName.Name = "txtName";

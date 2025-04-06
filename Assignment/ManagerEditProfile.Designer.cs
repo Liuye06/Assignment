@@ -58,6 +58,7 @@
             // 
             // cmbManagerGender
             // 
+            this.cmbManagerGender.BackColor = System.Drawing.Color.LightGray;
             this.cmbManagerGender.FormattingEnabled = true;
             this.cmbManagerGender.Items.AddRange(new object[] {
             "Female",
@@ -70,6 +71,7 @@
             // picManagerProfilePic
             // 
             this.picManagerProfilePic.BackColor = System.Drawing.Color.Gainsboro;
+            this.picManagerProfilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picManagerProfilePic.Location = new System.Drawing.Point(689, 86);
             this.picManagerProfilePic.Name = "picManagerProfilePic";
             this.picManagerProfilePic.Size = new System.Drawing.Size(219, 210);
@@ -79,6 +81,7 @@
             // 
             // txtManagerPassword
             // 
+            this.txtManagerPassword.BackColor = System.Drawing.Color.LightGray;
             this.txtManagerPassword.Location = new System.Drawing.Point(331, 105);
             this.txtManagerPassword.Name = "txtManagerPassword";
             this.txtManagerPassword.Size = new System.Drawing.Size(271, 30);
@@ -86,6 +89,7 @@
             // 
             // txtManagerUsername
             // 
+            this.txtManagerUsername.BackColor = System.Drawing.Color.LightGray;
             this.txtManagerUsername.Location = new System.Drawing.Point(331, 51);
             this.txtManagerUsername.Name = "txtManagerUsername";
             this.txtManagerUsername.Size = new System.Drawing.Size(271, 30);
@@ -153,6 +157,7 @@
             // 
             // txtMangerEmail
             // 
+            this.txtMangerEmail.BackColor = System.Drawing.Color.LightGray;
             this.txtMangerEmail.Location = new System.Drawing.Point(331, 214);
             this.txtMangerEmail.Name = "txtMangerEmail";
             this.txtMangerEmail.Size = new System.Drawing.Size(271, 30);
@@ -160,6 +165,7 @@
             // 
             // txtManagerName
             // 
+            this.txtManagerName.BackColor = System.Drawing.Color.LightGray;
             this.txtManagerName.Location = new System.Drawing.Point(331, 160);
             this.txtManagerName.Name = "txtManagerName";
             this.txtManagerName.Size = new System.Drawing.Size(271, 30);

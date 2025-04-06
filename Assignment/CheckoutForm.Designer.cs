@@ -44,6 +44,7 @@
             // 
             // lstCartFood
             // 
+            this.lstCartFood.BackColor = System.Drawing.SystemColors.MenuBar;
             this.lstCartFood.HideSelection = false;
             this.lstCartFood.Location = new System.Drawing.Point(205, 135);
             this.lstCartFood.Name = "lstCartFood";

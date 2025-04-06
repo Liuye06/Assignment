@@ -75,7 +75,8 @@
             // 
             // txtPriceHall
             // 
-            this.txtPriceHall.Location = new System.Drawing.Point(275, 229);
+            this.txtPriceHall.BackColor = System.Drawing.Color.Silver;
+            this.txtPriceHall.Location = new System.Drawing.Point(313, 235);
             this.txtPriceHall.Name = "txtPriceHall";
             this.txtPriceHall.Size = new System.Drawing.Size(309, 32);
             this.txtPriceHall.TabIndex = 8;
@@ -83,7 +84,8 @@
             // 
             // txtCapacity
             // 
-            this.txtCapacity.Location = new System.Drawing.Point(275, 147);
+            this.txtCapacity.BackColor = System.Drawing.Color.Silver;
+            this.txtCapacity.Location = new System.Drawing.Point(313, 153);
             this.txtCapacity.Name = "txtCapacity";
             this.txtCapacity.Size = new System.Drawing.Size(309, 32);
             this.txtCapacity.TabIndex = 7;
@@ -91,7 +93,7 @@
             // lblPriceHall
             // 
             this.lblPriceHall.AutoSize = true;
-            this.lblPriceHall.Location = new System.Drawing.Point(143, 232);
+            this.lblPriceHall.Location = new System.Drawing.Point(181, 238);
             this.lblPriceHall.Name = "lblPriceHall";
             this.lblPriceHall.Size = new System.Drawing.Size(66, 25);
             this.lblPriceHall.TabIndex = 6;
@@ -100,7 +102,7 @@
             // lblCapacity
             // 
             this.lblCapacity.AutoSize = true;
-            this.lblCapacity.Location = new System.Drawing.Point(143, 150);
+            this.lblCapacity.Location = new System.Drawing.Point(181, 156);
             this.lblCapacity.Name = "lblCapacity";
             this.lblCapacity.Size = new System.Drawing.Size(99, 25);
             this.lblCapacity.TabIndex = 5;
@@ -121,7 +123,7 @@
             // lblAddHall
             // 
             this.lblAddHall.AutoSize = true;
-            this.lblAddHall.Location = new System.Drawing.Point(143, 66);
+            this.lblAddHall.Location = new System.Drawing.Point(181, 72);
             this.lblAddHall.Name = "lblAddHall";
             this.lblAddHall.Size = new System.Drawing.Size(124, 25);
             this.lblAddHall.TabIndex = 1;
@@ -129,7 +131,8 @@
             // 
             // txtHallName
             // 
-            this.txtHallName.Location = new System.Drawing.Point(275, 63);
+            this.txtHallName.BackColor = System.Drawing.Color.Silver;
+            this.txtHallName.Location = new System.Drawing.Point(313, 69);
             this.txtHallName.Name = "txtHallName";
             this.txtHallName.Size = new System.Drawing.Size(309, 32);
             this.txtHallName.TabIndex = 0;

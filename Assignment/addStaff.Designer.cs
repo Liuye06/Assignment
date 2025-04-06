@@ -51,9 +51,9 @@
             // 
             this.btn_addStaff.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_addStaff.ForeColor = System.Drawing.Color.LightSalmon;
-            this.btn_addStaff.Location = new System.Drawing.Point(286, 370);
+            this.btn_addStaff.Location = new System.Drawing.Point(203, 370);
             this.btn_addStaff.Name = "btn_addStaff";
-            this.btn_addStaff.Size = new System.Drawing.Size(266, 41);
+            this.btn_addStaff.Size = new System.Drawing.Size(333, 41);
             this.btn_addStaff.TabIndex = 28;
             this.btn_addStaff.Text = "Register";
             this.btn_addStaff.UseVisualStyleBackColor = true;
@@ -196,9 +196,9 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.LightSalmon;
-            this.btnCancel.Location = new System.Drawing.Point(558, 370);
+            this.btnCancel.Location = new System.Drawing.Point(571, 370);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(266, 41);
+            this.btnCancel.Size = new System.Drawing.Size(337, 41);
             this.btnCancel.TabIndex = 32;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;

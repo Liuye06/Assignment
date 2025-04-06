@@ -197,9 +197,9 @@
             this.gbShowCusOrder.Controls.Add(this.cmbCusOrderStatus);
             this.gbShowCusOrder.Font = new System.Drawing.Font("Modern No. 20", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbShowCusOrder.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.gbShowCusOrder.Location = new System.Drawing.Point(16, 37);
+            this.gbShowCusOrder.Location = new System.Drawing.Point(16, 18);
             this.gbShowCusOrder.Name = "gbShowCusOrder";
-            this.gbShowCusOrder.Size = new System.Drawing.Size(837, 434);
+            this.gbShowCusOrder.Size = new System.Drawing.Size(837, 453);
             this.gbShowCusOrder.TabIndex = 7;
             this.gbShowCusOrder.TabStop = false;
             this.gbShowCusOrder.Text = "Customer Order";
@@ -218,11 +218,12 @@
             // 
             // cmbChef
             // 
+            this.cmbChef.BackColor = System.Drawing.Color.LightGray;
             this.cmbChef.FormattingEnabled = true;
             this.cmbChef.Items.AddRange(new object[] {
             "In Progress",
             "Completed"});
-            this.cmbChef.Location = new System.Drawing.Point(23, 361);
+            this.cmbChef.Location = new System.Drawing.Point(24, 356);
             this.cmbChef.Name = "cmbChef";
             this.cmbChef.Size = new System.Drawing.Size(404, 37);
             this.cmbChef.TabIndex = 18;
@@ -346,6 +347,7 @@
             // 
             // cmbCusOrderStatus
             // 
+            this.cmbCusOrderStatus.BackColor = System.Drawing.Color.LightGray;
             this.cmbCusOrderStatus.FormattingEnabled = true;
             this.cmbCusOrderStatus.Items.AddRange(new object[] {
             "All",

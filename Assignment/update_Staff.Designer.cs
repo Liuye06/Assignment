@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(update_Staff));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.btn_view = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
@@ -52,13 +53,12 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Btn_resetSearchStaff = new System.Windows.Forms.Button();
-            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,17 @@
             this.panel1.TabIndex = 5;
             this.panel1.UseWaitCursor = true;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pic_logo
+            // 
+            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+            this.pic_logo.Location = new System.Drawing.Point(-1, -1);
+            this.pic_logo.Name = "pic_logo";
+            this.pic_logo.Size = new System.Drawing.Size(262, 118);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pic_logo.TabIndex = 20;
+            this.pic_logo.TabStop = false;
+            this.pic_logo.UseWaitCursor = true;
             // 
             // btn_view
             // 
@@ -288,6 +299,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(179, 75);
             this.comboBox1.Name = "comboBox1";
@@ -319,16 +331,6 @@
             this.Btn_resetSearchStaff.UseVisualStyleBackColor = true;
             this.Btn_resetSearchStaff.Click += new System.EventHandler(this.Btn_resetSearchStaff_Click);
             // 
-            // pic_logo
-            // 
-            this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
-            this.pic_logo.Location = new System.Drawing.Point(-1, -1);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(262, 118);
-            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pic_logo.TabIndex = 20;
-            this.pic_logo.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
@@ -354,10 +356,10 @@
             this.Load += new System.EventHandler(this.update_Staff_Load);
             this.Shown += new System.EventHandler(this.update_Staff_Shown);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

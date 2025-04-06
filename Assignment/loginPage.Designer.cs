@@ -56,7 +56,7 @@
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(683, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 45);
+            this.label1.Size = new System.Drawing.Size(158, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "LOGIN";
             // 
@@ -82,6 +82,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.Silver;
             this.txtUsername.Location = new System.Drawing.Point(647, 165);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(285, 30);
@@ -89,6 +90,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.Silver;
             this.txtPassword.Location = new System.Drawing.Point(647, 230);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(285, 30);
@@ -98,7 +100,8 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(658, 327);
+            this.button1.Font = new System.Drawing.Font("Mongolian Baiti", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(672, 327);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 39);
             this.button1.TabIndex = 6;

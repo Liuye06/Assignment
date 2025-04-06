@@ -59,9 +59,9 @@
             this.gbAddMenu.Controls.Add(this.lblAddMenu);
             this.gbAddMenu.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbAddMenu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.gbAddMenu.Location = new System.Drawing.Point(142, 34);
+            this.gbAddMenu.Location = new System.Drawing.Point(131, 34);
             this.gbAddMenu.Name = "gbAddMenu";
-            this.gbAddMenu.Size = new System.Drawing.Size(852, 407);
+            this.gbAddMenu.Size = new System.Drawing.Size(863, 407);
             this.gbAddMenu.TabIndex = 1;
             this.gbAddMenu.TabStop = false;
             this.gbAddMenu.Text = "Add New Menu Item";
@@ -102,6 +102,7 @@
             // picAddMenu
             // 
             this.picAddMenu.BackColor = System.Drawing.Color.Gainsboro;
+            this.picAddMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picAddMenu.Location = new System.Drawing.Point(570, 60);
             this.picAddMenu.Name = "picAddMenu";
             this.picAddMenu.Size = new System.Drawing.Size(219, 210);
@@ -111,6 +112,7 @@
             // 
             // cmbCategoryMenu
             // 
+            this.cmbCategoryMenu.BackColor = System.Drawing.Color.LightGray;
             this.cmbCategoryMenu.FormattingEnabled = true;
             this.cmbCategoryMenu.Items.AddRange(new object[] {
             "Appetizer",
@@ -125,6 +127,7 @@
             // 
             // txtPriceMenu
             // 
+            this.txtPriceMenu.BackColor = System.Drawing.Color.LightGray;
             this.txtPriceMenu.Location = new System.Drawing.Point(205, 156);
             this.txtPriceMenu.Name = "txtPriceMenu";
             this.txtPriceMenu.Size = new System.Drawing.Size(301, 32);
@@ -132,6 +135,7 @@
             // 
             // txtAddMenu
             // 
+            this.txtAddMenu.BackColor = System.Drawing.Color.LightGray;
             this.txtAddMenu.Location = new System.Drawing.Point(205, 78);
             this.txtAddMenu.Name = "txtAddMenu";
             this.txtAddMenu.Size = new System.Drawing.Size(301, 32);
@@ -140,6 +144,7 @@
             // lblCategoryMenu
             // 
             this.lblCategoryMenu.AutoSize = true;
+            this.lblCategoryMenu.ForeColor = System.Drawing.SystemColors.Info;
             this.lblCategoryMenu.Location = new System.Drawing.Point(66, 240);
             this.lblCategoryMenu.Name = "lblCategoryMenu";
             this.lblCategoryMenu.Size = new System.Drawing.Size(99, 25);
@@ -149,6 +154,7 @@
             // lblPriceMenu
             // 
             this.lblPriceMenu.AutoSize = true;
+            this.lblPriceMenu.ForeColor = System.Drawing.SystemColors.Info;
             this.lblPriceMenu.Location = new System.Drawing.Point(66, 159);
             this.lblPriceMenu.Name = "lblPriceMenu";
             this.lblPriceMenu.Size = new System.Drawing.Size(66, 25);
@@ -158,7 +164,7 @@
             // lblAddMenu
             // 
             this.lblAddMenu.AutoSize = true;
-            this.lblAddMenu.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblAddMenu.ForeColor = System.Drawing.SystemColors.Info;
             this.lblAddMenu.Location = new System.Drawing.Point(66, 81);
             this.lblAddMenu.Name = "lblAddMenu";
             this.lblAddMenu.Size = new System.Drawing.Size(69, 25);

@@ -63,6 +63,7 @@
             // 
             // txtEditPriceHall
             // 
+            this.txtEditPriceHall.BackColor = System.Drawing.Color.LightGray;
             this.txtEditPriceHall.Location = new System.Drawing.Point(346, 224);
             this.txtEditPriceHall.Name = "txtEditPriceHall";
             this.txtEditPriceHall.Size = new System.Drawing.Size(301, 36);
@@ -96,6 +97,7 @@
             // 
             // txtEditCapacityHall
             // 
+            this.txtEditCapacityHall.BackColor = System.Drawing.Color.LightGray;
             this.txtEditCapacityHall.Location = new System.Drawing.Point(346, 143);
             this.txtEditCapacityHall.Name = "txtEditCapacityHall";
             this.txtEditCapacityHall.Size = new System.Drawing.Size(301, 36);
@@ -103,6 +105,7 @@
             // 
             // txtEditHall
             // 
+            this.txtEditHall.BackColor = System.Drawing.Color.LightGray;
             this.txtEditHall.Location = new System.Drawing.Point(346, 65);
             this.txtEditHall.Name = "txtEditHall";
             this.txtEditHall.Size = new System.Drawing.Size(301, 36);

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainHallResvReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableSidebar_HRReport = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pic_logo = new System.Windows.Forms.PictureBox();
@@ -234,14 +233,6 @@
             // dgvReport
             // 
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReport.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReport.Location = new System.Drawing.Point(45, 85);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.RowHeadersWidth = 51;
@@ -263,6 +254,7 @@
             // 
             // cmbResvType
             // 
+            this.cmbResvType.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmbResvType.FormattingEnabled = true;
             this.cmbResvType.Items.AddRange(new object[] {
             "All",
@@ -292,6 +284,7 @@
             // 
             // cmbMonth
             // 
+            this.cmbMonth.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmbMonth.FormattingEnabled = true;
             this.cmbMonth.Items.AddRange(new object[] {
             "Jan",
@@ -306,7 +299,7 @@
             "Oct",
             "Nov",
             "Dec"});
-            this.cmbMonth.Location = new System.Drawing.Point(113, 40);
+            this.cmbMonth.Location = new System.Drawing.Point(168, 37);
             this.cmbMonth.Name = "cmbMonth";
             this.cmbMonth.Size = new System.Drawing.Size(149, 33);
             this.cmbMonth.TabIndex = 1;
@@ -315,7 +308,7 @@
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(40, 44);
+            this.lblMonth.Location = new System.Drawing.Point(95, 41);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(79, 25);
             this.lblMonth.TabIndex = 0;
