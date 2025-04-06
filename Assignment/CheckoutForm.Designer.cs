@@ -1,6 +1,6 @@
 ﻿namespace Assignment
 {
-    partial class CheckoutForm
+    partial class Customer_CheckoutForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckoutForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer_CheckoutForm));
             this.lstCartFood = new System.Windows.Forms.ListView();
             this.btnConfirm_Pay = new System.Windows.Forms.Button();
             this.lblTotalFood = new System.Windows.Forms.Label();

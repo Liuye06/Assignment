@@ -67,18 +67,18 @@ namespace Assignment
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-            ChefEditProfile updateForm = new ChefEditProfile(currentUserID, this);
+            Chef_EditProfile updateForm = new Chef_EditProfile(currentUserID, this);
             updateForm.Show();
         }
 
         private void btn_inventory_CProfile_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new Chef(currentUserID));
+            _sidebarManager.NavigateTo(new Chef_ManageInve(currentUserID));
         }
 
         private void btn_CusOrder_CProfile_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ChefCustomerOrder(currentUserID));
+            _sidebarManager.NavigateTo(new Chef_CustomerOrder(currentUserID));
         }
 
         private void btn_ChefProfile_CProfile_Click(object sender, EventArgs e)

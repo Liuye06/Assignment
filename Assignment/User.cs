@@ -48,15 +48,15 @@ namespace Assignment
 
                             // Open different forms based on role
                             if (userRole.Equals("admin", StringComparison.OrdinalIgnoreCase))
-                                newForm = new Admin(userID);
+                                newForm = new Admin_Homepage(userID);
                             else if (userRole.Equals("chef", StringComparison.OrdinalIgnoreCase))
-                                newForm = new ChefHomepage(userID);
+                                newForm = new Chef_Homepage(userID);
                             else if (userRole.Equals("manager", StringComparison.OrdinalIgnoreCase))
-                                newForm = new ManagerHomepage(userID);
+                                newForm = new Manager_Homepage(userID);
                             else if (userRole.Equals("Reservation Coordinator", StringComparison.OrdinalIgnoreCase))
-                                newForm = new RCMainPage(userID);
+                                newForm = new RC_MainPage(userID);
                             else if (userRole.Equals("customer", StringComparison.OrdinalIgnoreCase))
-                                newForm = new CustomerHomepage(userID);
+                                newForm = new Customer_Homepage(userID);
 
                             if (newForm != null)
                             {

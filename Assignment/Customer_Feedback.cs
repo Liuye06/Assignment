@@ -1,0 +1,135 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Assignment
+{
+    public partial class Customer_Feedback : Form
+    {
+        private SidebarManager _sidebarManager;
+        private int currentUserId;
+
+        public Customer_Feedback(int userId)
+        {
+            InitializeComponent();
+            this.currentUserId = userId;
+            _sidebarManager = new SidebarManager(this);
+            UserSessionManager.Login(userId);
+        }
+
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            int orderId;
+            if (int.TryParse(txtSearchOrder.Text, out orderId))
+            {
+                OrderFeedback feedbackHandler = new OrderFeedback();
+                feedbackHandler.SearchOrderFeedback(currentUserId, orderId, listViewOrder); // Call function to filter ListView
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Order ID.");
+            }
+        }
+
+        private void btn_SubmitFeedback_Click(object sender, EventArgs e)
+        {
+            if (listViewOrder.SelectedItems.Count > 0 && !string.IsNullOrWhiteSpace(txt_Feedback.Text))
+            {
+                int orderId = int.Parse(listViewOrder.SelectedItems[0].SubItems[0].Text); 
+
+                OrderFeedback feedbackHandler = new OrderFeedback();
+                if (feedbackHandler.SubmitFeedback(currentUserId, orderId, txt_Feedback.Text))
+                {
+                    MessageBox.Show("Feedback submitted successfully.");
+
+                    // ✅ Refresh the ListView to show the updated feedback
+                    feedbackHandler.LoadOrders(currentUserId, listViewOrder);
+                }
+                else
+                {
+                    MessageBox.Show("Error submitting feedback.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order and enter feedback.");
+            }
+            txt_Feedback.Text = ""; // Clear feedback box
+        }
+
+        private void CustomerFeedback_Load(object sender, EventArgs e)
+        {
+            listViewOrder.View = View.Details;
+            listViewOrder.FullRowSelect = true;
+            listViewOrder.GridLines = true;
+
+            listViewOrder.Columns.Clear();
+            listViewOrder.Columns.Add("Order ID", 100);
+            listViewOrder.Columns.Add("Item Name", 150); 
+            listViewOrder.Columns.Add("Feedback", 300);
+
+            OrderFeedback feedbackHandler = new OrderFeedback();
+            feedbackHandler.LoadOrders(currentUserId, listViewOrder);
+        }
+
+        private void btnResetSearch_Click(object sender, EventArgs e)
+        {
+            txtSearchOrder.Text = ""; // Clear search box
+            listViewOrder.Items.Clear(); // Clear list
+            OrderFeedback feedbackHandler = new OrderFeedback();
+            feedbackHandler.LoadOrders(currentUserId, listViewOrder); // Reload all orders
+        }
+
+        private void btnProfile_Click_1(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Customer_Profile(currentUserId));
+        }
+
+        private void btnViewOrders_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Customer_ViewCustomerOrder(currentUserId));
+        }
+
+        private void btnViewReplyRequest_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Customer_ViewCustomerReplyRequest(currentUserId));
+        }
+
+        private void btnViewReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Customer_ViewReservation(currentUserId));
+        }
+
+        private void btnMakeReservation_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Customer_MakeReservation(currentUserId));
+        }
+
+        private void btnMakeOrder_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new CustomerMenu(currentUserId));
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            _sidebarManager.NavigateTo(new Customer_Feedback(currentUserId));
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            UserSessionManager.Logout(this);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
+}

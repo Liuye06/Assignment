@@ -27,7 +27,7 @@ namespace Assignment
 
         private void btnUpdateProfile_Click(object sender, EventArgs e)
         {
-            CustomerEditProfile updateForm = new CustomerEditProfile(currentUserID, this);
+            Customer_EditProfile updateForm = new Customer_EditProfile(currentUserID, this);
             updateForm.Show();
         }
 
@@ -78,32 +78,32 @@ namespace Assignment
 
         private void btnViewOrders_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerOrder(currentUserID));
+            _sidebarManager.NavigateTo(new Customer_ViewCustomerOrder(currentUserID));
         }
 
         private void btnViewReplyRequest_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new ViewCustomerReplyRequest(currentUserID));
+            _sidebarManager.NavigateTo(new Customer_ViewCustomerReplyRequest(currentUserID));
         }
 
         private void btnViewReservation_Click(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerViewReservation(currentUserID));
+            _sidebarManager.NavigateTo(new Customer_ViewReservation(currentUserID));
         }
 
         private void btnMakeReservation_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMakeAnReservation(currentUserID));
+            _sidebarManager.NavigateTo(new Customer_MakeReservation(currentUserID));
         }
 
         private void btnMakeOrder_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerMenu(currentUserID));
+            _sidebarManager.NavigateTo(new Customer_Menu(currentUserID));
         }
 
         private void btnFeedback_Click_1(object sender, EventArgs e)
         {
-            _sidebarManager.NavigateTo(new CustomerFeedback(currentUserID));
+            _sidebarManager.NavigateTo(new Customer_Feedback(currentUserID));
         }
 
         private void btnLogOut_Click_1(object sender, EventArgs e)

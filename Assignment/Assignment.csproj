@@ -86,24 +86,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChefDetails.cs" />
-    <Compile Include="ChefEditProfile.cs">
+    <Compile Include="Chef_EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChefEditProfile.Designer.cs">
-      <DependentUpon>ChefEditProfile.cs</DependentUpon>
+    <Compile Include="Chef_EditProfile.Designer.cs">
+      <DependentUpon>Chef_EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChefHomepage.cs">
+    <Compile Include="Chef_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChefHomepage.Designer.cs">
-      <DependentUpon>ChefHomepage.cs</DependentUpon>
+    <Compile Include="Chef_Homepage.Designer.cs">
+      <DependentUpon>Chef_Homepage.cs</DependentUpon>
     </Compile>
     <Compile Include="ChefProfileDB.cs" />
-    <Compile Include="CustomerEditProfile.cs">
+    <Compile Include="Customer_EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerEditProfile.Designer.cs">
-      <DependentUpon>CustomerEditProfile.cs</DependentUpon>
+    <Compile Include="Customer_EditProfile.Designer.cs">
+      <DependentUpon>Customer_EditProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerProfileDB.cs" />
     <Compile Include="loginPage.cs">
@@ -112,59 +112,59 @@
     <Compile Include="loginPage.Designer.cs">
       <DependentUpon>loginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="addCustomer.cs">
+    <Compile Include="Admin_addCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addCustomer.Designer.cs">
-      <DependentUpon>addCustomer.cs</DependentUpon>
+    <Compile Include="Admin_addCustomer.Designer.cs">
+      <DependentUpon>Admin_addCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="addStaff.cs">
+    <Compile Include="Admin_addStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addStaff.Designer.cs">
-      <DependentUpon>addStaff.cs</DependentUpon>
+    <Compile Include="Admin_addStaff.Designer.cs">
+      <DependentUpon>Admin_addStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin.cs">
+    <Compile Include="Admin_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="Admin_Homepage.Designer.cs">
+      <DependentUpon>Admin_Homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CheckoutForm.cs">
+    <Compile Include="Customer_CheckoutForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CheckoutForm.Designer.cs">
-      <DependentUpon>CheckoutForm.cs</DependentUpon>
+      <DependentUpon>Customer_CheckoutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerFeedback.cs">
+    <Compile Include="Customer_Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerFeedback.Designer.cs">
-      <DependentUpon>CustomerFeedback.cs</DependentUpon>
+    <Compile Include="Customer_Feedback.Designer.cs">
+      <DependentUpon>Customer_Feedback.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerHomepage.cs">
+    <Compile Include="Customer_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerHomepage.Designer.cs">
-      <DependentUpon>CustomerHomepage.cs</DependentUpon>
+    <Compile Include="Customer_Homepage.Designer.cs">
+      <DependentUpon>Customer_Homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerMakeAnReservation.cs">
+    <Compile Include="Customer_MakeReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerMakeAnReservation.Designer.cs">
-      <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
+    <Compile Include="Customer_MakeReservation.Designer.cs">
+      <DependentUpon>Customer_MakeReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerViewReservation.cs">
+    <Compile Include="Customer_ViewReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerViewReservation.Designer.cs">
-      <DependentUpon>CustomerViewReservation.cs</DependentUpon>
+    <Compile Include="Customer_ViewReservation.Designer.cs">
+      <DependentUpon>Customer_ViewReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerMenu.cs">
+    <Compile Include="Customer_ViewMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerMenu.Designer.cs">
-      <DependentUpon>CustomerMenu.cs</DependentUpon>
+    <Compile Include="Customer_ViewMenu.Designer.cs">
+      <DependentUpon>Customer_ViewMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerReservationManager.cs" />
     <Compile Include="Customer_Profile.cs">
@@ -177,74 +177,74 @@
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="FoodMenuManager.cs" />
-    <Compile Include="ManagerEditProfile.cs">
+    <Compile Include="Manager_EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerEditProfile.Designer.cs">
-      <DependentUpon>ManagerEditProfile.cs</DependentUpon>
+    <Compile Include="Manager_EditProfile.Designer.cs">
+      <DependentUpon>Manager_EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerHomepage.cs">
+    <Compile Include="Manager_Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerHomepage.Designer.cs">
-      <DependentUpon>ManagerHomepage.cs</DependentUpon>
+    <Compile Include="Manager_Homepage.Designer.cs">
+      <DependentUpon>Manager_Homepage.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerProfileDB.cs" />
     <Compile Include="OrderFeedback.cs" />
-    <Compile Include="AddChefIngredient.cs">
+    <Compile Include="Chef_AddChefIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddChefIngredient.Designer.cs">
-      <DependentUpon>AddChefIngredient.cs</DependentUpon>
+    <Compile Include="Chef_AddChefIngredient.Designer.cs">
+      <DependentUpon>Chef_AddChefIngredient.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNewHall.cs">
+    <Compile Include="Manager_AddNewHall.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewHall.Designer.cs">
-      <DependentUpon>AddNewHall.cs</DependentUpon>
+    <Compile Include="Manager_AddNewHall.Designer.cs">
+      <DependentUpon>Manager_AddNewHall.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNewMenuItem.cs">
+    <Compile Include="Manager_AddNewMenuItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddNewMenuItem.Designer.cs">
-      <DependentUpon>AddNewMenuItem.cs</DependentUpon>
+    <Compile Include="Manager_AddNewMenuItem.Designer.cs">
+      <DependentUpon>Manager_AddNewMenuItem.cs</DependentUpon>
     </Compile>
     <Compile Include="ChefManager.cs" />
-    <Compile Include="EditChefIngredient.cs">
+    <Compile Include="Chef_EditChefIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditChefIngredient.Designer.cs">
-      <DependentUpon>EditChefIngredient.cs</DependentUpon>
+    <Compile Include="Chef_EditChefIngredient.Designer.cs">
+      <DependentUpon>Chef_EditChefIngredient.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditHallData.cs">
+    <Compile Include="Manager_EditHallData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditHallData.Designer.cs">
-      <DependentUpon>EditHallData.cs</DependentUpon>
+    <Compile Include="Manager_EditHallData.Designer.cs">
+      <DependentUpon>Manager_EditHallData.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditMenuItemForm.cs">
+    <Compile Include="Manager_EditMenuItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditMenuItemForm.Designer.cs">
-      <DependentUpon>EditMenuItemForm.cs</DependentUpon>
+    <Compile Include="Manager_EditMenuItemForm.Designer.cs">
+      <DependentUpon>Manager_EditMenuItemForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminClass.cs" />
-    <Compile Include="AdminProfile.cs">
+    <Compile Include="Admin_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HallManager.cs" />
     <Compile Include="HallReservationManager.cs" />
     <Compile Include="ImageManager.cs" />
-    <Compile Include="MainHallResvReport.cs">
+    <Compile Include="Manager_MainHallResvReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminProfile.Designer.cs">
-      <DependentUpon>AdminProfile.cs</DependentUpon>
+    <Compile Include="Admin_Profile.Designer.cs">
+      <DependentUpon>Admin_Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainHallResvReport.Designer.cs">
-      <DependentUpon>MainHallResvReport.cs</DependentUpon>
+    <Compile Include="Manager_MainHallResvReport.Designer.cs">
+      <DependentUpon>Manager_MainHallResvReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageHall.cs">
+    <Compile Include="Manager_ManageHall.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
@@ -297,56 +297,56 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet9.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DeleteCus.cs">
+    <Compile Include="Admin_DeleteCus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Chef.cs">
+    <Compile Include="Chef_ManageInve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteCus.Designer.cs">
-      <DependentUpon>DeleteCus.cs</DependentUpon>
+    <Compile Include="Admin_DeleteCus.Designer.cs">
+      <DependentUpon>Admin_DeleteCus.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageHall.Designer.cs">
-      <DependentUpon>ManageHall.cs</DependentUpon>
+    <Compile Include="Manager_ManageHall.Designer.cs">
+      <DependentUpon>Manager_ManageHall.cs</DependentUpon>
     </Compile>
-    <Compile Include="Chef.Designer.cs">
-      <DependentUpon>Chef.cs</DependentUpon>
+    <Compile Include="Chef_ManageInve.Designer.cs">
+      <DependentUpon>Chef_ManageInve.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageMenu.cs">
+    <Compile Include="Manager_ManageMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteStaff.cs">
+    <Compile Include="Admin_DeleteStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Chef_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DeleteStaff.Designer.cs">
-      <DependentUpon>DeleteStaff.cs</DependentUpon>
+    <Compile Include="Admin_DeleteStaff.Designer.cs">
+      <DependentUpon>Admin_DeleteStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageMenu.Designer.cs">
-      <DependentUpon>ManageMenu.cs</DependentUpon>
+    <Compile Include="Manager_ManageMenu.Designer.cs">
+      <DependentUpon>Manager_ManageMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditCus.cs">
+    <Compile Include="Admin_EditCus.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Chef_Profile.Designer.cs">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerUpdateProfile.cs">
+    <Compile Include="Manager_UpdateProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditCus.Designer.cs">
-      <DependentUpon>EditCus.cs</DependentUpon>
+    <Compile Include="Admin_EditCus.Designer.cs">
+      <DependentUpon>Admin_EditCus.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerUpdateProfile.Designer.cs">
-      <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
+    <Compile Include="Manager_UpdateProfile.Designer.cs">
+      <DependentUpon>Manager_UpdateProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="editStaff.cs">
+    <Compile Include="Admin_editStaff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="editStaff.Designer.cs">
-      <DependentUpon>editStaff.cs</DependentUpon>
+    <Compile Include="Admin_editStaff.Designer.cs">
+      <DependentUpon>Admin_editStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="ListItem.cs" />
     <Compile Include="MenuManager.cs" />
@@ -358,47 +358,47 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RCEditProfile.cs">
+    <Compile Include="RC_EditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RCEditProfile.Designer.cs">
-      <DependentUpon>RCEditProfile.cs</DependentUpon>
+    <Compile Include="RC_EditProfile.Designer.cs">
+      <DependentUpon>RC_EditProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="RCMainPage.cs">
+    <Compile Include="RC_MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RCMainPage.Designer.cs">
-      <DependentUpon>RCMainPage.cs</DependentUpon>
+    <Compile Include="RC_MainPage.Designer.cs">
+      <DependentUpon>RC_MainPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="RCProfile.cs">
+    <Compile Include="RC_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RCProfile.Designer.cs">
-      <DependentUpon>RCProfile.cs</DependentUpon>
+    <Compile Include="RC_Profile.Designer.cs">
+      <DependentUpon>RC_Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="RCProfileDB.cs" />
-    <Compile Include="ReplyRequest.cs">
+    <Compile Include="RC_ReplyRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReplyRequest.Designer.cs">
-      <DependentUpon>ReplyRequest.cs</DependentUpon>
+    <Compile Include="RC_ReplyRequest.Designer.cs">
+      <DependentUpon>RC_ReplyRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="RequestHandler.cs" />
     <Compile Include="Reservation.cs" />
-    <Compile Include="ReservationForm.cs">
+    <Compile Include="RC_ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReservationForm.Designer.cs">
-      <DependentUpon>ReservationForm.cs</DependentUpon>
+    <Compile Include="RC_ReservationForm.Designer.cs">
+      <DependentUpon>RC_ReservationForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ChefEditProfile.resx">
-      <DependentUpon>ChefEditProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Chef_EditProfile.resx">
+      <DependentUpon>Chef_EditProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChefHomepage.resx">
-      <DependentUpon>ChefHomepage.cs</DependentUpon>
+    <EmbeddedResource Include="Chef_Homepage.resx">
+      <DependentUpon>Chef_Homepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerEditProfile.resx">
-      <DependentUpon>CustomerEditProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Customer_EditProfile.resx">
+      <DependentUpon>Customer_EditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="ReservationDetails.cs" />
     <Compile Include="ReservationManager.cs" />
@@ -406,181 +406,181 @@
     <EmbeddedResource Include="loginPage.resx">
       <DependentUpon>loginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="salesReport.cs">
+    <Compile Include="Admin_salesReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="UserSessionManager.cs" />
-    <Compile Include="ViewCustomerOrder.cs">
+    <Compile Include="Customer_ViewCustomerOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="salesReport.Designer.cs">
-      <DependentUpon>salesReport.cs</DependentUpon>
+    <Compile Include="Admin_salesReport.Designer.cs">
+      <DependentUpon>Admin_salesReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomerOrder.Designer.cs">
-      <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
+    <Compile Include="Customer_ViewCustomerOrder.Designer.cs">
+      <DependentUpon>Customer_ViewCustomerOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="update_Customer.cs">
+    <Compile Include="Admin_update_Customer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="update_Customer.Designer.cs">
-      <DependentUpon>update_Customer.cs</DependentUpon>
+    <Compile Include="Admin_update_Customer.Designer.cs">
+      <DependentUpon>Admin_update_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="update_Staff.cs">
+    <Compile Include="Admin_update_Staff.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="update_Staff.Designer.cs">
-      <DependentUpon>update_Staff.cs</DependentUpon>
+    <Compile Include="Admin_update_Staff.Designer.cs">
+      <DependentUpon>Admin_update_Staff.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewCustomerReservationNPayment.cs" />
-    <Compile Include="view_CusFeedback.cs">
+    <Compile Include="Admin_view_CusFeedback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view_CusFeedback.Designer.cs">
-      <DependentUpon>view_CusFeedback.cs</DependentUpon>
+    <Compile Include="Admin_view_CusFeedback.Designer.cs">
+      <DependentUpon>Admin_view_CusFeedback.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addCustomer.resx">
-      <DependentUpon>addCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_addCustomer.resx">
+      <DependentUpon>Admin_addCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addStaff.resx">
-      <DependentUpon>addStaff.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_addStaff.resx">
+      <DependentUpon>Admin_addStaff.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="OrderDetails.cs" />
-    <Compile Include="ViewCustomerReplyRequest.cs">
+    <Compile Include="Customer_ViewCustomerReplyRequest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomerReplyRequest.Designer.cs">
-      <DependentUpon>ViewCustomerReplyRequest.cs</DependentUpon>
+    <Compile Include="Customer_ViewCustomerReplyRequest.Designer.cs">
+      <DependentUpon>Customer_ViewCustomerReplyRequest.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_Homepage.resx">
+      <DependentUpon>Admin_Homepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CheckoutForm.resx">
-      <DependentUpon>CheckoutForm.cs</DependentUpon>
+      <DependentUpon>Customer_CheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerFeedback.resx">
-      <DependentUpon>CustomerFeedback.cs</DependentUpon>
+    <EmbeddedResource Include="Customer_Feedback.resx">
+      <DependentUpon>Customer_Feedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerHomepage.resx">
-      <DependentUpon>CustomerHomepage.cs</DependentUpon>
+    <EmbeddedResource Include="Customer_Homepage.resx">
+      <DependentUpon>Customer_Homepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerMakeAnReservation.resx">
-      <DependentUpon>CustomerMakeAnReservation.cs</DependentUpon>
+    <EmbeddedResource Include="Customer_MakeReservation.resx">
+      <DependentUpon>Customer_MakeReservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerViewReservation.resx">
-      <DependentUpon>CustomerViewReservation.cs</DependentUpon>
+    <EmbeddedResource Include="Customer_ViewReservation.resx">
+      <DependentUpon>Customer_ViewReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerMenu.resx">
-      <DependentUpon>CustomerMenu.cs</DependentUpon>
+      <DependentUpon>Customer_ViewMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer_Profile.resx">
       <DependentUpon>Customer_Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerEditProfile.resx">
-      <DependentUpon>ManagerEditProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_EditProfile.resx">
+      <DependentUpon>Manager_EditProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerHomepage.resx">
-      <DependentUpon>ManagerHomepage.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_Homepage.resx">
+      <DependentUpon>Manager_Homepage.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="SidebarManager.cs" />
-    <Compile Include="ChefCustomerOrder.cs">
+    <Compile Include="Chef_CustomerOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChefCustomerOrder.Designer.cs">
-      <DependentUpon>ChefCustomerOrder.cs</DependentUpon>
+    <Compile Include="Chef_CustomerOrder.Designer.cs">
+      <DependentUpon>Chef_CustomerOrder.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddChefIngredient.resx">
-      <DependentUpon>AddChefIngredient.cs</DependentUpon>
+    <EmbeddedResource Include="Chef_AddChefIngredient.resx">
+      <DependentUpon>Chef_AddChefIngredient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddNewHall.resx">
-      <DependentUpon>AddNewHall.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_AddNewHall.resx">
+      <DependentUpon>Manager_AddNewHall.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddNewMenuItem.resx">
-      <DependentUpon>AddNewMenuItem.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_AddNewMenuItem.resx">
+      <DependentUpon>Manager_AddNewMenuItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditChefIngredient.resx">
-      <DependentUpon>EditChefIngredient.cs</DependentUpon>
+    <EmbeddedResource Include="Chef_EditChefIngredient.resx">
+      <DependentUpon>Chef_EditChefIngredient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditHallData.resx">
-      <DependentUpon>EditHallData.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_EditHallData.resx">
+      <DependentUpon>Manager_EditHallData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditMenuItemForm.resx">
-      <DependentUpon>EditMenuItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_EditMenuItemForm.resx">
+      <DependentUpon>Manager_EditMenuItemForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainHallResvReport.resx">
-      <DependentUpon>MainHallResvReport.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_MainHallResvReport.resx">
+      <DependentUpon>Manager_MainHallResvReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageHall.resx">
-      <DependentUpon>ManageHall.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_ManageHall.resx">
+      <DependentUpon>Manager_ManageHall.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Chef.resx">
-      <DependentUpon>Chef.cs</DependentUpon>
+    <EmbeddedResource Include="Chef_ManageInve.resx">
+      <DependentUpon>Chef_ManageInve.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminProfile.resx">
-      <DependentUpon>AdminProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_Profile.resx">
+      <DependentUpon>Admin_Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageMenu.resx">
-      <DependentUpon>ManageMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_ManageMenu.resx">
+      <DependentUpon>Manager_ManageMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteCus.resx">
-      <DependentUpon>DeleteCus.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_DeleteCus.resx">
+      <DependentUpon>Admin_DeleteCus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteStaff.resx">
-      <DependentUpon>DeleteStaff.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_DeleteStaff.resx">
+      <DependentUpon>Admin_DeleteStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCus.resx">
-      <DependentUpon>EditCus.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_EditCus.resx">
+      <DependentUpon>Admin_EditCus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Chef_Profile.resx">
       <DependentUpon>Chef_Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editStaff.resx">
-      <DependentUpon>editStaff.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_editStaff.resx">
+      <DependentUpon>Admin_editStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerUpdateProfile.resx">
-      <DependentUpon>ManagerUpdateProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Manager_UpdateProfile.resx">
+      <DependentUpon>Manager_UpdateProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RCEditProfile.resx">
-      <DependentUpon>RCEditProfile.cs</DependentUpon>
+    <EmbeddedResource Include="RC_EditProfile.resx">
+      <DependentUpon>RC_EditProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RCMainPage.resx">
-      <DependentUpon>RCMainPage.cs</DependentUpon>
+    <EmbeddedResource Include="RC_MainPage.resx">
+      <DependentUpon>RC_MainPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RCProfile.resx">
-      <DependentUpon>RCProfile.cs</DependentUpon>
+    <EmbeddedResource Include="RC_Profile.resx">
+      <DependentUpon>RC_Profile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReplyRequest.resx">
-      <DependentUpon>ReplyRequest.cs</DependentUpon>
+    <EmbeddedResource Include="RC_ReplyRequest.resx">
+      <DependentUpon>RC_ReplyRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReservationForm.resx">
-      <DependentUpon>ReservationForm.cs</DependentUpon>
+    <EmbeddedResource Include="RC_ReservationForm.resx">
+      <DependentUpon>RC_ReservationForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <EmbeddedResource Include="salesReport.resx">
-      <DependentUpon>salesReport.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_salesReport.resx">
+      <DependentUpon>Admin_salesReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="update_Customer.resx">
-      <DependentUpon>update_Customer.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_update_Customer.resx">
+      <DependentUpon>Admin_update_Customer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="update_Staff.resx">
-      <DependentUpon>update_Staff.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_update_Staff.resx">
+      <DependentUpon>Admin_update_Staff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view_CusFeedback.resx">
-      <DependentUpon>view_CusFeedback.cs</DependentUpon>
+    <EmbeddedResource Include="Admin_view_CusFeedback.resx">
+      <DependentUpon>Admin_view_CusFeedback.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomerOrder.resx">
-      <DependentUpon>ViewCustomerOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Customer_ViewCustomerOrder.resx">
+      <DependentUpon>Customer_ViewCustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomerReplyRequest.resx">
-      <DependentUpon>ViewCustomerReplyRequest.cs</DependentUpon>
+    <EmbeddedResource Include="Customer_ViewCustomerReplyRequest.resx">
+      <DependentUpon>Customer_ViewCustomerReplyRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChefCustomerOrder.resx">
-      <DependentUpon>ChefCustomerOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Chef_CustomerOrder.resx">
+      <DependentUpon>Chef_CustomerOrder.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
