@@ -73,6 +73,7 @@
             // 
             // cmbMonth
             // 
+            this.cmbMonth.BackColor = System.Drawing.Color.Silver;
             this.cmbMonth.FormattingEnabled = true;
             this.cmbMonth.Items.AddRange(new object[] {
             "January",
@@ -168,6 +169,7 @@
             // 
             // cmbUserName
             // 
+            this.cmbUserName.BackColor = System.Drawing.Color.Silver;
             this.cmbUserName.FormattingEnabled = true;
             this.cmbUserName.Items.AddRange(new object[] {
             "January",
@@ -214,6 +216,7 @@
             // 
             // cmbTransactionType
             // 
+            this.cmbTransactionType.BackColor = System.Drawing.Color.Silver;
             this.cmbTransactionType.FormattingEnabled = true;
             this.cmbTransactionType.Items.AddRange(new object[] {
             "January",

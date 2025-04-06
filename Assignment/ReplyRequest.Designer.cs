@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReplyRequest));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableSidebar_Reservation = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_RC = new System.Windows.Forms.Label();
@@ -212,19 +211,11 @@
             // dgvReplyRequest
             // 
             this.dgvReplyRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReplyRequest.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReplyRequest.Location = new System.Drawing.Point(36, 102);
             this.dgvReplyRequest.Name = "dgvReplyRequest";
             this.dgvReplyRequest.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvReplyRequest.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvReplyRequest.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReplyRequest.RowTemplate.Height = 24;
             this.dgvReplyRequest.Size = new System.Drawing.Size(785, 218);
             this.dgvReplyRequest.TabIndex = 11;
@@ -232,6 +223,7 @@
             // 
             // cmbChangeStatus
             // 
+            this.cmbChangeStatus.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmbChangeStatus.FormattingEnabled = true;
             this.cmbChangeStatus.Items.AddRange(new object[] {
             "Approved",

@@ -54,6 +54,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(400, 311);
             this.comboBox1.Name = "comboBox1";
@@ -62,6 +63,7 @@
             // 
             // btn_delete
             // 
+            this.btn_delete.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.Location = new System.Drawing.Point(681, 305);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(251, 35);
@@ -193,6 +195,7 @@
             // 
             // btn_Cancel
             // 
+            this.btn_Cancel.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel.Location = new System.Drawing.Point(681, 361);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(251, 35);

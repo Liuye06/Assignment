@@ -220,6 +220,7 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
@@ -232,6 +233,7 @@
             // picProfilePic
             // 
             this.picProfilePic.BackColor = System.Drawing.Color.Gainsboro;
+            this.picProfilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picProfilePic.Location = new System.Drawing.Point(513, 76);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
@@ -241,6 +243,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtPassword.Location = new System.Drawing.Point(171, 94);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(271, 32);
@@ -248,6 +251,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtUsername.Location = new System.Drawing.Point(171, 40);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(271, 32);
@@ -302,6 +306,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtEmail.Location = new System.Drawing.Point(171, 203);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(271, 32);
@@ -309,6 +314,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtName.Location = new System.Drawing.Point(171, 149);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(271, 32);

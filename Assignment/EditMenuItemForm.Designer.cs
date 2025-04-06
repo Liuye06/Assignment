@@ -105,6 +105,7 @@
             // picEditMenu
             // 
             this.picEditMenu.BackColor = System.Drawing.Color.Gainsboro;
+            this.picEditMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picEditMenu.Location = new System.Drawing.Point(583, 62);
             this.picEditMenu.Name = "picEditMenu";
             this.picEditMenu.Size = new System.Drawing.Size(219, 210);
@@ -114,6 +115,7 @@
             // 
             // cmbEditCategoryMenu
             // 
+            this.cmbEditCategoryMenu.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmbEditCategoryMenu.FormattingEnabled = true;
             this.cmbEditCategoryMenu.Items.AddRange(new object[] {
             "Appetizer",
@@ -128,6 +130,7 @@
             // 
             // txtEditPriceMenu
             // 
+            this.txtEditPriceMenu.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtEditPriceMenu.Location = new System.Drawing.Point(218, 158);
             this.txtEditPriceMenu.Name = "txtEditPriceMenu";
             this.txtEditPriceMenu.Size = new System.Drawing.Size(301, 32);
@@ -135,6 +138,7 @@
             // 
             // txtEditMenu
             // 
+            this.txtEditMenu.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtEditMenu.Location = new System.Drawing.Point(218, 80);
             this.txtEditMenu.Name = "txtEditMenu";
             this.txtEditMenu.Size = new System.Drawing.Size(301, 32);

@@ -100,7 +100,8 @@
             // lblEditStock
             // 
             this.lblEditStock.AutoSize = true;
-            this.lblEditStock.Location = new System.Drawing.Point(208, 187);
+            this.lblEditStock.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblEditStock.Location = new System.Drawing.Point(227, 187);
             this.lblEditStock.Name = "lblEditStock";
             this.lblEditStock.Size = new System.Drawing.Size(85, 31);
             this.lblEditStock.TabIndex = 1;
@@ -109,7 +110,8 @@
             // lblEditIngredient
             // 
             this.lblEditIngredient.AutoSize = true;
-            this.lblEditIngredient.Location = new System.Drawing.Point(208, 109);
+            this.lblEditIngredient.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblEditIngredient.Location = new System.Drawing.Point(227, 109);
             this.lblEditIngredient.Name = "lblEditIngredient";
             this.lblEditIngredient.Size = new System.Drawing.Size(151, 31);
             this.lblEditIngredient.TabIndex = 0;

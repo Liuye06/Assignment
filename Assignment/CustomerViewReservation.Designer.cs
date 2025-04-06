@@ -267,6 +267,7 @@
             // 
             // listView_ReservationRequest
             // 
+            this.listView_ReservationRequest.BackColor = System.Drawing.Color.LightSteelBlue;
             this.listView_ReservationRequest.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView_ReservationRequest.FullRowSelect = true;
             this.listView_ReservationRequest.GridLines = true;

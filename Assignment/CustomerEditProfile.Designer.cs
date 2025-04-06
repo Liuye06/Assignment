@@ -64,6 +64,7 @@
             // btnEditBrowseImageMenu
             // 
             this.btnEditBrowseImageMenu.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditBrowseImageMenu.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnEditBrowseImageMenu.Location = new System.Drawing.Point(684, 325);
             this.btnEditBrowseImageMenu.Name = "btnEditBrowseImageMenu";
             this.btnEditBrowseImageMenu.Size = new System.Drawing.Size(219, 34);
@@ -94,6 +95,7 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.BackColor = System.Drawing.Color.Silver;
             this.cmbGender.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
@@ -106,6 +108,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.Silver;
             this.txtPassword.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(302, 109);
             this.txtPassword.Name = "txtPassword";
@@ -114,6 +117,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.Silver;
             this.txtUsername.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(302, 55);
             this.txtUsername.Name = "txtUsername";
@@ -170,6 +174,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.Color.Silver;
             this.txtEmail.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(302, 218);
             this.txtEmail.Name = "txtEmail";
@@ -178,6 +183,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.Silver;
             this.txtName.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(302, 164);
             this.txtName.Name = "txtName";
@@ -222,6 +228,7 @@
             // 
             // picProfilePic
             // 
+            this.picProfilePic.BackColor = System.Drawing.Color.Silver;
             this.picProfilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picProfilePic.Location = new System.Drawing.Point(684, 98);
             this.picProfilePic.Name = "picProfilePic";

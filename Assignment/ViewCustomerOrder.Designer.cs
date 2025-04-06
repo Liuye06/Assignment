@@ -71,6 +71,7 @@
             // 
             // listView_OrderHistory
             // 
+            this.listView_OrderHistory.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.listView_OrderHistory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.OrderID,
             this.ItemName,

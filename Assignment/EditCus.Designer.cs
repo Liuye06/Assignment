@@ -74,6 +74,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(565, 99);
             this.comboBox1.Name = "comboBox1";
@@ -118,6 +119,7 @@
             // 
             // txt_EditCus
             // 
+            this.txt_EditCus.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txt_EditCus.Location = new System.Drawing.Point(568, 237);
             this.txt_EditCus.Name = "txt_EditCus";
             this.txt_EditCus.Size = new System.Drawing.Size(293, 30);

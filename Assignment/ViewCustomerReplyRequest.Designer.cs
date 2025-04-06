@@ -67,6 +67,7 @@
             // 
             // listView_ReservationRequest
             // 
+            this.listView_ReservationRequest.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.listView_ReservationRequest.FullRowSelect = true;
             this.listView_ReservationRequest.GridLines = true;
             this.listView_ReservationRequest.HideSelection = false;

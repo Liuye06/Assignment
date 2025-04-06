@@ -46,7 +46,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label1.ForeColor = System.Drawing.SystemColors.Info;
             this.label1.Location = new System.Drawing.Point(482, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 25);
@@ -55,6 +55,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.DarkGray;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Admin",
@@ -90,6 +91,7 @@
             // 
             // txt_EditCus
             // 
+            this.txt_EditCus.BackColor = System.Drawing.Color.DarkGray;
             this.txt_EditCus.Location = new System.Drawing.Point(733, 162);
             this.txt_EditCus.Name = "txt_EditCus";
             this.txt_EditCus.Size = new System.Drawing.Size(245, 30);
@@ -124,7 +126,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
             this.label2.Location = new System.Drawing.Point(128, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 25);
@@ -136,7 +138,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
             this.label3.Location = new System.Drawing.Point(482, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(224, 25);
@@ -145,6 +147,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.BackColor = System.Drawing.Color.DarkGray;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Real_Name",

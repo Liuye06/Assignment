@@ -208,9 +208,9 @@
             this.gbRCProfile.Controls.Add(this.lblName);
             this.gbRCProfile.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbRCProfile.ForeColor = System.Drawing.Color.White;
-            this.gbRCProfile.Location = new System.Drawing.Point(19, 78);
+            this.gbRCProfile.Location = new System.Drawing.Point(32, 78);
             this.gbRCProfile.Name = "gbRCProfile";
-            this.gbRCProfile.Size = new System.Drawing.Size(805, 380);
+            this.gbRCProfile.Size = new System.Drawing.Size(851, 380);
             this.gbRCProfile.TabIndex = 16;
             this.gbRCProfile.TabStop = false;
             this.gbRCProfile.Text = "Reservation Coordinator Profile";
@@ -224,6 +224,7 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
@@ -235,6 +236,8 @@
             // 
             // picProfilePic
             // 
+            this.picProfilePic.BackColor = System.Drawing.Color.DarkGray;
+            this.picProfilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picProfilePic.Location = new System.Drawing.Point(508, 79);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
@@ -244,6 +247,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtPassword.Location = new System.Drawing.Point(153, 95);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(271, 29);
@@ -251,6 +255,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtUsername.Location = new System.Drawing.Point(153, 41);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(271, 29);
@@ -294,7 +299,7 @@
             // 
             // btnUpdateProfile
             // 
-            this.btnUpdateProfile.ForeColor = System.Drawing.Color.RosyBrown;
+            this.btnUpdateProfile.ForeColor = System.Drawing.Color.Brown;
             this.btnUpdateProfile.Location = new System.Drawing.Point(476, 312);
             this.btnUpdateProfile.Name = "btnUpdateProfile";
             this.btnUpdateProfile.Size = new System.Drawing.Size(310, 35);
@@ -305,6 +310,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtEmail.Location = new System.Drawing.Point(153, 204);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(271, 29);
@@ -312,6 +318,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtName.Location = new System.Drawing.Point(153, 150);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(271, 29);

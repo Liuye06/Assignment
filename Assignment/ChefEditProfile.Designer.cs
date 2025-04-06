@@ -59,6 +59,7 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.BackColor = System.Drawing.Color.LightGray;
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
@@ -71,6 +72,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.Color.LightGray;
             this.txtPassword.Location = new System.Drawing.Point(310, 98);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(271, 30);
@@ -79,6 +81,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.Color.LightGray;
             this.txtUsername.Location = new System.Drawing.Point(310, 44);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(271, 30);
@@ -139,6 +142,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.Color.LightGray;
             this.txtEmail.Location = new System.Drawing.Point(310, 207);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(271, 30);
@@ -147,6 +151,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.LightGray;
             this.txtName.Location = new System.Drawing.Point(310, 153);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(271, 30);
@@ -208,7 +213,7 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnCancel.Location = new System.Drawing.Point(545, 387);
+            this.btnCancel.Location = new System.Drawing.Point(558, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(393, 34);
             this.btnCancel.TabIndex = 37;
@@ -231,6 +236,7 @@
             // picProfilePic
             // 
             this.picProfilePic.BackColor = System.Drawing.Color.Gainsboro;
+            this.picProfilePic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picProfilePic.Location = new System.Drawing.Point(678, 82);
             this.picProfilePic.Name = "picProfilePic";
             this.picProfilePic.Size = new System.Drawing.Size(219, 210);
